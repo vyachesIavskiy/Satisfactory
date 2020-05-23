@@ -1,0 +1,73 @@
+{
+  "equipment" : [
+    {
+      "id" : "E7D314AC-744B-4700-BADD-548F8F15850A",
+      "name" : "Xeno-Zapper",
+      "equipmentType" : "Hands"
+    },
+    {
+      "id" : "A18969ED-349B-4789-B783-AA8D8FE7C237",
+      "name" : "Portable Miner",
+      "equipmentType" : "Hands"
+    },
+    {
+      "id" : "A2FCEA26-12CF-4992-A362-10DF975F4E9E",
+      "fuel" : "Biofuel",
+      "equipmentType" : "Hands",
+      "name" : "Chainsaw"
+    },
+    {
+      "id" : "42DCD8FF-BDDE-467F-846C-69351A18E999",
+      "name" : "Object Scanner",
+      "equipmentType" : "Hands"
+    },
+    {
+      "id" : "5A07430E-72C3-4373-AEC0-EF36A426BB7A",
+      "name" : "Beacon",
+      "equipmentType" : "Hands"
+    },
+    {
+      "ammo" : "Color Cartridge",
+      "id" : "8BA150A2-8D92-45BB-A4A9-6847D5DA76C0",
+      "equipmentType" : "Hands",
+      "name" : "Color Gun"
+    },
+    {
+      "id" : "7BC4C6DD-398D-446A-88E7-56CB356D764A",
+      "name" : "Xeno-Basher",
+      "equipmentType" : "Hands"
+    },
+    {
+      "id" : "D0739C86-CE59-4C02-BDED-317A3116D648",
+      "name" : "Factory Cart™",
+      "equipmentType" : "Hands"
+    },
+    {
+      "id" : "85AB2FA2-4FFD-4436-A69B-99732DCEC7DC",
+      "name" : "Medical Inhaler",
+      "equipmentType" : "Hands"
+    },
+    {
+      "id" : "50E0D5E0-BF7C-4BF7-A33B-53555A0986EB",
+      "name" : "Nutritional Inhaler",
+      "equipmentType" : "Hands"
+    },
+    {
+      "ammo" : "Nobelisk",
+      "id" : "B69BB4D5-39E1-4D48-A720-E4E52C17F61B",
+      "equipmentType" : "Hands",
+      "name" : "Nobelisk Detonator"
+    },
+    {
+      "id" : "B276CFDD-9A34-4347-8005-7BE8D20B6FC6",
+      "name" : "Blade Runners",
+      "equipmentType" : "Body"
+    },
+    {
+      "id" : "6F2F205A-F325-43D5-B949-3F271B51A9F2",
+      "fuel" : "Fuel",
+      "equipmentType" : "Body",
+      "name" : "Jetpack"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "Vehicles" : [
+    {
+      "id" : "857235FF-DC7C-4C8B-9A5E-30C43BEFCD41",
+      "name" : "Tractor"
+    },
+    {
+      "id" : "1C6A9476-A78B-47FA-9F28-5E4E83008A88",
+      "name" : "Explorer"
+    },
+    {
+      "id" : "30CAEEA0-36F8-43D7-B0F5-26F5D98FD804",
+      "name" : "Truck"
+    }
+  ]
+}

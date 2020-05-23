@@ -1,0 +1,1419 @@
+{
+  "recipes" : [
+    {
+      "id" : "377EDD85-1647-4D97-9F18-54A7CA2EA4D3",
+      "input" : [
+        {
+          "id" : "D8B3DA6B-F6F9-4C01-BA0D-BCC35B0C764D",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "57266899-33FA-4C78-B639-4A1D2D912F68",
+          "amount" : 30
+        }
+      ],
+      "machine" : "smelter",
+      "isDefault" : true
+    },
+    {
+      "id" : "1114E37F-82DA-4C4D-A02F-377B9E2E965F",
+      "input" : [
+        {
+          "id" : "BB8332B7-E384-49FA-AA0A-4BF48CDA0E62",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "A3A37E6D-9F11-4144-A121-9FFBC6243607",
+          "amount" : 30
+        }
+      ],
+      "machine" : "smelter",
+      "isDefault" : true
+    },
+    {
+      "id" : "C4C7FA68-B803-4C82-BE22-301575533B1E",
+      "input" : [
+        {
+          "id" : "9210ED1A-72C8-402F-82C5-E564004D69B0",
+          "amount" : 45
+        }
+      ],
+      "output" : [
+        {
+          "id" : "2B2DDC71-D68B-43F1-966A-38A8CF5D1001",
+          "amount" : 15
+        }
+      ],
+      "machine" : "smelter",
+      "isDefault" : true
+    },
+    {
+      "id" : "01524385-EAAD-49FD-BAB0-0E739F188321",
+      "input" : [
+        {
+          "id" : "D8B3DA6B-F6F9-4C01-BA0D-BCC35B0C764D",
+          "amount" : 45
+        },
+        {
+          "id" : "DC883BC8-44FE-49BD-8719-AEEEDB74A9E9",
+          "amount" : 45
+        }
+      ],
+      "output" : [
+        {
+          "id" : "80705454-78E4-4036-AE59-32B48130BCFB",
+          "amount" : 45
+        }
+      ],
+      "machine" : "foundry",
+      "isDefault" : true
+    },
+    {
+      "id" : "5A31A479-EDEF-4ADC-88D3-F12DDDD88850",
+      "input" : [
+        {
+          "id" : "D8B3DA6B-F6F9-4C01-BA0D-BCC35B0C764D",
+          "amount" : 20
+        },
+        {
+          "id" : "BB8332B7-E384-49FA-AA0A-4BF48CDA0E62",
+          "amount" : 20
+        }
+      ],
+      "output" : [
+        {
+          "id" : "57266899-33FA-4C78-B639-4A1D2D912F68",
+          "amount" : 50
+        }
+      ],
+      "machine" : "foundry",
+      "isDefault" : false
+    },
+    {
+      "id" : "539FC8F7-1956-482C-ADEB-E3EB62AB9AAC",
+      "input" : [
+        {
+          "id" : "57266899-33FA-4C78-B639-4A1D2D912F68",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "6E1DF089-004C-495A-8ECA-F57F04A9E895",
+          "amount" : 20
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "5CA74680-C2ED-4E71-955E-55731B39C244",
+      "input" : [
+        {
+          "id" : "57266899-33FA-4C78-B639-4A1D2D912F68",
+          "amount" : 15
+        }
+      ],
+      "output" : [
+        {
+          "id" : "BB08E89C-8B04-41DD-9B36-B921BD86CB26",
+          "amount" : 15
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "E2955AF9-B887-4C70-BCA4-E2F52626A720",
+      "input" : [
+        {
+          "id" : "BB08E89C-8B04-41DD-9B36-B921BD86CB26",
+          "amount" : 10
+        }
+      ],
+      "output" : [
+        {
+          "id" : "739882AB-4F97-4AF0-93A9-BCBA824D8DA2",
+          "amount" : 40
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "1DB65C56-E730-40C9-BC1E-37A34D3ACD34",
+      "input" : [
+        {
+          "id" : "57266899-33FA-4C78-B639-4A1D2D912F68",
+          "amount" : 12.5
+        }
+      ],
+      "output" : [
+        {
+          "id" : "739882AB-4F97-4AF0-93A9-BCBA824D8DA2",
+          "amount" : 50
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : false
+    },
+    {
+      "id" : "5C92407B-4628-46E2-8F52-8A6E18BB1F64",
+      "input" : [
+        {
+          "id" : "A3A37E6D-9F11-4144-A121-9FFBC6243607",
+          "amount" : 20
+        }
+      ],
+      "output" : [
+        {
+          "id" : "593922F1-F5DF-4E3D-861B-6B51605193C0",
+          "amount" : 10
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "DD6EA79D-4BB3-4DF5-8015-8178D058A4FF",
+      "input" : [
+        {
+          "id" : "80705454-78E4-4036-AE59-32B48130BCFB",
+          "amount" : 60
+        }
+      ],
+      "output" : [
+        {
+          "id" : "409DF583-4C53-4377-9436-E11BB1FBD64E",
+          "amount" : 15
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "19E38590-470C-4B13-8169-268C40278A99",
+      "input" : [
+        {
+          "id" : "80705454-78E4-4036-AE59-32B48130BCFB",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "2112AD70-ED98-452A-A169-E74C07D8B361",
+          "amount" : 20
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "7C0A51A8-0109-4E5C-8A98-4DAAF7099B14",
+      "input" : [
+        {
+          "id" : "A3A37E6D-9F11-4144-A121-9FFBC6243607",
+          "amount" : 15
+        }
+      ],
+      "output" : [
+        {
+          "id" : "DE696766-1D8F-4B3B-9591-9DCA6D2F983E",
+          "amount" : 30
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "E85330CA-9FB5-4EE4-821F-EFB09E570472",
+      "input" : [
+        {
+          "id" : "57266899-33FA-4C78-B639-4A1D2D912F68",
+          "amount" : 12.5
+        }
+      ],
+      "output" : [
+        {
+          "id" : "DE696766-1D8F-4B3B-9591-9DCA6D2F983E",
+          "amount" : 22.5
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : false
+    },
+    {
+      "id" : "2153889D-C380-4456-8EAC-2150D73953F1",
+      "input" : [
+        {
+          "id" : "DE696766-1D8F-4B3B-9591-9DCA6D2F983E",
+          "amount" : 60
+        }
+      ],
+      "output" : [
+        {
+          "id" : "EF39BED3-51D8-4A2A-9688-597F73F45156",
+          "amount" : 30
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "CB9D4686-A3BD-4807-978F-53CDBC27918F",
+      "input" : [
+        {
+          "id" : "2B2DDC71-D68B-43F1-966A-38A8CF5D1001",
+          "amount" : 12
+        }
+      ],
+      "output" : [
+        {
+          "id" : "A848DA7A-DAB7-46BC-8113-BDDAABC01602",
+          "amount" : 60
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "BB48B417-E88A-4032-A674-35979A8887EE",
+      "input" : [
+        {
+          "id" : "3E1B2648-5F30-4D6D-922B-D6B351C9E6FF",
+          "amount" : 45
+        }
+      ],
+      "output" : [
+        {
+          "id" : "EFBCF238-3E1C-423E-B57E-62B032D21037",
+          "amount" : 15
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "64EB775D-6B09-4132-B43E-A7084393DCCF",
+      "input" : [
+        {
+          "id" : "20FFA45C-D21E-4C95-B862-C19800C3076A",
+          "amount" : 37.5
+        }
+      ],
+      "output" : [
+        {
+          "id" : "40B68321-CCC9-475E-AA19-35EA81AC6924",
+          "amount" : 22.5
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "186A3B83-0BB4-42B9-9743-D9AE47340E24",
+      "input" : [
+        {
+          "id" : "20FFA45C-D21E-4C95-B862-C19800C3076A",
+          "amount" : 22.5
+        }
+      ],
+      "output" : [
+        {
+          "id" : "CBF4CDBF-EE68-4933-845B-C188946DE584",
+          "amount" : 37.5
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "FABF9765-EB46-4AA1-99EF-5D04F4E60B40",
+      "input" : [
+        {
+          "id" : "B1CAB5CB-93C1-47C1-A2B6-1E57322F1522",
+          "amount" : 60
+        }
+      ],
+      "output" : [
+        {
+          "id" : "A334D59C-AB19-4BDD-8516-8DFD60AB019F",
+          "amount" : 300
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "8AB268B8-55BC-4848-8CBC-6892A8133292",
+      "input" : [
+        {
+          "id" : "9408483C-9211-4B8A-9C0E-CB5707A30200",
+          "amount" : 120
+        }
+      ],
+      "output" : [
+        {
+          "id" : "A334D59C-AB19-4BDD-8516-8DFD60AB019F",
+          "amount" : 60
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "8EEEC7B6-D59D-433F-AF07-7BE1D4A985ED",
+      "input" : [
+        {
+          "id" : "ED78E661-27D1-4697-BF66-90F6FCABB9F9",
+          "amount" : 15
+        }
+      ],
+      "output" : [
+        {
+          "id" : "A334D59C-AB19-4BDD-8516-8DFD60AB019F",
+          "amount" : 1500
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "3D270878-F42E-40B3-9B0F-F911A8A09E5B",
+      "input" : [
+        {
+          "id" : "5A44939A-63D1-4F0A-BC6E-3E577AC03103",
+          "amount" : 7.5
+        }
+      ],
+      "output" : [
+        {
+          "id" : "A334D59C-AB19-4BDD-8516-8DFD60AB019F",
+          "amount" : 1500
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "9D7C8D5E-CF65-4CDE-AA6C-71F84FA9ABD5",
+      "input" : [
+        {
+          "id" : "E2BF718D-C9B6-4D09-A295-AF0C2EB454B5",
+          "amount" : 150
+        }
+      ],
+      "output" : [
+        {
+          "id" : "A334D59C-AB19-4BDD-8516-8DFD60AB019F",
+          "amount" : 150
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "E35A6EC9-4C3F-404D-8D9A-4BEF6E028420",
+      "input" : [
+        {
+          "id" : "A334D59C-AB19-4BDD-8516-8DFD60AB019F",
+          "amount" : 120
+        }
+      ],
+      "output" : [
+        {
+          "id" : "D220751A-441F-4759-A5B2-6AA50621BDBF",
+          "amount" : 60
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "DE826385-6C74-48C0-B669-BD8A5F848E52",
+      "input" : [
+        {
+          "id" : "B2F7917D-9546-4753-983E-23E9C86AA44D",
+          "amount" : 6
+        }
+      ],
+      "output" : [
+        {
+          "id" : "2FA23EE7-18C2-4035-8A55-2AE3E830FDF9",
+          "amount" : 6
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "525D425F-A260-40A5-A2B7-5C2D4687E06D",
+      "input" : [
+        {
+          "id" : "A0EBCF32-D341-4317-BA37-048B3A3A8FE3",
+          "amount" : 4
+        }
+      ],
+      "output" : [
+        {
+          "id" : "2FA23EE7-18C2-4035-8A55-2AE3E830FDF9",
+          "amount" : 8
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "CE226785-4C79-460A-A63D-50571FDF632F",
+      "input" : [
+        {
+          "id" : "B34ED7E3-699B-4CEF-B52D-D575DDC38068",
+          "amount" : 3
+        }
+      ],
+      "output" : [
+        {
+          "id" : "2FA23EE7-18C2-4035-8A55-2AE3E830FDF9",
+          "amount" : 15
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "C20C45B3-7897-4D52-ABDC-71B5432C7951",
+      "input" : [
+        {
+          "id" : "B2766A5C-42F3-4BBF-9937-C1168B2704E0",
+          "amount" : 37.5
+        }
+      ],
+      "output" : [
+        {
+          "id" : "7C4BCD0E-9DDA-47D3-9363-227E6F39B04E",
+          "amount" : 75
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "A8136141-D8BA-4FE2-BB07-B62EB9413E0A",
+      "input" : [
+        {
+          "id" : "D5DFFC74-4CE8-44D7-85C3-754448509964",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "F7EF3789-5944-4DF9-B069-9EA323E7528B",
+          "amount" : 10
+        }
+      ],
+      "machine" : "constructor",
+      "isDefault" : true
+    },
+    {
+      "id" : "6E06CE88-46A1-4ED6-AECA-59F25F7D2299",
+      "input" : [
+        {
+          "id" : "6E1DF089-004C-495A-8ECA-F57F04A9E895",
+          "amount" : 30
+        },
+        {
+          "id" : "739882AB-4F97-4AF0-93A9-BCBA824D8DA2",
+          "amount" : 60
+        }
+      ],
+      "output" : [
+        {
+          "id" : "99E0EC59-BDEC-4435-9438-0201FF769190",
+          "amount" : 5
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "6C9BAA60-86F4-44E5-A6C2-E01B4AA6309F",
+      "input" : [
+        {
+          "id" : "99E0EC59-BDEC-4435-9438-0201FF769190",
+          "amount" : 3
+        },
+        {
+          "id" : "BB08E89C-8B04-41DD-9B36-B921BD86CB26",
+          "amount" : 12
+        }
+      ],
+      "output" : [
+        {
+          "id" : "0D7E1D24-883A-4413-9E2F-83F53C8A9854",
+          "amount" : 2
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "962E9E40-E299-487B-8B64-40D2A2492DFB",
+      "input" : [
+        {
+          "id" : "409DF583-4C53-4377-9436-E11BB1FBD64E",
+          "amount" : 24
+        },
+        {
+          "id" : "EFBCF238-3E1C-423E-B57E-62B032D21037",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "1177D437-9F5B-443B-BFF7-E9EE0BB97FCC",
+          "amount" : 6
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "DBE9F0BC-F6EB-4A26-A5CE-308806B5D559",
+      "input" : [
+        {
+          "id" : "BB08E89C-8B04-41DD-9B36-B921BD86CB26",
+          "amount" : 20
+        },
+        {
+          "id" : "739882AB-4F97-4AF0-93A9-BCBA824D8DA2",
+          "amount" : 100
+        }
+      ],
+      "output" : [
+        {
+          "id" : "4817DB1A-CE23-4310-979A-029762ED23B6",
+          "amount" : 4
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "FB39D52B-2BB0-4BB3-8FF4-916DFD5A93BC",
+      "input" : [
+        {
+          "id" : "2112AD70-ED98-452A-A169-E74C07D8B361",
+          "amount" : 15
+        },
+        {
+          "id" : "DE696766-1D8F-4B3B-9591-9DCA6D2F983E",
+          "amount" : 40
+        }
+      ],
+      "output" : [
+        {
+          "id" : "9F45689A-CEF4-4305-8EC1-7CDD9D345CA2",
+          "amount" : 5
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "3AFA9ADD-4395-4A57-8191-F49C34A9057F",
+      "input" : [
+        {
+          "id" : "4817DB1A-CE23-4310-979A-029762ED23B6",
+          "amount" : 10
+        },
+        {
+          "id" : "9F45689A-CEF4-4305-8EC1-7CDD9D345CA2",
+          "amount" : 10
+        }
+      ],
+      "output" : [
+        {
+          "id" : "55757760-3C97-4578-AA56-68D9E8D07195",
+          "amount" : 5
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "A1393287-8AC6-4F7C-BB36-388D08E30B81",
+      "input" : [
+        {
+          "id" : "99E0EC59-BDEC-4435-9438-0201FF769190",
+          "amount" : 2
+        },
+        {
+          "id" : "4817DB1A-CE23-4310-979A-029762ED23B6",
+          "amount" : 2
+        }
+      ],
+      "output" : [
+        {
+          "id" : "BE92D8F7-FD09-47E8-8E57-12A5E23C0EE7",
+          "amount" : 2
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "0A5E5566-D213-4AAE-9330-1CB8B61BEF04",
+      "input" : [
+        {
+          "id" : "0D7E1D24-883A-4413-9E2F-83F53C8A9854",
+          "amount" : 2.5
+        },
+        {
+          "id" : "409DF583-4C53-4377-9436-E11BB1FBD64E",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "AD01C188-F977-47AD-862E-DC040C8A3ADF",
+          "amount" : 5
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "22BFC43E-B992-4F2F-AD05-C83A88A3D882",
+      "input" : [
+        {
+          "id" : "9F45689A-CEF4-4305-8EC1-7CDD9D345CA2",
+          "amount" : 2.5
+        },
+        {
+          "id" : "EF39BED3-51D8-4A2A-9688-597F73F45156",
+          "amount" : 50
+        }
+      ],
+      "output" : [
+        {
+          "id" : "1DEC52FC-B508-47FB-9263-89131D2E76E1",
+          "amount" : 2.5
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "220205D3-1D5B-4E94-946B-BE3C8DBE28AD",
+      "input" : [
+        {
+          "id" : "DC883BC8-44FE-49BD-8719-AEEEDB74A9E9",
+          "amount" : 7.5
+        },
+        {
+          "id" : "3C6CE842-4676-4726-A09E-68CC0CD9EC69",
+          "amount" : 15
+        }
+      ],
+      "output" : [
+        {
+          "id" : "C60DCE23-4BBB-452B-B320-FE5947FFF62C",
+          "amount" : 7.5
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "3099D61A-C8FE-48CA-B42B-006C03B1B514",
+      "input" : [
+        {
+          "id" : "C60DCE23-4BBB-452B-B320-FE5947FFF62C",
+          "amount" : 15
+        },
+        {
+          "id" : "2112AD70-ED98-452A-A169-E74C07D8B361",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "D53B51E0-AEB6-4024-B7C2-E5A9231889DD",
+          "amount" : 3
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "E2CA45E4-4FF6-4885-A0BD-6E7248B38640",
+      "input" : [
+        {
+          "id" : "2B2DDC71-D68B-43F1-966A-38A8CF5D1001",
+          "amount" : 7.5
+        },
+        {
+          "id" : "A3A37E6D-9F11-4144-A121-9FFBC6243607",
+          "amount" : 37.5
+        }
+      ],
+      "output" : [
+        {
+          "id" : "A848DA7A-DAB7-46BC-8113-BDDAABC01602",
+          "amount" : 90
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : false
+    },
+    {
+      "id" : "CED9F8C7-E54C-47E0-AEFD-8F05AC7BDB5B",
+      "input" : [
+        {
+          "id" : "593922F1-F5DF-4E3D-861B-6B51605193C0",
+          "amount" : 15
+        },
+        {
+          "id" : "D5DFFC74-4CE8-44D7-85C3-754448509964",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "B0C7CC19-5D47-45AA-943B-001414E28536",
+          "amount" : 7.5
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "5D66760F-CBBF-4395-95F7-8CE372E6DEF7",
+      "input" : [
+        {
+          "id" : "593922F1-F5DF-4E3D-861B-6B51605193C0",
+          "amount" : 25
+        },
+        {
+          "id" : "A848DA7A-DAB7-46BC-8113-BDDAABC01602",
+          "amount" : 100
+        }
+      ],
+      "output" : [
+        {
+          "id" : "E854DDDA-01AB-4AFB-9656-C488280B04C3",
+          "amount" : 5
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "E28BB889-4C39-46DD-91DA-731F18C8A808",
+      "input" : [
+        {
+          "id" : "E2BF718D-C9B6-4D09-A295-AF0C2EB454B5",
+          "amount" : 15
+        },
+        {
+          "id" : "A334D59C-AB19-4BDD-8516-8DFD60AB019F",
+          "amount" : 75
+        }
+      ],
+      "output" : [
+        {
+          "id" : "C5C8F55F-3D07-476B-ADE9-B75A986EFF60",
+          "amount" : 15
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : true
+    },
+    {
+      "id" : "53A7CF9B-1889-4F01-9A32-F3E050DE3077",
+      "input" : [
+        {
+          "id" : "B0C7CC19-5D47-45AA-943B-001414E28536",
+          "amount" : 7.5
+        },
+        {
+          "id" : "72187EBA-5004-4244-B8A1-CC884227DD76",
+          "amount" : 2.8130000000000002
+        }
+      ],
+      "output" : [
+        {
+          "id" : "36A61EA6-A730-4D9E-8F76-73164C2116CB",
+          "amount" : 2.7999999999999998
+        }
+      ],
+      "machine" : "assembler",
+      "isDefault" : false
+    },
+    {
+      "id" : "7C0AA7AE-06A4-4BBA-B08B-87F4087BF1AF",
+      "input" : [
+        {
+          "id" : "6E1DF089-004C-495A-8ECA-F57F04A9E895",
+          "amount" : 22.5
+        },
+        {
+          "id" : "BB08E89C-8B04-41DD-9B36-B921BD86CB26",
+          "amount" : 7.5
+        },
+        {
+          "id" : "DE696766-1D8F-4B3B-9591-9DCA6D2F983E",
+          "amount" : 112.5
+        },
+        {
+          "id" : "EF39BED3-51D8-4A2A-9688-597F73F45156",
+          "amount" : 15
+        }
+      ],
+      "output" : [
+        {
+          "id" : "5A07430E-72C3-4373-AEC0-EF36A426BB7A",
+          "amount" : 7.5
+        }
+      ],
+      "machine" : "manufacturer",
+      "isDefault" : true
+    },
+    {
+      "id" : "DA747F21-B641-4784-AD20-D886E81A3A87",
+      "input" : [
+        {
+          "id" : "40B68321-CCC9-475E-AA19-35EA81AC6924",
+          "amount" : 18
+        },
+        {
+          "id" : "EF39BED3-51D8-4A2A-9688-597F73F45156",
+          "amount" : 14
+        },
+        {
+          "id" : "99E0EC59-BDEC-4435-9438-0201FF769190",
+          "amount" : 2.5
+        }
+      ],
+      "output" : [
+        {
+          "id" : "72187EBA-5004-4244-B8A1-CC884227DD76",
+          "amount" : 1
+        }
+      ],
+      "machine" : "manufacturer",
+      "isDefault" : true
+    },
+    {
+      "id" : "1743E971-EE35-49A8-B24C-BB5D44163A5F",
+      "input" : [
+        {
+          "id" : "B0C7CC19-5D47-45AA-943B-001414E28536",
+          "amount" : 25
+        },
+        {
+          "id" : "EF39BED3-51D8-4A2A-9688-597F73F45156",
+          "amount" : 22.5
+        },
+        {
+          "id" : "D5DFFC74-4CE8-44D7-85C3-754448509964",
+          "amount" : 45
+        },
+        {
+          "id" : "739882AB-4F97-4AF0-93A9-BCBA824D8DA2",
+          "amount" : 130
+        }
+      ],
+      "output" : [
+        {
+          "id" : "36A61EA6-A730-4D9E-8F76-73164C2116CB",
+          "amount" : 2.5
+        }
+      ],
+      "machine" : "manufacturer",
+      "isDefault" : true
+    },
+    {
+      "id" : "394551A9-B540-4D30-BE28-7495EC12DB89",
+      "input" : [
+        {
+          "id" : "0D7E1D24-883A-4413-9E2F-83F53C8A9854",
+          "amount" : 10
+        },
+        {
+          "id" : "2112AD70-ED98-452A-A169-E74C07D8B361",
+          "amount" : 30
+        },
+        {
+          "id" : "1177D437-9F5B-443B-BFF7-E9EE0BB97FCC",
+          "amount" : 10
+        },
+        {
+          "id" : "739882AB-4F97-4AF0-93A9-BCBA824D8DA2",
+          "amount" : 200
+        }
+      ],
+      "output" : [
+        {
+          "id" : "5A8874A0-55FE-4BDF-891B-4B25390A275D",
+          "amount" : 2
+        }
+      ],
+      "machine" : "manufacturer",
+      "isDefault" : true
+    },
+    {
+      "id" : "533A777F-F898-4C87-91B4-7D14D9EA7553",
+      "input" : [
+        {
+          "id" : "55757760-3C97-4578-AA56-68D9E8D07195",
+          "amount" : 2
+        },
+        {
+          "id" : "E4451917-A767-41DD-8736-FC29FB341EAD",
+          "amount" : 15
+        },
+        {
+          "id" : "BE92D8F7-FD09-47E8-8E57-12A5E23C0EE7",
+          "amount" : 2
+        }
+      ],
+      "output" : [
+        {
+          "id" : "8731DE50-F1E1-412F-8C86-9DED82CB3B6B",
+          "amount" : 1
+        }
+      ],
+      "machine" : "manufacturer",
+      "isDefault" : true
+    },
+    {
+      "id" : "6E9C63AB-FAB7-47C5-9073-DC79C202CC16",
+      "input" : [
+        {
+          "id" : "1DEC52FC-B508-47FB-9263-89131D2E76E1",
+          "amount" : 7.5
+        },
+        {
+          "id" : "B0C7CC19-5D47-45AA-943B-001414E28536",
+          "amount" : 5
+        },
+        {
+          "id" : "5A8874A0-55FE-4BDF-891B-4B25390A275D",
+          "amount" : 1
+        },
+        {
+          "id" : "36A61EA6-A730-4D9E-8F76-73164C2116CB",
+          "amount" : 1
+        }
+      ],
+      "output" : [
+        {
+          "id" : "C1C3281E-367E-46D0-B0A3-290AA1F1E050",
+          "amount" : 1
+        }
+      ],
+      "machine" : "manufacturer",
+      "isDefault" : true
+    },
+    {
+      "id" : "EF5D842E-5326-42B1-B65A-3C850CAD23E9",
+      "input" : [
+        {
+          "id" : "DC883BC8-44FE-49BD-8719-AEEEDB74A9E9",
+          "amount" : 37.5
+        },
+        {
+          "id" : "E4451917-A767-41DD-8736-FC29FB341EAD",
+          "amount" : 15
+        },
+        {
+          "id" : "C5C8F55F-3D07-476B-ADE9-B75A986EFF60",
+          "amount" : 15
+        }
+      ],
+      "output" : [
+        {
+          "id" : "D93D872F-4DF9-4C6D-AE81-79715B8B6AAE",
+          "amount" : 7.5
+        }
+      ],
+      "machine" : "manufacturer",
+      "isDefault" : true
+    },
+    {
+      "id" : "4D27D118-B73E-4900-A0EE-C38E7D68415E",
+      "input" : [
+        {
+          "id" : "4ADFEAF5-1FC1-471D-A6EE-33DF0AC84EBE",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "BF4FF0EB-D95B-4668-B4BC-E7D130124284",
+          "amount" : 20
+        }
+      ],
+      "machine" : "manufacturer",
+      "isDefault" : true
+    },
+    {
+      "id" : "ABB50A48-4EE9-4FFE-96FE-303CDFC94082",
+      "input" : [
+        {
+          "id" : "5FC9ADE7-9E96-4EC2-BCDF-5D032A9230D0",
+          "amount" : 60
+        }
+      ],
+      "output" : [
+        {
+          "id" : "BF4FF0EB-D95B-4668-B4BC-E7D130124284",
+          "amount" : 40
+        },
+        {
+          "id" : "1E4596AC-B75F-4415-A8BD-CD978F84BAAA",
+          "amount" : 30
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "E47D0055-8D6E-4E4A-B557-C1B26F4594C3",
+      "input" : [
+        {
+          "id" : "D220751A-441F-4759-A5B2-6AA50621BDBF",
+          "amount" : 90
+        },
+        {
+          "id" : "4F295BE9-71C5-4C1D-BA79-94A0852D12BC",
+          "amount" : 45
+        }
+      ],
+      "output" : [
+        {
+          "id" : "3C495282-CD3F-46C0-9467-E311408E5EBB",
+          "amount" : 60
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "8BC836B5-B305-44CD-BA9D-8E484F87759E",
+      "input" : [
+        {
+          "id" : "209B0689-1201-4C5E-8DCF-EE0E3294F91C",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "BF4FF0EB-D95B-4668-B4BC-E7D130124284",
+          "amount" : 30
+        },
+        {
+          "id" : "F7EF3789-5944-4DF9-B069-9EA323E7528B",
+          "amount" : 30
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "706CCB9A-233A-42B2-840C-FA045CD84265",
+      "input" : [
+        {
+          "id" : "D6CCA31C-9725-46C6-A3EF-2FE7DF9F0BAF",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "3C495282-CD3F-46C0-9467-E311408E5EBB",
+          "amount" : 30
+        },
+        {
+          "id" : "F7EF3789-5944-4DF9-B069-9EA323E7528B",
+          "amount" : 30
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "B847E9CA-5787-4CDE-81C4-7BE5A982212E",
+      "input" : [
+        {
+          "id" : "1E4596AC-B75F-4415-A8BD-CD978F84BAAA",
+          "amount" : 20
+        },
+        {
+          "id" : "4F295BE9-71C5-4C1D-BA79-94A0852D12BC",
+          "amount" : 40
+        }
+      ],
+      "output" : [
+        {
+          "id" : "E4451917-A767-41DD-8736-FC29FB341EAD",
+          "amount" : 10
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "CDCA0E4B-EAC7-4D8A-8A21-B443E128571F",
+      "input" : [
+        {
+          "id" : "1E4596AC-B75F-4415-A8BD-CD978F84BAAA",
+          "amount" : 30
+        },
+        {
+          "id" : "4F295BE9-71C5-4C1D-BA79-94A0852D12BC",
+          "amount" : 20
+        }
+      ],
+      "output" : [
+        {
+          "id" : "D5DFFC74-4CE8-44D7-85C3-754448509964",
+          "amount" : 10
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "FFAACA9A-7FD5-4E72-B80D-D1515F2585AE",
+      "input" : [
+        {
+          "id" : "4ADFEAF5-1FC1-471D-A6EE-33DF0AC84EBE",
+          "amount" : 20
+        }
+      ],
+      "output" : [
+        {
+          "id" : "2DD56D01-FC29-4A22-8DBE-1EE6F50C4EAB",
+          "amount" : 60
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "0A8DE370-8A1B-43EC-9520-131ADCCBECDE",
+      "input" : [
+        {
+          "id" : "5FC9ADE7-9E96-4EC2-BCDF-5D032A9230D0",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "E4451917-A767-41DD-8736-FC29FB341EAD",
+          "amount" : 20
+        },
+        {
+          "id" : "4ADFEAF5-1FC1-471D-A6EE-33DF0AC84EBE",
+          "amount" : 10
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "480D7DD6-B705-4FB8-B56E-1CC3C9523922",
+      "input" : [
+        {
+          "id" : "5FC9ADE7-9E96-4EC2-BCDF-5D032A9230D0",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "D5DFFC74-4CE8-44D7-85C3-754448509964",
+          "amount" : 20
+        },
+        {
+          "id" : "4ADFEAF5-1FC1-471D-A6EE-33DF0AC84EBE",
+          "amount" : 20
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "949F7DAE-083D-4354-AC39-717763D7B90B",
+      "input" : [
+        {
+          "id" : "4F295BE9-71C5-4C1D-BA79-94A0852D12BC",
+          "amount" : 30
+        },
+        {
+          "id" : "F7EF3789-5944-4DF9-B069-9EA323E7528B",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "BB6C6BF6-6FAE-4872-B97C-74CBA480A52B",
+          "amount" : 30
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "65AF3B24-80DF-4E51-964B-1067201CFD48",
+      "input" : [
+        {
+          "id" : "5FC9ADE7-9E96-4EC2-BCDF-5D032A9230D0",
+          "amount" : 12
+        },
+        {
+          "id" : "F7EF3789-5944-4DF9-B069-9EA323E7528B",
+          "amount" : 12
+        }
+      ],
+      "output" : [
+        {
+          "id" : "B6EA1F2C-E4A3-482F-842E-5457E9ACCC00",
+          "amount" : 12
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "34ECCCFE-4DA8-46AF-A244-DB3041E46444",
+      "input" : [
+        {
+          "id" : "BF4FF0EB-D95B-4668-B4BC-E7D130124284",
+          "amount" : 20
+        },
+        {
+          "id" : "F7EF3789-5944-4DF9-B069-9EA323E7528B",
+          "amount" : 20
+        }
+      ],
+      "output" : [
+        {
+          "id" : "209B0689-1201-4C5E-8DCF-EE0E3294F91C",
+          "amount" : 20
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "7EAB6639-76EB-4607-8231-972D3D28B9CA",
+      "input" : [
+        {
+          "id" : "4ADFEAF5-1FC1-471D-A6EE-33DF0AC84EBE",
+          "amount" : 10
+        },
+        {
+          "id" : "F7EF3789-5944-4DF9-B069-9EA323E7528B",
+          "amount" : 10
+        }
+      ],
+      "output" : [
+        {
+          "id" : "76AC2874-3FFD-4202-8935-3D1647335A00",
+          "amount" : 10
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "F044C29C-9385-48D7-ACD7-8F549DDF7B7B",
+      "input" : [
+        {
+          "id" : "3C495282-CD3F-46C0-9467-E311408E5EBB",
+          "amount" : 15
+        },
+        {
+          "id" : "F7EF3789-5944-4DF9-B069-9EA323E7528B",
+          "amount" : 15
+        }
+      ],
+      "output" : [
+        {
+          "id" : "D6CCA31C-9725-46C6-A3EF-2FE7DF9F0BAF",
+          "amount" : 15
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "20438389-C3F5-486F-B526-42B090D4EA8B",
+      "input" : [
+        {
+          "id" : "BB6C6BF6-6FAE-4872-B97C-74CBA480A52B",
+          "amount" : 60
+        }
+      ],
+      "output" : [
+        {
+          "id" : "4F295BE9-71C5-4C1D-BA79-94A0852D12BC",
+          "amount" : 60
+        },
+        {
+          "id" : "F7EF3789-5944-4DF9-B069-9EA323E7528B",
+          "amount" : 60
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "39A50BE5-8FAA-4887-8055-C3C4C8702790",
+      "input" : [
+        {
+          "id" : "B6EA1F2C-E4A3-482F-842E-5457E9ACCC00",
+          "amount" : 30
+        }
+      ],
+      "output" : [
+        {
+          "id" : "5FC9ADE7-9E96-4EC2-BCDF-5D032A9230D0",
+          "amount" : 30
+        },
+        {
+          "id" : "F7EF3789-5944-4DF9-B069-9EA323E7528B",
+          "amount" : 30
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    },
+    {
+      "id" : "B1D1219B-2AAE-4811-A570-84CE9924C49D",
+      "input" : [
+        {
+          "id" : "76AC2874-3FFD-4202-8935-3D1647335A00",
+          "amount" : 10
+        }
+      ],
+      "output" : [
+        {
+          "id" : "4ADFEAF5-1FC1-471D-A6EE-33DF0AC84EBE",
+          "amount" : 10
+        },
+        {
+          "id" : "F7EF3789-5944-4DF9-B069-9EA323E7528B",
+          "amount" : 10
+        }
+      ],
+      "machine" : "refinery",
+      "isDefault" : true
+    }
+  ]
+}

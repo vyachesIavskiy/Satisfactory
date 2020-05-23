@@ -1,11 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Satisfactory
-//
-//  Created by Vyacheslav Nagornyak on 23.05.2020.
-//  Copyright © 2020 Vyacheslav Nagornyak. All rights reserved.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

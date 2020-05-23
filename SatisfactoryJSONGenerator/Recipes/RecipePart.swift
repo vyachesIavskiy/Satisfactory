@@ -9,14 +9,24 @@ struct RecipePart: Codable {
     }
     
     var resource: Resource {
-        if let part = parts.first(where: { $0.id == id }) {
+        if let part = Parts.first(where: { $0.id == id }) {
             return part
         }
         
-        if let equipment = equipment.first(where: { $0.id == id }) {
+        if let equipment = Equipments.first(where: { $0.id == id }) {
             return equipment
         }
         
         fatalError("Resource with \(id) is not found")
+    }
+    
+    init(_ part: Part, amount: Double) {
+        id = part.id
+        self.amount = amount
+    }
+    
+    init(_ equipment: Equipment, amount: Double) {
+        id = equipment.id
+        self.amount = amount
     }
 }

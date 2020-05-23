@@ -14,11 +14,21 @@
 		4538193F2479535400C4C1FF /* Satisfactory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4538193D2479535400C4C1FF /* Satisfactory.xcdatamodeld */; };
 		453819412479535600C4C1FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453819402479535600C4C1FF /* Assets.xcassets */; };
 		453819442479535600C4C1FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453819422479535600C4C1FF /* LaunchScreen.storyboard */; };
+		455F634424796746001D5870 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F634324796746001D5870 /* TableView.swift */; };
+		455F6346247969DF001D5870 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F6345247969DF001D5870 /* TableViewCell.swift */; };
+		455F634824797611001D5870 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F634724797611001D5870 /* BundleExtension.swift */; };
+		455F634A2479765D001D5870 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63492479765D001D5870 /* Recipe.swift */; };
+		455F634C247977BB001D5870 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F634B247977BB001D5870 /* Storage.swift */; };
+		455F634E24797A29001D5870 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F634D24797A29001D5870 /* RecipesViewController.swift */; };
 		45BD9CE02479546300438822 /* equipment.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDB2479546300438822 /* equipment.json */; };
 		45BD9CE12479546300438822 /* vehicles.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDC2479546300438822 /* vehicles.json */; };
 		45BD9CE22479546300438822 /* parts.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDD2479546300438822 /* parts.json */; };
 		45BD9CE32479546300438822 /* buildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDE2479546300438822 /* buildings.json */; };
 		45BD9CE42479546300438822 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDF2479546300438822 /* recipes.json */; };
+		45F4347224795ADE00829A12 /* Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F4347124795ADE00829A12 /* Part.swift */; };
+		45F4347624795DEE00829A12 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F4347524795DEE00829A12 /* UIViewExtension.swift */; };
+		45F43478247961AE00829A12 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F43477247961AE00829A12 /* UICollectionViewExtension.swift */; };
+		45F4347A247962CF00829A12 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F43479247962CF00829A12 /* UITableViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +41,21 @@
 		453819402479535600C4C1FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		453819432479535600C4C1FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		453819452479535600C4C1FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		455F634324796746001D5870 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		455F6345247969DF001D5870 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		455F634724797611001D5870 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		455F63492479765D001D5870 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		455F634B247977BB001D5870 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		455F634D24797A29001D5870 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		45BD9CDB2479546300438822 /* equipment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = equipment.json; sourceTree = "<group>"; };
 		45BD9CDC2479546300438822 /* vehicles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vehicles.json; sourceTree = "<group>"; };
 		45BD9CDD2479546300438822 /* parts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parts.json; sourceTree = "<group>"; };
 		45BD9CDE2479546300438822 /* buildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buildings.json; sourceTree = "<group>"; };
 		45BD9CDF2479546300438822 /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
+		45F4347124795ADE00829A12 /* Part.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part.swift; sourceTree = "<group>"; };
+		45F4347524795DEE00829A12 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		45F43477247961AE00829A12 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		45F43479247962CF00829A12 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +88,17 @@
 		453819332479535400C4C1FF /* Satisfactory */ = {
 			isa = PBXGroup;
 			children = (
+				455F63422479673E001D5870 /* Basics */,
+				45F4347424795D9C00829A12 /* Extensions */,
 				4538194C2479536100C4C1FF /* Support Files */,
 				4538194B2479535C00C4C1FF /* JSON */,
+				45F4347324795AE400829A12 /* Models */,
 				453819342479535400C4C1FF /* AppDelegate.swift */,
 				453819362479535400C4C1FF /* SceneDelegate.swift */,
 				453819382479535400C4C1FF /* ViewController.swift */,
+				455F634D24797A29001D5870 /* RecipesViewController.swift */,
 				4538193A2479535400C4C1FF /* Main.storyboard */,
+				455F634B247977BB001D5870 /* Storage.swift */,
 			);
 			path = Satisfactory;
 			sourceTree = "<group>";
@@ -99,6 +124,35 @@
 				453819402479535600C4C1FF /* Assets.xcassets */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		455F63422479673E001D5870 /* Basics */ = {
+			isa = PBXGroup;
+			children = (
+				455F634324796746001D5870 /* TableView.swift */,
+				455F6345247969DF001D5870 /* TableViewCell.swift */,
+			);
+			path = Basics;
+			sourceTree = "<group>";
+		};
+		45F4347324795AE400829A12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				45F4347124795ADE00829A12 /* Part.swift */,
+				455F63492479765D001D5870 /* Recipe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		45F4347424795D9C00829A12 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45F4347524795DEE00829A12 /* UIViewExtension.swift */,
+				45F43479247962CF00829A12 /* UITableViewExtension.swift */,
+				45F43477247961AE00829A12 /* UICollectionViewExtension.swift */,
+				455F634724797611001D5870 /* BundleExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +231,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F4347624795DEE00829A12 /* UIViewExtension.swift in Sources */,
 				453819392479535400C4C1FF /* ViewController.swift in Sources */,
 				4538193F2479535400C4C1FF /* Satisfactory.xcdatamodeld in Sources */,
+				455F634A2479765D001D5870 /* Recipe.swift in Sources */,
+				45F4347A247962CF00829A12 /* UITableViewExtension.swift in Sources */,
+				455F634424796746001D5870 /* TableView.swift in Sources */,
+				455F6346247969DF001D5870 /* TableViewCell.swift in Sources */,
 				453819352479535400C4C1FF /* AppDelegate.swift in Sources */,
+				455F634E24797A29001D5870 /* RecipesViewController.swift in Sources */,
+				45F4347224795ADE00829A12 /* Part.swift in Sources */,
 				453819372479535400C4C1FF /* SceneDelegate.swift in Sources */,
+				45F43478247961AE00829A12 /* UICollectionViewExtension.swift in Sources */,
+				455F634824797611001D5870 /* BundleExtension.swift in Sources */,
+				455F634C247977BB001D5870 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

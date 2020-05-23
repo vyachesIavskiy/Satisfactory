@@ -18,5 +18,6 @@ enum PartType: String, Codable {
     case communications = "Communications"
     case containers = "Containers"
     case oilProducts = "Oil Products"
+    case nuclear = "Nuclear"
     case spaceElevatorParts = "Space Elevator Parts"
 }

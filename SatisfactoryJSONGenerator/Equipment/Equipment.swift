@@ -27,13 +27,16 @@ let factoryCart = Equipment(name: "Factory Cart™", equipmentType: .hands)
 let medicalInhaler = Equipment(name: "Medical Inhaler", equipmentType: .hands)
 let nutritionalInhaler = Equipment(name: "Nutritional Inhaler", equipmentType: .hands)
 let nobeliskDetonator = Equipment(name: "Nobelisk Detonator", equipmentType: .hands, ammo: .nobelisk)
+let rebbarGun = Equipment(name: "Rebbar Gun", equipmentType: .hands, ammo: .spikedRebar)
 
 // MARK: - Body
 let bladeRunners = Equipment(name: "Blade Runners", equipmentType: .body)
 let jetpack = Equipment(name: "Jetpack", equipmentType: .body, fuel: .fuel)
 let gasMask = Equipment(name: "Gas Mask", equipmentType: .body, fuel: .filter)
+let hazmatSuit = Equipment(name: "Hazmat Suit", equipmentType: .body)
+let parachute = Equipment(name: "Parachute", equipmentType: .body)
 
-let equipment = [
+let Equipments = [
     xenoZapper,
     portableMiner,
     chainsaw,
@@ -45,7 +48,11 @@ let equipment = [
     medicalInhaler,
     nutritionalInhaler,
     nobeliskDetonator,
+    rebbarGun,
     
     bladeRunners,
-    jetpack
+    jetpack,
+    gasMask,
+    hazmatSuit,
+    parachute
 ]

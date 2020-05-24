@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Flower Petals.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

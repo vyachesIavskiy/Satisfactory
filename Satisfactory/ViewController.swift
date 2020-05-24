@@ -6,12 +6,6 @@ class PartsDataSource: UITableViewDiffableDataSource<String, Part> {
     }
 }
 
-final class BasicCell: TableViewCell {
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: reuseIdentifier)
-    }
-}
-
 final class ViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -54,6 +48,7 @@ final class ViewController: UIViewController {
         dataSource = PartsDataSource(tableView: tableView) { tableView, indexPath, part in
             let cell = tableView.dequeue(cell: BasicCell.self, for: indexPath)
             cell.textLabel?.text = part.name
+            cell.imageView?.image = UIImage(named: part.name)
             return cell
         }
         

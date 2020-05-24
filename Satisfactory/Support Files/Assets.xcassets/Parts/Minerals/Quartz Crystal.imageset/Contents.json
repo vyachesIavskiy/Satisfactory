@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Quartz Crystal.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

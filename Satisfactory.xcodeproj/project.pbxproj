@@ -25,6 +25,7 @@
 		455F63C7247A5A92001D5870 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63C6247A5A92001D5870 /* StringExtension.swift */; };
 		455F63C9247A5BFE001D5870 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63C8247A5BFE001D5870 /* Building.swift */; };
 		455F63CB247A5CAC001D5870 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63CA247A5CAC001D5870 /* Vehicle.swift */; };
+		455F63CE247A6D26001D5870 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63CD247A6D26001D5870 /* BasicCell.swift */; };
 		45BD9CE02479546300438822 /* equipment.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDB2479546300438822 /* equipment.json */; };
 		45BD9CE12479546300438822 /* vehicles.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDC2479546300438822 /* vehicles.json */; };
 		45BD9CE22479546300438822 /* parts.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDD2479546300438822 /* parts.json */; };
@@ -57,6 +58,7 @@
 		455F63C6247A5A92001D5870 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		455F63C8247A5BFE001D5870 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		455F63CA247A5CAC001D5870 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		455F63CD247A6D26001D5870 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
 		45BD9CDB2479546300438822 /* equipment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = equipment.json; sourceTree = "<group>"; };
 		45BD9CDC2479546300438822 /* vehicles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vehicles.json; sourceTree = "<group>"; };
 		45BD9CDD2479546300438822 /* parts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parts.json; sourceTree = "<group>"; };
@@ -98,9 +100,9 @@
 		453819332479535400C4C1FF /* Satisfactory */ = {
 			isa = PBXGroup;
 			children = (
+				4538194C2479536100C4C1FF /* Support Files */,
 				455F63422479673E001D5870 /* Basics */,
 				45F4347424795D9C00829A12 /* Extensions */,
-				4538194C2479536100C4C1FF /* Support Files */,
 				4538194B2479535C00C4C1FF /* JSON */,
 				45F4347324795AE400829A12 /* Models */,
 				453819342479535400C4C1FF /* AppDelegate.swift */,
@@ -141,6 +143,7 @@
 			children = (
 				455F634324796746001D5870 /* TableView.swift */,
 				455F6345247969DF001D5870 /* TableViewCell.swift */,
+				455F63CD247A6D26001D5870 /* BasicCell.swift */,
 			);
 			path = Basics;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				455F63CE247A6D26001D5870 /* BasicCell.swift in Sources */,
 				45F4347624795DEE00829A12 /* UIViewExtension.swift in Sources */,
 				455F63C9247A5BFE001D5870 /* Building.swift in Sources */,
 				453819392479535400C4C1FF /* ViewController.swift in Sources */,

@@ -55,7 +55,7 @@ let motorRecipe1 = Recipe(input: [
 
 // MARK: - Electronics
 let highSpeedConnectorRecipe = Recipe(input: [
-    .init(quickWire, amount: 210),
+    .init(quickwire, amount: 210),
     .init(cable, amount: 37.5),
     .init(circuitBoard, amount: 3.75)
     ], output: [
@@ -63,7 +63,7 @@ let highSpeedConnectorRecipe = Recipe(input: [
 ], machine: manufacturer)
 
 let highSpeedConnectorRecipe1 = Recipe(input: [
-    .init(quickWire, amount: 90),
+    .init(quickwire, amount: 90),
     .init(silica, amount: 37.5),
     .init(circuitBoard, amount: 3)
     ], output: [
@@ -91,7 +91,7 @@ let computerRecipe = Recipe(input: [
 
 let computerRecipe2 = Recipe(input: [
     .init(circuitBoard, amount: 26.25),
-    .init(quickWire, amount: 105),
+    .init(quickwire, amount: 105),
     .init(rubber, amount: 45)
     ], output: [
         .init(computer, amount: 3.8),
@@ -161,7 +161,7 @@ let encasedUraniumCellRecipe1 = Recipe(input: [
     .init(uraniumPellet, amount: 20),
     .init(sulfur, amount: 22.5),
     .init(silica, amount: 22.5),
-    .init(quickWire, amount: 37.5)
+    .init(quickwire, amount: 37.5)
     ], output: [
         .init(encasedUraniumCell, amount: 17.5)
 ], machine: manufacturer, isDefault: false)
@@ -177,7 +177,7 @@ let gasFilterRecipe = Recipe(input: [
 
 let iodineInfusedFilterRecipe = Recipe(input: [
     .init(gasFilter, amount: 3.75),
-    .init(quickWire, amount: 30),
+    .init(quickwire, amount: 30),
     .init(rubber, amount: 7.5)
     ], output: [
         .init(iodineInfusedFilter, amount: 3.8)

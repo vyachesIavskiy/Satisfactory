@@ -114,7 +114,7 @@ let statorRecipe = Recipe(input: [
 
 let statorRecipe1 = Recipe(input: [
     .init(steelPipe, amount: 16),
-    .init(quickWire, amount: 60)
+    .init(quickwire, amount: 60)
     ], output: [
         .init(stator, amount: 8)
 ], machine: assembler, isDefault: false)
@@ -163,14 +163,14 @@ let circuitBoardRecipe2 = Recipe(input: [
 
 let circuitBoardRecipe3 = Recipe(input: [
     .init(plastic, amount: 12.5),
-    .init(quickWire, amount: 37.5)
+    .init(quickwire, amount: 37.5)
     ], output: [
         .init(circuitBoard, amount: 8.8)
 ], machine: assembler, isDefault: false)
 
 let aiLimiterRecipe = Recipe(input: [
     .init(copperSheet, amount: 25),
-    .init(quickWire, amount: 100)
+    .init(quickwire, amount: 100)
     ], output: [
         .init(aiLimiter, amount: 5)
 ], machine: assembler)
@@ -190,7 +190,7 @@ let cableRecipe1 = Recipe(input: [
 ], machine: assembler, isDefault: false)
 
 let cableRecipe2 = Recipe(input: [
-    .init(quickWire, amount: 7.5),
+    .init(quickwire, amount: 7.5),
     .init(rubber, amount: 5)
     ], output: [
         .init(cable, amount: 27.5)
@@ -200,7 +200,7 @@ let quickWireRecipe1 = Recipe(input: [
     .init(cateriumIngot, amount: 7.5),
     .init(copperIngot, amount: 37.5)
     ], output: [
-        .init(quickWire, amount: 90)
+        .init(quickwire, amount: 90)
 ], machine: assembler, isDefault: false)
 
 // MARK: - Minerals

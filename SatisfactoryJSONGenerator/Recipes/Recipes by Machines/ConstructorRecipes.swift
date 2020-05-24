@@ -81,7 +81,7 @@ let cableRecipe = Recipe(input: [
 let quickWireRecipe = Recipe(input: [
     .init(cateriumIngot, amount: 12)
     ], output: [
-        .init(quickWire, amount: 60)
+        .init(quickwire, amount: 60)
 ], machine: constructor)
 
 // MARK: - Minerals

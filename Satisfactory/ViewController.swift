@@ -57,10 +57,7 @@ final class ViewController: UIViewController {
             return cell
         }
         
-        var snapshot = NSDiffableDataSourceSnapshot<String, Part>()
-        snapshot.appendSections([""])
-        snapshot.appendItems(parts)
-        dataSource.apply(snapshot)
+        updateDataSource(animated: false)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,12 +68,12 @@ final class ViewController: UIViewController {
         }
     }
     
-    private func updateDataSource() {
+    private func updateDataSource(animated: Bool = true) {
         var snapshot = NSDiffableDataSourceSnapshot<String, Part>()
         snapshot.deleteAllItems()
         snapshot.appendSections([""])
         snapshot.appendItems(parts)
-        dataSource.apply(snapshot)
+        dataSource.apply(snapshot, animatingDifferences: animated)
     }
 }
 

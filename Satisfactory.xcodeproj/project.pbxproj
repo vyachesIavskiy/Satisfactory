@@ -20,6 +20,11 @@
 		455F634A2479765D001D5870 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63492479765D001D5870 /* Recipe.swift */; };
 		455F634C247977BB001D5870 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F634B247977BB001D5870 /* Storage.swift */; };
 		455F634E24797A29001D5870 /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F634D24797A29001D5870 /* RecipesViewController.swift */; };
+		455F63C3247A59DD001D5870 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63C2247A59DD001D5870 /* Equipment.swift */; };
+		455F63C5247A5A38001D5870 /* ParsingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63C4247A5A38001D5870 /* ParsingError.swift */; };
+		455F63C7247A5A92001D5870 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63C6247A5A92001D5870 /* StringExtension.swift */; };
+		455F63C9247A5BFE001D5870 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63C8247A5BFE001D5870 /* Building.swift */; };
+		455F63CB247A5CAC001D5870 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63CA247A5CAC001D5870 /* Vehicle.swift */; };
 		45BD9CE02479546300438822 /* equipment.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDB2479546300438822 /* equipment.json */; };
 		45BD9CE12479546300438822 /* vehicles.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDC2479546300438822 /* vehicles.json */; };
 		45BD9CE22479546300438822 /* parts.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDD2479546300438822 /* parts.json */; };
@@ -47,6 +52,11 @@
 		455F63492479765D001D5870 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		455F634B247977BB001D5870 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		455F634D24797A29001D5870 /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
+		455F63C2247A59DD001D5870 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		455F63C4247A5A38001D5870 /* ParsingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingError.swift; sourceTree = "<group>"; };
+		455F63C6247A5A92001D5870 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		455F63C8247A5BFE001D5870 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		455F63CA247A5CAC001D5870 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		45BD9CDB2479546300438822 /* equipment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = equipment.json; sourceTree = "<group>"; };
 		45BD9CDC2479546300438822 /* vehicles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vehicles.json; sourceTree = "<group>"; };
 		45BD9CDD2479546300438822 /* parts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parts.json; sourceTree = "<group>"; };
@@ -138,8 +148,12 @@
 		45F4347324795AE400829A12 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				455F63C4247A5A38001D5870 /* ParsingError.swift */,
 				45F4347124795ADE00829A12 /* Part.swift */,
+				455F63C2247A59DD001D5870 /* Equipment.swift */,
+				455F63C8247A5BFE001D5870 /* Building.swift */,
 				455F63492479765D001D5870 /* Recipe.swift */,
+				455F63CA247A5CAC001D5870 /* Vehicle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,6 +165,7 @@
 				45F43479247962CF00829A12 /* UITableViewExtension.swift */,
 				45F43477247961AE00829A12 /* UICollectionViewExtension.swift */,
 				455F634724797611001D5870 /* BundleExtension.swift */,
+				455F63C6247A5A92001D5870 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,19 +247,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				45F4347624795DEE00829A12 /* UIViewExtension.swift in Sources */,
+				455F63C9247A5BFE001D5870 /* Building.swift in Sources */,
 				453819392479535400C4C1FF /* ViewController.swift in Sources */,
+				455F63CB247A5CAC001D5870 /* Vehicle.swift in Sources */,
 				4538193F2479535400C4C1FF /* Satisfactory.xcdatamodeld in Sources */,
 				455F634A2479765D001D5870 /* Recipe.swift in Sources */,
 				45F4347A247962CF00829A12 /* UITableViewExtension.swift in Sources */,
 				455F634424796746001D5870 /* TableView.swift in Sources */,
 				455F6346247969DF001D5870 /* TableViewCell.swift in Sources */,
 				453819352479535400C4C1FF /* AppDelegate.swift in Sources */,
+				455F63C7247A5A92001D5870 /* StringExtension.swift in Sources */,
 				455F634E24797A29001D5870 /* RecipesViewController.swift in Sources */,
 				45F4347224795ADE00829A12 /* Part.swift in Sources */,
 				453819372479535400C4C1FF /* SceneDelegate.swift in Sources */,
+				455F63C5247A5A38001D5870 /* ParsingError.swift in Sources */,
 				45F43478247961AE00829A12 /* UICollectionViewExtension.swift in Sources */,
 				455F634824797611001D5870 /* BundleExtension.swift in Sources */,
 				455F634C247977BB001D5870 /* Storage.swift in Sources */,
+				455F63C3247A59DD001D5870 /* Equipment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

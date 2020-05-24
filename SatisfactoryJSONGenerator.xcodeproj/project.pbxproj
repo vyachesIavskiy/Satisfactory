@@ -11,14 +11,11 @@
 		4531C4B42401693C00948CFA /* PartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4B32401693C00948CFA /* PartType.swift */; };
 		4531C4B62401694C00948CFA /* Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4B52401694C00948CFA /* Part.swift */; };
 		4531C4BC24016CA600948CFA /* EquipmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4BB24016CA600948CFA /* EquipmentType.swift */; };
-		4531C4BE24016CB600948CFA /* EquipmentFuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4BD24016CB600948CFA /* EquipmentFuel.swift */; };
-		4531C4C024016CC400948CFA /* EquipmentAmmo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4BF24016CC400948CFA /* EquipmentAmmo.swift */; };
 		4531C4C224016CD700948CFA /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4C124016CD700948CFA /* Equipment.swift */; };
 		4531C4C424016D1400948CFA /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4C324016D1400948CFA /* Vehicle.swift */; };
 		4531C4C724016DEA00948CFA /* BuildingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4C624016DEA00948CFA /* BuildingType.swift */; };
 		4531C4C924016F1300948CFA /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4C824016F1300948CFA /* Building.swift */; };
 		4531C4CC240189A300948CFA /* RecipePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4CB240189A300948CFA /* RecipePart.swift */; };
-		4531C4CE240189B300948CFA /* RecipeMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4CD240189B300948CFA /* RecipeMachine.swift */; };
 		4531C4D0240189C200948CFA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4CF240189C200948CFA /* Recipe.swift */; };
 		4531C4D2240253BF00948CFA /* ExctractionRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4D1240253BF00948CFA /* ExctractionRate.swift */; };
 		4531C4D4240253F300948CFA /* MinerLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4D3240253F300948CFA /* MinerLevel.swift */; };
@@ -99,14 +96,11 @@
 		4531C4B32401693C00948CFA /* PartType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartType.swift; sourceTree = "<group>"; };
 		4531C4B52401694C00948CFA /* Part.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part.swift; sourceTree = "<group>"; };
 		4531C4BB24016CA600948CFA /* EquipmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentType.swift; sourceTree = "<group>"; };
-		4531C4BD24016CB600948CFA /* EquipmentFuel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentFuel.swift; sourceTree = "<group>"; };
-		4531C4BF24016CC400948CFA /* EquipmentAmmo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentAmmo.swift; sourceTree = "<group>"; };
 		4531C4C124016CD700948CFA /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		4531C4C324016D1400948CFA /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		4531C4C624016DEA00948CFA /* BuildingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingType.swift; sourceTree = "<group>"; };
 		4531C4C824016F1300948CFA /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		4531C4CB240189A300948CFA /* RecipePart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePart.swift; sourceTree = "<group>"; };
-		4531C4CD240189B300948CFA /* RecipeMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeMachine.swift; sourceTree = "<group>"; };
 		4531C4CF240189C200948CFA /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		4531C4D1240253BF00948CFA /* ExctractionRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExctractionRate.swift; sourceTree = "<group>"; };
 		4531C4D3240253F300948CFA /* MinerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerLevel.swift; sourceTree = "<group>"; };
@@ -226,8 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				4531C4BB24016CA600948CFA /* EquipmentType.swift */,
-				4531C4BD24016CB600948CFA /* EquipmentFuel.swift */,
-				4531C4BF24016CC400948CFA /* EquipmentAmmo.swift */,
 				4531C4C124016CD700948CFA /* Equipment.swift */,
 			);
 			path = Equipment;
@@ -248,7 +240,6 @@
 			children = (
 				455F634F2479DB25001D5870 /* Recipes by Machines */,
 				4531C4CB240189A300948CFA /* RecipePart.swift */,
-				4531C4CD240189B300948CFA /* RecipeMachine.swift */,
 				4531C4CF240189C200948CFA /* Recipe.swift */,
 			);
 			path = Recipes;
@@ -400,7 +391,6 @@
 				455F63912479E475001D5870 /* Generators.swift in Sources */,
 				455F63702479E123001D5870 /* Minerals.swift in Sources */,
 				4531C4C724016DEA00948CFA /* BuildingType.swift in Sources */,
-				4531C4BE24016CB600948CFA /* EquipmentFuel.swift in Sources */,
 				455F636C2479E114001D5870 /* Standart Parts.swift in Sources */,
 				455F639F2479E512001D5870 /* Pipelines.swift in Sources */,
 				455F63852479E44B001D5870 /* Special.swift in Sources */,
@@ -424,7 +414,6 @@
 				455F63A52479E52E001D5870 /* Storage.swift in Sources */,
 				455F639B2479E500001D5870 /* Conveyor Supports.swift in Sources */,
 				455F63802479E169001D5870 /* Nuclear.swift in Sources */,
-				4531C4CE240189B300948CFA /* RecipeMachine.swift in Sources */,
 				455F63742479E133001D5870 /* Power Shards.swift in Sources */,
 				455F63BF2479E595001D5870 /* Motor Vehicles.swift in Sources */,
 				455F63972479E4E9001D5870 /* Conveyor Belts.swift in Sources */,
@@ -460,7 +449,6 @@
 				455F63762479E13E001D5870 /* Industrial Parts.swift in Sources */,
 				455F63AD2479E54C001D5870 /* Doors.swift in Sources */,
 				455F63A32479E527001D5870 /* Attachments.swift in Sources */,
-				4531C4C024016CC400948CFA /* EquipmentAmmo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

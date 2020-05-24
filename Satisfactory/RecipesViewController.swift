@@ -14,7 +14,7 @@ final class RecipesViewController: UIViewController {
     var recipes: [Recipe]
     
     init(part: Part) {
-        recipes = Storage.shared[recipeByPartName: part.name]
+        recipes = Storage.shared[recipesForPart: part.id]
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,6 +32,7 @@ final class RecipesViewController: UIViewController {
         
         dataSource = RecipesDataSource(tableView: tableView) { tableView, indexPath, recipe -> UITableViewCell? in
             let cell = tableView.dequeue(cell: BasicCell.self, for: indexPath)
+            cell.textLabel?.numberOfLines = 0
             cell.textLabel?.text = "\(recipe)"
             return cell
         }
@@ -39,6 +40,6 @@ final class RecipesViewController: UIViewController {
         var snapshot = NSDiffableDataSourceSnapshot<String, Recipe>()
         snapshot.appendSections([""])
         snapshot.appendItems(recipes)
-        dataSource.apply(snapshot)
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
 }

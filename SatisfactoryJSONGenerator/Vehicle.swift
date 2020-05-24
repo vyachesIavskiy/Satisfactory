@@ -14,5 +14,7 @@ let freightCar = Vehicle(name: "Freight Car")
 let Vehicles = [
     tractor,
     explorer,
-    truck
+    truck,
+    electricLocomotive,
+    freightCar
 ]

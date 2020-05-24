@@ -1,3299 +1,3297 @@
-{
-  "recipes" : [
-    {
-      "id" : "A706AA39-154D-416C-94A4-980C6C8A0DC0",
-      "input" : [
-        {
-          "id" : "42851B68-CD2E-44A5-90A9-6E5FA6D17961",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "F1640BC2-1911-414D-9748-0BC95143B238",
-          "amount" : 30
-        }
-      ],
-      "machine" : "6FC6E134-79B1-484A-A66C-3733158551B6",
-      "isDefault" : true
-    },
-    {
-      "id" : "07C39FE0-D3FD-4B83-BF08-AE7F4528FCFF",
-      "input" : [
-        {
-          "id" : "8A6DB796-8FFC-4995-95A8-427511C78447",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "88663AF4-7BF3-4A7E-BE16-E918D1289806",
-          "amount" : 30
-        }
-      ],
-      "machine" : "6FC6E134-79B1-484A-A66C-3733158551B6",
-      "isDefault" : true
-    },
-    {
-      "id" : "77BE3783-E751-4C81-A0BC-E97C3007EA78",
-      "input" : [
-        {
-          "id" : "C2903316-7158-48D9-895E-48E8907230C1",
-          "amount" : 45
-        }
-      ],
-      "output" : [
-        {
-          "id" : "12ED0AF6-A7FA-4C2D-8AC3-ED1CD2013149",
-          "amount" : 15
-        }
-      ],
-      "machine" : "6FC6E134-79B1-484A-A66C-3733158551B6",
-      "isDefault" : true
-    },
-    {
-      "id" : "07E87CB0-F014-4F2D-B030-BA76DF4E4488",
-      "input" : [
-        {
-          "id" : "3CB5C280-ABC4-4562-ABC7-BFD1280D3A83",
-          "amount" : 144
-        }
-      ],
-      "output" : [
-        {
-          "id" : "46B39626-A0DC-4893-8B0B-5DB2C18BBAF2",
-          "amount" : 36
-        }
-      ],
-      "machine" : "6FC6E134-79B1-484A-A66C-3733158551B6",
-      "isDefault" : false
-    },
-    {
-      "id" : "ADDC298E-D866-4074-8FAC-D1EE9C2F0BEA",
-      "input" : [
-        {
-          "id" : "42851B68-CD2E-44A5-90A9-6E5FA6D17961",
-          "amount" : 45
-        },
-        {
-          "id" : "76B47E5E-B846-4450-BB46-CDB48E5DC1FC",
-          "amount" : 45
-        }
-      ],
-      "output" : [
-        {
-          "id" : "165A4040-8DA2-4EE5-B155-91EBF9639108",
-          "amount" : 45
-        }
-      ],
-      "machine" : "DC9E5CE9-679F-4454-982B-F1593AAAEE1C",
-      "isDefault" : true
-    },
-    {
-      "id" : "2AB8C53C-053B-45DB-AD50-7024E4DBC9FF",
-      "input" : [
-        {
-          "id" : "42851B68-CD2E-44A5-90A9-6E5FA6D17961",
-          "amount" : 20
-        },
-        {
-          "id" : "8A6DB796-8FFC-4995-95A8-427511C78447",
-          "amount" : 20
-        }
-      ],
-      "output" : [
-        {
-          "id" : "F1640BC2-1911-414D-9748-0BC95143B238",
-          "amount" : 50
-        }
-      ],
-      "machine" : "DC9E5CE9-679F-4454-982B-F1593AAAEE1C",
-      "isDefault" : false
-    },
-    {
-      "id" : "3712657A-D338-4DFD-8465-399FBD4F7A5B",
-      "input" : [
-        {
-          "id" : "8A6DB796-8FFC-4995-95A8-427511C78447",
-          "amount" : 50
-        },
-        {
-          "id" : "42851B68-CD2E-44A5-90A9-6E5FA6D17961",
-          "amount" : 25
-        }
-      ],
-      "output" : [
-        {
-          "id" : "88663AF4-7BF3-4A7E-BE16-E918D1289806",
-          "amount" : 100
-        }
-      ],
-      "machine" : "DC9E5CE9-679F-4454-982B-F1593AAAEE1C",
-      "isDefault" : false
-    },
-    {
-      "id" : "6A94BE8E-E0AC-4F59-8341-CA64D48D1331",
-      "input" : [
-        {
-          "id" : "F1640BC2-1911-414D-9748-0BC95143B238",
-          "amount" : 40
-        },
-        {
-          "id" : "76B47E5E-B846-4450-BB46-CDB48E5DC1FC",
-          "amount" : 40
-        }
-      ],
-      "output" : [
-        {
-          "id" : "165A4040-8DA2-4EE5-B155-91EBF9639108",
-          "amount" : 60
-        }
-      ],
-      "machine" : "DC9E5CE9-679F-4454-982B-F1593AAAEE1C",
-      "isDefault" : false
-    },
-    {
-      "id" : "958F5C18-DC73-4994-971A-F59891561091",
-      "input" : [
-        {
-          "id" : "42851B68-CD2E-44A5-90A9-6E5FA6D17961",
-          "amount" : 22.5
-        },
-        {
-          "id" : "DC7B5C19-E5E0-4D26-A21B-0932EC0585B5",
-          "amount" : 11.25
-        }
-      ],
-      "output" : [
-        {
-          "id" : "165A4040-8DA2-4EE5-B155-91EBF9639108",
-          "amount" : 37.5
-        }
-      ],
-      "machine" : "DC9E5CE9-679F-4454-982B-F1593AAAEE1C",
-      "isDefault" : false
-    },
-    {
-      "id" : "0F1F02D7-82C5-473D-B4C2-B6BE55321997",
-      "input" : [
-        {
-          "id" : "42851B68-CD2E-44A5-90A9-6E5FA6D17961",
-          "amount" : 75
-        },
-        {
-          "id" : "22079534-6117-420A-B8F5-0CEF52063260",
-          "amount" : 75
-        }
-      ],
-      "output" : [
-        {
-          "id" : "165A4040-8DA2-4EE5-B155-91EBF9639108",
-          "amount" : 100
-        }
-      ],
-      "machine" : "DC9E5CE9-679F-4454-982B-F1593AAAEE1C",
-      "isDefault" : false
-    },
-    {
-      "id" : "1793AEE2-69CD-4B7B-80B3-6BD8861703B1",
-      "input" : [
-        {
-          "id" : "3CB5C280-ABC4-4562-ABC7-BFD1280D3A83",
-          "amount" : 240
-        },
-        {
-          "id" : "6686B3A9-C47E-4FD3-927A-AD3261798EF2",
-          "amount" : 140
-        }
-      ],
-      "output" : [
-        {
-          "id" : "46B39626-A0DC-4893-8B0B-5DB2C18BBAF2",
-          "amount" : 80
-        }
-      ],
-      "machine" : "DC9E5CE9-679F-4454-982B-F1593AAAEE1C",
-      "isDefault" : true
-    },
-    {
-      "id" : "A2E6EA15-0C63-4467-8C30-40B3E239FA2B",
-      "input" : [
-        {
-          "id" : "F1640BC2-1911-414D-9748-0BC95143B238",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "87B17600-196E-4A46-A846-F2E47144840B",
-          "amount" : 20
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "7EA236C6-17D1-4BB9-9693-101742FC7066",
-      "input" : [
-        {
-          "id" : "F1640BC2-1911-414D-9748-0BC95143B238",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "1ADF4177-A777-4445-AF0B-4B7F38C06473",
-          "amount" : 15
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "6A0030D2-2DE7-4982-B78D-F82ECFAF7700",
-      "input" : [
-        {
-          "id" : "165A4040-8DA2-4EE5-B155-91EBF9639108",
-          "amount" : 12
-        }
-      ],
-      "output" : [
-        {
-          "id" : "1ADF4177-A777-4445-AF0B-4B7F38C06473",
-          "amount" : 48
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : false
-    },
-    {
-      "id" : "BD51EA21-D217-4525-848D-953FED138626",
-      "input" : [
-        {
-          "id" : "1ADF4177-A777-4445-AF0B-4B7F38C06473",
-          "amount" : 10
-        }
-      ],
-      "output" : [
-        {
-          "id" : "23E67E89-79FA-4163-9F38-D22FB85E64FE",
-          "amount" : 40
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "B6F84F1F-51EA-4285-B74B-BE6D986FE58D",
-      "input" : [
-        {
-          "id" : "F1640BC2-1911-414D-9748-0BC95143B238",
-          "amount" : 12.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "23E67E89-79FA-4163-9F38-D22FB85E64FE",
-          "amount" : 50
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : false
-    },
-    {
-      "id" : "B8F0187D-93AB-4507-9EA6-077C8ED35F10",
-      "input" : [
-        {
-          "id" : "ADD53133-5240-4C07-BC6C-ECB41F78C701",
-          "amount" : 5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "23E67E89-79FA-4163-9F38-D22FB85E64FE",
-          "amount" : 260
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : false
-    },
-    {
-      "id" : "6F5B685D-E485-419F-82B5-CFC3CF0E8BA1",
-      "input" : [
-        {
-          "id" : "88663AF4-7BF3-4A7E-BE16-E918D1289806",
-          "amount" : 20
-        }
-      ],
-      "output" : [
-        {
-          "id" : "5F2998B9-5E01-4849-8B7D-C67FBA863495",
-          "amount" : 10
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "309C3359-86B1-45BA-BF34-2742ACDB30F6",
-      "input" : [
-        {
-          "id" : "165A4040-8DA2-4EE5-B155-91EBF9639108",
-          "amount" : 60
-        }
-      ],
-      "output" : [
-        {
-          "id" : "ADD53133-5240-4C07-BC6C-ECB41F78C701",
-          "amount" : 15
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "F3ADF2E0-4252-498C-BB48-222973FE32F5",
-      "input" : [
-        {
-          "id" : "165A4040-8DA2-4EE5-B155-91EBF9639108",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 20
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "9F5E6DCA-8E7A-43FE-BB32-DBC179203753",
-      "input" : [
-        {
-          "id" : "88663AF4-7BF3-4A7E-BE16-E918D1289806",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 30
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "6D808EA5-EE6B-42E6-93E5-8E7FC65254AD",
-      "input" : [
-        {
-          "id" : "F1640BC2-1911-414D-9748-0BC95143B238",
-          "amount" : 12.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 22.5
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : false
-    },
-    {
-      "id" : "2193288C-8378-4CB5-AC41-4C6F966E570A",
-      "input" : [
-        {
-          "id" : "12ED0AF6-A7FA-4C2D-8AC3-ED1CD2013149",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 120
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : false
-    },
-    {
-      "id" : "C87B11AD-448B-4A91-AA9C-3B016F73C3F3",
-      "input" : [
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 60
-        }
-      ],
-      "output" : [
-        {
-          "id" : "8A01C044-CDC1-4F93-A437-A9E0EF1285BC",
-          "amount" : 30
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "5EA08419-F902-48A5-901C-52B10161E10B",
-      "input" : [
-        {
-          "id" : "12ED0AF6-A7FA-4C2D-8AC3-ED1CD2013149",
-          "amount" : 12
-        }
-      ],
-      "output" : [
-        {
-          "id" : "975E4A48-4024-4634-BE25-6060D2A717C8",
-          "amount" : 60
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "42F47CD5-1B3B-4710-9513-355F5F0C8A83",
-      "input" : [
-        {
-          "id" : "EDCEC72F-B8F0-4251-ADB6-8C1EC066BF65",
-          "amount" : 45
-        }
-      ],
-      "output" : [
-        {
-          "id" : "D5EAD0B1-025E-4013-ACF3-AB0925A24FEA",
-          "amount" : 15
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "8A381498-B3FA-46D3-8269-F55E8D66B3AF",
-      "input" : [
-        {
-          "id" : "A73C64D1-80A0-487A-871B-F73A60540BD0",
-          "amount" : 37.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "A5B49588-42DD-4C2E-A912-9D4D6E8585B5",
-          "amount" : 22.5
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "3F002952-D7DD-445F-9E06-C8E0CEF960EB",
-      "input" : [
-        {
-          "id" : "A73C64D1-80A0-487A-871B-F73A60540BD0",
-          "amount" : 22.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "6686B3A9-C47E-4FD3-927A-AD3261798EF2",
-          "amount" : 37.5
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "D9AAC710-AEE0-4E66-97DE-4F28194A672B",
-      "input" : [
-        {
-          "id" : "70709B67-A519-499C-B06F-E5DEF803E5C7",
-          "amount" : 60
-        }
-      ],
-      "output" : [
-        {
-          "id" : "11F9DD2C-5B18-42C9-9B83-C14931447C65",
-          "amount" : 300
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "20129C90-E18D-40E3-9073-A585D0B29BBC",
-      "input" : [
-        {
-          "id" : "10E5C72A-D5C6-47EB-A413-24DF608333CF",
-          "amount" : 120
-        }
-      ],
-      "output" : [
-        {
-          "id" : "11F9DD2C-5B18-42C9-9B83-C14931447C65",
-          "amount" : 60
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "1E96463E-C9BC-4C83-A4CF-0C072035948A",
-      "input" : [
-        {
-          "id" : "11E13FC8-D43B-48C3-BA92-14D196E22EFB",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "11F9DD2C-5B18-42C9-9B83-C14931447C65",
-          "amount" : 1500
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "09F2F5B4-A7AD-44D7-819D-0B64320FDA6A",
-      "input" : [
-        {
-          "id" : "399266A0-EA5E-4BD8-A10D-8AB388715DE6",
-          "amount" : 7.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "11F9DD2C-5B18-42C9-9B83-C14931447C65",
-          "amount" : 1500
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "3B6B1DBB-C051-43AD-92B8-D8A6EF99AFF3",
-      "input" : [
-        {
-          "id" : "FB41BCE3-AA8D-43BB-B291-9824A628CFE6",
-          "amount" : 150
-        }
-      ],
-      "output" : [
-        {
-          "id" : "11F9DD2C-5B18-42C9-9B83-C14931447C65",
-          "amount" : 150
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "432CAAEC-883D-459C-BA0C-F7F939242396",
-      "input" : [
-        {
-          "id" : "11F9DD2C-5B18-42C9-9B83-C14931447C65",
-          "amount" : 120
-        }
-      ],
-      "output" : [
-        {
-          "id" : "19035B88-4D33-4CB6-950B-93FF92569041",
-          "amount" : 60
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "0B35BA96-87C3-4C0D-BC58-9C3A3030BDD8",
-      "input" : [
-        {
-          "id" : "70709B67-A519-499C-B06F-E5DEF803E5C7",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "76B47E5E-B846-4450-BB46-CDB48E5DC1FC",
-          "amount" : 150
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : false
-    },
-    {
-      "id" : "BD1C83A9-3D93-4BF7-BEDF-FE167A0DAB2C",
-      "input" : [
-        {
-          "id" : "11F9DD2C-5B18-42C9-9B83-C14931447C65",
-          "amount" : 37.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "76B47E5E-B846-4450-BB46-CDB48E5DC1FC",
-          "amount" : 45
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : false
-    },
-    {
-      "id" : "68F65160-8234-430F-9EB2-9E6047DD52DA",
-      "input" : [
-        {
-          "id" : "A7841426-62B4-472A-84AB-6266A73B7AE8",
-          "amount" : 6
-        }
-      ],
-      "output" : [
-        {
-          "id" : "7A28AD1D-A18B-4BBD-B946-F9CB46C1B1F1",
-          "amount" : 6
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "60D50A9A-A412-449E-A40E-D122B227CC12",
-      "input" : [
-        {
-          "id" : "41430FFB-02E7-4278-8957-8B232F99841E",
-          "amount" : 4
-        }
-      ],
-      "output" : [
-        {
-          "id" : "7A28AD1D-A18B-4BBD-B946-F9CB46C1B1F1",
-          "amount" : 8
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "28979355-11CF-4F40-B37C-A6F5AC1ADE6F",
-      "input" : [
-        {
-          "id" : "B2200A81-1E83-4FE5-BFDF-F1BB11993B7B",
-          "amount" : 3
-        }
-      ],
-      "output" : [
-        {
-          "id" : "7A28AD1D-A18B-4BBD-B946-F9CB46C1B1F1",
-          "amount" : 15
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "45924A15-744E-41EA-A48E-E27D2BC2DE8F",
-      "input" : [
-        {
-          "id" : "48F2AEF4-B885-4719-A3BD-30BD4577A344",
-          "amount" : 37.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "30567B65-A100-43F3-BBBE-1B3E01D12CBB",
-          "amount" : 75
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "31894955-8945-4F43-A82A-3C0340FCB758",
-      "input" : [
-        {
-          "id" : "1ADF4177-A777-4445-AF0B-4B7F38C06473",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "DC369D85-BD04-4B1A-8054-BDB7020A3244",
-          "amount" : 15
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "4D55FD68-8A05-410D-9B22-BEC0A942CE26",
-      "input" : [
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 10
-        }
-      ],
-      "machine" : "D85C0D58-E927-492B-960B-7562A0F4C166",
-      "isDefault" : true
-    },
-    {
-      "id" : "2BFDE656-9BBD-4562-B4DC-E076A0889E9D",
-      "input" : [
-        {
-          "id" : "87B17600-196E-4A46-A846-F2E47144840B",
-          "amount" : 30
-        },
-        {
-          "id" : "23E67E89-79FA-4163-9F38-D22FB85E64FE",
-          "amount" : 60
-        }
-      ],
-      "output" : [
-        {
-          "id" : "735ECCC6-A78A-48F7-8FCE-566DBC9775E2",
-          "amount" : 5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "C720A348-1654-4BA2-B673-B3C250BD787A",
-      "input" : [
-        {
-          "id" : "87B17600-196E-4A46-A846-F2E47144840B",
-          "amount" : 11.25
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 3.75
-        }
-      ],
-      "output" : [
-        {
-          "id" : "735ECCC6-A78A-48F7-8FCE-566DBC9775E2",
-          "amount" : 3.7999999999999998
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "2356CDC6-79F3-4A07-8797-ABE18BC0A23D",
-      "input" : [
-        {
-          "id" : "87B17600-196E-4A46-A846-F2E47144840B",
-          "amount" : 90
-        },
-        {
-          "id" : "23E67E89-79FA-4163-9F38-D22FB85E64FE",
-          "amount" : 50
-        }
-      ],
-      "output" : [
-        {
-          "id" : "735ECCC6-A78A-48F7-8FCE-566DBC9775E2",
-          "amount" : 15
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "47BF2C3A-E5F0-4AA7-A7B0-DDD7EB078059",
-      "input" : [
-        {
-          "id" : "87B17600-196E-4A46-A846-F2E47144840B",
-          "amount" : 18.75
-        },
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 37.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "735ECCC6-A78A-48F7-8FCE-566DBC9775E2",
-          "amount" : 5.5999999999999996
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "570315ED-63E8-4760-B817-5B9E2200F970",
-      "input" : [
-        {
-          "id" : "735ECCC6-A78A-48F7-8FCE-566DBC9775E2",
-          "amount" : 3
-        },
-        {
-          "id" : "1ADF4177-A777-4445-AF0B-4B7F38C06473",
-          "amount" : 12
-        }
-      ],
-      "output" : [
-        {
-          "id" : "8D2727D7-A273-404A-ABD3-83E66D379A5F",
-          "amount" : 2
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "8F3557E2-3D36-4B9D-8B34-0785024280D1",
-      "input" : [
-        {
-          "id" : "735ECCC6-A78A-48F7-8FCE-566DBC9775E2",
-          "amount" : 7.5
-        },
-        {
-          "id" : "23E67E89-79FA-4163-9F38-D22FB85E64FE",
-          "amount" : 140
-        }
-      ],
-      "output" : [
-        {
-          "id" : "8D2727D7-A273-404A-ABD3-83E66D379A5F",
-          "amount" : 5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "014AADE5-E166-4085-A6FF-462230F0CD6E",
-      "input" : [
-        {
-          "id" : "735ECCC6-A78A-48F7-8FCE-566DBC9775E2",
-          "amount" : 2
-        },
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 10
-        }
-      ],
-      "output" : [
-        {
-          "id" : "8D2727D7-A273-404A-ABD3-83E66D379A5F",
-          "amount" : 3
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "5589AB9F-4851-433A-B889-D5EB61491999",
-      "input" : [
-        {
-          "id" : "F1640BC2-1911-414D-9748-0BC95143B238",
-          "amount" : 50
-        },
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 10
-        }
-      ],
-      "output" : [
-        {
-          "id" : "87B17600-196E-4A46-A846-F2E47144840B",
-          "amount" : 75
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "101284F4-DA52-46EE-B0D0-0712BBD76E11",
-      "input" : [
-        {
-          "id" : "165A4040-8DA2-4EE5-B155-91EBF9639108",
-          "amount" : 7.5
-        },
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "87B17600-196E-4A46-A846-F2E47144840B",
-          "amount" : 45
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "8668BB99-C174-45A6-9C35-17FFD5DE1984",
-      "input" : [
-        {
-          "id" : "ADD53133-5240-4C07-BC6C-ECB41F78C701",
-          "amount" : 24
-        },
-        {
-          "id" : "D5EAD0B1-025E-4013-ACF3-AB0925A24FEA",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "D77B7C90-A380-475C-BC42-6F83117F58C8",
-          "amount" : 6
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "A8CCAC74-FE8A-4393-8862-0B5017B03A5A",
-      "input" : [
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 28
-        },
-        {
-          "id" : "D5EAD0B1-025E-4013-ACF3-AB0925A24FEA",
-          "amount" : 20
-        }
-      ],
-      "output" : [
-        {
-          "id" : "D77B7C90-A380-475C-BC42-6F83117F58C8",
-          "amount" : 4
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "239892B5-B632-4B8F-8049-F376959EE7C3",
-      "input" : [
-        {
-          "id" : "46B39626-A0DC-4893-8B0B-5DB2C18BBAF2",
-          "amount" : 60
-        },
-        {
-          "id" : "88663AF4-7BF3-4A7E-BE16-E918D1289806",
-          "amount" : 22.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "94D93D87-D8E8-44A3-A5D8-440C44EB8833",
-          "amount" : 30
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "9AB14F80-B333-4DE6-A0C0-01E82459AAC9",
-      "input" : [
-        {
-          "id" : "1ADF4177-A777-4445-AF0B-4B7F38C06473",
-          "amount" : 20
-        },
-        {
-          "id" : "23E67E89-79FA-4163-9F38-D22FB85E64FE",
-          "amount" : 100
-        }
-      ],
-      "output" : [
-        {
-          "id" : "3BCF1B57-7427-4EC0-8F84-1258B1D4FEFC",
-          "amount" : 4
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "B57DA36F-6214-464C-BF8F-0D4919F454D6",
-      "input" : [
-        {
-          "id" : "5F2998B9-5E01-4849-8B7D-C67FBA863495",
-          "amount" : 22.5
-        },
-        {
-          "id" : "23E67E89-79FA-4163-9F38-D22FB85E64FE",
-          "amount" : 52
-        }
-      ],
-      "output" : [
-        {
-          "id" : "3BCF1B57-7427-4EC0-8F84-1258B1D4FEFC",
-          "amount" : 11.199999999999999
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "30EF7E2F-06A8-4729-B887-FA659261BC38",
-      "input" : [
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 10
-        },
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "3BCF1B57-7427-4EC0-8F84-1258B1D4FEFC",
-          "amount" : 5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "7797D490-B473-40B9-ACF2-6DCDAEE34743",
-      "input" : [
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 15
-        },
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 40
-        }
-      ],
-      "output" : [
-        {
-          "id" : "D5DF8530-919F-4431-BC5B-AD278F75C455",
-          "amount" : 5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "6C85AF3C-5A3F-4443-A935-C48FAA685E32",
-      "input" : [
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 16
-        },
-        {
-          "id" : "975E4A48-4024-4634-BE25-6060D2A717C8",
-          "amount" : 60
-        }
-      ],
-      "output" : [
-        {
-          "id" : "D5DF8530-919F-4431-BC5B-AD278F75C455",
-          "amount" : 8
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "38EA01D5-7CF7-4394-B235-8ADCFF9DB5A6",
-      "input" : [
-        {
-          "id" : "3BCF1B57-7427-4EC0-8F84-1258B1D4FEFC",
-          "amount" : 10
-        },
-        {
-          "id" : "D5DF8530-919F-4431-BC5B-AD278F75C455",
-          "amount" : 10
-        }
-      ],
-      "output" : [
-        {
-          "id" : "4151D657-4B14-4C5A-9034-279664E67F79",
-          "amount" : 5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "A1162713-EDA4-402F-B9B7-67C55EC2468A",
-      "input" : [
-        {
-          "id" : "94D93D87-D8E8-44A3-A5D8-440C44EB8833",
-          "amount" : 40
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 70
-        }
-      ],
-      "output" : [
-        {
-          "id" : "E54C9C98-118D-489C-A7D2-2736AEE4E0C9",
-          "amount" : 10
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "711220B1-858B-422B-94F2-D7F62ED6E7EB",
-      "input" : [
-        {
-          "id" : "94D93D87-D8E8-44A3-A5D8-440C44EB8833",
-          "amount" : 37.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "5F2998B9-5E01-4849-8B7D-C67FBA863495",
-          "amount" : 56.25
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "79CB858F-60F5-4B16-A006-9E4A711A98E0",
-      "input" : [
-        {
-          "id" : "5F2998B9-5E01-4849-8B7D-C67FBA863495",
-          "amount" : 15
-        },
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "810C8BAC-FFE1-44AE-A641-15BA8B27BB4B",
-          "amount" : 7.5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "A0462211-30C8-458F-9B70-4041EFE59A85",
-      "input" : [
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 30
-        },
-        {
-          "id" : "22079534-6117-420A-B8F5-0CEF52063260",
-          "amount" : 45
-        }
-      ],
-      "output" : [
-        {
-          "id" : "810C8BAC-FFE1-44AE-A641-15BA8B27BB4B",
-          "amount" : 5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "9AC67E1C-261F-4507-8455-F4F95232E396",
-      "input" : [
-        {
-          "id" : "5F2998B9-5E01-4849-8B7D-C67FBA863495",
-          "amount" : 27.5
-        },
-        {
-          "id" : "6686B3A9-C47E-4FD3-927A-AD3261798EF2",
-          "amount" : 27.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "810C8BAC-FFE1-44AE-A641-15BA8B27BB4B",
-          "amount" : 12.5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "5A50644B-5CE5-4CB8-A7C2-724C7D339606",
-      "input" : [
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 12.5
-        },
-        {
-          "id" : "975E4A48-4024-4634-BE25-6060D2A717C8",
-          "amount" : 37.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "810C8BAC-FFE1-44AE-A641-15BA8B27BB4B",
-          "amount" : 8.8000000000000007
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "B888476B-8DCC-450B-8346-81574FBC2BCC",
-      "input" : [
-        {
-          "id" : "5F2998B9-5E01-4849-8B7D-C67FBA863495",
-          "amount" : 25
-        },
-        {
-          "id" : "975E4A48-4024-4634-BE25-6060D2A717C8",
-          "amount" : 100
-        }
-      ],
-      "output" : [
-        {
-          "id" : "34E31B0A-5E02-4ACF-963C-64192F5BBC1A",
-          "amount" : 5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "E88B8481-7C54-4DE1-B17E-69F96267AF30",
-      "input" : [
-        {
-          "id" : "88663AF4-7BF3-4A7E-BE16-E918D1289806",
-          "amount" : 12
-        },
-        {
-          "id" : "12ED0AF6-A7FA-4C2D-8AC3-ED1CD2013149",
-          "amount" : 3
-        }
-      ],
-      "output" : [
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 90
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "457E459F-C663-44EF-BC79-03F20F8C57D9",
-      "input" : [
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 45
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "8A01C044-CDC1-4F93-A437-A9E0EF1285BC",
-          "amount" : 100
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "6DD3FACB-549F-4B38-8FAD-A5E069556FA2",
-      "input" : [
-        {
-          "id" : "975E4A48-4024-4634-BE25-6060D2A717C8",
-          "amount" : 7.5
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "8A01C044-CDC1-4F93-A437-A9E0EF1285BC",
-          "amount" : 27.5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "89731073-88DD-42A6-81CB-E21F834ECFBD",
-      "input" : [
-        {
-          "id" : "12ED0AF6-A7FA-4C2D-8AC3-ED1CD2013149",
-          "amount" : 7.5
-        },
-        {
-          "id" : "88663AF4-7BF3-4A7E-BE16-E918D1289806",
-          "amount" : 37.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "975E4A48-4024-4634-BE25-6060D2A717C8",
-          "amount" : 90
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "2876EA86-245E-4AB2-8588-D60ED6BBA3B2",
-      "input" : [
-        {
-          "id" : "EDCEC72F-B8F0-4251-ADB6-8C1EC066BF65",
-          "amount" : 50
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 10
-        }
-      ],
-      "output" : [
-        {
-          "id" : "D5EAD0B1-025E-4013-ACF3-AB0925A24FEA",
-          "amount" : 45
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "4C798D3C-E5C0-4466-894F-3D30A9F0E1D1",
-      "input" : [
-        {
-          "id" : "EDCEC72F-B8F0-4251-ADB6-8C1EC066BF65",
-          "amount" : 30
-        },
-        {
-          "id" : "6686B3A9-C47E-4FD3-927A-AD3261798EF2",
-          "amount" : 7.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "D5EAD0B1-025E-4013-ACF3-AB0925A24FEA",
-          "amount" : 25
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "65D8EA50-DD85-48C0-B1B3-560FE43D6051",
-      "input" : [
-        {
-          "id" : "76B47E5E-B846-4450-BB46-CDB48E5DC1FC",
-          "amount" : 25
-        },
-        {
-          "id" : "42F3A792-919A-46AC-9E47-DAA8C05CDC20",
-          "amount" : 25
-        }
-      ],
-      "output" : [
-        {
-          "id" : "DC7B5C19-E5E0-4D26-A21B-0932EC0585B5",
-          "amount" : 25
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "A4AE182D-35C9-42E8-8F5F-07116BE4AA9A",
-      "input" : [
-        {
-          "id" : "A73C64D1-80A0-487A-871B-F73A60540BD0",
-          "amount" : 11.25
-        },
-        {
-          "id" : "EDCEC72F-B8F0-4251-ADB6-8C1EC066BF65",
-          "amount" : 18.75
-        }
-      ],
-      "output" : [
-        {
-          "id" : "6686B3A9-C47E-4FD3-927A-AD3261798EF2",
-          "amount" : 26.199999999999999
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "9FE25DD0-0B99-4EDD-A8CA-1A441C7210A6",
-      "input" : [
-        {
-          "id" : "FB41BCE3-AA8D-43BB-B291-9824A628CFE6",
-          "amount" : 15
-        },
-        {
-          "id" : "11F9DD2C-5B18-42C9-9B83-C14931447C65",
-          "amount" : 75
-        }
-      ],
-      "output" : [
-        {
-          "id" : "C07967B9-450C-45C6-8F45-37806668C4C6",
-          "amount" : 15
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "DB70F97F-AB2B-46E8-B8A7-EBA1EC5BA1FA",
-      "input" : [
-        {
-          "id" : "810C8BAC-FFE1-44AE-A641-15BA8B27BB4B",
-          "amount" : 7.5
-        },
-        {
-          "id" : "79B7EE06-AFC6-422F-BA13-D78A0F0B076B",
-          "amount" : 2.8130000000000002
-        }
-      ],
-      "output" : [
-        {
-          "id" : "83FF0318-3967-4262-B3EA-F60272AB2DAA",
-          "amount" : 2.7999999999999998
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "983A883C-31A0-47E3-A310-1FB79B961EF8",
-      "input" : [
-        {
-          "id" : "D5DF8530-919F-4431-BC5B-AD278F75C455",
-          "amount" : 6
-        },
-        {
-          "id" : "34E31B0A-5E02-4ACF-963C-64192F5BBC1A",
-          "amount" : 4
-        }
-      ],
-      "output" : [
-        {
-          "id" : "38178D43-14F6-403B-A361-E4E9419E24AC",
-          "amount" : 4
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "01B7DDCD-0717-4C92-B3E6-8D267631EB28",
-      "input" : [
-        {
-          "id" : "D5DF8530-919F-4431-BC5B-AD278F75C455",
-          "amount" : 10
-        },
-        {
-          "id" : "0AEDA113-0BDE-4B18-BC59-A26803764D95",
-          "amount" : 5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "38178D43-14F6-403B-A361-E4E9419E24AC",
-          "amount" : 10
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "5E57C188-599C-4EF6-8130-5C39018DD3D8",
-      "input" : [
-        {
-          "id" : "ACFD6ECA-4A84-4589-897F-1FDFC1BDE6CE",
-          "amount" : 40
-        },
-        {
-          "id" : "D5EAD0B1-025E-4013-ACF3-AB0925A24FEA",
-          "amount" : 9
-        }
-      ],
-      "output" : [
-        {
-          "id" : "81807CCE-D00E-4A86-ACA5-2FD6FAC18652",
-          "amount" : 10
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "3FDA32C9-F2B8-4134-B117-2354CA7CA38A",
-      "input" : [
-        {
-          "id" : "76B47E5E-B846-4450-BB46-CDB48E5DC1FC",
-          "amount" : 7.5
-        },
-        {
-          "id" : "42F3A792-919A-46AC-9E47-DAA8C05CDC20",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "850D8F9B-22BB-4A72-8F8F-B838A25A7E10",
-          "amount" : 7.5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "3C94ADAB-F444-41C1-8301-379EEFF936B1",
-      "input" : [
-        {
-          "id" : "42F3A792-919A-46AC-9E47-DAA8C05CDC20",
-          "amount" : 7.5
-        },
-        {
-          "id" : "DC7B5C19-E5E0-4D26-A21B-0932EC0585B5",
-          "amount" : 3.75
-        }
-      ],
-      "output" : [
-        {
-          "id" : "850D8F9B-22BB-4A72-8F8F-B838A25A7E10",
-          "amount" : 15
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : false
-    },
-    {
-      "id" : "46B267A0-A4C3-4627-909A-399681209B6E",
-      "input" : [
-        {
-          "id" : "850D8F9B-22BB-4A72-8F8F-B838A25A7E10",
-          "amount" : 15
-        },
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "95F598A0-1FCA-4B89-B79A-CE403DA22FF2",
-          "amount" : 3
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "3802A5B4-48D2-4FF3-9B95-8978C7FE160E",
-      "input" : [
-        {
-          "id" : "735ECCC6-A78A-48F7-8FCE-566DBC9775E2",
-          "amount" : 2
-        },
-        {
-          "id" : "3BCF1B57-7427-4EC0-8F84-1258B1D4FEFC",
-          "amount" : 2
-        }
-      ],
-      "output" : [
-        {
-          "id" : "55537C60-F04F-451E-A85F-3235F8C34B8D",
-          "amount" : 2
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "509E87DB-F7E3-4621-8891-AE3CF856490D",
-      "input" : [
-        {
-          "id" : "8D2727D7-A273-404A-ABD3-83E66D379A5F",
-          "amount" : 2.5
-        },
-        {
-          "id" : "ADD53133-5240-4C07-BC6C-ECB41F78C701",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "8DD81FD8-39A5-4C80-A646-D452B673C72F",
-          "amount" : 5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "82E22D2F-DBC6-444A-8207-2C2FB3D05FB8",
-      "input" : [
-        {
-          "id" : "D5DF8530-919F-4431-BC5B-AD278F75C455",
-          "amount" : 2.5
-        },
-        {
-          "id" : "8A01C044-CDC1-4F93-A437-A9E0EF1285BC",
-          "amount" : 50
-        }
-      ],
-      "output" : [
-        {
-          "id" : "85DC6615-85B0-4E91-A502-03155E802553",
-          "amount" : 2.5
-        }
-      ],
-      "machine" : "40E15717-85B6-46ED-B9FD-A785858ECCC9",
-      "isDefault" : true
-    },
-    {
-      "id" : "BFDBFC6E-F44C-41CF-B0FA-003F83701397",
-      "input" : [
-        {
-          "id" : "8D2727D7-A273-404A-ABD3-83E66D379A5F",
-          "amount" : 10
-        },
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 30
-        },
-        {
-          "id" : "D77B7C90-A380-475C-BC42-6F83117F58C8",
-          "amount" : 10
-        },
-        {
-          "id" : "23E67E89-79FA-4163-9F38-D22FB85E64FE",
-          "amount" : 200
-        }
-      ],
-      "output" : [
-        {
-          "id" : "AAA89510-47C8-4B82-ADAC-BADAC668EC57",
-          "amount" : 2
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "04407564-8940-46CC-8A38-84C8EFB8D962",
-      "input" : [
-        {
-          "id" : "8D2727D7-A273-404A-ABD3-83E66D379A5F",
-          "amount" : 18.75
-        },
-        {
-          "id" : "D77B7C90-A380-475C-BC42-6F83117F58C8",
-          "amount" : 11.25
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 75
-        },
-        {
-          "id" : "23E67E89-79FA-4163-9F38-D22FB85E64FE",
-          "amount" : 390
-        }
-      ],
-      "output" : [
-        {
-          "id" : "AAA89510-47C8-4B82-ADAC-BADAC668EC57",
-          "amount" : 3.7999999999999998
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "DB84F2B5-E140-4996-8583-2670A73B9DF1",
-      "input" : [
-        {
-          "id" : "8D2727D7-A273-404A-ABD3-83E66D379A5F",
-          "amount" : 7.5
-        },
-        {
-          "id" : "D77B7C90-A380-475C-BC42-6F83117F58C8",
-          "amount" : 9.375
-        },
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 33.75
-        },
-        {
-          "id" : "D5EAD0B1-025E-4013-ACF3-AB0925A24FEA",
-          "amount" : 20.625
-        }
-      ],
-      "output" : [
-        {
-          "id" : "AAA89510-47C8-4B82-ADAC-BADAC668EC57",
-          "amount" : 2.7999999999999998
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "F275415E-A7F9-4CEE-BC1C-C6C591C1CD95",
-      "input" : [
-        {
-          "id" : "E54C9C98-118D-489C-A7D2-2736AEE4E0C9",
-          "amount" : 7.5
-        },
-        {
-          "id" : "F53380F9-B6EC-4A14-A3FE-30AAC9E5784D",
-          "amount" : 3.75
-        },
-        {
-          "id" : "4151D657-4B14-4C5A-9034-279664E67F79",
-          "amount" : 7.5
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 45
-        }
-      ],
-      "output" : [
-        {
-          "id" : "3C80D3F8-F732-4543-B67D-DB31ACF0F484",
-          "amount" : 1.8999999999999999
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "47C5E1AA-05AD-4F6C-9006-EBAEFE27AC12",
-      "input" : [
-        {
-          "id" : "4151D657-4B14-4C5A-9034-279664E67F79",
-          "amount" : 6.5629999999999997
-        },
-        {
-          "id" : "F53380F9-B6EC-4A14-A3FE-30AAC9E5784D",
-          "amount" : 4.6879999999999997
-        },
-        {
-          "id" : "34E31B0A-5E02-4ACF-963C-64192F5BBC1A",
-          "amount" : 8.4380000000000006
-        },
-        {
-          "id" : "D5DF8530-919F-4431-BC5B-AD278F75C455",
-          "amount" : 6.5629999999999997
-        }
-      ],
-      "output" : [
-        {
-          "id" : "3C80D3F8-F732-4543-B67D-DB31ACF0F484",
-          "amount" : 2.7999999999999998
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "A814BCFC-1D04-464B-BB06-BE188C66E144",
-      "input" : [
-        {
-          "id" : "3BCF1B57-7427-4EC0-8F84-1258B1D4FEFC",
-          "amount" : 3.75
-        },
-        {
-          "id" : "D5DF8530-919F-4431-BC5B-AD278F75C455",
-          "amount" : 3.75
-        },
-        {
-          "id" : "79B7EE06-AFC6-422F-BA13-D78A0F0B076B",
-          "amount" : 1.25
-        }
-      ],
-      "output" : [
-        {
-          "id" : "4151D657-4B14-4C5A-9034-279664E67F79",
-          "amount" : 7.5
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "4F7128A7-9E43-4B55-9309-12016A6C8F58",
-      "input" : [
-        {
-          "id" : "975E4A48-4024-4634-BE25-6060D2A717C8",
-          "amount" : 210
-        },
-        {
-          "id" : "8A01C044-CDC1-4F93-A437-A9E0EF1285BC",
-          "amount" : 37.5
-        },
-        {
-          "id" : "810C8BAC-FFE1-44AE-A641-15BA8B27BB4B",
-          "amount" : 3.75
-        }
-      ],
-      "output" : [
-        {
-          "id" : "0AEDA113-0BDE-4B18-BC59-A26803764D95",
-          "amount" : 3.7999999999999998
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "96769B8E-4454-45EA-81A7-73D826456FD6",
-      "input" : [
-        {
-          "id" : "975E4A48-4024-4634-BE25-6060D2A717C8",
-          "amount" : 90
-        },
-        {
-          "id" : "6686B3A9-C47E-4FD3-927A-AD3261798EF2",
-          "amount" : 37.5
-        },
-        {
-          "id" : "810C8BAC-FFE1-44AE-A641-15BA8B27BB4B",
-          "amount" : 3
-        }
-      ],
-      "output" : [
-        {
-          "id" : "0AEDA113-0BDE-4B18-BC59-A26803764D95",
-          "amount" : 3
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "F4BFE976-88D1-471D-B978-E927A194F22D",
-      "input" : [
-        {
-          "id" : "94D93D87-D8E8-44A3-A5D8-440C44EB8833",
-          "amount" : 15
-        },
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 30
-        },
-        {
-          "id" : "42F3A792-919A-46AC-9E47-DAA8C05CDC20",
-          "amount" : 37.5
-        },
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "45478B74-CC57-4BEA-B169-25B640F10C5F",
-          "amount" : 5.5999999999999996
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "EFEC7F70-13CC-440C-BA69-28DF2E5E27E5",
-      "input" : [
-        {
-          "id" : "810C8BAC-FFE1-44AE-A641-15BA8B27BB4B",
-          "amount" : 25
-        },
-        {
-          "id" : "8A01C044-CDC1-4F93-A437-A9E0EF1285BC",
-          "amount" : 22.5
-        },
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 45
-        },
-        {
-          "id" : "23E67E89-79FA-4163-9F38-D22FB85E64FE",
-          "amount" : 130
-        }
-      ],
-      "output" : [
-        {
-          "id" : "83FF0318-3967-4262-B3EA-F60272AB2DAA",
-          "amount" : 2.5
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "43A203A5-5B65-4CF9-84E2-24E3C7E31D67",
-      "input" : [
-        {
-          "id" : "810C8BAC-FFE1-44AE-A641-15BA8B27BB4B",
-          "amount" : 26.25
-        },
-        {
-          "id" : "975E4A48-4024-4634-BE25-6060D2A717C8",
-          "amount" : 105
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 45
-        }
-      ],
-      "output" : [
-        {
-          "id" : "83FF0318-3967-4262-B3EA-F60272AB2DAA",
-          "amount" : 3.7999999999999998
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "AAE3C38C-5AD7-4BD4-A983-68F7D3721156",
-      "input" : [
-        {
-          "id" : "A5B49588-42DD-4C2E-A912-9D4D6E8585B5",
-          "amount" : 18
-        },
-        {
-          "id" : "8A01C044-CDC1-4F93-A437-A9E0EF1285BC",
-          "amount" : 14
-        },
-        {
-          "id" : "735ECCC6-A78A-48F7-8FCE-566DBC9775E2",
-          "amount" : 2.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "79B7EE06-AFC6-422F-BA13-D78A0F0B076B",
-          "amount" : 1
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "2CE27469-167C-43B6-A12A-2C778E06885A",
-      "input" : [
-        {
-          "id" : "A5B49588-42DD-4C2E-A912-9D4D6E8585B5",
-          "amount" : 18.75
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 13.125
-        },
-        {
-          "id" : "34E31B0A-5E02-4ACF-963C-64192F5BBC1A",
-          "amount" : 1.875
-        }
-      ],
-      "output" : [
-        {
-          "id" : "79B7EE06-AFC6-422F-BA13-D78A0F0B076B",
-          "amount" : 1.8999999999999999
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "88108976-6970-4806-9276-BAA0E496BC86",
-      "input" : [
-        {
-          "id" : "E54C9C98-118D-489C-A7D2-2736AEE4E0C9",
-          "amount" : 10
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 40
-        },
-        {
-          "id" : "79B7EE06-AFC6-422F-BA13-D78A0F0B076B",
-          "amount" : 2.5
-        },
-        {
-          "id" : "83FF0318-3967-4262-B3EA-F60272AB2DAA",
-          "amount" : 2.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "F53380F9-B6EC-4A14-A3FE-30AAC9E5784D",
-          "amount" : 2.5
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "B9D429FD-7F21-4758-B12C-E11E629DF871",
-      "input" : [
-        {
-          "id" : "E54C9C98-118D-489C-A7D2-2736AEE4E0C9",
-          "amount" : 12.5
-        },
-        {
-          "id" : "41BFCABD-108D-4BD4-85ED-AB8614FE7B0C",
-          "amount" : 1.25
-        },
-        {
-          "id" : "A5B49588-42DD-4C2E-A912-9D4D6E8585B5",
-          "amount" : 37.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "F53380F9-B6EC-4A14-A3FE-30AAC9E5784D",
-          "amount" : 3.7999999999999998
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "56EF322A-5F54-4079-A455-6F93757977B7",
-      "input" : [
-        {
-          "id" : "83FF0318-3967-4262-B3EA-F60272AB2DAA",
-          "amount" : 3.75
-        },
-        {
-          "id" : "34E31B0A-5E02-4ACF-963C-64192F5BBC1A",
-          "amount" : 3.75
-        },
-        {
-          "id" : "0AEDA113-0BDE-4B18-BC59-A26803764D95",
-          "amount" : 5.625
-        },
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 52.200000000000003
-        }
-      ],
-      "output" : [
-        {
-          "id" : "41BFCABD-108D-4BD4-85ED-AB8614FE7B0C",
-          "amount" : 1.8999999999999999
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "B0FDD00B-1838-4EAB-8602-36C5C29ADFAB",
-      "input" : [
-        {
-          "id" : "81807CCE-D00E-4A86-ACA5-2FD6FAC18652",
-          "amount" : 10
-        },
-        {
-          "id" : "D77B7C90-A380-475C-BC42-6F83117F58C8",
-          "amount" : 1.2
-        },
-        {
-          "id" : "38178D43-14F6-403B-A361-E4E9419E24AC",
-          "amount" : 2
-        }
-      ],
-      "output" : [
-        {
-          "id" : "75502488-F992-4ADA-BACC-1F5800AE6047",
-          "amount" : 0.40000000000000002
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "9C628F49-4978-4EB6-BCF3-3548CF7EE460",
-      "input" : [
-        {
-          "id" : "81807CCE-D00E-4A86-ACA5-2FD6FAC18652",
-          "amount" : 10
-        },
-        {
-          "id" : "38178D43-14F6-403B-A361-E4E9419E24AC",
-          "amount" : 2
-        },
-        {
-          "id" : "79B7EE06-AFC6-422F-BA13-D78A0F0B076B",
-          "amount" : 0.59999999999999998
-        },
-        {
-          "id" : "CDCA5D31-608B-4B00-8AAF-24C2D1BEA08D",
-          "amount" : 1.2
-        }
-      ],
-      "output" : [
-        {
-          "id" : "75502488-F992-4ADA-BACC-1F5800AE6047",
-          "amount" : 0.59999999999999998
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "0409A740-1578-4722-9983-B6BC3A062F87",
-      "input" : [
-        {
-          "id" : "ACFD6ECA-4A84-4589-897F-1FDFC1BDE6CE",
-          "amount" : 20
-        },
-        {
-          "id" : "42F3A792-919A-46AC-9E47-DAA8C05CDC20",
-          "amount" : 22.5
-        },
-        {
-          "id" : "6686B3A9-C47E-4FD3-927A-AD3261798EF2",
-          "amount" : 22.5
-        },
-        {
-          "id" : "975E4A48-4024-4634-BE25-6060D2A717C8",
-          "amount" : 37.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "81807CCE-D00E-4A86-ACA5-2FD6FAC18652",
-          "amount" : 17.5
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "C60AEF84-A7A7-4EB7-B389-675E0D8F0D1D",
-      "input" : [
-        {
-          "id" : "76B47E5E-B846-4450-BB46-CDB48E5DC1FC",
-          "amount" : 37.5
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 15
-        },
-        {
-          "id" : "C07967B9-450C-45C6-8F45-37806668C4C6",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "CA111924-0123-4272-A462-06A9673D6522",
-          "amount" : 7.5
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "4CF1DA32-22C6-4459-842F-E727E3E1D1B2",
-      "input" : [
-        {
-          "id" : "CA111924-0123-4272-A462-06A9673D6522",
-          "amount" : 3.75
-        },
-        {
-          "id" : "975E4A48-4024-4634-BE25-6060D2A717C8",
-          "amount" : 30
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 7.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "E1F7A269-6270-4414-AD69-B6A492372F72",
-          "amount" : 3.7999999999999998
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "554A4F05-5434-46D6-AB78-0FC0B06F463B",
-      "input" : [
-        {
-          "id" : "CDCA5D31-608B-4B00-8AAF-24C2D1BEA08D",
-          "amount" : 3
-        },
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 30
-        },
-        {
-          "id" : "850D8F9B-22BB-4A72-8F8F-B838A25A7E10",
-          "amount" : 30
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "F500D476-9FBD-4161-922D-A51B2314F9E1",
-          "amount" : 15
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "47B5482A-D381-4D7F-ADCD-238B65FA9534",
-      "input" : [
-        {
-          "id" : "850D8F9B-22BB-4A72-8F8F-B838A25A7E10",
-          "amount" : 12
-        },
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 12
-        },
-        {
-          "id" : "79B7EE06-AFC6-422F-BA13-D78A0F0B076B",
-          "amount" : 1.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "95F598A0-1FCA-4B89-B79A-CE403DA22FF2",
-          "amount" : 6
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "216DB437-36BA-4838-9D10-2510C0EFA295",
-      "input" : [
-        {
-          "id" : "4151D657-4B14-4C5A-9034-279664E67F79",
-          "amount" : 2
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 15
-        },
-        {
-          "id" : "55537C60-F04F-451E-A85F-3235F8C34B8D",
-          "amount" : 2
-        }
-      ],
-      "output" : [
-        {
-          "id" : "A01C69D7-1791-40E5-AF29-D03B5E4C5E3A",
-          "amount" : 1
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "B1A7E74B-4361-4796-BF55-04AAA28421BC",
-      "input" : [
-        {
-          "id" : "85DC6615-85B0-4E91-A502-03155E802553",
-          "amount" : 7.5
-        },
-        {
-          "id" : "810C8BAC-FFE1-44AE-A641-15BA8B27BB4B",
-          "amount" : 5
-        },
-        {
-          "id" : "AAA89510-47C8-4B82-ADAC-BADAC668EC57",
-          "amount" : 1
-        },
-        {
-          "id" : "83FF0318-3967-4262-B3EA-F60272AB2DAA",
-          "amount" : 1
-        }
-      ],
-      "output" : [
-        {
-          "id" : "07D78674-6B8E-4011-841B-A5C4A65C20D6",
-          "amount" : 1
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "00F71678-1855-46E6-B159-B8D9254BF1C0",
-      "input" : [
-        {
-          "id" : "735ECCC6-A78A-48F7-8FCE-566DBC9775E2",
-          "amount" : 2.5
-        },
-        {
-          "id" : "3BCF1B57-7427-4EC0-8F84-1258B1D4FEFC",
-          "amount" : 2.5
-        },
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 7.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "55537C60-F04F-451E-A85F-3235F8C34B8D",
-          "amount" : 5
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "F7782606-A343-4B6B-8C8E-A17A8A488B06",
-      "input" : [
-        {
-          "id" : "8D2727D7-A273-404A-ABD3-83E66D379A5F",
-          "amount" : 3.75
-        },
-        {
-          "id" : "ADD53133-5240-4C07-BC6C-ECB41F78C701",
-          "amount" : 22.5
-        },
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "8DD81FD8-39A5-4C80-A646-D452B673C72F",
-          "amount" : 7.5
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "7C865A80-F2E9-46AF-AD28-A76AE111A91D",
-      "input" : [
-        {
-          "id" : "D5DF8530-919F-4431-BC5B-AD278F75C455",
-          "amount" : 3.75
-        },
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 75
-        },
-        {
-          "id" : "0AEDA113-0BDE-4B18-BC59-A26803764D95",
-          "amount" : 1.875
-        }
-      ],
-      "output" : [
-        {
-          "id" : "85DC6615-85B0-4E91-A502-03155E802553",
-          "amount" : 7.5
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "07E658CE-E536-4FC4-94DB-40CF6AE509D8",
-      "input" : [
-        {
-          "id" : "87B17600-196E-4A46-A846-F2E47144840B",
-          "amount" : 22.5
-        },
-        {
-          "id" : "1ADF4177-A777-4445-AF0B-4B7F38C06473",
-          "amount" : 7.5
-        },
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 112.5
-        },
-        {
-          "id" : "8A01C044-CDC1-4F93-A437-A9E0EF1285BC",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "CDCA5D31-608B-4B00-8AAF-24C2D1BEA08D",
-          "amount" : 7.5
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "6B47176A-6F70-45D0-847C-12B6672E0354",
-      "input" : [
-        {
-          "id" : "ADD53133-5240-4C07-BC6C-ECB41F78C701",
-          "amount" : 2
-        },
-        {
-          "id" : "7B35B135-413B-4A3A-9559-13567222B62D",
-          "amount" : 8
-        },
-        {
-          "id" : "79B7EE06-AFC6-422F-BA13-D78A0F0B076B",
-          "amount" : 0.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "CDCA5D31-608B-4B00-8AAF-24C2D1BEA08D",
-          "amount" : 10
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : false
-    },
-    {
-      "id" : "A78918C1-2436-4C27-A5BE-6CABD8234F85",
-      "input" : [
-        {
-          "id" : "42851B68-CD2E-44A5-90A9-6E5FA6D17961",
-          "amount" : 35
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 20
-        }
-      ],
-      "output" : [
-        {
-          "id" : "F1640BC2-1911-414D-9748-0BC95143B238",
-          "amount" : 65
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "DA8129FC-2256-4E41-8EF7-108B3D48F9EA",
-      "input" : [
-        {
-          "id" : "8A6DB796-8FFC-4995-95A8-427511C78447",
-          "amount" : 15
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 10
-        }
-      ],
-      "output" : [
-        {
-          "id" : "88663AF4-7BF3-4A7E-BE16-E918D1289806",
-          "amount" : 37.5
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "5EEF5032-5936-455F-9E45-3292EED90E02",
-      "input" : [
-        {
-          "id" : "C2903316-7158-48D9-895E-48E8907230C1",
-          "amount" : 24
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 24
-        }
-      ],
-      "output" : [
-        {
-          "id" : "12ED0AF6-A7FA-4C2D-8AC3-ED1CD2013149",
-          "amount" : 12
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "ED0FC9CE-DF78-4ADE-9D66-34563F66814A",
-      "input" : [
-        {
-          "id" : "EDCEC72F-B8F0-4251-ADB6-8C1EC066BF65",
-          "amount" : 120
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 100
-        }
-      ],
-      "output" : [
-        {
-          "id" : "D5EAD0B1-025E-4013-ACF3-AB0925A24FEA",
-          "amount" : 80
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "D0D4214C-F493-41FD-AF6D-A1CBEF46BBAC",
-      "input" : [
-        {
-          "id" : "A73C64D1-80A0-487A-871B-F73A60540BD0",
-          "amount" : 67.5
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 37.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "A5B49588-42DD-4C2E-A912-9D4D6E8585B5",
-          "amount" : 52.200000000000003
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "D5CA362A-BE48-44EB-9C67-08077EDF4C60",
-      "input" : [
-        {
-          "id" : "1A2CA264-E458-4505-A08B-24F7BEE781FE",
-          "amount" : 80
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 50
-        }
-      ],
-      "output" : [
-        {
-          "id" : "C07967B9-450C-45C6-8F45-37806668C4C6",
-          "amount" : 5
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "6BBA9BE1-D0DE-46DE-913F-682AF40FDD09",
-      "input" : [
-        {
-          "id" : "88663AF4-7BF3-4A7E-BE16-E918D1289806",
-          "amount" : 22.5
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 22.5
-        }
-      ],
-      "output" : [
-        {
-          "id" : "5F2998B9-5E01-4849-8B7D-C67FBA863495",
-          "amount" : 22.5
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "CCB9EE80-FD62-4928-AEEC-CDCD10DD6B4D",
-      "input" : [
-        {
-          "id" : "5FD654C2-2506-423D-B431-312869735025",
-          "amount" : 37.5
-        },
-        {
-          "id" : "1CBDC15C-7E1A-448B-9AA6-0B9533137DBC",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "8A01C044-CDC1-4F93-A437-A9E0EF1285BC",
-          "amount" : 67.5
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "C1698D0B-CEAA-43C0-B4FB-CBEF3600F546",
-      "input" : [
-        {
-          "id" : "CD211262-6DF0-41AE-A576-B500296E3D83",
-          "amount" : 20
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 20
-        }
-      ],
-      "output" : [
-        {
-          "id" : "BD3CC077-9669-4419-A546-2AE1A54FD5FE",
-          "amount" : 20
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "48F028BD-515A-468F-8084-AA1424B87D6B",
-      "input" : [
-        {
-          "id" : "1CBDC15C-7E1A-448B-9AA6-0B9533137DBC",
-          "amount" : 30
-        },
-        {
-          "id" : "BA9B8E8B-1204-4E24-81DB-AA111691FACC",
-          "amount" : 60
-        }
-      ],
-      "output" : [
-        {
-          "id" : "CD211262-6DF0-41AE-A576-B500296E3D83",
-          "amount" : 60
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "A3E68AA1-ADF3-4E2C-A912-1650B9742E77",
-      "input" : [
-        {
-          "id" : "B6F04E7B-2E18-4DEB-AC00-1886859FCD28",
-          "amount" : 20
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 20
-        }
-      ],
-      "output" : [
-        {
-          "id" : "A66F7290-D13A-4DA6-9E6F-CD3A15302B33",
-          "amount" : 20
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "35CA7C85-C8D4-4C21-95A7-B2E65865B836",
-      "input" : [
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 30
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "BA9B8E8B-1204-4E24-81DB-AA111691FACC",
-          "amount" : 30
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "F955ECE8-D728-44EF-9CB5-CD9B108F7D9A",
-      "input" : [
-        {
-          "id" : "3807596F-501C-4833-A137-2CBAAE3CE0B0",
-          "amount" : 12
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 12
-        }
-      ],
-      "output" : [
-        {
-          "id" : "B932B125-D3C4-424C-BCC2-E129186E2688",
-          "amount" : 12
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "C32AF7AA-30CB-412A-954E-CA471CCA020E",
-      "input" : [
-        {
-          "id" : "1CBDC15C-7E1A-448B-9AA6-0B9533137DBC",
-          "amount" : 10
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 10
-        }
-      ],
-      "output" : [
-        {
-          "id" : "1F669A00-DC36-45F5-A5EA-9FF1D64224C0",
-          "amount" : 10
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "800658AB-8B94-4765-A649-6C9D472896EC",
-      "input" : [
-        {
-          "id" : "22721D78-C41B-4C98-B42E-3B2839088F41",
-          "amount" : 15
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "2502DAC5-EFF0-43F5-B47D-E2A56B4AF933",
-          "amount" : 15
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "B71AA3C7-BBBB-4004-8D12-066A4CAE03C4",
-      "input" : [
-        {
-          "id" : "1F669A00-DC36-45F5-A5EA-9FF1D64224C0",
-          "amount" : 10
-        }
-      ],
-      "output" : [
-        {
-          "id" : "1CBDC15C-7E1A-448B-9AA6-0B9533137DBC",
-          "amount" : 10
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 10
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "4FB16F9C-5510-445B-90DD-D26220F8B025",
-      "input" : [
-        {
-          "id" : "BA9B8E8B-1204-4E24-81DB-AA111691FACC",
-          "amount" : 60
-        }
-      ],
-      "output" : [
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 60
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 60
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "E8751B98-3B95-4635-8F4E-4A610D7D1C14",
-      "input" : [
-        {
-          "id" : "B932B125-D3C4-424C-BCC2-E129186E2688",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "3807596F-501C-4833-A137-2CBAAE3CE0B0",
-          "amount" : 30
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 30
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "676117F5-3455-4131-86DD-83FD5E9F4B40",
-      "input" : [
-        {
-          "id" : "A66F7290-D13A-4DA6-9E6F-CD3A15302B33",
-          "amount" : 20
-        }
-      ],
-      "output" : [
-        {
-          "id" : "B6F04E7B-2E18-4DEB-AC00-1886859FCD28",
-          "amount" : 20
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 20
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "8528E19E-1FEF-4F59-95E2-4502EB9CFA3C",
-      "input" : [
-        {
-          "id" : "BD3CC077-9669-4419-A546-2AE1A54FD5FE",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "CD211262-6DF0-41AE-A576-B500296E3D83",
-          "amount" : 30
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 30
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "B0E15B78-7383-42F2-80A5-BC5C6FB9DECB",
-      "input" : [
-        {
-          "id" : "2502DAC5-EFF0-43F5-B47D-E2A56B4AF933",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "22721D78-C41B-4C98-B42E-3B2839088F41",
-          "amount" : 30
-        },
-        {
-          "id" : "4584A4F5-33E8-40D4-AE4B-BEF4456A78F4",
-          "amount" : 30
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "C0A58D1C-490C-42F8-9A59-944B5C4C45FB",
-      "input" : [
-        {
-          "id" : "0C0DEC64-6185-4C65-9DBE-CC42C3A374AF",
-          "amount" : 240
-        },
-        {
-          "id" : "22079534-6117-420A-B8F5-0CEF52063260",
-          "amount" : 60
-        }
-      ],
-      "output" : [
-        {
-          "id" : "3CB5C280-ABC4-4562-ABC7-BFD1280D3A83",
-          "amount" : 360
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 60
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "330DF026-52F3-4CEE-802F-9E689768E77A",
-      "input" : [
-        {
-          "id" : "0C0DEC64-6185-4C65-9DBE-CC42C3A374AF",
-          "amount" : 90
-        },
-        {
-          "id" : "76B47E5E-B846-4450-BB46-CDB48E5DC1FC",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "3CB5C280-ABC4-4562-ABC7-BFD1280D3A83",
-          "amount" : 150
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 30
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "6EBEBCA7-5DA3-4693-B4EB-34A57B240301",
-      "input" : [
-        {
-          "id" : "2487162C-ADDB-4404-B65B-B73CBBF63845",
-          "amount" : 70
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 100
-        }
-      ],
-      "output" : [
-        {
-          "id" : "0C0DEC64-6185-4C65-9DBE-CC42C3A374AF",
-          "amount" : 80
-        },
-        {
-          "id" : "6686B3A9-C47E-4FD3-927A-AD3261798EF2",
-          "amount" : 20
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "504B60CC-0346-43FB-AD72-B29AE290C492",
-      "input" : [
-        {
-          "id" : "E16DF4A3-B526-44C9-9EE6-E7457C112D97",
-          "amount" : 50
-        },
-        {
-          "id" : "FC9B112A-90F1-42B7-A0E2-C9663607E52F",
-          "amount" : 80
-        }
-      ],
-      "output" : [
-        {
-          "id" : "ACFD6ECA-4A84-4589-897F-1FDFC1BDE6CE",
-          "amount" : 50
-        },
-        {
-          "id" : "FC9B112A-90F1-42B7-A0E2-C9663607E52F",
-          "amount" : 20
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "BEE243FF-811A-4C7A-AEBF-3D4A69D7F105",
-      "input" : [
-        {
-          "id" : "42F3A792-919A-46AC-9E47-DAA8C05CDC20",
-          "amount" : 50
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 50
-        }
-      ],
-      "output" : [
-        {
-          "id" : "FC9B112A-90F1-42B7-A0E2-C9663607E52F",
-          "amount" : 100
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "2AB816E2-B8F3-4ECD-AE11-1B7A0C3D7146",
-      "input" : [
-        {
-          "id" : "3807596F-501C-4833-A137-2CBAAE3CE0B0",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "1CBDC15C-7E1A-448B-9AA6-0B9533137DBC",
-          "amount" : 40
-        },
-        {
-          "id" : "1A2CA264-E458-4505-A08B-24F7BEE781FE",
-          "amount" : 20
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "EB57C1D9-7A6F-4A80-86E7-2B9682A556BB",
-      "input" : [
-        {
-          "id" : "3807596F-501C-4833-A137-2CBAAE3CE0B0",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 20
-        },
-        {
-          "id" : "1CBDC15C-7E1A-448B-9AA6-0B9533137DBC",
-          "amount" : 10
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "F879A3A6-17AC-4AA9-AA4B-CBFF52ED4C2F",
-      "input" : [
-        {
-          "id" : "1A2CA264-E458-4505-A08B-24F7BEE781FE",
-          "amount" : 60
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 20
-        }
-      ],
-      "output" : [
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 20
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "81295813-CB90-435F-831B-4DD9799316AC",
-      "input" : [
-        {
-          "id" : "2853EEC9-EC81-4108-A491-0A83CF542C52",
-          "amount" : 30
-        },
-        {
-          "id" : "CD211262-6DF0-41AE-A576-B500296E3D83",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 60
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "1B1BCBFB-BE36-4756-8188-2AEB43A5FD55",
-      "input" : [
-        {
-          "id" : "3807596F-501C-4833-A137-2CBAAE3CE0B0",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 20
-        },
-        {
-          "id" : "1CBDC15C-7E1A-448B-9AA6-0B9533137DBC",
-          "amount" : 20
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "6F1A7E71-1B61-4FA8-82CA-6DA729699960",
-      "input" : [
-        {
-          "id" : "1A2CA264-E458-4505-A08B-24F7BEE781FE",
-          "amount" : 40
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 40
-        }
-      ],
-      "output" : [
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 20
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "5F9219FC-7067-465E-BB96-A3018FFA3456",
-      "input" : [
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 30
-        },
-        {
-          "id" : "CD211262-6DF0-41AE-A576-B500296E3D83",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "7A3704D4-CBE0-400A-87A4-A6C4D200A4B9",
-          "amount" : 60
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "F482953F-9B4A-4F6E-9B07-3E6654E51F15",
-      "input" : [
-        {
-          "id" : "1CBDC15C-7E1A-448B-9AA6-0B9533137DBC",
-          "amount" : 40
-        }
-      ],
-      "output" : [
-        {
-          "id" : "22079534-6117-420A-B8F5-0CEF52063260",
-          "amount" : 120
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "71BA6E00-6954-4295-9995-C9DB6ACB36AF",
-      "input" : [
-        {
-          "id" : "CD211262-6DF0-41AE-A576-B500296E3D83",
-          "amount" : 22.5
-        },
-        {
-          "id" : "DC7B5C19-E5E0-4D26-A21B-0932EC0585B5",
-          "amount" : 15
-        }
-      ],
-      "output" : [
-        {
-          "id" : "B6F04E7B-2E18-4DEB-AC00-1886859FCD28",
-          "amount" : 18.800000000000001
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "4B7B0BD4-129F-45E4-AEAB-AA832CDC50E2",
-      "input" : [
-        {
-          "id" : "1CBDC15C-7E1A-448B-9AA6-0B9533137DBC",
-          "amount" : 37.5
-        },
-        {
-          "id" : "DC7B5C19-E5E0-4D26-A21B-0932EC0585B5",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "B6F04E7B-2E18-4DEB-AC00-1886859FCD28",
-          "amount" : 30
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : false
-    },
-    {
-      "id" : "6FE66097-5578-43F6-B832-DA8F9532C203",
-      "input" : [
-        {
-          "id" : "3807596F-501C-4833-A137-2CBAAE3CE0B0",
-          "amount" : 60
-        }
-      ],
-      "output" : [
-        {
-          "id" : "CD211262-6DF0-41AE-A576-B500296E3D83",
-          "amount" : 40
-        },
-        {
-          "id" : "1A2CA264-E458-4505-A08B-24F7BEE781FE",
-          "amount" : 30
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    },
-    {
-      "id" : "3932CE6F-46D7-4C97-8A0F-A0C2A54A0D7B",
-      "input" : [
-        {
-          "id" : "1CBDC15C-7E1A-448B-9AA6-0B9533137DBC",
-          "amount" : 30
-        }
-      ],
-      "output" : [
-        {
-          "id" : "CD211262-6DF0-41AE-A576-B500296E3D83",
-          "amount" : 20
-        }
-      ],
-      "machine" : "EA60D2C8-9E18-446F-9DE3-346E83994C91",
-      "isDefault" : true
-    },
-    {
-      "id" : "2DF5CB42-79C2-4675-8AFB-0AD5AB947677",
-      "input" : [
-        {
-          "id" : "19035B88-4D33-4CB6-950B-93FF92569041",
-          "amount" : 90
-        },
-        {
-          "id" : "CA8F0E76-639D-4DB8-B1B3-DAA96CFA7635",
-          "amount" : 45
-        }
-      ],
-      "output" : [
-        {
-          "id" : "22721D78-C41B-4C98-B42E-3B2839088F41",
-          "amount" : 60
-        }
-      ],
-      "machine" : "AEA3CFA5-7579-4F2B-B5AB-E49F376DD443",
-      "isDefault" : true
-    }
-  ]
-}
+[
+  {
+    "id" : "D00908AB-229B-48B6-9104-26C011EAB86D",
+    "input" : [
+      {
+        "id" : "6EE5AE7A-C783-4572-8BF8-DCE98E3F3EC9",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "0BF3587D-1830-4DF5-854A-A1103A9D8E92",
+        "amount" : 30
+      }
+    ],
+    "machine" : "0CDDCB29-BCEB-4436-A53E-10F5B881ABCA",
+    "isDefault" : true
+  },
+  {
+    "id" : "BF7B6E9F-A3C6-4C1E-90F6-DED7B33CA912",
+    "input" : [
+      {
+        "id" : "EF11F2C2-D17B-4CCD-A708-93FF73495F72",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "439B0340-FE89-4337-A77C-764ABC3FB4B9",
+        "amount" : 30
+      }
+    ],
+    "machine" : "0CDDCB29-BCEB-4436-A53E-10F5B881ABCA",
+    "isDefault" : true
+  },
+  {
+    "id" : "040DACF8-E83A-4F58-928F-17883A8B6B56",
+    "input" : [
+      {
+        "id" : "10E4750D-0444-4814-BB17-A6272391C53C",
+        "amount" : 45
+      }
+    ],
+    "output" : [
+      {
+        "id" : "A2C4D4A4-920B-48F4-9032-D679B3D075B1",
+        "amount" : 15
+      }
+    ],
+    "machine" : "0CDDCB29-BCEB-4436-A53E-10F5B881ABCA",
+    "isDefault" : true
+  },
+  {
+    "id" : "26A8D746-2C86-4FE5-87A8-67C8E3980252",
+    "input" : [
+      {
+        "id" : "92198807-9DF6-4427-925D-FF36080CC550",
+        "amount" : 144
+      }
+    ],
+    "output" : [
+      {
+        "id" : "8F36E23F-1F4C-47F0-9E0A-8B1816E0CD9D",
+        "amount" : 36
+      }
+    ],
+    "machine" : "0CDDCB29-BCEB-4436-A53E-10F5B881ABCA",
+    "isDefault" : false
+  },
+  {
+    "id" : "E9ED5DE4-62DA-4961-8EFC-78B6DC1B353A",
+    "input" : [
+      {
+        "id" : "6EE5AE7A-C783-4572-8BF8-DCE98E3F3EC9",
+        "amount" : 45
+      },
+      {
+        "id" : "24290322-4E6F-4594-9AD3-D4F2A76CCB94",
+        "amount" : 45
+      }
+    ],
+    "output" : [
+      {
+        "id" : "66195D1B-BE1B-4D74-B8E9-FB957D65549C",
+        "amount" : 45
+      }
+    ],
+    "machine" : "111927EE-A080-4495-9D68-C9D0716932B7",
+    "isDefault" : true
+  },
+  {
+    "id" : "F46FF0B8-46FA-445B-BF4D-E8F1BF2A2BDE",
+    "input" : [
+      {
+        "id" : "6EE5AE7A-C783-4572-8BF8-DCE98E3F3EC9",
+        "amount" : 20
+      },
+      {
+        "id" : "EF11F2C2-D17B-4CCD-A708-93FF73495F72",
+        "amount" : 20
+      }
+    ],
+    "output" : [
+      {
+        "id" : "0BF3587D-1830-4DF5-854A-A1103A9D8E92",
+        "amount" : 50
+      }
+    ],
+    "machine" : "111927EE-A080-4495-9D68-C9D0716932B7",
+    "isDefault" : false
+  },
+  {
+    "id" : "4369F9FE-A93A-407E-81EC-68C04EC27D49",
+    "input" : [
+      {
+        "id" : "EF11F2C2-D17B-4CCD-A708-93FF73495F72",
+        "amount" : 50
+      },
+      {
+        "id" : "6EE5AE7A-C783-4572-8BF8-DCE98E3F3EC9",
+        "amount" : 25
+      }
+    ],
+    "output" : [
+      {
+        "id" : "439B0340-FE89-4337-A77C-764ABC3FB4B9",
+        "amount" : 100
+      }
+    ],
+    "machine" : "111927EE-A080-4495-9D68-C9D0716932B7",
+    "isDefault" : false
+  },
+  {
+    "id" : "F0A3EEE5-C39F-4D11-9E77-AA36040F2DD6",
+    "input" : [
+      {
+        "id" : "0BF3587D-1830-4DF5-854A-A1103A9D8E92",
+        "amount" : 40
+      },
+      {
+        "id" : "24290322-4E6F-4594-9AD3-D4F2A76CCB94",
+        "amount" : 40
+      }
+    ],
+    "output" : [
+      {
+        "id" : "66195D1B-BE1B-4D74-B8E9-FB957D65549C",
+        "amount" : 60
+      }
+    ],
+    "machine" : "111927EE-A080-4495-9D68-C9D0716932B7",
+    "isDefault" : false
+  },
+  {
+    "id" : "C9B46317-FC10-43A4-8AE6-135DD6A20927",
+    "input" : [
+      {
+        "id" : "6EE5AE7A-C783-4572-8BF8-DCE98E3F3EC9",
+        "amount" : 22.5
+      },
+      {
+        "id" : "BB885860-3B97-4A96-9410-35998E5284A6",
+        "amount" : 11.25
+      }
+    ],
+    "output" : [
+      {
+        "id" : "66195D1B-BE1B-4D74-B8E9-FB957D65549C",
+        "amount" : 37.5
+      }
+    ],
+    "machine" : "111927EE-A080-4495-9D68-C9D0716932B7",
+    "isDefault" : false
+  },
+  {
+    "id" : "A2EBB5AB-3D93-497F-8F83-ABDDCB252E50",
+    "input" : [
+      {
+        "id" : "6EE5AE7A-C783-4572-8BF8-DCE98E3F3EC9",
+        "amount" : 75
+      },
+      {
+        "id" : "C7812F2A-519C-4706-96E0-1F0D36057029",
+        "amount" : 75
+      }
+    ],
+    "output" : [
+      {
+        "id" : "66195D1B-BE1B-4D74-B8E9-FB957D65549C",
+        "amount" : 100
+      }
+    ],
+    "machine" : "111927EE-A080-4495-9D68-C9D0716932B7",
+    "isDefault" : false
+  },
+  {
+    "id" : "739ED801-111F-4E15-A52F-FA8BCAB7D484",
+    "input" : [
+      {
+        "id" : "92198807-9DF6-4427-925D-FF36080CC550",
+        "amount" : 240
+      },
+      {
+        "id" : "29A0ED39-CF3D-4BA2-A2A1-888066D51812",
+        "amount" : 140
+      }
+    ],
+    "output" : [
+      {
+        "id" : "8F36E23F-1F4C-47F0-9E0A-8B1816E0CD9D",
+        "amount" : 80
+      }
+    ],
+    "machine" : "111927EE-A080-4495-9D68-C9D0716932B7",
+    "isDefault" : true
+  },
+  {
+    "id" : "D88C67D8-22BD-452A-A493-AA40DD789866",
+    "input" : [
+      {
+        "id" : "0BF3587D-1830-4DF5-854A-A1103A9D8E92",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "90E3516D-9E69-4350-A7A4-1B5379F8E8E8",
+        "amount" : 20
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "561826BA-3A64-4D51-A552-5AECC81BB949",
+    "input" : [
+      {
+        "id" : "0BF3587D-1830-4DF5-854A-A1103A9D8E92",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "FAC89C80-2C2D-44BA-A7E0-AAA9B2EE4142",
+        "amount" : 15
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "67480E8C-2E2B-49C4-ABC4-5A89521A8867",
+    "input" : [
+      {
+        "id" : "66195D1B-BE1B-4D74-B8E9-FB957D65549C",
+        "amount" : 12
+      }
+    ],
+    "output" : [
+      {
+        "id" : "FAC89C80-2C2D-44BA-A7E0-AAA9B2EE4142",
+        "amount" : 48
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : false
+  },
+  {
+    "id" : "C5C4B86C-E396-4B44-B5CB-CE7070F7CF42",
+    "input" : [
+      {
+        "id" : "FAC89C80-2C2D-44BA-A7E0-AAA9B2EE4142",
+        "amount" : 10
+      }
+    ],
+    "output" : [
+      {
+        "id" : "89CB0C34-A799-40EE-8AFB-54882DB5683E",
+        "amount" : 40
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "D1F01BB3-7371-4BFE-AEE1-A26FDE609BA3",
+    "input" : [
+      {
+        "id" : "0BF3587D-1830-4DF5-854A-A1103A9D8E92",
+        "amount" : 12.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "89CB0C34-A799-40EE-8AFB-54882DB5683E",
+        "amount" : 50
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : false
+  },
+  {
+    "id" : "0E578A61-C613-4CBC-9774-3B5075E547FC",
+    "input" : [
+      {
+        "id" : "48A98ABC-AEEB-4684-9FBE-8AC2AA5925AF",
+        "amount" : 5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "89CB0C34-A799-40EE-8AFB-54882DB5683E",
+        "amount" : 260
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : false
+  },
+  {
+    "id" : "B52314D0-E9CF-40DF-B644-1DB8D9996470",
+    "input" : [
+      {
+        "id" : "439B0340-FE89-4337-A77C-764ABC3FB4B9",
+        "amount" : 20
+      }
+    ],
+    "output" : [
+      {
+        "id" : "0AF0439B-61CE-49AB-B980-B740856B1811",
+        "amount" : 10
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "19591FB1-AC66-4B56-973A-6ECE4DE45595",
+    "input" : [
+      {
+        "id" : "66195D1B-BE1B-4D74-B8E9-FB957D65549C",
+        "amount" : 60
+      }
+    ],
+    "output" : [
+      {
+        "id" : "48A98ABC-AEEB-4684-9FBE-8AC2AA5925AF",
+        "amount" : 15
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "CBB2C8FC-1CBA-446C-A40A-678649F1ABF9",
+    "input" : [
+      {
+        "id" : "66195D1B-BE1B-4D74-B8E9-FB957D65549C",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 20
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "FF9304C1-145C-4F2B-9415-455724FF5209",
+    "input" : [
+      {
+        "id" : "439B0340-FE89-4337-A77C-764ABC3FB4B9",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 30
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "3ADBA44A-3DCC-4170-A6E6-9C4796FC8D88",
+    "input" : [
+      {
+        "id" : "0BF3587D-1830-4DF5-854A-A1103A9D8E92",
+        "amount" : 12.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 22.5
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : false
+  },
+  {
+    "id" : "E1225E43-62EF-48B4-AD1E-AD233B7CA772",
+    "input" : [
+      {
+        "id" : "A2C4D4A4-920B-48F4-9032-D679B3D075B1",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 120
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : false
+  },
+  {
+    "id" : "497B5646-2732-43AA-934A-94097F1705B9",
+    "input" : [
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 60
+      }
+    ],
+    "output" : [
+      {
+        "id" : "6E4563C2-EA1D-4DB1-AB5D-AEF136B18BFC",
+        "amount" : 30
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "5C044546-713E-4A0F-8AD4-68D257F17296",
+    "input" : [
+      {
+        "id" : "A2C4D4A4-920B-48F4-9032-D679B3D075B1",
+        "amount" : 12
+      }
+    ],
+    "output" : [
+      {
+        "id" : "9672BD54-CF5D-40E4-8AA4-6F619894F4EA",
+        "amount" : 60
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "CDCFB61F-7451-49D9-A424-A6D4BD96F1DC",
+    "input" : [
+      {
+        "id" : "61CC9F4F-D23A-4E73-A811-06E236833927",
+        "amount" : 45
+      }
+    ],
+    "output" : [
+      {
+        "id" : "2EFC3AF6-8F20-4FAA-82FB-043BCFDA5104",
+        "amount" : 15
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "91FDA2E2-12EA-4C1A-8029-430185E807D3",
+    "input" : [
+      {
+        "id" : "76FB6654-F83E-4C97-A925-41DD18DEE8BE",
+        "amount" : 37.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "DE31EAE8-7D6C-414C-A01C-4FBBA9F05FDC",
+        "amount" : 22.5
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "1CBDF156-A42B-42D8-AB2D-AC609CD532C9",
+    "input" : [
+      {
+        "id" : "76FB6654-F83E-4C97-A925-41DD18DEE8BE",
+        "amount" : 22.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "29A0ED39-CF3D-4BA2-A2A1-888066D51812",
+        "amount" : 37.5
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "B7AF92EB-F32B-411D-867D-7F910081AE19",
+    "input" : [
+      {
+        "id" : "F4FEFF43-9FDE-46F7-B0A8-8B0EDE981108",
+        "amount" : 60
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1183E5C2-893A-46F2-8498-4382A319DFD2",
+        "amount" : 300
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "6D501239-96CB-451A-8D9E-D77680389476",
+    "input" : [
+      {
+        "id" : "48B66CCB-9F68-4D3E-B6C2-63BEF6861B78",
+        "amount" : 120
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1183E5C2-893A-46F2-8498-4382A319DFD2",
+        "amount" : 60
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "5934E515-B001-4B9B-BAF7-0247D1F63C59",
+    "input" : [
+      {
+        "id" : "5E286FB8-DA8E-4421-8D5F-22E0BEBB326F",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1183E5C2-893A-46F2-8498-4382A319DFD2",
+        "amount" : 1500
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "3F0E9884-025F-4E25-AA4B-8101C80023F5",
+    "input" : [
+      {
+        "id" : "C3ABA92E-B4FC-438E-B7C7-6144A70A40A1",
+        "amount" : 7.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1183E5C2-893A-46F2-8498-4382A319DFD2",
+        "amount" : 1500
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "D9F6808B-8857-468F-9565-F24F8E3D634D",
+    "input" : [
+      {
+        "id" : "F6843507-14FA-44E7-BE67-22AE5D14A44D",
+        "amount" : 150
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1183E5C2-893A-46F2-8498-4382A319DFD2",
+        "amount" : 150
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "0992BA81-0B80-4CFA-AB96-DBFC268032B4",
+    "input" : [
+      {
+        "id" : "1183E5C2-893A-46F2-8498-4382A319DFD2",
+        "amount" : 120
+      }
+    ],
+    "output" : [
+      {
+        "id" : "EB557280-928A-45C7-A094-9AF8F68D3869",
+        "amount" : 60
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "B0502079-263D-420A-8437-46C261AF4EB0",
+    "input" : [
+      {
+        "id" : "F4FEFF43-9FDE-46F7-B0A8-8B0EDE981108",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "24290322-4E6F-4594-9AD3-D4F2A76CCB94",
+        "amount" : 150
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : false
+  },
+  {
+    "id" : "01B10A4C-95BB-4C13-A1E6-24C957C1A3B1",
+    "input" : [
+      {
+        "id" : "1183E5C2-893A-46F2-8498-4382A319DFD2",
+        "amount" : 37.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "24290322-4E6F-4594-9AD3-D4F2A76CCB94",
+        "amount" : 45
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : false
+  },
+  {
+    "id" : "C74778A5-A0C1-4B2E-9EC8-D1DF757CE795",
+    "input" : [
+      {
+        "id" : "2C4AE473-F05D-477F-B6CD-7135883F20D0",
+        "amount" : 6
+      }
+    ],
+    "output" : [
+      {
+        "id" : "FC1CF0BE-CB64-4108-B85F-D369FA17F44F",
+        "amount" : 6
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "803BF87C-8825-4627-9EEB-958F00D0183F",
+    "input" : [
+      {
+        "id" : "F6B65B81-FE09-459B-B456-847C3D131C71",
+        "amount" : 4
+      }
+    ],
+    "output" : [
+      {
+        "id" : "FC1CF0BE-CB64-4108-B85F-D369FA17F44F",
+        "amount" : 8
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "FEAE94B1-2AA6-4859-A57F-F40E760A0E8A",
+    "input" : [
+      {
+        "id" : "A6B78463-3B89-47EB-9096-96F204EC8090",
+        "amount" : 3
+      }
+    ],
+    "output" : [
+      {
+        "id" : "FC1CF0BE-CB64-4108-B85F-D369FA17F44F",
+        "amount" : 15
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "B3D9A35B-95A6-4023-853D-61A392B5B8C0",
+    "input" : [
+      {
+        "id" : "0DF5C7A3-03EE-4DD4-88FE-F21FFE2E0893",
+        "amount" : 37.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "48B5E429-D395-4B97-B7A8-70401A6EC12C",
+        "amount" : 75
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "5CB5EC5A-B45A-472F-87C9-5F6FE839DB7A",
+    "input" : [
+      {
+        "id" : "FAC89C80-2C2D-44BA-A7E0-AAA9B2EE4142",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "3CAEFDED-EDAF-4640-B01E-9ABFA012A418",
+        "amount" : 15
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "DC2FC965-3510-4798-BAEB-8D0723CDD8CE",
+    "input" : [
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 10
+      }
+    ],
+    "machine" : "00D2C163-EE62-4010-BF0C-6573AD5D5807",
+    "isDefault" : true
+  },
+  {
+    "id" : "3CC70D6D-8FB5-484B-B203-A342D00DC6A5",
+    "input" : [
+      {
+        "id" : "90E3516D-9E69-4350-A7A4-1B5379F8E8E8",
+        "amount" : 30
+      },
+      {
+        "id" : "89CB0C34-A799-40EE-8AFB-54882DB5683E",
+        "amount" : 60
+      }
+    ],
+    "output" : [
+      {
+        "id" : "B817828C-2CD9-406B-90E9-66DCC3135CC3",
+        "amount" : 5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "86A8E299-8657-42F3-A762-D420F3E5B701",
+    "input" : [
+      {
+        "id" : "90E3516D-9E69-4350-A7A4-1B5379F8E8E8",
+        "amount" : 11.25
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 3.75
+      }
+    ],
+    "output" : [
+      {
+        "id" : "B817828C-2CD9-406B-90E9-66DCC3135CC3",
+        "amount" : 3.7999999999999998
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "91043CBD-6188-4823-B1A3-6332B3AF8751",
+    "input" : [
+      {
+        "id" : "90E3516D-9E69-4350-A7A4-1B5379F8E8E8",
+        "amount" : 90
+      },
+      {
+        "id" : "89CB0C34-A799-40EE-8AFB-54882DB5683E",
+        "amount" : 50
+      }
+    ],
+    "output" : [
+      {
+        "id" : "B817828C-2CD9-406B-90E9-66DCC3135CC3",
+        "amount" : 15
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "5686C492-EB55-4228-AE64-8B947D04FC84",
+    "input" : [
+      {
+        "id" : "90E3516D-9E69-4350-A7A4-1B5379F8E8E8",
+        "amount" : 18.75
+      },
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 37.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "B817828C-2CD9-406B-90E9-66DCC3135CC3",
+        "amount" : 5.5999999999999996
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "91896F7D-507A-46B6-88AE-D3091D3C2667",
+    "input" : [
+      {
+        "id" : "B817828C-2CD9-406B-90E9-66DCC3135CC3",
+        "amount" : 3
+      },
+      {
+        "id" : "FAC89C80-2C2D-44BA-A7E0-AAA9B2EE4142",
+        "amount" : 12
+      }
+    ],
+    "output" : [
+      {
+        "id" : "57473AFD-C2E5-4993-BBF8-C0642E7FB63D",
+        "amount" : 2
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "5888A68B-EEC3-4B81-BDDF-F2A4F0510BE0",
+    "input" : [
+      {
+        "id" : "B817828C-2CD9-406B-90E9-66DCC3135CC3",
+        "amount" : 7.5
+      },
+      {
+        "id" : "89CB0C34-A799-40EE-8AFB-54882DB5683E",
+        "amount" : 140
+      }
+    ],
+    "output" : [
+      {
+        "id" : "57473AFD-C2E5-4993-BBF8-C0642E7FB63D",
+        "amount" : 5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "F373D947-0417-4A73-817D-36B0B4B0CB2E",
+    "input" : [
+      {
+        "id" : "B817828C-2CD9-406B-90E9-66DCC3135CC3",
+        "amount" : 2
+      },
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 10
+      }
+    ],
+    "output" : [
+      {
+        "id" : "57473AFD-C2E5-4993-BBF8-C0642E7FB63D",
+        "amount" : 3
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "678B00D7-03D8-4AB7-BCD6-F86AA54905D9",
+    "input" : [
+      {
+        "id" : "0BF3587D-1830-4DF5-854A-A1103A9D8E92",
+        "amount" : 50
+      },
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 10
+      }
+    ],
+    "output" : [
+      {
+        "id" : "90E3516D-9E69-4350-A7A4-1B5379F8E8E8",
+        "amount" : 75
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "9F21B054-9F39-43D2-B81C-CBAD6FB1269F",
+    "input" : [
+      {
+        "id" : "66195D1B-BE1B-4D74-B8E9-FB957D65549C",
+        "amount" : 7.5
+      },
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "90E3516D-9E69-4350-A7A4-1B5379F8E8E8",
+        "amount" : 45
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "82730DF0-5927-43ED-BA82-6831231CDD47",
+    "input" : [
+      {
+        "id" : "48A98ABC-AEEB-4684-9FBE-8AC2AA5925AF",
+        "amount" : 24
+      },
+      {
+        "id" : "2EFC3AF6-8F20-4FAA-82FB-043BCFDA5104",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "2C743525-6C89-468D-AD20-E957A6F76330",
+        "amount" : 6
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "D2803469-DE82-473A-8065-A86088F1A420",
+    "input" : [
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 28
+      },
+      {
+        "id" : "2EFC3AF6-8F20-4FAA-82FB-043BCFDA5104",
+        "amount" : 20
+      }
+    ],
+    "output" : [
+      {
+        "id" : "2C743525-6C89-468D-AD20-E957A6F76330",
+        "amount" : 4
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "0F0F04DF-0BD9-423C-9D87-6C3F7A26CCD6",
+    "input" : [
+      {
+        "id" : "8F36E23F-1F4C-47F0-9E0A-8B1816E0CD9D",
+        "amount" : 60
+      },
+      {
+        "id" : "439B0340-FE89-4337-A77C-764ABC3FB4B9",
+        "amount" : 22.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "61D4E621-71E4-4E9C-BF35-9B0164B914B2",
+        "amount" : 30
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "ECF34B45-C558-464C-9C88-86F5F740468E",
+    "input" : [
+      {
+        "id" : "FAC89C80-2C2D-44BA-A7E0-AAA9B2EE4142",
+        "amount" : 20
+      },
+      {
+        "id" : "89CB0C34-A799-40EE-8AFB-54882DB5683E",
+        "amount" : 100
+      }
+    ],
+    "output" : [
+      {
+        "id" : "A8C2377F-92C3-4CC0-91CE-BFD3E14CBD57",
+        "amount" : 4
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "106C6F39-5FA0-4D86-A6E9-64E6432E1B9A",
+    "input" : [
+      {
+        "id" : "0AF0439B-61CE-49AB-B980-B740856B1811",
+        "amount" : 22.5
+      },
+      {
+        "id" : "89CB0C34-A799-40EE-8AFB-54882DB5683E",
+        "amount" : 52
+      }
+    ],
+    "output" : [
+      {
+        "id" : "A8C2377F-92C3-4CC0-91CE-BFD3E14CBD57",
+        "amount" : 11.199999999999999
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "8DD2C26A-00D4-489D-B75A-E6B3846A2F36",
+    "input" : [
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 10
+      },
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "A8C2377F-92C3-4CC0-91CE-BFD3E14CBD57",
+        "amount" : 5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "F8898A55-A8BB-4753-B267-FA0E459AF35F",
+    "input" : [
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 15
+      },
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 40
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1046223C-840F-4A3D-9BD1-925FAA445B33",
+        "amount" : 5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "0305EF05-83C4-41AF-BA7F-1F41462AD1E1",
+    "input" : [
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 16
+      },
+      {
+        "id" : "9672BD54-CF5D-40E4-8AA4-6F619894F4EA",
+        "amount" : 60
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1046223C-840F-4A3D-9BD1-925FAA445B33",
+        "amount" : 8
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "48A0B175-BE19-4F17-80B0-43CBC59686C9",
+    "input" : [
+      {
+        "id" : "A8C2377F-92C3-4CC0-91CE-BFD3E14CBD57",
+        "amount" : 10
+      },
+      {
+        "id" : "1046223C-840F-4A3D-9BD1-925FAA445B33",
+        "amount" : 10
+      }
+    ],
+    "output" : [
+      {
+        "id" : "92E0558C-7517-47C3-B2C3-42B4D2F115A8",
+        "amount" : 5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "9939BC30-2CA8-4113-8001-911D54C625B0",
+    "input" : [
+      {
+        "id" : "61D4E621-71E4-4E9C-BF35-9B0164B914B2",
+        "amount" : 40
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 70
+      }
+    ],
+    "output" : [
+      {
+        "id" : "7E06CA84-97A4-49F5-A8BF-5E156F8B8C74",
+        "amount" : 10
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "396EDE49-282D-4E6F-8E68-83CDE537B337",
+    "input" : [
+      {
+        "id" : "61D4E621-71E4-4E9C-BF35-9B0164B914B2",
+        "amount" : 37.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "0AF0439B-61CE-49AB-B980-B740856B1811",
+        "amount" : 56.25
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "E756223D-8975-46BA-8195-C1F574B98A30",
+    "input" : [
+      {
+        "id" : "0AF0439B-61CE-49AB-B980-B740856B1811",
+        "amount" : 15
+      },
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "E40FFA4B-FD9D-49E0-A281-924B19D366EA",
+        "amount" : 7.5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "F420EA9C-9486-473D-98EA-C8D160B5F1A4",
+    "input" : [
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 30
+      },
+      {
+        "id" : "C7812F2A-519C-4706-96E0-1F0D36057029",
+        "amount" : 45
+      }
+    ],
+    "output" : [
+      {
+        "id" : "E40FFA4B-FD9D-49E0-A281-924B19D366EA",
+        "amount" : 5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "D3036582-E6E2-4BDC-9AB3-3141A39673D3",
+    "input" : [
+      {
+        "id" : "0AF0439B-61CE-49AB-B980-B740856B1811",
+        "amount" : 27.5
+      },
+      {
+        "id" : "29A0ED39-CF3D-4BA2-A2A1-888066D51812",
+        "amount" : 27.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "E40FFA4B-FD9D-49E0-A281-924B19D366EA",
+        "amount" : 12.5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "58ABA2B6-7BC0-4799-80B0-DA929971D71A",
+    "input" : [
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 12.5
+      },
+      {
+        "id" : "9672BD54-CF5D-40E4-8AA4-6F619894F4EA",
+        "amount" : 37.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "E40FFA4B-FD9D-49E0-A281-924B19D366EA",
+        "amount" : 8.8000000000000007
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "A72D5315-968B-4510-87CC-26CF99F0131F",
+    "input" : [
+      {
+        "id" : "0AF0439B-61CE-49AB-B980-B740856B1811",
+        "amount" : 25
+      },
+      {
+        "id" : "9672BD54-CF5D-40E4-8AA4-6F619894F4EA",
+        "amount" : 100
+      }
+    ],
+    "output" : [
+      {
+        "id" : "AB70E21D-74DF-4B05-BB72-AEAA1C9243A0",
+        "amount" : 5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "30196803-EBFA-4CDD-92E7-AE93D020FFB3",
+    "input" : [
+      {
+        "id" : "439B0340-FE89-4337-A77C-764ABC3FB4B9",
+        "amount" : 12
+      },
+      {
+        "id" : "A2C4D4A4-920B-48F4-9032-D679B3D075B1",
+        "amount" : 3
+      }
+    ],
+    "output" : [
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 90
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "B3DD2ED8-EA6E-466D-BCC0-38DB9C587AA3",
+    "input" : [
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 45
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "6E4563C2-EA1D-4DB1-AB5D-AEF136B18BFC",
+        "amount" : 100
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "579F9522-1129-415D-9D3C-33DEFDC912D9",
+    "input" : [
+      {
+        "id" : "9672BD54-CF5D-40E4-8AA4-6F619894F4EA",
+        "amount" : 7.5
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "6E4563C2-EA1D-4DB1-AB5D-AEF136B18BFC",
+        "amount" : 27.5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "03748CFD-76A3-43F3-8B8F-82E53A631DA9",
+    "input" : [
+      {
+        "id" : "A2C4D4A4-920B-48F4-9032-D679B3D075B1",
+        "amount" : 7.5
+      },
+      {
+        "id" : "439B0340-FE89-4337-A77C-764ABC3FB4B9",
+        "amount" : 37.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "9672BD54-CF5D-40E4-8AA4-6F619894F4EA",
+        "amount" : 90
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "9856CA1A-17D4-4E0B-AE9B-A4088EEC09D8",
+    "input" : [
+      {
+        "id" : "61CC9F4F-D23A-4E73-A811-06E236833927",
+        "amount" : 50
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 10
+      }
+    ],
+    "output" : [
+      {
+        "id" : "2EFC3AF6-8F20-4FAA-82FB-043BCFDA5104",
+        "amount" : 45
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "E84FD627-5D3E-4CDF-9194-276725949C84",
+    "input" : [
+      {
+        "id" : "61CC9F4F-D23A-4E73-A811-06E236833927",
+        "amount" : 30
+      },
+      {
+        "id" : "29A0ED39-CF3D-4BA2-A2A1-888066D51812",
+        "amount" : 7.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "2EFC3AF6-8F20-4FAA-82FB-043BCFDA5104",
+        "amount" : 25
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "A3F9BB13-D992-4265-B167-AD7841E7B91A",
+    "input" : [
+      {
+        "id" : "24290322-4E6F-4594-9AD3-D4F2A76CCB94",
+        "amount" : 25
+      },
+      {
+        "id" : "F97943F0-7B3B-4B9E-AF50-2E76EDD4E7CD",
+        "amount" : 25
+      }
+    ],
+    "output" : [
+      {
+        "id" : "BB885860-3B97-4A96-9410-35998E5284A6",
+        "amount" : 25
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "3C65CB87-72A7-443F-96CE-B528DBC0A351",
+    "input" : [
+      {
+        "id" : "76FB6654-F83E-4C97-A925-41DD18DEE8BE",
+        "amount" : 11.25
+      },
+      {
+        "id" : "61CC9F4F-D23A-4E73-A811-06E236833927",
+        "amount" : 18.75
+      }
+    ],
+    "output" : [
+      {
+        "id" : "29A0ED39-CF3D-4BA2-A2A1-888066D51812",
+        "amount" : 26.199999999999999
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "70744B15-2883-41B5-8579-3AFFE7CF7816",
+    "input" : [
+      {
+        "id" : "F6843507-14FA-44E7-BE67-22AE5D14A44D",
+        "amount" : 15
+      },
+      {
+        "id" : "1183E5C2-893A-46F2-8498-4382A319DFD2",
+        "amount" : 75
+      }
+    ],
+    "output" : [
+      {
+        "id" : "43F1AA04-2F55-4AD5-926B-C92201A261B4",
+        "amount" : 15
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "F9DB9DBF-B494-4EED-B2FF-ADF6EFE42223",
+    "input" : [
+      {
+        "id" : "E40FFA4B-FD9D-49E0-A281-924B19D366EA",
+        "amount" : 7.5
+      },
+      {
+        "id" : "6B967B28-B581-4574-8E1E-D00DA4011D50",
+        "amount" : 2.8130000000000002
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1C17DCC5-00CD-480E-A0AC-8BD236B24109",
+        "amount" : 2.7999999999999998
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "E52BD088-8C50-4011-81F2-67183CD03243",
+    "input" : [
+      {
+        "id" : "1046223C-840F-4A3D-9BD1-925FAA445B33",
+        "amount" : 6
+      },
+      {
+        "id" : "AB70E21D-74DF-4B05-BB72-AEAA1C9243A0",
+        "amount" : 4
+      }
+    ],
+    "output" : [
+      {
+        "id" : "BF15426F-FD21-4298-A93B-7D224C5E4638",
+        "amount" : 4
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "14C9D6C6-09C7-46DC-8A7D-5A76FEF1E80B",
+    "input" : [
+      {
+        "id" : "1046223C-840F-4A3D-9BD1-925FAA445B33",
+        "amount" : 10
+      },
+      {
+        "id" : "42F756B5-C2DA-4A58-AE43-CECA430DAA1E",
+        "amount" : 5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "BF15426F-FD21-4298-A93B-7D224C5E4638",
+        "amount" : 10
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "E0955BB8-1BB5-47D7-82EA-7E772173273E",
+    "input" : [
+      {
+        "id" : "9D41E3D2-F3F1-4C59-9B9B-9CD209174015",
+        "amount" : 40
+      },
+      {
+        "id" : "2EFC3AF6-8F20-4FAA-82FB-043BCFDA5104",
+        "amount" : 9
+      }
+    ],
+    "output" : [
+      {
+        "id" : "BD25330F-D9BD-463F-A40E-D13D731B63E1",
+        "amount" : 10
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "F97DAECA-33AE-487A-A764-A4C897CFCA60",
+    "input" : [
+      {
+        "id" : "24290322-4E6F-4594-9AD3-D4F2A76CCB94",
+        "amount" : 7.5
+      },
+      {
+        "id" : "F97943F0-7B3B-4B9E-AF50-2E76EDD4E7CD",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "B532948F-1811-4201-B9EA-1D9C43C9F83D",
+        "amount" : 7.5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "3C63C765-1119-49DA-B535-DB92CD04C33D",
+    "input" : [
+      {
+        "id" : "F97943F0-7B3B-4B9E-AF50-2E76EDD4E7CD",
+        "amount" : 7.5
+      },
+      {
+        "id" : "BB885860-3B97-4A96-9410-35998E5284A6",
+        "amount" : 3.75
+      }
+    ],
+    "output" : [
+      {
+        "id" : "B532948F-1811-4201-B9EA-1D9C43C9F83D",
+        "amount" : 15
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : false
+  },
+  {
+    "id" : "8E2AB708-416D-45EA-9C3E-C9F094F3AE5E",
+    "input" : [
+      {
+        "id" : "B532948F-1811-4201-B9EA-1D9C43C9F83D",
+        "amount" : 15
+      },
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "290CC2F5-B951-4B09-A69D-AE23FBAF12A7",
+        "amount" : 3
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "AEE934C6-7B36-4CFF-854E-5D94C49B5EBC",
+    "input" : [
+      {
+        "id" : "B817828C-2CD9-406B-90E9-66DCC3135CC3",
+        "amount" : 2
+      },
+      {
+        "id" : "A8C2377F-92C3-4CC0-91CE-BFD3E14CBD57",
+        "amount" : 2
+      }
+    ],
+    "output" : [
+      {
+        "id" : "9DB8B7B7-ADC1-47ED-9E4E-0D79D4310145",
+        "amount" : 2
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "8EA1EC56-BB52-4DA7-9B42-A707C07808EC",
+    "input" : [
+      {
+        "id" : "57473AFD-C2E5-4993-BBF8-C0642E7FB63D",
+        "amount" : 2.5
+      },
+      {
+        "id" : "48A98ABC-AEEB-4684-9FBE-8AC2AA5925AF",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "28F74616-3DE6-4769-859A-96AE99AD454D",
+        "amount" : 5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "36154DEA-3E5C-4E24-A198-7DDBBE260BD3",
+    "input" : [
+      {
+        "id" : "1046223C-840F-4A3D-9BD1-925FAA445B33",
+        "amount" : 2.5
+      },
+      {
+        "id" : "6E4563C2-EA1D-4DB1-AB5D-AEF136B18BFC",
+        "amount" : 50
+      }
+    ],
+    "output" : [
+      {
+        "id" : "C1DDB51A-9C43-4362-9F46-FB63C226278B",
+        "amount" : 2.5
+      }
+    ],
+    "machine" : "733DEA83-0084-49CB-8EC5-0150AAC08313",
+    "isDefault" : true
+  },
+  {
+    "id" : "8D909995-9FAD-4228-AF4C-55D33F448F68",
+    "input" : [
+      {
+        "id" : "57473AFD-C2E5-4993-BBF8-C0642E7FB63D",
+        "amount" : 10
+      },
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 30
+      },
+      {
+        "id" : "2C743525-6C89-468D-AD20-E957A6F76330",
+        "amount" : 10
+      },
+      {
+        "id" : "89CB0C34-A799-40EE-8AFB-54882DB5683E",
+        "amount" : 200
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1EB05BC9-2DCB-4E59-B2F7-B24503393156",
+        "amount" : 2
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "6044545D-0EF3-4759-9406-19071C479EC7",
+    "input" : [
+      {
+        "id" : "57473AFD-C2E5-4993-BBF8-C0642E7FB63D",
+        "amount" : 18.75
+      },
+      {
+        "id" : "2C743525-6C89-468D-AD20-E957A6F76330",
+        "amount" : 11.25
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 75
+      },
+      {
+        "id" : "89CB0C34-A799-40EE-8AFB-54882DB5683E",
+        "amount" : 390
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1EB05BC9-2DCB-4E59-B2F7-B24503393156",
+        "amount" : 3.7999999999999998
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "2C7CD9C1-CA6E-49DD-A540-2407143E80DB",
+    "input" : [
+      {
+        "id" : "57473AFD-C2E5-4993-BBF8-C0642E7FB63D",
+        "amount" : 7.5
+      },
+      {
+        "id" : "2C743525-6C89-468D-AD20-E957A6F76330",
+        "amount" : 9.375
+      },
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 33.75
+      },
+      {
+        "id" : "2EFC3AF6-8F20-4FAA-82FB-043BCFDA5104",
+        "amount" : 20.625
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1EB05BC9-2DCB-4E59-B2F7-B24503393156",
+        "amount" : 2.7999999999999998
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "1E1501F5-F9AF-4FD3-BE94-9FE2F497F57F",
+    "input" : [
+      {
+        "id" : "7E06CA84-97A4-49F5-A8BF-5E156F8B8C74",
+        "amount" : 7.5
+      },
+      {
+        "id" : "4F6BC67F-D693-42B0-BE41-533C32770476",
+        "amount" : 3.75
+      },
+      {
+        "id" : "92E0558C-7517-47C3-B2C3-42B4D2F115A8",
+        "amount" : 7.5
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 45
+      }
+    ],
+    "output" : [
+      {
+        "id" : "83CE4F18-99D6-48E0-B13C-F68AA9D172A1",
+        "amount" : 1.8999999999999999
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "96C90B41-9151-46CD-A32F-7986773DCC9B",
+    "input" : [
+      {
+        "id" : "92E0558C-7517-47C3-B2C3-42B4D2F115A8",
+        "amount" : 6.5629999999999997
+      },
+      {
+        "id" : "4F6BC67F-D693-42B0-BE41-533C32770476",
+        "amount" : 4.6879999999999997
+      },
+      {
+        "id" : "AB70E21D-74DF-4B05-BB72-AEAA1C9243A0",
+        "amount" : 8.4380000000000006
+      },
+      {
+        "id" : "1046223C-840F-4A3D-9BD1-925FAA445B33",
+        "amount" : 6.5629999999999997
+      }
+    ],
+    "output" : [
+      {
+        "id" : "83CE4F18-99D6-48E0-B13C-F68AA9D172A1",
+        "amount" : 2.7999999999999998
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "EC13CB7D-40A2-4B6C-91FF-AACD4535995A",
+    "input" : [
+      {
+        "id" : "A8C2377F-92C3-4CC0-91CE-BFD3E14CBD57",
+        "amount" : 3.75
+      },
+      {
+        "id" : "1046223C-840F-4A3D-9BD1-925FAA445B33",
+        "amount" : 3.75
+      },
+      {
+        "id" : "6B967B28-B581-4574-8E1E-D00DA4011D50",
+        "amount" : 1.25
+      }
+    ],
+    "output" : [
+      {
+        "id" : "92E0558C-7517-47C3-B2C3-42B4D2F115A8",
+        "amount" : 7.5
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "C4AEB5A5-BBA7-459F-9FFD-55126D854991",
+    "input" : [
+      {
+        "id" : "9672BD54-CF5D-40E4-8AA4-6F619894F4EA",
+        "amount" : 210
+      },
+      {
+        "id" : "6E4563C2-EA1D-4DB1-AB5D-AEF136B18BFC",
+        "amount" : 37.5
+      },
+      {
+        "id" : "E40FFA4B-FD9D-49E0-A281-924B19D366EA",
+        "amount" : 3.75
+      }
+    ],
+    "output" : [
+      {
+        "id" : "42F756B5-C2DA-4A58-AE43-CECA430DAA1E",
+        "amount" : 3.7999999999999998
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "7FC6B309-249D-43C2-B0D9-0E1100B6D534",
+    "input" : [
+      {
+        "id" : "9672BD54-CF5D-40E4-8AA4-6F619894F4EA",
+        "amount" : 90
+      },
+      {
+        "id" : "29A0ED39-CF3D-4BA2-A2A1-888066D51812",
+        "amount" : 37.5
+      },
+      {
+        "id" : "E40FFA4B-FD9D-49E0-A281-924B19D366EA",
+        "amount" : 3
+      }
+    ],
+    "output" : [
+      {
+        "id" : "42F756B5-C2DA-4A58-AE43-CECA430DAA1E",
+        "amount" : 3
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "89D4361D-080B-48F6-A7FA-2628FF209851",
+    "input" : [
+      {
+        "id" : "61D4E621-71E4-4E9C-BF35-9B0164B914B2",
+        "amount" : 15
+      },
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 30
+      },
+      {
+        "id" : "F97943F0-7B3B-4B9E-AF50-2E76EDD4E7CD",
+        "amount" : 37.5
+      },
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1FF240A1-AADC-4E2D-9E19-3FA6D8CA5E77",
+        "amount" : 5.5999999999999996
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "CF8E6094-78DB-4833-ACE6-476477575AD5",
+    "input" : [
+      {
+        "id" : "E40FFA4B-FD9D-49E0-A281-924B19D366EA",
+        "amount" : 25
+      },
+      {
+        "id" : "6E4563C2-EA1D-4DB1-AB5D-AEF136B18BFC",
+        "amount" : 22.5
+      },
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 45
+      },
+      {
+        "id" : "89CB0C34-A799-40EE-8AFB-54882DB5683E",
+        "amount" : 130
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1C17DCC5-00CD-480E-A0AC-8BD236B24109",
+        "amount" : 2.5
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "AE72C7F0-873E-4D9A-B438-C873C64CBA26",
+    "input" : [
+      {
+        "id" : "E40FFA4B-FD9D-49E0-A281-924B19D366EA",
+        "amount" : 26.25
+      },
+      {
+        "id" : "9672BD54-CF5D-40E4-8AA4-6F619894F4EA",
+        "amount" : 105
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 45
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1C17DCC5-00CD-480E-A0AC-8BD236B24109",
+        "amount" : 3.7999999999999998
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "14AF9329-51B0-4283-9F90-C5B3DA90693A",
+    "input" : [
+      {
+        "id" : "DE31EAE8-7D6C-414C-A01C-4FBBA9F05FDC",
+        "amount" : 18
+      },
+      {
+        "id" : "6E4563C2-EA1D-4DB1-AB5D-AEF136B18BFC",
+        "amount" : 14
+      },
+      {
+        "id" : "B817828C-2CD9-406B-90E9-66DCC3135CC3",
+        "amount" : 2.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "6B967B28-B581-4574-8E1E-D00DA4011D50",
+        "amount" : 1
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "54A9C711-EC28-4C1B-AD30-FDDBB41631D0",
+    "input" : [
+      {
+        "id" : "DE31EAE8-7D6C-414C-A01C-4FBBA9F05FDC",
+        "amount" : 18.75
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 13.125
+      },
+      {
+        "id" : "AB70E21D-74DF-4B05-BB72-AEAA1C9243A0",
+        "amount" : 1.875
+      }
+    ],
+    "output" : [
+      {
+        "id" : "6B967B28-B581-4574-8E1E-D00DA4011D50",
+        "amount" : 1.8999999999999999
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "EF9EF6B3-726B-4607-8972-4F97565EACC8",
+    "input" : [
+      {
+        "id" : "7E06CA84-97A4-49F5-A8BF-5E156F8B8C74",
+        "amount" : 10
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 40
+      },
+      {
+        "id" : "6B967B28-B581-4574-8E1E-D00DA4011D50",
+        "amount" : 2.5
+      },
+      {
+        "id" : "1C17DCC5-00CD-480E-A0AC-8BD236B24109",
+        "amount" : 2.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "4F6BC67F-D693-42B0-BE41-533C32770476",
+        "amount" : 2.5
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "91782C09-01FC-4161-ACF4-E8DC7B034333",
+    "input" : [
+      {
+        "id" : "7E06CA84-97A4-49F5-A8BF-5E156F8B8C74",
+        "amount" : 12.5
+      },
+      {
+        "id" : "3B809BB4-247A-42B4-86E6-03DA045DDA17",
+        "amount" : 1.25
+      },
+      {
+        "id" : "DE31EAE8-7D6C-414C-A01C-4FBBA9F05FDC",
+        "amount" : 37.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "4F6BC67F-D693-42B0-BE41-533C32770476",
+        "amount" : 3.7999999999999998
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "93D19294-06B7-40B4-A10D-1208EA85DEE5",
+    "input" : [
+      {
+        "id" : "1C17DCC5-00CD-480E-A0AC-8BD236B24109",
+        "amount" : 3.75
+      },
+      {
+        "id" : "AB70E21D-74DF-4B05-BB72-AEAA1C9243A0",
+        "amount" : 3.75
+      },
+      {
+        "id" : "42F756B5-C2DA-4A58-AE43-CECA430DAA1E",
+        "amount" : 5.625
+      },
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 52.200000000000003
+      }
+    ],
+    "output" : [
+      {
+        "id" : "3B809BB4-247A-42B4-86E6-03DA045DDA17",
+        "amount" : 1.8999999999999999
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "C8890E5A-967A-499C-A90D-F16A1BC2802D",
+    "input" : [
+      {
+        "id" : "BD25330F-D9BD-463F-A40E-D13D731B63E1",
+        "amount" : 10
+      },
+      {
+        "id" : "2C743525-6C89-468D-AD20-E957A6F76330",
+        "amount" : 1.2
+      },
+      {
+        "id" : "BF15426F-FD21-4298-A93B-7D224C5E4638",
+        "amount" : 2
+      }
+    ],
+    "output" : [
+      {
+        "id" : "C44E3642-1E1D-41A3-9ED0-BB2E625C352C",
+        "amount" : 0.40000000000000002
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "1A112F8C-9149-4A5E-8F1A-0BB2F6CCCB50",
+    "input" : [
+      {
+        "id" : "BD25330F-D9BD-463F-A40E-D13D731B63E1",
+        "amount" : 10
+      },
+      {
+        "id" : "BF15426F-FD21-4298-A93B-7D224C5E4638",
+        "amount" : 2
+      },
+      {
+        "id" : "6B967B28-B581-4574-8E1E-D00DA4011D50",
+        "amount" : 0.59999999999999998
+      },
+      {
+        "id" : "93CBEBB4-0CE0-4BE3-93DF-51AA85F64328",
+        "amount" : 1.2
+      }
+    ],
+    "output" : [
+      {
+        "id" : "C44E3642-1E1D-41A3-9ED0-BB2E625C352C",
+        "amount" : 0.59999999999999998
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "C0DF5B92-F782-4F3D-A052-D9674AFB2FB4",
+    "input" : [
+      {
+        "id" : "9D41E3D2-F3F1-4C59-9B9B-9CD209174015",
+        "amount" : 20
+      },
+      {
+        "id" : "F97943F0-7B3B-4B9E-AF50-2E76EDD4E7CD",
+        "amount" : 22.5
+      },
+      {
+        "id" : "29A0ED39-CF3D-4BA2-A2A1-888066D51812",
+        "amount" : 22.5
+      },
+      {
+        "id" : "9672BD54-CF5D-40E4-8AA4-6F619894F4EA",
+        "amount" : 37.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "BD25330F-D9BD-463F-A40E-D13D731B63E1",
+        "amount" : 17.5
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "AEDE5E78-941A-48D3-B605-DC35ACFBBE38",
+    "input" : [
+      {
+        "id" : "24290322-4E6F-4594-9AD3-D4F2A76CCB94",
+        "amount" : 37.5
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 15
+      },
+      {
+        "id" : "43F1AA04-2F55-4AD5-926B-C92201A261B4",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "54117A26-AADF-4D86-8B5C-33D00D7B5C64",
+        "amount" : 7.5
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "75A2CED2-370B-43B2-8A70-578652AC8B10",
+    "input" : [
+      {
+        "id" : "54117A26-AADF-4D86-8B5C-33D00D7B5C64",
+        "amount" : 3.75
+      },
+      {
+        "id" : "9672BD54-CF5D-40E4-8AA4-6F619894F4EA",
+        "amount" : 30
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 7.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "494DC8B0-EFEB-4E61-B589-2403383AA232",
+        "amount" : 3.7999999999999998
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "22C31D7E-92E1-4F43-8699-AC49E1DA2969",
+    "input" : [
+      {
+        "id" : "93CBEBB4-0CE0-4BE3-93DF-51AA85F64328",
+        "amount" : 3
+      },
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 30
+      },
+      {
+        "id" : "B532948F-1811-4201-B9EA-1D9C43C9F83D",
+        "amount" : 30
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "1567D280-8FB6-41C8-866E-88AA6A224466",
+        "amount" : 15
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "7E01577A-A1A9-48C5-BCA8-23FE5337E639",
+    "input" : [
+      {
+        "id" : "B532948F-1811-4201-B9EA-1D9C43C9F83D",
+        "amount" : 12
+      },
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 12
+      },
+      {
+        "id" : "6B967B28-B581-4574-8E1E-D00DA4011D50",
+        "amount" : 1.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "290CC2F5-B951-4B09-A69D-AE23FBAF12A7",
+        "amount" : 6
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "DF38D858-D4B9-47C5-8187-606211AA4726",
+    "input" : [
+      {
+        "id" : "92E0558C-7517-47C3-B2C3-42B4D2F115A8",
+        "amount" : 2
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 15
+      },
+      {
+        "id" : "9DB8B7B7-ADC1-47ED-9E4E-0D79D4310145",
+        "amount" : 2
+      }
+    ],
+    "output" : [
+      {
+        "id" : "F98B996D-89E9-424F-8BB9-C6E2FA670B77",
+        "amount" : 1
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "EFF1EED3-D44A-4D58-994F-8D77453C7B22",
+    "input" : [
+      {
+        "id" : "C1DDB51A-9C43-4362-9F46-FB63C226278B",
+        "amount" : 7.5
+      },
+      {
+        "id" : "E40FFA4B-FD9D-49E0-A281-924B19D366EA",
+        "amount" : 5
+      },
+      {
+        "id" : "1EB05BC9-2DCB-4E59-B2F7-B24503393156",
+        "amount" : 1
+      },
+      {
+        "id" : "1C17DCC5-00CD-480E-A0AC-8BD236B24109",
+        "amount" : 1
+      }
+    ],
+    "output" : [
+      {
+        "id" : "2B004041-DD2D-4E93-AA5F-8E4689729AAE",
+        "amount" : 1
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "E6B25DFB-4D42-400B-B933-B562331B5DC5",
+    "input" : [
+      {
+        "id" : "B817828C-2CD9-406B-90E9-66DCC3135CC3",
+        "amount" : 2.5
+      },
+      {
+        "id" : "A8C2377F-92C3-4CC0-91CE-BFD3E14CBD57",
+        "amount" : 2.5
+      },
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 7.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "9DB8B7B7-ADC1-47ED-9E4E-0D79D4310145",
+        "amount" : 5
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "9F18985D-869D-4743-930E-65BE9149E48F",
+    "input" : [
+      {
+        "id" : "57473AFD-C2E5-4993-BBF8-C0642E7FB63D",
+        "amount" : 3.75
+      },
+      {
+        "id" : "48A98ABC-AEEB-4684-9FBE-8AC2AA5925AF",
+        "amount" : 22.5
+      },
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "28F74616-3DE6-4769-859A-96AE99AD454D",
+        "amount" : 7.5
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "8390817E-F40A-4484-A366-6AC3D26B006E",
+    "input" : [
+      {
+        "id" : "1046223C-840F-4A3D-9BD1-925FAA445B33",
+        "amount" : 3.75
+      },
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 75
+      },
+      {
+        "id" : "42F756B5-C2DA-4A58-AE43-CECA430DAA1E",
+        "amount" : 1.875
+      }
+    ],
+    "output" : [
+      {
+        "id" : "C1DDB51A-9C43-4362-9F46-FB63C226278B",
+        "amount" : 7.5
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "B58187B0-D5C0-4C18-91EA-1011DD3B9678",
+    "input" : [
+      {
+        "id" : "90E3516D-9E69-4350-A7A4-1B5379F8E8E8",
+        "amount" : 22.5
+      },
+      {
+        "id" : "FAC89C80-2C2D-44BA-A7E0-AAA9B2EE4142",
+        "amount" : 7.5
+      },
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 112.5
+      },
+      {
+        "id" : "6E4563C2-EA1D-4DB1-AB5D-AEF136B18BFC",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "93CBEBB4-0CE0-4BE3-93DF-51AA85F64328",
+        "amount" : 7.5
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "3B5017A0-FC0A-4FD3-8851-E3ADFA33D2AE",
+    "input" : [
+      {
+        "id" : "48A98ABC-AEEB-4684-9FBE-8AC2AA5925AF",
+        "amount" : 2
+      },
+      {
+        "id" : "8B14F3DB-BBDD-4A3C-B628-77D6E670E4C5",
+        "amount" : 8
+      },
+      {
+        "id" : "6B967B28-B581-4574-8E1E-D00DA4011D50",
+        "amount" : 0.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "93CBEBB4-0CE0-4BE3-93DF-51AA85F64328",
+        "amount" : 10
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : false
+  },
+  {
+    "id" : "CC373C80-B53D-4923-8B9B-FFECDA8F5BF4",
+    "input" : [
+      {
+        "id" : "6EE5AE7A-C783-4572-8BF8-DCE98E3F3EC9",
+        "amount" : 35
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 20
+      }
+    ],
+    "output" : [
+      {
+        "id" : "0BF3587D-1830-4DF5-854A-A1103A9D8E92",
+        "amount" : 65
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "6107CC41-6A00-4507-8959-2596BA2E40A3",
+    "input" : [
+      {
+        "id" : "EF11F2C2-D17B-4CCD-A708-93FF73495F72",
+        "amount" : 15
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 10
+      }
+    ],
+    "output" : [
+      {
+        "id" : "439B0340-FE89-4337-A77C-764ABC3FB4B9",
+        "amount" : 37.5
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "C0B6528B-9090-4D98-ACA0-37A8F666BCD2",
+    "input" : [
+      {
+        "id" : "10E4750D-0444-4814-BB17-A6272391C53C",
+        "amount" : 24
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 24
+      }
+    ],
+    "output" : [
+      {
+        "id" : "A2C4D4A4-920B-48F4-9032-D679B3D075B1",
+        "amount" : 12
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "9FACDFD8-0EE6-47EE-BFBC-25BFE4F97DC8",
+    "input" : [
+      {
+        "id" : "61CC9F4F-D23A-4E73-A811-06E236833927",
+        "amount" : 120
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 100
+      }
+    ],
+    "output" : [
+      {
+        "id" : "2EFC3AF6-8F20-4FAA-82FB-043BCFDA5104",
+        "amount" : 80
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "A3D4553A-804C-499F-851D-37BC068DD406",
+    "input" : [
+      {
+        "id" : "76FB6654-F83E-4C97-A925-41DD18DEE8BE",
+        "amount" : 67.5
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 37.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "DE31EAE8-7D6C-414C-A01C-4FBBA9F05FDC",
+        "amount" : 52.200000000000003
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "A641B0EE-A776-4E6A-B1A0-7DDBB78228B9",
+    "input" : [
+      {
+        "id" : "C16B136E-8F9D-4EBC-87E9-1AEEC3EB544A",
+        "amount" : 80
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 50
+      }
+    ],
+    "output" : [
+      {
+        "id" : "43F1AA04-2F55-4AD5-926B-C92201A261B4",
+        "amount" : 5
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "0DB1F072-EDCC-4653-B226-03339EE206F5",
+    "input" : [
+      {
+        "id" : "439B0340-FE89-4337-A77C-764ABC3FB4B9",
+        "amount" : 22.5
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 22.5
+      }
+    ],
+    "output" : [
+      {
+        "id" : "0AF0439B-61CE-49AB-B980-B740856B1811",
+        "amount" : 22.5
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "1718B0C0-916F-46F5-BF3A-2B7ED5F21AB9",
+    "input" : [
+      {
+        "id" : "92322929-F25F-444F-9FB8-7D522D1EDCD5",
+        "amount" : 37.5
+      },
+      {
+        "id" : "8B01471A-9DD0-4FF1-BB94-03C2BA980EB8",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "6E4563C2-EA1D-4DB1-AB5D-AEF136B18BFC",
+        "amount" : 67.5
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "A135B982-DE80-4662-A369-B4ACF6BCCE91",
+    "input" : [
+      {
+        "id" : "E59464E7-56B9-40C6-8123-DB1772A26953",
+        "amount" : 20
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 20
+      }
+    ],
+    "output" : [
+      {
+        "id" : "B4CF0364-60C3-4DC6-BF0F-B81E8871BAFE",
+        "amount" : 20
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "5C4A84BF-9358-41F1-8D43-DD5024273E18",
+    "input" : [
+      {
+        "id" : "8B01471A-9DD0-4FF1-BB94-03C2BA980EB8",
+        "amount" : 30
+      },
+      {
+        "id" : "EE5CD025-836E-4D14-BA46-F81D7EA59654",
+        "amount" : 60
+      }
+    ],
+    "output" : [
+      {
+        "id" : "E59464E7-56B9-40C6-8123-DB1772A26953",
+        "amount" : 60
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "3AE8D60D-B37A-45DD-8658-395807790910",
+    "input" : [
+      {
+        "id" : "05DE7EFF-7B77-4480-8679-81BC5C7D6F81",
+        "amount" : 20
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 20
+      }
+    ],
+    "output" : [
+      {
+        "id" : "8E0F6F9E-8243-435A-BC71-BFED1B1EE2FC",
+        "amount" : 20
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "2E04C724-C975-4007-977A-74570386CCB3",
+    "input" : [
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 30
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "EE5CD025-836E-4D14-BA46-F81D7EA59654",
+        "amount" : 30
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "7AF91B05-0EF4-4660-BD1F-4A65B2414B8B",
+    "input" : [
+      {
+        "id" : "3995F552-D765-49BC-B5BB-B82E2F63EF2B",
+        "amount" : 12
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 12
+      }
+    ],
+    "output" : [
+      {
+        "id" : "E323266B-3417-4572-8F6D-E5B8378F70D3",
+        "amount" : 12
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "6F30F1B7-DF65-4903-BD3A-B23A19A49D87",
+    "input" : [
+      {
+        "id" : "8B01471A-9DD0-4FF1-BB94-03C2BA980EB8",
+        "amount" : 10
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 10
+      }
+    ],
+    "output" : [
+      {
+        "id" : "E109BCE0-8BFB-4BE4-911A-A0033C4D5FB5",
+        "amount" : 10
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "9C8B7930-6358-48B0-8F0B-1BCDBB422366",
+    "input" : [
+      {
+        "id" : "21EF01D1-83F3-4DE3-AB8E-4FD8B6132F8C",
+        "amount" : 15
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "F722B2A3-F550-4BDF-94CE-1BDAD83F0654",
+        "amount" : 15
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "377610FB-15D2-4A72-B8D8-F1F0BAE441AB",
+    "input" : [
+      {
+        "id" : "E109BCE0-8BFB-4BE4-911A-A0033C4D5FB5",
+        "amount" : 10
+      }
+    ],
+    "output" : [
+      {
+        "id" : "8B01471A-9DD0-4FF1-BB94-03C2BA980EB8",
+        "amount" : 10
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 10
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "7985D336-21B2-44BD-8010-47028E64BF07",
+    "input" : [
+      {
+        "id" : "EE5CD025-836E-4D14-BA46-F81D7EA59654",
+        "amount" : 60
+      }
+    ],
+    "output" : [
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 60
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 60
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "5BD75CC6-BAFF-42F5-A26F-855CF43B7E40",
+    "input" : [
+      {
+        "id" : "E323266B-3417-4572-8F6D-E5B8378F70D3",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "3995F552-D765-49BC-B5BB-B82E2F63EF2B",
+        "amount" : 30
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 30
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "0021B605-7B50-42F9-92BD-EFCF46BF1A1E",
+    "input" : [
+      {
+        "id" : "8E0F6F9E-8243-435A-BC71-BFED1B1EE2FC",
+        "amount" : 20
+      }
+    ],
+    "output" : [
+      {
+        "id" : "05DE7EFF-7B77-4480-8679-81BC5C7D6F81",
+        "amount" : 20
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 20
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "E286B8DD-4231-4218-96A7-75286D164746",
+    "input" : [
+      {
+        "id" : "B4CF0364-60C3-4DC6-BF0F-B81E8871BAFE",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "E59464E7-56B9-40C6-8123-DB1772A26953",
+        "amount" : 30
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 30
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "CFA1125A-666D-481C-99AD-BBA50F9764B6",
+    "input" : [
+      {
+        "id" : "F722B2A3-F550-4BDF-94CE-1BDAD83F0654",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "21EF01D1-83F3-4DE3-AB8E-4FD8B6132F8C",
+        "amount" : 30
+      },
+      {
+        "id" : "6EB8EE5B-B1B9-4571-8722-CD8F57ADE436",
+        "amount" : 30
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "2FE14F97-CA59-4583-A6C3-293C3529A08F",
+    "input" : [
+      {
+        "id" : "F4CA3EE9-35F4-48AF-9D22-599C8BBE8158",
+        "amount" : 240
+      },
+      {
+        "id" : "C7812F2A-519C-4706-96E0-1F0D36057029",
+        "amount" : 60
+      }
+    ],
+    "output" : [
+      {
+        "id" : "92198807-9DF6-4427-925D-FF36080CC550",
+        "amount" : 360
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 60
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "7FD6BAEC-DE69-4AC5-91B2-E564D45552A9",
+    "input" : [
+      {
+        "id" : "F4CA3EE9-35F4-48AF-9D22-599C8BBE8158",
+        "amount" : 90
+      },
+      {
+        "id" : "24290322-4E6F-4594-9AD3-D4F2A76CCB94",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "92198807-9DF6-4427-925D-FF36080CC550",
+        "amount" : 150
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 30
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "B4E99284-FCE5-47FD-A38D-84849058CAFD",
+    "input" : [
+      {
+        "id" : "E6080B22-120E-44BA-97B6-E42EA16F100D",
+        "amount" : 70
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 100
+      }
+    ],
+    "output" : [
+      {
+        "id" : "F4CA3EE9-35F4-48AF-9D22-599C8BBE8158",
+        "amount" : 80
+      },
+      {
+        "id" : "29A0ED39-CF3D-4BA2-A2A1-888066D51812",
+        "amount" : 20
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "8A6FB03B-13A9-4F01-81D2-FB907B1C331D",
+    "input" : [
+      {
+        "id" : "9317DA20-410A-4C1F-8087-A54BC1E1C41D",
+        "amount" : 50
+      },
+      {
+        "id" : "E882861B-CA54-452F-9438-FB7A6AE7768F",
+        "amount" : 80
+      }
+    ],
+    "output" : [
+      {
+        "id" : "9D41E3D2-F3F1-4C59-9B9B-9CD209174015",
+        "amount" : 50
+      },
+      {
+        "id" : "E882861B-CA54-452F-9438-FB7A6AE7768F",
+        "amount" : 20
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "F734E944-9CF1-4726-8438-B5388B36A425",
+    "input" : [
+      {
+        "id" : "F97943F0-7B3B-4B9E-AF50-2E76EDD4E7CD",
+        "amount" : 50
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 50
+      }
+    ],
+    "output" : [
+      {
+        "id" : "E882861B-CA54-452F-9438-FB7A6AE7768F",
+        "amount" : 100
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "0CBE0E96-004B-460A-93CB-12E285F2EA3A",
+    "input" : [
+      {
+        "id" : "3995F552-D765-49BC-B5BB-B82E2F63EF2B",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "8B01471A-9DD0-4FF1-BB94-03C2BA980EB8",
+        "amount" : 40
+      },
+      {
+        "id" : "C16B136E-8F9D-4EBC-87E9-1AEEC3EB544A",
+        "amount" : 20
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "FA687ABC-FA6D-4A7C-844D-5A5AAD48630B",
+    "input" : [
+      {
+        "id" : "3995F552-D765-49BC-B5BB-B82E2F63EF2B",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 20
+      },
+      {
+        "id" : "8B01471A-9DD0-4FF1-BB94-03C2BA980EB8",
+        "amount" : 10
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "97572B89-4401-4669-9902-68C657063929",
+    "input" : [
+      {
+        "id" : "C16B136E-8F9D-4EBC-87E9-1AEEC3EB544A",
+        "amount" : 60
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 20
+      }
+    ],
+    "output" : [
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 20
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "829385A1-EC70-4436-A571-FE81E293494B",
+    "input" : [
+      {
+        "id" : "1170DB59-3D38-467E-89C8-5E3B33553DAC",
+        "amount" : 30
+      },
+      {
+        "id" : "E59464E7-56B9-40C6-8123-DB1772A26953",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 60
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "C1EE0499-0DE2-45A4-8C5A-F366687AB6EE",
+    "input" : [
+      {
+        "id" : "3995F552-D765-49BC-B5BB-B82E2F63EF2B",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 20
+      },
+      {
+        "id" : "8B01471A-9DD0-4FF1-BB94-03C2BA980EB8",
+        "amount" : 20
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "FFD81FC8-D3E8-4107-9DA7-71350169F7B7",
+    "input" : [
+      {
+        "id" : "C16B136E-8F9D-4EBC-87E9-1AEEC3EB544A",
+        "amount" : 40
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 40
+      }
+    ],
+    "output" : [
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 20
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "EEF2FAC1-3FD4-4A2D-86C5-5BB777D49268",
+    "input" : [
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 30
+      },
+      {
+        "id" : "E59464E7-56B9-40C6-8123-DB1772A26953",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "450A95F5-50BC-4593-88A5-CCC34E402311",
+        "amount" : 60
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "B3CC4190-2DD1-4392-A9DD-8D6DA48E5DAC",
+    "input" : [
+      {
+        "id" : "8B01471A-9DD0-4FF1-BB94-03C2BA980EB8",
+        "amount" : 40
+      }
+    ],
+    "output" : [
+      {
+        "id" : "C7812F2A-519C-4706-96E0-1F0D36057029",
+        "amount" : 120
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "528C3825-26D0-423E-92E1-2B82E8FC67AB",
+    "input" : [
+      {
+        "id" : "E59464E7-56B9-40C6-8123-DB1772A26953",
+        "amount" : 22.5
+      },
+      {
+        "id" : "BB885860-3B97-4A96-9410-35998E5284A6",
+        "amount" : 15
+      }
+    ],
+    "output" : [
+      {
+        "id" : "05DE7EFF-7B77-4480-8679-81BC5C7D6F81",
+        "amount" : 18.800000000000001
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "24EBEA65-6C5A-4F90-BD8D-C5AAAEEE6FAB",
+    "input" : [
+      {
+        "id" : "8B01471A-9DD0-4FF1-BB94-03C2BA980EB8",
+        "amount" : 37.5
+      },
+      {
+        "id" : "BB885860-3B97-4A96-9410-35998E5284A6",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "05DE7EFF-7B77-4480-8679-81BC5C7D6F81",
+        "amount" : 30
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : false
+  },
+  {
+    "id" : "5AC2762B-03D4-4DD2-ADCE-DD0B4596DB82",
+    "input" : [
+      {
+        "id" : "3995F552-D765-49BC-B5BB-B82E2F63EF2B",
+        "amount" : 60
+      }
+    ],
+    "output" : [
+      {
+        "id" : "E59464E7-56B9-40C6-8123-DB1772A26953",
+        "amount" : 40
+      },
+      {
+        "id" : "C16B136E-8F9D-4EBC-87E9-1AEEC3EB544A",
+        "amount" : 30
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  },
+  {
+    "id" : "1A7108A1-D594-4765-9B69-9C3F92256467",
+    "input" : [
+      {
+        "id" : "8B01471A-9DD0-4FF1-BB94-03C2BA980EB8",
+        "amount" : 30
+      }
+    ],
+    "output" : [
+      {
+        "id" : "E59464E7-56B9-40C6-8123-DB1772A26953",
+        "amount" : 20
+      }
+    ],
+    "machine" : "6F08BF32-7015-4D48-9D5E-BB0A0BF4FAEE",
+    "isDefault" : true
+  },
+  {
+    "id" : "4BABDE06-3A19-496A-A6F1-78E5DA10FE6C",
+    "input" : [
+      {
+        "id" : "EB557280-928A-45C7-A094-9AF8F68D3869",
+        "amount" : 90
+      },
+      {
+        "id" : "0F64753B-915C-455A-957F-49675162A9BB",
+        "amount" : 45
+      }
+    ],
+    "output" : [
+      {
+        "id" : "21EF01D1-83F3-4DE3-AB8E-4FD8B6132F8C",
+        "amount" : 60
+      }
+    ],
+    "machine" : "975381A4-7E46-4F45-A9C6-075EDD225E9D",
+    "isDefault" : true
+  }
+]

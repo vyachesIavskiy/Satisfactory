@@ -6,7 +6,6 @@ struct Part: Codable, Resource, CustomStringConvertible {
     let type: PartType
 }
 
-
 let Parts
     = HubParts
     + Ores

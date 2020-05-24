@@ -12,11 +12,11 @@ if !fileManager.fileExists(atPath: folder.path) {
 }
 
 do {
-    try encoder.encode(["parts": Parts]).write(to: folder.appendingPathComponent("parts.json"))
-    try encoder.encode(["equipment": Equipments]).write(to: folder.appendingPathComponent("equipment.json"))
-    try encoder.encode(["buildings": Buildings]).write(to: folder.appendingPathComponent("buildings.json"))
-    try encoder.encode(["vehicles": Vehicles]).write(to: folder.appendingPathComponent("vehicles.json"))
-    try encoder.encode(["recipes": Recipes]).write(to: folder.appendingPathComponent("recipes.json"))
+    try encoder.encode(Parts).write(to: folder.appendingPathComponent("parts.json"))
+    try encoder.encode(Equipments).write(to: folder.appendingPathComponent("equipment.json"))
+    try encoder.encode(Buildings).write(to: folder.appendingPathComponent("buildings.json"))
+    try encoder.encode(Vehicles).write(to: folder.appendingPathComponent("vehicles.json"))
+    try encoder.encode(Recipes).write(to: folder.appendingPathComponent("recipes.json"))
 } catch {
     print(error)
 }

@@ -1,16 +1,14 @@
 import Foundation
 
-struct Part: Codable {
+struct Building: Codable {
     let id: UUID
     let name: String
-    let type: String
+    let buildingType: String
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id).uuid()
         name = try container.decode(String.self, forKey: .name)
-        type = try container.decode(String.self, forKey: .type)
+        buildingType = try container.decode(String.self, forKey: .buildingType)
     }
 }
-
-extension Part: Hashable { }

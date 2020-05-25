@@ -26,6 +26,8 @@
 		455F63C9247A5BFE001D5870 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63C8247A5BFE001D5870 /* Building.swift */; };
 		455F63CB247A5CAC001D5870 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63CA247A5CAC001D5870 /* Vehicle.swift */; };
 		455F63CE247A6D26001D5870 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63CD247A6D26001D5870 /* BasicCell.swift */; };
+		455F63D0247A704D001D5870 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63CF247A704D001D5870 /* UIStackViewExtension.swift */; };
+		455F63D2247A736E001D5870 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63D1247A736E001D5870 /* View.swift */; };
 		45BD9CE02479546300438822 /* equipment.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDB2479546300438822 /* equipment.json */; };
 		45BD9CE12479546300438822 /* vehicles.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDC2479546300438822 /* vehicles.json */; };
 		45BD9CE22479546300438822 /* parts.json in Resources */ = {isa = PBXBuildFile; fileRef = 45BD9CDD2479546300438822 /* parts.json */; };
@@ -59,6 +61,8 @@
 		455F63C8247A5BFE001D5870 /* Building.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		455F63CA247A5CAC001D5870 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		455F63CD247A6D26001D5870 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
+		455F63CF247A704D001D5870 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
+		455F63D1247A736E001D5870 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		45BD9CDB2479546300438822 /* equipment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = equipment.json; sourceTree = "<group>"; };
 		45BD9CDC2479546300438822 /* vehicles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vehicles.json; sourceTree = "<group>"; };
 		45BD9CDD2479546300438822 /* parts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parts.json; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 				455F634324796746001D5870 /* TableView.swift */,
 				455F6345247969DF001D5870 /* TableViewCell.swift */,
 				455F63CD247A6D26001D5870 /* BasicCell.swift */,
+				455F63D1247A736E001D5870 /* View.swift */,
 			);
 			path = Basics;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				45F43477247961AE00829A12 /* UICollectionViewExtension.swift */,
 				455F634724797611001D5870 /* BundleExtension.swift */,
 				455F63C6247A5A92001D5870 /* StringExtension.swift */,
+				455F63CF247A704D001D5870 /* UIStackViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 				45F4347624795DEE00829A12 /* UIViewExtension.swift in Sources */,
 				455F63C9247A5BFE001D5870 /* Building.swift in Sources */,
 				453819392479535400C4C1FF /* ViewController.swift in Sources */,
+				455F63D0247A704D001D5870 /* UIStackViewExtension.swift in Sources */,
 				455F63CB247A5CAC001D5870 /* Vehicle.swift in Sources */,
 				4538193F2479535400C4C1FF /* Satisfactory.xcdatamodeld in Sources */,
 				455F634A2479765D001D5870 /* Recipe.swift in Sources */,
@@ -268,6 +275,7 @@
 				45F43478247961AE00829A12 /* UICollectionViewExtension.swift in Sources */,
 				455F634824797611001D5870 /* BundleExtension.swift in Sources */,
 				455F634C247977BB001D5870 /* Storage.swift in Sources */,
+				455F63D2247A736E001D5870 /* View.swift in Sources */,
 				455F63C3247A59DD001D5870 /* Equipment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

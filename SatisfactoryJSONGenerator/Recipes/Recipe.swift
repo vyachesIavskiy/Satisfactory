@@ -5,12 +5,14 @@ struct Recipe: Codable {
     let input: [RecipePart]
     let output: [RecipePart]
     let machine: Building
+    let duration: Int
     let isDefault: Bool
     
-    init(input: [RecipePart], output: [RecipePart], machine: Building, isDefault: Bool = true) {
+    init(input: [RecipePart], output: [RecipePart], machine: Building, duration: Int, isDefault: Bool = true) {
         self.input = input
         self.output = output
         self.machine = machine
+        self.duration = duration
         self.isDefault = isDefault
     }
     
@@ -20,6 +22,7 @@ struct Recipe: Codable {
         try container.encode(input, forKey: .input)
         try container.encode(output, forKey: .output)
         try container.encode(machine.id, forKey: .machine)
+        try container.encode(duration, forKey: .duration)
         try container.encode(isDefault, forKey: .isDefault)
     }
 }

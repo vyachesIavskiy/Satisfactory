@@ -4,7 +4,7 @@ struct Recipe: Codable, Hashable {
     struct RecipePart: Codable, Hashable {
         let part: Part?
         let equipment: Equipment?
-        let amount: Double
+        let amount: Int
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -16,7 +16,7 @@ struct Recipe: Codable, Hashable {
             let id = try container.decode(String.self, forKey: .id).uuid()
             part = Storage.shared[partId: id]
             equipment = Storage.shared[equipmentId: id]
-            amount = try container.decode(Double.self, forKey: .amount)
+            amount = try container.decode(Int.self, forKey: .amount)
         }
         
         static func == (lhs: Recipe.RecipePart, rhs: Recipe.RecipePart) -> Bool {
@@ -57,6 +57,7 @@ struct Recipe: Codable, Hashable {
     let input: [RecipePart]
     let output: [RecipePart]
     let machine: UUID
+    let duration: Int
     let isDefault: Bool
     
     init(from decoder: Decoder) throws {
@@ -65,24 +66,7 @@ struct Recipe: Codable, Hashable {
         input = try container.decode([RecipePart].self, forKey: .input)
         output = try container.decode([RecipePart].self, forKey: .output)
         machine = try container.decode(String.self, forKey: .machine).uuid()
+        duration = try container.decode(Int.self, forKey: .duration)
         isDefault = try container.decode(Bool.self, forKey: .isDefault)
-    }
-}
-
-extension Recipe: CustomStringConvertible {
-    var description: String {
-        let outputString = output.map {
-            $0.part?.name ?? $0.equipment?.name ?? ""
-        }.joined(separator: "\n")
-        
-        let inputString = input.map {
-            $0.part?.name ?? $0.equipment?.name ?? ""
-        }.joined(separator: "\n")
-        
-        return """
-        \(inputString)
-        -------------------------------------------
-        \(outputString)
-        """
     }
 }

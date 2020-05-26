@@ -6,7 +6,7 @@ class PartsDataSource: UITableViewDiffableDataSource<String, Part> {
     }
 }
 
-final class ListViewController: UIViewController {
+final class ListViewController: ViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.register(class: BasicCell.self)
@@ -37,11 +37,14 @@ final class ListViewController: UIViewController {
         searchController.searchBar.text ?? ""
     }
     
+    override init() {
+        super.init()
+        
+        tabBarItem = UITabBarItem(title: "Recipes", image: UIImage(systemName: "doc.text"), selectedImage: UIImage(systemName: "doc.text.fill"))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Recipes"
-        navigationItem.title = nil
         
         navigationItem.searchController = searchController
         navigationItem.largeTitleDisplayMode = .always
@@ -56,7 +59,6 @@ final class ListViewController: UIViewController {
         }
         
         updateDataSource(animated: false)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

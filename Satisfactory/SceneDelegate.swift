@@ -7,7 +7,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = scene as? UIWindowScene else { return }
         
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = ViewController().insideNavigation()
+        let controllers = [
+            ListViewController().insideNavigation(),
+            BuildingsViewController().insideNavigation()
+        ]
+        window?.rootViewController = TabBarController(viewControllers: controllers)
         window?.makeKeyAndVisible()
     }
 

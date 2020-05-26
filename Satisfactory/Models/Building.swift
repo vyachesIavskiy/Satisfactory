@@ -1,6 +1,6 @@
 import Foundation
 
-enum BuildingType: String, Codable {
+enum BuildingType: String, Codable, Hashable, CaseIterable {
     case special = "Special"
     case fluidProduction = "Fluid Production"
     case manufacturers = "Manufacturers"
@@ -27,14 +27,14 @@ enum BuildingType: String, Codable {
     case foundations = "Foundations"
     case quaterPipes = "Quater-Pipes"
     case ramps = "Ramps"
-    case invertedRamps = "InvertedRamps"
+    case invertedRamps = "Inverted Ramps"
     case hypertubes = "Hypertubes"
     case jumpPads = "Jump Pads"
     case motorVehicles = "Motor Vehicles"
     case railedVehicles = "Railed Vehicles"
 }
 
-struct Building: Codable {
+struct Building: Codable, Hashable {
     let id: UUID
     let name: String
     let buildingType: BuildingType

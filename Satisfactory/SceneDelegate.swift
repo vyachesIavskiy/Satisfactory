@@ -8,7 +8,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         let controllers = [
-            ListViewController().insideNavigation(),
+            PartsViewController().insideNavigation(),
             BuildingsViewController().insideNavigation()
         ]
         window?.rootViewController = TabBarController(viewControllers: controllers)

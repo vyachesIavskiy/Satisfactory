@@ -4,7 +4,7 @@ final class MainTabBarController: TabBarController {
     override init() {
         super.init()
         
-        setViewControllers([ListViewController().insideNavigation(), ListViewController()], animated: false)
+        setViewControllers([PartsViewController().insideNavigation(), PartsViewController()], animated: false)
         
         
     }

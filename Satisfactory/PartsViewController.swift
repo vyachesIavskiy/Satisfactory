@@ -6,7 +6,7 @@ class PartsDataSource: UITableViewDiffableDataSource<String, Part> {
     }
 }
 
-final class ListViewController: ViewController {
+final class PartsViewController: ViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.register(class: BasicCell.self)
@@ -78,14 +78,14 @@ final class ListViewController: ViewController {
     }
 }
 
-extension ListViewController: UITableViewDelegate {
+extension PartsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipesViewController = RecipesViewController(part: parts[indexPath.row])
         navigationController?.pushViewController(recipesViewController, animated: true)
     }
 }
 
-extension ListViewController: UISearchResultsUpdating {
+extension PartsViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         updateDataSource()
     }

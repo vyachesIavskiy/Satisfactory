@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		453819352479535400C4C1FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453819342479535400C4C1FF /* AppDelegate.swift */; };
 		453819372479535400C4C1FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453819362479535400C4C1FF /* SceneDelegate.swift */; };
-		453819392479535400C4C1FF /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453819382479535400C4C1FF /* ListViewController.swift */; };
+		453819392479535400C4C1FF /* PartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453819382479535400C4C1FF /* PartsViewController.swift */; };
 		4538193F2479535400C4C1FF /* Satisfactory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4538193D2479535400C4C1FF /* Satisfactory.xcdatamodeld */; };
 		453819412479535600C4C1FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453819402479535600C4C1FF /* Assets.xcassets */; };
 		453819442479535600C4C1FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453819422479535600C4C1FF /* LaunchScreen.storyboard */; };
@@ -48,7 +48,7 @@
 		453819312479535400C4C1FF /* Satisfactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satisfactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453819342479535400C4C1FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		453819362479535400C4C1FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		453819382479535400C4C1FF /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		453819382479535400C4C1FF /* PartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsViewController.swift; sourceTree = "<group>"; };
 		4538193E2479535400C4C1FF /* Satisfactory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Satisfactory.xcdatamodel; sourceTree = "<group>"; };
 		453819402479535600C4C1FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		453819432479535600C4C1FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 				45F4347324795AE400829A12 /* Models */,
 				453819342479535400C4C1FF /* AppDelegate.swift */,
 				453819362479535400C4C1FF /* SceneDelegate.swift */,
-				453819382479535400C4C1FF /* ListViewController.swift */,
+				453819382479535400C4C1FF /* PartsViewController.swift */,
 				455F634D24797A29001D5870 /* RecipesViewController.swift */,
 				455F634B247977BB001D5870 /* Storage.swift */,
 				45F328F3247C59ED00D2F169 /* MainTabBarController.swift */,
@@ -275,7 +275,7 @@
 				45F328FA247C634D00D2F169 /* TabBarController.swift in Sources */,
 				45F328FC247C659F00D2F169 /* BuildingsViewController.swift in Sources */,
 				455F63C9247A5BFE001D5870 /* Building.swift in Sources */,
-				453819392479535400C4C1FF /* ListViewController.swift in Sources */,
+				453819392479535400C4C1FF /* PartsViewController.swift in Sources */,
 				455F63D0247A704D001D5870 /* UIStackViewExtension.swift in Sources */,
 				455F63CB247A5CAC001D5870 /* Vehicle.swift in Sources */,
 				4538193F2479535400C4C1FF /* Satisfactory.xcdatamodeld in Sources */,

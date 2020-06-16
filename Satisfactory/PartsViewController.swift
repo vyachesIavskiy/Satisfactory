@@ -1,16 +1,24 @@
 import UIKit
 
-class PartsDataSource: UITableViewDiffableDataSource<String, Part> {
+class PartsDataSource: UITableViewDiffableDataSource<PartType, Part> {
+    override init(tableView: UITableView, cellProvider: @escaping UITableViewDiffableDataSource<PartType, Part>.CellProvider) {
+        super.init(tableView: tableView, cellProvider: cellProvider)
+        
+        defaultRowAnimation = .fade
+    }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        snapshot().sectionIdentifiers[section]
+        snapshot().sectionIdentifiers[section].rawValue
     }
 }
 
 final class PartsViewController: ViewController {
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .insetGrouped)
-        tableView.register(class: BasicCell.self)
+        let tableView = UITableView()
+//        tableView.register(class: BasicCell.self)
+//        tableView.register(class: ItemTableCell.self)
         tableView.delegate = self
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -18,7 +26,7 @@ final class PartsViewController: ViewController {
         let controller = UISearchController(searchResultsController: nil)
         controller.searchResultsUpdater = self
         controller.obscuresBackgroundDuringPresentation = false
-        controller.searchBar.placeholder = "Search parts..."
+        controller.searchBar.placeholder = "Search parts"
         return controller
     }()
     
@@ -52,10 +60,13 @@ final class PartsViewController: ViewController {
         view.add(subview: tableView).fill(inside: view)
         
         dataSource = PartsDataSource(tableView: tableView) { tableView, indexPath, part in
-            let cell = tableView.dequeue(cell: BasicCell.self, for: indexPath)
-            cell.textLabel?.text = part.name
-            cell.imageView?.image = UIImage(named: part.name)
-            return cell
+//            let cell = tableView.dequeue(cell: BasicCell.self, for: indexPath)
+//            let cell = tableView.dequeue(cell: ItemTableCell.self, for: indexPath)
+//            cell.textLabel?.text = part.name
+//            cell.imageView?.image = UIImage(named: part.name)
+//            cell.configure(name: part.name)
+//            return cell
+            return UITableViewCell()
         }
         
         updateDataSource(animated: false)
@@ -70,10 +81,25 @@ final class PartsViewController: ViewController {
     }
     
     private func updateDataSource(animated: Bool = true) {
-        var snapshot = NSDiffableDataSourceSnapshot<String, Part>()
+        var snapshot = NSDiffableDataSourceSnapshot<PartType, Part>()
         snapshot.deleteAllItems()
-        snapshot.appendSections([""])
-        snapshot.appendItems(parts)
+        
+        
+        snapshot.appendSections(PartType.allCases)
+        PartType.allCases.forEach { partType in
+            snapshot.appendItems(Storage.shared.parts.filter {
+                var result = $0.partType == partType
+                if let text = searchController.searchBar.text, !text.isEmpty {
+                    result = result && $0.name.contains(text)
+                }
+                return result
+            }, toSection: partType)
+        }
+        snapshot.sectionIdentifiers.forEach { section in
+            if snapshot.numberOfItems(inSection: section) == 0 {
+                snapshot.deleteSections([section])
+            }
+        }
         dataSource.apply(snapshot, animatingDifferences: animated)
     }
 }

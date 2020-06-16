@@ -1,10 +1,10 @@
-let colorCartridge = Part(name: "Color Cartridge", type: .consumed)
-let spikedRebar = Part(name: "Spiked Rebar", type: .consumed)
-let blackPowder = Part(name: "Black Powder", type: .consumed)
-let nobelisk = Part(name: "Nobelisk", type: .consumed)
-let rifleCartridge = Part(name: "Rifle Cartridge", type: .consumed)
-let gasFilter = Part(name: "Gas Filter", type: .consumed)
-let iodineInfusedFilter = Part(name: "Iodine Infused Filter", type: .consumed)
+let colorCartridge = Part(name: "Color Cartridge", partType: .consumed)
+let spikedRebar = Part(name: "Spiked Rebar", partType: .consumed)
+let blackPowder = Part(name: "Black Powder", partType: .consumed)
+let nobelisk = Part(name: "Nobelisk", partType: .consumed)
+let rifleCartridge = Part(name: "Rifle Cartridge", partType: .consumed)
+let gasFilter = Part(name: "Gas Filter", partType: .consumed)
+let iodineInfusedFilter = Part(name: "Iodine Infused Filter", partType: .consumed)
 
 let Consumed = [
     colorCartridge,

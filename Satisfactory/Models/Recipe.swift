@@ -1,10 +1,14 @@
 import Foundation
 
-struct Recipe: Codable, Hashable {
-    struct RecipePart: Codable, Hashable {
-        let part: Part?
-        let equipment: Equipment?
+struct Recipe: Codable, Hashable, Identifiable {
+    struct RecipePart: Codable, Hashable, Identifiable {
+        let id = UUID()
+        let item: Item
         let amount: Int
+        
+        var productionRecipes: [Recipe] {
+            item.recipes
+        }
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -14,42 +18,28 @@ struct Recipe: Codable, Hashable {
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             let id = try container.decode(String.self, forKey: .id).uuid()
-            part = Storage.shared[partId: id]
-            equipment = Storage.shared[equipmentId: id]
+            if let part = Storage.shared[partId: id] {
+                item = part
+            } else if let equipment = Storage.shared[equipmentId: id] {
+                item = equipment
+            } else {
+                throw ParsingError.itemWithIdIsMissing(id)
+            }
             amount = try container.decode(Int.self, forKey: .amount)
         }
         
         static func == (lhs: Recipe.RecipePart, rhs: Recipe.RecipePart) -> Bool {
-            if let lid = lhs.part?.id, let rid = rhs.part?.id {
-                return lid == rid
-            }
-            
-            if let lid = lhs.equipment?.id, let rid = rhs.equipment?.id {
-                return lid == rid
-            }
-            
-            return false
+            lhs.item.id == rhs.item.id
         }
         
         func encode(to encoder: Encoder) throws {
             var container = encoder.container(keyedBy: CodingKeys.self)
-            if let part = part {
-                try container.encode(part.id, forKey: .id)
-            }
-            if let equipment = equipment {
-                try container.encode(equipment.id, forKey: .id)
-            }
+            try container.encode(item.id, forKey: .id)
             try container.encode(amount, forKey: .amount)
         }
         
         func hash(into hasher: inout Hasher) {
-            if let id = part?.id {
-                hasher.combine(id)
-            } else if let id = equipment?.id {
-                hasher.combine(id)
-            } else {
-                hasher.combine(amount)
-            }
+            hasher.combine(item.id)
         }
     }
     
@@ -59,6 +49,13 @@ struct Recipe: Codable, Hashable {
     let machine: UUID
     let duration: Int
     let isDefault: Bool
+    
+    var allInputItems: [Item] {
+        input.reduce(into: []) { result, part in
+            guard !part.item.recipes.isEmpty else { return }
+            result += part.item.recipes.reduce([]) { $0 + $1.allInputItems }
+        }
+    }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

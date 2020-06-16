@@ -1,6 +1,6 @@
 import UIKit
 
-final class RecipePartView: View {
+final class RecipePartView: BasicView {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -69,16 +69,10 @@ final class RecipeTableCell: TableViewCell {
         inputContainerView.subviews.forEach { $0.removeFromSuperview() }
         outputContainerView.subviews.forEach { $0.removeFromSuperview() }
         
-        let views = recipe.input
-            .compactMap { $0.part?.name ?? $0.equipment?.name }
-            .map { RecipePartView(name: $0).height(equalTo: 40) }
-        
-        let views2 = recipe.output
-            .compactMap { $0.part?.name ?? $0.equipment?.name }
-            .map { RecipePartView(name: $0).height(equalTo: 40) }
+        let views = recipe.input.map { RecipePartView(name: $0.item.name).height(equalTo: 40) }
+        let views2 = recipe.output.map { RecipePartView(name: $0.item.name).height(equalTo: 40) }
         
         inputContainerView.add(subview: UIStackView(views: views, axis: .vertical, alignment: .leading)).fill(inside: inputContainerView)
-        
         outputContainerView.add(subview: UIStackView(views: views2, axis: .vertical, alignment: .leading)).fill(inside: outputContainerView)
     }
 }
@@ -97,7 +91,7 @@ final class RecipesViewController: UIViewController {
     var recipes: [Recipe]
     
     init(part: Part) {
-        recipes = Storage.shared[recipesForPart: part.id]
+        recipes = Storage.shared[recipesFor: part.id]
         
         super.init(nibName: nil, bundle: nil)
     }

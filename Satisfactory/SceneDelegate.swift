@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -6,12 +7,16 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = scene as? UIWindowScene else { return }
         
+//        let contentView = Home()
+        let contentView = AllParts()
+        
         window = UIWindow(windowScene: scene)
-        let controllers = [
-            PartsViewController().insideNavigation(),
-            BuildingsViewController().insideNavigation()
-        ]
-        window?.rootViewController = TabBarController(viewControllers: controllers)
+//        let controllers = [
+//            PartsViewController().insideNavigation(),
+//            EquipmentsViewController().insideNavigation(),
+//            BuildingsViewController().insideNavigation()
+//        ]
+        window?.rootViewController = UIHostingController(rootView: contentView)
         window?.makeKeyAndVisible()
     }
 

@@ -3,7 +3,7 @@ import Foundation
 struct Part: Codable, Resource, CustomStringConvertible {
     let id = UUID()
     let name: String
-    let type: PartType
+    let partType: PartType
 }
 
 let Parts

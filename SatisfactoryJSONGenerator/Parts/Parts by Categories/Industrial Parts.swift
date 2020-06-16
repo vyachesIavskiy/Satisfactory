@@ -1,8 +1,8 @@
-let rotor = Part(name: "Rotor", type: .industrialParts)
-let stator = Part(name: "Stator", type: .industrialParts)
-let motor = Part(name: "Motor", type: .industrialParts)
-let heatSink = Part(name: "Heat Sink", type: .industrialParts)
-let turboMotor = Part(name: "Turbo Motor", type: .industrialParts)
+let rotor = Part(name: "Rotor", partType: .industrialParts)
+let stator = Part(name: "Stator", partType: .industrialParts)
+let motor = Part(name: "Motor", partType: .industrialParts)
+let heatSink = Part(name: "Heat Sink", partType: .industrialParts)
+let turboMotor = Part(name: "Turbo Motor", partType: .industrialParts)
 
 let IndustrialParts = [
     rotor,

@@ -1,93 +1,88 @@
 [
   {
-    "id" : "DBF82E1E-8179-48D1-99D7-FB5A300976BE",
+    "id" : "EE8C26E1-6D39-4469-92A8-EA5CBB6C85BD",
     "name" : "Xeno-Zapper",
     "equipmentType" : "Hands"
   },
   {
-    "id" : "9B67358F-DE52-4B24-9FAE-4C6FF0967055",
+    "id" : "B0553054-A491-42FF-84AA-DC148DFCC732",
     "name" : "Portable Miner",
     "equipmentType" : "Hands"
   },
   {
-    "id" : "1CD454D1-000A-4269-A835-1CC8A6916A84",
-    "fuel" : "59E44EE7-0098-4FA5-AA9C-FC5711A6D573",
+    "id" : "43FF699A-435B-4420-BBB0-3CDFEE335D27",
+    "fuel" : "BCEB0BB9-1F4C-4B2A-A5FC-5580039752C5",
     "equipmentType" : "Hands",
     "name" : "Chainsaw"
   },
   {
-    "id" : "65179D15-D9DF-4391-9651-6C37B973251C",
+    "id" : "378CB17E-DB33-466A-96FB-32901476D2CE",
     "name" : "Object Scanner",
     "equipmentType" : "Hands"
   },
   {
-    "id" : "46A0B9AB-9EB5-48B9-9B4C-CF49CA1C3134",
+    "id" : "80CA7B96-301D-4BB8-9D44-F947461CFB27",
     "name" : "Beacon",
     "equipmentType" : "Hands"
   },
   {
-    "ammo" : "2FF1848E-D430-4613-9EC4-EC20D000E288",
-    "id" : "36595F6E-633B-47DE-9EA4-6E505F98AC62",
+    "ammo" : "BE96AA5C-83F0-4968-B8C2-A5E15E03DD63",
+    "id" : "16AB193B-DB43-45FE-A6EA-7007FD058D6D",
     "equipmentType" : "Hands",
     "name" : "Color Gun"
   },
   {
-    "id" : "74F4F6CE-15E0-4982-AA95-27FC7B37D0D8",
+    "id" : "675B344A-2A92-42FE-8870-60723DD181B3",
     "name" : "Xeno-Basher",
     "equipmentType" : "Hands"
   },
   {
-    "id" : "800F60E2-F8B0-4B97-AB6D-FC8D785E2AC0",
+    "id" : "EDDFFD90-34AA-4FEC-A818-4E0ED882CB63",
     "name" : "Factory Cart™",
     "equipmentType" : "Hands"
   },
   {
-    "id" : "2783138D-B213-4F00-A302-52B63B97EF49",
-    "name" : "Medical Inhaler",
+    "id" : "D1AC6AEC-0D84-4527-8BD9-30F352CD3D33",
+    "name" : "Medicinal Inhaler",
     "equipmentType" : "Hands"
   },
   {
-    "id" : "49BAC8F0-EC18-42C7-AEE8-D014EAAF064A",
-    "name" : "Nutritional Inhaler",
-    "equipmentType" : "Hands"
-  },
-  {
-    "ammo" : "33B80B85-AF56-4DEF-9E2A-3CD456C3671E",
-    "id" : "7C7055BD-0EBA-49BE-AAB5-CF4E7E7D5B09",
+    "ammo" : "94FE4224-D41C-4975-962F-959B85C6895B",
+    "id" : "AC7FF543-C4F4-45DB-83E7-6BE717A625C4",
     "equipmentType" : "Hands",
     "name" : "Nobelisk Detonator"
   },
   {
-    "ammo" : "8235EE75-82C9-40A0-A287-AB32830A13C1",
-    "id" : "2D94D0B3-A52C-4A8C-84F6-2D6FDBFE1E84",
+    "ammo" : "93B82BE3-C781-4DD8-920E-BD8477A8FD68",
+    "id" : "7F2EE647-7495-4DD2-9954-7DFA727CE2BF",
     "equipmentType" : "Hands",
-    "name" : "Rebbar Gun"
+    "name" : "Rebar Gun"
   },
   {
-    "id" : "6B792DB6-4578-4300-9837-AB3C48CB68E0",
+    "id" : "8ECE58CF-C9FE-47EE-81BC-04063BDD3685",
     "name" : "Blade Runners",
     "equipmentType" : "Body"
   },
   {
-    "id" : "60AC212E-06C0-4CC9-B3D3-E1E89C10F5CD",
-    "fuel" : "942808A5-7A7E-48B5-A6E1-5FF160AA646D",
+    "id" : "87A1BFF9-78B8-46F6-8E32-58BA96C5A034",
+    "fuel" : "68036E54-A413-4781-988C-B97143819EB1",
     "equipmentType" : "Body",
     "name" : "Jetpack"
   },
   {
-    "id" : "9BA43DAF-EF13-4A66-B574-54C9B0880617",
-    "fuel" : "EA122F9E-4B79-4E02-BE90-BBB3B2EBC9C6",
+    "id" : "C00F9285-9514-4F81-8E80-768D1F62BDEC",
+    "fuel" : "68DF76F8-1B3A-428F-A561-E3AEBA283648",
     "equipmentType" : "Body",
     "name" : "Gas Mask"
   },
   {
-    "id" : "4A508269-3111-4FD8-8D16-38433717418D",
-    "fuel" : "D437D3C0-8D46-4C87-A477-478084558751",
+    "id" : "AA71275A-EC32-4EAB-B609-02EBC0AF2911",
+    "fuel" : "F51BE4F7-CEBF-4A34-8E69-57D4FD4ED4F7",
     "equipmentType" : "Body",
     "name" : "Hazmat Suit"
   },
   {
-    "id" : "664E230A-2CC0-4E5A-BA54-DF1C1A381F61",
+    "id" : "11441252-0451-4DC1-AF9A-066B56A0B413",
     "name" : "Parachute",
     "equipmentType" : "Body"
   }

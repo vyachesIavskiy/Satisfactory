@@ -19,13 +19,25 @@ class TabBarController: UITabBarController {
     }
     
     private func setupAppearance() {
-        let tabBarItemAppearance = UITabBarItemAppearance()
-        tabBarItemAppearance.configureWithDefault(for: .stacked)
-        tabBarItemAppearance.selected.iconColor = .factoryPrimaryColor
-        tabBarItemAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.factorySecondaryColor]
+        let tabBarItemStackedAppearance = UITabBarItemAppearance()
+        tabBarItemStackedAppearance.configureWithDefault(for: .stacked)
+        tabBarItemStackedAppearance.selected.iconColor = .factoryPrimaryColor
+        tabBarItemStackedAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.factorySecondaryColor]
+        
+        let tabBarItemCompactAppearance = UITabBarItemAppearance()
+        tabBarItemCompactAppearance.configureWithDefault(for: .compactInline)
+        tabBarItemCompactAppearance.selected.iconColor = .factoryPrimaryColor
+        tabBarItemCompactAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.factorySecondaryColor]
+        
+        let tabBarItemInlineAppearance = UITabBarItemAppearance()
+        tabBarItemInlineAppearance.configureWithDefault(for: .inline)
+        tabBarItemInlineAppearance.selected.iconColor = .factoryPrimaryColor
+        tabBarItemInlineAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.factorySecondaryColor]
         
         let tabBarAppearance = UITabBarAppearance()
-        tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
+        tabBarAppearance.stackedLayoutAppearance = tabBarItemStackedAppearance
+        tabBarAppearance.compactInlineLayoutAppearance = tabBarItemCompactAppearance
+        tabBarAppearance.inlineLayoutAppearance = tabBarItemInlineAppearance
         tabBar.standardAppearance = tabBarAppearance
     }
 }

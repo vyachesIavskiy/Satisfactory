@@ -1,7 +1,7 @@
-let uraniumPellet = Part(name: "Uranium Pellet", type: .nuclear)
-let electromagneticControlRod = Part(name: "Electromagnetic Control Rod", type: .nuclear)
-let encasedUraniumCell = Part(name: "Encased Uranium Cell", type: .nuclear)
-let nuclearFuelRod = Part(name: "Nuclear Fuel Rod", type: .nuclear)
+let uraniumPellet = Part(name: "Uranium Pellet", partType: .nuclear)
+let electromagneticControlRod = Part(name: "Electromagnetic Control Rod", partType: .nuclear)
+let encasedUraniumCell = Part(name: "Encased Uranium Cell", partType: .nuclear)
+let nuclearFuelRod = Part(name: "Nuclear Fuel Rod", partType: .nuclear)
 
 let Nuclear = [
     uraniumPellet,

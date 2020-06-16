@@ -1,6 +1,6 @@
 import Foundation
 
-enum PartType: String, Codable {
+enum PartType: String, Codable, Hashable, CaseIterable {
     case hubParts = "Hub Parts"
     case ores = "Ores"
     case fuels = "Fuels"
@@ -22,19 +22,19 @@ enum PartType: String, Codable {
     case spaceElevatorParts = "Space Elevator Parts"
 }
 
-struct Part: Codable {
+struct Part: Item, Codable, Hashable, Identifiable {
     let id: UUID
     let name: String
-    let type: PartType
+    let partType: PartType
     
-    var isLiquid: Bool { return type == .liquids }
+    var isLiquid: Bool { return partType == .liquids }
+    
+    var recipes: [Recipe] { Storage.shared[recipesFor: id] }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id).uuid()
         name = try container.decode(String.self, forKey: .name)
-        type = try container.decode(PartType.self, forKey: .type)
+        partType = try container.decode(PartType.self, forKey: .partType)
     }
 }
-
-extension Part: Hashable { }

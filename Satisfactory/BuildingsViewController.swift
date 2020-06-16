@@ -1,6 +1,6 @@
 import UIKit
 
-class BuildingsDataSource: UITableViewDiffableDataSource<BuildingType, Building> {
+final class BuildingsDataSource: UITableViewDiffableDataSource<BuildingType, Building> {
     override init(tableView: UITableView, cellProvider: @escaping UITableViewDiffableDataSource<BuildingType, Building>.CellProvider) {
         super.init(tableView: tableView, cellProvider: cellProvider)
         
@@ -33,7 +33,7 @@ final class BuildingsViewController: ViewController {
         let controller = UISearchController(searchResultsController: nil)
         controller.searchResultsUpdater = self
         controller.obscuresBackgroundDuringPresentation = false
-        controller.searchBar.placeholder = "Search buildings..."
+        controller.searchBar.placeholder = "Search buildings"
         return controller
     }()
     

@@ -1,3 +1,3 @@
-let hubParts = Part(name: "Hub Parts", type: .hubParts)
+let hubParts = Part(name: "Hub Parts", partType: .hubParts)
 
 let HubParts = [hubParts]

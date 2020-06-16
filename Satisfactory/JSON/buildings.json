@@ -1,706 +1,706 @@
 [
   {
-    "id" : "EBF0F76E-C766-4AA6-AB7D-398AE5D5C13C",
+    "id" : "A1765CDE-F872-4AFA-899B-CEE118BB4184",
     "name" : "The HUB",
     "buildingType" : "Special"
   },
   {
-    "id" : "5A8574CB-F6A0-4C77-87D1-E7B8B13E5B46",
+    "id" : "D2745C5F-8CC5-4DFF-B4E4-53D093C39DFE",
     "name" : "M.A.M.",
     "buildingType" : "Special"
   },
   {
-    "id" : "75E26CE9-D9D6-48B5-A4D8-A21CD6765B7E",
+    "id" : "C47F7DEF-9F8A-4914-9B21-E1D05F3BE8C0",
     "name" : "Space Elevator",
     "buildingType" : "Special"
   },
   {
-    "id" : "7CF21439-A211-44EA-AE76-480D59336791",
+    "id" : "0E5E44A4-6DC8-4C5A-ADD6-EF64AED5D721",
     "name" : "AWESOME Sink",
     "buildingType" : "Special"
   },
   {
-    "id" : "AB3246B2-D1BE-4F1C-8304-9E5808349E29",
+    "id" : "8995BDF9-4A35-4793-A6C9-3613B6D4296A",
     "name" : "AWESOME Shop",
     "buildingType" : "Special"
   },
   {
-    "id" : "E7B3AA0C-9A65-4C18-A7FD-42961D326BCD",
+    "id" : "4AB36E6C-64C5-4847-BB4B-D4F7A72AD308",
     "name" : "Water Extractor",
     "buildingType" : "Fluid Production"
   },
   {
-    "id" : "704252DF-3562-43CF-859D-A1AF362E4029",
+    "id" : "47B54502-3FF5-450E-B37F-0F37F80F6085",
     "name" : "Oil Extractor",
     "buildingType" : "Fluid Production"
   },
   {
-    "id" : "A8F535AD-A1A4-4E10-BB41-03A672B74C06",
+    "id" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
     "name" : "Refinery",
     "buildingType" : "Fluid Production"
   },
   {
-    "id" : "1BA20D82-46D8-4227-BEEE-FE2200DAB8FB",
+    "id" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
     "name" : "Constructor",
     "buildingType" : "Manufacturers"
   },
   {
-    "id" : "C20FCE8B-2E2C-477F-8D09-9DA6D8DDA9B7",
+    "id" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
     "name" : "Assembler",
     "buildingType" : "Manufacturers"
   },
   {
-    "id" : "DE4696B9-305E-4DA4-9218-A92D7F6D112F",
+    "id" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
     "name" : "Manufacturer",
     "buildingType" : "Manufacturers"
   },
   {
-    "id" : "D3FD8696-29CD-4791-8C6B-A00B0150484D",
+    "id" : "8704691E-7E06-4613-8C8C-74C1C9ADAF0B",
     "name" : "Miner MK.1",
     "buildingType" : "Miners"
   },
   {
-    "id" : "196AC130-63FB-463E-A695-698AA2FAB164",
+    "id" : "4AF6A21C-CD1F-4ACF-8DE6-1B17621284C8",
     "name" : "Miner MK.2",
     "buildingType" : "Miners"
   },
   {
-    "id" : "27DCB01A-F003-4A15-A762-2B08920EBC7D",
+    "id" : "8D4A92F2-BAF2-4C58-9DF1-0D38744A2A3E",
     "name" : "Miner MK.3",
     "buildingType" : "Miners"
   },
   {
-    "id" : "69FAAE7F-CD04-461E-B024-2AA401ADCF39",
+    "id" : "29910A06-E019-4746-8FD7-A7E3FB171AB3",
     "name" : "Smelter",
     "buildingType" : "Smelters"
   },
   {
-    "id" : "75D747A6-1C70-4895-A9E2-2A1433DBB26D",
+    "id" : "067F8B6F-BA8B-48A5-B5A3-65BB13715F3C",
     "name" : "Foundry",
     "buildingType" : "Smelters"
   },
   {
-    "id" : "34BC073A-01B9-4178-8FD6-8B1F0D9657BE",
+    "id" : "D6D298AF-5155-4A8D-927E-C02BFF9595F1",
     "name" : "Craft Bench",
     "buildingType" : "Workstations"
   },
   {
-    "id" : "7203B8A0-409F-4C35-BEE6-244C65209A3A",
+    "id" : "5B34F4E9-CCAA-4AA2-99F7-0023201A7802",
     "name" : "Equipment Workshop",
     "buildingType" : "Workstations"
   },
   {
-    "id" : "60C744A9-8F8E-4431-84DB-19F9B32E836C",
+    "id" : "F8A6FBB3-1C5E-47EB-8891-A75641471F11",
     "name" : "Biomass Generator",
     "buildingType" : "Generators"
   },
   {
-    "id" : "105EB8D9-628B-49B1-B781-7DD1C98EA946",
+    "id" : "50F034DF-770C-478A-9299-8350882ED524",
     "name" : "Coal Generator",
     "buildingType" : "Generators"
   },
   {
-    "id" : "D6B3ED29-B251-45C0-8DD8-0D98A2083A12",
+    "id" : "8B51A52A-A8EA-4B65-91E7-AF35E4FDE3AA",
     "name" : "Fuel Generator",
     "buildingType" : "Generators"
   },
   {
-    "id" : "2F6B0B6B-77BD-4A7E-8938-C263288FFF28",
+    "id" : "5E545BE6-668F-4D13-8BD1-CF174DDF233A",
     "name" : "Nuclear Power Generator",
     "buildingType" : "Generators"
   },
   {
-    "id" : "BE0F4012-E3E4-4EFA-BD30-593B8AFB3B1C",
+    "id" : "E6284C42-D42C-499C-A41A-25ADD422C89F",
     "name" : "Geothermal Generator",
     "buildingType" : "Generators"
   },
   {
-    "id" : "0ECB6668-87E0-4501-9153-0018D6852919",
+    "id" : "AD9AD8CC-9696-4DCF-88AD-1637CB40D986",
     "name" : "Power Pole MK.1",
     "buildingType" : "Power Poles"
   },
   {
-    "id" : "4B0F7503-8362-49DE-BF87-FBBDC463F122",
+    "id" : "19D4CEDA-E2C9-407D-9624-95937A9355B8",
     "name" : "Power Pole MK.2",
     "buildingType" : "Power Poles"
   },
   {
-    "id" : "F9DCDC97-C065-41FF-A855-B8A2CE00CC89",
+    "id" : "5D1ECD8D-46E4-49B9-A1C9-260FBDAB2A0E",
     "name" : "Power Pole MK.3",
     "buildingType" : "Power Poles"
   },
   {
-    "id" : "8E021E6D-C5F4-4CC7-AA34-C807CE9E1651",
+    "id" : "C2EA115F-F6B7-4EAB-99C0-320510A1F3D8",
     "name" : "Power Line",
     "buildingType" : "Power Poles"
   },
   {
-    "id" : "F7AE00A2-52B9-4CEE-B0B4-74119D2EA67F",
+    "id" : "DEBD3DCA-ACFD-431B-B541-B2B2A3852AD3",
     "name" : "Wall Outlet MK.1",
     "buildingType" : "Wall Poles"
   },
   {
-    "id" : "19869C20-FACB-46A0-9F2D-1BF486320D01",
+    "id" : "CE2C4488-A6C8-4656-A9B2-5FF5805A28C6",
     "name" : "Wall Outlet MK.2",
     "buildingType" : "Wall Poles"
   },
   {
-    "id" : "3454D7A5-7BC9-4866-BCDD-FDF23E95CA7F",
+    "id" : "49FC43EC-0BEE-4B09-A84A-C7E534BC843A",
     "name" : "Wall Outlet MK.3",
     "buildingType" : "Wall Poles"
   },
   {
-    "id" : "29BAA331-2565-404D-9007-0F3B0F1BC023",
+    "id" : "D96D69B9-EB5C-46B4-B102-966C7EB7E90C",
     "name" : "Double Wall Outlet MK.1",
     "buildingType" : "Wall Poles"
   },
   {
-    "id" : "397830B4-93D8-4C8A-85F9-1AAC15986BA5",
+    "id" : "8FAA212D-45B6-4993-B2E8-7DF97618C76D",
     "name" : "Double Wall Outlet MK.2",
     "buildingType" : "Wall Poles"
   },
   {
-    "id" : "30AF3A27-BF39-4FC1-B06F-9848D5EE74E8",
+    "id" : "B63A69B3-7BCD-4786-AD09-D8CAB5BF15EB",
     "name" : "Double Wall Outlet MK.3",
     "buildingType" : "Wall Poles"
   },
   {
-    "id" : "0A88E6FF-DE9F-42C0-B5A9-DFA0435E55AA",
+    "id" : "F3638B6C-D8AB-4815-814C-D6E7D55F9488",
     "name" : "Conveyor Belt",
     "buildingType" : "Conveyor Belts"
   },
   {
-    "id" : "205938A6-178E-47AD-929C-A10E0037ED14",
+    "id" : "1374274F-263C-4A39-B282-746567B8886D",
     "name" : "Conveyor Belt MK.2",
     "buildingType" : "Conveyor Belts"
   },
   {
-    "id" : "7F5456F1-5CD1-47A3-85E1-16B70041DFAF",
+    "id" : "003AB725-A69A-4405-995B-ABF8FD35BE58",
     "name" : "Conveyor Belt MK.3",
     "buildingType" : "Conveyor Belts"
   },
   {
-    "id" : "F00D3011-0B09-4121-889E-E3C5607B1BAB",
+    "id" : "948803EB-6868-4920-9DED-6DF1AECAC622",
     "name" : "Conveyor Belt MK.4",
     "buildingType" : "Conveyor Belts"
   },
   {
-    "id" : "0B6C4A7D-E250-4053-B280-143AB8BA2FCB",
+    "id" : "E61847C9-3BAD-4FC2-B256-8AAE3A637238",
     "name" : "Conveyor Belt MK.5",
     "buildingType" : "Conveyor Belts"
   },
   {
-    "id" : "884A69B5-475F-4CE3-A059-1C91EB6B2C53",
+    "id" : "AB0F93AF-66F2-405D-BF59-5E5FE7935678",
     "name" : "Conveyor Lift",
     "buildingType" : "Conveyor Lifts"
   },
   {
-    "id" : "D8844D6A-BB85-4229-9DE7-FFF7FF00D675",
+    "id" : "6E058FC2-599F-4082-876C-B0B84E6F164D",
     "name" : "Conveyor Lift MK.2",
     "buildingType" : "Conveyor Lifts"
   },
   {
-    "id" : "B8DF45D5-A2E4-4925-BCCB-D0D12B5CF9A4",
+    "id" : "AA516E86-9627-4436-9120-254197720C38",
     "name" : "Conveyor Lift MK.3",
     "buildingType" : "Conveyor Lifts"
   },
   {
-    "id" : "8F90DCC6-8603-4282-9A7C-52A5BFD8A918",
+    "id" : "3F070BEF-400F-4770-BCA9-CAC2C602C8C8",
     "name" : "Conveyor Lift MK.4",
     "buildingType" : "Conveyor Lifts"
   },
   {
-    "id" : "C941ADE3-AD95-449D-992B-DEE4169BF1BD",
+    "id" : "7C94D26E-CAE0-4ADB-B175-98C460C413E5",
     "name" : "Conveyor Lift MK.5",
     "buildingType" : "Conveyor Lifts"
   },
   {
-    "id" : "34F476BF-1B01-42B9-8D3A-152E7CE9E11D",
+    "id" : "8F076CDB-2990-4768-B3BE-490BBF232F9F",
     "name" : "Conveyor Pole",
     "buildingType" : "Conveyor Supports"
   },
   {
-    "id" : "5EBDB489-2451-4AC4-A7BB-F01E2C058399",
+    "id" : "D11A0F25-89A0-404B-99D9-FCEF06D7F820",
     "name" : "Stackable Conveyor Pole",
     "buildingType" : "Conveyor Supports"
   },
   {
-    "id" : "3E2C93AD-E290-4CC4-9F3E-978DE6315205",
+    "id" : "782CEC18-3950-410B-8983-FA336BD09EF5",
     "name" : "Conveyor Wall Mount",
     "buildingType" : "Conveyor Supports"
   },
   {
-    "id" : "ECB37247-10EC-4DC1-871F-AA5395ED921A",
+    "id" : "FED67662-1E71-40BA-A5E1-D90E54A37B52",
     "name" : "Pipeline Support",
     "buildingType" : "Pipe Supports"
   },
   {
-    "id" : "3CD2331C-69A1-4EE7-88D5-99D3119414DB",
+    "id" : "00F12153-71CB-473A-95ED-1A990A8EA248",
     "name" : "Stackable Pipeline Support",
     "buildingType" : "Pipe Supports"
   },
   {
-    "id" : "154567CD-F2DE-4953-A338-BB2BC6FB6B64",
+    "id" : "E2A304A8-0858-44A1-BD87-5A0061E5F16D",
     "name" : "Pipeline Wall Support",
     "buildingType" : "Pipe Supports"
   },
   {
-    "id" : "ACE36BC8-7518-4687-8DE2-C9BBB0F66C84",
+    "id" : "0589FCB5-C145-4816-ABBC-04550E693145",
     "name" : "Pipeline Wall Hole",
     "buildingType" : "Pipe Supports"
   },
   {
-    "id" : "53EA40AA-2B84-4B54-975A-38E1BEF63DE7",
+    "id" : "D6D3DF6B-66CB-43F4-89B6-07213253DDEC",
     "name" : "Pipeline",
     "buildingType" : "Pipelines"
   },
   {
-    "id" : "95EA9DF2-8267-4DF6-81E5-85E6ABB74CAD",
+    "id" : "42616903-12DF-405E-A16E-C1E4DE6BF689",
     "name" : "Pipeline Junction Cross",
     "buildingType" : "Pipelines"
   },
   {
-    "id" : "6EAB1EDE-EFC6-40D1-A3F8-4E6243711B56",
+    "id" : "2D0A725B-8715-4297-BBC8-4AE2AF4136E1",
     "name" : "Pipeline Pump",
     "buildingType" : "Pipelines"
   },
   {
-    "id" : "F25855AB-FE01-480B-BE05-970FD2B8757F",
+    "id" : "135A3BF2-707B-4917-B409-07FA00F3B46C",
     "name" : "Conveyor Splitter",
     "buildingType" : "Sorting"
   },
   {
-    "id" : "D0206196-B0AD-4C82-BEDE-FA46148448D4",
+    "id" : "03D2549F-8CA7-497A-B758-0018CE556960",
     "name" : "Smart Splitter",
     "buildingType" : "Sorting"
   },
   {
-    "id" : "53DD5167-790F-4450-8554-1CE2E38054C1",
+    "id" : "96C04A9A-A7DC-47FE-BC6E-A3E25F4350EB",
     "name" : "Programmable Splitter",
     "buildingType" : "Sorting"
   },
   {
-    "id" : "7B2BC8BA-0B61-4D61-8E56-B155D01C8073",
+    "id" : "F476CFB0-4539-4B51-8C29-64FF08DB2BF4",
     "name" : "Conveyor Merger",
     "buildingType" : "Sorting"
   },
   {
-    "id" : "027A40D6-FF55-473E-82AE-C052F6644632",
+    "id" : "6EF830D3-062E-4682-ADA2-237CF0DA7DDE",
     "name" : "Fence 1",
     "buildingType" : "Attachments"
   },
   {
-    "id" : "C20AC665-6C46-4D90-8292-5DF035EDF498",
+    "id" : "64D923FF-5B87-4852-B661-458537D13ACD",
     "name" : "Stairs Right",
     "buildingType" : "Attachments"
   },
   {
-    "id" : "8B7CAE40-A989-4E7E-BA91-FC278E4B593A",
+    "id" : "AF245524-AC37-4F3A-841B-80171CEE957B",
     "name" : "Stairs Left",
     "buildingType" : "Attachments"
   },
   {
-    "id" : "CC483AB7-72AB-4213-B41A-FD033857211E",
+    "id" : "C23D5D21-6C14-4AF6-B69D-DCE5E38A8298",
     "name" : "Personal Storage Box",
     "buildingType" : "Storage"
   },
   {
-    "id" : "13712B60-2265-4553-A1A0-5E2CA13070F1",
+    "id" : "96F293F2-D1FF-46CB-A469-26510EADE153",
     "name" : "Storage Container",
     "buildingType" : "Storage"
   },
   {
-    "id" : "925BBB1E-4820-4BC3-8BEA-9FD1F2DA8780",
+    "id" : "460E1E70-F864-467F-9A42-D63A8EBDCDD3",
     "name" : "Industrial Storage Container",
     "buildingType" : "Storage"
   },
   {
-    "id" : "2A26BDFA-5AAC-44A9-ABC8-1D7F66C3DE87",
+    "id" : "8175A3B8-C1B8-48C1-A68E-D0E7D491D3A0",
     "name" : "Fluid Buffer",
     "buildingType" : "Storage"
   },
   {
-    "id" : "605AE059-A34E-48AF-970E-68B1C8A0D9CB",
+    "id" : "93BE7E78-DD67-4465-BB83-171D956DC85D",
     "name" : "Industrial Fluid Buffer",
     "buildingType" : "Storage"
   },
   {
-    "id" : "6A5CD849-5F1F-4C49-8A50-CC48E99AA17A",
+    "id" : "B63A699B-9E63-40C9-86D6-6F96FA3BACB1",
     "name" : "Lookout Tower",
     "buildingType" : "Towers"
   },
   {
-    "id" : "D5F459C1-7875-492D-B0BE-C53ED2DB932D",
+    "id" : "6688CDAB-CA52-4D0B-A1BE-F290F240CBD9",
     "name" : "Radio Tower",
     "buildingType" : "Towers"
   },
   {
-    "id" : "5C87E6B4-719D-4866-975E-B537E48447CE",
+    "id" : "73CB539E-2320-4D75-83C4-529E61261692",
     "name" : "Walkway Straight",
     "buildingType" : "Walkways"
   },
   {
-    "id" : "0D8B2290-5221-494E-A3BD-4D5DE32D3E09",
+    "id" : "5C99C88E-A0F8-4ABA-AEEB-A0954EB15294",
     "name" : "Walkway Turn",
     "buildingType" : "Walkways"
   },
   {
-    "id" : "3E0F6894-BD50-4B13-82F3-C5AA090EAA0B",
+    "id" : "851A2142-180E-42D9-A661-2B797358B09B",
     "name" : "Walkway T-Crossing",
     "buildingType" : "Walkways"
   },
   {
-    "id" : "0BDB88B4-C083-44C7-8C3B-09E18FBE9DC2",
+    "id" : "CDDDCB4A-6EED-4D91-BE6A-E1C6FB96687B",
     "name" : "Walkway Crossing",
     "buildingType" : "Walkways"
   },
   {
-    "id" : "7E46281C-CC5C-48D2-AD26-E2E105DD832B",
+    "id" : "E8295D91-CF91-4A63-B15B-04146D448371",
     "name" : "Walkway Ramp",
     "buildingType" : "Walkways"
   },
   {
-    "id" : "B120BBD4-D411-41E8-9EA6-30A99249E82F",
+    "id" : "551C7D18-9642-4577-88B9-2E4FFE080917",
     "name" : "Wall Conveyor x1",
     "buildingType" : "Conveyor Connections"
   },
   {
-    "id" : "BECB9C82-6700-436E-9C32-CE69DFD26130",
+    "id" : "0EC1920D-A725-4120-BFA4-049652A032C6",
     "name" : "Wall Conveyor x2",
     "buildingType" : "Conveyor Connections"
   },
   {
-    "id" : "6FE3CCA4-442E-4E12-8BD9-E5E9342BCECB",
+    "id" : "6FAED7C7-0382-420D-B003-6334D620CDC6",
     "name" : "Wall Conveyor x3",
     "buildingType" : "Conveyor Connections"
   },
   {
-    "id" : "12A80B65-FB45-451F-904E-58D392BECCEE",
+    "id" : "ECF93003-C90A-415F-B735-8609C6A11307",
     "name" : "Wall Conveyor x1 (Gray)",
     "buildingType" : "Conveyor Connections"
   },
   {
-    "id" : "E7132B7F-AD82-4B84-8FC5-1A7BDBA4134F",
+    "id" : "7DC78131-0C93-4C89-82A3-BA2B159779E9",
     "name" : "Wall Conveyor x2 (Gray)",
     "buildingType" : "Conveyor Connections"
   },
   {
-    "id" : "50DDA5ED-4FF4-41D2-BF65-7AEA78D69A6C",
+    "id" : "E442D6B6-88C0-47FE-B6BF-44706086EC3F",
     "name" : "Wall Conveyor x3 (Gray)",
     "buildingType" : "Conveyor Connections"
   },
   {
-    "id" : "14F6A2DB-BE7E-49C8-A1EB-B33530D43F93",
+    "id" : "9202F0E8-5ED1-4D29-BA7D-F5F72D420361",
     "name" : "Left Door Wall",
     "buildingType" : "Doors"
   },
   {
-    "id" : "4BC8B790-D61E-46E4-A1BB-4B8AA619A651",
+    "id" : "9FE8ECD9-4FDA-48C1-8CF1-2B53EF81FB21",
     "name" : "Center Door Wall",
     "buildingType" : "Doors"
   },
   {
-    "id" : "05AB6C61-3EA4-4B2F-A7DA-FC13802074BB",
+    "id" : "6178557C-5AC2-4648-A22D-B5F0EF118125",
     "name" : "Right Door Wall",
     "buildingType" : "Doors"
   },
   {
-    "id" : "C11FDBFB-9162-4ACE-BEE0-EDB209645473",
+    "id" : "36FF604E-1C0A-41A3-940A-7B4E638AF953",
     "name" : "Left Door Wall (Gray)",
     "buildingType" : "Doors"
   },
   {
-    "id" : "EA789C85-8DED-4E28-8146-FDC512749CB7",
+    "id" : "D4A55C10-DC3C-44EF-BDE3-9264C73CF4E0",
     "name" : "Center Door Wall (Gray)",
     "buildingType" : "Doors"
   },
   {
-    "id" : "DE864131-2770-4487-83EC-56E08C1C0DC8",
+    "id" : "74770B96-A6CB-4F75-93F4-ACCA9F616F94",
     "name" : "Right Door Wall (Gray)",
     "buildingType" : "Doors"
   },
   {
-    "id" : "449C7129-7C52-491D-B569-539675928B10",
+    "id" : "E7FC52D0-FCEA-4E2F-A31E-4EE64FB73C67",
     "name" : "Gate Wall",
     "buildingType" : "Doors"
   },
   {
-    "id" : "92A04315-4B14-4D93-91CC-65CB7FA57A32",
+    "id" : "65BF6B98-230F-4F5A-A823-A20BA76F91B8",
     "name" : "Wall 8m x 4m",
     "buildingType" : "Walls"
   },
   {
-    "id" : "0DE62A0F-2FDD-4154-8A2B-DCECE3ABD154",
+    "id" : "786BB3E1-9C10-4FD1-B607-76B54D50ED86",
     "name" : "Wall 8m x 4m (Gray)",
     "buildingType" : "Walls"
   },
   {
-    "id" : "A42E83D1-6C5B-432B-8730-597CF44C8386",
+    "id" : "AC6F8F02-84CC-4593-9CFA-8F7607D65819",
     "name" : "Reinforced Window",
     "buildingType" : "Windows"
   },
   {
-    "id" : "E08C6883-F957-404D-BB84-F1D783576CA9",
+    "id" : "6FAEA741-3CEC-4990-8533-E9BF1CC05105",
     "name" : "Frame Window",
     "buildingType" : "Windows"
   },
   {
-    "id" : "B6DD5E24-942A-4910-9B41-B4BA74B9309F",
+    "id" : "017C9240-AB13-4B7A-B709-6A03208FD4F4",
     "name" : "Single Window",
     "buildingType" : "Windows"
   },
   {
-    "id" : "F03EF8DB-DF72-45DA-ACF0-47D839D65675",
+    "id" : "1583D33A-7031-486E-A2C2-6F306FBC4377",
     "name" : "Pannel Window",
     "buildingType" : "Windows"
   },
   {
-    "id" : "02F414E2-9267-46E6-92EE-7E608C44C6E2",
+    "id" : "7BE7F1F4-F50A-4C12-9D07-B99DA945263C",
     "name" : "Foundation 8m x 1m",
     "buildingType" : "Foundations"
   },
   {
-    "id" : "158FFCED-1C82-4CE8-9FB8-FEACD0ED5501",
+    "id" : "30AD4219-6838-405F-BE72-2DC27D4F39B3",
     "name" : "Foundation 8m x 2m",
     "buildingType" : "Foundations"
   },
   {
-    "id" : "90DEF4C4-192A-46A1-AD84-FD112CFD2347",
+    "id" : "1DA865F5-4DC5-48CE-B6A7-249D1753DB4B",
     "name" : "Foundation 8m x 4m",
     "buildingType" : "Foundations"
   },
   {
-    "id" : "FA18D241-5C49-44BB-AB3E-E30D31B39964",
+    "id" : "0A93BB8B-0C4E-4E9D-8E2C-D3BFD312D77D",
     "name" : "Foundation Glass",
     "buildingType" : "Foundations"
   },
   {
-    "id" : "ECA5046E-FE2A-40C8-9BE3-592B21E79DDF",
+    "id" : "EF41C135-B3C8-4F7E-B2D3-800C054367EC",
     "name" : "Foundation Frame",
     "buildingType" : "Foundations"
   },
   {
-    "id" : "E7348A92-47A4-4C50-AD2C-C36895196B25",
+    "id" : "162D4C64-B960-4A70-B54C-460111BE3E01",
     "name" : "Pillar Base",
     "buildingType" : "Foundations"
   },
   {
-    "id" : "9000ABEB-2B80-4FFF-8D41-5C7B5345D518",
+    "id" : "166F511D-CE6C-46E8-AA2B-6FA55D3AA1A3",
     "name" : "Pillar Middle",
     "buildingType" : "Foundations"
   },
   {
-    "id" : "06A8FE8D-6B99-442C-97F7-AEB783205322",
+    "id" : "8B0242BA-96EE-4178-B1B3-88B162E3E54A",
     "name" : "Pillar Top",
     "buildingType" : "Foundations"
   },
   {
-    "id" : "706F8A86-22BD-444F-98FE-0FDD251ACA84",
+    "id" : "AA7465ED-77FB-4092-ABEF-69BE765DAB28",
     "name" : "Quater Pipe",
     "buildingType" : "Quater-Pipes"
   },
   {
-    "id" : "1622B836-05BE-4F2E-87FF-BC600BB09E3B",
+    "id" : "E7430794-EE7E-4882-A07B-0D69B8D0D516",
     "name" : "Inverted Quater Pipe",
     "buildingType" : "Quater-Pipes"
   },
   {
-    "id" : "3B3122C0-B85F-4F46-9BAD-90D69FC9A2B5",
+    "id" : "B6A84A84-B53B-4DC1-BDCA-433492A8C2C6",
     "name" : "Inner-Corner Quater Pipe",
     "buildingType" : "Quater-Pipes"
   },
   {
-    "id" : "2EF8C27A-EB57-4222-BD7A-45938471FF05",
+    "id" : "E489BF5B-45CB-42FA-8FFD-ABF16F19F57B",
     "name" : "Inverted Inner-Corner Quater Pipe",
     "buildingType" : "Quater-Pipes"
   },
   {
-    "id" : "40879680-88BD-4A12-BC91-0925ACCC0B8A",
+    "id" : "D0F6A751-4D0F-407A-9EB3-B5EDF3AF5A3A",
     "name" : "Outer-Corner Quater Pipe",
     "buildingType" : "Quater-Pipes"
   },
   {
-    "id" : "36AF3BCA-9FC5-42E7-A30E-2403C8696214",
+    "id" : "4D0D769A-A617-45F9-AF46-BECDC67D786E",
     "name" : "Inverted Outer-Corner Quater Pipe",
     "buildingType" : "Quater-Pipes"
   },
   {
-    "id" : "2F743542-6803-4A9C-9F27-1156E21794C0",
+    "id" : "EADB78B9-5387-444F-9339-7C5920C530B7",
     "name" : "Ramp 8m x 1m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "83DDEE05-3A68-481F-BBC9-C5539F967979",
+    "id" : "D2DCCFCC-40D8-4C88-A08B-DD9D253DFCF8",
     "name" : "Ramp 8m x 2m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "7D7997B7-E7BF-4A44-A193-8765244D04D5",
+    "id" : "5CBE63B8-7661-419D-B763-C32430CFD62B",
     "name" : "Ramp 8m x 4m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "E7C6CFED-F258-4B75-8B57-AA7BC9F26EB8",
+    "id" : "9CE958C1-270D-4D9A-AA3C-88A260048EB9",
     "name" : "Up Corner Ramp 8m x 1m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "396CA73B-CA04-44F9-80EC-3683E7D3D82A",
+    "id" : "4FCAADDC-6DA7-4ECC-A834-DA869A146547",
     "name" : "Up Corner Ramp 8m x 2m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "54CCECCC-3AC3-4436-AC9F-907671F71BB6",
+    "id" : "E834F650-8DA0-4D57-9E6B-12BB60B67C1C",
     "name" : "Up Corner Ramp 8m x 4m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "0379DDAC-D75B-44EC-85B2-5F759840CAAD",
+    "id" : "7B41AC90-FF84-4D82-BEDA-0D098D902F5C",
     "name" : "Down Corner Ramp 8m x 1m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "8874E346-F74F-4929-955B-A4442DD9008A",
+    "id" : "D3DE717B-EF4C-452C-9A19-ED4EC9FDCA2C",
     "name" : "Down Corner Ramp 8m x 2m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "567B1A47-7C86-4FB0-B3FD-D1CEC3BB373C",
+    "id" : "7700074B-7960-455B-9B17-6D5ABA513852",
     "name" : "Down Corner Ramp 8m x 4m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "52979093-A2E5-4F17-AE40-15B69DED03A6",
+    "id" : "A78A3FE5-A318-43D9-8217-6B7D3C2804C0",
     "name" : "Double Ramp 8m x 2m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "CCF12B9E-667E-4777-9347-34F696BEA1CE",
+    "id" : "92551181-77B5-4029-86D9-BA5F76EA7F14",
     "name" : "Double Ramp 8m x 4m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "DF5F8516-E782-47EC-8163-FAD0F54EC79A",
+    "id" : "884D36C9-5B79-4DC5-A9FE-512B37726B16",
     "name" : "Double Ramp 8m x 8m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "6ED50F01-C687-4AB3-99B0-AB79EE01A4CE",
+    "id" : "6268713D-BB12-48EB-B668-09F91B72452B",
     "name" : "Inverted Ramp 8m x 1m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "8E460D57-4769-40F6-A9F0-D0515494A784",
+    "id" : "3C3B76DD-5C59-43D0-8829-3E5068A6FB52",
     "name" : "Inverted Ramp 8m x 2m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "1BA62774-ABE5-4133-998B-D87BC9D7DB6F",
+    "id" : "47329979-CEE0-4775-901C-96516A12F42D",
     "name" : "Inverted Ramp 8m x 4m",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "51D782DD-543F-4D73-9745-0E0E265DA8AA",
+    "id" : "4E0038D9-0B2E-4706-A38F-47B493EE0AF0",
     "name" : "Up Corner Ramp 8m x 1m Inverted",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "B74795C1-2AF8-473B-BD85-6F603EB8742C",
+    "id" : "BF285070-5EF5-4D61-A0F7-DAB1E3193542",
     "name" : "Up Corner Ramp 8m x 2m Inverted",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "1A1A239C-40D8-40E5-947B-31565783FE64",
+    "id" : "5962B65C-88EF-4E4C-B43F-042C5C975A34",
     "name" : "Up Corner Ramp 8m x 4m Inverted",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "798F3703-3E50-46C0-945E-E77B7588D187",
+    "id" : "8C14C5A1-3982-4606-8EEA-5119945C281D",
     "name" : "Down Corner Ramp 8m x 1m Inverted",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "EFAC0697-E26B-43BB-B17D-8BEF1C3BD19C",
+    "id" : "785C1F3C-11DB-4FBA-9D36-E1BF2E13BA15",
     "name" : "Down Corner Ramp 8m x 2m Inverted",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "1885EACD-B18E-4F14-A05C-70C4CFB524A3",
+    "id" : "49451B0A-A50A-4041-9608-FECED6DCB87C",
     "name" : "Down Corner Ramp 8m x 4m Inverted",
     "buildingType" : "Ramps"
   },
   {
-    "id" : "34A38DCE-4E15-4A40-8B76-152230EC3B27",
+    "id" : "999FEA29-DB78-4564-954E-AAA11261112D",
     "name" : "Hyper Tube",
     "buildingType" : "Hypertubes"
   },
   {
-    "id" : "43DA9527-AB08-420E-AA79-6B013CEF4EB4",
+    "id" : "227662D6-A0AE-42F3-A13F-ABBED34B8FCF",
     "name" : "Hyper Tube Entrance",
     "buildingType" : "Hypertubes"
   },
   {
-    "id" : "E8162382-975C-431D-8813-1B398432C267",
+    "id" : "D6527C9D-3AA5-4C32-8649-2A14C4726CDE",
     "name" : "Hyper Tube Support",
     "buildingType" : "Hypertubes"
   },
   {
-    "id" : "84ABDECE-0AD5-41BA-8AD3-6241648FB253",
+    "id" : "DB29A9A5-B268-404B-BF49-8982D76901AE",
     "name" : "Hyper Tube Wall Support",
     "buildingType" : "Hypertubes"
   },
   {
-    "id" : "B38B47DF-948D-4E0A-B293-70D1362B6B1B",
+    "id" : "797EA742-A808-4C30-8F63-AF37AD505F09",
     "name" : "Hyper Tube Wall Hole",
     "buildingType" : "Hypertubes"
   },
   {
-    "id" : "DB2141DA-C8FB-4BFB-8230-3BF188B3A21B",
+    "id" : "811F3D5E-F68E-41CB-9B36-D0B9F62E9F72",
     "name" : "Stackable Hyper Tube Support",
     "buildingType" : "Hypertubes"
   },
   {
-    "id" : "E48CE258-6CD9-4933-A0EC-E70D925E3E4D",
+    "id" : "FC511861-EB1C-4810-9498-5A40F9C66E99",
     "name" : "Jump Pad",
     "buildingType" : "Jump Pads"
   },
   {
-    "id" : "5611B504-B8ED-49A0-B9CC-3AAF18E7AF58",
+    "id" : "A8EB46CF-ADF9-4B90-8641-1A5B8A057FBE",
     "name" : "Tilted Jump Pad",
     "buildingType" : "Jump Pads"
   },
   {
-    "id" : "E642285F-6C35-4A2A-AA52-35560BBEB9A1",
+    "id" : "76D72E25-CAE8-43C8-B87D-E33E5AE6BAC1",
     "name" : "U-Jelly Landing Pad",
     "buildingType" : "Jump Pads"
   },
   {
-    "id" : "5614D2FB-EEA2-4605-A1D6-A6A1F72CF102",
+    "id" : "BEABE35E-5E24-4690-AB4C-A41E1944E336",
     "name" : "Truck Station",
     "buildingType" : "Motor Vehicles"
   },
   {
-    "id" : "ABE400C4-0CE1-4ED5-8D84-0AD3B3E5036F",
+    "id" : "D987D277-C275-4E89-9C46-7C5A296D2007",
     "name" : "Train Station",
     "buildingType" : "Railed Vehicles"
   },
   {
-    "id" : "F34464DF-A612-4A8A-9F88-764D1D44D30B",
+    "id" : "7A3A3D9B-C1FB-4B1E-A7D7-8812EAEF8AAF",
     "name" : "Freight Platform",
     "buildingType" : "Railed Vehicles"
   },
   {
-    "id" : "A2680282-5560-46E0-9548-8DD7309D8646",
+    "id" : "2DF5C999-8494-457E-AD7B-FFB108632FE7",
     "name" : "Fluid Freight Platform",
     "buildingType" : "Railed Vehicles"
   },
   {
-    "id" : "56C2F9E5-CD60-4348-BD55-5BAFC74E4CCB",
+    "id" : "61DA519E-81F4-4622-B91A-D1873CE9B17C",
     "name" : "Empty Platform",
     "buildingType" : "Railed Vehicles"
   },
   {
-    "id" : "CD3F5E5D-7FCA-42C0-AC5C-FBCEF1BD6E1F",
+    "id" : "29BB337A-77F5-4AF2-BCFB-A01034F89888",
     "name" : "Railway",
     "buildingType" : "Railed Vehicles"
   }

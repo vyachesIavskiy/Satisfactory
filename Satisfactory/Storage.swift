@@ -13,6 +13,10 @@ final class Storage {
         parts.first { $0.id == id }
     }
     
+    subscript (partName name: String) -> Part? {
+        parts.first { $0.name == name }
+    }
+    
     subscript (equipmentId id: UUID) -> Equipment? {
         equipments.first { $0.id == id }
     }
@@ -29,20 +33,8 @@ final class Storage {
         recipes.first { $0.id == id }
     }
     
-    subscript (recipesForPart id: UUID) -> [Recipe] {
-        recipes.filter {
-            $0.output.contains {
-                if let pid = $0.part?.id {
-                    return pid == id
-                }
-                
-                if let eid = $0.equipment?.id {
-                    return eid == id
-                }
-                
-                return false
-            }
-        }
+    subscript (recipesFor id: UUID) -> [Recipe] {
+        recipes.filter { $0.output.contains { $0.item.id == id } }
     }
     
     private init() {}

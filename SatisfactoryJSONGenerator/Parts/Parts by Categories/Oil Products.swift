@@ -1,7 +1,7 @@
-let rubber = Part(name: "Rubber", type: .oilProducts)
-let plastic = Part(name: "Plastic", type: .oilProducts)
-let petroleumCoke = Part(name: "Petroleum Coke", type: .oilProducts)
-let polymerResin = Part(name: "Polymer Resin", type: .oilProducts)
+let rubber = Part(name: "Rubber", partType: .oilProducts)
+let plastic = Part(name: "Plastic", partType: .oilProducts)
+let petroleumCoke = Part(name: "Petroleum Coke", partType: .oilProducts)
+let polymerResin = Part(name: "Polymer Resin", partType: .oilProducts)
 
 let OilProducts = [
     rubber,

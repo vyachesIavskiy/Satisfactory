@@ -1,16 +1,18 @@
 import Foundation
 
-enum EquipmentType: String, Codable {
+enum EquipmentType: String, Codable, Hashable, CaseIterable {
     case hands = "Hands"
     case body = "Body"
 }
 
-struct Equipment: Codable {
+struct Equipment: Item, Codable, Hashable {
     let id: UUID
     let name: String
     let equipmentType: EquipmentType
     let fuel: UUID?
     let ammo: UUID?
+    
+    var recipes: [Recipe] { Storage.shared[recipesFor: id] }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

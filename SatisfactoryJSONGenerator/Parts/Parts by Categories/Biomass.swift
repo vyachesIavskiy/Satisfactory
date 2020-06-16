@@ -1,6 +1,6 @@
-let biomass = Part(name: "Biomass", type: .biomass)
-let solidBiofuel = Part(name: "Solid Biofuel", type: .biomass)
-let fabric = Part(name: "Fabric", type: .biomass)
+let biomass = Part(name: "Biomass", partType: .biomass)
+let solidBiofuel = Part(name: "Solid Biofuel", partType: .biomass)
+let fabric = Part(name: "Fabric", partType: .biomass)
 
 let Biomasses = [
     biomass,

@@ -1,11 +1,11 @@
-let water = Part(name: "Water", type: .liquids)
-let crudeOil = Part(name: "Crude Oil", type: .liquids)
-let heavyOilResidue = Part(name: "Heavy Oil Residue", type: .liquids)
-let fuel = Part(name: "Fuel", type: .liquids)
-let liquidBiofuel = Part(name: "Liquid Biofuel", type: .liquids)
-let turbofuel = Part(name: "Turbofuel", type: .liquids)
-let aluminaSolution = Part(name: "Alumina Solution", type: .liquids)
-let sulfuricAcid = Part(name: "Sulfuric Acid", type: .liquids)
+let water = Part(name: "Water", partType: .liquids)
+let crudeOil = Part(name: "Crude Oil", partType: .liquids)
+let heavyOilResidue = Part(name: "Heavy Oil Residue", partType: .liquids)
+let fuel = Part(name: "Fuel", partType: .liquids)
+let liquidBiofuel = Part(name: "Liquid Biofuel", partType: .liquids)
+let turbofuel = Part(name: "Turbofuel", partType: .liquids)
+let aluminaSolution = Part(name: "Alumina Solution", partType: .liquids)
+let sulfuricAcid = Part(name: "Sulfuric Acid", partType: .liquids)
 
 let Liquids = [
     water,

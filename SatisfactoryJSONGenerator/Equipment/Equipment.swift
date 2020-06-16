@@ -37,10 +37,9 @@ let beacon = Equipment(name: "Beacon", equipmentType: .hands)
 let colorGun = Equipment(name: "Color Gun", equipmentType: .hands, ammo: colorCartridge)
 let xenoBasher = Equipment(name: "Xeno-Basher", equipmentType: .hands)
 let factoryCart = Equipment(name: "Factory Cart™", equipmentType: .hands)
-let medicalInhaler = Equipment(name: "Medical Inhaler", equipmentType: .hands)
-let nutritionalInhaler = Equipment(name: "Nutritional Inhaler", equipmentType: .hands)
+let medicinalInhaler = Equipment(name: "Medicinal Inhaler", equipmentType: .hands)
 let nobeliskDetonator = Equipment(name: "Nobelisk Detonator", equipmentType: .hands, ammo: nobelisk)
-let rebbarGun = Equipment(name: "Rebbar Gun", equipmentType: .hands, ammo: spikedRebar)
+let rebarGun = Equipment(name: "Rebar Gun", equipmentType: .hands, ammo: spikedRebar)
 
 // MARK: - Body
 let bladeRunners = Equipment(name: "Blade Runners", equipmentType: .body)
@@ -58,10 +57,9 @@ let Equipments = [
     colorGun,
     xenoBasher,
     factoryCart,
-    medicalInhaler,
-    nutritionalInhaler,
+    medicinalInhaler,
     nobeliskDetonator,
-    rebbarGun,
+    rebarGun,
     
     bladeRunners,
     jetpack,

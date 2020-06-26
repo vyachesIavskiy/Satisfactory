@@ -1,3478 +1,3634 @@
 [
   {
-    "isDefault" : true,
-    "id" : "9463065F-DD5C-4604-BA98-FD855B3453DA",
-    "input" : [
-      {
-        "id" : "85D402F1-0606-40FC-8297-8304D126BC8E",
-        "amount" : 1
-      }
-    ],
     "output" : [
       {
-        "id" : "5285392D-D801-4637-9E88-4E0D87B71BE4",
+        "id" : "74C2E45A-0C7D-4319-A191-404318D7506C",
         "amount" : 1
       }
     ],
-    "machine" : "29910A06-E019-4746-8FD7-A7E3FB171AB3",
-    "duration" : 2
-  },
-  {
-    "isDefault" : true,
-    "id" : "239F19E4-8D8F-4ABB-A40E-2EA13F28C77B",
     "input" : [
       {
-        "id" : "EF49983A-B52E-4CA4-8EC8-22264695CA1A",
+        "id" : "B563C6BD-86D6-459E-B414-5D0959ECEF61",
         "amount" : 1
       }
     ],
+    "id" : "56CBDFF9-47CB-40F2-879E-A6CD78939C97",
+    "duration" : 2,
+    "isDefault" : true,
+    "machine" : "FE160F62-B710-49DF-B595-38E69B6F3ED3",
+    "name" : "Iron Ingot"
+  },
+  {
     "output" : [
       {
-        "id" : "D98509A9-9023-4217-A10D-9766AE9ACB4D",
+        "id" : "D51FE276-AA7E-4890-B4D5-023740013966",
         "amount" : 1
       }
     ],
-    "machine" : "29910A06-E019-4746-8FD7-A7E3FB171AB3",
-    "duration" : 2
-  },
-  {
-    "isDefault" : true,
-    "id" : "B622B7E8-C3B8-455F-A77E-6083111D2BCE",
     "input" : [
       {
-        "id" : "4D0AD764-9A11-457F-80BD-A5A7AF60E2A9",
+        "id" : "ED0ED2F2-5972-4887-8902-7E100056AED8",
+        "amount" : 1
+      }
+    ],
+    "id" : "62137597-0AD1-4C8D-8E57-A5984A6FFF11",
+    "duration" : 2,
+    "isDefault" : true,
+    "machine" : "FE160F62-B710-49DF-B595-38E69B6F3ED3",
+    "name" : "Copper Ingot"
+  },
+  {
+    "output" : [
+      {
+        "id" : "6A68EC64-9363-464B-86AB-B6057291975E",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "F9713ABB-B3FA-46BF-894B-F704F94DA05C",
         "amount" : 3
       }
     ],
-    "output" : [
-      {
-        "id" : "132E8D67-BE76-44C8-A49C-76921105A4E7",
-        "amount" : 1
-      }
-    ],
-    "machine" : "29910A06-E019-4746-8FD7-A7E3FB171AB3",
-    "duration" : 4
+    "id" : "FDD533C3-0A25-44A1-9C4F-A77D663DCD2D",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "FE160F62-B710-49DF-B595-38E69B6F3ED3",
+    "name" : "Caterium Ingot"
   },
   {
-    "isDefault" : false,
-    "id" : "FA0D8E37-84CF-4A89-858B-0F898055F7C0",
+    "output" : [
+      {
+        "id" : "6E2F5766-313B-492A-B0BC-D2AFE896AD1B",
+        "amount" : 3
+      }
+    ],
     "input" : [
       {
-        "id" : "96CE7465-48DC-4719-AAB0-49FC2F31F5EF",
+        "id" : "3FC73407-1D4C-4FB2-AF0F-2FA4CD44667D",
         "amount" : 12
       }
     ],
+    "id" : "D11B24E8-A66A-4913-A8E0-0F90DF60299D",
+    "duration" : 5,
+    "isDefault" : false,
+    "machine" : "FE160F62-B710-49DF-B595-38E69B6F3ED3",
+    "name" : "Alternate: Pure Aluminum Ingot"
+  },
+  {
     "output" : [
       {
-        "id" : "CA7016BA-3A03-4F3C-8D64-DD9C5AA13682",
+        "id" : "1ADC1834-A8BA-4C21-8019-6237542F09D8",
         "amount" : 3
       }
     ],
-    "machine" : "29910A06-E019-4746-8FD7-A7E3FB171AB3",
-    "duration" : 5
-  },
-  {
+    "input" : [
+      {
+        "id" : "B563C6BD-86D6-459E-B414-5D0959ECEF61",
+        "amount" : 3
+      },
+      {
+        "id" : "26A26D82-195A-4AC3-81F6-2BC55216C095",
+        "amount" : 3
+      }
+    ],
+    "id" : "EDAD6488-DBFC-4872-BC9B-901B3D593F11",
+    "duration" : 4,
     "isDefault" : true,
-    "id" : "75425122-11C0-4218-B080-02BD84524EEF",
-    "input" : [
-      {
-        "id" : "85D402F1-0606-40FC-8297-8304D126BC8E",
-        "amount" : 3
-      },
-      {
-        "id" : "2A48263A-BEC9-4CA2-A162-9BBD0BEB6E46",
-        "amount" : 3
-      }
-    ],
-    "output" : [
-      {
-        "id" : "03D8B898-C8C5-4189-82BC-6D2EB6D6DE58",
-        "amount" : 3
-      }
-    ],
-    "machine" : "067F8B6F-BA8B-48A5-B5A3-65BB13715F3C",
-    "duration" : 4
+    "machine" : "511DAD41-1E96-49B2-8F08-B1094A57123F",
+    "name" : "Steel Ingot"
   },
   {
-    "isDefault" : false,
-    "id" : "45D89851-5782-4F73-9D32-C1AAD8EC2094",
+    "output" : [
+      {
+        "id" : "1ADC1834-A8BA-4C21-8019-6237542F09D8",
+        "amount" : 3
+      }
+    ],
     "input" : [
       {
-        "id" : "5285392D-D801-4637-9E88-4E0D87B71BE4",
+        "id" : "74C2E45A-0C7D-4319-A191-404318D7506C",
         "amount" : 2
       },
       {
-        "id" : "2A48263A-BEC9-4CA2-A162-9BBD0BEB6E46",
+        "id" : "26A26D82-195A-4AC3-81F6-2BC55216C095",
         "amount" : 2
       }
     ],
-    "output" : [
-      {
-        "id" : "03D8B898-C8C5-4189-82BC-6D2EB6D6DE58",
-        "amount" : 3
-      }
-    ],
-    "machine" : "067F8B6F-BA8B-48A5-B5A3-65BB13715F3C",
-    "duration" : 3
+    "id" : "BF768EAB-446F-4D89-B56D-E0DA591F6E73",
+    "duration" : 3,
+    "isDefault" : false,
+    "machine" : "511DAD41-1E96-49B2-8F08-B1094A57123F",
+    "name" : "Alternate: Solid Steel Ingot"
   },
   {
-    "isDefault" : false,
-    "id" : "E56DEFA7-6FF7-4B94-8668-889FA8C608DC",
+    "output" : [
+      {
+        "id" : "1ADC1834-A8BA-4C21-8019-6237542F09D8",
+        "amount" : 10
+      }
+    ],
     "input" : [
       {
-        "id" : "85D402F1-0606-40FC-8297-8304D126BC8E",
+        "id" : "B563C6BD-86D6-459E-B414-5D0959ECEF61",
         "amount" : 6
       },
       {
-        "id" : "72699377-05CA-45EC-BE4B-70BBFAF0CEFE",
+        "id" : "CDF90860-2099-4EB7-A3E8-67B396E8E65E",
         "amount" : 3
       }
     ],
-    "output" : [
-      {
-        "id" : "03D8B898-C8C5-4189-82BC-6D2EB6D6DE58",
-        "amount" : 10
-      }
-    ],
-    "machine" : "067F8B6F-BA8B-48A5-B5A3-65BB13715F3C",
-    "duration" : 16
+    "id" : "F4D4B728-384E-4DD9-9F24-897B584FDC37",
+    "duration" : 16,
+    "isDefault" : false,
+    "machine" : "511DAD41-1E96-49B2-8F08-B1094A57123F",
+    "name" : "Alternate: Compacted Steel Ingot"
   },
   {
-    "isDefault" : false,
-    "id" : "6F4B3B4D-B8C8-44BD-9919-366C47A849BB",
-    "input" : [
-      {
-        "id" : "85D402F1-0606-40FC-8297-8304D126BC8E",
-        "amount" : 15
-      },
-      {
-        "id" : "A4374CAC-AEC0-48B6-829D-0B7FFA2E3289",
-        "amount" : 15
-      }
-    ],
     "output" : [
       {
-        "id" : "03D8B898-C8C5-4189-82BC-6D2EB6D6DE58",
+        "id" : "1ADC1834-A8BA-4C21-8019-6237542F09D8",
         "amount" : 20
       }
     ],
-    "machine" : "067F8B6F-BA8B-48A5-B5A3-65BB13715F3C",
-    "duration" : 12
-  },
-  {
-    "isDefault" : false,
-    "id" : "76A5B3E7-DBFF-46E8-91E4-C743F5B95302",
     "input" : [
       {
-        "id" : "85D402F1-0606-40FC-8297-8304D126BC8E",
-        "amount" : 2
+        "id" : "B563C6BD-86D6-459E-B414-5D0959ECEF61",
+        "amount" : 15
       },
       {
-        "id" : "EF49983A-B52E-4CA4-8EC8-22264695CA1A",
-        "amount" : 2
+        "id" : "E80E7688-53B8-4B3B-94EC-57284C69D6F9",
+        "amount" : 15
       }
     ],
+    "id" : "4111B0E9-9559-4894-9017-00337406FC35",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "511DAD41-1E96-49B2-8F08-B1094A57123F",
+    "name" : "Alternate: Coke Steel Ingot"
+  },
+  {
     "output" : [
       {
-        "id" : "5285392D-D801-4637-9E88-4E0D87B71BE4",
+        "id" : "74C2E45A-0C7D-4319-A191-404318D7506C",
         "amount" : 5
       }
     ],
-    "machine" : "067F8B6F-BA8B-48A5-B5A3-65BB13715F3C",
-    "duration" : 6
-  },
-  {
-    "isDefault" : false,
-    "id" : "20CC8E81-3A52-4778-8579-634CF3E8C667",
     "input" : [
       {
-        "id" : "EF49983A-B52E-4CA4-8EC8-22264695CA1A",
-        "amount" : 10
+        "id" : "B563C6BD-86D6-459E-B414-5D0959ECEF61",
+        "amount" : 2
       },
       {
-        "id" : "85D402F1-0606-40FC-8297-8304D126BC8E",
-        "amount" : 5
+        "id" : "ED0ED2F2-5972-4887-8902-7E100056AED8",
+        "amount" : 2
       }
     ],
+    "id" : "DF01AD93-4B01-4297-A173-165AB198A1A7",
+    "duration" : 6,
+    "isDefault" : false,
+    "machine" : "511DAD41-1E96-49B2-8F08-B1094A57123F",
+    "name" : "Alternate: Iron Alloy Ingot"
+  },
+  {
     "output" : [
       {
-        "id" : "D98509A9-9023-4217-A10D-9766AE9ACB4D",
+        "id" : "D51FE276-AA7E-4890-B4D5-023740013966",
         "amount" : 20
       }
     ],
-    "machine" : "067F8B6F-BA8B-48A5-B5A3-65BB13715F3C",
-    "duration" : 12
-  },
-  {
-    "isDefault" : true,
-    "id" : "37898B45-DB66-4D40-8B97-60E91AF924FB",
     "input" : [
       {
-        "id" : "96CE7465-48DC-4719-AAB0-49FC2F31F5EF",
+        "id" : "ED0ED2F2-5972-4887-8902-7E100056AED8",
+        "amount" : 10
+      },
+      {
+        "id" : "B563C6BD-86D6-459E-B414-5D0959ECEF61",
+        "amount" : 5
+      }
+    ],
+    "id" : "E8D9CF21-5008-4505-B3F6-773F4546DBE1",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "511DAD41-1E96-49B2-8F08-B1094A57123F",
+    "name" : "Alternate: Copper Alloy Ingot"
+  },
+  {
+    "output" : [
+      {
+        "id" : "6E2F5766-313B-492A-B0BC-D2AFE896AD1B",
+        "amount" : 4
+      }
+    ],
+    "input" : [
+      {
+        "id" : "3FC73407-1D4C-4FB2-AF0F-2FA4CD44667D",
         "amount" : 12
       },
       {
-        "id" : "4263C99C-B6E7-45D9-BB64-6FA8C64A935D",
+        "id" : "9AA62BAE-BD32-4ECA-923C-92D4AF5E27CC",
         "amount" : 7
       }
     ],
-    "output" : [
-      {
-        "id" : "CA7016BA-3A03-4F3C-8D64-DD9C5AA13682",
-        "amount" : 4
-      }
-    ],
-    "machine" : "067F8B6F-BA8B-48A5-B5A3-65BB13715F3C",
-    "duration" : 3
+    "id" : "CF107D9F-E276-49EB-AB0C-2BB22635CACD",
+    "duration" : 3,
+    "isDefault" : true,
+    "machine" : "511DAD41-1E96-49B2-8F08-B1094A57123F",
+    "name" : "Aluminum Ingot"
   },
   {
-    "isDefault" : true,
-    "id" : "6B7AA020-4575-452B-A3F7-1CD88E1CEEAB",
-    "input" : [
-      {
-        "id" : "5285392D-D801-4637-9E88-4E0D87B71BE4",
-        "amount" : 3
-      }
-    ],
     "output" : [
       {
-        "id" : "8E04181A-E1AC-42F5-A925-6AD5A96C0373",
+        "id" : "65BDB720-7EE1-4745-A17E-14603EBDCFE9",
         "amount" : 2
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 6
-  },
-  {
+    "input" : [
+      {
+        "id" : "74C2E45A-0C7D-4319-A191-404318D7506C",
+        "amount" : 3
+      }
+    ],
+    "id" : "E3216460-6261-47A1-BB58-C1B20BD125CC",
+    "duration" : 6,
     "isDefault" : true,
-    "id" : "E0B5C7D9-BA2E-4DFD-A335-6D640EBA9604",
-    "input" : [
-      {
-        "id" : "5285392D-D801-4637-9E88-4E0D87B71BE4",
-        "amount" : 1
-      }
-    ],
-    "output" : [
-      {
-        "id" : "D94E820B-B6BD-49CF-BF1F-99B42DBEB0EB",
-        "amount" : 1
-      }
-    ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Iron Plate"
   },
   {
-    "isDefault" : false,
-    "id" : "4D48618C-C4EF-4683-808B-C8CD98345FF0",
-    "input" : [
+    "output" : [
       {
-        "id" : "03D8B898-C8C5-4189-82BC-6D2EB6D6DE58",
+        "id" : "79190097-D5CF-404F-B9C6-BC3918500EC0",
         "amount" : 1
       }
     ],
+    "input" : [
+      {
+        "id" : "74C2E45A-0C7D-4319-A191-404318D7506C",
+        "amount" : 1
+      }
+    ],
+    "id" : "8C99FBF7-9D49-4EB6-B5B1-8CFBF537A12E",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Iron Rod"
+  },
+  {
     "output" : [
       {
-        "id" : "D94E820B-B6BD-49CF-BF1F-99B42DBEB0EB",
+        "id" : "79190097-D5CF-404F-B9C6-BC3918500EC0",
         "amount" : 4
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 5
-  },
-  {
-    "isDefault" : true,
-    "id" : "5626A0EB-C790-4564-90A5-E1B4E6DA45E8",
     "input" : [
       {
-        "id" : "D94E820B-B6BD-49CF-BF1F-99B42DBEB0EB",
+        "id" : "1ADC1834-A8BA-4C21-8019-6237542F09D8",
         "amount" : 1
       }
     ],
+    "id" : "6027C4F4-7064-4C22-8A3F-CD1CC46380FF",
+    "duration" : 5,
+    "isDefault" : false,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Alternate: Steel Rod"
+  },
+  {
     "output" : [
       {
-        "id" : "5AFBDD2D-90A6-43DF-BBEB-979071F831C8",
+        "id" : "16308E13-F421-49F4-B269-63B45B14C968",
         "amount" : 4
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : false,
-    "id" : "A2C05E57-6CDA-4FA3-93B7-6261C65338E9",
     "input" : [
       {
-        "id" : "5285392D-D801-4637-9E88-4E0D87B71BE4",
-        "amount" : 5
+        "id" : "79190097-D5CF-404F-B9C6-BC3918500EC0",
+        "amount" : 1
       }
     ],
+    "id" : "27C34D9E-8641-4540-A73C-CE5F8BA7DAC0",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Screw"
+  },
+  {
     "output" : [
       {
-        "id" : "5AFBDD2D-90A6-43DF-BBEB-979071F831C8",
+        "id" : "16308E13-F421-49F4-B269-63B45B14C968",
         "amount" : 20
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 24
-  },
-  {
-    "isDefault" : false,
-    "id" : "CFF44973-6A8B-4C9D-8ADD-287C9A41A007",
     "input" : [
       {
-        "id" : "AEDBDDFA-28D2-4864-8922-775C16662C6A",
-        "amount" : 1
+        "id" : "74C2E45A-0C7D-4319-A191-404318D7506C",
+        "amount" : 5
       }
     ],
+    "id" : "C9367285-34E9-45F0-80C4-C67FE2E2C9CA",
+    "duration" : 24,
+    "isDefault" : false,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Alternate: Casted Screw"
+  },
+  {
     "output" : [
       {
-        "id" : "5AFBDD2D-90A6-43DF-BBEB-979071F831C8",
+        "id" : "16308E13-F421-49F4-B269-63B45B14C968",
         "amount" : 52
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 12
-  },
-  {
-    "isDefault" : true,
-    "id" : "1F8B0785-F027-4999-997E-A2F9348069E2",
     "input" : [
       {
-        "id" : "D98509A9-9023-4217-A10D-9766AE9ACB4D",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "F3D3C814-7765-4201-9E8B-803CB19E4E58",
+        "id" : "525C604C-12D7-423C-94A6-925094FB332D",
         "amount" : 1
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 6
+    "id" : "AAD44728-D94C-400C-BF77-EEF79D0F861E",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Alternate: Steel Screw"
   },
   {
-    "isDefault" : true,
-    "id" : "EF5FC0B2-FF30-4B11-82DE-A59B6BE66A07",
+    "output" : [
+      {
+        "id" : "3D362F99-56E6-4AC8-884D-79F057476308",
+        "amount" : 1
+      }
+    ],
     "input" : [
       {
-        "id" : "03D8B898-C8C5-4189-82BC-6D2EB6D6DE58",
+        "id" : "D51FE276-AA7E-4890-B4D5-023740013966",
+        "amount" : 2
+      }
+    ],
+    "id" : "9D8F6162-FB85-4FF3-B61D-3BFDD7A1370B",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Copper Sheet"
+  },
+  {
+    "output" : [
+      {
+        "id" : "525C604C-12D7-423C-94A6-925094FB332D",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "1ADC1834-A8BA-4C21-8019-6237542F09D8",
         "amount" : 4
       }
     ],
-    "output" : [
-      {
-        "id" : "AEDBDDFA-28D2-4864-8922-775C16662C6A",
-        "amount" : 1
-      }
-    ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
+    "id" : "46F1346E-5243-4792-83F3-607A162D99E8",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Steel Beam"
   },
   {
-    "isDefault" : true,
-    "id" : "77541E8E-CD9F-4781-8563-C6E5AA4B0C45",
+    "output" : [
+      {
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
+        "amount" : 2
+      }
+    ],
     "input" : [
       {
-        "id" : "03D8B898-C8C5-4189-82BC-6D2EB6D6DE58",
+        "id" : "1ADC1834-A8BA-4C21-8019-6237542F09D8",
         "amount" : 3
       }
     ],
+    "id" : "589CCEA9-A573-4783-BFD9-3E363A83C30B",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Steel Pipe"
+  },
+  {
     "output" : [
       {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
         "amount" : 2
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : true,
-    "id" : "02DFAFD1-C498-465F-B314-7967E549802B",
     "input" : [
       {
-        "id" : "D98509A9-9023-4217-A10D-9766AE9ACB4D",
+        "id" : "D51FE276-AA7E-4890-B4D5-023740013966",
         "amount" : 1
       }
     ],
-    "output" : [
-      {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
-        "amount" : 2
-      }
-    ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
+    "id" : "C293AC6E-13ED-4575-B9AF-28A8E1FE8FB1",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Wire"
   },
   {
-    "isDefault" : false,
-    "id" : "5DEE062D-0D16-44DD-8C01-2B32BBF94453",
-    "input" : [
-      {
-        "id" : "5285392D-D801-4637-9E88-4E0D87B71BE4",
-        "amount" : 5
-      }
-    ],
     "output" : [
       {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
         "amount" : 9
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 24
-  },
-  {
-    "isDefault" : false,
-    "id" : "D620BC54-4D3E-4926-A143-3404C4542D5E",
     "input" : [
       {
-        "id" : "132E8D67-BE76-44C8-A49C-76921105A4E7",
-        "amount" : 1
+        "id" : "74C2E45A-0C7D-4319-A191-404318D7506C",
+        "amount" : 5
       }
     ],
+    "id" : "1658FC6A-2A7C-424A-8631-F8D8CBE29B38",
+    "duration" : 24,
+    "isDefault" : false,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Alternate: Iron Wire"
+  },
+  {
     "output" : [
       {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
         "amount" : 8
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
-  },
-  {
-    "isDefault" : true,
-    "id" : "663E3CB1-45E6-4EB6-80E6-B78E97895614",
     "input" : [
       {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
+        "id" : "6A68EC64-9363-464B-86AB-B6057291975E",
+        "amount" : 1
+      }
+    ],
+    "id" : "2E269083-4220-468D-ADA5-837AA6438936",
+    "duration" : 4,
+    "isDefault" : false,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Alternate: Caterium wire"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ABE5E712-3E0C-42D4-A556-292673C0B508",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
         "amount" : 2
       }
     ],
-    "output" : [
-      {
-        "id" : "E341C5ED-17CB-4B18-A02B-DE329F84608E",
-        "amount" : 1
-      }
-    ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 2
+    "id" : "E407A6BB-855D-4FCE-9F53-122DBB595E90",
+    "duration" : 2,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Cable"
   },
   {
-    "isDefault" : true,
-    "id" : "8A7D1610-CAAF-4B69-AE44-9F200DC251D0",
-    "input" : [
-      {
-        "id" : "132E8D67-BE76-44C8-A49C-76921105A4E7",
-        "amount" : 1
-      }
-    ],
     "output" : [
       {
-        "id" : "63B4EB83-4936-4163-BDF4-CD058B0D964B",
+        "id" : "BE77AB91-581C-46B7-A52C-C8506E77582D",
         "amount" : 5
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 5
-  },
-  {
-    "isDefault" : true,
-    "id" : "39A7E839-5848-47F4-A882-73696382EC9F",
     "input" : [
       {
-        "id" : "4F178725-D50E-4161-AA74-D8F04769691A",
-        "amount" : 3
-      }
-    ],
-    "output" : [
-      {
-        "id" : "E30ED745-8463-4EBA-9599-D21AC04BC140",
+        "id" : "6A68EC64-9363-464B-86AB-B6057291975E",
         "amount" : 1
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
+    "id" : "0738B4D7-D924-4F17-869C-8C48DCE7DBC8",
+    "duration" : 5,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Quickwire"
   },
   {
-    "isDefault" : true,
-    "id" : "4473405F-822F-4DF1-9091-A86DE9B9F608",
-    "input" : [
-      {
-        "id" : "73B5CEDA-D335-4C13-99AF-4ECAD81D4622",
-        "amount" : 5
-      }
-    ],
     "output" : [
       {
-        "id" : "B3EFA785-EA5C-42A2-8C43-ABF8C3F27BCA",
+        "id" : "627B8BF2-3800-4569-B2FF-E2F422272AF8",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "204FF439-9B8B-4FF3-A2ED-95CBF3A02619",
         "amount" : 3
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 8
+    "id" : "848D6181-1264-48B0-B3EA-EF96DBD430FE",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Concrete"
   },
   {
-    "isDefault" : true,
-    "id" : "72501382-14B8-4C5A-91C4-6D2656C0BD35",
-    "input" : [
+    "output" : [
       {
-        "id" : "73B5CEDA-D335-4C13-99AF-4ECAD81D4622",
+        "id" : "34A5C8A5-2371-49F5-8B3B-B3FF918039FB",
         "amount" : 3
       }
     ],
-    "output" : [
+    "input" : [
       {
-        "id" : "4263C99C-B6E7-45D9-BB64-6FA8C64A935D",
+        "id" : "0522A6B5-C7FF-4D1E-85A3-4CB3EDFFC406",
         "amount" : 5
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 8
+    "id" : "5A96B79C-4363-4ACE-A9D0-003A830AE1EE",
+    "duration" : 8,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Quartz Crystal"
   },
   {
-    "isDefault" : true,
-    "id" : "0DDC4975-9DAE-4FAA-921C-90E21D1F3C56",
-    "input" : [
-      {
-        "id" : "504C4E4B-A77B-4C57-8662-B5BAEC3F67DA",
-        "amount" : 4
-      }
-    ],
     "output" : [
       {
-        "id" : "D8758C9D-23F7-45EE-89E8-2960B5813326",
+        "id" : "9AA62BAE-BD32-4ECA-923C-92D4AF5E27CC",
+        "amount" : 5
+      }
+    ],
+    "input" : [
+      {
+        "id" : "0522A6B5-C7FF-4D1E-85A3-4CB3EDFFC406",
+        "amount" : 3
+      }
+    ],
+    "id" : "C3F46EFE-6BFC-47A7-992B-B0F5D1A333DB",
+    "duration" : 8,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Silica"
+  },
+  {
+    "output" : [
+      {
+        "id" : "D43CFBEE-1424-4138-8A64-85FC9FA6A6D7",
         "amount" : 20
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
-  },
-  {
-    "isDefault" : true,
-    "id" : "4C16107F-8722-4C88-BEFC-4B49F2BC0A78",
     "input" : [
       {
-        "id" : "77473704-83A1-4BAE-AB20-A9166A25D0F0",
-        "amount" : 10
+        "id" : "B03AA488-62C5-4B7C-9FA6-0623CC1D921D",
+        "amount" : 4
       }
     ],
+    "id" : "67794CEB-C227-4925-922D-015257D6C36C",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Biomass (Wood)"
+  },
+  {
     "output" : [
       {
-        "id" : "D8758C9D-23F7-45EE-89E8-2960B5813326",
+        "id" : "D43CFBEE-1424-4138-8A64-85FC9FA6A6D7",
         "amount" : 5
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 5
-  },
-  {
-    "isDefault" : true,
-    "id" : "1565FFB2-AC4A-4170-9455-23FB910DEF8A",
     "input" : [
       {
-        "id" : "CD4DEC7F-3D3E-474A-A6B0-5475EB0F7E1F",
-        "amount" : 1
+        "id" : "1D04DBD3-DD51-4757-8CC8-722C68CB494E",
+        "amount" : 10
       }
     ],
+    "id" : "08C6D63C-429E-4888-A7A3-B364978E59EA",
+    "duration" : 5,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Biomass (Leaves)"
+  },
+  {
     "output" : [
       {
-        "id" : "D8758C9D-23F7-45EE-89E8-2960B5813326",
+        "id" : "D43CFBEE-1424-4138-8A64-85FC9FA6A6D7",
         "amount" : 100
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
-  },
-  {
-    "isDefault" : true,
-    "id" : "15806C8D-FFE4-47EE-8900-1BEFE867AD1F",
     "input" : [
       {
-        "id" : "3D72D4F3-7BB0-4DDC-B8EA-8522C4ED12A9",
+        "id" : "935AC6A5-ED89-4878-9F50-83FD123BB726",
         "amount" : 1
       }
     ],
+    "id" : "29363EA1-8EAF-4656-955D-72CC289B89D9",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Biomass (Alien Carapace)"
+  },
+  {
     "output" : [
       {
-        "id" : "D8758C9D-23F7-45EE-89E8-2960B5813326",
+        "id" : "D43CFBEE-1424-4138-8A64-85FC9FA6A6D7",
         "amount" : 200
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 8
-  },
-  {
-    "isDefault" : true,
-    "id" : "A7F71613-8662-435F-82E4-22A4E72CFC36",
     "input" : [
       {
-        "id" : "17711FE1-7D61-43E2-80B7-97682520B60C",
-        "amount" : 10
+        "id" : "65926A3B-8748-422D-B8D8-9979E4861699",
+        "amount" : 1
       }
     ],
+    "id" : "727F4948-02B8-4CF7-8670-73337F86B9B8",
+    "duration" : 8,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Biomass (Alien Organs)"
+  },
+  {
     "output" : [
       {
-        "id" : "D8758C9D-23F7-45EE-89E8-2960B5813326",
+        "id" : "D43CFBEE-1424-4138-8A64-85FC9FA6A6D7",
         "amount" : 10
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
-  },
-  {
-    "isDefault" : true,
-    "id" : "5C51D211-4935-466F-9C21-9D6732C69D25",
     "input" : [
       {
-        "id" : "D8758C9D-23F7-45EE-89E8-2960B5813326",
+        "id" : "7D55899B-03D8-4AB4-B3F1-37C59C553B2F",
+        "amount" : 10
+      }
+    ],
+    "id" : "F85D2334-9BE3-4F6A-93BF-B7ADF924E22A",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Biomass (Mycelia)"
+  },
+  {
+    "output" : [
+      {
+        "id" : "2D4EC6E6-93E4-4BA0-8101-DDE50D1710E4",
+        "amount" : 4
+      }
+    ],
+    "input" : [
+      {
+        "id" : "D43CFBEE-1424-4138-8A64-85FC9FA6A6D7",
         "amount" : 8
       }
     ],
-    "output" : [
-      {
-        "id" : "BCEB0BB9-1F4C-4B2A-A5FC-5580039752C5",
-        "amount" : 4
-      }
-    ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
+    "id" : "29D7686A-624E-485E-8C41-AF0125C27A90",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Solid Biofuel"
   },
   {
-    "isDefault" : false,
-    "id" : "48A1C277-6F41-4BC1-AC1A-780B72C834AB",
-    "input" : [
-      {
-        "id" : "504C4E4B-A77B-4C57-8662-B5BAEC3F67DA",
-        "amount" : 1
-      }
-    ],
     "output" : [
       {
-        "id" : "2A48263A-BEC9-4CA2-A162-9BBD0BEB6E46",
+        "id" : "26A26D82-195A-4AC3-81F6-2BC55216C095",
         "amount" : 10
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
-  },
-  {
-    "isDefault" : false,
-    "id" : "B03A87E8-9086-4779-A773-639B6779F965",
     "input" : [
       {
-        "id" : "D8758C9D-23F7-45EE-89E8-2960B5813326",
-        "amount" : 5
+        "id" : "B03AA488-62C5-4B7C-9FA6-0623CC1D921D",
+        "amount" : 1
       }
     ],
+    "id" : "9EEF13BC-56BF-46EA-BFBC-6AA84C527AB5",
+    "duration" : 4,
+    "isDefault" : false,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Alternate: Charcoal"
+  },
+  {
     "output" : [
       {
-        "id" : "2A48263A-BEC9-4CA2-A162-9BBD0BEB6E46",
+        "id" : "26A26D82-195A-4AC3-81F6-2BC55216C095",
         "amount" : 6
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 8
-  },
-  {
-    "isDefault" : true,
-    "id" : "BCB56088-E01F-4A8C-8AE6-3D98BB071640",
     "input" : [
       {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
-        "amount" : 2
+        "id" : "D43CFBEE-1424-4138-8A64-85FC9FA6A6D7",
+        "amount" : 5
       }
     ],
+    "id" : "52A68213-2206-4532-A179-A3B944FF381F",
+    "duration" : 8,
+    "isDefault" : false,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Alternate: Biocoal"
+  },
+  {
     "output" : [
       {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
         "amount" : 4
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
-  },
-  {
-    "isDefault" : true,
-    "id" : "25E4D495-5D73-406F-94DC-D6B0A8DB7219",
     "input" : [
       {
-        "id" : "D94E820B-B6BD-49CF-BF1F-99B42DBEB0EB",
-        "amount" : 1
-      }
-    ],
-    "output" : [
-      {
-        "id" : "93B82BE3-C781-4DD8-920E-BD8477A8FD68",
-        "amount" : 1
-      }
-    ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 4
-  },
-  {
-    "isDefault" : true,
-    "id" : "41CA1561-1B7E-43BD-935E-481FA1B995DA",
-    "input" : [
-      {
-        "id" : "7F5534BF-9513-47B1-9C47-3736CF3ACE15",
-        "amount" : 5
-      }
-    ],
-    "output" : [
-      {
-        "id" : "BE96AA5C-83F0-4968-B8C2-A5E15E03DD63",
-        "amount" : 10
-      }
-    ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 8
-  },
-  {
-    "isDefault" : true,
-    "id" : "A719C97B-6D0D-48F1-B681-0B45BEC67AAE",
-    "input" : [
-      {
-        "id" : "1D58A1A8-B89B-41AC-949E-6CC1B4754634",
-        "amount" : 1
-      }
-    ],
-    "output" : [
-      {
-        "id" : "A03E7880-C4E9-4DCA-AEF9-5523271B1B64",
-        "amount" : 1
-      }
-    ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 8
-  },
-  {
-    "isDefault" : true,
-    "id" : "6C2B2CF4-A3E4-4272-A6B1-077782979268",
-    "input" : [
-      {
-        "id" : "0B48402E-69B5-4A1C-8169-F1A8B53115C9",
-        "amount" : 1
-      }
-    ],
-    "output" : [
-      {
-        "id" : "A03E7880-C4E9-4DCA-AEF9-5523271B1B64",
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
         "amount" : 2
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 12
+    "id" : "589F2905-69EF-4B9E-B5B2-AF25EDA1C76B",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Empty Canister"
   },
   {
-    "isDefault" : true,
-    "id" : "C9F7FC05-4229-4F63-8862-FEFC5612019B",
-    "input" : [
+    "output" : [
       {
-        "id" : "EE41C999-031B-46D4-B2E8-ED0B08C32DE4",
+        "id" : "05558C19-D818-41A0-A37C-3CF7AA320C4E",
         "amount" : 1
       }
     ],
+    "input" : [
+      {
+        "id" : "79190097-D5CF-404F-B9C6-BC3918500EC0",
+        "amount" : 1
+      }
+    ],
+    "id" : "BA64F11B-A41D-428D-8BDB-3BD8013E33FE",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Spiked Rebar"
+  },
+  {
     "output" : [
       {
-        "id" : "A03E7880-C4E9-4DCA-AEF9-5523271B1B64",
+        "id" : "84A1412E-5FD9-4A4E-9AF2-24C128C98440",
+        "amount" : 10
+      }
+    ],
+    "input" : [
+      {
+        "id" : "5FE9D195-3266-4126-A0B2-03C3BCE7EF17",
         "amount" : 5
       }
     ],
-    "machine" : "3838EDCB-2225-42C8-86DD-EA2B7F1660A7",
-    "duration" : 24
+    "id" : "A88983E7-6239-4FDA-81F5-2387CB74B381",
+    "duration" : 8,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Color Cartridge"
   },
   {
-    "isDefault" : true,
-    "id" : "ABFA6DE3-DCAC-4A62-9D52-4FBC011C692C",
+    "output" : [
+      {
+        "id" : "59938E1B-AB2B-4CCC-909F-1F4CB42A7CBE",
+        "amount" : 1
+      }
+    ],
     "input" : [
       {
-        "id" : "8E04181A-E1AC-42F5-A925-6AD5A96C0373",
+        "id" : "02D94D6F-B100-4F3C-9F9D-AFDCE2231D2C",
+        "amount" : 1
+      }
+    ],
+    "id" : "D1F55018-E7B9-416D-A835-20307A1E24E1",
+    "duration" : 8,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Power Shard (1)"
+  },
+  {
+    "output" : [
+      {
+        "id" : "59938E1B-AB2B-4CCC-909F-1F4CB42A7CBE",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "DD605225-8885-476B-8F22-3D50DC3A98A2",
+        "amount" : 1
+      }
+    ],
+    "id" : "19C653FC-152E-444A-992A-6D14F29C2C4C",
+    "duration" : 12,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Power Shard (2)"
+  },
+  {
+    "output" : [
+      {
+        "id" : "59938E1B-AB2B-4CCC-909F-1F4CB42A7CBE",
+        "amount" : 5
+      }
+    ],
+    "input" : [
+      {
+        "id" : "8A71F225-BEE6-4EA0-9B3E-3DE2D27AC5A8",
+        "amount" : 1
+      }
+    ],
+    "id" : "E14FFE4E-509C-4F69-AF9C-33D16FBF35D9",
+    "duration" : 24,
+    "isDefault" : true,
+    "machine" : "1BF01B0E-0F94-46DB-964C-7508BF9037F6",
+    "name" : "Power Shard (5)"
+  },
+  {
+    "output" : [
+      {
+        "id" : "E896B5A7-DA43-4C22-A04B-62ECA6280D44",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "65BDB720-7EE1-4745-A17E-14603EBDCFE9",
         "amount" : 6
       },
       {
-        "id" : "5AFBDD2D-90A6-43DF-BBEB-979071F831C8",
+        "id" : "16308E13-F421-49F4-B269-63B45B14C968",
         "amount" : 12
       }
     ],
+    "id" : "8E273386-6071-4D23-8EAB-8E009930EDEA",
+    "duration" : 12,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Reinforced Iron Plate"
+  },
+  {
     "output" : [
       {
-        "id" : "5E4161A9-9EBE-407D-9D79-24F05FA2D809",
+        "id" : "E896B5A7-DA43-4C22-A04B-62ECA6280D44",
         "amount" : 1
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
-  },
-  {
-    "isDefault" : false,
-    "id" : "813B5711-4649-45B2-BB74-C8D7C498F86E",
     "input" : [
       {
-        "id" : "8E04181A-E1AC-42F5-A925-6AD5A96C0373",
+        "id" : "65BDB720-7EE1-4745-A17E-14603EBDCFE9",
         "amount" : 3
       },
       {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
         "amount" : 1
       }
     ],
-    "output" : [
-      {
-        "id" : "5E4161A9-9EBE-407D-9D79-24F05FA2D809",
-        "amount" : 1
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 16
+    "id" : "282BF6BE-E783-423B-89E9-A7BC82AF4576",
+    "duration" : 16,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Adhered Iron Plate"
   },
   {
-    "isDefault" : false,
-    "id" : "080535C1-522C-4636-BDD2-6219B6F027E7",
+    "output" : [
+      {
+        "id" : "E896B5A7-DA43-4C22-A04B-62ECA6280D44",
+        "amount" : 3
+      }
+    ],
     "input" : [
       {
-        "id" : "8E04181A-E1AC-42F5-A925-6AD5A96C0373",
+        "id" : "65BDB720-7EE1-4745-A17E-14603EBDCFE9",
         "amount" : 18
       },
       {
-        "id" : "5AFBDD2D-90A6-43DF-BBEB-979071F831C8",
+        "id" : "16308E13-F421-49F4-B269-63B45B14C968",
         "amount" : 50
       }
     ],
+    "id" : "F49743CC-AFBB-488E-83D0-BD741AB8875E",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Bolted Iron Plate"
+  },
+  {
     "output" : [
       {
-        "id" : "5E4161A9-9EBE-407D-9D79-24F05FA2D809",
+        "id" : "E896B5A7-DA43-4C22-A04B-62ECA6280D44",
         "amount" : 3
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
-  },
-  {
-    "isDefault" : false,
-    "id" : "1401CD11-7057-4424-AA73-2C2068CE3A79",
     "input" : [
       {
-        "id" : "8E04181A-E1AC-42F5-A925-6AD5A96C0373",
+        "id" : "65BDB720-7EE1-4745-A17E-14603EBDCFE9",
         "amount" : 10
       },
       {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
         "amount" : 20
       }
     ],
-    "output" : [
-      {
-        "id" : "5E4161A9-9EBE-407D-9D79-24F05FA2D809",
-        "amount" : 3
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 32
+    "id" : "1B4EA552-AAB5-4118-B2A6-E77F88A5A61C",
+    "duration" : 32,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Stitched Iron Plate"
   },
   {
-    "isDefault" : true,
-    "id" : "AB1DBEAF-87F2-4EA0-B0A2-405F795717BA",
+    "output" : [
+      {
+        "id" : "4B8ADF14-86FF-49E6-92F1-A5AD32320278",
+        "amount" : 2
+      }
+    ],
     "input" : [
       {
-        "id" : "5E4161A9-9EBE-407D-9D79-24F05FA2D809",
+        "id" : "E896B5A7-DA43-4C22-A04B-62ECA6280D44",
         "amount" : 3
       },
       {
-        "id" : "D94E820B-B6BD-49CF-BF1F-99B42DBEB0EB",
+        "id" : "79190097-D5CF-404F-B9C6-BC3918500EC0",
         "amount" : 12
       }
     ],
+    "id" : "D272A365-1CC7-46BB-913D-DF4C5EE6FF32",
+    "duration" : 60,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Modular Frame"
+  },
+  {
     "output" : [
       {
-        "id" : "55ECE08F-4FF3-4085-8E58-6BB25259228E",
+        "id" : "4B8ADF14-86FF-49E6-92F1-A5AD32320278",
         "amount" : 2
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 60
-  },
-  {
-    "isDefault" : false,
-    "id" : "518A7BE8-10E8-4ECD-8FD0-DE7141F4AA5D",
     "input" : [
       {
-        "id" : "5E4161A9-9EBE-407D-9D79-24F05FA2D809",
+        "id" : "E896B5A7-DA43-4C22-A04B-62ECA6280D44",
         "amount" : 3
       },
       {
-        "id" : "5AFBDD2D-90A6-43DF-BBEB-979071F831C8",
+        "id" : "16308E13-F421-49F4-B269-63B45B14C968",
         "amount" : 56
       }
     ],
-    "output" : [
-      {
-        "id" : "55ECE08F-4FF3-4085-8E58-6BB25259228E",
-        "amount" : 2
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 24
+    "id" : "2564F06B-E505-4DC5-B3AF-E5BC5019C0DA",
+    "duration" : 24,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Bolted Frame"
   },
   {
-    "isDefault" : false,
-    "id" : "43279C6A-2D42-4A0C-BF92-7F77959E669D",
-    "input" : [
-      {
-        "id" : "5E4161A9-9EBE-407D-9D79-24F05FA2D809",
-        "amount" : 2
-      },
-      {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
-        "amount" : 10
-      }
-    ],
     "output" : [
       {
-        "id" : "55ECE08F-4FF3-4085-8E58-6BB25259228E",
+        "id" : "4B8ADF14-86FF-49E6-92F1-A5AD32320278",
         "amount" : 3
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 60
-  },
-  {
-    "isDefault" : false,
-    "id" : "EF69F92D-8B70-47A4-8497-1EE88B3A0891",
     "input" : [
       {
-        "id" : "5285392D-D801-4637-9E88-4E0D87B71BE4",
-        "amount" : 10
+        "id" : "E896B5A7-DA43-4C22-A04B-62ECA6280D44",
+        "amount" : 2
       },
       {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
-        "amount" : 2
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
+        "amount" : 10
       }
     ],
+    "id" : "0F4B25AB-336B-46EC-BC35-5DE27B2DCDE9",
+    "duration" : 60,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Steeled Frame"
+  },
+  {
     "output" : [
       {
-        "id" : "8E04181A-E1AC-42F5-A925-6AD5A96C0373",
+        "id" : "65BDB720-7EE1-4745-A17E-14603EBDCFE9",
         "amount" : 15
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
-  },
-  {
-    "isDefault" : false,
-    "id" : "E40FF519-69D4-494B-80E2-6A107BD3B242",
     "input" : [
       {
-        "id" : "03D8B898-C8C5-4189-82BC-6D2EB6D6DE58",
-        "amount" : 3
+        "id" : "74C2E45A-0C7D-4319-A191-404318D7506C",
+        "amount" : 10
       },
       {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
         "amount" : 2
       }
     ],
+    "id" : "DBE7A30B-F574-4EC1-B16B-9878CD9CDDAE",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Coated Iron Plate"
+  },
+  {
     "output" : [
       {
-        "id" : "8E04181A-E1AC-42F5-A925-6AD5A96C0373",
+        "id" : "65BDB720-7EE1-4745-A17E-14603EBDCFE9",
         "amount" : 18
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 24
-  },
-  {
-    "isDefault" : true,
-    "id" : "2C0A1415-5096-4B2B-AA00-2ABB6E058FCD",
     "input" : [
       {
-        "id" : "AEDBDDFA-28D2-4864-8922-775C16662C6A",
-        "amount" : 4
+        "id" : "1ADC1834-A8BA-4C21-8019-6237542F09D8",
+        "amount" : 3
       },
       {
-        "id" : "E30ED745-8463-4EBA-9599-D21AC04BC140",
-        "amount" : 5
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
+        "amount" : 2
       }
     ],
+    "id" : "BCF68CE6-8FCB-459A-BC81-3C5A99BE6B79",
+    "duration" : 24,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Steel Coated Plate"
+  },
+  {
     "output" : [
       {
-        "id" : "B99B3FC5-A89F-437D-B074-19EE164877C1",
+        "id" : "4821FD0F-355C-49A1-972F-17DFFCD0B805",
         "amount" : 1
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 10
-  },
-  {
-    "isDefault" : false,
-    "id" : "824DB8BB-33A4-4511-A728-2E8DADFC3A81",
     "input" : [
       {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
+        "id" : "525C604C-12D7-423C-94A6-925094FB332D",
+        "amount" : 4
+      },
+      {
+        "id" : "627B8BF2-3800-4569-B2FF-E2F422272AF8",
+        "amount" : 5
+      }
+    ],
+    "id" : "61AB35D6-D295-43A5-B7B7-32E2B98E1DC1",
+    "duration" : 10,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Encased Industrial Beam"
+  },
+  {
+    "output" : [
+      {
+        "id" : "4821FD0F-355C-49A1-972F-17DFFCD0B805",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
         "amount" : 7
       },
       {
-        "id" : "E30ED745-8463-4EBA-9599-D21AC04BC140",
+        "id" : "627B8BF2-3800-4569-B2FF-E2F422272AF8",
         "amount" : 5
       }
     ],
-    "output" : [
-      {
-        "id" : "B99B3FC5-A89F-437D-B074-19EE164877C1",
-        "amount" : 1
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 15
+    "id" : "6B007077-1227-44EC-A5E4-A2E4A5FCEF72",
+    "duration" : 15,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Encased Industrial Pipe"
   },
   {
-    "isDefault" : true,
-    "id" : "48A306BE-8235-4CA7-A607-8564F10FC8F4",
-    "input" : [
-      {
-        "id" : "CA7016BA-3A03-4F3C-8D64-DD9C5AA13682",
-        "amount" : 8
-      },
-      {
-        "id" : "D98509A9-9023-4217-A10D-9766AE9ACB4D",
-        "amount" : 3
-      }
-    ],
     "output" : [
       {
-        "id" : "8ECF7F43-BFBD-4DAE-B0E9-6E4E0C7DD5E6",
+        "id" : "E2274209-0B5A-4CDA-B880-7EA5998E190B",
         "amount" : 4
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 8
-  },
-  {
-    "isDefault" : true,
-    "id" : "EDECA847-54D9-4F6A-AAAD-B59A3EDB0232",
     "input" : [
       {
-        "id" : "D94E820B-B6BD-49CF-BF1F-99B42DBEB0EB",
+        "id" : "6E2F5766-313B-492A-B0BC-D2AFE896AD1B",
+        "amount" : 8
+      },
+      {
+        "id" : "D51FE276-AA7E-4890-B4D5-023740013966",
+        "amount" : 3
+      }
+    ],
+    "id" : "FDCC0B6E-F6C2-4F3F-A6B2-20DB22998D90",
+    "duration" : 8,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alclad Aluminum Sheet"
+  },
+  {
+    "output" : [
+      {
+        "id" : "2A1FD4FA-0B75-4919-BD9D-B25C40544B9D",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "79190097-D5CF-404F-B9C6-BC3918500EC0",
         "amount" : 5
       },
       {
-        "id" : "5AFBDD2D-90A6-43DF-BBEB-979071F831C8",
+        "id" : "16308E13-F421-49F4-B269-63B45B14C968",
         "amount" : 25
       }
     ],
-    "output" : [
-      {
-        "id" : "03D8472E-D0D3-432A-A24B-D7473F7153DD",
-        "amount" : 1
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 15
+    "id" : "0E0E2F7C-E071-4659-9228-4A33C3087352",
+    "duration" : 15,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Rotor"
   },
   {
-    "isDefault" : false,
-    "id" : "F119899F-61AC-4E42-A8C6-96BF9C3D2473",
+    "output" : [
+      {
+        "id" : "2A1FD4FA-0B75-4919-BD9D-B25C40544B9D",
+        "amount" : 3
+      }
+    ],
     "input" : [
       {
-        "id" : "F3D3C814-7765-4201-9E8B-803CB19E4E58",
+        "id" : "3D362F99-56E6-4AC8-884D-79F057476308",
         "amount" : 6
       },
       {
-        "id" : "5AFBDD2D-90A6-43DF-BBEB-979071F831C8",
+        "id" : "16308E13-F421-49F4-B269-63B45B14C968",
         "amount" : 52
       }
     ],
-    "output" : [
-      {
-        "id" : "03D8472E-D0D3-432A-A24B-D7473F7153DD",
-        "amount" : 3
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 16
+    "id" : "72CFB544-9FE7-4959-BB29-27A39AE334D1",
+    "duration" : 16,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Copper Rotor"
   },
   {
-    "isDefault" : false,
-    "id" : "3506C187-E8C5-48BA-B9DB-3FBD7FFD0DD5",
+    "output" : [
+      {
+        "id" : "2A1FD4FA-0B75-4919-BD9D-B25C40544B9D",
+        "amount" : 1
+      }
+    ],
     "input" : [
       {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
         "amount" : 2
       },
       {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
         "amount" : 6
       }
     ],
+    "id" : "AD1EEDEE-AA00-4273-B59F-4191F6FA2299",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Steel Rotor"
+  },
+  {
     "output" : [
       {
-        "id" : "03D8472E-D0D3-432A-A24B-D7473F7153DD",
+        "id" : "B312BAEE-C4D5-49A2-8B01-81EC2C5F79C0",
         "amount" : 1
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
-  },
-  {
-    "isDefault" : true,
-    "id" : "DF0944E5-325E-492F-AB11-FDAF2DD3BBE8",
     "input" : [
       {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
         "amount" : 3
       },
       {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
         "amount" : 8
       }
     ],
-    "output" : [
-      {
-        "id" : "AB648960-15EE-48C5-9820-32434D16AA56",
-        "amount" : 1
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
+    "id" : "481D1608-A2FF-4BB2-AF7C-1FB86F8FA92B",
+    "duration" : 12,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Stator"
   },
   {
-    "isDefault" : false,
-    "id" : "F7633819-5631-48AD-8872-825458E2622F",
+    "output" : [
+      {
+        "id" : "B312BAEE-C4D5-49A2-8B01-81EC2C5F79C0",
+        "amount" : 2
+      }
+    ],
     "input" : [
       {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
         "amount" : 4
       },
       {
-        "id" : "63B4EB83-4936-4163-BDF4-CD058B0D964B",
+        "id" : "BE77AB91-581C-46B7-A52C-C8506E77582D",
         "amount" : 15
       }
     ],
-    "output" : [
-      {
-        "id" : "AB648960-15EE-48C5-9820-32434D16AA56",
-        "amount" : 2
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 15
+    "id" : "C337977A-D064-45EE-A226-22E41BB4B9DC",
+    "duration" : 15,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Quickwire Stator"
   },
   {
-    "isDefault" : true,
-    "id" : "D28A7174-587A-4A1A-8214-A70A7C33B500",
-    "input" : [
-      {
-        "id" : "03D8472E-D0D3-432A-A24B-D7473F7153DD",
-        "amount" : 2
-      },
-      {
-        "id" : "AB648960-15EE-48C5-9820-32434D16AA56",
-        "amount" : 2
-      }
-    ],
     "output" : [
       {
-        "id" : "B9E55730-1B9C-46A3-B281-C7BB1AFC97F4",
+        "id" : "837C70AF-2CC6-4FE4-B83F-DBCC1DF32B31",
         "amount" : 1
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
-  },
-  {
-    "isDefault" : true,
-    "id" : "C64D8484-4053-431A-88D5-5D54835F6AA9",
     "input" : [
       {
-        "id" : "8ECF7F43-BFBD-4DAE-B0E9-6E4E0C7DD5E6",
+        "id" : "2A1FD4FA-0B75-4919-BD9D-B25C40544B9D",
+        "amount" : 2
+      },
+      {
+        "id" : "B312BAEE-C4D5-49A2-8B01-81EC2C5F79C0",
+        "amount" : 2
+      }
+    ],
+    "id" : "BA446528-F22C-4396-9C3E-5132E5F5ECEF",
+    "duration" : 12,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Motor"
+  },
+  {
+    "output" : [
+      {
+        "id" : "D6F1908B-51BF-45A6-BA16-30694B428A1C",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "E2274209-0B5A-4CDA-B880-7EA5998E190B",
         "amount" : 8
       },
       {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
         "amount" : 14
       }
     ],
-    "output" : [
-      {
-        "id" : "C68D17A8-E3C1-40F4-BDA0-72E5984CBBFB",
-        "amount" : 2
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
+    "id" : "A92A80C6-8F6E-43FC-9488-405D48A0690E",
+    "duration" : 12,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Heat Sink"
   },
   {
-    "isDefault" : false,
-    "id" : "73C0506E-2ECD-4F8D-997F-C57715D4217A",
-    "input" : [
-      {
-        "id" : "8ECF7F43-BFBD-4DAE-B0E9-6E4E0C7DD5E6",
-        "amount" : 20
-      },
-      {
-        "id" : "F3D3C814-7765-4201-9E8B-803CB19E4E58",
-        "amount" : 30
-      }
-    ],
     "output" : [
       {
-        "id" : "8ECF7F43-BFBD-4DAE-B0E9-6E4E0C7DD5E6",
+        "id" : "E2274209-0B5A-4CDA-B880-7EA5998E190B",
         "amount" : 7
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 32
-  },
-  {
-    "isDefault" : true,
-    "id" : "2544A0E8-B8CB-4FF8-BFE5-D57C37E25A07",
     "input" : [
       {
-        "id" : "F3D3C814-7765-4201-9E8B-803CB19E4E58",
+        "id" : "E2274209-0B5A-4CDA-B880-7EA5998E190B",
+        "amount" : 20
+      },
+      {
+        "id" : "3D362F99-56E6-4AC8-884D-79F057476308",
+        "amount" : 30
+      }
+    ],
+    "id" : "CDE6E51A-44B2-4949-BB3B-ACA2F25064B2",
+    "duration" : 32,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Heat Exchanger"
+  },
+  {
+    "output" : [
+      {
+        "id" : "1A918FF5-71E5-4EE5-AB2B-7D60B6BB8724",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "3D362F99-56E6-4AC8-884D-79F057476308",
         "amount" : 2
       },
       {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
         "amount" : 4
       }
     ],
+    "id" : "298DE186-CA85-4A8A-B213-8E0E6FA0F10E",
+    "duration" : 8,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Circuit Board"
+  },
+  {
     "output" : [
       {
-        "id" : "5CF7FD67-B4BE-40F2-AD5C-5F4A1A90A7D4",
+        "id" : "1A918FF5-71E5-4EE5-AB2B-7D60B6BB8724",
         "amount" : 1
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 8
-  },
-  {
-    "isDefault" : false,
-    "id" : "BCE7DD8C-4D98-4FFB-8B08-283A35EB976F",
     "input" : [
       {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
         "amount" : 6
       },
       {
-        "id" : "A4374CAC-AEC0-48B6-829D-0B7FFA2E3289",
+        "id" : "E80E7688-53B8-4B3B-94EC-57284C69D6F9",
         "amount" : 9
       }
     ],
-    "output" : [
-      {
-        "id" : "5CF7FD67-B4BE-40F2-AD5C-5F4A1A90A7D4",
-        "amount" : 1
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
+    "id" : "4F63FB78-DB88-41A5-B922-5E674CDD5AA8",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Electrode Circuit Board"
   },
   {
-    "isDefault" : false,
-    "id" : "7D398BE0-6A6E-478E-98BA-B3E68D5D89A2",
-    "input" : [
-      {
-        "id" : "F3D3C814-7765-4201-9E8B-803CB19E4E58",
-        "amount" : 11
-      },
-      {
-        "id" : "4263C99C-B6E7-45D9-BB64-6FA8C64A935D",
-        "amount" : 11
-      }
-    ],
     "output" : [
       {
-        "id" : "5CF7FD67-B4BE-40F2-AD5C-5F4A1A90A7D4",
+        "id" : "1A918FF5-71E5-4EE5-AB2B-7D60B6BB8724",
         "amount" : 5
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 24
-  },
-  {
-    "isDefault" : false,
-    "id" : "EC8BBF6F-4072-4851-B124-E39CC3113C19",
     "input" : [
       {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
-        "amount" : 10
+        "id" : "3D362F99-56E6-4AC8-884D-79F057476308",
+        "amount" : 11
       },
       {
-        "id" : "63B4EB83-4936-4163-BDF4-CD058B0D964B",
-        "amount" : 30
+        "id" : "9AA62BAE-BD32-4ECA-923C-92D4AF5E27CC",
+        "amount" : 11
       }
     ],
+    "id" : "ABE66B52-FC28-43B7-9999-5569BF35923F",
+    "duration" : 24,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Silicone Circuit Board"
+  },
+  {
     "output" : [
       {
-        "id" : "5CF7FD67-B4BE-40F2-AD5C-5F4A1A90A7D4",
+        "id" : "1A918FF5-71E5-4EE5-AB2B-7D60B6BB8724",
         "amount" : 7
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 48
-  },
-  {
-    "isDefault" : true,
-    "id" : "4050B372-1936-48AD-A6EC-519A83CEF07B",
     "input" : [
       {
-        "id" : "F3D3C814-7765-4201-9E8B-803CB19E4E58",
-        "amount" : 5
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
+        "amount" : 10
       },
       {
-        "id" : "63B4EB83-4936-4163-BDF4-CD058B0D964B",
-        "amount" : 20
+        "id" : "BE77AB91-581C-46B7-A52C-C8506E77582D",
+        "amount" : 30
       }
     ],
+    "id" : "143D3DA6-5E43-488E-ADEF-FB6FB58DBE10",
+    "duration" : 48,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Caterium Circuit Board"
+  },
+  {
     "output" : [
       {
-        "id" : "570EE484-AF5C-4E80-A9D2-5A4E0231BC0B",
+        "id" : "21123948-7BF0-48C2-8F14-074517B4609D",
         "amount" : 1
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
-  },
-  {
-    "isDefault" : false,
-    "id" : "0B1006E3-7E96-4D0B-AC5B-8252B4F53A5F",
     "input" : [
       {
-        "id" : "D98509A9-9023-4217-A10D-9766AE9ACB4D",
+        "id" : "3D362F99-56E6-4AC8-884D-79F057476308",
+        "amount" : 5
+      },
+      {
+        "id" : "BE77AB91-581C-46B7-A52C-C8506E77582D",
+        "amount" : 20
+      }
+    ],
+    "id" : "F17CBFC9-DB24-4031-948A-E4E79AB438FF",
+    "duration" : 12,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "A. I. Limiter"
+  },
+  {
+    "output" : [
+      {
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
+        "amount" : 30
+      }
+    ],
+    "input" : [
+      {
+        "id" : "D51FE276-AA7E-4890-B4D5-023740013966",
         "amount" : 4
       },
       {
-        "id" : "132E8D67-BE76-44C8-A49C-76921105A4E7",
+        "id" : "6A68EC64-9363-464B-86AB-B6057291975E",
         "amount" : 1
       }
     ],
-    "output" : [
-      {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
-        "amount" : 30
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 20
+    "id" : "BC6D5F9E-CC78-47F6-A30E-1BB8541E9C93",
+    "duration" : 20,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Fused Wire"
   },
   {
-    "isDefault" : false,
-    "id" : "F909B4FF-03B9-4CB6-8AC4-4A9AAC28B3E2",
-    "input" : [
-      {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
-        "amount" : 9
-      },
-      {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
-        "amount" : 6
-      }
-    ],
     "output" : [
       {
-        "id" : "E341C5ED-17CB-4B18-A02B-DE329F84608E",
+        "id" : "ABE5E712-3E0C-42D4-A556-292673C0B508",
         "amount" : 20
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
-  },
-  {
-    "isDefault" : false,
-    "id" : "01AC1F2F-C4CC-4DB0-B547-C2C30A4210E7",
     "input" : [
       {
-        "id" : "63B4EB83-4936-4163-BDF4-CD058B0D964B",
-        "amount" : 3
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
+        "amount" : 9
       },
       {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
-        "amount" : 2
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
+        "amount" : 6
       }
     ],
+    "id" : "493EEF2A-010F-45EE-B808-2357556B1EDD",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Insulated Cable"
+  },
+  {
     "output" : [
       {
-        "id" : "E341C5ED-17CB-4B18-A02B-DE329F84608E",
+        "id" : "ABE5E712-3E0C-42D4-A556-292673C0B508",
         "amount" : 11
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 24
-  },
-  {
-    "isDefault" : false,
-    "id" : "3B6C6A96-933D-4636-8D93-B8470B2E068F",
     "input" : [
       {
-        "id" : "132E8D67-BE76-44C8-A49C-76921105A4E7",
-        "amount" : 1
+        "id" : "BE77AB91-581C-46B7-A52C-C8506E77582D",
+        "amount" : 3
       },
       {
-        "id" : "D98509A9-9023-4217-A10D-9766AE9ACB4D",
-        "amount" : 5
-      }
-    ],
-    "output" : [
-      {
-        "id" : "63B4EB83-4936-4163-BDF4-CD058B0D964B",
-        "amount" : 12
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 8
-  },
-  {
-    "isDefault" : false,
-    "id" : "FD234E5E-8948-4EEF-8CA8-6CB4AC8C3B68",
-    "input" : [
-      {
-        "id" : "4F178725-D50E-4161-AA74-D8F04769691A",
-        "amount" : 10
-      },
-      {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
         "amount" : 2
       }
     ],
+    "id" : "79E2F816-2913-4E3F-8345-178AA89861FA",
+    "duration" : 24,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Quickwire Cable"
+  },
+  {
     "output" : [
       {
-        "id" : "E30ED745-8463-4EBA-9599-D21AC04BC140",
+        "id" : "BE77AB91-581C-46B7-A52C-C8506E77582D",
+        "amount" : 12
+      }
+    ],
+    "input" : [
+      {
+        "id" : "6A68EC64-9363-464B-86AB-B6057291975E",
+        "amount" : 1
+      },
+      {
+        "id" : "D51FE276-AA7E-4890-B4D5-023740013966",
+        "amount" : 5
+      }
+    ],
+    "id" : "6FBE2D60-C6BA-46F0-88E0-AE8880B73378",
+    "duration" : 8,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Fused Quickwire"
+  },
+  {
+    "output" : [
+      {
+        "id" : "627B8BF2-3800-4569-B2FF-E2F422272AF8",
         "amount" : 9
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
-  },
-  {
-    "isDefault" : false,
-    "id" : "5AE9D64D-C99B-4501-814F-10C316610CB6",
     "input" : [
       {
-        "id" : "4F178725-D50E-4161-AA74-D8F04769691A",
-        "amount" : 12
+        "id" : "204FF439-9B8B-4FF3-A2ED-95CBF3A02619",
+        "amount" : 10
       },
       {
-        "id" : "4263C99C-B6E7-45D9-BB64-6FA8C64A935D",
-        "amount" : 3
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
+        "amount" : 2
       }
     ],
+    "id" : "DB1E9F94-07D9-4820-A872-86532D3C86C3",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Rubber Concrete"
+  },
+  {
     "output" : [
       {
-        "id" : "E30ED745-8463-4EBA-9599-D21AC04BC140",
+        "id" : "627B8BF2-3800-4569-B2FF-E2F422272AF8",
         "amount" : 10
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 24
-  },
-  {
-    "isDefault" : false,
-    "id" : "1585749E-A6AA-4A23-B4DC-A301BC96CDBD",
     "input" : [
       {
-        "id" : "2A48263A-BEC9-4CA2-A162-9BBD0BEB6E46",
-        "amount" : 5
+        "id" : "204FF439-9B8B-4FF3-A2ED-95CBF3A02619",
+        "amount" : 12
       },
       {
-        "id" : "AB88D4F6-CD84-4AB5-83D5-502068D1C06D",
-        "amount" : 5
-      }
-    ],
-    "output" : [
-      {
-        "id" : "72699377-05CA-45EC-BE4B-70BBFAF0CEFE",
-        "amount" : 5
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 12
-  },
-  {
-    "isDefault" : false,
-    "id" : "D3361072-209A-4FBF-A595-8F1898C29108",
-    "input" : [
-      {
-        "id" : "73B5CEDA-D335-4C13-99AF-4ECAD81D4622",
+        "id" : "9AA62BAE-BD32-4ECA-923C-92D4AF5E27CC",
         "amount" : 3
-      },
+      }
+    ],
+    "id" : "725917F3-5C43-4F6F-A543-689B9B01181F",
+    "duration" : 24,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Fine Concrete"
+  },
+  {
+    "output" : [
       {
-        "id" : "4F178725-D50E-4161-AA74-D8F04769691A",
+        "id" : "CDF90860-2099-4EB7-A3E8-67B396E8E65E",
         "amount" : 5
       }
     ],
+    "input" : [
+      {
+        "id" : "26A26D82-195A-4AC3-81F6-2BC55216C095",
+        "amount" : 5
+      },
+      {
+        "id" : "5CF7C9E5-8BE1-4F42-A5E5-E71F0920B244",
+        "amount" : 5
+      }
+    ],
+    "id" : "6AEE1549-5D1F-42E3-89E3-2637FC070918",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Compacted Coal"
+  },
+  {
     "output" : [
       {
-        "id" : "4263C99C-B6E7-45D9-BB64-6FA8C64A935D",
+        "id" : "9AA62BAE-BD32-4ECA-923C-92D4AF5E27CC",
         "amount" : 7
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 16
-  },
-  {
-    "isDefault" : false,
-    "id" : "F3A0C7C0-BD3E-4E30-B80E-220A9EAC3666",
     "input" : [
       {
-        "id" : "5CF7FD67-B4BE-40F2-AD5C-5F4A1A90A7D4",
+        "id" : "0522A6B5-C7FF-4D1E-85A3-4CB3EDFFC406",
+        "amount" : 3
+      },
+      {
+        "id" : "204FF439-9B8B-4FF3-A2ED-95CBF3A02619",
+        "amount" : 5
+      }
+    ],
+    "id" : "1A880A9D-97DB-41F0-B67E-F1A3D143826F",
+    "duration" : 16,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Cheap Silica"
+  },
+  {
+    "output" : [
+      {
+        "id" : "5BCE8572-C10B-42D9-83DD-2E46E20606A6",
+        "amount" : 3
+      }
+    ],
+    "input" : [
+      {
+        "id" : "1A918FF5-71E5-4EE5-AB2B-7D60B6BB8724",
         "amount" : 8
       },
       {
-        "id" : "5D643A2D-46D8-4B28-8417-E8F30ED036E3",
+        "id" : "AF1244A6-2FE2-4185-901D-20E117DCDF47",
         "amount" : 3
       }
     ],
-    "output" : [
-      {
-        "id" : "B5931A1A-64CF-4F6D-B974-205AB22CE78D",
-        "amount" : 3
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 64
+    "id" : "2A1FEBDB-4FA3-428C-8E47-F028BDFF61E6",
+    "duration" : 64,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Crystal Compute"
   },
   {
-    "isDefault" : true,
-    "id" : "BB45E2AA-9E60-4BA8-BDB8-10E2315BC628",
+    "output" : [
+      {
+        "id" : "D85890EB-90D4-4678-A838-3F79C8AC5209",
+        "amount" : 2
+      }
+    ],
     "input" : [
       {
-        "id" : "AB648960-15EE-48C5-9820-32434D16AA56",
+        "id" : "B312BAEE-C4D5-49A2-8B01-81EC2C5F79C0",
         "amount" : 3
       },
       {
-        "id" : "570EE484-AF5C-4E80-A9D2-5A4E0231BC0B",
+        "id" : "21123948-7BF0-48C2-8F14-074517B4609D",
         "amount" : 2
       }
     ],
-    "output" : [
-      {
-        "id" : "38560A24-B0E0-4B72-9978-9C7F8D00F3E7",
-        "amount" : 2
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 30
+    "id" : "B0A6C2F5-6954-4F92-9A7B-E9DADC7B2743",
+    "duration" : 30,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Electromagnetic Control Rod"
   },
   {
-    "isDefault" : false,
-    "id" : "63C8DB3B-1D1C-437F-B8CC-F0D88258E27A",
+    "output" : [
+      {
+        "id" : "D85890EB-90D4-4678-A838-3F79C8AC5209",
+        "amount" : 10
+      }
+    ],
     "input" : [
       {
-        "id" : "AB648960-15EE-48C5-9820-32434D16AA56",
+        "id" : "B312BAEE-C4D5-49A2-8B01-81EC2C5F79C0",
         "amount" : 10
       },
       {
-        "id" : "7FC5CB98-5B4A-4821-85A6-646E0D46ED0D",
+        "id" : "0FECFEA2-B2D1-4CBC-843A-3AABB8316110",
         "amount" : 5
       }
     ],
+    "id" : "5D6C239B-4B8E-49C3-9B3D-345F59EDE1A7",
+    "duration" : 60,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Electromagnetic Connection Rod"
+  },
+  {
     "output" : [
       {
-        "id" : "38560A24-B0E0-4B72-9978-9C7F8D00F3E7",
+        "id" : "1D135AD1-677D-4A97-826D-0F3E0287EF73",
         "amount" : 10
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 60
-  },
-  {
-    "isDefault" : true,
-    "id" : "4F688F45-188D-4E92-B185-46F325DC6A2A",
     "input" : [
       {
-        "id" : "12A95CFF-27E9-4A9C-BE69-DA2BA537A344",
+        "id" : "3A7E81FC-B679-4284-8616-D3FC1F7650EE",
         "amount" : 40
       },
       {
-        "id" : "E30ED745-8463-4EBA-9599-D21AC04BC140",
+        "id" : "627B8BF2-3800-4569-B2FF-E2F422272AF8",
         "amount" : 9
       }
     ],
-    "output" : [
-      {
-        "id" : "728FB61D-0E22-4F62-BFB8-99C5BFF2453E",
-        "amount" : 10
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 60
-  },
-  {
+    "id" : "B93AA1AD-913B-4FF4-949B-C94932D03407",
+    "duration" : 60,
     "isDefault" : true,
-    "id" : "A8FD6F80-09A7-4DA5-B550-8EC907DD0D19",
-    "input" : [
-      {
-        "id" : "2A48263A-BEC9-4CA2-A162-9BBD0BEB6E46",
-        "amount" : 1
-      },
-      {
-        "id" : "AB88D4F6-CD84-4AB5-83D5-502068D1C06D",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "7B23CC8E-0B54-4F67-8D25-9AD2A0DA5106",
-        "amount" : 1
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 8
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Encased Uranium Cell"
   },
   {
-    "isDefault" : false,
-    "id" : "D0C27466-94D6-4886-85FA-CE044E205E99",
-    "input" : [
+    "output" : [
       {
-        "id" : "AB88D4F6-CD84-4AB5-83D5-502068D1C06D",
-        "amount" : 2
-      },
-      {
-        "id" : "72699377-05CA-45EC-BE4B-70BBFAF0CEFE",
+        "id" : "19A17DC8-750E-4C43-90C4-BC382DEEDD90",
         "amount" : 1
       }
     ],
+    "input" : [
+      {
+        "id" : "26A26D82-195A-4AC3-81F6-2BC55216C095",
+        "amount" : 1
+      },
+      {
+        "id" : "5CF7C9E5-8BE1-4F42-A5E5-E71F0920B244",
+        "amount" : 2
+      }
+    ],
+    "id" : "FA60F779-E36E-485D-90CB-5A5011455899",
+    "duration" : 8,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Black Powder"
+  },
+  {
     "output" : [
       {
-        "id" : "7B23CC8E-0B54-4F67-8D25-9AD2A0DA5106",
+        "id" : "19A17DC8-750E-4C43-90C4-BC382DEEDD90",
         "amount" : 4
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 16
-  },
-  {
-    "isDefault" : true,
-    "id" : "EA7F61A6-CB31-4E66-8768-AEB8363CD4B5",
     "input" : [
       {
-        "id" : "7B23CC8E-0B54-4F67-8D25-9AD2A0DA5106",
+        "id" : "5CF7C9E5-8BE1-4F42-A5E5-E71F0920B244",
+        "amount" : 2
+      },
+      {
+        "id" : "CDF90860-2099-4EB7-A3E8-67B396E8E65E",
+        "amount" : 1
+      }
+    ],
+    "id" : "C01EC635-8057-4A38-B721-B7BD1E3665B8",
+    "duration" : 16,
+    "isDefault" : false,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Alternate: Fine Black Powder"
+  },
+  {
+    "output" : [
+      {
+        "id" : "856C04C5-8810-4BA2-87EF-5FC5B3972C0B",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "19A17DC8-750E-4C43-90C4-BC382DEEDD90",
         "amount" : 5
       },
       {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
         "amount" : 10
       }
     ],
+    "id" : "F8337D56-6E3A-4BF1-AFD1-ED656FAD6430",
+    "duration" : 20,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Nobelisk"
+  },
+  {
     "output" : [
       {
-        "id" : "94FE4224-D41C-4975-962F-959B85C6895B",
+        "id" : "041BB58E-B7C0-4E17-B963-B0BDCAD52767",
         "amount" : 1
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 20
-  },
-  {
-    "isDefault" : true,
-    "id" : "78D9D080-3E61-4613-B69A-28CEE36688D4",
     "input" : [
       {
-        "id" : "5E4161A9-9EBE-407D-9D79-24F05FA2D809",
+        "id" : "E896B5A7-DA43-4C22-A04B-62ECA6280D44",
         "amount" : 1
       },
       {
-        "id" : "03D8472E-D0D3-432A-A24B-D7473F7153DD",
+        "id" : "2A1FD4FA-0B75-4919-BD9D-B25C40544B9D",
         "amount" : 1
       }
     ],
-    "output" : [
-      {
-        "id" : "6AD56F06-F74B-4DA0-86CE-C4D10C3FA337",
-        "amount" : 1
-      }
-    ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 30
+    "id" : "6E0E6224-3F7D-49D5-807A-0E2AF106E6A8",
+    "duration" : 30,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Smart Plating"
   },
   {
-    "isDefault" : true,
-    "id" : "10AF9A3F-DAE6-4FA3-B14F-BD896BDBCADF",
-    "input" : [
-      {
-        "id" : "55ECE08F-4FF3-4085-8E58-6BB25259228E",
-        "amount" : 1
-      },
-      {
-        "id" : "AEDBDDFA-28D2-4864-8922-775C16662C6A",
-        "amount" : 12
-      }
-    ],
     "output" : [
       {
-        "id" : "74A076F0-E79D-401F-A4B1-4E021A1EE140",
+        "id" : "6C6D3D25-9B68-494C-98F5-E8664B282C69",
         "amount" : 2
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 24
-  },
-  {
-    "isDefault" : true,
-    "id" : "5F6D321B-CB87-47A9-B0E4-C2448FBC408F",
     "input" : [
       {
-        "id" : "AB648960-15EE-48C5-9820-32434D16AA56",
+        "id" : "4B8ADF14-86FF-49E6-92F1-A5AD32320278",
         "amount" : 1
       },
       {
-        "id" : "E341C5ED-17CB-4B18-A02B-DE329F84608E",
+        "id" : "525C604C-12D7-423C-94A6-925094FB332D",
+        "amount" : 12
+      }
+    ],
+    "id" : "35D1285D-F0DB-4358-BAB5-A6C31C0C3634",
+    "duration" : 24,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Versatile Framework"
+  },
+  {
+    "output" : [
+      {
+        "id" : "EB795800-666F-4CAB-A88B-2DF5DC178466",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "B312BAEE-C4D5-49A2-8B01-81EC2C5F79C0",
+        "amount" : 1
+      },
+      {
+        "id" : "ABE5E712-3E0C-42D4-A556-292673C0B508",
         "amount" : 20
       }
     ],
+    "id" : "5FA49B59-BE24-4076-8F73-53D1BCFA39BC",
+    "duration" : 24,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Automated Wiring"
+  },
+  {
     "output" : [
       {
-        "id" : "3C95583D-8C5E-40F1-8349-6A5750D47BD5",
+        "id" : "3929A818-FBE5-49FC-B1CA-DAE46BE48A24",
         "amount" : 1
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 24
-  },
-  {
-    "isDefault" : true,
-    "id" : "DBACF28D-F68F-40E4-BFFE-94E1A83D96E2",
     "input" : [
       {
-        "id" : "17711FE1-7D61-43E2-80B7-97682520B60C",
+        "id" : "7D55899B-03D8-4AB4-B3F1-37C59C553B2F",
         "amount" : 1
       },
       {
-        "id" : "D8758C9D-23F7-45EE-89E8-2960B5813326",
+        "id" : "D43CFBEE-1424-4138-8A64-85FC9FA6A6D7",
         "amount" : 5
       }
     ],
+    "id" : "60B8F93F-F543-4FAD-8DA4-8136AE58067C",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "EAC80D0D-0B07-4805-B190-91FD6A8E7E54",
+    "name" : "Fabric"
+  },
+  {
     "output" : [
       {
-        "id" : "02EBF7C7-9D32-4C85-A7A7-7892CD4CC146",
+        "id" : "E3639EAA-9CD7-4677-9F74-8A206D753B2E",
         "amount" : 1
       }
     ],
-    "machine" : "4286CE82-E304-43DC-8C21-23FB39E69EB5",
-    "duration" : 4
-  },
-  {
-    "isDefault" : true,
-    "id" : "56F35AB4-F68B-4E08-BF86-2E726EFAFFD9",
     "input" : [
       {
-        "id" : "55ECE08F-4FF3-4085-8E58-6BB25259228E",
+        "id" : "4B8ADF14-86FF-49E6-92F1-A5AD32320278",
         "amount" : 5
       },
       {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
         "amount" : 15
       },
       {
-        "id" : "B99B3FC5-A89F-437D-B074-19EE164877C1",
+        "id" : "4821FD0F-355C-49A1-972F-17DFFCD0B805",
         "amount" : 5
       },
       {
-        "id" : "5AFBDD2D-90A6-43DF-BBEB-979071F831C8",
+        "id" : "16308E13-F421-49F4-B269-63B45B14C968",
         "amount" : 100
       }
     ],
+    "id" : "F7259F8B-44A6-4E62-94E8-3BB4E20CBBF7",
+    "duration" : 30,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Heavy Modular Frame"
+  },
+  {
     "output" : [
       {
-        "id" : "0AA01498-DB12-4B4D-89EF-5ED2228B064E",
+        "id" : "E3639EAA-9CD7-4677-9F74-8A206D753B2E",
         "amount" : 1
       }
     ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 30
-  },
-  {
-    "isDefault" : false,
-    "id" : "947B004B-58F4-4A7A-9E77-6D051E9A1E2E",
     "input" : [
       {
-        "id" : "55ECE08F-4FF3-4085-8E58-6BB25259228E",
+        "id" : "4B8ADF14-86FF-49E6-92F1-A5AD32320278",
         "amount" : 5
       },
       {
-        "id" : "B99B3FC5-A89F-437D-B074-19EE164877C1",
+        "id" : "4821FD0F-355C-49A1-972F-17DFFCD0B805",
         "amount" : 3
       },
       {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
         "amount" : 20
       },
       {
-        "id" : "5AFBDD2D-90A6-43DF-BBEB-979071F831C8",
+        "id" : "16308E13-F421-49F4-B269-63B45B14C968",
         "amount" : 104
       }
     ],
-    "output" : [
-      {
-        "id" : "0AA01498-DB12-4B4D-89EF-5ED2228B064E",
-        "amount" : 1
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 16
+    "id" : "9D0EC2CE-24EE-4276-85B9-AF2DAAC688FD",
+    "duration" : 16,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Heavy Flexible Frame"
   },
   {
-    "isDefault" : false,
-    "id" : "0F7838F5-3C38-42AC-A8A4-EC98242551F5",
+    "output" : [
+      {
+        "id" : "E3639EAA-9CD7-4677-9F74-8A206D753B2E",
+        "amount" : 3
+      }
+    ],
     "input" : [
       {
-        "id" : "55ECE08F-4FF3-4085-8E58-6BB25259228E",
+        "id" : "4B8ADF14-86FF-49E6-92F1-A5AD32320278",
         "amount" : 8
       },
       {
-        "id" : "B99B3FC5-A89F-437D-B074-19EE164877C1",
+        "id" : "4821FD0F-355C-49A1-972F-17DFFCD0B805",
         "amount" : 10
       },
       {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
         "amount" : 36
       },
       {
-        "id" : "E30ED745-8463-4EBA-9599-D21AC04BC140",
+        "id" : "627B8BF2-3800-4569-B2FF-E2F422272AF8",
         "amount" : 22
       }
     ],
-    "output" : [
-      {
-        "id" : "0AA01498-DB12-4B4D-89EF-5ED2228B064E",
-        "amount" : 3
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 64
+    "id" : "7DB4FD86-04FD-4573-AE25-A8D477C69656",
+    "duration" : 64,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Heavy Encased Frame"
   },
   {
-    "isDefault" : true,
-    "id" : "54D63BC4-0F8B-4F36-8B58-06EFBF059C12",
+    "output" : [
+      {
+        "id" : "47B9C467-7592-4C2D-A26A-FFE8A0EB8746",
+        "amount" : 1
+      }
+    ],
     "input" : [
       {
-        "id" : "C68D17A8-E3C1-40F4-BDA0-72E5984CBBFB",
+        "id" : "D6F1908B-51BF-45A6-BA16-30694B428A1C",
         "amount" : 4
       },
       {
-        "id" : "D1AD49CD-F7DE-4893-AAAA-3309FD5370F7",
+        "id" : "B95A01F6-AFE1-4E67-8357-CC8173F79883",
         "amount" : 2
       },
       {
-        "id" : "B9E55730-1B9C-46A3-B281-C7BB1AFC97F4",
+        "id" : "837C70AF-2CC6-4FE4-B83F-DBCC1DF32B31",
         "amount" : 4
       },
       {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
         "amount" : 24
       }
     ],
-    "output" : [
-      {
-        "id" : "F585A683-C6A1-4961-B10F-73A540D0062B",
-        "amount" : 1
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 32
+    "id" : "E32642C4-9608-43E9-8D30-7D58B8EA53D6",
+    "duration" : 32,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Turbo Motor"
   },
   {
-    "isDefault" : false,
-    "id" : "3DD0B675-8F1D-4A26-92E3-4D4CAAF70A60",
+    "output" : [
+      {
+        "id" : "47B9C467-7592-4C2D-A26A-FFE8A0EB8746",
+        "amount" : 3
+      }
+    ],
     "input" : [
       {
-        "id" : "B9E55730-1B9C-46A3-B281-C7BB1AFC97F4",
+        "id" : "837C70AF-2CC6-4FE4-B83F-DBCC1DF32B31",
         "amount" : 7
       },
       {
-        "id" : "D1AD49CD-F7DE-4893-AAAA-3309FD5370F7",
+        "id" : "B95A01F6-AFE1-4E67-8357-CC8173F79883",
         "amount" : 5
       },
       {
-        "id" : "570EE484-AF5C-4E80-A9D2-5A4E0231BC0B",
+        "id" : "21123948-7BF0-48C2-8F14-074517B4609D",
         "amount" : 9
       },
       {
-        "id" : "AB648960-15EE-48C5-9820-32434D16AA56",
+        "id" : "B312BAEE-C4D5-49A2-8B01-81EC2C5F79C0",
         "amount" : 7
       }
     ],
-    "output" : [
-      {
-        "id" : "F585A683-C6A1-4961-B10F-73A540D0062B",
-        "amount" : 3
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 64
+    "id" : "A066D8E0-973D-415C-8D2A-EF4C115C3070",
+    "duration" : 64,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Turbo Rigour Motor"
   },
   {
-    "isDefault" : false,
-    "id" : "9511074A-098C-4649-A4BC-AF9F03F06CEB",
-    "input" : [
-      {
-        "id" : "03D8472E-D0D3-432A-A24B-D7473F7153DD",
-        "amount" : 3
-      },
-      {
-        "id" : "AB648960-15EE-48C5-9820-32434D16AA56",
-        "amount" : 3
-      },
-      {
-        "id" : "5D643A2D-46D8-4B28-8417-E8F30ED036E3",
-        "amount" : 1
-      }
-    ],
     "output" : [
       {
-        "id" : "B9E55730-1B9C-46A3-B281-C7BB1AFC97F4",
+        "id" : "837C70AF-2CC6-4FE4-B83F-DBCC1DF32B31",
         "amount" : 6
       }
     ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 48
-  },
-  {
-    "isDefault" : true,
-    "id" : "15C2ACD0-AC96-4B8A-A40F-77BAD5082B8B",
     "input" : [
       {
-        "id" : "63B4EB83-4936-4163-BDF4-CD058B0D964B",
+        "id" : "2A1FD4FA-0B75-4919-BD9D-B25C40544B9D",
+        "amount" : 3
+      },
+      {
+        "id" : "B312BAEE-C4D5-49A2-8B01-81EC2C5F79C0",
+        "amount" : 3
+      },
+      {
+        "id" : "AF1244A6-2FE2-4185-901D-20E117DCDF47",
+        "amount" : 1
+      }
+    ],
+    "id" : "0FA530E7-7CE4-4850-9770-876E9EF8BBFE",
+    "duration" : 48,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Rigour Motor"
+  },
+  {
+    "output" : [
+      {
+        "id" : "0FECFEA2-B2D1-4CBC-843A-3AABB8316110",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "BE77AB91-581C-46B7-A52C-C8506E77582D",
         "amount" : 56
       },
       {
-        "id" : "E341C5ED-17CB-4B18-A02B-DE329F84608E",
+        "id" : "ABE5E712-3E0C-42D4-A556-292673C0B508",
         "amount" : 10
       },
       {
-        "id" : "5CF7FD67-B4BE-40F2-AD5C-5F4A1A90A7D4",
+        "id" : "1A918FF5-71E5-4EE5-AB2B-7D60B6BB8724",
         "amount" : 1
       }
     ],
-    "output" : [
-      {
-        "id" : "7FC5CB98-5B4A-4821-85A6-646E0D46ED0D",
-        "amount" : 1
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 16
+    "id" : "A6870CA8-29F8-45DA-9420-8548FEF5B2BB",
+    "duration" : 16,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "High-Speed Connector"
   },
   {
-    "isDefault" : false,
-    "id" : "DF6C8A13-A8D0-4FC6-BFE4-887D74985899",
+    "output" : [
+      {
+        "id" : "0FECFEA2-B2D1-4CBC-843A-3AABB8316110",
+        "amount" : 2
+      }
+    ],
     "input" : [
       {
-        "id" : "63B4EB83-4936-4163-BDF4-CD058B0D964B",
+        "id" : "BE77AB91-581C-46B7-A52C-C8506E77582D",
         "amount" : 60
       },
       {
-        "id" : "4263C99C-B6E7-45D9-BB64-6FA8C64A935D",
+        "id" : "9AA62BAE-BD32-4ECA-923C-92D4AF5E27CC",
         "amount" : 25
       },
       {
-        "id" : "5CF7FD67-B4BE-40F2-AD5C-5F4A1A90A7D4",
+        "id" : "1A918FF5-71E5-4EE5-AB2B-7D60B6BB8724",
         "amount" : 2
       }
     ],
-    "output" : [
-      {
-        "id" : "7FC5CB98-5B4A-4821-85A6-646E0D46ED0D",
-        "amount" : 2
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 40
+    "id" : "BB7EE883-1F96-4B69-8633-6C125907E8FD",
+    "duration" : 40,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Silicone High-Speed Connector"
   },
   {
-    "isDefault" : true,
-    "id" : "5A2799A7-D03A-45C4-86BA-8E9DD2495304",
-    "input" : [
-      {
-        "id" : "8ECF7F43-BFBD-4DAE-B0E9-6E4E0C7DD5E6",
-        "amount" : 8
-      },
-      {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
-        "amount" : 16
-      },
-      {
-        "id" : "AB88D4F6-CD84-4AB5-83D5-502068D1C06D",
-        "amount" : 20
-      },
-      {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
-        "amount" : 8
-      }
-    ],
     "output" : [
       {
-        "id" : "080EAD7E-887C-4EE0-86B3-8A41FBCDBE93",
+        "id" : "F28C9073-E167-4AD2-BD0E-AA3DEED5D86D",
         "amount" : 3
       }
     ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 32
-  },
-  {
-    "isDefault" : true,
-    "id" : "EE918A8C-8D32-4799-AD83-3473EFC4D895",
     "input" : [
       {
-        "id" : "5CF7FD67-B4BE-40F2-AD5C-5F4A1A90A7D4",
+        "id" : "E2274209-0B5A-4CDA-B880-7EA5998E190B",
+        "amount" : 8
+      },
+      {
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
+        "amount" : 16
+      },
+      {
+        "id" : "5CF7C9E5-8BE1-4F42-A5E5-E71F0920B244",
+        "amount" : 20
+      },
+      {
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
+        "amount" : 8
+      }
+    ],
+    "id" : "96706623-3095-4CC9-849D-9F3CEE2D9EF4",
+    "duration" : 32,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Battery"
+  },
+  {
+    "output" : [
+      {
+        "id" : "5BCE8572-C10B-42D9-83DD-2E46E20606A6",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "1A918FF5-71E5-4EE5-AB2B-7D60B6BB8724",
         "amount" : 10
       },
       {
-        "id" : "E341C5ED-17CB-4B18-A02B-DE329F84608E",
+        "id" : "ABE5E712-3E0C-42D4-A556-292673C0B508",
         "amount" : 9
       },
       {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
         "amount" : 18
       },
       {
-        "id" : "5AFBDD2D-90A6-43DF-BBEB-979071F831C8",
+        "id" : "16308E13-F421-49F4-B269-63B45B14C968",
         "amount" : 52
       }
     ],
+    "id" : "A090BFFE-AE2A-45D4-9D24-AA1E710A32E5",
+    "duration" : 24,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Computer"
+  },
+  {
     "output" : [
       {
-        "id" : "B5931A1A-64CF-4F6D-B974-205AB22CE78D",
+        "id" : "5BCE8572-C10B-42D9-83DD-2E46E20606A6",
         "amount" : 1
       }
     ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 24
-  },
-  {
-    "isDefault" : false,
-    "id" : "E6163F51-0BC6-433C-86B2-654405B438D8",
     "input" : [
       {
-        "id" : "5CF7FD67-B4BE-40F2-AD5C-5F4A1A90A7D4",
+        "id" : "1A918FF5-71E5-4EE5-AB2B-7D60B6BB8724",
         "amount" : 7
       },
       {
-        "id" : "63B4EB83-4936-4163-BDF4-CD058B0D964B",
+        "id" : "BE77AB91-581C-46B7-A52C-C8506E77582D",
         "amount" : 28
       },
       {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
         "amount" : 12
       }
     ],
-    "output" : [
-      {
-        "id" : "B5931A1A-64CF-4F6D-B974-205AB22CE78D",
-        "amount" : 1
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 16
+    "id" : "094AD806-6B44-405F-A23A-D7D43454B8C6",
+    "duration" : 16,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Caterium Computer"
   },
   {
-    "isDefault" : true,
-    "id" : "1A67B7EF-55F4-4DDF-A5AF-12FCFAF9B7F6",
+    "output" : [
+      {
+        "id" : "AF1244A6-2FE2-4185-901D-20E117DCDF47",
+        "amount" : 2
+      }
+    ],
     "input" : [
       {
-        "id" : "B3EFA785-EA5C-42A2-8C43-ABF8C3F27BCA",
+        "id" : "34A5C8A5-2371-49F5-8B3B-B3FF918039FB",
         "amount" : 36
       },
       {
-        "id" : "E341C5ED-17CB-4B18-A02B-DE329F84608E",
+        "id" : "ABE5E712-3E0C-42D4-A556-292673C0B508",
         "amount" : 28
       },
       {
-        "id" : "5E4161A9-9EBE-407D-9D79-24F05FA2D809",
+        "id" : "E896B5A7-DA43-4C22-A04B-62ECA6280D44",
         "amount" : 5
       }
     ],
-    "output" : [
-      {
-        "id" : "5D643A2D-46D8-4B28-8417-E8F30ED036E3",
-        "amount" : 2
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 120
+    "id" : "AE98F6C6-EC46-4E98-AB88-364AB1BB280F",
+    "duration" : 120,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Crystal Oscillator"
   },
   {
-    "isDefault" : false,
-    "id" : "BB707CB1-88D6-4E70-BCD1-30BD1FF110C8",
+    "output" : [
+      {
+        "id" : "AF1244A6-2FE2-4185-901D-20E117DCDF47",
+        "amount" : 1
+      }
+    ],
     "input" : [
       {
-        "id" : "B3EFA785-EA5C-42A2-8C43-ABF8C3F27BCA",
+        "id" : "34A5C8A5-2371-49F5-8B3B-B3FF918039FB",
         "amount" : 10
       },
       {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
         "amount" : 7
       },
       {
-        "id" : "570EE484-AF5C-4E80-A9D2-5A4E0231BC0B",
+        "id" : "21123948-7BF0-48C2-8F14-074517B4609D",
         "amount" : 1
       }
     ],
-    "output" : [
-      {
-        "id" : "5D643A2D-46D8-4B28-8417-E8F30ED036E3",
-        "amount" : 1
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 32
+    "id" : "D6C8C683-DF2D-42BB-941C-EA8DF698B5BA",
+    "duration" : 32,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Insulated Crystal Oscillator"
   },
   {
-    "isDefault" : true,
-    "id" : "092CC56E-1830-492F-9188-E1EE806CD6D6",
+    "output" : [
+      {
+        "id" : "DEAA72FA-B484-4465-801B-21A348E594FF",
+        "amount" : 1
+      }
+    ],
     "input" : [
       {
-        "id" : "B5931A1A-64CF-4F6D-B974-205AB22CE78D",
+        "id" : "5BCE8572-C10B-42D9-83DD-2E46E20606A6",
         "amount" : 2
       },
       {
-        "id" : "570EE484-AF5C-4E80-A9D2-5A4E0231BC0B",
+        "id" : "21123948-7BF0-48C2-8F14-074517B4609D",
         "amount" : 2
       },
       {
-        "id" : "7FC5CB98-5B4A-4821-85A6-646E0D46ED0D",
+        "id" : "0FECFEA2-B2D1-4CBC-843A-3AABB8316110",
         "amount" : 3
       },
       {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
         "amount" : 28
       }
     ],
+    "id" : "5B2B8312-D4A9-4A34-81BA-180CC0178638",
+    "duration" : 32,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Supercomputer"
+  },
+  {
     "output" : [
       {
-        "id" : "32FF860A-4842-47BC-932B-43477555CD45",
+        "id" : "B95A01F6-AFE1-4E67-8357-CC8173F79883",
         "amount" : 1
       }
     ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 32
-  },
-  {
-    "isDefault" : true,
-    "id" : "F98F2859-1FAF-4937-AB33-D747B9C1F760",
     "input" : [
       {
-        "id" : "C68D17A8-E3C1-40F4-BDA0-72E5984CBBFB",
+        "id" : "D6F1908B-51BF-45A6-BA16-30694B428A1C",
         "amount" : 4
       },
       {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
         "amount" : 16
       },
       {
-        "id" : "5D643A2D-46D8-4B28-8417-E8F30ED036E3",
+        "id" : "AF1244A6-2FE2-4185-901D-20E117DCDF47",
         "amount" : 1
       },
       {
-        "id" : "B5931A1A-64CF-4F6D-B974-205AB22CE78D",
+        "id" : "5BCE8572-C10B-42D9-83DD-2E46E20606A6",
         "amount" : 1
       }
     ],
-    "output" : [
-      {
-        "id" : "D1AD49CD-F7DE-4893-AAAA-3309FD5370F7",
-        "amount" : 1
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 24
+    "id" : "1354C7A2-EBFE-4469-BEB5-FCCB60F474B2",
+    "duration" : 24,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Radio Control Unit"
   },
   {
-    "isDefault" : false,
-    "id" : "6295D24C-2413-4466-8659-7DD9BD7758F9",
+    "output" : [
+      {
+        "id" : "B95A01F6-AFE1-4E67-8357-CC8173F79883",
+        "amount" : 3
+      }
+    ],
     "input" : [
       {
-        "id" : "C68D17A8-E3C1-40F4-BDA0-72E5984CBBFB",
+        "id" : "D6F1908B-51BF-45A6-BA16-30694B428A1C",
         "amount" : 10
       },
       {
-        "id" : "32FF860A-4842-47BC-932B-43477555CD45",
+        "id" : "DEAA72FA-B484-4465-801B-21A348E594FF",
         "amount" : 1
       },
       {
-        "id" : "B3EFA785-EA5C-42A2-8C43-ABF8C3F27BCA",
+        "id" : "34A5C8A5-2371-49F5-8B3B-B3FF918039FB",
         "amount" : 30
       }
     ],
-    "output" : [
-      {
-        "id" : "D1AD49CD-F7DE-4893-AAAA-3309FD5370F7",
-        "amount" : 3
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 48
+    "id" : "A4D521F3-831E-4367-80AD-C54FC97698C7",
+    "duration" : 48,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Radio Control System"
   },
   {
-    "isDefault" : true,
-    "id" : "9AD42D7C-2F6B-4E8E-9356-04D447520733",
+    "output" : [
+      {
+        "id" : "845C0ABD-245C-4FA0-8332-884DCD2634B0",
+        "amount" : 1
+      }
+    ],
     "input" : [
       {
-        "id" : "728FB61D-0E22-4F62-BFB8-99C5BFF2453E",
+        "id" : "1D135AD1-677D-4A97-826D-0F3E0287EF73",
         "amount" : 25
       },
       {
-        "id" : "B99B3FC5-A89F-437D-B074-19EE164877C1",
+        "id" : "4821FD0F-355C-49A1-972F-17DFFCD0B805",
         "amount" : 3
       },
       {
-        "id" : "38560A24-B0E0-4B72-9978-9C7F8D00F3E7",
+        "id" : "D85890EB-90D4-4678-A838-3F79C8AC5209",
         "amount" : 5
       }
     ],
-    "output" : [
-      {
-        "id" : "430DF6EF-5F21-4A59-91A5-BBF698AF55C8",
-        "amount" : 1
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 150
+    "id" : "253D9A8C-E5BC-4B8B-A089-D8DCDE90194B",
+    "duration" : 150,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Nuclear Fuel Rod"
   },
   {
-    "isDefault" : false,
-    "id" : "3918AEBD-B657-4035-8E02-23B997D9A377",
+    "output" : [
+      {
+        "id" : "845C0ABD-245C-4FA0-8332-884DCD2634B0",
+        "amount" : 3
+      }
+    ],
     "input" : [
       {
-        "id" : "728FB61D-0E22-4F62-BFB8-99C5BFF2453E",
+        "id" : "1D135AD1-677D-4A97-826D-0F3E0287EF73",
         "amount" : 50
       },
       {
-        "id" : "38560A24-B0E0-4B72-9978-9C7F8D00F3E7",
+        "id" : "D85890EB-90D4-4678-A838-3F79C8AC5209",
         "amount" : 10
       },
       {
-        "id" : "5D643A2D-46D8-4B28-8417-E8F30ED036E3",
+        "id" : "AF1244A6-2FE2-4185-901D-20E117DCDF47",
         "amount" : 3
       },
       {
-        "id" : "80CA7B96-301D-4BB8-9D44-F947461CFB27",
+        "id" : "053FB457-E973-41E6-B147-3F58F5DE7815",
         "amount" : 6
       }
     ],
-    "output" : [
-      {
-        "id" : "430DF6EF-5F21-4A59-91A5-BBF698AF55C8",
-        "amount" : 3
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 300
+    "id" : "17A62177-4C68-4102-97FD-2F9056097AA6",
+    "duration" : 300,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Nuclear Fuel Unit"
   },
   {
-    "isDefault" : false,
-    "id" : "844F0A49-7128-4859-8848-D60B0D2666A0",
-    "input" : [
-      {
-        "id" : "12A95CFF-27E9-4A9C-BE69-DA2BA537A344",
-        "amount" : 40
-      },
-      {
-        "id" : "AB88D4F6-CD84-4AB5-83D5-502068D1C06D",
-        "amount" : 45
-      },
-      {
-        "id" : "4263C99C-B6E7-45D9-BB64-6FA8C64A935D",
-        "amount" : 45
-      },
-      {
-        "id" : "63B4EB83-4936-4163-BDF4-CD058B0D964B",
-        "amount" : 75
-      }
-    ],
     "output" : [
       {
-        "id" : "728FB61D-0E22-4F62-BFB8-99C5BFF2453E",
+        "id" : "1D135AD1-677D-4A97-826D-0F3E0287EF73",
         "amount" : 35
       }
     ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 120
-  },
-  {
-    "isDefault" : true,
-    "id" : "2964475C-B367-4191-9FEA-E70437AD02A4",
     "input" : [
       {
-        "id" : "2A48263A-BEC9-4CA2-A162-9BBD0BEB6E46",
-        "amount" : 5
-      },
-      {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
-        "amount" : 2
-      },
-      {
-        "id" : "02EBF7C7-9D32-4C85-A7A7-7892CD4CC146",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "68DF76F8-1B3A-428F-A561-E3AEBA283648",
-        "amount" : 1
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 8
-  },
-  {
-    "isDefault" : true,
-    "id" : "DEF5BC6C-5FCC-4953-9AE6-50D577D10F39",
-    "input" : [
-      {
-        "id" : "68DF76F8-1B3A-428F-A561-E3AEBA283648",
-        "amount" : 1
-      },
-      {
-        "id" : "63B4EB83-4936-4163-BDF4-CD058B0D964B",
-        "amount" : 8
-      },
-      {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "F51BE4F7-CEBF-4A34-8E69-57D4FD4ED4F7",
-        "amount" : 1
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 16
-  },
-  {
-    "isDefault" : true,
-    "id" : "8C5192FC-D5E1-4044-A5E9-D70980B58FEC",
-    "input" : [
-      {
-        "id" : "80CA7B96-301D-4BB8-9D44-F947461CFB27",
-        "amount" : 1
-      },
-      {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
-        "amount" : 10
-      },
-      {
-        "id" : "7B23CC8E-0B54-4F67-8D25-9AD2A0DA5106",
-        "amount" : 10
-      },
-      {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
-        "amount" : 10
-      }
-    ],
-    "output" : [
-      {
-        "id" : "B7B43706-59A8-4103-B34A-6F2D2B7ABC58",
-        "amount" : 5
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 20
-  },
-  {
-    "isDefault" : false,
-    "id" : "A295C4A9-654B-4980-9F16-D668F9968A55",
-    "input" : [
-      {
-        "id" : "7B23CC8E-0B54-4F67-8D25-9AD2A0DA5106",
-        "amount" : 8
-      },
-      {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
-        "amount" : 8
-      },
-      {
-        "id" : "5D643A2D-46D8-4B28-8417-E8F30ED036E3",
-        "amount" : 1
-      }
-    ],
-    "output" : [
-      {
-        "id" : "94FE4224-D41C-4975-962F-959B85C6895B",
-        "amount" : 4
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 40
-  },
-  {
-    "isDefault" : true,
-    "id" : "6A2F3070-BA88-46D1-A2AA-38551B9B753C",
-    "input" : [
-      {
-        "id" : "B9E55730-1B9C-46A3-B281-C7BB1AFC97F4",
-        "amount" : 2
-      },
-      {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
-        "amount" : 15
-      },
-      {
-        "id" : "6AD56F06-F74B-4DA0-86CE-C4D10C3FA337",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "0F27A818-2523-407C-96AB-8D9FBEF176B6",
-        "amount" : 1
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 60
-  },
-  {
-    "isDefault" : true,
-    "id" : "9860B740-A6BC-4C5A-8327-2D46BB2E71B9",
-    "input" : [
-      {
-        "id" : "3C95583D-8C5E-40F1-8349-6A5750D47BD5",
-        "amount" : 15
-      },
-      {
-        "id" : "5CF7FD67-B4BE-40F2-AD5C-5F4A1A90A7D4",
-        "amount" : 10
-      },
-      {
-        "id" : "0AA01498-DB12-4B4D-89EF-5ED2228B064E",
-        "amount" : 2
-      },
-      {
-        "id" : "B5931A1A-64CF-4F6D-B974-205AB22CE78D",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "5C7538C9-6B3B-4532-B197-28D1C6523A58",
-        "amount" : 2
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 120
-  },
-  {
-    "isDefault" : false,
-    "id" : "CD75934B-B74E-481F-A772-A99859401935",
-    "input" : [
-      {
-        "id" : "5E4161A9-9EBE-407D-9D79-24F05FA2D809",
-        "amount" : 1
-      },
-      {
-        "id" : "03D8472E-D0D3-432A-A24B-D7473F7153DD",
-        "amount" : 1
-      },
-      {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
-        "amount" : 3
-      }
-    ],
-    "output" : [
-      {
-        "id" : "6AD56F06-F74B-4DA0-86CE-C4D10C3FA337",
-        "amount" : 2
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 24
-  },
-  {
-    "isDefault" : false,
-    "id" : "4059A8BF-E7BF-46CE-8BC6-0BE682E17E4D",
-    "input" : [
-      {
-        "id" : "55ECE08F-4FF3-4085-8E58-6BB25259228E",
-        "amount" : 1
-      },
-      {
-        "id" : "AEDBDDFA-28D2-4864-8922-775C16662C6A",
-        "amount" : 6
-      },
-      {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
-        "amount" : 8
-      }
-    ],
-    "output" : [
-      {
-        "id" : "74A076F0-E79D-401F-A4B1-4E021A1EE140",
-        "amount" : 2
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 16
-  },
-  {
-    "isDefault" : false,
-    "id" : "48EBD568-D7B0-4AB0-9BE7-25AF4E38C600",
-    "input" : [
-      {
-        "id" : "AB648960-15EE-48C5-9820-32434D16AA56",
-        "amount" : 2
-      },
-      {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
+        "id" : "3A7E81FC-B679-4284-8616-D3FC1F7650EE",
         "amount" : 40
       },
       {
-        "id" : "7FC5CB98-5B4A-4821-85A6-646E0D46ED0D",
-        "amount" : 1
-      }
-    ],
-    "output" : [
+        "id" : "5CF7C9E5-8BE1-4F42-A5E5-E71F0920B244",
+        "amount" : 45
+      },
       {
-        "id" : "3C95583D-8C5E-40F1-8349-6A5750D47BD5",
-        "amount" : 4
+        "id" : "9AA62BAE-BD32-4ECA-923C-92D4AF5E27CC",
+        "amount" : 45
+      },
+      {
+        "id" : "BE77AB91-581C-46B7-A52C-C8506E77582D",
+        "amount" : 75
       }
     ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 32
+    "id" : "79F72299-2389-4437-B946-DA9BE402CA6F",
+    "duration" : 120,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Infused Uranium Cell"
   },
   {
-    "isDefault" : true,
-    "id" : "82B99ED4-A111-4FC6-A84A-22079E949E16",
+    "output" : [
+      {
+        "id" : "1C6D2E14-EA99-45E8-8B6B-5EB779C510A9",
+        "amount" : 1
+      }
+    ],
     "input" : [
       {
-        "id" : "8E04181A-E1AC-42F5-A925-6AD5A96C0373",
-        "amount" : 3
+        "id" : "26A26D82-195A-4AC3-81F6-2BC55216C095",
+        "amount" : 5
       },
       {
-        "id" : "D94E820B-B6BD-49CF-BF1F-99B42DBEB0EB",
-        "amount" : 1
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
+        "amount" : 2
       },
       {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
-        "amount" : 15
-      },
-      {
-        "id" : "E341C5ED-17CB-4B18-A02B-DE329F84608E",
+        "id" : "3929A818-FBE5-49FC-B1CA-DAE46BE48A24",
         "amount" : 2
       }
     ],
-    "output" : [
-      {
-        "id" : "80CA7B96-301D-4BB8-9D44-F947461CFB27",
-        "amount" : 1
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 8
+    "id" : "C1C1BF58-23BC-4B08-82D1-F369639B6700",
+    "duration" : 8,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Gas Filter"
   },
   {
-    "isDefault" : false,
-    "id" : "97DB8FE7-88B0-41F7-8A97-1C1FA51C935A",
-    "input" : [
+    "output" : [
       {
-        "id" : "AEDBDDFA-28D2-4864-8922-775C16662C6A",
-        "amount" : 4
-      },
-      {
-        "id" : "7D7E963B-0065-47B2-9762-583555064714",
-        "amount" : 16
-      },
-      {
-        "id" : "5D643A2D-46D8-4B28-8417-E8F30ED036E3",
+        "id" : "F03CA3AD-264F-4418-97A8-ACB2F8CC2392",
         "amount" : 1
       }
     ],
+    "input" : [
+      {
+        "id" : "1C6D2E14-EA99-45E8-8B6B-5EB779C510A9",
+        "amount" : 1
+      },
+      {
+        "id" : "BE77AB91-581C-46B7-A52C-C8506E77582D",
+        "amount" : 8
+      },
+      {
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
+        "amount" : 2
+      }
+    ],
+    "id" : "3F88D0F9-4888-4316-B27A-EAC6B4E04041",
+    "duration" : 16,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Iodine Infused Filter"
+  },
+  {
     "output" : [
       {
-        "id" : "80CA7B96-301D-4BB8-9D44-F947461CFB27",
+        "id" : "9E13FB39-CD0C-43C6-9FEE-FF48272A734B",
+        "amount" : 5
+      }
+    ],
+    "input" : [
+      {
+        "id" : "053FB457-E973-41E6-B147-3F58F5DE7815",
+        "amount" : 1
+      },
+      {
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
+        "amount" : 10
+      },
+      {
+        "id" : "19A17DC8-750E-4C43-90C4-BC382DEEDD90",
+        "amount" : 10
+      },
+      {
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
+        "amount" : 10
+      }
+    ],
+    "id" : "DBC6393F-9696-4F71-BDDA-638A6B5A09BD",
+    "duration" : 20,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Rifle Cartridge"
+  },
+  {
+    "output" : [
+      {
+        "id" : "856C04C5-8810-4BA2-87EF-5FC5B3972C0B",
+        "amount" : 4
+      }
+    ],
+    "input" : [
+      {
+        "id" : "19A17DC8-750E-4C43-90C4-BC382DEEDD90",
+        "amount" : 8
+      },
+      {
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
+        "amount" : 8
+      },
+      {
+        "id" : "AF1244A6-2FE2-4185-901D-20E117DCDF47",
+        "amount" : 1
+      }
+    ],
+    "id" : "1C66EC98-125E-4E51-B9F9-8ED17BC78002",
+    "duration" : 40,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Seismic Nobelisk"
+  },
+  {
+    "output" : [
+      {
+        "id" : "E1499C1F-64CC-4E12-9017-7DFAFC327ED8",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "837C70AF-2CC6-4FE4-B83F-DBCC1DF32B31",
+        "amount" : 2
+      },
+      {
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
+        "amount" : 15
+      },
+      {
+        "id" : "041BB58E-B7C0-4E17-B963-B0BDCAD52767",
+        "amount" : 2
+      }
+    ],
+    "id" : "EA6FBB19-DC85-4060-B0F0-4084D2BFA907",
+    "duration" : 60,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Modular Engine"
+  },
+  {
+    "output" : [
+      {
+        "id" : "4D7BD373-0DD1-48B5-89D8-9C45AFD9AE8B",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "EB795800-666F-4CAB-A88B-2DF5DC178466",
+        "amount" : 15
+      },
+      {
+        "id" : "1A918FF5-71E5-4EE5-AB2B-7D60B6BB8724",
+        "amount" : 10
+      },
+      {
+        "id" : "E3639EAA-9CD7-4677-9F74-8A206D753B2E",
+        "amount" : 2
+      },
+      {
+        "id" : "5BCE8572-C10B-42D9-83DD-2E46E20606A6",
+        "amount" : 2
+      }
+    ],
+    "id" : "6F61586F-7527-463C-88E7-B9A07A2FBA85",
+    "duration" : 120,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Adaptive Control Unit"
+  },
+  {
+    "output" : [
+      {
+        "id" : "041BB58E-B7C0-4E17-B963-B0BDCAD52767",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "E896B5A7-DA43-4C22-A04B-62ECA6280D44",
+        "amount" : 1
+      },
+      {
+        "id" : "2A1FD4FA-0B75-4919-BD9D-B25C40544B9D",
+        "amount" : 1
+      },
+      {
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
+        "amount" : 3
+      }
+    ],
+    "id" : "7265B2E6-2DA9-458C-91BD-FB5FF58B8014",
+    "duration" : 24,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Plastic Smart Plating"
+  },
+  {
+    "output" : [
+      {
+        "id" : "6C6D3D25-9B68-494C-98F5-E8664B282C69",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "4B8ADF14-86FF-49E6-92F1-A5AD32320278",
+        "amount" : 1
+      },
+      {
+        "id" : "525C604C-12D7-423C-94A6-925094FB332D",
+        "amount" : 6
+      },
+      {
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
+        "amount" : 8
+      }
+    ],
+    "id" : "98C27114-7020-4248-855D-9086096C965E",
+    "duration" : 16,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Flexible Framework"
+  },
+  {
+    "output" : [
+      {
+        "id" : "EB795800-666F-4CAB-A88B-2DF5DC178466",
+        "amount" : 4
+      }
+    ],
+    "input" : [
+      {
+        "id" : "B312BAEE-C4D5-49A2-8B01-81EC2C5F79C0",
+        "amount" : 2
+      },
+      {
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
+        "amount" : 40
+      },
+      {
+        "id" : "0FECFEA2-B2D1-4CBC-843A-3AABB8316110",
+        "amount" : 1
+      }
+    ],
+    "id" : "28ADD6AF-7196-4694-BFEF-3C337D2F4BB6",
+    "duration" : 32,
+    "isDefault" : false,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Automated Speed Wiring"
+  },
+  {
+    "output" : [
+      {
+        "id" : "053FB457-E973-41E6-B147-3F58F5DE7815",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "65BDB720-7EE1-4745-A17E-14603EBDCFE9",
+        "amount" : 3
+      },
+      {
+        "id" : "79190097-D5CF-404F-B9C6-BC3918500EC0",
+        "amount" : 1
+      },
+      {
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
+        "amount" : 15
+      },
+      {
+        "id" : "ABE5E712-3E0C-42D4-A556-292673C0B508",
+        "amount" : 2
+      }
+    ],
+    "id" : "288920F3-14FA-4225-A13F-8970FAA4A597",
+    "duration" : 8,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Beacon"
+  },
+  {
+    "output" : [
+      {
+        "id" : "053FB457-E973-41E6-B147-3F58F5DE7815",
         "amount" : 20
       }
     ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 120
-  },
-  {
-    "isDefault" : false,
-    "id" : "8C32FE23-48E5-46E2-9B4F-1F6546E897AF",
     "input" : [
       {
-        "id" : "85D402F1-0606-40FC-8297-8304D126BC8E",
-        "amount" : 7
-      },
-      {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
+        "id" : "525C604C-12D7-423C-94A6-925094FB332D",
         "amount" : 4
-      }
-    ],
-    "output" : [
-      {
-        "id" : "5285392D-D801-4637-9E88-4E0D87B71BE4",
-        "amount" : 13
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 12
-  },
-  {
-    "isDefault" : false,
-    "id" : "8D35417A-5823-43CA-BBDA-56BC94F8386E",
-    "input" : [
-      {
-        "id" : "EF49983A-B52E-4CA4-8EC8-22264695CA1A",
-        "amount" : 6
       },
       {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 4
-      }
-    ],
-    "output" : [
-      {
-        "id" : "D98509A9-9023-4217-A10D-9766AE9ACB4D",
-        "amount" : 15
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 24
-  },
-  {
-    "isDefault" : false,
-    "id" : "E94F794A-1F5E-4337-9E86-8533D386B8BA",
-    "input" : [
-      {
-        "id" : "4D0AD764-9A11-457F-80BD-A5A7AF60E2A9",
-        "amount" : 2
-      },
-      {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "132E8D67-BE76-44C8-A49C-76921105A4E7",
-        "amount" : 1
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 5
-  },
-  {
-    "isDefault" : false,
-    "id" : "C1A763CF-B071-414D-9125-C5843FA781FB",
-    "input" : [
-      {
-        "id" : "4F178725-D50E-4161-AA74-D8F04769691A",
-        "amount" : 6
-      },
-      {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 5
-      }
-    ],
-    "output" : [
-      {
-        "id" : "E30ED745-8463-4EBA-9599-D21AC04BC140",
-        "amount" : 4
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 3
-  },
-  {
-    "isDefault" : false,
-    "id" : "BA81EB4A-F9D9-4B61-89F4-AA215EE1CB7D",
-    "input" : [
-      {
-        "id" : "73B5CEDA-D335-4C13-99AF-4ECAD81D4622",
-        "amount" : 9
-      },
-      {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 5
-      }
-    ],
-    "output" : [
-      {
-        "id" : "B3EFA785-EA5C-42A2-8C43-ABF8C3F27BCA",
-        "amount" : 7
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 8
-  },
-  {
-    "isDefault" : false,
-    "id" : "CE0ADE6A-B794-4798-A8F3-61A37EF5A076",
-    "input" : [
-      {
-        "id" : "60E46CB1-7462-4F74-B063-1C7610D498B8",
+        "id" : "F89FBBAF-D381-4272-903B-9948F89677DC",
         "amount" : 16
       },
       {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 10
-      }
-    ],
-    "output" : [
-      {
-        "id" : "02EBF7C7-9D32-4C85-A7A7-7892CD4CC146",
+        "id" : "AF1244A6-2FE2-4185-901D-20E117DCDF47",
         "amount" : 1
       }
     ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 12
-  },
-  {
+    "id" : "86F7D87A-BE3D-4690-BB7A-915F95F246AD",
+    "duration" : 120,
     "isDefault" : false,
-    "id" : "D84E3BEC-2CB6-41C5-BBAE-CE3B397AFBB6",
-    "input" : [
-      {
-        "id" : "D98509A9-9023-4217-A10D-9766AE9ACB4D",
-        "amount" : 3
-      },
-      {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 3
-      }
-    ],
-    "output" : [
-      {
-        "id" : "F3D3C814-7765-4201-9E8B-803CB19E4E58",
-        "amount" : 3
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 8
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Alternate: Crystal Beacon"
   },
   {
-    "isDefault" : false,
-    "id" : "3B05930B-64C5-475B-96A4-C5A8A23C429A",
-    "input" : [
-      {
-        "id" : "708047F5-8908-4A49-9F8F-6A81B9334B84",
-        "amount" : 5
-      },
-      {
-        "id" : "1F631E37-6C0E-43B3-85EA-C9FEEC984916",
-        "amount" : 2
-      }
-    ],
     "output" : [
       {
-        "id" : "E341C5ED-17CB-4B18-A02B-DE329F84608E",
-        "amount" : 9
+        "id" : "74C2E45A-0C7D-4319-A191-404318D7506C",
+        "amount" : 13
       }
     ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 8
-  },
-  {
-    "isDefault" : true,
-    "id" : "67C568B5-0DE9-4DEB-BE38-117621BED314",
     "input" : [
       {
-        "id" : "C185AE52-0BB3-48B8-8BE6-1FD94E13FFE2",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "68036E54-A413-4781-988C-B97143819EB1",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 3
-  },
-  {
-    "isDefault" : false,
-    "id" : "25ED2917-7D39-4F64-8232-7CD796B6C5D6",
-    "input" : [
-      {
-        "id" : "1F631E37-6C0E-43B3-85EA-C9FEEC984916",
-        "amount" : 1
-      },
-      {
-        "id" : "9E815074-EDE4-4D8B-A0CD-D85EF0A26BC8",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "C185AE52-0BB3-48B8-8BE6-1FD94E13FFE2",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 2
-  },
-  {
-    "isDefault" : false,
-    "id" : "D2E5B0A3-3AB9-4D48-BFBC-D69BC658180A",
-    "input" : [
-      {
-        "id" : "9F8C0554-817B-418A-A9B6-364C8B655E5D",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "EB2E65B3-A7E4-400C-990D-7DAC82E10F22",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : true,
-    "id" : "46646820-7763-4A91-8A06-9B3D403CC392",
-    "input" : [
-      {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "9E815074-EDE4-4D8B-A0CD-D85EF0A26BC8",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 2
-  },
-  {
-    "isDefault" : true,
-    "id" : "82C98256-BCC4-4BBD-8C9E-654A2C71B85C",
-    "input" : [
-      {
-        "id" : "196E6D47-40F6-4995-932D-C65631CD47D6",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "A26254EE-333B-44AE-A9D6-AE0E0A3930EA",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 4
-  },
-  {
-    "isDefault" : true,
-    "id" : "D1A0FA53-F3EC-4F93-AE74-9CD80B13823A",
-    "input" : [
-      {
-        "id" : "1F631E37-6C0E-43B3-85EA-C9FEEC984916",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "7F842375-F811-4F24-8246-00A4D0C252EF",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 4
-  },
-  {
-    "isDefault" : true,
-    "id" : "F125CB4F-3A8F-47AE-A3EB-ACEC346494B6",
-    "input" : [
-      {
-        "id" : "6B50CE4E-2B28-4655-9AE6-1FE72BDE004E",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "5E8905D2-5620-4F35-9B6B-3AFA507F6270",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 3
-  },
-  {
-    "isDefault" : true,
-    "id" : "52856297-9D89-4AAA-9F44-A8DD7399B593",
-    "input" : [
-      {
-        "id" : "68036E54-A413-4781-988C-B97143819EB1",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "C185AE52-0BB3-48B8-8BE6-1FD94E13FFE2",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 2
-  },
-  {
-    "isDefault" : true,
-    "id" : "7E23D41D-090A-43BF-B30D-6A2B956654FA",
-    "input" : [
-      {
-        "id" : "EB2E65B3-A7E4-400C-990D-7DAC82E10F22",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "9F8C0554-817B-418A-A9B6-364C8B655E5D",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : true,
-    "id" : "9BE1BA96-A87D-402D-AC84-4D742C8A5329",
-    "input" : [
-      {
-        "id" : "9E815074-EDE4-4D8B-A0CD-D85EF0A26BC8",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 1
-  },
-  {
-    "isDefault" : true,
-    "id" : "EEC3F6F7-3DCB-4476-BC86-2CAC143566E4",
-    "input" : [
-      {
-        "id" : "A26254EE-333B-44AE-A9D6-AE0E0A3930EA",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "196E6D47-40F6-4995-932D-C65631CD47D6",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 2
-  },
-  {
-    "isDefault" : true,
-    "id" : "A96785CA-AC60-481F-873D-D25371676BF0",
-    "input" : [
-      {
-        "id" : "7F842375-F811-4F24-8246-00A4D0C252EF",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "1F631E37-6C0E-43B3-85EA-C9FEEC984916",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : true,
-    "id" : "DA482F2A-9E2A-4C4E-817F-3A66293E03F4",
-    "input" : [
-      {
-        "id" : "5E8905D2-5620-4F35-9B6B-3AFA507F6270",
-        "amount" : 2
-      }
-    ],
-    "output" : [
-      {
-        "id" : "6B50CE4E-2B28-4655-9AE6-1FE72BDE004E",
-        "amount" : 2
-      },
-      {
-        "id" : "425CF02A-BD31-4FC8-B746-ED1A29237EF4",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 2
-  },
-  {
-    "isDefault" : true,
-    "id" : "15524D29-1A05-4C75-A342-0C444DB1C9D2",
-    "input" : [
-      {
-        "id" : "9D6F3CF2-DD06-4492-A52C-F6867836FAED",
-        "amount" : 4
-      },
-      {
-        "id" : "A4374CAC-AEC0-48B6-829D-0B7FFA2E3289",
-        "amount" : 1
-      }
-    ],
-    "output" : [
-      {
-        "id" : "96CE7465-48DC-4719-AAB0-49FC2F31F5EF",
-        "amount" : 6
-      },
-      {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 1
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 1
-  },
-  {
-    "isDefault" : false,
-    "id" : "DA884479-F83F-4762-803C-03001BEA6D3E",
-    "input" : [
-      {
-        "id" : "9D6F3CF2-DD06-4492-A52C-F6867836FAED",
-        "amount" : 3
-      },
-      {
-        "id" : "2A48263A-BEC9-4CA2-A162-9BBD0BEB6E46",
-        "amount" : 1
-      }
-    ],
-    "output" : [
-      {
-        "id" : "96CE7465-48DC-4719-AAB0-49FC2F31F5EF",
-        "amount" : 5
-      },
-      {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 1
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 2
-  },
-  {
-    "isDefault" : true,
-    "id" : "45913383-5FA4-4205-BFD2-E93604B66C7D",
-    "input" : [
-      {
-        "id" : "D4D8E230-5874-406A-A68B-BE5ADD2FA0C8",
+        "id" : "B563C6BD-86D6-459E-B414-5D0959ECEF61",
         "amount" : 7
       },
       {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 10
-      }
-    ],
-    "output" : [
-      {
-        "id" : "9D6F3CF2-DD06-4492-A52C-F6867836FAED",
-        "amount" : 8
-      },
-      {
-        "id" : "4263C99C-B6E7-45D9-BB64-6FA8C64A935D",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : true,
-    "id" : "198F06A0-5E21-45F2-9B21-5D4282D890B1",
-    "input" : [
-      {
-        "id" : "03D5F5F2-74F8-456D-AA29-E5B58C3896B0",
-        "amount" : 5
-      },
-      {
-        "id" : "C5B88E3E-7FF7-4824-85D0-98424FBD3F4E",
-        "amount" : 8
-      }
-    ],
-    "output" : [
-      {
-        "id" : "12A95CFF-27E9-4A9C-BE69-DA2BA537A344",
-        "amount" : 5
-      },
-      {
-        "id" : "C5B88E3E-7FF7-4824-85D0-98424FBD3F4E",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : true,
-    "id" : "2E516F72-34F9-4572-A792-C91431533043",
-    "input" : [
-      {
-        "id" : "AB88D4F6-CD84-4AB5-83D5-502068D1C06D",
-        "amount" : 5
-      },
-      {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 5
-      }
-    ],
-    "output" : [
-      {
-        "id" : "C5B88E3E-7FF7-4824-85D0-98424FBD3F4E",
-        "amount" : 10
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : false,
-    "id" : "CB734920-0764-49AB-88D0-F1FC835D63DE",
-    "input" : [
-      {
-        "id" : "196E6D47-40F6-4995-932D-C65631CD47D6",
-        "amount" : 3
-      }
-    ],
-    "output" : [
-      {
-        "id" : "1F631E37-6C0E-43B3-85EA-C9FEEC984916",
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
         "amount" : 4
-      },
-      {
-        "id" : "60E46CB1-7462-4F74-B063-1C7610D498B8",
-        "amount" : 2
       }
     ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
+    "id" : "E52EFF91-9D62-44CA-9FEC-0A8CE35F59B6",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Pure Iron Ingot"
   },
   {
-    "isDefault" : true,
-    "id" : "E5FF16C0-4EC7-43C6-85DF-E6A7B9D4C884",
-    "input" : [
-      {
-        "id" : "196E6D47-40F6-4995-932D-C65631CD47D6",
-        "amount" : 3
-      }
-    ],
     "output" : [
       {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
-        "amount" : 2
+        "id" : "D51FE276-AA7E-4890-B4D5-023740013966",
+        "amount" : 15
+      }
+    ],
+    "input" : [
+      {
+        "id" : "ED0ED2F2-5972-4887-8902-7E100056AED8",
+        "amount" : 6
       },
       {
-        "id" : "1F631E37-6C0E-43B3-85EA-C9FEEC984916",
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 4
+      }
+    ],
+    "id" : "D43AF5F2-C5AB-4748-8ECB-6C3ACCDD37B6",
+    "duration" : 24,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Pure Copper Ingot"
+  },
+  {
+    "output" : [
+      {
+        "id" : "6A68EC64-9363-464B-86AB-B6057291975E",
         "amount" : 1
       }
     ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : true,
-    "id" : "50EF76D7-4FA5-4705-A92E-A550962D575A",
     "input" : [
       {
-        "id" : "60E46CB1-7462-4F74-B063-1C7610D498B8",
-        "amount" : 6
+        "id" : "F9713ABB-B3FA-46BF-894B-F704F94DA05C",
+        "amount" : 2
       },
       {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
         "amount" : 2
       }
     ],
-    "output" : [
-      {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
+    "id" : "3AB0A6D5-231C-4C06-B5FA-70942541563A",
+    "duration" : 5,
     "isDefault" : false,
-    "id" : "3CE0A867-688D-401B-BC11-3412BF31DE4F",
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Pure Caterium Ingot"
+  },
+  {
+    "output" : [
+      {
+        "id" : "627B8BF2-3800-4569-B2FF-E2F422272AF8",
+        "amount" : 4
+      }
+    ],
     "input" : [
       {
-        "id" : "639B1CDC-D527-4A6A-9A55-39F4480EC0FE",
+        "id" : "204FF439-9B8B-4FF3-A2ED-95CBF3A02619",
         "amount" : 6
       },
       {
-        "id" : "C185AE52-0BB3-48B8-8BE6-1FD94E13FFE2",
-        "amount" : 6
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 5
       }
     ],
-    "output" : [
-      {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
-        "amount" : 12
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 12
+    "id" : "84CF4A19-9655-44EA-A346-7D982FAF555D",
+    "duration" : 3,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Wet Concrete"
   },
   {
-    "isDefault" : true,
-    "id" : "D6D30240-E77C-4230-A159-B3366919228A",
+    "output" : [
+      {
+        "id" : "34A5C8A5-2371-49F5-8B3B-B3FF918039FB",
+        "amount" : 7
+      }
+    ],
     "input" : [
       {
-        "id" : "196E6D47-40F6-4995-932D-C65631CD47D6",
+        "id" : "0522A6B5-C7FF-4D1E-85A3-4CB3EDFFC406",
+        "amount" : 9
+      },
+      {
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 5
+      }
+    ],
+    "id" : "D4023BC1-1555-4FE8-A102-93DE2ECCBB89",
+    "duration" : 8,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Pure Quartz Crystal"
+  },
+  {
+    "output" : [
+      {
+        "id" : "3929A818-FBE5-49FC-B1CA-DAE46BE48A24",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "197B3340-55F5-49E4-A187-66E44B5EACFF",
+        "amount" : 16
+      },
+      {
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 10
+      }
+    ],
+    "id" : "9A39C7CA-2FB5-4312-B0F8-25B1C6440139",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Polyester Fabric"
+  },
+  {
+    "output" : [
+      {
+        "id" : "3D362F99-56E6-4AC8-884D-79F057476308",
         "amount" : 3
       }
     ],
-    "output" : [
-      {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
-        "amount" : 2
-      },
-      {
-        "id" : "1F631E37-6C0E-43B3-85EA-C9FEEC984916",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : true,
-    "id" : "54B837B1-8D3B-42D5-8406-59F069205C8A",
     "input" : [
       {
-        "id" : "60E46CB1-7462-4F74-B063-1C7610D498B8",
-        "amount" : 4
+        "id" : "D51FE276-AA7E-4890-B4D5-023740013966",
+        "amount" : 3
       },
       {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
-        "amount" : 4
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 3
       }
     ],
-    "output" : [
-      {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
-        "amount" : 2
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
+    "id" : "D3EE825E-1EDF-412B-AEC4-23999C75806B",
+    "duration" : 8,
     "isDefault" : false,
-    "id" : "EE8C06B3-F458-4DDA-86F9-8B622116E894",
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Steamed Copper Sheet"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ABE5E712-3E0C-42D4-A556-292673C0B508",
+        "amount" : 9
+      }
+    ],
     "input" : [
       {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
+        "id" : "4D32FD4B-4AB7-4482-A724-428F9FDA5390",
+        "amount" : 5
+      },
+      {
+        "id" : "AD65DC53-EB1F-4FB8-BA47-BF46F7DA468E",
+        "amount" : 2
+      }
+    ],
+    "id" : "494C43D0-AF11-46BF-97DA-5D2B5A34EE7D",
+    "duration" : 8,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Coated Cable"
+  },
+  {
+    "output" : [
+      {
+        "id" : "B8ABFF83-5E4D-4B0F-BF72-7503D28BAA10",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "D5BEFB16-C745-4626-B654-E51224997820",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "id" : "C0031C39-8ED7-49E9-A38B-B800AD73F633",
+    "duration" : 3,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Packaged Fuel"
+  },
+  {
+    "output" : [
+      {
+        "id" : "D5BEFB16-C745-4626-B654-E51224997820",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "AD65DC53-EB1F-4FB8-BA47-BF46F7DA468E",
+        "amount" : 1
+      },
+      {
+        "id" : "CD386499-7732-4EAC-B160-10E0E13C669E",
+        "amount" : 2
+      }
+    ],
+    "id" : "98764866-718B-49C1-951A-803740F6DC72",
+    "duration" : 2,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Diluted Packaged Fuel"
+  },
+  {
+    "output" : [
+      {
+        "id" : "D3501C84-DC29-4B9D-A4C2-8B598348018A",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "E92391F9-2AA7-477A-94CE-0ADB6CBB8626",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "id" : "178567EB-0F9B-410F-A628-D9A703B4AF3B",
+    "duration" : 6,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Packaged Turbofuel"
+  },
+  {
+    "output" : [
+      {
+        "id" : "CD386499-7732-4EAC-B160-10E0E13C669E",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "id" : "E08070EE-E05F-4597-ACBD-13D40E28C5ED",
+    "duration" : 2,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Packaged Water"
+  },
+  {
+    "output" : [
+      {
+        "id" : "95E8EC3F-4FF2-4B46-ABCC-5C8F6917DB4C",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "9DA2F1E2-1A76-4DC0-ADA0-1ABE8BA95CA5",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "id" : "8D181F07-9F7F-42CD-9F7C-D0380F9A8E60",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Packaged Oil"
+  },
+  {
+    "output" : [
+      {
+        "id" : "A5045035-289F-41E3-B968-BB6116F5AFCA",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "AD65DC53-EB1F-4FB8-BA47-BF46F7DA468E",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "id" : "4B2532BF-85EA-4998-823D-388DC4AD8BFD",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Packaged Heavy Oil Residue"
+  },
+  {
+    "output" : [
+      {
+        "id" : "0CAE2D0F-F830-4600-B2A8-BF5EBE0506EE",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "A2F108C5-C56E-45EC-B6E9-F57437725CEB",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "id" : "7866DA5D-6A6D-4BCA-B7CB-2E08EA9E91FB",
+    "duration" : 3,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Packaged Liquid Biofuel"
+  },
+  {
+    "output" : [
+      {
+        "id" : "D5BEFB16-C745-4626-B654-E51224997820",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "B8ABFF83-5E4D-4B0F-BF72-7503D28BAA10",
+        "amount" : 2
+      }
+    ],
+    "id" : "333D6B7A-F326-4E0E-B2E0-257DB307FCFE",
+    "duration" : 2,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Unpackaged Fuel"
+  },
+  {
+    "output" : [
+      {
+        "id" : "E92391F9-2AA7-477A-94CE-0ADB6CBB8626",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "D3501C84-DC29-4B9D-A4C2-8B598348018A",
+        "amount" : 2
+      }
+    ],
+    "id" : "E793D899-B4D5-455F-89E6-DDB2263E38AF",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Unpackaged Turbofuel"
+  },
+  {
+    "output" : [
+      {
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "CD386499-7732-4EAC-B160-10E0E13C669E",
+        "amount" : 2
+      }
+    ],
+    "id" : "15577C69-9DA1-4CFA-8A0F-E20B7DCDB492",
+    "duration" : 1,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Unpackaged Water"
+  },
+  {
+    "output" : [
+      {
+        "id" : "9DA2F1E2-1A76-4DC0-ADA0-1ABE8BA95CA5",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "95E8EC3F-4FF2-4B46-ABCC-5C8F6917DB4C",
+        "amount" : 2
+      }
+    ],
+    "id" : "4CE879A9-0FFF-409B-83B8-2BC67F7CA7C9",
+    "duration" : 2,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Unpackaged Oil"
+  },
+  {
+    "output" : [
+      {
+        "id" : "AD65DC53-EB1F-4FB8-BA47-BF46F7DA468E",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "A5045035-289F-41E3-B968-BB6116F5AFCA",
+        "amount" : 2
+      }
+    ],
+    "id" : "1E20A662-E3D4-49C9-A9C6-126297760DA0",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Unpackaged Heavy Oil Residue"
+  },
+  {
+    "output" : [
+      {
+        "id" : "A2F108C5-C56E-45EC-B6E9-F57437725CEB",
+        "amount" : 2
+      },
+      {
+        "id" : "96A141E2-413D-461D-90D6-022EAEAC153B",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "0CAE2D0F-F830-4600-B2A8-BF5EBE0506EE",
+        "amount" : 2
+      }
+    ],
+    "id" : "3EB40776-CEEE-4F3F-8D89-2CC0C5E07724",
+    "duration" : 2,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Unpackaged Liquid Boifuel"
+  },
+  {
+    "output" : [
+      {
+        "id" : "3FC73407-1D4C-4FB2-AF0F-2FA4CD44667D",
         "amount" : 6
       },
       {
-        "id" : "C185AE52-0BB3-48B8-8BE6-1FD94E13FFE2",
-        "amount" : 6
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 1
       }
     ],
+    "input" : [
+      {
+        "id" : "6F21E2A8-8C25-4D3A-8209-288A566A93FD",
+        "amount" : 4
+      },
+      {
+        "id" : "E80E7688-53B8-4B3B-94EC-57284C69D6F9",
+        "amount" : 1
+      }
+    ],
+    "id" : "0CFED501-8879-4213-B8B3-E6D683B8B7B8",
+    "duration" : 1,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Aluminum Scrap"
+  },
+  {
     "output" : [
       {
-        "id" : "D0A5193A-E0DA-4BD2-833D-9686499ED7D9",
+        "id" : "3FC73407-1D4C-4FB2-AF0F-2FA4CD44667D",
+        "amount" : 5
+      },
+      {
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "6F21E2A8-8C25-4D3A-8209-288A566A93FD",
+        "amount" : 3
+      },
+      {
+        "id" : "26A26D82-195A-4AC3-81F6-2BC55216C095",
+        "amount" : 1
+      }
+    ],
+    "id" : "DA699C03-AAE8-4FB0-B59A-BBBCC257F77B",
+    "duration" : 2,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Electrode - Aluminum Scrap"
+  },
+  {
+    "output" : [
+      {
+        "id" : "6F21E2A8-8C25-4D3A-8209-288A566A93FD",
+        "amount" : 8
+      },
+      {
+        "id" : "9AA62BAE-BD32-4ECA-923C-92D4AF5E27CC",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "FC0018D9-588E-4B10-AE55-E101BE3F701F",
+        "amount" : 7
+      },
+      {
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 10
+      }
+    ],
+    "id" : "4B508315-6BBE-4388-91ED-67201C0D4C34",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Akumina Solution"
+  },
+  {
+    "output" : [
+      {
+        "id" : "3A7E81FC-B679-4284-8616-D3FC1F7650EE",
+        "amount" : 5
+      },
+      {
+        "id" : "8B1A9F79-A518-42BD-A95D-77A50C4218D5",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "FAB0B8E6-987F-44AF-AE5B-E2332C2861A8",
+        "amount" : 5
+      },
+      {
+        "id" : "8B1A9F79-A518-42BD-A95D-77A50C4218D5",
+        "amount" : 8
+      }
+    ],
+    "id" : "D5553900-9241-4B98-8F54-D912E9DB0797",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Uranium Pellet"
+  },
+  {
+    "output" : [
+      {
+        "id" : "8B1A9F79-A518-42BD-A95D-77A50C4218D5",
+        "amount" : 10
+      }
+    ],
+    "input" : [
+      {
+        "id" : "5CF7C9E5-8BE1-4F42-A5E5-E71F0920B244",
+        "amount" : 5
+      },
+      {
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 5
+      }
+    ],
+    "id" : "7B4D4CE2-3FDF-4171-9EBC-3D600F800422",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Sulfuric Acid"
+  },
+  {
+    "output" : [
+      {
+        "id" : "AD65DC53-EB1F-4FB8-BA47-BF46F7DA468E",
+        "amount" : 4
+      },
+      {
+        "id" : "197B3340-55F5-49E4-A187-66E44B5EACFF",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "9DA2F1E2-1A76-4DC0-ADA0-1ABE8BA95CA5",
+        "amount" : 3
+      }
+    ],
+    "id" : "A2B70357-EB91-414D-A424-3E0DE50EEE31",
+    "duration" : 6,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Heavy Oil Residue"
+  },
+  {
+    "output" : [
+      {
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
+        "amount" : 2
+      },
+      {
+        "id" : "AD65DC53-EB1F-4FB8-BA47-BF46F7DA468E",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "9DA2F1E2-1A76-4DC0-ADA0-1ABE8BA95CA5",
+        "amount" : 3
+      }
+    ],
+    "id" : "22B51745-5E70-4E8D-9E11-123B37509481",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Plastic"
+  },
+  {
+    "output" : [
+      {
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "197B3340-55F5-49E4-A187-66E44B5EACFF",
+        "amount" : 6
+      },
+      {
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 2
+      }
+    ],
+    "id" : "6B19B931-96D7-4EC5-B6EE-2212A568CBD1",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Residual Plastic"
+  },
+  {
+    "output" : [
+      {
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
         "amount" : 12
       }
     ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 12
-  },
-  {
-    "isDefault" : true,
-    "id" : "275AE456-B44A-47FC-B720-5095629A39E8",
     "input" : [
       {
-        "id" : "1F631E37-6C0E-43B3-85EA-C9FEEC984916",
-        "amount" : 4
-      }
-    ],
-    "output" : [
+        "id" : "57C29FAA-55BF-4F74-8B31-8A7EB6DAD849",
+        "amount" : 6
+      },
       {
-        "id" : "A4374CAC-AEC0-48B6-829D-0B7FFA2E3289",
-        "amount" : 12
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : false,
-    "id" : "B3BC8055-D255-4226-B763-82A32C3A758C",
-    "input" : [
-      {
-        "id" : "196E6D47-40F6-4995-932D-C65631CD47D6",
+        "id" : "D5BEFB16-C745-4626-B654-E51224997820",
         "amount" : 6
       }
     ],
+    "id" : "25050F06-0E51-4DB4-AF7A-F2E0B98C661C",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Recycled Plastic"
+  },
+  {
     "output" : [
       {
-        "id" : "60E46CB1-7462-4F74-B063-1C7610D498B8",
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
+        "amount" : 2
+      },
+      {
+        "id" : "AD65DC53-EB1F-4FB8-BA47-BF46F7DA468E",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "9DA2F1E2-1A76-4DC0-ADA0-1ABE8BA95CA5",
+        "amount" : 3
+      }
+    ],
+    "id" : "19C18F02-9600-4A17-A647-7C6B3EEBBAAB",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Rubber"
+  },
+  {
+    "output" : [
+      {
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "197B3340-55F5-49E4-A187-66E44B5EACFF",
+        "amount" : 4
+      },
+      {
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
+        "amount" : 4
+      }
+    ],
+    "id" : "2491B502-39F2-43FF-939F-6B763B901D74",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Residual Rubber"
+  },
+  {
+    "output" : [
+      {
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
+        "amount" : 12
+      }
+    ],
+    "input" : [
+      {
+        "id" : "5F7479FC-45DC-466F-A069-700CDBB65E32",
+        "amount" : 6
+      },
+      {
+        "id" : "D5BEFB16-C745-4626-B654-E51224997820",
+        "amount" : 6
+      }
+    ],
+    "id" : "F211284F-0396-4DD3-BCFD-DD27E1874557",
+    "duration" : 12,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Recycled Rubber"
+  },
+  {
+    "output" : [
+      {
+        "id" : "E80E7688-53B8-4B3B-94EC-57284C69D6F9",
+        "amount" : 12
+      }
+    ],
+    "input" : [
+      {
+        "id" : "AD65DC53-EB1F-4FB8-BA47-BF46F7DA468E",
+        "amount" : 4
+      }
+    ],
+    "id" : "A6B59577-7EE4-4384-B77D-48B27A20909D",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Petroleum Coke"
+  },
+  {
+    "output" : [
+      {
+        "id" : "197B3340-55F5-49E4-A187-66E44B5EACFF",
         "amount" : 13
       },
       {
-        "id" : "1F631E37-6C0E-43B3-85EA-C9FEEC984916",
+        "id" : "AD65DC53-EB1F-4FB8-BA47-BF46F7DA468E",
         "amount" : 2
       }
     ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
-    "isDefault" : true,
-    "id" : "79AD3AE8-BFDA-4A38-9561-7A4EFF517D43",
     "input" : [
       {
-        "id" : "196E6D47-40F6-4995-932D-C65631CD47D6",
+        "id" : "9DA2F1E2-1A76-4DC0-ADA0-1ABE8BA95CA5",
         "amount" : 6
       }
     ],
+    "id" : "DB79E56A-4078-4A1C-ADC7-A3F37B8AB73B",
+    "duration" : 6,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Polymer Resin"
+  },
+  {
     "output" : [
       {
-        "id" : "C185AE52-0BB3-48B8-8BE6-1FD94E13FFE2",
+        "id" : "D5BEFB16-C745-4626-B654-E51224997820",
         "amount" : 4
       },
       {
-        "id" : "60E46CB1-7462-4F74-B063-1C7610D498B8",
+        "id" : "197B3340-55F5-49E4-A187-66E44B5EACFF",
         "amount" : 3
       }
     ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 6
-  },
-  {
+    "input" : [
+      {
+        "id" : "9DA2F1E2-1A76-4DC0-ADA0-1ABE8BA95CA5",
+        "amount" : 6
+      }
+    ],
+    "id" : "E2941048-4383-45D4-A53A-26B0E023A6A1",
+    "duration" : 6,
     "isDefault" : true,
-    "id" : "18BCE5EC-BD98-4C61-A42C-10787FBB908E",
-    "input" : [
-      {
-        "id" : "1F631E37-6C0E-43B3-85EA-C9FEEC984916",
-        "amount" : 6
-      }
-    ],
-    "output" : [
-      {
-        "id" : "C185AE52-0BB3-48B8-8BE6-1FD94E13FFE2",
-        "amount" : 4
-      }
-    ],
-    "machine" : "7D98DB9E-37E2-4340-B3EB-E48E05D6BAE1",
-    "duration" : 6
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Fuel"
   },
   {
-    "isDefault" : false,
-    "id" : "D9BD87CB-79CE-46A7-B0E3-2E7172D45D19",
-    "input" : [
+    "output" : [
       {
-        "id" : "C185AE52-0BB3-48B8-8BE6-1FD94E13FFE2",
-        "amount" : 6
-      },
-      {
-        "id" : "72699377-05CA-45EC-BE4B-70BBFAF0CEFE",
+        "id" : "D5BEFB16-C745-4626-B654-E51224997820",
         "amount" : 4
       }
     ],
+    "input" : [
+      {
+        "id" : "AD65DC53-EB1F-4FB8-BA47-BF46F7DA468E",
+        "amount" : 6
+      }
+    ],
+    "id" : "32B4F708-72AE-4407-9A09-7D3A036238C7",
+    "duration" : 6,
+    "isDefault" : true,
+    "machine" : "531015B8-8C92-40C0-89AF-54D2593D8618",
+    "name" : "Residual Fuel"
+  },
+  {
     "output" : [
       {
-        "id" : "9F8C0554-817B-418A-A9B6-364C8B655E5D",
+        "id" : "E92391F9-2AA7-477A-94CE-0ADB6CBB8626",
         "amount" : 5
       }
     ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 16
-  },
-  {
-    "isDefault" : false,
-    "id" : "B5569081-4F4A-44C5-827E-A32CECC1E6D0",
     "input" : [
       {
-        "id" : "1F631E37-6C0E-43B3-85EA-C9FEEC984916",
-        "amount" : 5
-      },
-      {
-        "id" : "72699377-05CA-45EC-BE4B-70BBFAF0CEFE",
-        "amount" : 4
-      }
-    ],
-    "output" : [
-      {
-        "id" : "9F8C0554-817B-418A-A9B6-364C8B655E5D",
-        "amount" : 4
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 8
-  },
-  {
-    "isDefault" : true,
-    "id" : "C67A0F40-84D2-4CAC-92F2-3471CDC86E35",
-    "input" : [
-      {
-        "id" : "BCEB0BB9-1F4C-4B2A-A5FC-5580039752C5",
+        "id" : "D5BEFB16-C745-4626-B654-E51224997820",
         "amount" : 6
       },
       {
-        "id" : "23C96E29-5708-4231-897B-22963F40A660",
+        "id" : "CDF90860-2099-4EB7-A3E8-67B396E8E65E",
+        "amount" : 4
+      }
+    ],
+    "id" : "AD2BC906-1707-4CDE-9F04-629E1FD568DF",
+    "duration" : 16,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Turbofuel"
+  },
+  {
+    "output" : [
+      {
+        "id" : "E92391F9-2AA7-477A-94CE-0ADB6CBB8626",
+        "amount" : 4
+      }
+    ],
+    "input" : [
+      {
+        "id" : "AD65DC53-EB1F-4FB8-BA47-BF46F7DA468E",
+        "amount" : 5
+      },
+      {
+        "id" : "CDF90860-2099-4EB7-A3E8-67B396E8E65E",
+        "amount" : 4
+      }
+    ],
+    "id" : "B72EE07C-7A82-42B8-8694-3702A1BF9D33",
+    "duration" : 8,
+    "isDefault" : false,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Alternate: Turbo Heavy Fuel"
+  },
+  {
+    "output" : [
+      {
+        "id" : "A2F108C5-C56E-45EC-B6E9-F57437725CEB",
+        "amount" : 4
+      }
+    ],
+    "input" : [
+      {
+        "id" : "2D4EC6E6-93E4-4BA0-8101-DDE50D1710E4",
+        "amount" : 6
+      },
+      {
+        "id" : "8E7E63D4-95E6-483B-AD94-979A3F91B59A",
         "amount" : 3
       }
     ],
-    "output" : [
-      {
-        "id" : "6B50CE4E-2B28-4655-9AE6-1FE72BDE004E",
-        "amount" : 4
-      }
-    ],
-    "machine" : "C1F5C2E4-5721-4F07-B93D-B97D884EBDC7",
-    "duration" : 4
+    "id" : "78913B75-F51F-4070-9413-EB656F6A08BE",
+    "duration" : 4,
+    "isDefault" : true,
+    "machine" : "07F0E440-E5F3-404D-86C2-5F795DB4E833",
+    "name" : "Liquid Biofuel"
   }
 ]

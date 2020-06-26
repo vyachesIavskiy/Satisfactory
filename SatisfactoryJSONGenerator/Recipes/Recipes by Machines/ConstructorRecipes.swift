@@ -425,4 +425,3 @@ let constructorRecipes = [
     powerShard2Recipe,
     powerShard5Recipe,
 ]
-s

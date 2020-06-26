@@ -6,9 +6,7 @@ struct Recipe: Codable, Hashable, Identifiable {
         let item: Item
         let amount: Int
         
-        var productionRecipes: [Recipe] {
-            item.recipes
-        }
+        var productionRecipes: [Recipe] { item.recipes }
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -44,6 +42,7 @@ struct Recipe: Codable, Hashable, Identifiable {
     }
     
     let id: UUID
+    let name: String
     let input: [RecipePart]
     let output: [RecipePart]
     let machine: UUID
@@ -60,6 +59,7 @@ struct Recipe: Codable, Hashable, Identifiable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id).uuid()
+        name = try container.decode(String.self, forKey: .name)
         input = try container.decode([RecipePart].self, forKey: .input)
         output = try container.decode([RecipePart].self, forKey: .output)
         machine = try container.decode(String.self, forKey: .machine).uuid()

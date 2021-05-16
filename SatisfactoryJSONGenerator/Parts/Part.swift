@@ -1,9 +1,16 @@
 import Foundation
 
-struct Part: Codable, Resource, CustomStringConvertible {
+struct Part: Encodable, Resource, CustomStringConvertible {
     let id = UUID()
     let name: String
     let partType: PartType
+    let rawResource: Bool
+    
+    init(name: String, partType: PartType, rawResource: Bool = false) {
+        self.name = name
+        self.partType = partType
+        self.rawResource = rawResource
+    }
 }
 
 let Parts
@@ -13,6 +20,7 @@ let Parts
     + Aliens
     + PowerSlugs
     + Liquids
+    + Gases
     + Ingots
     + StandartParts
     + Electronics

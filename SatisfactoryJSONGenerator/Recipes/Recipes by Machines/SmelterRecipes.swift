@@ -1,3 +1,4 @@
+// MARK: - Ingots
 let ironIngotRecipe = Recipe(
     name: "Iron Ingot",
     input: [
@@ -37,17 +38,18 @@ let cateriumIngotRecipe = Recipe(
 let aluminumIngotRecipe1 = Recipe(
     name: "Alternate: Pure Aluminum Ingot",
     input: [
-        .init(aluminumScrap, amount: 12)
+        .init(aluminumScrap, amount: 2)
     ],
     output: [
-        .init(aluminumIngot, amount: 3)
+        .init(aluminumIngot, amount: 1)
     ],
     machine: smelter,
-    duration: 5,
+    duration: 2,
     isDefault: false
 )
 
-let smelterRecipes = [
+let SmelterRecipes = [
+    // Ingots
     ironIngotRecipe,
     copperIngotRecipe,
     cateriumIngotRecipe,

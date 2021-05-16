@@ -2,7 +2,7 @@ import Foundation
 
 struct RecipePart: Codable {
     let id: UUID
-    let amount: Int
+    let amount: Double
     
     var name: String {
         resource.name
@@ -20,12 +20,12 @@ struct RecipePart: Codable {
         fatalError("Resource with \(id) is not found")
     }
     
-    init(_ part: Part, amount: Int) {
+    init(_ part: Part, amount: Double) {
         id = part.id
         self.amount = amount
     }
     
-    init(_ equipment: Equipment, amount: Int) {
+    init(_ equipment: Equipment, amount: Double) {
         id = equipment.id
         self.amount = amount
     }

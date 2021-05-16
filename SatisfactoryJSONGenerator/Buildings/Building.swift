@@ -1,6 +1,6 @@
 import Foundation
 
-struct Building: Codable {
+struct Building: Encodable {
     let id = UUID()
     let name: String
     let buildingType: BuildingType
@@ -8,32 +8,40 @@ struct Building: Codable {
 
 let Buildings
     = Special
+    
     + FluidProduction
     + Manufacturers
     + Miners
     + Smelters
     + WorkStations
+    
     + Generators
     + PowerPoles
     + WallPoles
+    
     + ConveyorBelts
     + ConveyorLifts
     + ConveyorSupports
-    + PipeSupports
+    + PipelineSupports
     + Pipelines
     + Sorting
+    
     + Attachments
+    + Lights
     + Storage
     + Towers
     + Walkways
-    + ConveyourConnections
-    + Doors
-    + Walls
-    + Windows
+    
     + Foundations
     + QuaterPipes
     + Ramps
     + InvertedRamps
+    
+    + ConveyourConnections
+    + Doors
+    + Walls
+    + Windows
+    
     + Hypertubes
     + JumpPads
     + MotorVehicles

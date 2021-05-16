@@ -125,14 +125,14 @@ let encasedIndustrialBeamRecipe1 = Recipe(
 let alcladAluminumSheetRecipe = Recipe(
     name: "Alclad Aluminum Sheet",
     input: [
-        .init(aluminumIngot, amount: 8),
-        .init(copperIngot, amount: 3)
+        .init(aluminumIngot, amount: 3),
+        .init(copperIngot, amount: 1)
     ],
     output: [
-        .init(alcladAluminumSheet, amount: 4)
+        .init(alcladAluminumSheet, amount: 3)
     ],
     machine: assembler,
-    duration: 8
+    duration: 6
 )
 
 let ironPlateRecipe1 = Recipe(
@@ -160,6 +160,20 @@ let ironPlateRecipe2 = Recipe(
     ],
     machine: assembler,
     duration: 24,
+    isDefault: false
+)
+
+let aluminumCasingRecipe1 = Recipe(
+    name: "Alternate: Alclad Casing",
+    input: [
+        .init(aluminumIngot, amount: 20),
+        .init(copperIngot, amount: 10)
+    ],
+    output: [
+        .init(aluminumCasing, amount: 15)
+    ],
+    machine: assembler,
+    duration: 8,
     isDefault: false
 )
 
@@ -245,30 +259,44 @@ let motorRecipe = Recipe(
     duration: 12
 )
 
+let motorRecipe1 = Recipe(
+    name: "Alternate: Electric Motor",
+    input: [
+        .init(electromagneticControlRod, amount: 1),
+        .init(rotor, amount: 2)
+    ],
+    output: [
+        .init(motor, amount: 2)
+    ],
+    machine: assembler,
+    duration: 16,
+    isDefault: false
+)
+
 let heatSinkRecipe = Recipe(
     name: "Heat Sink",
     input: [
-        .init(alcladAluminumSheet, amount: 8),
-        .init(rubber, amount: 14)
+        .init(alcladAluminumSheet, amount: 5),
+        .init(copperSheet, amount: 3)
     ],
     output: [
-        .init(heatSink, amount: 2)
+        .init(heatSink, amount: 1)
     ],
     machine: assembler,
-    duration: 12
+    duration: 8
 )
 
 let heatSinkRecipe1 = Recipe(
     name: "Alternate: Heat Exchanger",
     input: [
-        .init(alcladAluminumSheet, amount: 20),
-        .init(copperSheet, amount: 30)
+        .init(aluminumCasing, amount: 3),
+        .init(rubber, amount: 3)
     ],
     output: [
-        .init(alcladAluminumSheet, amount: 7)
+        .init(heatSink, amount: 1)
     ],
     machine: assembler,
-    duration: 32,
+    duration: 6,
     isDefault: false
 )
 
@@ -329,7 +357,7 @@ let circuitBoardRecipe3 = Recipe(
 )
 
 let aiLimiterRecipe = Recipe(
-    name: "A. I. Limiter",
+    name: "AI Limiter",
     input: [
         .init(copperSheet, amount: 5),
         .init(quickwire, amount: 20)
@@ -397,6 +425,34 @@ let quickwireRecipe1 = Recipe(
     isDefault: false
 )
 
+let computerRecipe1 = Recipe(
+    name: "Alternate: Crystal Computer",
+    input: [
+        .init(circuitBoard, amount: 8),
+        .init(crystalOscillator, amount: 3)
+    ],
+    output: [
+        .init(computer, amount: 3)
+    ],
+    machine: assembler,
+    duration: 64,
+    isDefault: false
+)
+
+let supercomputerRecipe2 = Recipe(
+    name: "Alternate: OC Supercomputer",
+    input: [
+        .init(radioControlUnit, amount: 3),
+        .init(coolingSystem, amount: 3)
+    ],
+    output: [
+        .init(supercomputer, amount: 1)
+    ],
+    machine: assembler,
+    duration: 20,
+    isDefault: false
+)
+
 // MARK: - Minerals
 let concreteRecipe1 = Recipe(
     name: "Alternate: Rubber Concrete",
@@ -415,8 +471,8 @@ let concreteRecipe1 = Recipe(
 let concreteRecipe2 = Recipe(
     name: "Alternate: Fine Concrete",
     input: [
-        .init(limestone, amount: 12),
-        .init(silica, amount: 3)
+        .init(silica, amount: 3),
+        .init(limestone, amount: 12)
     ],
     output: [
         .init(concrete, amount: 10)
@@ -454,21 +510,6 @@ let silicaRecipe1 = Recipe(
     isDefault: false
 )
 
-// MARK: - Communications
-let computerRecipe1 = Recipe(
-    name: "Alternate: Crystal Compute",
-    input: [
-        .init(circuitBoard, amount: 8),
-        .init(crystalOscillator, amount: 3)
-    ],
-    output: [
-        .init(computer, amount: 3)
-    ],
-    machine: assembler,
-    duration: 64,
-    isDefault: false
-)
-
 // MARK: - Nuclear
 let electromagneticControlRodRecipe = Recipe(
     name: "Electromagnetic Control Rod",
@@ -486,28 +527,55 @@ let electromagneticControlRodRecipe = Recipe(
 let electromagneticControlRodRecipe1 = Recipe(
     name: "Alternate: Electromagnetic Connection Rod",
     input: [
-        .init(stator, amount: 10),
-        .init(highSpeedConnector, amount: 5)
+        .init(stator, amount: 2),
+        .init(highSpeedConnector, amount: 1)
     ],
     output: [
-        .init(electromagneticControlRod, amount: 10)
+        .init(electromagneticControlRod, amount: 2)
     ],
     machine: assembler,
-    duration: 60,
+    duration: 15,
     isDefault: false
 )
 
-let encasedUraniumCellRecipe = Recipe(
-    name: "Encased Uranium Cell",
+//let encasedUraniumCellRecipe = Recipe(
+//    name: "Encased Uranium Cell",
+//    input: [
+//        .init(uraniumPellet, amount: 40),
+//        .init(concrete, amount: 9)
+//    ],
+//    output: [
+//        .init(encasedUraniumCell, amount: 10)
+//    ],
+//    machine: assembler,
+//    duration: 60
+//)
+
+let encasedPlutoniumCellRecipe = Recipe(
+    name: "Encased Plutonium Cell",
     input: [
-        .init(uraniumPellet, amount: 40),
-        .init(concrete, amount: 9)
+        .init(plutoniumPellet, amount: 2),
+        .init(concrete, amount: 4)
     ],
     output: [
-        .init(encasedUraniumCell, amount: 10)
+        .init(encasedPlutoniumCell, amount: 1)
     ],
     machine: assembler,
-    duration: 60
+    duration: 12
+)
+
+let plutoniumFuelRodRecipe1 = Recipe(
+    name: "Alternate: Plutonium Fuel Unit",
+    input: [
+        .init(encasedPlutoniumCell, amount: 20),
+        .init(pressureConversionCube, amount: 1)
+    ],
+    output: [
+        .init(plutoniumFuelRod, amount: 1)
+    ],
+    machine: assembler,
+    duration: 120,
+    isDefault: false
 )
 
 // MARK: - Consumed
@@ -591,6 +659,19 @@ let automatedWiringRecipe = Recipe(
     duration: 24
 )
 
+let assemblyDirectorSystemRecipe = Recipe(
+    name: "Assembly Director System",
+    input: [
+        .init(adaptiveControlUnit, amount: 2),
+        .init(supercomputer, amount: 1)
+    ],
+    output: [
+        .init(assemblyDirectorSystem, amount: 1)
+    ],
+    machine: assembler,
+    duration: 80
+)
+
 // MARK: - Biomass
 let fabricRecipe = Recipe(
     name: "Fabric",
@@ -605,7 +686,36 @@ let fabricRecipe = Recipe(
     duration: 4
 )
 
-let assemblerRecipes = [
+// MARK: - Containers
+let pressureConversionCubeRecipe = Recipe(
+    name: "Pressure Conversion Cube",
+    input: [
+        .init(fusedModularFrame, amount: 1),
+        .init(radioControlUnit, amount: 2)
+    ],
+    output: [
+        .init(pressureConversionCube, amount: 1)
+    ],
+    machine: assembler,
+    duration: 60
+)
+
+let emptyCanisterRecipe2 = Recipe(
+    name: "Alternate: Coated Iron Canister",
+    input: [
+        .init(ironPlate, amount: 2),
+        .init(copperSheet, amount: 1)
+    ],
+    output: [
+        .init(emptyCanister, amount: 4)
+    ],
+    machine: assembler,
+    duration: 4,
+    isDefault: false
+)
+
+let AssemblerRecipes = [
+    // Standard Parts
     reinforcedIronPlateRecipe,
     reinforcedIronPlateRecipe1,
     reinforcedIronPlateRecipe2,
@@ -618,7 +728,9 @@ let assemblerRecipes = [
     encasedIndustrialBeamRecipe,
     encasedIndustrialBeamRecipe1,
     alcladAluminumSheetRecipe,
+    aluminumCasingRecipe1,
     
+    // Industrial Parts
     rotorRecipe,
     rotorRecipe1,
     rotorRecipe2,
@@ -628,6 +740,7 @@ let assemblerRecipes = [
     heatSinkRecipe,
     heatSinkRecipe1,
     
+    // Electronics
     circuitBoardRecipe,
     circuitBoardRecipe1,
     circuitBoardRecipe2,
@@ -637,25 +750,36 @@ let assemblerRecipes = [
     cableRecipe1,
     cableRecipe2,
     quickwireRecipe1,
+    computerRecipe1,
+    supercomputerRecipe1,
     
+    // Minerals
     concreteRecipe1,
     concreteRecipe2,
     compactedCoalRecipe,
     silicaRecipe1,
     
-    computerRecipe1,
-    
+    // Nuclear
     electromagneticControlRodRecipe,
     electromagneticControlRodRecipe1,
-    encasedUraniumCellRecipe,
+    encasedPlutoniumCellRecipe,
+    plutoniumFuelRodRecipe1,
     
+    // Consumed
     blackPowderRecipe,
     blackPowderRecipe1,
     nobeliskRecipe,
     
+    // Space Elevator
     smartPlatingRecipe,
     versatileFrameworkRecipe,
     automatedWiringRecipe,
+    assemblyDirectorSystemRecipe,
     
+    // Biomass
     fabricRecipe,
+    
+    // Containers
+    pressureConversionCubeRecipe,
+    emptyCanisterRecipe2
 ]

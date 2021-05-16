@@ -49,7 +49,7 @@ let screwRecipe = Recipe(
 )
 
 let screwRecipe1 = Recipe(
-    name: "Alternate: Casted Screw",
+    name: "Alternate: Cast Screw",
     input: [
         .init(ironIngot, amount: 5)
     ],
@@ -108,6 +108,18 @@ let steelPipeRecipe = Recipe(
     ],
     machine: constructor,
     duration: 6
+)
+
+let aluminumCasingRecipe = Recipe(
+    name: "Aluminum Casing",
+    input: [
+        .init(aluminumIngot, amount: 3)
+    ],
+    output: [
+        .init(aluminumCasing, amount: 2)
+    ],
+    machine: constructor,
+    duration: 2
 )
 
 // MARK: - Electronics
@@ -210,19 +222,19 @@ let silicaRecipe = Recipe(
     duration: 8
 )
 
-// MARK: - Biomass
-let biomassWoodRecipe = Recipe(
-    name: "Biomass (Wood)",
+let copperPowderRecipe = Recipe(
+    name: "Copper Powder",
     input: [
-        .init(wood, amount: 4)
+        .init(copperIngot, amount: 30)
     ],
     output: [
-        .init(biomass, amount: 20)
+        .init(copperPowder, amount: 5)
     ],
     machine: constructor,
-    duration: 4
+    duration: 6
 )
 
+// MARK: - Biomass
 let biomassLeavesRecipe = Recipe(
     name: "Biomass (Leaves)",
     input: [
@@ -233,6 +245,18 @@ let biomassLeavesRecipe = Recipe(
     ],
     machine: constructor,
     duration: 5
+)
+
+let biomassWoodRecipe = Recipe(
+    name: "Biomass (Wood)",
+    input: [
+        .init(wood, amount: 4)
+    ],
+    output: [
+        .init(biomass, amount: 20)
+    ],
+    machine: constructor,
+    duration: 4
 )
 
 let biomassAlienCarapaceRecipe = Recipe(
@@ -283,20 +307,7 @@ let solidBiofuelRecipe = Recipe(
     duration: 4
 )
 
-// MARK: - Raw materials
-let charcoalRecipe = Recipe(
-    name: "Alternate: Charcoal",
-    input: [
-        .init(wood, amount: 1)
-    ],
-    output: [
-        .init(coal, amount: 10)
-    ],
-    machine: constructor,
-    duration: 4,
-    isDefault: false
-)
-
+// MARK: - Raw Materials
 let bioCoalRecipe = Recipe(
     name: "Alternate: Biocoal",
     input: [
@@ -307,6 +318,19 @@ let bioCoalRecipe = Recipe(
     ],
     machine: constructor,
     duration: 8,
+    isDefault: false
+)
+
+let charcoalRecipe = Recipe(
+    name: "Alternate: Charcoal",
+    input: [
+        .init(wood, amount: 1)
+    ],
+    output: [
+        .init(coal, amount: 10)
+    ],
+    machine: constructor,
+    duration: 4,
     isDefault: false
 )
 
@@ -321,6 +345,31 @@ let emptyCanisterRecipe = Recipe(
     ],
     machine: constructor,
     duration: 4
+)
+
+let emptyCanisterRecipe1 = Recipe(
+    name: "Alternate: Steel Canister",
+    input: [
+        .init(steelIngot, amount: 3)
+    ],
+    output: [
+        .init(emptyCanister, amount: 2)
+    ],
+    machine: constructor,
+    duration: 3,
+    isDefault: false
+)
+
+let emptyFluidTankRecipe = Recipe(
+    name: "Empty Fluid Tank",
+    input: [
+        .init(aluminumIngot, amount: 1)
+    ],
+    output: [
+        .init(emptyFluidTank, amount: 1)
+    ],
+    machine: constructor,
+    duration: 1
 )
 
 // MARK: - Consumed
@@ -385,7 +434,8 @@ let powerShard5Recipe = Recipe(
     duration: 24
 )
 
-let constructorRecipes = [
+let ConstructorRecipes = [
+    // Standard Parts
     ironPlateRecipe,
     ironRodRecipe,
     ironRodRecipe1,
@@ -395,17 +445,21 @@ let constructorRecipes = [
     copperSheetRecipe,
     steelBeamRecipe,
     steelPipeRecipe,
+    aluminumCasingRecipe,
     
+    // Electronics
     wireRecipe,
     wireRecipe1,
     wireRecipe2,
     cableRecipe,
     quickwireRecipe,
     
+    // Minerals
     concreteRecipe,
     quartzCrystalRecipe,
     silicaRecipe,
     
+    // Biomass
     biomassWoodRecipe,
     biomassLeavesRecipe,
     biomassAlienCarapaceRecipe,
@@ -413,14 +467,20 @@ let constructorRecipes = [
     biomassMyceliaRecipe,
     solidBiofuelRecipe,
     
+    // Raw Materials
     charcoalRecipe,
     bioCoalRecipe,
     
+    // Containers
     emptyCanisterRecipe,
+    emptyCanisterRecipe1,
+    emptyFluidTankRecipe,
     
+    // Consumed
     spikedRebarRecipe,
     colorCartridgeRecipe,
     
+    // Power Shards
     powerShard1Recipe,
     powerShard2Recipe,
     powerShard5Recipe,

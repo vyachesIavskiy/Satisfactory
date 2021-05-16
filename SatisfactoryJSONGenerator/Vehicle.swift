@@ -1,20 +1,23 @@
 import Foundation
 
-struct Vehicle: Codable {
+struct Vehicle: Encodable {
     let id = UUID()
     let name: String
 }
 
 let tractor = Vehicle(name: "Tractor")
-let explorer = Vehicle(name: "Explorer")
 let truck = Vehicle(name: "Truck")
+let explorer = Vehicle(name: "Explorer")
+let cyberWagon = Vehicle(name: "Cyber Wagon")
+let drone = Vehicle(name: "Drone")
 let electricLocomotive = Vehicle(name: "Electric Locomotive")
 let freightCar = Vehicle(name: "Freight Car")
 
 let Vehicles = [
     tractor,
-    explorer,
     truck,
+    explorer,
+    drone,
     electricLocomotive,
     freightCar
 ]

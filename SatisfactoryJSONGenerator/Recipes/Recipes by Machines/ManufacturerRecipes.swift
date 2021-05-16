@@ -1,4 +1,4 @@
-// MARK: - Standart Parts
+// MARK: - Standard Parts
 let heavyModularFrameRecipe = Recipe(
     name: "Heavy Modular Frame",
     input: [
@@ -50,7 +50,7 @@ let heavyModularFrameRecipe2 = Recipe(
 let turboMotorRecipe = Recipe(
     name: "Turbo Motor",
     input: [
-        .init(heatSink, amount: 4),
+        .init(coolingSystem, amount: 4),
         .init(radioControlUnit, amount: 2),
         .init(motor, amount: 4),
         .init(rubber, amount: 24)
@@ -63,12 +63,12 @@ let turboMotorRecipe = Recipe(
 )
 
 let turboMotorRecipe1 = Recipe(
-    name: "Alternate: Turbo Rigour Motor",
+    name: "Alternate: Turbo Electric Motor",
     input: [
         .init(motor, amount: 7),
-        .init(radioControlUnit, amount: 5),
-        .init(aiLimiter, amount: 9),
-        .init(stator, amount: 7)
+        .init(radioControlUnit, amount: 9),
+        .init(electromagneticControlRod, amount: 5),
+        .init(rotor, amount: 7)
     ],
     output: [
         .init(turboMotor, amount: 3)
@@ -78,7 +78,23 @@ let turboMotorRecipe1 = Recipe(
     isDefault: false
 )
 
-let motorRecipe1 = Recipe(
+let turboMotorRecipe2 = Recipe(
+    name: "Alternate: Turbo Pressure Motor",
+    input: [
+        .init(motor, amount: 4),
+        .init(pressureConversionCube, amount: 1),
+        .init(pressureConversionCube, amount: 24),
+        .init(stator, amount: 8)
+    ],
+    output: [
+        .init(turboMotor, amount: 2)
+    ],
+    machine: manufacturer,
+    duration: 32,
+    isDefault: false
+)
+
+let motorRecipe2 = Recipe(
     name: "Alternate: Rigour Motor",
     input: [
         .init(rotor, amount: 3),
@@ -90,6 +106,22 @@ let motorRecipe1 = Recipe(
     ],
     machine: manufacturer,
     duration: 48,
+    isDefault: false
+)
+
+let batteryRecipe1 = Recipe(
+    name: "Alternate: Classic Battery",
+    input: [
+        .init(sulfur, amount: 6),
+        .init(alcladAluminumSheet, amount: 7),
+        .init(plastic, amount: 8),
+        .init(wire, amount: 12)
+    ],
+    output: [
+        .init(battery, amount: 4)
+    ],
+    machine: manufacturer,
+    duration: 8,
     isDefault: false
 )
 
@@ -121,21 +153,6 @@ let highSpeedConnectorRecipe1 = Recipe(
     machine: manufacturer,
     duration: 40,
     isDefault: false
-)
-
-let batteryRecipe = Recipe(
-    name: "Battery",
-    input: [
-        .init(alcladAluminumSheet, amount: 8),
-        .init(wire, amount: 16),
-        .init(sulfur, amount: 20),
-        .init(plastic, amount: 8)
-    ],
-    output: [
-        .init(battery, amount: 3)
-    ],
-    machine: manufacturer,
-    duration: 32
 )
 
 // MARK: - Communications
@@ -213,61 +230,92 @@ let supercomputerRecipe = Recipe(
     duration: 32
 )
 
+let supercomputerRecipe1 = Recipe(
+    name: "Alternate: Super-State Computer",
+    input: [
+        .init(computer, amount: 3),
+        .init(electromagneticControlRod, amount: 2),
+        .init(battery, amount: 20),
+        .init(wire, amount: 45)
+    ],
+    output: [
+        .init(supercomputer, amount: 2)
+    ],
+    machine: manufacturer,
+    duration: 50,
+    isDefault: false
+)
+
 let radioControlUnitRecipe = Recipe(
     name: "Radio Control Unit",
     input: [
-        .init(heatSink, amount: 4),
-        .init(rubber, amount: 16),
+        .init(aluminumCasing, amount: 32),
         .init(crystalOscillator, amount: 1),
         .init(computer, amount: 1)
+    ],
+    output: [
+        .init(radioControlUnit, amount: 2)
+    ],
+    machine: manufacturer,
+    duration: 48
+)
+
+let radioControlUnitRecipe1 = Recipe(
+    name: "Alternate: Radio Connection Unit",
+    input: [
+        .init(heatSink, amount: 4),
+        .init(highSpeedConnector, amount: 2),
+        .init(quartzCrystal, amount: 12)
     ],
     output: [
         .init(radioControlUnit, amount: 1)
     ],
     machine: manufacturer,
-    duration: 24
+    duration: 16,
+    isDefault: false
 )
 
-let radioControlUnitRecipe1 = Recipe(
+let radioControlUnitRecipe2 = Recipe(
     name: "Alternate: Radio Control System",
     input: [
-        .init(heatSink, amount: 10),
-        .init(supercomputer, amount: 1),
-        .init(quartzCrystal, amount: 30)
+        .init(crystalOscillator, amount: 1),
+        .init(circuitBoard, amount: 10),
+        .init(aluminumCasing, amount: 60),
+        .init(rubber, amount: 30)
     ],
     output: [
         .init(radioControlUnit, amount: 3)
     ],
     machine: manufacturer,
-    duration: 48,
+    duration: 40,
     isDefault: false
 )
 
 // MARK: - Nuclear
-let nuclearFuelRodRecipe = Recipe(
-    name: "Nuclear Fuel Rod",
+let uraniumFuelRodRecipe = Recipe(
+    name: "Uranium Fuel Rod",
     input: [
-        .init(encasedUraniumCell, amount: 25),
+        .init(encasedUraniumCell, amount: 50),
         .init(encasedIndustrialBeam, amount: 3),
         .init(electromagneticControlRod, amount: 5)
     ],
     output: [
-        .init(nuclearFuelRod, amount: 1)
+        .init(uraniumFuelRod, amount: 1)
     ],
     machine: manufacturer,
     duration: 150
 )
 
-let nuclearFuelRodRecipe1 = Recipe(
-    name: "Alternate: Nuclear Fuel Unit",
+let uraniumFuelRodRecipe1 = Recipe(
+    name: "Alternate: Uranium Fuel Unit",
     input: [
-        .init(encasedUraniumCell, amount: 50),
+        .init(encasedUraniumCell, amount: 100),
         .init(electromagneticControlRod, amount: 10),
         .init(crystalOscillator, amount: 3),
         .init(beacon, amount: 6)
     ],
     output: [
-        .init(nuclearFuelRod, amount: 3)
+        .init(uraniumFuelRod, amount: 3)
     ],
     machine: manufacturer,
     duration: 300,
@@ -277,17 +325,32 @@ let nuclearFuelRodRecipe1 = Recipe(
 let encasedUraniumCellRecipe1 = Recipe(
     name: "Alternate: Infused Uranium Cell",
     input: [
-        .init(uraniumPellet, amount: 40),
-        .init(sulfur, amount: 45),
-        .init(silica, amount: 45),
-        .init(quickwire, amount: 75)
+        .init(uranium, amount: 5),
+        .init(silica, amount: 3),
+        .init(sulfur, amount: 5),
+        .init(quickwire, amount: 15)
     ],
     output: [
-        .init(encasedUraniumCell, amount: 35)
+        .init(encasedUraniumCell, amount: 4)
     ],
     machine: manufacturer,
-    duration: 120,
+    duration: 12,
     isDefault: false
+)
+
+let plutoniumFuelRodRecipe = Recipe(
+    name: "Plutonium Fuel Rod",
+    input: [
+        .init(encasedPlutoniumCell, amount: 30),
+        .init(steelBeam, amount: 18),
+        .init(electromagneticControlRod, amount: 6),
+        .init(heatSink, amount: 10)
+    ],
+    output: [
+        .init(plutoniumFuelRod, amount: 1)
+    ],
+    machine: manufacturer,
+    duration: 240
 )
 
 // MARK: - Consumed
@@ -310,7 +373,7 @@ let iodineInfusedFilterRecipe = Recipe(
     input: [
         .init(gasFilter, amount: 1),
         .init(quickwire, amount: 8),
-        .init(rubber, amount: 2)
+        .init(aluminumCasing, amount: 1)
     ],
     output: [
         .init(iodineInfusedFilter, amount: 1)
@@ -374,6 +437,35 @@ let adaptiveControlUnitRecipe = Recipe(
     ],
     output: [
         .init(adaptiveControlUnit, amount: 2)
+    ],
+    machine: manufacturer,
+    duration: 120
+)
+
+let magneticFieldGeneratorRecipe = Recipe(
+    name: "Magnetic Field Generator",
+    input: [
+        .init(versatileFramework, amount: 5),
+        .init(electromagneticControlRod, amount: 2),
+        .init(battery, amount: 10)
+    ],
+    output: [
+        .init(magneticFieldGenerator, amount: 2)
+    ],
+    machine: manufacturer,
+    duration: 120
+)
+
+let thermalPropulsionRocketRecipe = Recipe(
+    name: "Thermal Propulsion Rocket",
+    input: [
+        .init(modularEngine, amount: 5),
+        .init(turboMotor, amount: 2),
+        .init(coolingSystem, amount: 6),
+        .init(fusedModularFrame, amount: 2)
+    ],
+    output: [
+        .init(thermalPropulsionRocket, amount: 2)
     ],
     machine: manufacturer,
     duration: 120
@@ -455,42 +547,73 @@ let beaconRecipe1 = Recipe(
     isDefault: false
 )
 
-let manufacturerRecipes = [
+let portableMinerRecipe1 = Recipe(
+    name: "Alternate: Automated Miner",
+    input: [
+        .init(motor, amount: 1),
+        .init(steelPipe, amount: 4),
+        .init(ironRod, amount: 4),
+        .init(ironPlate, amount: 2)
+    ],
+    output: [
+        .init(portableMiner, amount: 1)
+    ],
+    machine: manufacturer,
+    duration: 60,
+    isDefault: false
+)
+
+let ManufacturerRecipes = [
+    // Standard parts
     heavyModularFrameRecipe,
     heavyModularFrameRecipe1,
     heavyModularFrameRecipe2,
     
+    // industrial parts
     turboMotorRecipe,
     turboMotorRecipe1,
-    motorRecipe1,
+    turboMotorRecipe2,
+    motorRecipe2,
+    batteryRecipe1,
     
+    // Electronics
     highSpeedConnectorRecipe,
     highSpeedConnectorRecipe1,
-    batteryRecipe,
     
+    // Comunications
     computerRecipe,
     computerRecipe2,
     crystalOscillatorRecipe,
     crystalOscillatorRecipe1,
     supercomputerRecipe,
+    supercomputerRecipe2,
     radioControlUnitRecipe,
     radioControlUnitRecipe1,
+    radioControlUnitRecipe2,
     
-    nuclearFuelRodRecipe,
-    nuclearFuelRodRecipe1,
+    // Nuclear
+    uraniumFuelRodRecipe,
+    uraniumFuelRodRecipe1,
     encasedUraniumCellRecipe1,
+    plutoniumFuelRodRecipe,
     
+    // Consumed
     gasFilterRecipe,
     iodineInfusedFilterRecipe,
     rifleCartridgeRecipe,
     nobeliskRecipe1,
     
+    // Space Elevator
     modularEngineRecipe,
     adaptiveControlUnitRecipe,
+    magneticFieldGeneratorRecipe,
+    thermalPropulsionRocketRecipe,
     smartPlatingRecipe1,
     versatileFrameworkRecipe1,
     automatedWiringRecipe1,
     
+    // Hands
     beaconRecipe,
-    beaconRecipe1
+    beaconRecipe1,
+    portableMinerRecipe1
 ]

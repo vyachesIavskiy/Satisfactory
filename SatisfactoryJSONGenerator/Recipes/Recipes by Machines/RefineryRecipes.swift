@@ -115,189 +115,16 @@ let cableRecipe3 = Recipe(
     isDefault: false
 )
 
-// MARK: - Packaging
-let packagedFuelRecipe = Recipe(
-    name: "Packaged Fuel",
-    input: [
-        .init(fuel, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    output: [
-        .init(packagedFuel, amount: 2)
-    ],
-    machine: refinery,
-    duration: 3
-)
-
-let packagedFuelRecipe1 = Recipe(
-    name: "Alternate: Diluted Packaged Fuel",
-    input: [
-        .init(heavyOilResidue, amount: 1),
-        .init(packagedWater, amount: 2)
-    ],
-    output: [
-        .init(fuel, amount: 2)
-    ],
-    machine: refinery,
-    duration: 2,
-    isDefault: false
-)
-
-let packagedTurbofuelRecipe = Recipe(
-    name: "Packaged Turbofuel",
-    input: [
-        .init(turbofuel, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    output: [
-        .init(packagedTurbofuel, amount: 2)
-    ],
-    machine: refinery,
-    duration: 6,
-    isDefault: false
-)
-
-let packagedWaterRecipe = Recipe(
-    name: "Packaged Water",
-    input: [
-        .init(water, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    output: [
-        .init(packagedWater, amount: 2)
-    ],
-    machine: refinery,
-    duration: 2
-)
-
-let packagedOilRecipe = Recipe(
-    name: "Packaged Oil",
-    input: [
-        .init(crudeOil, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    output: [
-        .init(packagedOil, amount: 2)
-    ],
-    machine: refinery,
-    duration: 4
-)
-
-let packagedHeavyOilResidueRecipe = Recipe(
-    name: "Packaged Heavy Oil Residue",
-    input: [
-        .init(heavyOilResidue, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    output: [
-        .init(packagedHeavyOilResidue, amount: 2)
-    ],
-    machine: refinery,
-    duration: 4
-)
-
-let packagedBiofuelRecipe = Recipe(
-    name: "Packaged Liquid Biofuel",
-    input: [
-        .init(liquidBiofuel, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    output: [
-        .init(packagedLiquidBiofuel, amount: 2)
-    ],
-    machine: refinery,
-    duration: 3
-)
-
-// MARK: - Unpackaging
-let unpackagedFuelRecipe = Recipe(
-    name: "Unpackaged Fuel",
-    input: [
-        .init(packagedFuel, amount: 2)
-    ],
-    output: [
-        .init(fuel, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    machine: refinery,
-    duration: 2
-)
-
-let unpackagedTurbofuelRecipe = Recipe(
-    name: "Unpackaged Turbofuel",
-    input: [
-        .init(packagedTurbofuel, amount: 2)
-    ],
-    output: [
-        .init(turbofuel, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    machine: refinery,
-    duration: 6
-)
-
-let unpackagedWaterRecipe = Recipe(
-    name: "Unpackaged Water",
-    input: [
-        .init(packagedWater, amount: 2)
-    ],
-    output: [
-        .init(water, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    machine: refinery,
-    duration: 1
-)
-
-let unpackagedOilRecipe = Recipe(
-    name: "Unpackaged Oil",
-    input: [
-        .init(packagedOil, amount: 2)
-    ],
-    output: [
-        .init(crudeOil, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    machine: refinery,
-    duration: 2
-)
-
-let unpackagedHeavyOilResidueRecipe = Recipe(
-    name: "Unpackaged Heavy Oil Residue",
-    input: [
-        .init(packagedHeavyOilResidue, amount: 2)
-    ],
-    output: [
-        .init(heavyOilResidue, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    machine: refinery,
-    duration: 6
-)
-
-let unpackagedBiofuelRecipe = Recipe(
-    name: "Unpackaged Liquid Boifuel",
-    input: [
-        .init(packagedLiquidBiofuel, amount: 2)
-    ],
-    output: [
-        .init(liquidBiofuel, amount: 2),
-        .init(emptyCanister, amount: 2)
-    ],
-    machine: refinery,
-    duration: 2
-)
-
 // MARK: - Advanced Refinement
 let aluminumScrapRecipe = Recipe(
     name: "Aluminum Scrap",
     input: [
         .init(aluminaSolution, amount: 4),
-        .init(petroleumCoke, amount: 1)
+        .init(coal, amount: 2)
     ],
     output: [
         .init(aluminumScrap, amount: 6),
-        .init(water, amount: 1)
+        .init(water, amount: 2)
     ],
     machine: refinery,
     duration: 1
@@ -306,44 +133,44 @@ let aluminumScrapRecipe = Recipe(
 let aluminumScrapRecipe1 = Recipe(
     name: "Alternate: Electrode - Aluminum Scrap",
     input: [
-        .init(aluminaSolution, amount: 3),
-        .init(coal, amount: 1)
+        .init(aluminaSolution, amount: 12),
+        .init(petroleumCoke, amount: 4)
     ],
     output: [
-        .init(aluminumScrap, amount: 5),
-        .init(water, amount: 1)
+        .init(aluminumScrap, amount: 20),
+        .init(water, amount: 7)
     ],
     machine: refinery,
-    duration: 2,
+    duration: 4,
     isDefault: false
 )
 
 let aluminaSolutionRecipe = Recipe(
-    name: "Akumina Solution",
+    name: "Alumina Solution",
     input: [
-        .init(bauxite, amount: 7),
-        .init(water, amount: 10)
+        .init(bauxite, amount: 12),
+        .init(water, amount: 18)
     ],
     output: [
-        .init(aluminaSolution, amount: 8),
-        .init(silica, amount: 2)
+        .init(aluminaSolution, amount: 12),
+        .init(silica, amount: 5)
     ],
     machine: refinery,
     duration: 6
 )
 
-let uraniumPelletRecipe = Recipe(
-    name: "Uranium Pellet",
+let aluminaSolutionRecipe1 = Recipe(
+    name: "Alternate: Sloppy Alumina",
     input: [
-        .init(uranium, amount: 5),
-        .init(sulfuricAcid, amount: 8)
+        .init(bauxite, amount: 10),
+        .init(water, amount: 10)
     ],
     output: [
-        .init(uraniumPellet, amount: 5),
-        .init(sulfuricAcid, amount: 2)
+        .init(aluminaSolution, amount: 12)
     ],
     machine: refinery,
-    duration: 6
+    duration: 3,
+    isDefault: false
 )
 
 let sulfuricAcidRecipe = Recipe(
@@ -359,21 +186,9 @@ let sulfuricAcidRecipe = Recipe(
     duration: 6
 )
 
-let heavyOilResidueRecipe = Recipe(
-    name: "Alternate: Heavy Oil Residue",
-    input: [
-        .init(crudeOil, amount: 3)
-    ],
-    output: [
-        .init(heavyOilResidue, amount: 4),
-        .init(polymerResin, amount: 2)
-    ],
-    machine: refinery,
-    duration: 6,
-    isDefault: false
-)
 
-// MARK: - Solid Oil Products
+
+// MARK: - Oil Products
 let plasticRecipe = Recipe(
     name: "Plastic",
     input: [
@@ -420,7 +235,7 @@ let rubberRecipe = Recipe(
         .init(crudeOil, amount: 3)
     ],
     output: [
-        .init(plastic, amount: 2),
+        .init(rubber, amount: 2),
         .init(heavyOilResidue, amount: 2)
     ],
     machine: refinery,
@@ -434,7 +249,7 @@ let residualRubberRecipe = Recipe(
         .init(water, amount: 4)
     ],
     output: [
-        .init(plastic, amount: 2)
+        .init(rubber, amount: 2)
     ],
     machine: refinery,
     duration: 6
@@ -447,7 +262,7 @@ let rubberRecipe1 = Recipe(
         .init(fuel, amount: 6)
     ],
     output: [
-        .init(plastic, amount: 12)
+        .init(rubber, amount: 12)
     ],
     machine: refinery,
     duration: 12,
@@ -480,6 +295,20 @@ let polymerResinRecipe1 = Recipe(
     isDefault: false
 )
 
+let heavyOilResidueRecipe1 = Recipe(
+    name: "Alternate: Heavy Oil Residue",
+    input: [
+        .init(crudeOil, amount: 3)
+    ],
+    output: [
+        .init(heavyOilResidue, amount: 4),
+        .init(polymerResin, amount: 2)
+    ],
+    machine: refinery,
+    duration: 6,
+    isDefault: false
+)
+
 // MARK: - Fuel
 let fuelRecipe = Recipe(
     name: "Fuel",
@@ -504,6 +333,33 @@ let residualFuelRecipe = Recipe(
     ],
     machine: manufacturer,
     duration: 6
+)
+
+let fuelRecipe1 = Recipe(
+    name: "Alternate: Diluted Packaged Fuel",
+    input: [
+        .init(heavyOilResidue, amount: 1),
+        .init(packagedWater, amount: 2)
+    ],
+    output: [
+        .init(fuel, amount: 2)
+    ],
+    machine: refinery,
+    duration: 2,
+    isDefault: false
+)
+
+let liquidBiofuelRecipe = Recipe(
+    name: "Liquid Biofuel",
+    input: [
+        .init(solidBiofuel, amount: 6),
+        .init(water, amount: 3)
+    ],
+    output: [
+        .init(liquidBiofuel, amount: 4)
+    ],
+    machine: refinery,
+    duration: 4
 )
 
 let turbofuelRecipe = Recipe(
@@ -534,20 +390,7 @@ let turbofuelRecipe1 = Recipe(
     isDefault: false
 )
 
-let liquidBiofuelRecipe = Recipe(
-    name: "Liquid Biofuel",
-    input: [
-        .init(solidBiofuel, amount: 6),
-        .init(water, amount: 3)
-    ],
-    output: [
-        .init(liquidBiofuel, amount: 4)
-    ],
-    machine: refinery,
-    duration: 4
-)
-
-let refineryRecipes = [
+let RefineryRecipes = [
     // ingots
     ironIngotRecipe2,
     copperIngotRecipe2,
@@ -566,32 +409,14 @@ let refineryRecipes = [
     // electronics
     cableRecipe3,
     
-    // packagins
-    packagedFuelRecipe,
-    packagedFuelRecipe1,
-    packagedTurbofuelRecipe,
-    packagedWaterRecipe,
-    packagedOilRecipe,
-    packagedHeavyOilResidueRecipe,
-    packagedBiofuelRecipe,
-    
-    // unpackaging
-    unpackagedFuelRecipe,
-    unpackagedTurbofuelRecipe,
-    unpackagedWaterRecipe,
-    unpackagedOilRecipe,
-    unpackagedHeavyOilResidueRecipe,
-    unpackagedBiofuelRecipe,
-    
     // advanced refinement
     aluminumScrapRecipe,
     aluminumScrapRecipe1,
     aluminaSolutionRecipe,
-    uraniumPelletRecipe,
+    aluminaSolutionRecipe1,
     sulfuricAcidRecipe,
-    heavyOilResidueRecipe,
     
-    // solid oil products
+    // oil products
     plasticRecipe,
     residualPlasticRecipe,
     plasticRecipe1,
@@ -600,11 +425,13 @@ let refineryRecipes = [
     rubberRecipe1,
     petroleumCokeRecipe,
     polymerResinRecipe1,
+    heavyOilResidueRecipe1,
     
     // fuel
     fuelRecipe,
     residualFuelRecipe,
+    fuelRecipe1,
+    liquidBiofuelRecipe,
     turbofuelRecipe,
-    turbofuelRecipe1,
-    liquidBiofuelRecipe
+    turbofuelRecipe1
 ]

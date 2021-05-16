@@ -9,6 +9,7 @@ let steelPipe = Part(name: "Steel Pipe", partType: .standartParts)
 let encasedIndustrialBeam = Part(name: "Encased Industrial Beam", partType: .standartParts)
 let heavyModularFrame = Part(name: "Heavy Modular Frame", partType: .standartParts)
 let alcladAluminumSheet = Part(name: "Alclad Aluminum Sheet", partType: .standartParts)
+let aluminumCasing = Part(name: "Aluminum Casing", partType: .standartParts)
 
 let StandartParts = [
     ironPlate,
@@ -21,5 +22,6 @@ let StandartParts = [
     steelPipe,
     encasedIndustrialBeam,
     heavyModularFrame,
-    alcladAluminumSheet
+    alcladAluminumSheet,
+    aluminumCasing
 ]

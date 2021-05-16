@@ -1,11 +1,19 @@
 import Foundation
 
-struct Equipment: Codable, Resource, CustomStringConvertible {
+struct Equipment: Encodable, Resource, CustomStringConvertible {
     let id = UUID()
     let name: String
     let equipmentType: EquipmentType
     let fuel: Part?
     let ammo: Part?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case equipmentType
+        case fuel
+        case ammo
+    }
     
     init(name: String, equipmentType: EquipmentType, fuel: Part? = nil, ammo: Part? = nil) {
         self.name = name
@@ -40,6 +48,7 @@ let factoryCart = Equipment(name: "Factory Cart™", equipmentType: .hands)
 let medicinalInhaler = Equipment(name: "Medicinal Inhaler", equipmentType: .hands)
 let nobeliskDetonator = Equipment(name: "Nobelisk Detonator", equipmentType: .hands, ammo: nobelisk)
 let rebarGun = Equipment(name: "Rebar Gun", equipmentType: .hands, ammo: spikedRebar)
+let zipline = Equipment(name: "Zipline", equipmentType: .hands)
 
 // MARK: - Body
 let bladeRunners = Equipment(name: "Blade Runners", equipmentType: .body)
@@ -47,6 +56,7 @@ let jetpack = Equipment(name: "Jetpack", equipmentType: .body, fuel: packagedFue
 let gasMask = Equipment(name: "Gas Mask", equipmentType: .body, fuel: gasFilter)
 let hazmatSuit = Equipment(name: "Hazmat Suit", equipmentType: .body, fuel: iodineInfusedFilter)
 let parachute = Equipment(name: "Parachute", equipmentType: .body)
+let hoverPack = Equipment(name: "Hover Pack", equipmentType: .body)
 
 let Equipments = [
     xenoZapper,
@@ -60,10 +70,12 @@ let Equipments = [
     medicinalInhaler,
     nobeliskDetonator,
     rebarGun,
+    zipline,
     
     bladeRunners,
     jetpack,
     gasMask,
     hazmatSuit,
-    parachute
+    parachute,
+    hoverPack
 ]

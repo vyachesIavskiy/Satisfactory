@@ -1,8 +1,14 @@
-let hub = Building(name: "The HUB", buildingType: .special)
-let mam = Building(name: "M.A.M.", buildingType: .special)
-let spaceElevator = Building(name: "Space Elevator", buildingType: .special)
-let awesomeSink = Building(name: "AWESOME Sink", buildingType: .special)
-let awesomeShop = Building(name: "AWESOME Shop", buildingType: .special)
+private extension Building {
+    init(name: String) {
+        self.init(name: name, buildingType: .special)
+    }
+}
+
+let hub = Building(name: "The HUB")
+let mam = Building(name: "MAM")
+let spaceElevator = Building(name: "Space Elevator")
+let awesomeSink = Building(name: "AWESOME Sink")
+let awesomeShop = Building(name: "AWESOME Shop")
 
 let Special = [
     hub,

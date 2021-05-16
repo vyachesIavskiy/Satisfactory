@@ -7,6 +7,7 @@ enum PartType: String, Codable {
     case aliens = "Aliens"
     case powerSlugs = "Power Slugs"
     case liquids = "Liquids"
+    case gases = "Gases"
     case ingots = "Ingots"
     case standartParts = "Standart Parts"
     case electronics = "Electronics"

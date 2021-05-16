@@ -5,7 +5,7 @@ encoder.outputFormatting = .prettyPrinted
 
 let fileManager = FileManager.default
 let home = fileManager.homeDirectoryForCurrentUser
-let folder = home.appendingPathComponent("Desktop/Satisfactory/Satisfactory/JSON")
+let folder = home.appendingPathComponent("Desktop/Satisfactory/Shared/JSON")
 
 if !fileManager.fileExists(atPath: folder.path) {
     try? fileManager.createDirectory(at: folder, withIntermediateDirectories: true, attributes: nil)
@@ -17,6 +17,7 @@ do {
     try encoder.encode(Buildings).write(to: folder.appendingPathComponent("buildings.json"))
     try encoder.encode(Vehicles).write(to: folder.appendingPathComponent("vehicles.json"))
     try encoder.encode(Recipes).write(to: folder.appendingPathComponent("recipes.json"))
+    try encoder.encode(ExtractionRates).write(to: folder.appendingPathComponent("exctractionRates.json"))
 } catch {
     print(error)
 }

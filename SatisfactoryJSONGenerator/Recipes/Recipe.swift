@@ -1,6 +1,6 @@
 import Foundation
 
-struct Recipe: Codable {
+struct Recipe: Encodable {
     let id = UUID()
     let name: String
     let input: [RecipePart]
@@ -8,6 +8,16 @@ struct Recipe: Codable {
     let machine: Building
     let duration: Int
     let isDefault: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case input
+        case output
+        case machine
+        case duration
+        case isDefault
+    }
     
     init(name: String, input: [RecipePart], output: [RecipePart], machine: Building, duration: Int, isDefault: Bool = true) {
         self.name = name
@@ -39,9 +49,12 @@ extension Recipe: CustomStringConvertible {
 }
 
 let Recipes
-    = smelterRecipes
-    + foundryRecipes
-    + constructorRecipes
-    + assemblerRecipes
-    + manufacturerRecipes
-    + refineryRecipes
+    = SmelterRecipes
+    + FoundryRecipes
+    + ConstructorRecipes
+    + AssemblerRecipes
+    + RefineryRecipes
+    + PackagerRecipes
+    + ManufacturerRecipes
+    + BlenderRecipes
+    + ParticleAcceleratorRecipes

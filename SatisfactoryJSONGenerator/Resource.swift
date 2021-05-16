@@ -2,7 +2,7 @@ import Foundation
 
 protocol Resource {
     var id: UUID { get }
-    var name: String { get}
+    var name: String { get }
 }
 
 extension CustomStringConvertible where Self: Resource {

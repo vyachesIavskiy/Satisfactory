@@ -15,6 +15,8 @@ extension Bundle {
         do {
             let data = try Data(contentsOf: url)
             return try JSONDecoder().decode(Model.self, from: data)
+        } catch let error as ParsingError {
+            fatalError(error.description)
         } catch {
             fatalError(error.localizedDescription)
         }

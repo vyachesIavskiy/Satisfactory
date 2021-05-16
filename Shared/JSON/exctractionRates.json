@@ -1,0 +1,35 @@
+{
+  "fluidExctractionRates" : [
+    {
+      "impure" : 60
+    },
+    {
+      "normal" : 120
+    },
+    {
+      "pure" : 240
+    }
+  ],
+  "gasExtractionRates" : [
+    {
+      "impure" : 30
+    },
+    {
+      "normal" : 60
+    },
+    {
+      "pure" : 120
+    }
+  ],
+  "oreExctractionRates" : [
+    {
+      "impure" : 30
+    },
+    {
+      "normal" : 60
+    },
+    {
+      "pure" : 120
+    }
+  ]
+}

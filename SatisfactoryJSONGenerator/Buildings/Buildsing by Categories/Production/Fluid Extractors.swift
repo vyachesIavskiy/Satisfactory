@@ -7,7 +7,7 @@ private extension Building {
 let waterExctractor = Building(name: "Water Extractor")
 let oilExctractor = Building(name: "Oil Extractor")
 let resourceWellPressurizer = Building(name: "Resource Well Pressurizer")
-let resourceWellExtractor = Building(name: "Resource Well Exctractor")
+let resourceWellExtractor = Building(name: "Resource Well Extractor")
 
 let FluidProduction = [
     waterExctractor,

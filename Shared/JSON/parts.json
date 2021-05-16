@@ -1,697 +1,697 @@
 [
   {
     "rawResource" : false,
-    "id" : "B5F63D39-4952-4AEA-95CA-5C70EEF946EE",
+    "id" : "43D051ED-0D63-4954-9D17-A73DBD92978A",
     "name" : "Hub Parts",
     "partType" : "Hub Parts"
   },
   {
     "rawResource" : true,
-    "id" : "D0DF8897-A831-4BC7-92D2-2EF47191F707",
+    "id" : "915A16DB-FD5C-43AB-B6DF-2535537E3772",
     "name" : "Iron Ore",
     "partType" : "Ores"
   },
   {
     "rawResource" : true,
-    "id" : "8FD54010-75A0-4FD2-82EF-DDB392518423",
+    "id" : "491F50AA-9E52-4DD4-9D79-AAB04FCF41AC",
     "name" : "Copper Ore",
     "partType" : "Ores"
   },
   {
     "rawResource" : true,
-    "id" : "E283C5BA-4239-4537-9974-7EDD910B0890",
+    "id" : "26177D61-CAF0-403F-AD3E-C152694EF4EF",
     "name" : "Limestone",
     "partType" : "Ores"
   },
   {
     "rawResource" : true,
-    "id" : "F746E62F-35B7-4F07-8EF9-0DBCA6C6E6BA",
+    "id" : "458A24C9-BAD8-40F9-A452-E6A778A2E697",
     "name" : "Coal",
     "partType" : "Ores"
   },
   {
     "rawResource" : true,
-    "id" : "ECE1931D-A89C-471C-B558-6A7A3B9347EF",
+    "id" : "60B5876C-4E6D-4BC7-BBD2-AE580EDE27C1",
     "name" : "Raw Quartz",
     "partType" : "Ores"
   },
   {
     "rawResource" : true,
-    "id" : "9A96F8AD-8431-4CE3-B798-B09649C22A0B",
+    "id" : "8AEE8C36-160A-45E5-99E4-E925C8DFB466",
     "name" : "Caterium Ore",
     "partType" : "Ores"
   },
   {
     "rawResource" : true,
-    "id" : "288D37EA-70DC-4AB8-9C57-67C9992A4D41",
+    "id" : "75F79F3B-E11C-4479-B429-C624E3F48160",
     "name" : "Sulfur",
     "partType" : "Ores"
   },
   {
     "rawResource" : true,
-    "id" : "211E2EB5-2111-4FA6-B5B7-7840101A689B",
+    "id" : "F2F3F4D9-E0B3-479D-B491-ED7AB77D5F54",
     "name" : "Bauxite",
     "partType" : "Ores"
   },
   {
     "rawResource" : true,
-    "id" : "BE8C6513-CFA2-470B-8219-68DCFB310A93",
+    "id" : "FE5A51FF-5244-4AF8-886B-5D0575E6615B",
     "name" : "Uranium",
     "partType" : "Ores"
   },
   {
     "rawResource" : true,
-    "id" : "BFA8C607-BE2B-4EA9-A6D2-B643B928E095",
+    "id" : "52372534-3C06-42D7-9342-2A95408F0376",
     "name" : "S.A.M. Ore",
     "partType" : "Ores"
   },
   {
     "rawResource" : true,
-    "id" : "3E6B06D5-0E15-46FF-AF42-7A710733B352",
+    "id" : "805E895C-E62B-4EEF-ABFD-DABFD2039374",
     "name" : "Leaves",
     "partType" : "Fuels"
   },
   {
     "rawResource" : true,
-    "id" : "12023A32-9595-494B-916A-09D171D9CED2",
+    "id" : "64B79B08-4F9F-4368-B30C-AD68BC9277B4",
     "name" : "Wood",
     "partType" : "Fuels"
   },
   {
     "rawResource" : true,
-    "id" : "91D1C43F-A406-4885-B0E1-6AA6F1A8EE0A",
+    "id" : "1EA05289-5707-4403-ACF5-B8C2D9BAD11E",
     "name" : "Mycelia",
     "partType" : "Fuels"
   },
   {
     "rawResource" : true,
-    "id" : "05D7D498-49BD-4AAB-9E7A-068CFCC43075",
+    "id" : "80AA21C0-A09F-49C7-823A-6E9789754A99",
     "name" : "Flower Petals",
     "partType" : "Fuels"
   },
   {
     "rawResource" : false,
-    "id" : "B2264A54-C532-4475-AB8A-099445126E3C",
+    "id" : "70EBD3B8-FDFD-419E-8BDB-CE794037973E",
     "name" : "Compacted Coal",
     "partType" : "Fuels"
   },
   {
     "rawResource" : true,
-    "id" : "C24807E5-9CF9-435E-9E80-1745F745FF41",
+    "id" : "B3BA8A93-2C99-4CA5-A67B-D882B68F6C70",
     "name" : "Alien Carapace",
     "partType" : "Aliens"
   },
   {
     "rawResource" : true,
-    "id" : "389671B4-E9FC-4531-B84A-972E71B2CA7C",
+    "id" : "F0973033-2FE0-4BDD-BF4B-EAF0ABC54158",
     "name" : "Alien Organs",
     "partType" : "Aliens"
   },
   {
     "rawResource" : true,
-    "id" : "0B9877C3-7A74-4C8C-BFA4-5D840E24C6D9",
+    "id" : "58FFE09F-2692-4F23-B806-0E197907C86B",
     "name" : "Green Power Slug",
     "partType" : "Power Slugs"
   },
   {
     "rawResource" : true,
-    "id" : "886E35F0-8BF5-44AD-90DC-AE1759A4DFF2",
+    "id" : "AC354542-2C3A-4900-B633-334F96284211",
     "name" : "Yellow Power Slug",
     "partType" : "Power Slugs"
   },
   {
     "rawResource" : true,
-    "id" : "331D1B62-3E22-4DC1-B1E5-D17A243737A4",
+    "id" : "41405FA0-2EA0-48A0-B104-1DF46C053D0D",
     "name" : "Purple Power Slug",
     "partType" : "Power Slugs"
   },
   {
     "rawResource" : true,
-    "id" : "2A6A862B-9452-4D2E-9820-7B2BD19DF97C",
+    "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
     "name" : "Water",
     "partType" : "Liquids"
   },
   {
     "rawResource" : true,
-    "id" : "2A36466F-C961-4951-8EE0-F555BDA9A81C",
+    "id" : "3FD1E7F1-3612-48A1-B38B-9EE82731C7F3",
     "name" : "Crude Oil",
     "partType" : "Liquids"
   },
   {
     "rawResource" : false,
-    "id" : "C8F8D223-92F6-47DB-9067-E30CDC6DA449",
+    "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
     "name" : "Heavy Oil Residue",
     "partType" : "Liquids"
   },
   {
     "rawResource" : false,
-    "id" : "2F61B3AC-60ED-4CCC-BE6A-03FFB7523BD0",
+    "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
     "name" : "Fuel",
     "partType" : "Liquids"
   },
   {
     "rawResource" : false,
-    "id" : "AF561D2B-4404-4C86-BA59-33D8312B053F",
+    "id" : "8359E039-9A7D-4555-855E-D419B6DB0CC5",
     "name" : "Liquid Biofuel",
     "partType" : "Liquids"
   },
   {
     "rawResource" : false,
-    "id" : "0D50A0D5-E7C4-4F8B-9006-76D4F0B7B104",
+    "id" : "3EFCFDE3-6FF0-44D6-BAA9-AC059449BA16",
     "name" : "Turbofuel",
     "partType" : "Liquids"
   },
   {
     "rawResource" : false,
-    "id" : "92F5EE6B-9459-4D60-9F2F-3F66C491AAA3",
+    "id" : "074290F3-33DB-484D-B9D9-9060768D8353",
     "name" : "Alumina Solution",
     "partType" : "Liquids"
   },
   {
     "rawResource" : false,
-    "id" : "9140118E-FFD3-472C-BBF5-4BF4D9D91FC8",
+    "id" : "9E0131D9-45A5-4C08-916E-AABC8DFB87E7",
     "name" : "Sulfuric Acid",
     "partType" : "Liquids"
   },
   {
     "rawResource" : false,
-    "id" : "D23FEF9E-ADAB-4E92-B9AD-EFCF62BB5890",
+    "id" : "0F7EA2D3-6B37-4056-9700-2AA343B00484",
     "name" : "Nitric Acid",
     "partType" : "Liquids"
   },
   {
     "rawResource" : true,
-    "id" : "E3F4685C-A8D0-48C8-9D45-45D72F3130DF",
+    "id" : "2E807E3A-C4FB-4D97-B654-9249C0222C9D",
     "name" : "Nitrogen Gas",
     "partType" : "Gases"
   },
   {
     "rawResource" : false,
-    "id" : "89708800-B516-4387-806F-FD0C8B7440B3",
+    "id" : "D523FCEC-7D68-4D25-959B-D7D7E99CC736",
     "name" : "Iron Ingot",
     "partType" : "Ingots"
   },
   {
     "rawResource" : false,
-    "id" : "E8CA4B00-0392-4FCD-9E5E-33264040EB41",
+    "id" : "E44B82C0-3D0A-496B-8E75-A01A39929DCD",
     "name" : "Copper Ingot",
     "partType" : "Ingots"
   },
   {
     "rawResource" : false,
-    "id" : "2D905CDD-0956-459A-A8AE-B21FC6B81376",
+    "id" : "E31F3830-AA40-4E87-95C6-64DF260C3B36",
     "name" : "Steel Ingot",
     "partType" : "Ingots"
   },
   {
     "rawResource" : false,
-    "id" : "994EB1AE-9BA0-4F7C-8A5A-0988788473C1",
+    "id" : "0942ADCB-2B6D-4A1A-B53C-00CBF029D6B6",
     "name" : "Caterium Ingot",
     "partType" : "Ingots"
   },
   {
     "rawResource" : false,
-    "id" : "6B1779C0-19E0-41DF-A6EF-F7A66B13F657",
+    "id" : "B7B5E0C0-861B-4B01-BF0A-07F4AE9518AB",
     "name" : "Aluminum Ingot",
     "partType" : "Ingots"
   },
   {
     "rawResource" : false,
-    "id" : "7927E363-7461-4963-A417-853BD201ACF7",
+    "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
     "name" : "Iron Plate",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "EF3F93A4-E7D5-4225-9863-3829B0948E78",
+    "id" : "BA6FE6CF-7262-42CE-9144-000FF4D5B1AE",
     "name" : "Iron Rod",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "491E6133-1204-4BB9-BC9B-6B699E9CAE18",
+    "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
     "name" : "Screw",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "6AA0DBA3-3D9A-47B3-9691-03293CFE3C23",
+    "id" : "8EE863E4-7810-4DFD-A762-ED260127477C",
     "name" : "Reinforced Iron Plate",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "8E9DB364-6DC4-4440-BD54-22D4E6515094",
+    "id" : "2A648609-5046-438E-B3BA-6180AF9608F2",
     "name" : "Copper Sheet",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "9B5F3015-BD6A-4C8E-9787-03BD526AC325",
+    "id" : "66D9BE6D-CE27-4647-9AC1-DB9B33E1AE48",
     "name" : "Modular Frame",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "5954BB1A-896F-47B1-AA31-80C16EB2A8A2",
+    "id" : "857B2CAE-6247-4F48-9542-2AA077EBE1E2",
     "name" : "Steel Beam",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "17C3FAF8-76FE-4E2A-B5C4-EB7586742025",
+    "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
     "name" : "Steel Pipe",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "7E672BB1-7937-4CB2-9866-68DE97FE2461",
+    "id" : "7A5CBE4C-A6CD-43FF-B44D-9C3A02F94743",
     "name" : "Encased Industrial Beam",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "CEB14ECF-5969-4957-AC49-6FAE3D841147",
+    "id" : "004E4D1A-125E-4D9F-915E-365EE030B386",
     "name" : "Heavy Modular Frame",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "95CC9169-E1A3-425C-9D7C-CEBB067D537C",
+    "id" : "82FBC8F2-1EB8-413D-BDF2-238164B5D115",
     "name" : "Alclad Aluminum Sheet",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "E6F8961B-B30C-46BB-871A-55F1ECCAE5AE",
+    "id" : "4F81F26F-183E-4612-8332-03158C61D97F",
     "name" : "Aluminum Casing",
     "partType" : "Standart Parts"
   },
   {
     "rawResource" : false,
-    "id" : "506728A6-F26A-4055-B74B-AA030B1B369C",
+    "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
     "name" : "Wire",
     "partType" : "Electronics"
   },
   {
     "rawResource" : false,
-    "id" : "8FFD1ED6-9CC1-47AE-A69C-8837708397D4",
+    "id" : "E3C161A3-DE19-4AF4-848F-C5995D96D40F",
     "name" : "Cable",
     "partType" : "Electronics"
   },
   {
     "rawResource" : false,
-    "id" : "12FB8E24-396E-4B11-806B-A4AA3BCF877A",
+    "id" : "072C0A64-D069-4804-B389-43662A38007B",
     "name" : "Quickwire",
     "partType" : "Electronics"
   },
   {
     "rawResource" : false,
-    "id" : "F3C75304-F2C0-4765-8754-FD230134FF64",
+    "id" : "24744743-6137-4A12-A3BB-8E2159078BA7",
     "name" : "AI Limiter",
     "partType" : "Electronics"
   },
   {
     "rawResource" : false,
-    "id" : "2088895F-1EF8-40E3-B1A6-71E085D5F269",
+    "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
     "name" : "Circuit Board",
     "partType" : "Electronics"
   },
   {
     "rawResource" : false,
-    "id" : "D9AD35F3-8123-49BF-A48F-BF3E964C4B33",
+    "id" : "0CE458AD-D38B-4B74-A9A4-64090D8200C8",
     "name" : "High-Speed Connector",
     "partType" : "Electronics"
   },
   {
     "rawResource" : false,
-    "id" : "770047F2-8EBA-4AF7-8280-3C65EC22FA5A",
+    "id" : "CD2BD00F-E4F0-4A40-AAB9-B84D09B5E9B9",
     "name" : "Concrete",
     "partType" : "Minerals"
   },
   {
     "rawResource" : false,
-    "id" : "6168DAD6-B605-4B01-A2FD-C4BBAF64FA00",
+    "id" : "8DD3E216-7B8F-4C16-910A-85E3EC48C312",
     "name" : "Quartz Crystal",
     "partType" : "Minerals"
   },
   {
     "rawResource" : false,
-    "id" : "954CFC7A-5400-4067-B916-EE78E28EE2A1",
+    "id" : "41CBFA94-7C33-4BE3-A4C9-5AD71E8ACDE9",
     "name" : "Silica",
     "partType" : "Minerals"
   },
   {
     "rawResource" : false,
-    "id" : "1F2F2C4F-28F1-40CA-AB8D-AB6D9EEABDA8",
+    "id" : "34A3D2B7-B67A-4027-B1F6-E8D6228BC1A6",
     "name" : "Copper Powder",
     "partType" : "Minerals"
   },
   {
     "rawResource" : false,
-    "id" : "4A8AB822-AFFE-472C-BD9B-A700463CEB0C",
+    "id" : "9BEC0ED6-31E7-46D2-A012-91E3F6092006",
     "name" : "Aluminum Scrap",
     "partType" : "Minerals"
   },
   {
     "rawResource" : false,
-    "id" : "66B34213-7EB5-4669-80C6-9C6416C622E5",
+    "id" : "13068A2E-99AF-4889-A651-8FE64A1CBCC2",
     "name" : "Biomass",
     "partType" : "Biomass"
   },
   {
     "rawResource" : false,
-    "id" : "099374FE-DA2D-49D9-93CB-7DAF80A268D6",
+    "id" : "03EB7743-7334-4B05-82DF-D58D0547042B",
     "name" : "Solid Biofuel",
     "partType" : "Biomass"
   },
   {
     "rawResource" : false,
-    "id" : "13724A76-02D2-49B3-8029-9A54EFCA3E65",
+    "id" : "37AF11C7-BBDE-4ECF-8EBD-919DFBF1871B",
     "name" : "Fabric",
     "partType" : "Biomass"
   },
   {
     "rawResource" : false,
-    "id" : "100838A7-AA7F-4986-829F-C076AE8ACF95",
+    "id" : "C0FD1A9C-F509-4798-BCCB-922827171D78",
     "name" : "Power Shard",
     "partType" : "Power Shards"
   },
   {
     "rawResource" : false,
-    "id" : "268CAD4C-33CC-4E22-9066-3F3262715FE0",
+    "id" : "B326A584-B618-410A-B304-1575F08FB9A3",
     "name" : "Rotor",
     "partType" : "Industrial Parts"
   },
   {
     "rawResource" : false,
-    "id" : "15B34B1D-4AA2-43FE-9B48-8A95A612BD8A",
+    "id" : "6E092C8B-4D3F-42FE-93DD-F1ED2970B27A",
     "name" : "Stator",
     "partType" : "Industrial Parts"
   },
   {
     "rawResource" : false,
-    "id" : "73FFA853-3954-408E-8C4A-0CFDE480757B",
+    "id" : "567032CD-BF02-4928-87F9-1E2139F4E2E7",
     "name" : "Motor",
     "partType" : "Industrial Parts"
   },
   {
     "rawResource" : false,
-    "id" : "DB7F7710-4097-48CA-9D09-511DF823C0FA",
+    "id" : "58F25DD7-56C4-4D9A-B72F-689725ACDF97",
     "name" : "Heat Sink",
     "partType" : "Industrial Parts"
   },
   {
     "rawResource" : false,
-    "id" : "A34B367E-17E8-4931-BA84-B2A7E496F241",
+    "id" : "059FEB59-5C36-4AF5-86F4-D47551AA453C",
     "name" : "Cooling System",
     "partType" : "Industrial Parts"
   },
   {
     "rawResource" : false,
-    "id" : "650CFE3B-6B74-4B55-BB72-3A5A358CA89C",
+    "id" : "A81DF570-7B8E-4344-B727-F65F5449DF58",
     "name" : "Fused Modular Frame",
     "partType" : "Industrial Parts"
   },
   {
     "rawResource" : false,
-    "id" : "3A55D0CA-B0C1-4B5C-8148-DEE43845D972",
+    "id" : "88655D85-EE13-4CC8-9250-384E4413FA4B",
     "name" : "Battery",
     "partType" : "Electronics"
   },
   {
     "rawResource" : false,
-    "id" : "7DE99CC2-31EF-4BA5-A2A8-A6000B2CDD35",
+    "id" : "D3134E3D-F249-44F8-9EF7-09526CED4BE9",
     "name" : "Turbo Motor",
     "partType" : "Industrial Parts"
   },
   {
     "rawResource" : false,
-    "id" : "ABC4EEF2-97EA-4DE7-B1A0-A6A8480692D3",
+    "id" : "29735E39-E9E2-41EC-B4EB-394C133D7929",
     "name" : "Color Cartridge",
     "partType" : "Consumed"
   },
   {
     "rawResource" : false,
-    "id" : "5A7CEA09-B428-466E-AA59-6D2BE2DFD408",
+    "id" : "5F7184C0-4096-4536-9E5E-B4CCC2985D34",
     "name" : "Spiked Rebar",
     "partType" : "Consumed"
   },
   {
     "rawResource" : false,
-    "id" : "385E329D-E829-41DC-814E-265255D03854",
+    "id" : "03EA5485-8266-4408-9933-09853BDA0C3F",
     "name" : "Black Powder",
     "partType" : "Consumed"
   },
   {
     "rawResource" : false,
-    "id" : "D07966A0-D5FB-48C6-A101-C532267EDE40",
+    "id" : "2DBBE452-0117-422F-860E-35C351BE89C4",
     "name" : "Nobelisk",
     "partType" : "Consumed"
   },
   {
     "rawResource" : false,
-    "id" : "4E7B4CC6-7853-41F0-90CF-56068B09BDA5",
+    "id" : "8F0F53EB-81CF-473B-9B40-FF9359617130",
     "name" : "Rifle Cartridge",
     "partType" : "Consumed"
   },
   {
     "rawResource" : false,
-    "id" : "56DCE07F-9975-426E-901A-96A846418414",
+    "id" : "31CC09BA-0B51-4898-A9F7-0DD714A393B7",
     "name" : "Gas Filter",
     "partType" : "Consumed"
   },
   {
     "rawResource" : false,
-    "id" : "C7C8D3B5-9FFF-4B7E-BFD6-975672E626DB",
+    "id" : "A5371260-B60B-4A8D-AC4C-53B66E1CA9E7",
     "name" : "Iodine Infused Filter",
     "partType" : "Consumed"
   },
   {
     "rawResource" : false,
-    "id" : "30BCDF41-BACB-403D-A639-2280BF9942D9",
+    "id" : "7BE99766-CBFD-44D8-BDF8-55B0AFEA9AFB",
     "name" : "Crystal Oscillator",
     "partType" : "Communications"
   },
   {
     "rawResource" : false,
-    "id" : "C9F8B38D-DEC1-4E5E-865D-93C85C057FBC",
+    "id" : "F5357BDE-84AB-4FC8-8D4F-B19ABE0E60D4",
     "name" : "Computer",
     "partType" : "Communications"
   },
   {
     "rawResource" : false,
-    "id" : "0154183C-7A1D-43AA-BF63-478847010A0E",
+    "id" : "08AF4BD4-88CB-4560-8226-E13182E7D1A6",
     "name" : "Radio Control Unit",
     "partType" : "Communications"
   },
   {
     "rawResource" : false,
-    "id" : "73327153-13E2-423D-878B-A052BC080D5F",
+    "id" : "C0033EED-EBE1-43F4-B4A1-9DCBC3031416",
     "name" : "Supercomputer",
     "partType" : "Communications"
   },
   {
     "rawResource" : false,
-    "id" : "B393C4BC-60E7-464C-88FC-864AEEE57CA5",
+    "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
     "name" : "Empty Canister",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "BE91A33A-7417-4E7B-813B-648A40FCD7ED",
+    "id" : "122D1C44-B483-487B-B0D8-FA63A42EB3FA",
     "name" : "Empty Fluid Tank",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "E17F920B-A85B-4CB2-802A-63182EA5A080",
+    "id" : "DE4227AB-0EDE-4377-9FD4-5C1E37D01462",
     "name" : "Pressure Conversion Cube",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "270AED37-267B-42C3-9A58-6C23A192C9E9",
+    "id" : "08C5B522-AA69-45C3-97A3-C5AD95CE04E3",
     "name" : "Packaged Water",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "F70D7BE3-32C8-4952-A05C-08A53DEFF60C",
+    "id" : "272CA297-092C-4757-A39B-28CB9959D75C",
     "name" : "Packaged Oil",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "AC2288B5-CFDB-4A4C-AC18-E5737C6A5CBA",
+    "id" : "2F381718-B81F-43D6-8631-1B8A833D8207",
     "name" : "Packaged Fuel",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "DD894EE3-6D8F-49A2-9333-D40BA6260019",
+    "id" : "AEB3D44E-849F-4756-9752-899B10185402",
     "name" : "Packaged Heavy Oil Residue",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "879169E4-3F6C-4470-A99A-3C10C12E06A1",
+    "id" : "B813CFC0-B4DA-4050-91F9-03A6CC32B948",
     "name" : "Packaged Liquid Biofuel",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "F98972C7-43C3-4C69-9CE3-E0346C59BE17",
+    "id" : "A8DB01A4-8AB4-41DA-8AEA-F9F9D664A5F2",
     "name" : "Packaged Turbofuel",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "B421AAF8-F15E-4DCD-9056-9B90FB1F6550",
+    "id" : "73423B04-8288-4648-9065-2A43FC4AC7CC",
     "name" : "Packaged Alumina Solution",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "490386D9-C861-45AD-AB65-1D874C3A78FE",
+    "id" : "57407F27-87C6-4CB2-9133-1AC18C684991",
     "name" : "Packaged Sulfuric Acid",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "6EBB564A-A44E-4569-9CF3-3936BB6806C7",
+    "id" : "D68568FE-E990-4427-A827-3D7088A91D2A",
     "name" : "Packaged Nitric Acid",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "48CD4989-5393-4CC1-9F6C-37AAA173249B",
+    "id" : "B64D06EE-FA0A-4E63-B018-ADFCBE5D5FDB",
     "name" : "Packaged Nitrogen Gas",
     "partType" : "Containers"
   },
   {
     "rawResource" : false,
-    "id" : "E189DA36-4EF2-48CB-B7D7-167450DFD788",
+    "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
     "name" : "Rubber",
     "partType" : "Oil Products"
   },
   {
     "rawResource" : false,
-    "id" : "128EB58A-A8A8-4F01-A4A8-C06AD8F1ABCE",
+    "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
     "name" : "Plastic",
     "partType" : "Oil Products"
   },
   {
     "rawResource" : false,
-    "id" : "AEE74CA9-2DA6-4559-851D-8B2F78B9CF22",
+    "id" : "23C72668-6A67-4AAD-9301-ABBE35A89E37",
     "name" : "Petroleum Coke",
     "partType" : "Oil Products"
   },
   {
     "rawResource" : false,
-    "id" : "CFF2DDC9-71BA-463C-9DF6-CFF5F9036EC9",
+    "id" : "D6474697-32AE-4882-A14D-1EF1ECC40B1E",
     "name" : "Polymer Resin",
     "partType" : "Oil Products"
   },
   {
     "rawResource" : false,
-    "id" : "7B904C1A-5FC6-4517-8C25-7544BD88B3D4",
+    "id" : "A62300C6-1416-4A3A-9B9F-AC48B9927196",
     "name" : "Electromagnetic Control Rod",
     "partType" : "Nuclear"
   },
   {
     "rawResource" : false,
-    "id" : "0776328B-EF08-4A87-8662-A07C0373E1D7",
+    "id" : "780504F0-53D6-49B3-9A30-864D4C4697D0",
     "name" : "Encased Uranium Cell",
     "partType" : "Nuclear"
   },
   {
     "rawResource" : false,
-    "id" : "760F4328-9748-49B4-9659-807742207ADC",
+    "id" : "C2E592FE-6885-4858-B34C-584A7029EE55",
     "name" : "Uranium Fuel Rod",
     "partType" : "Nuclear"
   },
   {
     "rawResource" : false,
-    "id" : "24331EC1-F9F6-4311-96EA-07E870329BE5",
+    "id" : "D94EC364-FB38-41F4-80CF-8BA3158A61F9",
     "name" : "Uranium Waste",
     "partType" : "Nuclear"
   },
   {
     "rawResource" : false,
-    "id" : "93993AAD-8470-4641-B631-148CB4B5CF6B",
+    "id" : "20B17438-D6B8-422D-98E3-4D09767FB592",
     "name" : "Non-fissile Uranium",
     "partType" : "Nuclear"
   },
   {
     "rawResource" : false,
-    "id" : "857CA10E-9D5A-463C-BC77-6FE0D1F81D96",
+    "id" : "A20A0D40-8658-4697-8C5E-798CD589C302",
     "name" : "Plutonium Pellet",
     "partType" : "Nuclear"
   },
   {
     "rawResource" : false,
-    "id" : "B2BEC0B2-D976-4202-99F2-B8F7DCB233AD",
+    "id" : "4CEA8485-3DF0-45C1-AAEC-2300CC5E6AD9",
     "name" : "Encased Plutonium Cell",
     "partType" : "Nuclear"
   },
   {
     "rawResource" : false,
-    "id" : "FD8A9AF7-D15F-4629-B91F-AD3CF58B4BC0",
+    "id" : "FE764C83-13D9-40A6-A155-D490FEECD8C0",
     "name" : "Plutonium Fuel Rod",
     "partType" : "Nuclear"
   },
   {
     "rawResource" : false,
-    "id" : "D7AFEDAA-3202-414A-A336-D2B0B4520D8E",
+    "id" : "2BA26A07-7F1E-4EC0-AFBD-035DE23A08D7",
     "name" : "Smart Plating",
     "partType" : "Space Elevator Parts"
   },
   {
     "rawResource" : false,
-    "id" : "E9E811A8-FF79-4B9C-8EF7-E1919D86376C",
+    "id" : "C85BB88A-BAF4-4937-82A9-02406AAB75A8",
     "name" : "Versatile Framework",
     "partType" : "Space Elevator Parts"
   },
   {
     "rawResource" : false,
-    "id" : "231E38AE-791C-4BDF-8BAA-3C0E37B8842E",
+    "id" : "83899715-1975-44D2-A2F9-2286D0A923B4",
     "name" : "Automated Wiring",
     "partType" : "Space Elevator Parts"
   },
   {
     "rawResource" : false,
-    "id" : "B61443E0-E457-4C93-8920-E340F6D7654F",
+    "id" : "4EA56515-04D4-4BB1-80A4-D01994DBE4B2",
     "name" : "Modular Engine",
     "partType" : "Space Elevator Parts"
   },
   {
     "rawResource" : false,
-    "id" : "C65F36AD-7542-4936-9FD5-04513A1F655E",
+    "id" : "D63DDBB3-0371-4A4B-84B8-4C46A278DC2D",
     "name" : "Adaptive Control Unit",
     "partType" : "Space Elevator Parts"
   },
   {
     "rawResource" : false,
-    "id" : "64855D89-EEC5-4137-A979-46FC503E7880",
+    "id" : "4CF35C2A-B0BE-4084-BBFC-8AC5DDDAA264",
     "name" : "Assembly Director System",
     "partType" : "Space Elevator Parts"
   },
   {
     "rawResource" : false,
-    "id" : "60F31182-6D9A-4185-ABED-CF52CB31F0D7",
+    "id" : "544101B0-C30C-4558-817F-04D6EE68D97B",
     "name" : "Magnetic Field Generator",
     "partType" : "Space Elevator Parts"
   },
   {
     "rawResource" : false,
-    "id" : "5CDFA3AC-1384-4B29-9F58-3ECA087CF136",
+    "id" : "7A48C90E-61CF-4FE4-8D47-8EA35538B7F7",
     "name" : "Thermal Propulsion Rocket",
     "partType" : "Space Elevator Parts"
   },
   {
     "rawResource" : false,
-    "id" : "7F86984C-833E-43FA-A8EF-F5C2D28FA7DE",
+    "id" : "A1C328DA-8F33-4273-B8BE-091380EBC9BD",
     "name" : "Nuclear Pasta",
     "partType" : "Space Elevator Parts"
   }

@@ -4,7 +4,7 @@ private extension Building {
     }
 }
 
-let biomassGenerator = Building(name: "Biomass Generator")
+let biomassGenerator = Building(name: "Biomass Burner")
 let coalGenerator = Building(name: "Coal Generator")
 let fuelGenerator = Building(name: "Fuel Generator")
 let geothermalGenerator = Building(name: "Geothermal Generator")

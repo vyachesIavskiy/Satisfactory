@@ -1,26 +1,26 @@
 [
   {
-    "id" : "F6FDDBD7-76F2-4D25-B979-4E1AE8D325E0",
+    "id" : "25CD28A7-6814-40D5-B52D-365D5DE850E8",
     "name" : "Tractor"
   },
   {
-    "id" : "9F360635-81D8-4173-A2EB-43701E95C781",
+    "id" : "B24B30F0-3766-46D2-9A25-16D39FA63EF8",
     "name" : "Truck"
   },
   {
-    "id" : "FF188C2D-D212-410B-A17D-2A4ABA115D2F",
+    "id" : "B391DDF6-BD58-4841-B770-C33EFB34ED53",
     "name" : "Explorer"
   },
   {
-    "id" : "AB17BD4D-AFEA-4623-B11B-80A5DBA2A7CA",
+    "id" : "447096CA-53D5-42ED-AA71-209D44E9AA95",
     "name" : "Drone"
   },
   {
-    "id" : "18C275CC-4B86-4423-8E33-5E7E006637EA",
+    "id" : "33682077-981A-44FB-B9E2-A3A27E8999C7",
     "name" : "Electric Locomotive"
   },
   {
-    "id" : "CAF4AC2E-BD00-4E30-AEA9-131C03EFD755",
+    "id" : "7E773193-D55B-4765-9C3F-26AB1F7D70D7",
     "name" : "Freight Car"
   }
 ]

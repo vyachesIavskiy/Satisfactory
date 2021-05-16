@@ -6,7 +6,7 @@ let liquidBiofuel = Part(name: "Liquid Biofuel", partType: .liquids)
 let turbofuel = Part(name: "Turbofuel", partType: .liquids)
 let aluminaSolution = Part(name: "Alumina Solution", partType: .liquids)
 let sulfuricAcid = Part(name: "Sulfuric Acid", partType: .liquids)
-let nitricAcid = Part(name: "Notric Acid", partType: .liquids)
+let nitricAcid = Part(name: "Nitric Acid", partType: .liquids)
 
 let Liquids = [
     water,

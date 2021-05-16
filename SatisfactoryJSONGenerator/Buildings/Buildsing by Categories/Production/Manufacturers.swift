@@ -18,5 +18,6 @@ let Manufacturers = [
     manufacturer,
     packager,
     refinery,
-    blender
+    blender,
+    particleAccelerator
 ]

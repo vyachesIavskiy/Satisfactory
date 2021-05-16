@@ -7,6 +7,7 @@ enum PartType: String, Codable, Hashable, CaseIterable {
     case aliens = "Aliens"
     case powerSlugs = "Power Slugs"
     case liquids = "Liquids"
+    case gases = "Gases"
     case ingots = "Ingots"
     case standartParts = "Standart Parts"
     case electronics = "Electronics"
@@ -26,8 +27,10 @@ struct Part: Item, Codable, Hashable, Identifiable {
     let id: UUID
     let name: String
     let partType: PartType
+    let rawResource: Bool
     
-    var isLiquid: Bool { return partType == .liquids }
+    var isLiquid: Bool { partType == .liquids }
+    var isGas: Bool { partType == .gases }
     
     var recipes: [Recipe] { Storage.shared[recipesFor: id] }
     
@@ -36,5 +39,6 @@ struct Part: Item, Codable, Hashable, Identifiable {
         id = try container.decode(String.self, forKey: .id).uuid()
         name = try container.decode(String.self, forKey: .name)
         partType = try container.decode(PartType.self, forKey: .partType)
+        rawResource = try container.decode(Bool.self, forKey: .rawResource)
     }
 }

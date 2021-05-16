@@ -1,10 +1,10 @@
 import Foundation
 
-struct Recipe: Codable, Hashable, Identifiable {
+struct Recipe: Codable, Identifiable {
     struct RecipePart: Codable, Hashable, Identifiable {
         let id = UUID()
         let item: Item
-        let amount: Int
+        let amount: Double
         
         var productionRecipes: [Recipe] { item.recipes }
         
@@ -23,7 +23,7 @@ struct Recipe: Codable, Hashable, Identifiable {
             } else {
                 throw ParsingError.itemWithIdIsMissing(id)
             }
-            amount = try container.decode(Int.self, forKey: .amount)
+            amount = try container.decode(Double.self, forKey: .amount)
         }
         
         static func == (lhs: Recipe.RecipePart, rhs: Recipe.RecipePart) -> Bool {
@@ -39,13 +39,17 @@ struct Recipe: Codable, Hashable, Identifiable {
         func hash(into hasher: inout Hasher) {
             hasher.combine(item.id)
         }
+        
+        func amountPerMinute(with duration: Int) -> Double {
+            Double(amount) * (60 / Double(duration))
+        }
     }
     
     let id: UUID
     let name: String
     let input: [RecipePart]
     let output: [RecipePart]
-    let machine: UUID
+    let machine: Building
     let duration: Int
     let isDefault: Bool
     
@@ -62,8 +66,21 @@ struct Recipe: Codable, Hashable, Identifiable {
         name = try container.decode(String.self, forKey: .name)
         input = try container.decode([RecipePart].self, forKey: .input)
         output = try container.decode([RecipePart].self, forKey: .output)
-        machine = try container.decode(String.self, forKey: .machine).uuid()
+        let machineId = try container.decode(String.self, forKey: .machine).uuid()
+        if let machine = Storage.shared[buildingId: machineId] {
+            self.machine = machine
+        } else {
+            throw ParsingError.buildingWithIdIsMissing(machineId)
+        }
         duration = try container.decode(Int.self, forKey: .duration)
         isDefault = try container.decode(Bool.self, forKey: .isDefault)
     }
+}
+
+extension Recipe: Hashable {
+    func hash(into hasher: inout Hasher) { hasher.combine(id) }
+}
+
+extension Recipe: Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool { lhs.id == rhs.id }
 }

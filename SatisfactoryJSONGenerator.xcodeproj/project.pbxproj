@@ -80,6 +80,8 @@
 		F934D78126504CF2002E7723 /* ParticleAcceleratorRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934D78026504CF2002E7723 /* ParticleAcceleratorRecipes.swift */; };
 		F9498A60262AFD56009AEDEF /* Lights.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9498A5F262AFD56009AEDEF /* Lights.swift */; };
 		F99B673E26503693008E75AE /* PackagerRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99B673D26503693008E75AE /* PackagerRecipes.swift */; };
+		F9E8F5F126EE49A100028A3B /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E8F5F026EE49A100028A3B /* Milestone.swift */; };
+		F9E8F5F326EE4A0F00028A3B /* Tier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E8F5F226EE4A0F00028A3B /* Tier.swift */; };
 		F9EB2B15264FC4A70079074D /* Gases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EB2B14264FC4A70079074D /* Gases.swift */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +172,10 @@
 		F934D78026504CF2002E7723 /* ParticleAcceleratorRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleAcceleratorRecipes.swift; sourceTree = "<group>"; };
 		F9498A5F262AFD56009AEDEF /* Lights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lights.swift; sourceTree = "<group>"; };
 		F99B673D26503693008E75AE /* PackagerRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagerRecipes.swift; sourceTree = "<group>"; };
+		F9E8F5EC26EE488E00028A3B /* Tier0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tier0.swift; sourceTree = "<group>"; };
+		F9E8F5EE26EE492700028A3B /* Tier1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tier1.swift; sourceTree = "<group>"; };
+		F9E8F5F026EE49A100028A3B /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
+		F9E8F5F226EE4A0F00028A3B /* Tier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tier.swift; sourceTree = "<group>"; };
 		F9EB2B14264FC4A70079074D /* Gases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +209,7 @@
 		4531C4AB2401523200948CFA /* SatisfactoryJSONGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				F9E8F5EB26EE486700028A3B /* Milestones */,
 				4531C4B924016C9300948CFA /* Parts */,
 				4531C4BA24016C9A00948CFA /* Equipment */,
 				4531C4C524016DDF00948CFA /* Buildings */,
@@ -211,6 +218,8 @@
 				4531C4D1240253BF00948CFA /* ExctractionRate.swift */,
 				4531C4D3240253F300948CFA /* MinerLevel.swift */,
 				45CEDDC82402675200BF20AF /* Resource.swift */,
+				F9E8F5F226EE4A0F00028A3B /* Tier.swift */,
+				F9E8F5F026EE49A100028A3B /* Milestone.swift */,
 				4531C4AC2401523200948CFA /* main.swift */,
 			);
 			path = SatisfactoryJSONGenerator;
@@ -275,18 +284,18 @@
 			isa = PBXGroup;
 			children = (
 				455F635D2479E0CE001D5870 /* HubParts.swift */,
-				455F635F2479E0D6001D5870 /* Ores.swift */,
-				455F63612479E0DD001D5870 /* Fuels.swift */,
 				455F63632479E0EF001D5870 /* Aliens.swift */,
 				455F63652479E0FB001D5870 /* Power Slugs.swift */,
-				455F63672479E104001D5870 /* Liquids.swift */,
+				455F63612479E0DD001D5870 /* Fuels.swift */,
+				455F63732479E133001D5870 /* Power Shards.swift */,
+				455F63712479E129001D5870 /* Biomass.swift */,
 				F9EB2B14264FC4A70079074D /* Gases.swift */,
+				455F63672479E104001D5870 /* Liquids.swift */,
+				455F635F2479E0D6001D5870 /* Ores.swift */,
 				455F63692479E10C001D5870 /* Ingots.swift */,
 				455F636B2479E114001D5870 /* Standart Parts.swift */,
 				455F636D2479E11E001D5870 /* Electronics.swift */,
 				455F636F2479E123001D5870 /* Minerals.swift */,
-				455F63712479E129001D5870 /* Biomass.swift */,
-				455F63732479E133001D5870 /* Power Shards.swift */,
 				455F63752479E13E001D5870 /* Industrial Parts.swift */,
 				455F63772479E145001D5870 /* Consumed.swift */,
 				455F63792479E14E001D5870 /* Communications.swift */,
@@ -311,6 +320,15 @@
 				F9EB2B13264FC2E40079074D /* Transportation */,
 			);
 			path = "Buildsing by Categories";
+			sourceTree = "<group>";
+		};
+		F9E8F5EB26EE486700028A3B /* Milestones */ = {
+			isa = PBXGroup;
+			children = (
+				F9E8F5EC26EE488E00028A3B /* Tier0.swift */,
+				F9E8F5EE26EE492700028A3B /* Tier1.swift */,
+			);
+			path = Milestones;
 			sourceTree = "<group>";
 		};
 		F9EB2B0D264FC0B40079074D /* Production */ = {
@@ -512,6 +530,8 @@
 				455F63512479DB30001D5870 /* SmelterRecipes.swift in Sources */,
 				455F635B2479DEAF001D5870 /* RefineryRecipes.swift in Sources */,
 				455F63782479E145001D5870 /* Consumed.swift in Sources */,
+				F9E8F5F126EE49A100028A3B /* Milestone.swift in Sources */,
+				F9E8F5F326EE4A0F00028A3B /* Tier.swift in Sources */,
 				4531C4D0240189C200948CFA /* Recipe.swift in Sources */,
 				455F63A12479E51F001D5870 /* Sorting.swift in Sources */,
 				455F63872479E453001D5870 /* Fluid Extractors.swift in Sources */,

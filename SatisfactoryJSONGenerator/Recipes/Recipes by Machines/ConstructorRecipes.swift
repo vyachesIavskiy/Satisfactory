@@ -458,6 +458,7 @@ let ConstructorRecipes = [
     concreteRecipe,
     quartzCrystalRecipe,
     silicaRecipe,
+    copperPowderRecipe,
     
     // Biomass
     biomassWoodRecipe,

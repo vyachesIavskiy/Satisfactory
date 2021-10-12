@@ -83,7 +83,7 @@ let turboMotorRecipe2 = Recipe(
     input: [
         .init(motor, amount: 4),
         .init(pressureConversionCube, amount: 1),
-        .init(pressureConversionCube, amount: 24),
+        .init(packagedNitrogenGas, amount: 24),
         .init(stator, amount: 8)
     ],
     output: [

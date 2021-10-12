@@ -1,8 +1,14 @@
-let leaves = Part(name: "Leaves", partType: .fuels, rawResource: true)
-let wood = Part(name: "Wood", partType: .fuels, rawResource: true)
-let mycelia = Part(name: "Mycelia", partType: .fuels, rawResource: true)
-let flowerPetals = Part(name: "Flower Petals", partType: .fuels, rawResource: true)
-let compactedCoal = Part(name: "Compacted Coal", partType: .fuels)
+private extension Part {
+    init(name: String, sortingPriority: Int) {
+        self.init(name: name, partType: .fuels, tier: .tier0, milestone: 0, sortingPriority: sortingPriority, rawResource: true)
+    }
+}
+
+let leaves = Part(name: "Leaves", sortingPriority: 6)
+let wood = Part(name: "Wood", sortingPriority: 7)
+let mycelia = Part(name: "Mycelia", sortingPriority: 8)
+let flowerPetals = Part(name: "Flower Petals", sortingPriority: 9)
+let compactedCoal = Part(name: "Compacted Coal", sortingPriority: 46)
 
 let Fuels = [
     leaves,

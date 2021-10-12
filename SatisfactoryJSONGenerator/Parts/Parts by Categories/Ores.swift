@@ -1,13 +1,19 @@
-let ironOre = Part(name: "Iron Ore", partType: .ores, rawResource: true)
-let copperOre = Part(name: "Copper Ore", partType: .ores, rawResource: true)
-let limestone = Part(name: "Limestone", partType: .ores, rawResource: true)
-let coal = Part(name: "Coal", partType: .ores, rawResource: true)
-let rawQuartz = Part(name: "Raw Quartz", partType: .ores, rawResource: true)
-let cateriumOre = Part(name: "Caterium Ore", partType: .ores, rawResource: true)
-let sulfur = Part(name: "Sulfur", partType: .ores, rawResource: true)
-let bauxite = Part(name: "Bauxite", partType: .ores, rawResource: true)
-let uranium = Part(name: "Uranium", partType: .ores, rawResource: true)
-let samOre = Part(name: "S.A.M. Ore", partType: .ores, rawResource: true)
+private extension Part {
+    init(name: String, sortingPriority: Int) {
+        self.init(name: name, partType: .ores, tier: .tier0, milestone: 0, sortingPriority: sortingPriority, rawResource: true)
+    }
+}
+
+let ironOre = Part(name: "Iron Ore", sortingPriority: 25)
+let copperOre = Part(name: "Copper Ore", sortingPriority: 26)
+let limestone = Part(name: "Limestone", sortingPriority: 27)
+let coal = Part(name: "Coal", sortingPriority: 28)
+let cateriumOre = Part(name: "Caterium Ore", sortingPriority: 29)
+let bauxite = Part(name: "Bauxite", sortingPriority: 30)
+let rawQuartz = Part(name: "Raw Quartz", sortingPriority: 31)
+let sulfur = Part(name: "Sulfur", sortingPriority: 32)
+let uranium = Part(name: "Uranium", sortingPriority: 33)
+let samOre = Part(name: "S.A.M. Ore", sortingPriority: 34)
 
 let Ores = [
     ironOre,

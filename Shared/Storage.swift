@@ -5,18 +5,23 @@ final class Storage {
     
     lazy var parts = Bundle.main.parts
     lazy var equipments = Bundle.main.equipments
+    lazy var items = (parts as [Item]) + (equipments as [Item])
     lazy var buildings = Bundle.main.buildings
     lazy var vehicles = Bundle.main.vehicles
     lazy var recipes = Bundle.main.recipes
     
-    subscript (partId id: UUID) -> Part? { parts.first { $0.id == id } }
-    subscript (equipmentId id: UUID) -> Equipment? { equipments.first { $0.id == id } }
-    subscript (itemId id: UUID) -> Item? { self[partId: id] ?? self[equipmentId: id] }
-    subscript (buildingId id: UUID) -> Building? { buildings.first { $0.id == id } }
-    subscript (vehicleId id: UUID) -> Vehicle? { vehicles.first { $0.id == id } }
-    subscript (recipeId id: UUID) -> Recipe? { recipes.first { $0.id == id } }
+    subscript (partId id: String) -> Part? { parts.first { $0.id == id } }
+    subscript (equipmentId id: String) -> Equipment? { equipments.first { $0.id == id } }
+    subscript (itemId id: String) -> Item? { self[partId: id] ?? self[equipmentId: id] ?? self[buildingId: id] }
+    subscript (buildingId id: String) -> Building? { buildings.first { $0.id == id } }
+    subscript (vehicleId id: String) -> Vehicle? { vehicles.first { $0.id == id } }
+    subscript (recipeId id: String) -> Recipe? { recipes.first { $0.id == id } }
     
-    subscript (recipesFor id: UUID) -> [Recipe] { recipes.filter { $0.output.contains { $0.item.id == id } } }
+    subscript (recipesFor id: String) -> [Recipe] { recipes.filter { $0.output.contains { $0.item.id == id } } }
+//    subscript (recipesFor name: String) -> [Recipe] {
+//        guard let item = self[itemName: name] else { return [] }
+//        return self[recipesFor: item.id]
+//    }
     
     subscript (partName name: String) -> Part? { parts.first { $0.name == name } }
     subscript (equipmentName name: String) -> Equipment? { equipments.first { $0.name == name } }
@@ -25,14 +30,15 @@ final class Storage {
     subscript (vehicleName name: String) -> Vehicle? { vehicles.first { $0.name == name } }
     subscript (recipeName name: String) -> Recipe? { recipes.first { $0.name.lowercased().contains(name.lowercased()) } }
     
-    static subscript (partId id: UUID) -> Part? { shared[partId: id] }
-    static subscript (equipmentId id: UUID) -> Equipment? { shared[equipmentId: id] }
-    static subscript (itemId id: UUID) -> Item? { shared[itemId: id] }
-    static subscript (buildingId id: UUID) -> Building? { shared[buildingId: id] }
-    static subscript (vehicleId id: UUID) -> Vehicle? { shared[vehicleId: id] }
-    static subscript (recipeId id: UUID) -> Recipe? { shared[recipeId: id] }
+    static subscript (partId id: String) -> Part? { shared[partId: id] }
+    static subscript (equipmentId id: String) -> Equipment? { shared[equipmentId: id] }
+    static subscript (itemId id: String) -> Item? { shared[itemId: id] }
+    static subscript (buildingId id: String) -> Building? { shared[buildingId: id] }
+    static subscript (vehicleId id: String) -> Vehicle? { shared[vehicleId: id] }
+    static subscript (recipeId id: String) -> Recipe? { shared[recipeId: id] }
     
-    static subscript (recipesFor id: UUID) -> [Recipe] { shared[recipesFor: id] }
+    static subscript (recipesFor id: String) -> [Recipe] { shared[recipesFor: id] }
+//    static subscript (recipesFor name: String) -> [Recipe] { shared[recipesFor: name] }
     
     static subscript (partName name: String) -> Part? { shared[partName: name] }
     static subscript (equipmentName name: String) -> Equipment? { shared[equipmentName: name] }

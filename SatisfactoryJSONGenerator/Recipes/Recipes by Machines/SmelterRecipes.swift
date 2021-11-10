@@ -7,7 +7,7 @@ let ironIngotRecipe = Recipe(
     output: [
         .init(ironIngot, amount: 1)
     ],
-    machine: smelter,
+    machines: [smelter],
     duration: 2
 )
 
@@ -19,7 +19,7 @@ let copperIngotRecipe = Recipe(
     output: [
         .init(copperIngot, amount: 1)
     ],
-    machine: smelter,
+    machines: [smelter],
     duration: 2
 )
 
@@ -31,7 +31,7 @@ let cateriumIngotRecipe = Recipe(
     output: [
         .init(cateriumIngot, amount: 1)
     ],
-    machine: smelter,
+    machines: [smelter],
     duration: 4
 )
 
@@ -43,7 +43,7 @@ let aluminumIngotRecipe1 = Recipe(
     output: [
         .init(aluminumIngot, amount: 1)
     ],
-    machine: smelter,
+    machines: [smelter],
     duration: 2,
     isDefault: false
 )

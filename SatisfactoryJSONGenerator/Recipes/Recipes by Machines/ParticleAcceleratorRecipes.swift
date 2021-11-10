@@ -8,7 +8,7 @@ let plutoniumPelletRecipe = Recipe(
     output: [
         .init(plutoniumPellet, amount: 30)
     ],
-    machine: particleAccelerator,
+    machines: [particleAccelerator],
     duration: 60
 )
 
@@ -21,7 +21,7 @@ let encasedPlutoniumCellRecipe1 = Recipe(
     output: [
         .init(encasedPlutoniumCell, amount: 20)
     ],
-    machine: particleAccelerator,
+    machines: [particleAccelerator],
     duration: 120,
     isDefault: false
 )
@@ -36,7 +36,7 @@ let nuclearPastaRecipe = Recipe(
     output: [
         .init(nuclearPasta, amount: 1)
     ],
-    machine: particleAccelerator,
+    machines: [particleAccelerator],
     duration: 120
 )
 

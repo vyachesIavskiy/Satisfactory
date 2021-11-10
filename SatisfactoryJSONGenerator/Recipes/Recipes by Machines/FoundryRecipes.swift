@@ -8,7 +8,7 @@ let steelIngotRecipe = Recipe(
     output: [
         .init(steelIngot, amount: 3)
     ],
-    machine: foundry,
+    machines: [foundry],
     duration: 4
 )
 
@@ -21,7 +21,7 @@ let steelIngotRecipe1 = Recipe(
     output: [
         .init(steelIngot, amount: 3)
     ],
-    machine: foundry,
+    machines: [foundry],
     duration: 3,
     isDefault: false
 )
@@ -35,7 +35,7 @@ let steelIngotRecipe2 = Recipe(
     output: [
         .init(steelIngot, amount: 10)
     ],
-    machine: foundry,
+    machines: [foundry],
     duration: 16,
     isDefault: false
 )
@@ -49,7 +49,7 @@ let steelIngotRecipe3 = Recipe(
     output: [
         .init(steelIngot, amount: 20)
     ],
-    machine: foundry,
+    machines: [foundry],
     duration: 12,
     isDefault: false
 )
@@ -63,7 +63,7 @@ let ironIngotRecipe1 = Recipe(
     output: [
         .init(ironIngot, amount: 5)
     ],
-    machine: foundry,
+    machines: [foundry],
     duration: 6,
     isDefault: false
 )
@@ -77,7 +77,7 @@ let copperIngotRecipe1 = Recipe(
     output: [
         .init(copperIngot, amount: 20)
     ],
-    machine: foundry,
+    machines: [foundry],
     duration: 12,
     isDefault: false
 )
@@ -91,7 +91,7 @@ let aluminumIngotRecipe = Recipe(
     output: [
         .init(aluminumIngot, amount: 4)
     ],
-    machine: foundry,
+    machines: [foundry],
     duration: 4
 )
 

@@ -10,7 +10,7 @@ let heavyModularFrameRecipe = Recipe(
     output: [
         .init(heavyModularFrame, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 30
 )
 
@@ -25,7 +25,7 @@ let heavyModularFrameRecipe1 = Recipe(
     output: [
         .init(heavyModularFrame, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 16,
     isDefault: false
 )
@@ -41,7 +41,7 @@ let heavyModularFrameRecipe2 = Recipe(
     output: [
         .init(heavyModularFrame, amount: 3)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 64,
     isDefault: false
 )
@@ -58,7 +58,7 @@ let turboMotorRecipe = Recipe(
     output: [
         .init(turboMotor, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 32
 )
 
@@ -73,7 +73,7 @@ let turboMotorRecipe1 = Recipe(
     output: [
         .init(turboMotor, amount: 3)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 64,
     isDefault: false
 )
@@ -89,7 +89,7 @@ let turboMotorRecipe2 = Recipe(
     output: [
         .init(turboMotor, amount: 2)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 32,
     isDefault: false
 )
@@ -104,7 +104,7 @@ let motorRecipe2 = Recipe(
     output: [
         .init(motor, amount: 6)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 48,
     isDefault: false
 )
@@ -120,7 +120,7 @@ let batteryRecipe1 = Recipe(
     output: [
         .init(battery, amount: 4)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 8,
     isDefault: false
 )
@@ -136,7 +136,7 @@ let highSpeedConnectorRecipe = Recipe(
     output: [
         .init(highSpeedConnector, amount: 1),
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 16
 )
 
@@ -150,7 +150,7 @@ let highSpeedConnectorRecipe1 = Recipe(
     output: [
         .init(highSpeedConnector, amount: 2),
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 40,
     isDefault: false
 )
@@ -167,7 +167,7 @@ let computerRecipe = Recipe(
     output: [
         .init(computer, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 24
 )
 
@@ -181,7 +181,7 @@ let computerRecipe2 = Recipe(
     output: [
         .init(computer, amount: 1),
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 16,
     isDefault: false
 )
@@ -196,7 +196,7 @@ let crystalOscillatorRecipe = Recipe(
     output: [
         .init(crystalOscillator, amount: 2)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 120
 )
 
@@ -210,7 +210,7 @@ let crystalOscillatorRecipe1 = Recipe(
     output: [
         .init(crystalOscillator, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 32,
     isDefault: false
 )
@@ -226,7 +226,7 @@ let supercomputerRecipe = Recipe(
     output: [
         .init(supercomputer, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 32
 )
 
@@ -241,7 +241,7 @@ let supercomputerRecipe1 = Recipe(
     output: [
         .init(supercomputer, amount: 2)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 50,
     isDefault: false
 )
@@ -256,7 +256,7 @@ let radioControlUnitRecipe = Recipe(
     output: [
         .init(radioControlUnit, amount: 2)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 48
 )
 
@@ -270,7 +270,7 @@ let radioControlUnitRecipe1 = Recipe(
     output: [
         .init(radioControlUnit, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 16,
     isDefault: false
 )
@@ -286,7 +286,7 @@ let radioControlUnitRecipe2 = Recipe(
     output: [
         .init(radioControlUnit, amount: 3)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 40,
     isDefault: false
 )
@@ -302,7 +302,7 @@ let uraniumFuelRodRecipe = Recipe(
     output: [
         .init(uraniumFuelRod, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 150
 )
 
@@ -317,7 +317,7 @@ let uraniumFuelRodRecipe1 = Recipe(
     output: [
         .init(uraniumFuelRod, amount: 3)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 300,
     isDefault: false
 )
@@ -333,7 +333,7 @@ let encasedUraniumCellRecipe1 = Recipe(
     output: [
         .init(encasedUraniumCell, amount: 4)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 12,
     isDefault: false
 )
@@ -349,7 +349,7 @@ let plutoniumFuelRodRecipe = Recipe(
     output: [
         .init(plutoniumFuelRod, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 240
 )
 
@@ -364,7 +364,7 @@ let gasFilterRecipe = Recipe(
     output: [
         .init(gasFilter, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 8
 )
 
@@ -378,7 +378,7 @@ let iodineInfusedFilterRecipe = Recipe(
     output: [
         .init(iodineInfusedFilter, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 16
 )
 
@@ -393,7 +393,7 @@ let rifleCartridgeRecipe = Recipe(
     output: [
         .init(rifleCartridge, amount: 5)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 20
 )
 
@@ -407,7 +407,7 @@ let nobeliskRecipe1 = Recipe(
     output: [
         .init(nobelisk, amount: 4)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 40,
     isDefault: false
 )
@@ -423,7 +423,7 @@ let modularEngineRecipe = Recipe(
     output: [
         .init(modularEngine, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 60
 )
 
@@ -438,7 +438,7 @@ let adaptiveControlUnitRecipe = Recipe(
     output: [
         .init(adaptiveControlUnit, amount: 2)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 120
 )
 
@@ -452,7 +452,7 @@ let magneticFieldGeneratorRecipe = Recipe(
     output: [
         .init(magneticFieldGenerator, amount: 2)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 120
 )
 
@@ -467,7 +467,7 @@ let thermalPropulsionRocketRecipe = Recipe(
     output: [
         .init(thermalPropulsionRocket, amount: 2)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 120
 )
 
@@ -481,7 +481,7 @@ let smartPlatingRecipe1 = Recipe(
     output: [
         .init(smartPlating, amount: 2)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 24,
     isDefault: false
 )
@@ -496,7 +496,7 @@ let versatileFrameworkRecipe1 = Recipe(
     output: [
         .init(versatileFramework, amount: 2)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 16,
     isDefault: false
 )
@@ -511,7 +511,7 @@ let automatedWiringRecipe1 = Recipe(
     output: [
         .init(automatedWiring, amount: 4)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 32,
     isDefault: false
 )
@@ -528,7 +528,7 @@ let beaconRecipe = Recipe(
     output: [
         .init(beacon, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 8
 )
 
@@ -542,7 +542,7 @@ let beaconRecipe1 = Recipe(
     output: [
         .init(beacon, amount: 20)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 120,
     isDefault: false
 )
@@ -558,7 +558,7 @@ let portableMinerRecipe1 = Recipe(
     output: [
         .init(portableMiner, amount: 1)
     ],
-    machine: manufacturer,
+    machines: [manufacturer],
     duration: 60,
     isDefault: false
 )

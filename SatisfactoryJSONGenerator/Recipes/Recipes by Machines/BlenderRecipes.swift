@@ -10,7 +10,7 @@ let coolingSystemRecipe = Recipe(
     output: [
         .init(coolingSystem, amount: 1)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 10
 )
 
@@ -24,7 +24,7 @@ let coolingSystemRecipe1 = Recipe(
     output: [
         .init(coolingSystem, amount: 2)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 32,
     isDefault: false
 )
@@ -39,7 +39,7 @@ let fusedModularFrameRecipe = Recipe(
     output: [
         .init(fusedModularFrame, amount: 1)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 40
 )
 
@@ -54,7 +54,7 @@ let fusedModularFrameRecipe1 = Recipe(
     output: [
         .init(fusedModularFrame, amount: 1)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 20,
     isDefault: false
 )
@@ -70,7 +70,7 @@ let batteryRecipe = Recipe(
         .init(battery, amount: 1),
         .init(water, amount: 1.5)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 3
 )
 
@@ -84,7 +84,7 @@ let fuelRecipe2 = Recipe(
     output: [
         .init(fuel, amount: 10)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 6,
     isDefault: false
 )
@@ -100,7 +100,7 @@ let turbofuelRecipe2 = Recipe(
     output: [
         .init(turbofuel, amount: 6)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 8,
     isDefault: false
 )
@@ -118,7 +118,7 @@ let nonFissileUraniumRecipe = Recipe(
         .init(nonFissileUranium, amount: 20),
         .init(water, amount: 6)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 24
 )
 
@@ -134,7 +134,7 @@ let nonFissileUraniumRecipe1 = Recipe(
         .init(nonFissileUranium, amount: 20),
         .init(water, amount: 8)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 12,
     isDefault: false
 )
@@ -150,7 +150,7 @@ let encasedUraniumCellRecipe = Recipe(
         .init(encasedUraniumCell, amount: 5),
         .init(sulfuricAcid, amount: 2)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 12
 )
 
@@ -165,7 +165,7 @@ let nitricAcidRecipe = Recipe(
     output: [
         .init(nitricAcid, amount: 3)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 6
 )
 
@@ -181,7 +181,7 @@ let aluminumScrapRecipe2 = Recipe(
         .init(aluminumScrap, amount: 30),
         .init(water, amount: 5)
     ],
-    machine: blender,
+    machines: [blender],
     duration: 6,
     isDefault: false
 )

@@ -6,20 +6,40 @@ encoder.outputFormatting = .prettyPrinted
 let fileManager = FileManager.default
 let home = fileManager.homeDirectoryForCurrentUser
 let folder = home.appendingPathComponent("Desktop/Satisfactory/Shared/JSON")
+let tempFolder = home.appendingPathComponent("Desktop/SatisfactoryTest")
 
-if !fileManager.fileExists(atPath: folder.path) {
-    try? fileManager.createDirectory(at: folder, withIntermediateDirectories: true, attributes: nil)
-}
+let isTesting = false
 
-do {
-    try encoder.encode(Parts).write(to: folder.appendingPathComponent("parts.json"))
-    try encoder.encode(Equipments).write(to: folder.appendingPathComponent("equipment.json"))
-    try encoder.encode(Buildings).write(to: folder.appendingPathComponent("buildings.json"))
-    try encoder.encode(Vehicles).write(to: folder.appendingPathComponent("vehicles.json"))
-    try encoder.encode(Recipes).write(to: folder.appendingPathComponent("recipes.json"))
-    try encoder.encode(ExtractionRates).write(to: folder.appendingPathComponent("exctractionRates.json"))
-} catch {
-    print(error)
+if isTesting {
+    if !fileManager.fileExists(atPath: tempFolder.path) {
+        try? fileManager.createDirectory(at: tempFolder, withIntermediateDirectories: true, attributes: nil)
+    }
+
+    do {
+        try encoder.encode(Parts).write(to: tempFolder.appendingPathComponent("parts.json"))
+        try encoder.encode(Equipments).write(to: tempFolder.appendingPathComponent("equipment.json"))
+        try encoder.encode(Buildings).write(to: tempFolder.appendingPathComponent("buildings.json"))
+        try encoder.encode(Vehicles).write(to: tempFolder.appendingPathComponent("vehicles.json"))
+        try encoder.encode(Recipes).write(to: tempFolder.appendingPathComponent("recipes.json"))
+        try encoder.encode(ExtractionRates).write(to: tempFolder.appendingPathComponent("exctractionRates.json"))
+    } catch {
+        print(error)
+    }
+} else {
+    if !fileManager.fileExists(atPath: folder.path) {
+        try? fileManager.createDirectory(at: folder, withIntermediateDirectories: true, attributes: nil)
+    }
+
+    do {
+        try encoder.encode(Parts).write(to: folder.appendingPathComponent("parts.json"))
+        try encoder.encode(Equipments).write(to: folder.appendingPathComponent("equipment.json"))
+        try encoder.encode(Buildings).write(to: folder.appendingPathComponent("buildings.json"))
+        try encoder.encode(Vehicles).write(to: folder.appendingPathComponent("vehicles.json"))
+        try encoder.encode(Recipes).write(to: folder.appendingPathComponent("recipes.json"))
+        try encoder.encode(ExtractionRates).write(to: folder.appendingPathComponent("exctractionRates.json"))
+    } catch {
+        print(error)
+    }
 }
 
 //let ironImpureAmount = 5.0

@@ -1,8 +1,13 @@
 import Foundation
 
 struct Vehicle: Encodable {
-    let id = UUID()
+    let id: String
     let name: String
+    
+    init(name: String) {
+        id = name.idFromName
+        self.name = name
+    }
 }
 
 let tractor = Vehicle(name: "Tractor")

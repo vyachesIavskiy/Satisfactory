@@ -1,9 +1,15 @@
 import Foundation
 
-struct Building: Encodable {
-    let id = UUID()
+struct Building: Item, Encodable {
+    let id: String
     let name: String
     let buildingType: BuildingType
+    
+    init(name: String, buildingType: BuildingType) {
+        self.id = name.idFromName
+        self.name = name
+        self.buildingType = buildingType
+    }
 }
 
 let Buildings

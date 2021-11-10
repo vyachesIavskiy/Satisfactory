@@ -1,6 +1,6 @@
 import Foundation
 
-enum BuildingType: String, Codable, Hashable, CaseIterable {
+enum BuildingType: String, Hashable, CaseIterable {
     case special = "Special"
     case fluidExtractors = "Fluid Extractors"
     case manufacturers = "Manufacturers"
@@ -35,15 +35,12 @@ enum BuildingType: String, Codable, Hashable, CaseIterable {
     case railedVehicles = "Railed Vehicles"
 }
 
-struct Building: Codable, Hashable {
-    let id: UUID
+struct Building: Item, Hashable {
+    let id: String
     let name: String
     let buildingType: BuildingType
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(String.self, forKey: .id).uuid()
-        name = try container.decode(String.self, forKey: .name)
-        buildingType = try container.decode(BuildingType.self, forKey: .buildingType)
+    var recipes: [Recipe] {
+        Storage[recipesFor: id]
     }
 }

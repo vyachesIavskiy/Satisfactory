@@ -75,10 +75,13 @@
 		455F63BD2479E58C001D5870 /* Jump Pads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63BC2479E58C001D5870 /* Jump Pads.swift */; };
 		455F63BF2479E595001D5870 /* Motor Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63BE2479E595001D5870 /* Motor Vehicles.swift */; };
 		455F63C12479E59E001D5870 /* Railed Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F63C02479E59E001D5870 /* Railed Vehicles.swift */; };
-		45CEDDC92402675200BF20AF /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEDDC82402675200BF20AF /* Resource.swift */; };
+		45CEDDC92402675200BF20AF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CEDDC82402675200BF20AF /* Item.swift */; };
 		F934D77F265046D7002E7723 /* BlenderRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934D77E265046D7002E7723 /* BlenderRecipes.swift */; };
 		F934D78126504CF2002E7723 /* ParticleAcceleratorRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934D78026504CF2002E7723 /* ParticleAcceleratorRecipes.swift */; };
 		F9498A60262AFD56009AEDEF /* Lights.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9498A5F262AFD56009AEDEF /* Lights.swift */; };
+		F98F3B1B273AA09A00CE2580 /* TierBuildingRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B1A273AA09A00CE2580 /* TierBuildingRecipes.swift */; };
+		F98F3B1E273AB41E00CE2580 /* BuildingRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B1D273AB41E00CE2580 /* BuildingRecipes.swift */; };
+		F98F3B22273AB4C000CE2580 /* MAMBuildingRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B21273AB4C000CE2580 /* MAMBuildingRecipes.swift */; };
 		F99B673E26503693008E75AE /* PackagerRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99B673D26503693008E75AE /* PackagerRecipes.swift */; };
 		F9E8F5F126EE49A100028A3B /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E8F5F026EE49A100028A3B /* Milestone.swift */; };
 		F9E8F5F326EE4A0F00028A3B /* Tier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E8F5F226EE4A0F00028A3B /* Tier.swift */; };
@@ -167,10 +170,13 @@
 		455F63BC2479E58C001D5870 /* Jump Pads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Jump Pads.swift"; sourceTree = "<group>"; };
 		455F63BE2479E595001D5870 /* Motor Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Motor Vehicles.swift"; sourceTree = "<group>"; };
 		455F63C02479E59E001D5870 /* Railed Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Railed Vehicles.swift"; sourceTree = "<group>"; };
-		45CEDDC82402675200BF20AF /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		45CEDDC82402675200BF20AF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F934D77E265046D7002E7723 /* BlenderRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlenderRecipes.swift; sourceTree = "<group>"; };
 		F934D78026504CF2002E7723 /* ParticleAcceleratorRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleAcceleratorRecipes.swift; sourceTree = "<group>"; };
 		F9498A5F262AFD56009AEDEF /* Lights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lights.swift; sourceTree = "<group>"; };
+		F98F3B1A273AA09A00CE2580 /* TierBuildingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierBuildingRecipes.swift; sourceTree = "<group>"; };
+		F98F3B1D273AB41E00CE2580 /* BuildingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingRecipes.swift; sourceTree = "<group>"; };
+		F98F3B21273AB4C000CE2580 /* MAMBuildingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMBuildingRecipes.swift; sourceTree = "<group>"; };
 		F99B673D26503693008E75AE /* PackagerRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagerRecipes.swift; sourceTree = "<group>"; };
 		F9E8F5EC26EE488E00028A3B /* Tier0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tier0.swift; sourceTree = "<group>"; };
 		F9E8F5EE26EE492700028A3B /* Tier1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tier1.swift; sourceTree = "<group>"; };
@@ -217,7 +223,7 @@
 				4531C4C324016D1400948CFA /* Vehicle.swift */,
 				4531C4D1240253BF00948CFA /* ExctractionRate.swift */,
 				4531C4D3240253F300948CFA /* MinerLevel.swift */,
-				45CEDDC82402675200BF20AF /* Resource.swift */,
+				45CEDDC82402675200BF20AF /* Item.swift */,
 				F9E8F5F226EE4A0F00028A3B /* Tier.swift */,
 				F9E8F5F026EE49A100028A3B /* Milestone.swift */,
 				4531C4AC2401523200948CFA /* main.swift */,
@@ -257,9 +263,11 @@
 		4531C4CA2401899700948CFA /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				F98F3B1F273AB48D00CE2580 /* Building Recipes */,
 				455F634F2479DB25001D5870 /* Recipes by Machines */,
 				4531C4CB240189A300948CFA /* RecipePart.swift */,
 				4531C4CF240189C200948CFA /* Recipe.swift */,
+				F98F3B1D273AB41E00CE2580 /* BuildingRecipes.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -320,6 +328,15 @@
 				F9EB2B13264FC2E40079074D /* Transportation */,
 			);
 			path = "Buildsing by Categories";
+			sourceTree = "<group>";
+		};
+		F98F3B1F273AB48D00CE2580 /* Building Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				F98F3B1A273AA09A00CE2580 /* TierBuildingRecipes.swift */,
+				F98F3B21273AB4C000CE2580 /* MAMBuildingRecipes.swift */,
+			);
+			path = "Building Recipes";
 			sourceTree = "<group>";
 		};
 		F9E8F5EB26EE486700028A3B /* Milestones */ = {
@@ -469,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98F3B22273AB4C000CE2580 /* MAMBuildingRecipes.swift in Sources */,
 				4531C4C424016D1400948CFA /* Vehicle.swift in Sources */,
 				455F63642479E0EF001D5870 /* Aliens.swift in Sources */,
 				F9498A60262AFD56009AEDEF /* Lights.swift in Sources */,
@@ -478,8 +496,9 @@
 				455F637A2479E14E001D5870 /* Communications.swift in Sources */,
 				F9EB2B15264FC4A70079074D /* Gases.swift in Sources */,
 				455F63532479DB47001D5870 /* FoundryRecipes.swift in Sources */,
+				F98F3B1B273AA09A00CE2580 /* TierBuildingRecipes.swift in Sources */,
 				F99B673E26503693008E75AE /* PackagerRecipes.swift in Sources */,
-				45CEDDC92402675200BF20AF /* Resource.swift in Sources */,
+				45CEDDC92402675200BF20AF /* Item.swift in Sources */,
 				455F63912479E475001D5870 /* Generators.swift in Sources */,
 				455F63702479E123001D5870 /* Minerals.swift in Sources */,
 				4531C4C724016DEA00948CFA /* BuildingType.swift in Sources */,
@@ -531,6 +550,7 @@
 				455F635B2479DEAF001D5870 /* RefineryRecipes.swift in Sources */,
 				455F63782479E145001D5870 /* Consumed.swift in Sources */,
 				F9E8F5F126EE49A100028A3B /* Milestone.swift in Sources */,
+				F98F3B1E273AB41E00CE2580 /* BuildingRecipes.swift in Sources */,
 				F9E8F5F326EE4A0F00028A3B /* Tier.swift in Sources */,
 				4531C4D0240189C200948CFA /* Recipe.swift in Sources */,
 				455F63A12479E51F001D5870 /* Sorting.swift in Sources */,

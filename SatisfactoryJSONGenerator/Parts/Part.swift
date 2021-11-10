@@ -1,7 +1,7 @@
 import Foundation
 
-struct Part: Encodable, Resource, CustomStringConvertible {
-    let id = UUID()
+struct Part: Encodable, Item, CustomStringConvertible {
+    let id: String
     let name: String
     let partType: PartType
     let tier: Tier
@@ -9,7 +9,15 @@ struct Part: Encodable, Resource, CustomStringConvertible {
     let sortingPriority: Int
     let rawResource: Bool
     
-    init(name: String, partType: PartType, tier: Tier, milestone: Int, sortingPriority: Int, rawResource: Bool = false) {
+    init(
+        name: String,
+        partType: PartType,
+        tier: Tier,
+        milestone: Int,
+        sortingPriority: Int,
+        rawResource: Bool = false
+    ) {
+        self.id = name.idFromName
         self.name = name
         self.partType = partType
         self.tier = tier

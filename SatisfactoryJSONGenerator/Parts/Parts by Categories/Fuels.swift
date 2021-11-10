@@ -8,7 +8,7 @@ let leaves = Part(name: "Leaves", sortingPriority: 6)
 let wood = Part(name: "Wood", sortingPriority: 7)
 let mycelia = Part(name: "Mycelia", sortingPriority: 8)
 let flowerPetals = Part(name: "Flower Petals", sortingPriority: 9)
-let compactedCoal = Part(name: "Compacted Coal", sortingPriority: 46)
+let compactedCoal = Part(name: "Compacted Coal", partType: .fuels, tier: .tier0, milestone: 0, sortingPriority: 46, rawResource: false)
 
 let Fuels = [
     leaves,

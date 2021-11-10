@@ -8,7 +8,7 @@ let ironIngotRecipe2 = Recipe(
     output: [
         .init(ironIngot, amount: 13)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 12,
     isDefault: false
 )
@@ -22,7 +22,7 @@ let copperIngotRecipe2 = Recipe(
     output: [
         .init(copperIngot, amount: 15)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 24,
     isDefault: false
 )
@@ -36,7 +36,7 @@ let cateriumIngotRecipe1 = Recipe(
     output: [
         .init(cateriumIngot, amount: 1)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 5,
     isDefault: false
 )
@@ -51,7 +51,7 @@ let concreteRecipe3 = Recipe(
     output: [
         .init(concrete, amount: 4)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 3,
     isDefault: false
 )
@@ -65,7 +65,7 @@ let quartzCrystalRecipe1 = Recipe(
     output: [
         .init(quartzCrystal, amount: 7)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 8,
     isDefault: false
 )
@@ -80,7 +80,7 @@ let fabricRecipe1 = Recipe(
     output: [
         .init(fabric, amount: 1)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 12,
     isDefault: false
 )
@@ -95,7 +95,7 @@ let copperSheetRecipe1 = Recipe(
     output: [
         .init(copperSheet, amount: 3)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 8,
     isDefault: false
 )
@@ -110,7 +110,7 @@ let cableRecipe3 = Recipe(
     output: [
         .init(cable, amount: 9)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 8,
     isDefault: false
 )
@@ -126,7 +126,7 @@ let aluminumScrapRecipe = Recipe(
         .init(aluminumScrap, amount: 6),
         .init(water, amount: 2)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 1
 )
 
@@ -140,7 +140,7 @@ let aluminumScrapRecipe1 = Recipe(
         .init(aluminumScrap, amount: 20),
         .init(water, amount: 7)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 4,
     isDefault: false
 )
@@ -155,7 +155,7 @@ let aluminaSolutionRecipe = Recipe(
         .init(aluminaSolution, amount: 12),
         .init(silica, amount: 5)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 6
 )
 
@@ -168,7 +168,7 @@ let aluminaSolutionRecipe1 = Recipe(
     output: [
         .init(aluminaSolution, amount: 12)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 3,
     isDefault: false
 )
@@ -182,7 +182,7 @@ let sulfuricAcidRecipe = Recipe(
     output: [
         .init(sulfuricAcid, amount: 10)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 6
 )
 
@@ -198,7 +198,7 @@ let plasticRecipe = Recipe(
         .init(plastic, amount: 2),
         .init(heavyOilResidue, amount: 1)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 6
 )
 
@@ -211,7 +211,7 @@ let residualPlasticRecipe = Recipe(
     output: [
         .init(plastic, amount: 2)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 6
 )
 
@@ -224,7 +224,7 @@ let plasticRecipe1 = Recipe(
     output: [
         .init(plastic, amount: 12)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 12,
     isDefault: false
 )
@@ -238,7 +238,7 @@ let rubberRecipe = Recipe(
         .init(rubber, amount: 2),
         .init(heavyOilResidue, amount: 2)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 6
 )
 
@@ -251,7 +251,7 @@ let residualRubberRecipe = Recipe(
     output: [
         .init(rubber, amount: 2)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 6
 )
 
@@ -264,7 +264,7 @@ let rubberRecipe1 = Recipe(
     output: [
         .init(rubber, amount: 12)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 12,
     isDefault: false
 )
@@ -277,7 +277,7 @@ let petroleumCokeRecipe = Recipe(
     output: [
         .init(petroleumCoke, amount: 12)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 6
 )
 
@@ -290,7 +290,7 @@ let polymerResinRecipe1 = Recipe(
         .init(polymerResin, amount: 13),
         .init(heavyOilResidue, amount: 2)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 6,
     isDefault: false
 )
@@ -304,7 +304,7 @@ let heavyOilResidueRecipe1 = Recipe(
         .init(heavyOilResidue, amount: 4),
         .init(polymerResin, amount: 2)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 6,
     isDefault: false
 )
@@ -319,7 +319,7 @@ let fuelRecipe = Recipe(
         .init(fuel, amount: 4),
         .init(polymerResin, amount: 3)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 6
 )
 
@@ -331,7 +331,7 @@ let residualFuelRecipe = Recipe(
     output: [
         .init(fuel, amount: 4)
     ],
-    machine: manufacturer,
+    machines: [refinery],
     duration: 6
 )
 
@@ -344,7 +344,7 @@ let fuelRecipe1 = Recipe(
     output: [
         .init(fuel, amount: 2)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 2,
     isDefault: false
 )
@@ -358,7 +358,7 @@ let liquidBiofuelRecipe = Recipe(
     output: [
         .init(liquidBiofuel, amount: 4)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 4
 )
 
@@ -371,7 +371,7 @@ let turbofuelRecipe = Recipe(
     output: [
         .init(turbofuel, amount: 5)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 16,
     isDefault: false
 )
@@ -385,7 +385,7 @@ let turbofuelRecipe1 = Recipe(
     output: [
         .init(turbofuel, amount: 4)
     ],
-    machine: refinery,
+    machines: [refinery],
     duration: 8,
     isDefault: false
 )

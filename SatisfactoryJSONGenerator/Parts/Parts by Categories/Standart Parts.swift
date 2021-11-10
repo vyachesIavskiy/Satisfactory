@@ -14,8 +14,8 @@ let steelBeam = Part(name: "Steel Beam", tier: .tier3, milestone: 2, sortingPrio
 let steelPipe = Part(name: "Steel Pipe", tier: .tier3, milestone: 2, sortingPriority: 49)
 let encasedIndustrialBeam = Part(name: "Encased Industrial Beam", tier: .tier4, milestone: 0, sortingPriority: 65)
 let heavyModularFrame = Part(name: "Heavy Modular Frame", tier: .tier4, milestone: 0, sortingPriority: 96)
-let alcladAluminumSheet = Part(name: "Alclad Aluminum Sheet", tier: .tier7, milestone: 0, sortingPriority: 74)
-let aluminumCasing = Part(name: "Aluminum Casing", tier: .tier7, milestone: 0, sortingPriority: 75)
+let alcladAluminumSheet = Part(name: "Alclad Aluminum Sheet", tier: .tier7, milestone: 0, sortingPriority: 75)
+let aluminumCasing = Part(name: "Aluminum Casing", tier: .tier7, milestone: 0, sortingPriority: 76)
 
 let StandartParts = [
     ironPlate,

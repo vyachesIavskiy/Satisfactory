@@ -8,7 +8,7 @@ let packagedWaterRecipe = Recipe(
     output: [
         .init(packagedWater, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 2
 )
 
@@ -21,7 +21,7 @@ let packagedOilRecipe = Recipe(
     output: [
         .init(packagedOil, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 4
 )
 
@@ -34,7 +34,7 @@ let packagedHeavyOilResidueRecipe = Recipe(
     output: [
         .init(packagedHeavyOilResidue, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 4
 )
 
@@ -47,7 +47,7 @@ let packagedLiquidBiofuelRecipe = Recipe(
     output: [
         .init(packagedLiquidBiofuel, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 3
 )
 
@@ -60,7 +60,7 @@ let packagedFuelRecipe = Recipe(
     output: [
         .init(packagedFuel, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 3
 )
 
@@ -73,7 +73,7 @@ let packagedTurbofuelRecipe = Recipe(
     output: [
         .init(packagedTurbofuel, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 6
 )
 
@@ -86,7 +86,7 @@ let packagedAluminaSolutionRecipe = Recipe(
     output: [
         .init(packagedAluminaSolution, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 1
 )
 
@@ -99,7 +99,7 @@ let packagedSulfuricAcidRecipe = Recipe(
     output: [
         .init(packagedSulfuricAcid, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 3
 )
 
@@ -112,7 +112,7 @@ let packagedNitrogenGasRecipe = Recipe(
     output: [
         .init(packagedNitrogenGas, amount: 1)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 1
 )
 
@@ -125,7 +125,7 @@ let packagedNitricAcidRecipe = Recipe(
     output: [
         .init(packagedNitricAcid, amount: 1)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 2
 )
 
@@ -139,7 +139,7 @@ let unpackagedWaterRecipe = Recipe(
         .init(water, amount: 2),
         .init(emptyCanister, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 1
 )
 
@@ -152,7 +152,7 @@ let unpackagedOilRecipe = Recipe(
         .init(crudeOil, amount: 2),
         .init(emptyCanister, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 2
 )
 
@@ -165,7 +165,7 @@ let unpackagedHeavyOilResidueRecipe = Recipe(
         .init(heavyOilResidue, amount: 2),
         .init(emptyCanister, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 6
 )
 
@@ -178,7 +178,7 @@ let unpackagedLiquidBiofuelRecipe = Recipe(
         .init(liquidBiofuel, amount: 2),
         .init(emptyCanister, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 2
 )
 
@@ -191,7 +191,7 @@ let unpackagedFuelRecipe = Recipe(
         .init(fuel, amount: 2),
         .init(emptyCanister, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 2
 )
 
@@ -204,7 +204,7 @@ let unpackagedTurbofuelRecipe = Recipe(
         .init(turbofuel, amount: 2),
         .init(emptyCanister, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 6
 )
 
@@ -217,7 +217,7 @@ let unpackagedAluminaSolutionRecipe = Recipe(
         .init(aluminaSolution, amount: 2),
         .init(emptyCanister, amount: 2)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 1
 )
 
@@ -230,7 +230,7 @@ let unpackagedSulfuricAcidRecipe = Recipe(
         .init(sulfuricAcid, amount: 1),
         .init(emptyCanister, amount: 1)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 1
 )
 
@@ -243,7 +243,7 @@ let unpackagedNitrogenGasRecipe = Recipe(
         .init(nitrogenGas, amount: 4),
         .init(emptyFluidTank, amount: 1)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 1
 )
 
@@ -256,7 +256,7 @@ let unpackagedNitricAcidRecipe = Recipe(
         .init(nitricAcid, amount: 1),
         .init(emptyFluidTank, amount: 1)
     ],
-    machine: packager,
+    machines: [packager],
     duration: 3
 )
 

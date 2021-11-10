@@ -1,11 +1,11 @@
 import Foundation
 
 struct Recipe: Encodable {
-    let id = UUID()
+    let id: String
     let name: String
     let input: [RecipePart]
     let output: [RecipePart]
-    let machine: Building
+    let machines: [Building]
     let duration: Int
     let isDefault: Bool
     
@@ -14,16 +14,17 @@ struct Recipe: Encodable {
         case name
         case input
         case output
-        case machine
+        case machines
         case duration
         case isDefault
     }
     
-    init(name: String, input: [RecipePart], output: [RecipePart], machine: Building, duration: Int, isDefault: Bool = true) {
+    init(name: String, input: [RecipePart], output: [RecipePart], machines: [Building], duration: Int, isDefault: Bool = true) {
+        self.id = name.idFromName
         self.name = name
         self.input = input
         self.output = output
-        self.machine = machine
+        self.machines = machines
         self.duration = duration
         self.isDefault = isDefault
     }
@@ -34,7 +35,7 @@ struct Recipe: Encodable {
         try container.encode(name, forKey: .name)
         try container.encode(input, forKey: .input)
         try container.encode(output, forKey: .output)
-        try container.encode(machine.id, forKey: .machine)
+        try container.encode(machines.map(\.id), forKey: .machines)
         try container.encode(duration, forKey: .duration)
         try container.encode(isDefault, forKey: .isDefault)
     }
@@ -44,7 +45,7 @@ extension Recipe: CustomStringConvertible {
     var description: String {
         let inputs = input.map { "\($0.name): \($0.amount)" }.joined(separator: ", ")
         let outputs = output.map { "\($0.name): \($0.amount)" }.joined(separator: ", ")
-        return "\(machine): [\(inputs) -> \(outputs)]"
+        return "\(machines.first?.name ?? "Build gun"): [\(inputs) -> \(outputs)]"
     }
 }
 
@@ -58,3 +59,4 @@ let Recipes
     + ManufacturerRecipes
     + BlenderRecipes
     + ParticleAcceleratorRecipes
+    + BuildingRecipes

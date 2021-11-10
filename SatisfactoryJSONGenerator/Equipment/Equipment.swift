@@ -1,7 +1,7 @@
 import Foundation
 
-struct Equipment: Encodable, Resource, CustomStringConvertible {
-    let id = UUID()
+struct Equipment: Encodable, Item, CustomStringConvertible {
+    let id: String
     let name: String
     let equipmentType: EquipmentType
     let fuel: Part?
@@ -16,6 +16,7 @@ struct Equipment: Encodable, Resource, CustomStringConvertible {
     }
     
     init(name: String, equipmentType: EquipmentType, fuel: Part? = nil, ammo: Part? = nil) {
+        self.id = name.idFromName
         self.name = name
         self.equipmentType = equipmentType
         self.fuel = fuel
@@ -42,21 +43,24 @@ let portableMiner = Equipment(name: "Portable Miner", equipmentType: .hands)
 let chainsaw = Equipment(name: "Chainsaw", equipmentType: .hands, fuel: solidBiofuel)
 let objectScanner = Equipment(name: "Object Scanner", equipmentType: .hands)
 let beacon = Equipment(name: "Beacon", equipmentType: .hands) // 91
-let colorGun = Equipment(name: "Color Gun", equipmentType: .hands, ammo: colorCartridge)
+let rebarGun = Equipment(name: "Rebar Gun", equipmentType: .hands, ammo: spikedRebar)
+//let colorGun = Equipment(name: "Color Gun", equipmentType: .hands, ammo: colorCartridge)
 let xenoBasher = Equipment(name: "Xeno-Basher", equipmentType: .hands)
+let zipline = Equipment(name: "Zipline", equipmentType: .hands)
 let factoryCart = Equipment(name: "Factory Cart™", equipmentType: .hands)
+let golderFactoryCart = Equipment(name: "Golden Factory Cart™", equipmentType: .hands)
 let medicinalInhaler = Equipment(name: "Medicinal Inhaler", equipmentType: .hands)
 let nobeliskDetonator = Equipment(name: "Nobelisk Detonator", equipmentType: .hands, ammo: nobelisk)
-let rebarGun = Equipment(name: "Rebar Gun", equipmentType: .hands, ammo: spikedRebar)
-let zipline = Equipment(name: "Zipline", equipmentType: .hands)
+let coffeCup = Equipment(name: "FICSIT™ Coffe Cup", equipmentType: .hands)
+let goldCoffeCup = Equipment(name: "FICSIT™ Gold Coffee Cup", equipmentType: .hands)
 
 // MARK: - Body
 let bladeRunners = Equipment(name: "Blade Runners", equipmentType: .body)
+let parachute = Equipment(name: "Parachute", equipmentType: .body)
 let jetpack = Equipment(name: "Jetpack", equipmentType: .body, fuel: packagedFuel)
+let hoverPack = Equipment(name: "Hover Pack", equipmentType: .body)
 let gasMask = Equipment(name: "Gas Mask", equipmentType: .body, fuel: gasFilter)
 let hazmatSuit = Equipment(name: "Hazmat Suit", equipmentType: .body, fuel: iodineInfusedFilter)
-let parachute = Equipment(name: "Parachute", equipmentType: .body)
-let hoverPack = Equipment(name: "Hover Pack", equipmentType: .body)
 
 let Equipments = [
     xenoZapper,
@@ -64,18 +68,21 @@ let Equipments = [
     chainsaw,
     objectScanner,
     beacon,
-    colorGun,
+    rebarGun,
+//    colorGun,
     xenoBasher,
+    zipline,
     factoryCart,
+    golderFactoryCart,
     medicinalInhaler,
     nobeliskDetonator,
-    rebarGun,
-    zipline,
+    coffeCup,
+    goldCoffeCup,
     
     bladeRunners,
-    jetpack,
-    gasMask,
-    hazmatSuit,
     parachute,
-    hoverPack
+    jetpack,
+    hoverPack,
+    gasMask,
+    hazmatSuit
 ]

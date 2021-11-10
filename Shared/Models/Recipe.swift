@@ -1,39 +1,29 @@
 import Foundation
 
-struct Recipe: Codable, Identifiable {
-    struct RecipePart: Codable, Hashable, Identifiable {
-        let id = UUID()
+struct Recipe: Identifiable {
+    struct RecipePartOld: Hashable, Identifiable {
         let item: Item
         let amount: Double
         
+        var id: String {
+            item.id
+        }
+        
+        fileprivate var recipeDuration = 0
+        
         var productionRecipes: [Recipe] { item.recipes }
         
-        enum CodingKeys: String, CodingKey {
-            case id
-            case amount
+        var amountPerMinute: Double {
+            amount * (60 / Double(recipeDuration))
         }
         
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-            let id = try container.decode(String.self, forKey: .id).uuid()
-            if let part = Storage.shared[partId: id] {
-                item = part
-            } else if let equipment = Storage.shared[equipmentId: id] {
-                item = equipment
-            } else {
-                throw ParsingError.itemWithIdIsMissing(id)
-            }
-            amount = try container.decode(Double.self, forKey: .amount)
+        init(item: Item, amount: Double) {
+            self.item = item
+            self.amount = amount
         }
         
-        static func == (lhs: Recipe.RecipePart, rhs: Recipe.RecipePart) -> Bool {
+        static func == (lhs: Recipe.RecipePartOld, rhs: Recipe.RecipePartOld) -> Bool {
             lhs.item.id == rhs.item.id
-        }
-        
-        func encode(to encoder: Encoder) throws {
-            var container = encoder.container(keyedBy: CodingKeys.self)
-            try container.encode(item.id, forKey: .id)
-            try container.encode(amount, forKey: .amount)
         }
         
         func hash(into hasher: inout Hasher) {
@@ -45,35 +35,61 @@ struct Recipe: Codable, Identifiable {
         }
     }
     
-    let id: UUID
+    let id: String
     let name: String
-    let input: [RecipePart]
-    let output: [RecipePart]
-    let machine: Building
+    private(set) var input: [RecipePartOld]
+    private(set) var output: [RecipePartOld]
+    let machines: [Building]
     let duration: Int
     let isDefault: Bool
-    
-    var allInputItems: [Item] {
-        input.reduce(into: []) { result, part in
-            guard !part.item.recipes.isEmpty else { return }
-            result += part.item.recipes.reduce([]) { $0 + $1.allInputItems }
+    var isFavorite: Bool {
+        get {
+            UserDefaults.standard.bool(forKey: id)
+        }
+        set {
+            if newValue {
+                UserDefaults.standard.set(newValue, forKey: id)
+            } else {
+                UserDefaults.standard.removeObject(forKey: id)
+            }
         }
     }
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(String.self, forKey: .id).uuid()
-        name = try container.decode(String.self, forKey: .name)
-        input = try container.decode([RecipePart].self, forKey: .input)
-        output = try container.decode([RecipePart].self, forKey: .output)
-        let machineId = try container.decode(String.self, forKey: .machine).uuid()
-        if let machine = Storage.shared[buildingId: machineId] {
-            self.machine = machine
-        } else {
-            throw ParsingError.buildingWithIdIsMissing(machineId)
+    var canBeInitial: Bool {
+        input.reduce(true) { partialResult, input in
+            partialResult && (input.item as? Part)?.rawResource == true
         }
-        duration = try container.decode(Int.self, forKey: .duration)
-        isDefault = try container.decode(Bool.self, forKey: .isDefault)
+    }
+    
+    init(
+        id: String,
+        name: String,
+        input: [RecipePartOld],
+        output: [RecipePartOld],
+        machines: [Building],
+        duration: Int,
+        isDefault: Bool
+    ) {
+        self.id = id
+        self.name = name
+        self.input = input
+        self.output = output
+        self.machines = machines
+        self.duration = duration
+        self.isDefault = isDefault
+        
+        self.input.enumerated().forEach { (index, _) in
+            self.input[index].recipeDuration = duration
+        }
+        
+        self.output.enumerated().forEach { (index, _) in
+            self.output[index].recipeDuration = duration
+        }
+    }
+    
+    func inputAmountsPerMinute(for item: Item, with desiredProductionPerMinute: Double) -> [(Item, Double)] {
+        let multiplier = desiredProductionPerMinute / (output.first { $0.item.id == item.id }?.amountPerMinute ?? 1)
+        return input.map { ($0.item, $0.amountPerMinute * multiplier) }
     }
 }
 
@@ -83,4 +99,19 @@ extension Recipe: Hashable {
 
 extension Recipe: Equatable {
     static func == (lhs: Self, rhs: Self) -> Bool { lhs.id == rhs.id }
+}
+
+extension Recipe: CustomStringConvertible {
+    var description: String {
+        let output = output.map { "\($0.amountPerMinute.formatted(.fractionFromZeroToFour))/min \($0.item.name)" }.joined(separator: "\n")
+        let input = input.map { "\($0.amountPerMinute.formatted(.fractionFromZeroToFour))/min \($0.item.name)" }.joined(separator: "\n")
+        
+        return """
+        \(name)
+        
+        \(output)
+        ----------------------------------
+        \(input)
+        """
+    }
 }

@@ -2,4650 +2,7253 @@
   {
     "output" : [
       {
-        "id" : "D523FCEC-7D68-4D25-959B-D7D7E99CC736",
+        "id" : "iron-ingot",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "915A16DB-FD5C-43AB-B6DF-2535537E3772",
+        "id" : "iron-ore",
         "amount" : 1
       }
     ],
-    "id" : "A87CA46D-382F-453D-BA7E-B60847B0FD0F",
-    "duration" : 2,
+    "id" : "iron-ingot",
     "isDefault" : true,
-    "machine" : "9A77EC82-C938-46B3-95BD-1EA97DB18761",
+    "duration" : 2,
+    "machines" : [
+      "smelter"
+    ],
     "name" : "Iron Ingot"
   },
   {
     "output" : [
       {
-        "id" : "E44B82C0-3D0A-496B-8E75-A01A39929DCD",
+        "id" : "copper-ingot",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "491F50AA-9E52-4DD4-9D79-AAB04FCF41AC",
+        "id" : "copper-ore",
         "amount" : 1
       }
     ],
-    "id" : "94CA707B-EB6A-4EAD-9B92-DAB8E60B0C6C",
-    "duration" : 2,
+    "id" : "copper-ingot",
     "isDefault" : true,
-    "machine" : "9A77EC82-C938-46B3-95BD-1EA97DB18761",
+    "duration" : 2,
+    "machines" : [
+      "smelter"
+    ],
     "name" : "Copper Ingot"
   },
   {
     "output" : [
       {
-        "id" : "0942ADCB-2B6D-4A1A-B53C-00CBF029D6B6",
+        "id" : "caterium-ingot",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "8AEE8C36-160A-45E5-99E4-E925C8DFB466",
+        "id" : "caterium-ore",
         "amount" : 3
       }
     ],
-    "id" : "8BFAC464-8F27-4ACE-A72A-44D8BEFA64D0",
-    "duration" : 4,
+    "id" : "caterium-ingot",
     "isDefault" : true,
-    "machine" : "9A77EC82-C938-46B3-95BD-1EA97DB18761",
+    "duration" : 4,
+    "machines" : [
+      "smelter"
+    ],
     "name" : "Caterium Ingot"
   },
   {
     "output" : [
       {
-        "id" : "B7B5E0C0-861B-4B01-BF0A-07F4AE9518AB",
+        "id" : "aluminum-ingot",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "9BEC0ED6-31E7-46D2-A012-91E3F6092006",
+        "id" : "aluminum-scrap",
         "amount" : 2
       }
     ],
-    "id" : "A6F8A909-79D9-48A3-A758-84D3F2572FAB",
-    "duration" : 2,
+    "id" : "alternate-pure-aluminum-ingot",
     "isDefault" : false,
-    "machine" : "9A77EC82-C938-46B3-95BD-1EA97DB18761",
+    "duration" : 2,
+    "machines" : [
+      "smelter"
+    ],
     "name" : "Alternate: Pure Aluminum Ingot"
   },
   {
     "output" : [
       {
-        "id" : "E31F3830-AA40-4E87-95C6-64DF260C3B36",
+        "id" : "steel-ingot",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "915A16DB-FD5C-43AB-B6DF-2535537E3772",
+        "id" : "iron-ore",
         "amount" : 3
       },
       {
-        "id" : "458A24C9-BAD8-40F9-A452-E6A778A2E697",
+        "id" : "coal",
         "amount" : 3
       }
     ],
-    "id" : "12788554-9DFE-4FA2-B3A8-30EDF25673E7",
-    "duration" : 4,
+    "id" : "steel-ingot",
     "isDefault" : true,
-    "machine" : "3078A94E-B298-4B6D-8F3F-FB6703D465BD",
+    "duration" : 4,
+    "machines" : [
+      "foundry"
+    ],
     "name" : "Steel Ingot"
   },
   {
     "output" : [
       {
-        "id" : "E31F3830-AA40-4E87-95C6-64DF260C3B36",
+        "id" : "steel-ingot",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "D523FCEC-7D68-4D25-959B-D7D7E99CC736",
+        "id" : "iron-ingot",
         "amount" : 2
       },
       {
-        "id" : "458A24C9-BAD8-40F9-A452-E6A778A2E697",
+        "id" : "coal",
         "amount" : 2
       }
     ],
-    "id" : "FAA6D371-78B0-40FE-9EF2-D2CAD8F32210",
-    "duration" : 3,
+    "id" : "alternate-solid-steel-ingot",
     "isDefault" : false,
-    "machine" : "3078A94E-B298-4B6D-8F3F-FB6703D465BD",
+    "duration" : 3,
+    "machines" : [
+      "foundry"
+    ],
     "name" : "Alternate: Solid Steel Ingot"
   },
   {
     "output" : [
       {
-        "id" : "E31F3830-AA40-4E87-95C6-64DF260C3B36",
+        "id" : "steel-ingot",
         "amount" : 10
       }
     ],
     "input" : [
       {
-        "id" : "915A16DB-FD5C-43AB-B6DF-2535537E3772",
+        "id" : "iron-ore",
         "amount" : 6
       },
       {
-        "id" : "70EBD3B8-FDFD-419E-8BDB-CE794037973E",
+        "id" : "compacted-coal",
         "amount" : 3
       }
     ],
-    "id" : "7FDA4696-DBA1-4D0B-BF7B-31C76316EAAE",
-    "duration" : 16,
+    "id" : "alternate-compacted-steel-ingot",
     "isDefault" : false,
-    "machine" : "3078A94E-B298-4B6D-8F3F-FB6703D465BD",
+    "duration" : 16,
+    "machines" : [
+      "foundry"
+    ],
     "name" : "Alternate: Compacted Steel Ingot"
   },
   {
     "output" : [
       {
-        "id" : "E31F3830-AA40-4E87-95C6-64DF260C3B36",
+        "id" : "steel-ingot",
         "amount" : 20
       }
     ],
     "input" : [
       {
-        "id" : "915A16DB-FD5C-43AB-B6DF-2535537E3772",
+        "id" : "iron-ore",
         "amount" : 15
       },
       {
-        "id" : "23C72668-6A67-4AAD-9301-ABBE35A89E37",
+        "id" : "petroleum-coke",
         "amount" : 15
       }
     ],
-    "id" : "D3E9F85F-CF67-47AB-8C39-519F20BECBCD",
-    "duration" : 12,
+    "id" : "alternate-coke-steel-ingot",
     "isDefault" : false,
-    "machine" : "3078A94E-B298-4B6D-8F3F-FB6703D465BD",
+    "duration" : 12,
+    "machines" : [
+      "foundry"
+    ],
     "name" : "Alternate: Coke Steel Ingot"
   },
   {
     "output" : [
       {
-        "id" : "D523FCEC-7D68-4D25-959B-D7D7E99CC736",
+        "id" : "iron-ingot",
         "amount" : 5
       }
     ],
     "input" : [
       {
-        "id" : "915A16DB-FD5C-43AB-B6DF-2535537E3772",
+        "id" : "iron-ore",
         "amount" : 2
       },
       {
-        "id" : "491F50AA-9E52-4DD4-9D79-AAB04FCF41AC",
+        "id" : "copper-ore",
         "amount" : 2
       }
     ],
-    "id" : "4B06BC88-BE3D-4302-B8B8-EBC60A7881FE",
-    "duration" : 6,
+    "id" : "alternate-iron-alloy-ingot",
     "isDefault" : false,
-    "machine" : "3078A94E-B298-4B6D-8F3F-FB6703D465BD",
+    "duration" : 6,
+    "machines" : [
+      "foundry"
+    ],
     "name" : "Alternate: Iron Alloy Ingot"
   },
   {
     "output" : [
       {
-        "id" : "E44B82C0-3D0A-496B-8E75-A01A39929DCD",
+        "id" : "copper-ingot",
         "amount" : 20
       }
     ],
     "input" : [
       {
-        "id" : "491F50AA-9E52-4DD4-9D79-AAB04FCF41AC",
+        "id" : "copper-ore",
         "amount" : 10
       },
       {
-        "id" : "915A16DB-FD5C-43AB-B6DF-2535537E3772",
+        "id" : "iron-ore",
         "amount" : 5
       }
     ],
-    "id" : "71485D36-F919-4B3C-AF16-8F4600CA7E32",
-    "duration" : 12,
+    "id" : "alternate-copper-alloy-ingot",
     "isDefault" : false,
-    "machine" : "3078A94E-B298-4B6D-8F3F-FB6703D465BD",
+    "duration" : 12,
+    "machines" : [
+      "foundry"
+    ],
     "name" : "Alternate: Copper Alloy Ingot"
   },
   {
     "output" : [
       {
-        "id" : "B7B5E0C0-861B-4B01-BF0A-07F4AE9518AB",
+        "id" : "aluminum-ingot",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "9BEC0ED6-31E7-46D2-A012-91E3F6092006",
+        "id" : "aluminum-scrap",
         "amount" : 6
       },
       {
-        "id" : "41CBFA94-7C33-4BE3-A4C9-5AD71E8ACDE9",
+        "id" : "silica",
         "amount" : 5
       }
     ],
-    "id" : "8F31C949-098C-41AF-BE5D-11558D0C23F8",
-    "duration" : 4,
+    "id" : "aluminum-ingot",
     "isDefault" : true,
-    "machine" : "3078A94E-B298-4B6D-8F3F-FB6703D465BD",
+    "duration" : 4,
+    "machines" : [
+      "foundry"
+    ],
     "name" : "Aluminum Ingot"
   },
   {
     "output" : [
       {
-        "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
+        "id" : "iron-plate",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "D523FCEC-7D68-4D25-959B-D7D7E99CC736",
+        "id" : "iron-ingot",
         "amount" : 3
       }
     ],
-    "id" : "8B4B50E1-2008-4E35-BE9D-5E91E7E71FF1",
-    "duration" : 6,
+    "id" : "iron-plate",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 6,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Iron Plate"
   },
   {
     "output" : [
       {
-        "id" : "BA6FE6CF-7262-42CE-9144-000FF4D5B1AE",
+        "id" : "iron-rod",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "D523FCEC-7D68-4D25-959B-D7D7E99CC736",
+        "id" : "iron-ingot",
         "amount" : 1
       }
     ],
-    "id" : "A328167C-06BA-4BA5-B6A6-40A08F14F0A1",
-    "duration" : 4,
+    "id" : "iron-rod",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Iron Rod"
   },
   {
     "output" : [
       {
-        "id" : "BA6FE6CF-7262-42CE-9144-000FF4D5B1AE",
+        "id" : "iron-rod",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "E31F3830-AA40-4E87-95C6-64DF260C3B36",
+        "id" : "steel-ingot",
         "amount" : 1
       }
     ],
-    "id" : "37232712-36FB-482F-B7A5-EBE4FE8850F8",
-    "duration" : 5,
+    "id" : "alternate-steel-rod",
     "isDefault" : false,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 5,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Alternate: Steel Rod"
   },
   {
     "output" : [
       {
-        "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
+        "id" : "screw",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "BA6FE6CF-7262-42CE-9144-000FF4D5B1AE",
+        "id" : "iron-rod",
         "amount" : 1
       }
     ],
-    "id" : "C6A6772D-7340-47E0-8C10-CFF6139CAC77",
-    "duration" : 6,
+    "id" : "screw",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 6,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Screw"
   },
   {
     "output" : [
       {
-        "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
+        "id" : "screw",
         "amount" : 20
       }
     ],
     "input" : [
       {
-        "id" : "D523FCEC-7D68-4D25-959B-D7D7E99CC736",
+        "id" : "iron-ingot",
         "amount" : 5
       }
     ],
-    "id" : "B190DEB6-7152-4CD9-94FB-D710C67D38E4",
-    "duration" : 24,
+    "id" : "alternate-cast-screw",
     "isDefault" : false,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 24,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Alternate: Cast Screw"
   },
   {
     "output" : [
       {
-        "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
+        "id" : "screw",
         "amount" : 52
       }
     ],
     "input" : [
       {
-        "id" : "857B2CAE-6247-4F48-9542-2AA077EBE1E2",
+        "id" : "steel-beam",
         "amount" : 1
       }
     ],
-    "id" : "0D3EFC5D-1C1A-492A-82AA-5E91D9B6D055",
-    "duration" : 12,
+    "id" : "alternate-steel-screw",
     "isDefault" : false,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 12,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Alternate: Steel Screw"
   },
   {
     "output" : [
       {
-        "id" : "2A648609-5046-438E-B3BA-6180AF9608F2",
+        "id" : "copper-sheet",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "E44B82C0-3D0A-496B-8E75-A01A39929DCD",
+        "id" : "copper-ingot",
         "amount" : 2
       }
     ],
-    "id" : "3A5FCB6D-0C8F-44D2-9191-A8AA8E3F1812",
-    "duration" : 6,
+    "id" : "copper-sheet",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 6,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Copper Sheet"
   },
   {
     "output" : [
       {
-        "id" : "857B2CAE-6247-4F48-9542-2AA077EBE1E2",
+        "id" : "steel-beam",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "E31F3830-AA40-4E87-95C6-64DF260C3B36",
+        "id" : "steel-ingot",
         "amount" : 4
       }
     ],
-    "id" : "8EAF81FF-BA3C-468F-9B9A-724B45DC0007",
-    "duration" : 4,
+    "id" : "steel-beam",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Steel Beam"
   },
   {
     "output" : [
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "E31F3830-AA40-4E87-95C6-64DF260C3B36",
+        "id" : "steel-ingot",
         "amount" : 3
       }
     ],
-    "id" : "B5A39C89-1A75-42D2-B0C9-5121B635DB0B",
-    "duration" : 6,
+    "id" : "steel-pipe",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 6,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Steel Pipe"
   },
   {
     "output" : [
       {
-        "id" : "4F81F26F-183E-4612-8332-03158C61D97F",
+        "id" : "aluminum-casing",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "B7B5E0C0-861B-4B01-BF0A-07F4AE9518AB",
+        "id" : "aluminum-ingot",
         "amount" : 3
       }
     ],
-    "id" : "A4B79501-3A16-4D90-8D63-0E745E4821F5",
-    "duration" : 2,
+    "id" : "aluminum-casing",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 2,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Aluminum Casing"
   },
   {
     "output" : [
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "E44B82C0-3D0A-496B-8E75-A01A39929DCD",
+        "id" : "copper-ingot",
         "amount" : 1
       }
     ],
-    "id" : "2B058354-775E-4B1F-855C-ACEA94A3CF5A",
-    "duration" : 4,
+    "id" : "wire",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Wire"
   },
   {
     "output" : [
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 9
       }
     ],
     "input" : [
       {
-        "id" : "D523FCEC-7D68-4D25-959B-D7D7E99CC736",
+        "id" : "iron-ingot",
         "amount" : 5
       }
     ],
-    "id" : "F57CAA17-6C21-4725-B93C-0A0DCC65CAB5",
-    "duration" : 24,
+    "id" : "alternate-iron-wire",
     "isDefault" : false,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 24,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Alternate: Iron Wire"
   },
   {
     "output" : [
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 8
       }
     ],
     "input" : [
       {
-        "id" : "0942ADCB-2B6D-4A1A-B53C-00CBF029D6B6",
+        "id" : "caterium-ingot",
         "amount" : 1
       }
     ],
-    "id" : "475014FF-A505-4BD3-909D-0137FEE1486D",
-    "duration" : 4,
+    "id" : "alternate-caterium-wire",
     "isDefault" : false,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Alternate: Caterium wire"
   },
   {
     "output" : [
       {
-        "id" : "E3C161A3-DE19-4AF4-848F-C5995D96D40F",
+        "id" : "cable",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 2
       }
     ],
-    "id" : "0F4755F7-665D-4E22-9DAD-6AF15E506C7C",
-    "duration" : 2,
+    "id" : "cable",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 2,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Cable"
   },
   {
     "output" : [
       {
-        "id" : "072C0A64-D069-4804-B389-43662A38007B",
+        "id" : "quickwire",
         "amount" : 5
       }
     ],
     "input" : [
       {
-        "id" : "0942ADCB-2B6D-4A1A-B53C-00CBF029D6B6",
+        "id" : "caterium-ingot",
         "amount" : 1
       }
     ],
-    "id" : "52B86926-1848-485E-8AA0-858736928F49",
-    "duration" : 5,
+    "id" : "quickwire",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 5,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Quickwire"
   },
   {
     "output" : [
       {
-        "id" : "CD2BD00F-E4F0-4A40-AAB9-B84D09B5E9B9",
+        "id" : "concrete",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "26177D61-CAF0-403F-AD3E-C152694EF4EF",
+        "id" : "limestone",
         "amount" : 3
       }
     ],
-    "id" : "B38828F6-AD5E-40E0-8C01-0BAE5DF6A0A3",
-    "duration" : 4,
+    "id" : "concrete",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Concrete"
   },
   {
     "output" : [
       {
-        "id" : "8DD3E216-7B8F-4C16-910A-85E3EC48C312",
+        "id" : "quartz-crystal",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "60B5876C-4E6D-4BC7-BBD2-AE580EDE27C1",
+        "id" : "raw-quartz",
         "amount" : 5
       }
     ],
-    "id" : "32BAA658-7CB3-4395-9FE3-BDD93E4009CE",
-    "duration" : 8,
+    "id" : "quartz-crystal",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 8,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Quartz Crystal"
   },
   {
     "output" : [
       {
-        "id" : "41CBFA94-7C33-4BE3-A4C9-5AD71E8ACDE9",
+        "id" : "silica",
         "amount" : 5
       }
     ],
     "input" : [
       {
-        "id" : "60B5876C-4E6D-4BC7-BBD2-AE580EDE27C1",
+        "id" : "raw-quartz",
         "amount" : 3
       }
     ],
-    "id" : "884FF62C-9F16-4943-893B-01F535AEE4C4",
-    "duration" : 8,
+    "id" : "silica",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 8,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Silica"
   },
   {
     "output" : [
       {
-        "id" : "13068A2E-99AF-4889-A651-8FE64A1CBCC2",
+        "id" : "copper-powder",
+        "amount" : 5
+      }
+    ],
+    "input" : [
+      {
+        "id" : "copper-ingot",
+        "amount" : 30
+      }
+    ],
+    "id" : "copper-powder",
+    "isDefault" : true,
+    "duration" : 6,
+    "machines" : [
+      "constructor"
+    ],
+    "name" : "Copper Powder"
+  },
+  {
+    "output" : [
+      {
+        "id" : "biomass",
         "amount" : 20
       }
     ],
     "input" : [
       {
-        "id" : "64B79B08-4F9F-4368-B30C-AD68BC9277B4",
+        "id" : "wood",
         "amount" : 4
       }
     ],
-    "id" : "188C85FA-D467-44B0-9805-382AE8746C8F",
-    "duration" : 4,
+    "id" : "biomass-(wood)",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Biomass (Wood)"
   },
   {
     "output" : [
       {
-        "id" : "13068A2E-99AF-4889-A651-8FE64A1CBCC2",
+        "id" : "biomass",
         "amount" : 5
       }
     ],
     "input" : [
       {
-        "id" : "805E895C-E62B-4EEF-ABFD-DABFD2039374",
+        "id" : "leaves",
         "amount" : 10
       }
     ],
-    "id" : "DD732F72-73AF-47E7-A381-C67487031B23",
-    "duration" : 5,
+    "id" : "biomass-(leaves)",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 5,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Biomass (Leaves)"
   },
   {
     "output" : [
       {
-        "id" : "13068A2E-99AF-4889-A651-8FE64A1CBCC2",
+        "id" : "biomass",
         "amount" : 100
       }
     ],
     "input" : [
       {
-        "id" : "B3BA8A93-2C99-4CA5-A67B-D882B68F6C70",
+        "id" : "alien-carapace",
         "amount" : 1
       }
     ],
-    "id" : "54E66D80-A7F0-4472-9869-D03F756F6FB9",
-    "duration" : 4,
+    "id" : "biomass-(alien-carapace)",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Biomass (Alien Carapace)"
   },
   {
     "output" : [
       {
-        "id" : "13068A2E-99AF-4889-A651-8FE64A1CBCC2",
+        "id" : "biomass",
         "amount" : 200
       }
     ],
     "input" : [
       {
-        "id" : "F0973033-2FE0-4BDD-BF4B-EAF0ABC54158",
+        "id" : "alien-organs",
         "amount" : 1
       }
     ],
-    "id" : "3DED140A-AC40-442A-B90E-7272B5D265FA",
-    "duration" : 8,
+    "id" : "biomass-(alien-organs)",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 8,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Biomass (Alien Organs)"
   },
   {
     "output" : [
       {
-        "id" : "13068A2E-99AF-4889-A651-8FE64A1CBCC2",
+        "id" : "biomass",
         "amount" : 10
       }
     ],
     "input" : [
       {
-        "id" : "1EA05289-5707-4403-ACF5-B8C2D9BAD11E",
+        "id" : "mycelia",
         "amount" : 10
       }
     ],
-    "id" : "010D0AFE-3488-4A51-824B-91A5D7B8A2BA",
-    "duration" : 4,
+    "id" : "biomass-(mycelia)",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Biomass (Mycelia)"
   },
   {
     "output" : [
       {
-        "id" : "03EB7743-7334-4B05-82DF-D58D0547042B",
+        "id" : "solid-biofuel",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "13068A2E-99AF-4889-A651-8FE64A1CBCC2",
+        "id" : "biomass",
         "amount" : 8
       }
     ],
-    "id" : "6AC132A4-AE6D-498A-8AE7-3115267C2DC2",
-    "duration" : 4,
+    "id" : "solid-biofuel",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Solid Biofuel"
   },
   {
     "output" : [
       {
-        "id" : "458A24C9-BAD8-40F9-A452-E6A778A2E697",
+        "id" : "coal",
         "amount" : 10
       }
     ],
     "input" : [
       {
-        "id" : "64B79B08-4F9F-4368-B30C-AD68BC9277B4",
+        "id" : "wood",
         "amount" : 1
       }
     ],
-    "id" : "9096D122-5325-43D7-A5B6-C90000A143B6",
-    "duration" : 4,
+    "id" : "alternate-charcoal",
     "isDefault" : false,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Alternate: Charcoal"
   },
   {
     "output" : [
       {
-        "id" : "458A24C9-BAD8-40F9-A452-E6A778A2E697",
+        "id" : "coal",
         "amount" : 6
       }
     ],
     "input" : [
       {
-        "id" : "13068A2E-99AF-4889-A651-8FE64A1CBCC2",
+        "id" : "biomass",
         "amount" : 5
       }
     ],
-    "id" : "71DAD646-2ABB-4A4C-99DF-4544C9083C1B",
-    "duration" : 8,
+    "id" : "alternate-biocoal",
     "isDefault" : false,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 8,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Alternate: Biocoal"
   },
   {
     "output" : [
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 2
       }
     ],
-    "id" : "BCC4352F-F377-487F-9BB7-1708154DDD84",
-    "duration" : 4,
+    "id" : "empty-canister",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Empty Canister"
   },
   {
     "output" : [
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "E31F3830-AA40-4E87-95C6-64DF260C3B36",
+        "id" : "steel-ingot",
         "amount" : 3
       }
     ],
-    "id" : "A1801042-54DF-4BCA-A2B0-A75747FCE48F",
-    "duration" : 3,
+    "id" : "alternate-steel-canister",
     "isDefault" : false,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 3,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Alternate: Steel Canister"
   },
   {
     "output" : [
       {
-        "id" : "122D1C44-B483-487B-B0D8-FA63A42EB3FA",
+        "id" : "empty-fluid-tank",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "B7B5E0C0-861B-4B01-BF0A-07F4AE9518AB",
+        "id" : "aluminum-ingot",
         "amount" : 1
       }
     ],
-    "id" : "D9F975E9-6C25-4DC5-8DB9-7F2746A171D7",
-    "duration" : 1,
+    "id" : "empty-fluid-tank",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 1,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Empty Fluid Tank"
   },
   {
     "output" : [
       {
-        "id" : "5F7184C0-4096-4536-9E5E-B4CCC2985D34",
+        "id" : "spiked-rebar",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "BA6FE6CF-7262-42CE-9144-000FF4D5B1AE",
+        "id" : "iron-rod",
         "amount" : 1
       }
     ],
-    "id" : "990899F9-18C9-4E16-A651-0C07A6931B92",
-    "duration" : 4,
+    "id" : "spiked-rebar",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 4,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Spiked Rebar"
   },
   {
     "output" : [
       {
-        "id" : "29735E39-E9E2-41EC-B4EB-394C133D7929",
+        "id" : "color-cartridge",
         "amount" : 10
       }
     ],
     "input" : [
       {
-        "id" : "80AA21C0-A09F-49C7-823A-6E9789754A99",
+        "id" : "flower-petals",
         "amount" : 5
       }
     ],
-    "id" : "0D485E6C-B25E-4041-AF9A-6BBA9396D055",
-    "duration" : 8,
+    "id" : "color-cartridge",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 8,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Color Cartridge"
   },
   {
     "output" : [
       {
-        "id" : "C0FD1A9C-F509-4798-BCCB-922827171D78",
+        "id" : "power-shard",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "58FFE09F-2692-4F23-B806-0E197907C86B",
+        "id" : "green-power-slug",
         "amount" : 1
       }
     ],
-    "id" : "D78AA0EF-1B20-4D3C-96BE-5C4B19CCBC79",
-    "duration" : 8,
+    "id" : "power-shard-(1)",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 8,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Power Shard (1)"
   },
   {
     "output" : [
       {
-        "id" : "C0FD1A9C-F509-4798-BCCB-922827171D78",
+        "id" : "power-shard",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "AC354542-2C3A-4900-B633-334F96284211",
+        "id" : "yellow-power-slug",
         "amount" : 1
       }
     ],
-    "id" : "316A56A9-6B3A-4917-A2F4-2B4ABB8F912B",
-    "duration" : 12,
+    "id" : "power-shard-(2)",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 12,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Power Shard (2)"
   },
   {
     "output" : [
       {
-        "id" : "C0FD1A9C-F509-4798-BCCB-922827171D78",
+        "id" : "power-shard",
         "amount" : 5
       }
     ],
     "input" : [
       {
-        "id" : "41405FA0-2EA0-48A0-B104-1DF46C053D0D",
+        "id" : "purple-power-slug",
         "amount" : 1
       }
     ],
-    "id" : "F2FDF152-12C9-4969-B48C-07FABD22E4C5",
-    "duration" : 24,
+    "id" : "power-shard-(5)",
     "isDefault" : true,
-    "machine" : "708B4923-0529-48CE-903A-932EA722E962",
+    "duration" : 24,
+    "machines" : [
+      "constructor"
+    ],
     "name" : "Power Shard (5)"
   },
   {
     "output" : [
       {
-        "id" : "8EE863E4-7810-4DFD-A762-ED260127477C",
+        "id" : "reinforced-iron-plate",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
+        "id" : "iron-plate",
         "amount" : 6
       },
       {
-        "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
+        "id" : "screw",
         "amount" : 12
       }
     ],
-    "id" : "56C79ED8-1A56-423C-B9AB-5F5891F4D8C2",
-    "duration" : 12,
+    "id" : "reinforced-iron-plate",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Reinforced Iron Plate"
   },
   {
     "output" : [
       {
-        "id" : "8EE863E4-7810-4DFD-A762-ED260127477C",
+        "id" : "reinforced-iron-plate",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
+        "id" : "iron-plate",
         "amount" : 3
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 1
       }
     ],
-    "id" : "478C74E7-7E9E-4D74-AC5F-CA0F3296245F",
-    "duration" : 16,
+    "id" : "alternate-adhered-iron-plate",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 16,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Adhered Iron Plate"
   },
   {
     "output" : [
       {
-        "id" : "8EE863E4-7810-4DFD-A762-ED260127477C",
+        "id" : "reinforced-iron-plate",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
+        "id" : "iron-plate",
         "amount" : 18
       },
       {
-        "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
+        "id" : "screw",
         "amount" : 50
       }
     ],
-    "id" : "937A1F75-C295-498E-B28D-041087FDDC9D",
-    "duration" : 12,
+    "id" : "alternate-bolted-iron-plate",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Bolted Iron Plate"
   },
   {
     "output" : [
       {
-        "id" : "8EE863E4-7810-4DFD-A762-ED260127477C",
+        "id" : "reinforced-iron-plate",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
+        "id" : "iron-plate",
         "amount" : 10
       },
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 20
       }
     ],
-    "id" : "5B0C3FAE-46B8-49D7-8FF6-54575B1FBCAE",
-    "duration" : 32,
+    "id" : "alternate-stitched-iron-plate",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 32,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Stitched Iron Plate"
   },
   {
     "output" : [
       {
-        "id" : "66D9BE6D-CE27-4647-9AC1-DB9B33E1AE48",
+        "id" : "modular-frame",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "8EE863E4-7810-4DFD-A762-ED260127477C",
+        "id" : "reinforced-iron-plate",
         "amount" : 3
       },
       {
-        "id" : "BA6FE6CF-7262-42CE-9144-000FF4D5B1AE",
+        "id" : "iron-rod",
         "amount" : 12
       }
     ],
-    "id" : "4B67001E-E342-4AF6-A192-FF7D03B0DD22",
-    "duration" : 60,
+    "id" : "modular-frame",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 60,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Modular Frame"
   },
   {
     "output" : [
       {
-        "id" : "66D9BE6D-CE27-4647-9AC1-DB9B33E1AE48",
+        "id" : "modular-frame",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "8EE863E4-7810-4DFD-A762-ED260127477C",
+        "id" : "reinforced-iron-plate",
         "amount" : 3
       },
       {
-        "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
+        "id" : "screw",
         "amount" : 56
       }
     ],
-    "id" : "85D8D5CC-5620-45A3-BA44-C1F920552663",
-    "duration" : 24,
+    "id" : "alternate-bolted-frame",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 24,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Bolted Frame"
   },
   {
     "output" : [
       {
-        "id" : "66D9BE6D-CE27-4647-9AC1-DB9B33E1AE48",
+        "id" : "modular-frame",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "8EE863E4-7810-4DFD-A762-ED260127477C",
+        "id" : "reinforced-iron-plate",
         "amount" : 2
       },
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 10
       }
     ],
-    "id" : "4D81765B-230C-40F8-973C-1CE3A674F60F",
-    "duration" : 60,
+    "id" : "alternate-steeled-frame",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 60,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Steeled Frame"
   },
   {
     "output" : [
       {
-        "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
+        "id" : "iron-plate",
         "amount" : 15
       }
     ],
     "input" : [
       {
-        "id" : "D523FCEC-7D68-4D25-959B-D7D7E99CC736",
+        "id" : "iron-ingot",
         "amount" : 10
       },
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 2
       }
     ],
-    "id" : "4D641982-BAAA-4990-9AE0-835016AEC714",
-    "duration" : 12,
+    "id" : "alternate-coated-iron-plate",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Coated Iron Plate"
   },
   {
     "output" : [
       {
-        "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
+        "id" : "iron-plate",
         "amount" : 18
       }
     ],
     "input" : [
       {
-        "id" : "E31F3830-AA40-4E87-95C6-64DF260C3B36",
+        "id" : "steel-ingot",
         "amount" : 3
       },
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 2
       }
     ],
-    "id" : "9A7F4110-B741-4929-94AA-76314C9A4D07",
-    "duration" : 24,
+    "id" : "alternate-steel-coated-plate",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 24,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Steel Coated Plate"
   },
   {
     "output" : [
       {
-        "id" : "7A5CBE4C-A6CD-43FF-B44D-9C3A02F94743",
+        "id" : "encased-industrial-beam",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "857B2CAE-6247-4F48-9542-2AA077EBE1E2",
+        "id" : "steel-beam",
         "amount" : 4
       },
       {
-        "id" : "CD2BD00F-E4F0-4A40-AAB9-B84D09B5E9B9",
+        "id" : "concrete",
         "amount" : 5
       }
     ],
-    "id" : "E9C5D914-8842-4BC4-8A6B-758E80692B04",
-    "duration" : 10,
+    "id" : "encased-industrial-beam",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 10,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Encased Industrial Beam"
   },
   {
     "output" : [
       {
-        "id" : "7A5CBE4C-A6CD-43FF-B44D-9C3A02F94743",
+        "id" : "encased-industrial-beam",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 7
       },
       {
-        "id" : "CD2BD00F-E4F0-4A40-AAB9-B84D09B5E9B9",
+        "id" : "concrete",
         "amount" : 5
       }
     ],
-    "id" : "46E74C82-28B4-464C-B95E-2FFC8B06BD3E",
-    "duration" : 15,
+    "id" : "alternate-encased-industrial-pipe",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 15,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Encased Industrial Pipe"
   },
   {
     "output" : [
       {
-        "id" : "82FBC8F2-1EB8-413D-BDF2-238164B5D115",
+        "id" : "alclad-aluminum-sheet",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "B7B5E0C0-861B-4B01-BF0A-07F4AE9518AB",
+        "id" : "aluminum-ingot",
         "amount" : 3
       },
       {
-        "id" : "E44B82C0-3D0A-496B-8E75-A01A39929DCD",
+        "id" : "copper-ingot",
         "amount" : 1
       }
     ],
-    "id" : "3732051F-0EB6-4A43-B63C-8FA2043E2371",
-    "duration" : 6,
+    "id" : "alclad-aluminum-sheet",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 6,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alclad Aluminum Sheet"
   },
   {
     "output" : [
       {
-        "id" : "4F81F26F-183E-4612-8332-03158C61D97F",
+        "id" : "aluminum-casing",
         "amount" : 15
       }
     ],
     "input" : [
       {
-        "id" : "B7B5E0C0-861B-4B01-BF0A-07F4AE9518AB",
+        "id" : "aluminum-ingot",
         "amount" : 20
       },
       {
-        "id" : "E44B82C0-3D0A-496B-8E75-A01A39929DCD",
+        "id" : "copper-ingot",
         "amount" : 10
       }
     ],
-    "id" : "FAE7093D-35B3-4EF3-8BB3-8319286AF935",
-    "duration" : 8,
+    "id" : "alternate-alclad-casing",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 8,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Alclad Casing"
   },
   {
     "output" : [
       {
-        "id" : "B326A584-B618-410A-B304-1575F08FB9A3",
+        "id" : "rotor",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "BA6FE6CF-7262-42CE-9144-000FF4D5B1AE",
+        "id" : "iron-rod",
         "amount" : 5
       },
       {
-        "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
+        "id" : "screw",
         "amount" : 25
       }
     ],
-    "id" : "BDE9693C-F23C-4EC7-BC22-A80F16605C42",
-    "duration" : 15,
+    "id" : "rotor",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 15,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Rotor"
   },
   {
     "output" : [
       {
-        "id" : "B326A584-B618-410A-B304-1575F08FB9A3",
+        "id" : "rotor",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "2A648609-5046-438E-B3BA-6180AF9608F2",
+        "id" : "copper-sheet",
         "amount" : 6
       },
       {
-        "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
+        "id" : "screw",
         "amount" : 52
       }
     ],
-    "id" : "50F6EC2F-E4DC-4FF1-B4F7-B91C18906795",
-    "duration" : 16,
+    "id" : "alternate-copper-rotor",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 16,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Copper Rotor"
   },
   {
     "output" : [
       {
-        "id" : "B326A584-B618-410A-B304-1575F08FB9A3",
+        "id" : "rotor",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 2
       },
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 6
       }
     ],
-    "id" : "C5CFA05D-573F-4385-BDB6-396E3AA4DF95",
-    "duration" : 12,
+    "id" : "alternate-steel-rotor",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Steel Rotor"
   },
   {
     "output" : [
       {
-        "id" : "6E092C8B-4D3F-42FE-93DD-F1ED2970B27A",
+        "id" : "stator",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 3
       },
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 8
       }
     ],
-    "id" : "1FFB9882-B5DB-442D-86A5-C7BD415BC08C",
-    "duration" : 12,
+    "id" : "stator",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Stator"
   },
   {
     "output" : [
       {
-        "id" : "6E092C8B-4D3F-42FE-93DD-F1ED2970B27A",
+        "id" : "stator",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 4
       },
       {
-        "id" : "072C0A64-D069-4804-B389-43662A38007B",
+        "id" : "quickwire",
         "amount" : 15
       }
     ],
-    "id" : "0D61A741-1220-49DC-8419-DB3264E2E981",
-    "duration" : 15,
+    "id" : "alternate-quickwire-stator",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 15,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Quickwire Stator"
   },
   {
     "output" : [
       {
-        "id" : "567032CD-BF02-4928-87F9-1E2139F4E2E7",
+        "id" : "motor",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "B326A584-B618-410A-B304-1575F08FB9A3",
+        "id" : "rotor",
         "amount" : 2
       },
       {
-        "id" : "6E092C8B-4D3F-42FE-93DD-F1ED2970B27A",
+        "id" : "stator",
         "amount" : 2
       }
     ],
-    "id" : "9FD6366B-F217-4403-8972-8071AA9BA90E",
-    "duration" : 12,
+    "id" : "motor",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Motor"
   },
   {
     "output" : [
       {
-        "id" : "58F25DD7-56C4-4D9A-B72F-689725ACDF97",
+        "id" : "heat-sink",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "82FBC8F2-1EB8-413D-BDF2-238164B5D115",
+        "id" : "alclad-aluminum-sheet",
         "amount" : 5
       },
       {
-        "id" : "2A648609-5046-438E-B3BA-6180AF9608F2",
+        "id" : "copper-sheet",
         "amount" : 3
       }
     ],
-    "id" : "C34A829A-3BCB-415F-B8C9-22D99A95ED62",
-    "duration" : 8,
+    "id" : "heat-sink",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 8,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Heat Sink"
   },
   {
     "output" : [
       {
-        "id" : "58F25DD7-56C4-4D9A-B72F-689725ACDF97",
+        "id" : "heat-sink",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "4F81F26F-183E-4612-8332-03158C61D97F",
+        "id" : "aluminum-casing",
         "amount" : 3
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 3
       }
     ],
-    "id" : "7F2F6410-B127-41B9-9B1A-BA035FD5B1C3",
-    "duration" : 6,
+    "id" : "alternate-heat-exchanger",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 6,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Heat Exchanger"
   },
   {
     "output" : [
       {
-        "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
+        "id" : "circuit-board",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "2A648609-5046-438E-B3BA-6180AF9608F2",
+        "id" : "copper-sheet",
         "amount" : 2
       },
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 4
       }
     ],
-    "id" : "04AE7EB8-8446-488D-8949-449B1246B940",
-    "duration" : 8,
+    "id" : "circuit-board",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 8,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Circuit Board"
   },
   {
     "output" : [
       {
-        "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
+        "id" : "circuit-board",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 6
       },
       {
-        "id" : "23C72668-6A67-4AAD-9301-ABBE35A89E37",
+        "id" : "petroleum-coke",
         "amount" : 9
       }
     ],
-    "id" : "A9E36374-77F3-497B-9AFD-06A453D078CB",
-    "duration" : 12,
+    "id" : "alternate-electrode-circuit-board",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Electrode Circuit Board"
   },
   {
     "output" : [
       {
-        "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
+        "id" : "circuit-board",
         "amount" : 5
       }
     ],
     "input" : [
       {
-        "id" : "2A648609-5046-438E-B3BA-6180AF9608F2",
+        "id" : "copper-sheet",
         "amount" : 11
       },
       {
-        "id" : "41CBFA94-7C33-4BE3-A4C9-5AD71E8ACDE9",
+        "id" : "silica",
         "amount" : 11
       }
     ],
-    "id" : "D18A09A0-575E-4554-9395-B9635989E91E",
-    "duration" : 24,
+    "id" : "alternate-silicone-circuit-board",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 24,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Silicone Circuit Board"
   },
   {
     "output" : [
       {
-        "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
+        "id" : "circuit-board",
         "amount" : 7
       }
     ],
     "input" : [
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 10
       },
       {
-        "id" : "072C0A64-D069-4804-B389-43662A38007B",
+        "id" : "quickwire",
         "amount" : 30
       }
     ],
-    "id" : "20E20393-25EE-4710-879B-79DBC60CBCD4",
-    "duration" : 48,
+    "id" : "alternate-caterium-circuit-board",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 48,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Caterium Circuit Board"
   },
   {
     "output" : [
       {
-        "id" : "24744743-6137-4A12-A3BB-8E2159078BA7",
+        "id" : "ai-limiter",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "2A648609-5046-438E-B3BA-6180AF9608F2",
+        "id" : "copper-sheet",
         "amount" : 5
       },
       {
-        "id" : "072C0A64-D069-4804-B389-43662A38007B",
+        "id" : "quickwire",
         "amount" : 20
       }
     ],
-    "id" : "0D17C715-8239-4735-BB62-7F6E5BFE680E",
-    "duration" : 12,
+    "id" : "ai-limiter",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "AI Limiter"
   },
   {
     "output" : [
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 30
       }
     ],
     "input" : [
       {
-        "id" : "E44B82C0-3D0A-496B-8E75-A01A39929DCD",
+        "id" : "copper-ingot",
         "amount" : 4
       },
       {
-        "id" : "0942ADCB-2B6D-4A1A-B53C-00CBF029D6B6",
+        "id" : "caterium-ingot",
         "amount" : 1
       }
     ],
-    "id" : "04632C8F-867B-4953-8334-5444C98CE39A",
-    "duration" : 20,
+    "id" : "alternate-fused-wire",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 20,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Fused Wire"
   },
   {
     "output" : [
       {
-        "id" : "E3C161A3-DE19-4AF4-848F-C5995D96D40F",
+        "id" : "cable",
         "amount" : 20
       }
     ],
     "input" : [
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 9
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 6
       }
     ],
-    "id" : "1F9EFE4D-E0A5-43A7-9F85-DFA3B49A146D",
-    "duration" : 12,
+    "id" : "alternate-insulated-cable",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Insulated Cable"
   },
   {
     "output" : [
       {
-        "id" : "E3C161A3-DE19-4AF4-848F-C5995D96D40F",
+        "id" : "cable",
         "amount" : 11
       }
     ],
     "input" : [
       {
-        "id" : "072C0A64-D069-4804-B389-43662A38007B",
+        "id" : "quickwire",
         "amount" : 3
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 2
       }
     ],
-    "id" : "E78E88EF-9270-4312-852C-5698F1267B80",
-    "duration" : 24,
+    "id" : "alternate-quickwire-cable",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 24,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Quickwire Cable"
   },
   {
     "output" : [
       {
-        "id" : "072C0A64-D069-4804-B389-43662A38007B",
+        "id" : "quickwire",
         "amount" : 12
       }
     ],
     "input" : [
       {
-        "id" : "0942ADCB-2B6D-4A1A-B53C-00CBF029D6B6",
+        "id" : "caterium-ingot",
         "amount" : 1
       },
       {
-        "id" : "E44B82C0-3D0A-496B-8E75-A01A39929DCD",
+        "id" : "copper-ingot",
         "amount" : 5
       }
     ],
-    "id" : "A06D2CDB-C1C2-4E37-AE77-3721B4622649",
-    "duration" : 8,
+    "id" : "alternate-fused-quickwire",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 8,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Fused Quickwire"
   },
   {
     "output" : [
       {
-        "id" : "F5357BDE-84AB-4FC8-8D4F-B19ABE0E60D4",
+        "id" : "computer",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
+        "id" : "circuit-board",
         "amount" : 8
       },
       {
-        "id" : "7BE99766-CBFD-44D8-BDF8-55B0AFEA9AFB",
+        "id" : "crystal-oscillator",
         "amount" : 3
       }
     ],
-    "id" : "A5CFAA8F-2111-4C73-AB81-E0B587EE6A9C",
-    "duration" : 64,
+    "id" : "alternate-crystal-computer",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 64,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Crystal Computer"
   },
   {
     "output" : [
       {
-        "id" : "C0033EED-EBE1-43F4-B4A1-9DCBC3031416",
+        "id" : "supercomputer",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "F5357BDE-84AB-4FC8-8D4F-B19ABE0E60D4",
+        "id" : "computer",
         "amount" : 3
       },
       {
-        "id" : "A62300C6-1416-4A3A-9B9F-AC48B9927196",
+        "id" : "electromagnetic-control-rod",
         "amount" : 2
       },
       {
-        "id" : "88655D85-EE13-4CC8-9250-384E4413FA4B",
+        "id" : "battery",
         "amount" : 20
       },
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 45
       }
     ],
-    "id" : "A7E2F7C3-9740-4705-909E-BC655EB3257E",
-    "duration" : 50,
+    "id" : "alternate-super-state-computer",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 50,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Super-State Computer"
   },
   {
     "output" : [
       {
-        "id" : "CD2BD00F-E4F0-4A40-AAB9-B84D09B5E9B9",
+        "id" : "concrete",
         "amount" : 9
       }
     ],
     "input" : [
       {
-        "id" : "26177D61-CAF0-403F-AD3E-C152694EF4EF",
+        "id" : "limestone",
         "amount" : 10
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 2
       }
     ],
-    "id" : "87C1C4F3-D188-48FD-B159-BFBED6DA1791",
-    "duration" : 12,
+    "id" : "alternate-rubber-concrete",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Rubber Concrete"
   },
   {
     "output" : [
       {
-        "id" : "CD2BD00F-E4F0-4A40-AAB9-B84D09B5E9B9",
+        "id" : "concrete",
         "amount" : 10
       }
     ],
     "input" : [
       {
-        "id" : "41CBFA94-7C33-4BE3-A4C9-5AD71E8ACDE9",
+        "id" : "silica",
         "amount" : 3
       },
       {
-        "id" : "26177D61-CAF0-403F-AD3E-C152694EF4EF",
+        "id" : "limestone",
         "amount" : 12
       }
     ],
-    "id" : "6B41686F-DEFA-411B-92EC-C42F3A4ACE61",
-    "duration" : 24,
+    "id" : "alternate-fine-concrete",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 24,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Fine Concrete"
   },
   {
     "output" : [
       {
-        "id" : "70EBD3B8-FDFD-419E-8BDB-CE794037973E",
+        "id" : "compacted-coal",
         "amount" : 5
       }
     ],
     "input" : [
       {
-        "id" : "458A24C9-BAD8-40F9-A452-E6A778A2E697",
+        "id" : "coal",
         "amount" : 5
       },
       {
-        "id" : "75F79F3B-E11C-4479-B429-C624E3F48160",
+        "id" : "sulfur",
         "amount" : 5
       }
     ],
-    "id" : "0367D4E8-A0D7-4800-AEFC-5F274D6C0A36",
-    "duration" : 12,
+    "id" : "alternate-compacted-coal",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Compacted Coal"
   },
   {
     "output" : [
       {
-        "id" : "41CBFA94-7C33-4BE3-A4C9-5AD71E8ACDE9",
+        "id" : "silica",
         "amount" : 7
       }
     ],
     "input" : [
       {
-        "id" : "60B5876C-4E6D-4BC7-BBD2-AE580EDE27C1",
+        "id" : "raw-quartz",
         "amount" : 3
       },
       {
-        "id" : "26177D61-CAF0-403F-AD3E-C152694EF4EF",
+        "id" : "limestone",
         "amount" : 5
       }
     ],
-    "id" : "CACD6C5E-E349-4F11-9BC6-B6D15E3B771E",
-    "duration" : 16,
+    "id" : "alternate-cheap-silica",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 16,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Cheap Silica"
   },
   {
     "output" : [
       {
-        "id" : "A62300C6-1416-4A3A-9B9F-AC48B9927196",
+        "id" : "electromagnetic-control-rod",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "6E092C8B-4D3F-42FE-93DD-F1ED2970B27A",
+        "id" : "stator",
         "amount" : 3
       },
       {
-        "id" : "24744743-6137-4A12-A3BB-8E2159078BA7",
+        "id" : "ai-limiter",
         "amount" : 2
       }
     ],
-    "id" : "0CDEAA33-19F2-472E-A430-A6DAADBF7C21",
-    "duration" : 30,
+    "id" : "electromagnetic-control-rod",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 30,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Electromagnetic Control Rod"
   },
   {
     "output" : [
       {
-        "id" : "A62300C6-1416-4A3A-9B9F-AC48B9927196",
+        "id" : "electromagnetic-control-rod",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "6E092C8B-4D3F-42FE-93DD-F1ED2970B27A",
+        "id" : "stator",
         "amount" : 2
       },
       {
-        "id" : "0CE458AD-D38B-4B74-A9A4-64090D8200C8",
+        "id" : "high-speed-connector",
         "amount" : 1
       }
     ],
-    "id" : "D2F8E2CE-0A02-473F-99D7-81F4622F39D2",
-    "duration" : 15,
+    "id" : "alternate-electromagnetic-connection-rod",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 15,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Electromagnetic Connection Rod"
   },
   {
     "output" : [
       {
-        "id" : "4CEA8485-3DF0-45C1-AAEC-2300CC5E6AD9",
+        "id" : "encased-plutonium-cell",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "A20A0D40-8658-4697-8C5E-798CD589C302",
+        "id" : "plutonium-pellet",
         "amount" : 2
       },
       {
-        "id" : "CD2BD00F-E4F0-4A40-AAB9-B84D09B5E9B9",
+        "id" : "concrete",
         "amount" : 4
       }
     ],
-    "id" : "6D3852EC-E6AB-4F47-97E1-7DC419F203C0",
-    "duration" : 12,
+    "id" : "encased-plutonium-cell",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Encased Plutonium Cell"
   },
   {
     "output" : [
       {
-        "id" : "FE764C83-13D9-40A6-A155-D490FEECD8C0",
+        "id" : "plutonium-fuel-rod",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "4CEA8485-3DF0-45C1-AAEC-2300CC5E6AD9",
+        "id" : "encased-plutonium-cell",
         "amount" : 20
       },
       {
-        "id" : "DE4227AB-0EDE-4377-9FD4-5C1E37D01462",
+        "id" : "pressure-conversion-cube",
         "amount" : 1
       }
     ],
-    "id" : "389F142D-4DED-449E-9C10-5E9052222AE7",
-    "duration" : 120,
+    "id" : "alternate-plutonium-fuel-unit",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 120,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Plutonium Fuel Unit"
   },
   {
     "output" : [
       {
-        "id" : "03EA5485-8266-4408-9933-09853BDA0C3F",
+        "id" : "black-powder",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "458A24C9-BAD8-40F9-A452-E6A778A2E697",
+        "id" : "coal",
         "amount" : 1
       },
       {
-        "id" : "75F79F3B-E11C-4479-B429-C624E3F48160",
+        "id" : "sulfur",
         "amount" : 2
       }
     ],
-    "id" : "ABA3372F-7EDA-4127-85F4-246F9065FB41",
-    "duration" : 8,
+    "id" : "black-powder",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 8,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Black Powder"
   },
   {
     "output" : [
       {
-        "id" : "03EA5485-8266-4408-9933-09853BDA0C3F",
+        "id" : "black-powder",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "75F79F3B-E11C-4479-B429-C624E3F48160",
+        "id" : "sulfur",
         "amount" : 2
       },
       {
-        "id" : "70EBD3B8-FDFD-419E-8BDB-CE794037973E",
+        "id" : "compacted-coal",
         "amount" : 1
       }
     ],
-    "id" : "FE477632-F0D3-42D1-94CC-36E16ED14A99",
-    "duration" : 16,
+    "id" : "alternate-fine-black-powder",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 16,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Fine Black Powder"
   },
   {
     "output" : [
       {
-        "id" : "2DBBE452-0117-422F-860E-35C351BE89C4",
+        "id" : "nobelisk",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "03EA5485-8266-4408-9933-09853BDA0C3F",
+        "id" : "black-powder",
         "amount" : 5
       },
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 10
       }
     ],
-    "id" : "A70D33C4-BD5B-4A05-AC7C-A6608AA9F56E",
-    "duration" : 20,
+    "id" : "nobelisk",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 20,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Nobelisk"
   },
   {
     "output" : [
       {
-        "id" : "2BA26A07-7F1E-4EC0-AFBD-035DE23A08D7",
+        "id" : "smart-plating",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "8EE863E4-7810-4DFD-A762-ED260127477C",
+        "id" : "reinforced-iron-plate",
         "amount" : 1
       },
       {
-        "id" : "B326A584-B618-410A-B304-1575F08FB9A3",
+        "id" : "rotor",
         "amount" : 1
       }
     ],
-    "id" : "41013321-6532-4E3C-8E2E-027C9D9B566D",
-    "duration" : 30,
+    "id" : "smart-plating",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 30,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Smart Plating"
   },
   {
     "output" : [
       {
-        "id" : "C85BB88A-BAF4-4937-82A9-02406AAB75A8",
+        "id" : "versatile-framework",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "66D9BE6D-CE27-4647-9AC1-DB9B33E1AE48",
+        "id" : "modular-frame",
         "amount" : 1
       },
       {
-        "id" : "857B2CAE-6247-4F48-9542-2AA077EBE1E2",
+        "id" : "steel-beam",
         "amount" : 12
       }
     ],
-    "id" : "0A9013B0-35AC-4A55-85F8-8DD2515CFEC3",
-    "duration" : 24,
+    "id" : "versatile-framework",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 24,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Versatile Framework"
   },
   {
     "output" : [
       {
-        "id" : "83899715-1975-44D2-A2F9-2286D0A923B4",
+        "id" : "automated-wiring",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "6E092C8B-4D3F-42FE-93DD-F1ED2970B27A",
+        "id" : "stator",
         "amount" : 1
       },
       {
-        "id" : "E3C161A3-DE19-4AF4-848F-C5995D96D40F",
+        "id" : "cable",
         "amount" : 20
       }
     ],
-    "id" : "7FE1820B-F6C7-431E-AE00-F349D1671D23",
-    "duration" : 24,
+    "id" : "automated-wiring",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 24,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Automated Wiring"
   },
   {
     "output" : [
       {
-        "id" : "4CF35C2A-B0BE-4084-BBFC-8AC5DDDAA264",
+        "id" : "assembly-director-system",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "D63DDBB3-0371-4A4B-84B8-4C46A278DC2D",
+        "id" : "adaptive-control-unit",
         "amount" : 2
       },
       {
-        "id" : "C0033EED-EBE1-43F4-B4A1-9DCBC3031416",
+        "id" : "supercomputer",
         "amount" : 1
       }
     ],
-    "id" : "C7C9F066-F25B-47BC-9E3C-86438B8E5574",
-    "duration" : 80,
+    "id" : "assembly-director-system",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 80,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Assembly Director System"
   },
   {
     "output" : [
       {
-        "id" : "37AF11C7-BBDE-4ECF-8EBD-919DFBF1871B",
+        "id" : "fabric",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "1EA05289-5707-4403-ACF5-B8C2D9BAD11E",
+        "id" : "mycelia",
         "amount" : 1
       },
       {
-        "id" : "13068A2E-99AF-4889-A651-8FE64A1CBCC2",
+        "id" : "biomass",
         "amount" : 5
       }
     ],
-    "id" : "0FA93617-189C-4676-89A0-D18AEEF93942",
-    "duration" : 4,
+    "id" : "fabric",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 4,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Fabric"
   },
   {
     "output" : [
       {
-        "id" : "DE4227AB-0EDE-4377-9FD4-5C1E37D01462",
+        "id" : "pressure-conversion-cube",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "A81DF570-7B8E-4344-B727-F65F5449DF58",
+        "id" : "fused-modular-frame",
         "amount" : 1
       },
       {
-        "id" : "08AF4BD4-88CB-4560-8226-E13182E7D1A6",
+        "id" : "radio-control-unit",
         "amount" : 2
       }
     ],
-    "id" : "687A2846-3603-4C3F-A99C-66376042961E",
-    "duration" : 60,
+    "id" : "pressure-conversion-cube",
     "isDefault" : true,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 60,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Pressure Conversion Cube"
   },
   {
     "output" : [
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
+        "id" : "iron-plate",
         "amount" : 2
       },
       {
-        "id" : "2A648609-5046-438E-B3BA-6180AF9608F2",
+        "id" : "copper-sheet",
         "amount" : 1
       }
     ],
-    "id" : "81BCB251-A700-41F1-80BF-A1BC0B72FC02",
-    "duration" : 4,
+    "id" : "alternate-coated-iron-canister",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 4,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: Coated Iron Canister"
   },
   {
     "output" : [
       {
-        "id" : "D523FCEC-7D68-4D25-959B-D7D7E99CC736",
+        "id" : "iron-ingot",
         "amount" : 13
       }
     ],
     "input" : [
       {
-        "id" : "915A16DB-FD5C-43AB-B6DF-2535537E3772",
+        "id" : "iron-ore",
         "amount" : 7
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 4
       }
     ],
-    "id" : "2487B930-B1BD-44D9-B2E3-AD0CA1D199CB",
-    "duration" : 12,
+    "id" : "alternate-pure-iron-ingot",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 12,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Pure Iron Ingot"
   },
   {
     "output" : [
       {
-        "id" : "E44B82C0-3D0A-496B-8E75-A01A39929DCD",
+        "id" : "copper-ingot",
         "amount" : 15
       }
     ],
     "input" : [
       {
-        "id" : "491F50AA-9E52-4DD4-9D79-AAB04FCF41AC",
+        "id" : "copper-ore",
         "amount" : 6
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 4
       }
     ],
-    "id" : "FFA24A4D-289C-4A3C-80D8-D7D7BB5A9220",
-    "duration" : 24,
+    "id" : "alternate-pure-copper-ingot",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 24,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Pure Copper Ingot"
   },
   {
     "output" : [
       {
-        "id" : "0942ADCB-2B6D-4A1A-B53C-00CBF029D6B6",
+        "id" : "caterium-ingot",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "8AEE8C36-160A-45E5-99E4-E925C8DFB466",
+        "id" : "caterium-ore",
         "amount" : 2
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 2
       }
     ],
-    "id" : "0C973E17-27C2-43E7-897B-839CB20B8F3C",
-    "duration" : 5,
+    "id" : "alternate-pure-caterium-ingot",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 5,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Pure Caterium Ingot"
   },
   {
     "output" : [
       {
-        "id" : "CD2BD00F-E4F0-4A40-AAB9-B84D09B5E9B9",
+        "id" : "concrete",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "26177D61-CAF0-403F-AD3E-C152694EF4EF",
+        "id" : "limestone",
         "amount" : 6
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 5
       }
     ],
-    "id" : "A13D1488-C6B3-4CDE-AE05-2854C7E5E3A7",
-    "duration" : 3,
+    "id" : "alternate-wet-concrete",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 3,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Wet Concrete"
   },
   {
     "output" : [
       {
-        "id" : "8DD3E216-7B8F-4C16-910A-85E3EC48C312",
+        "id" : "quartz-crystal",
         "amount" : 7
       }
     ],
     "input" : [
       {
-        "id" : "60B5876C-4E6D-4BC7-BBD2-AE580EDE27C1",
+        "id" : "raw-quartz",
         "amount" : 9
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 5
       }
     ],
-    "id" : "65BD987D-4A0D-42F5-B799-5FA6F6202708",
-    "duration" : 8,
+    "id" : "alternate-pure-quartz-crystal",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 8,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Pure Quartz Crystal"
   },
   {
     "output" : [
       {
-        "id" : "37AF11C7-BBDE-4ECF-8EBD-919DFBF1871B",
+        "id" : "fabric",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "D6474697-32AE-4882-A14D-1EF1ECC40B1E",
+        "id" : "polymer-resin",
         "amount" : 16
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 10
       }
     ],
-    "id" : "4611C136-EF3C-46F2-98A2-28F12ABED419",
-    "duration" : 12,
+    "id" : "alternate-polyester-fabric",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 12,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Polyester Fabric"
   },
   {
     "output" : [
       {
-        "id" : "2A648609-5046-438E-B3BA-6180AF9608F2",
+        "id" : "copper-sheet",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "E44B82C0-3D0A-496B-8E75-A01A39929DCD",
+        "id" : "copper-ingot",
         "amount" : 3
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 3
       }
     ],
-    "id" : "A4B6304B-304B-4CD8-A8F4-9FA92B9F80D2",
-    "duration" : 8,
+    "id" : "alternate-steamed-copper-sheet",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 8,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Steamed Copper Sheet"
   },
   {
     "output" : [
       {
-        "id" : "E3C161A3-DE19-4AF4-848F-C5995D96D40F",
+        "id" : "cable",
         "amount" : 9
       }
     ],
     "input" : [
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 5
       },
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 2
       }
     ],
-    "id" : "F3A4AC61-2A41-464A-9B02-9AC005C40C76",
-    "duration" : 8,
+    "id" : "alternate-coated-cable",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 8,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Coated Cable"
   },
   {
     "output" : [
       {
-        "id" : "9BEC0ED6-31E7-46D2-A012-91E3F6092006",
+        "id" : "aluminum-scrap",
         "amount" : 6
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "074290F3-33DB-484D-B9D9-9060768D8353",
+        "id" : "alumina-solution",
         "amount" : 4
       },
       {
-        "id" : "458A24C9-BAD8-40F9-A452-E6A778A2E697",
+        "id" : "coal",
         "amount" : 2
       }
     ],
-    "id" : "7917931A-D1AC-48DA-A35B-9E4E9AEAEF21",
-    "duration" : 1,
+    "id" : "aluminum-scrap",
     "isDefault" : true,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 1,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Aluminum Scrap"
   },
   {
     "output" : [
       {
-        "id" : "9BEC0ED6-31E7-46D2-A012-91E3F6092006",
+        "id" : "aluminum-scrap",
         "amount" : 20
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 7
       }
     ],
     "input" : [
       {
-        "id" : "074290F3-33DB-484D-B9D9-9060768D8353",
+        "id" : "alumina-solution",
         "amount" : 12
       },
       {
-        "id" : "23C72668-6A67-4AAD-9301-ABBE35A89E37",
+        "id" : "petroleum-coke",
         "amount" : 4
       }
     ],
-    "id" : "0313A6BF-301D-4D5C-9F2F-64D09E573AAF",
-    "duration" : 4,
+    "id" : "alternate-electrode---aluminum-scrap",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 4,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Electrode - Aluminum Scrap"
   },
   {
     "output" : [
       {
-        "id" : "074290F3-33DB-484D-B9D9-9060768D8353",
+        "id" : "alumina-solution",
         "amount" : 12
       },
       {
-        "id" : "41CBFA94-7C33-4BE3-A4C9-5AD71E8ACDE9",
+        "id" : "silica",
         "amount" : 5
       }
     ],
     "input" : [
       {
-        "id" : "F2F3F4D9-E0B3-479D-B491-ED7AB77D5F54",
+        "id" : "bauxite",
         "amount" : 12
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 18
       }
     ],
-    "id" : "5F2820F7-F2A3-4909-8191-F581A6187CBF",
-    "duration" : 6,
+    "id" : "alumina-solution",
     "isDefault" : true,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 6,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alumina Solution"
   },
   {
     "output" : [
       {
-        "id" : "074290F3-33DB-484D-B9D9-9060768D8353",
+        "id" : "alumina-solution",
         "amount" : 12
       }
     ],
     "input" : [
       {
-        "id" : "F2F3F4D9-E0B3-479D-B491-ED7AB77D5F54",
+        "id" : "bauxite",
         "amount" : 10
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 10
       }
     ],
-    "id" : "5F5E7376-1438-4FAB-A94F-4AD3B38B98F9",
-    "duration" : 3,
+    "id" : "alternate-sloppy-alumina",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 3,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Sloppy Alumina"
   },
   {
     "output" : [
       {
-        "id" : "9E0131D9-45A5-4C08-916E-AABC8DFB87E7",
+        "id" : "sulfuric-acid",
         "amount" : 10
       }
     ],
     "input" : [
       {
-        "id" : "75F79F3B-E11C-4479-B429-C624E3F48160",
+        "id" : "sulfur",
         "amount" : 5
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 5
       }
     ],
-    "id" : "25373F5F-64FA-43CA-8541-A44CD30B1CF0",
-    "duration" : 6,
+    "id" : "sulfuric-acid",
     "isDefault" : true,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 6,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Sulfuric Acid"
   },
   {
     "output" : [
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 2
       },
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "3FD1E7F1-3612-48A1-B38B-9EE82731C7F3",
+        "id" : "crude-oil",
         "amount" : 3
       }
     ],
-    "id" : "975DA1C2-C34E-4244-9341-428AEDD5E136",
-    "duration" : 6,
+    "id" : "plastic",
     "isDefault" : true,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 6,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Plastic"
   },
   {
     "output" : [
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "D6474697-32AE-4882-A14D-1EF1ECC40B1E",
+        "id" : "polymer-resin",
         "amount" : 6
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 2
       }
     ],
-    "id" : "A9A8FD2F-86BA-4036-AEA6-E796CFA2CFD2",
-    "duration" : 6,
+    "id" : "residual-plastic",
     "isDefault" : true,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 6,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Residual Plastic"
   },
   {
     "output" : [
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 12
       }
     ],
     "input" : [
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 6
       },
       {
-        "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
+        "id" : "fuel",
         "amount" : 6
       }
     ],
-    "id" : "E3347BBB-29CE-4A1F-B254-F13444C671B7",
-    "duration" : 12,
+    "id" : "alternate-recycled-plastic",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 12,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Recycled Plastic"
   },
   {
     "output" : [
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 2
       },
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "3FD1E7F1-3612-48A1-B38B-9EE82731C7F3",
+        "id" : "crude-oil",
         "amount" : 3
       }
     ],
-    "id" : "1B3D0C1C-D9EB-4D51-BD38-13D134F9E925",
-    "duration" : 6,
+    "id" : "rubber",
     "isDefault" : true,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 6,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Rubber"
   },
   {
     "output" : [
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "D6474697-32AE-4882-A14D-1EF1ECC40B1E",
+        "id" : "polymer-resin",
         "amount" : 4
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 4
       }
     ],
-    "id" : "F798B4B5-4051-4A33-8E15-DB6C09CEC554",
-    "duration" : 6,
+    "id" : "residual-rubber",
     "isDefault" : true,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 6,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Residual Rubber"
   },
   {
     "output" : [
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 12
       }
     ],
     "input" : [
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 6
       },
       {
-        "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
+        "id" : "fuel",
         "amount" : 6
       }
     ],
-    "id" : "46131CC6-FB42-49A3-942D-B17B43E1FB3B",
-    "duration" : 12,
+    "id" : "alternate-recycled-rubber",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 12,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Recycled Rubber"
   },
   {
     "output" : [
       {
-        "id" : "23C72668-6A67-4AAD-9301-ABBE35A89E37",
+        "id" : "petroleum-coke",
         "amount" : 12
       }
     ],
     "input" : [
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 4
       }
     ],
-    "id" : "1DBF313C-0CAD-42B3-93AF-CA302F237A71",
-    "duration" : 6,
+    "id" : "petroleum-coke",
     "isDefault" : true,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 6,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Petroleum Coke"
   },
   {
     "output" : [
       {
-        "id" : "D6474697-32AE-4882-A14D-1EF1ECC40B1E",
+        "id" : "polymer-resin",
         "amount" : 13
       },
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "3FD1E7F1-3612-48A1-B38B-9EE82731C7F3",
+        "id" : "crude-oil",
         "amount" : 6
       }
     ],
-    "id" : "EBE7F424-9C26-4443-AF12-58B03DF2BA5D",
-    "duration" : 6,
+    "id" : "alternate-polymer-resin",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 6,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Polymer Resin"
   },
   {
     "output" : [
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 4
       },
       {
-        "id" : "D6474697-32AE-4882-A14D-1EF1ECC40B1E",
+        "id" : "polymer-resin",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "3FD1E7F1-3612-48A1-B38B-9EE82731C7F3",
+        "id" : "crude-oil",
         "amount" : 3
       }
     ],
-    "id" : "F0906275-46A2-44EB-869B-B9303E001B15",
-    "duration" : 6,
+    "id" : "alternate-heavy-oil-residue",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 6,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Heavy Oil Residue"
   },
   {
     "output" : [
       {
-        "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
+        "id" : "fuel",
         "amount" : 4
       },
       {
-        "id" : "D6474697-32AE-4882-A14D-1EF1ECC40B1E",
+        "id" : "polymer-resin",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "3FD1E7F1-3612-48A1-B38B-9EE82731C7F3",
+        "id" : "crude-oil",
         "amount" : 6
       }
     ],
-    "id" : "2FFFEBE6-F611-4B6A-959F-AF4E0D65BE98",
-    "duration" : 6,
+    "id" : "fuel",
     "isDefault" : true,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 6,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Fuel"
   },
   {
     "output" : [
       {
-        "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
+        "id" : "fuel",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 6
       }
     ],
-    "id" : "29E8E752-31B4-45D0-9FDC-39847B6AF84A",
-    "duration" : 6,
+    "id" : "residual-fuel",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 6,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Residual Fuel"
   },
   {
     "output" : [
       {
-        "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
+        "id" : "fuel",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 1
       },
       {
-        "id" : "08C5B522-AA69-45C3-97A3-C5AD95CE04E3",
+        "id" : "packaged-water",
         "amount" : 2
       }
     ],
-    "id" : "8E7ACD73-6A17-428F-AE97-B74288A0A9A6",
-    "duration" : 2,
+    "id" : "alternate-diluted-packaged-fuel",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 2,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Diluted Packaged Fuel"
   },
   {
     "output" : [
       {
-        "id" : "8359E039-9A7D-4555-855E-D419B6DB0CC5",
+        "id" : "liquid-biofuel",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "03EB7743-7334-4B05-82DF-D58D0547042B",
+        "id" : "solid-biofuel",
         "amount" : 6
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 3
       }
     ],
-    "id" : "495CFF29-305F-4074-8611-75CF6A2A8347",
-    "duration" : 4,
+    "id" : "liquid-biofuel",
     "isDefault" : true,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 4,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Liquid Biofuel"
   },
   {
     "output" : [
       {
-        "id" : "3EFCFDE3-6FF0-44D6-BAA9-AC059449BA16",
+        "id" : "turbofuel",
         "amount" : 5
       }
     ],
     "input" : [
       {
-        "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
+        "id" : "fuel",
         "amount" : 6
       },
       {
-        "id" : "70EBD3B8-FDFD-419E-8BDB-CE794037973E",
+        "id" : "compacted-coal",
         "amount" : 4
       }
     ],
-    "id" : "DEA749D9-D43E-45F6-9747-343ECCCC94C4",
-    "duration" : 16,
+    "id" : "turbofuel",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 16,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Turbofuel"
   },
   {
     "output" : [
       {
-        "id" : "3EFCFDE3-6FF0-44D6-BAA9-AC059449BA16",
+        "id" : "turbofuel",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 5
       },
       {
-        "id" : "70EBD3B8-FDFD-419E-8BDB-CE794037973E",
+        "id" : "compacted-coal",
         "amount" : 4
       }
     ],
-    "id" : "74199601-BC7F-41B5-BD75-F021EE46109F",
-    "duration" : 8,
+    "id" : "alternate-turbo-heavy-fuel",
     "isDefault" : false,
-    "machine" : "09396BD3-2CAD-4569-A116-29E8568DF767",
+    "duration" : 8,
+    "machines" : [
+      "refinery"
+    ],
     "name" : "Alternate: Turbo Heavy Fuel"
   },
   {
     "output" : [
       {
-        "id" : "08C5B522-AA69-45C3-97A3-C5AD95CE04E3",
+        "id" : "packaged-water",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
-    "id" : "775C9F3A-4697-43D8-BAEF-A9D76F1C816D",
-    "duration" : 2,
+    "id" : "packaged-water",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 2,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Packaged Water"
   },
   {
     "output" : [
       {
-        "id" : "272CA297-092C-4757-A39B-28CB9959D75C",
+        "id" : "packaged-oil",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "3FD1E7F1-3612-48A1-B38B-9EE82731C7F3",
+        "id" : "crude-oil",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
-    "id" : "D68B3E61-C023-4518-8512-31D5993DB0A1",
-    "duration" : 4,
+    "id" : "packaged-oil",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 4,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Packaged Oil"
   },
   {
     "output" : [
       {
-        "id" : "AEB3D44E-849F-4756-9752-899B10185402",
+        "id" : "packaged-heavy-oil-residue",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
-    "id" : "A2F33F27-4EED-4F31-8B5E-27735883DC3A",
-    "duration" : 4,
+    "id" : "packaged-heavy-oil-residue",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 4,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Packaged Heavy Oil Residue"
   },
   {
     "output" : [
       {
-        "id" : "B813CFC0-B4DA-4050-91F9-03A6CC32B948",
+        "id" : "packaged-liquid-biofuel",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "8359E039-9A7D-4555-855E-D419B6DB0CC5",
+        "id" : "liquid-biofuel",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
-    "id" : "C9C5889E-3E2F-408F-8518-F19A91E31C16",
-    "duration" : 3,
+    "id" : "packaged-liquid-biofuel",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 3,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Packaged Liquid Biofuel"
   },
   {
     "output" : [
       {
-        "id" : "2F381718-B81F-43D6-8631-1B8A833D8207",
+        "id" : "packaged-fuel",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
+        "id" : "fuel",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
-    "id" : "9C04AC90-931C-40A9-A644-E4E467EC9347",
-    "duration" : 3,
+    "id" : "packaged-fuel",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 3,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Packaged Fuel"
   },
   {
     "output" : [
       {
-        "id" : "A8DB01A4-8AB4-41DA-8AEA-F9F9D664A5F2",
+        "id" : "packaged-turbofuel",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "3EFCFDE3-6FF0-44D6-BAA9-AC059449BA16",
+        "id" : "turbofuel",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
-    "id" : "234DBFB5-34B7-40F5-9A43-01706D9BDD89",
-    "duration" : 6,
+    "id" : "packaged-turbofuel",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 6,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Packaged Turbofuel"
   },
   {
     "output" : [
       {
-        "id" : "73423B04-8288-4648-9065-2A43FC4AC7CC",
+        "id" : "packaged-alumina-solution",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "074290F3-33DB-484D-B9D9-9060768D8353",
+        "id" : "alumina-solution",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
-    "id" : "694D07A1-4607-4654-B796-97272883D737",
-    "duration" : 1,
+    "id" : "packaged-alumina-solution",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 1,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Packaged Alumina Solution"
   },
   {
     "output" : [
       {
-        "id" : "57407F27-87C6-4CB2-9133-1AC18C684991",
+        "id" : "packaged-sulfuric-acid",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "9E0131D9-45A5-4C08-916E-AABC8DFB87E7",
+        "id" : "sulfuric-acid",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
-    "id" : "B952E594-0977-4F40-9397-EADBD5000ECE",
-    "duration" : 3,
+    "id" : "packaged-sulfuric-acid",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 3,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Packaged Sulfuric Acid"
   },
   {
     "output" : [
       {
-        "id" : "B64D06EE-FA0A-4E63-B018-ADFCBE5D5FDB",
+        "id" : "packaged-nitrogen-gas",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "2E807E3A-C4FB-4D97-B654-9249C0222C9D",
+        "id" : "nitrogen-gas",
         "amount" : 4
       },
       {
-        "id" : "122D1C44-B483-487B-B0D8-FA63A42EB3FA",
+        "id" : "empty-fluid-tank",
         "amount" : 1
       }
     ],
-    "id" : "7AF12A75-0BFD-4463-8288-F956CEC8B535",
-    "duration" : 1,
+    "id" : "packaged-nitrogen-gas",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 1,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Packaged Nitrogen Gas"
   },
   {
     "output" : [
       {
-        "id" : "D68568FE-E990-4427-A827-3D7088A91D2A",
+        "id" : "packaged-nitric-acid",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "0F7EA2D3-6B37-4056-9700-2AA343B00484",
+        "id" : "nitric-acid",
         "amount" : 1
       },
       {
-        "id" : "122D1C44-B483-487B-B0D8-FA63A42EB3FA",
+        "id" : "empty-fluid-tank",
         "amount" : 1
       }
     ],
-    "id" : "D3CC6042-0CF2-415F-9A0B-C26EB6BFA475",
-    "duration" : 2,
+    "id" : "packaged-nitric-acid",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 2,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Packaged Nitric Acid"
   },
   {
     "output" : [
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "08C5B522-AA69-45C3-97A3-C5AD95CE04E3",
+        "id" : "packaged-water",
         "amount" : 2
       }
     ],
-    "id" : "812E076F-CF16-4EAF-85CA-3CCE1EEE924E",
-    "duration" : 1,
+    "id" : "unpackaged-water",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 1,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Unpackaged Water"
   },
   {
     "output" : [
       {
-        "id" : "3FD1E7F1-3612-48A1-B38B-9EE82731C7F3",
+        "id" : "crude-oil",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "272CA297-092C-4757-A39B-28CB9959D75C",
+        "id" : "packaged-oil",
         "amount" : 2
       }
     ],
-    "id" : "E0CB60F4-1115-4315-8046-FC17362D71AA",
-    "duration" : 2,
+    "id" : "unpackaged-oil",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 2,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Unpackaged Oil"
   },
   {
     "output" : [
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "AEB3D44E-849F-4756-9752-899B10185402",
+        "id" : "packaged-heavy-oil-residue",
         "amount" : 2
       }
     ],
-    "id" : "52AD22D4-6C4A-435D-B342-99E2736483CD",
-    "duration" : 6,
+    "id" : "unpackaged-heavy-oil-residue",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 6,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Unpackaged Heavy Oil Residue"
   },
   {
     "output" : [
       {
-        "id" : "8359E039-9A7D-4555-855E-D419B6DB0CC5",
+        "id" : "liquid-biofuel",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "B813CFC0-B4DA-4050-91F9-03A6CC32B948",
+        "id" : "packaged-liquid-biofuel",
         "amount" : 2
       }
     ],
-    "id" : "9EF4E5C3-3452-4009-A60F-B2E0EAD45ADC",
-    "duration" : 2,
+    "id" : "unpackaged-liquid-biofuel",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 2,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Unpackaged Liquid Biofuel"
   },
   {
     "output" : [
       {
-        "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
+        "id" : "fuel",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "2F381718-B81F-43D6-8631-1B8A833D8207",
+        "id" : "packaged-fuel",
         "amount" : 2
       }
     ],
-    "id" : "68BD10D0-FB5B-4624-8D96-1403C77DDB56",
-    "duration" : 2,
+    "id" : "unpackaged-fuel",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 2,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Unpackaged Fuel"
   },
   {
     "output" : [
       {
-        "id" : "3EFCFDE3-6FF0-44D6-BAA9-AC059449BA16",
+        "id" : "turbofuel",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "A8DB01A4-8AB4-41DA-8AEA-F9F9D664A5F2",
+        "id" : "packaged-turbofuel",
         "amount" : 2
       }
     ],
-    "id" : "0A61A4EC-88B8-4394-8A05-038B31AED0AF",
-    "duration" : 6,
+    "id" : "unpackaged-turbofuel",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 6,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Unpackaged Turbofuel"
   },
   {
     "output" : [
       {
-        "id" : "074290F3-33DB-484D-B9D9-9060768D8353",
+        "id" : "alumina-solution",
         "amount" : 2
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "73423B04-8288-4648-9065-2A43FC4AC7CC",
+        "id" : "packaged-alumina-solution",
         "amount" : 2
       }
     ],
-    "id" : "B27B7A9B-EE5D-4172-A265-82660FD64854",
-    "duration" : 1,
+    "id" : "unpackaged-alumina-solution",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 1,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Unpackaged Alumina Solution"
   },
   {
     "output" : [
       {
-        "id" : "9E0131D9-45A5-4C08-916E-AABC8DFB87E7",
+        "id" : "sulfuric-acid",
         "amount" : 1
       },
       {
-        "id" : "0D1585C6-5E8D-4103-9115-F2FA029EA4CF",
+        "id" : "empty-canister",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "57407F27-87C6-4CB2-9133-1AC18C684991",
+        "id" : "packaged-sulfuric-acid",
         "amount" : 1
       }
     ],
-    "id" : "349A2DCC-B089-4994-880B-71E389A9CFDE",
-    "duration" : 1,
+    "id" : "unpackaged-sulfuric-acid",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 1,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Unpackaged Sulfuric Acid"
   },
   {
     "output" : [
       {
-        "id" : "2E807E3A-C4FB-4D97-B654-9249C0222C9D",
+        "id" : "nitrogen-gas",
         "amount" : 4
       },
       {
-        "id" : "122D1C44-B483-487B-B0D8-FA63A42EB3FA",
+        "id" : "empty-fluid-tank",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "B64D06EE-FA0A-4E63-B018-ADFCBE5D5FDB",
+        "id" : "packaged-nitrogen-gas",
         "amount" : 1
       }
     ],
-    "id" : "1D3BDCA5-8035-4AA2-B715-B058A8ED888E",
-    "duration" : 1,
+    "id" : "unpackaged-nitrogen-gas",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 1,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Unpackaged Nitrogen Gas"
   },
   {
     "output" : [
       {
-        "id" : "0F7EA2D3-6B37-4056-9700-2AA343B00484",
+        "id" : "nitric-acid",
         "amount" : 1
       },
       {
-        "id" : "122D1C44-B483-487B-B0D8-FA63A42EB3FA",
+        "id" : "empty-fluid-tank",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "D68568FE-E990-4427-A827-3D7088A91D2A",
+        "id" : "packaged-nitric-acid",
         "amount" : 1
       }
     ],
-    "id" : "914E187B-3805-433A-BD52-E88F98529357",
-    "duration" : 3,
+    "id" : "unpackaged-nitric-acid",
     "isDefault" : true,
-    "machine" : "50DC414C-1398-4D6D-9599-9B193F63DB99",
+    "duration" : 3,
+    "machines" : [
+      "packager"
+    ],
     "name" : "Unpackaged Nitric Acid"
   },
   {
     "output" : [
       {
-        "id" : "004E4D1A-125E-4D9F-915E-365EE030B386",
+        "id" : "heavy-modular-frame",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "66D9BE6D-CE27-4647-9AC1-DB9B33E1AE48",
+        "id" : "modular-frame",
         "amount" : 5
       },
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 15
       },
       {
-        "id" : "7A5CBE4C-A6CD-43FF-B44D-9C3A02F94743",
+        "id" : "encased-industrial-beam",
         "amount" : 5
       },
       {
-        "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
+        "id" : "screw",
         "amount" : 100
       }
     ],
-    "id" : "37A694DA-1282-46A8-9523-63CE3D870E6D",
-    "duration" : 30,
+    "id" : "heavy-modular-frame",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 30,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Heavy Modular Frame"
   },
   {
     "output" : [
       {
-        "id" : "004E4D1A-125E-4D9F-915E-365EE030B386",
+        "id" : "heavy-modular-frame",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "66D9BE6D-CE27-4647-9AC1-DB9B33E1AE48",
+        "id" : "modular-frame",
         "amount" : 5
       },
       {
-        "id" : "7A5CBE4C-A6CD-43FF-B44D-9C3A02F94743",
+        "id" : "encased-industrial-beam",
         "amount" : 3
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 20
       },
       {
-        "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
+        "id" : "screw",
         "amount" : 104
       }
     ],
-    "id" : "71FF4CB8-19BD-4658-B268-0B5A8195F394",
-    "duration" : 16,
+    "id" : "alternate-heavy-flexible-frame",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 16,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Heavy Flexible Frame"
   },
   {
     "output" : [
       {
-        "id" : "004E4D1A-125E-4D9F-915E-365EE030B386",
+        "id" : "heavy-modular-frame",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "66D9BE6D-CE27-4647-9AC1-DB9B33E1AE48",
+        "id" : "modular-frame",
         "amount" : 8
       },
       {
-        "id" : "7A5CBE4C-A6CD-43FF-B44D-9C3A02F94743",
+        "id" : "encased-industrial-beam",
         "amount" : 10
       },
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 36
       },
       {
-        "id" : "CD2BD00F-E4F0-4A40-AAB9-B84D09B5E9B9",
+        "id" : "concrete",
         "amount" : 22
       }
     ],
-    "id" : "628568FE-D76E-498A-941F-1D136FAA138F",
-    "duration" : 64,
+    "id" : "alternate-heavy-encased-frame",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 64,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Heavy Encased Frame"
   },
   {
     "output" : [
       {
-        "id" : "D3134E3D-F249-44F8-9EF7-09526CED4BE9",
+        "id" : "turbo-motor",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "059FEB59-5C36-4AF5-86F4-D47551AA453C",
+        "id" : "cooling-system",
         "amount" : 4
       },
       {
-        "id" : "08AF4BD4-88CB-4560-8226-E13182E7D1A6",
+        "id" : "radio-control-unit",
         "amount" : 2
       },
       {
-        "id" : "567032CD-BF02-4928-87F9-1E2139F4E2E7",
+        "id" : "motor",
         "amount" : 4
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 24
       }
     ],
-    "id" : "9B5F25CE-8469-45E4-B1DD-DCB251356C55",
-    "duration" : 32,
+    "id" : "turbo-motor",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 32,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Turbo Motor"
   },
   {
     "output" : [
       {
-        "id" : "D3134E3D-F249-44F8-9EF7-09526CED4BE9",
+        "id" : "turbo-motor",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "567032CD-BF02-4928-87F9-1E2139F4E2E7",
+        "id" : "motor",
         "amount" : 7
       },
       {
-        "id" : "08AF4BD4-88CB-4560-8226-E13182E7D1A6",
+        "id" : "radio-control-unit",
         "amount" : 9
       },
       {
-        "id" : "A62300C6-1416-4A3A-9B9F-AC48B9927196",
+        "id" : "electromagnetic-control-rod",
         "amount" : 5
       },
       {
-        "id" : "B326A584-B618-410A-B304-1575F08FB9A3",
+        "id" : "rotor",
         "amount" : 7
       }
     ],
-    "id" : "D3C9BC41-BB13-41F1-B3FE-34B5D6A5FF3F",
-    "duration" : 64,
+    "id" : "alternate-turbo-electric-motor",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 64,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Turbo Electric Motor"
   },
   {
     "output" : [
       {
-        "id" : "D3134E3D-F249-44F8-9EF7-09526CED4BE9",
+        "id" : "turbo-motor",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "567032CD-BF02-4928-87F9-1E2139F4E2E7",
+        "id" : "motor",
         "amount" : 4
       },
       {
-        "id" : "DE4227AB-0EDE-4377-9FD4-5C1E37D01462",
+        "id" : "pressure-conversion-cube",
         "amount" : 1
       },
       {
-        "id" : "DE4227AB-0EDE-4377-9FD4-5C1E37D01462",
+        "id" : "packaged-nitrogen-gas",
         "amount" : 24
       },
       {
-        "id" : "6E092C8B-4D3F-42FE-93DD-F1ED2970B27A",
+        "id" : "stator",
         "amount" : 8
       }
     ],
-    "id" : "5E7F4A09-8413-4BCC-A579-CD7DC3E54248",
-    "duration" : 32,
+    "id" : "alternate-turbo-pressure-motor",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 32,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Turbo Pressure Motor"
   },
   {
     "output" : [
       {
-        "id" : "567032CD-BF02-4928-87F9-1E2139F4E2E7",
+        "id" : "motor",
         "amount" : 6
       }
     ],
     "input" : [
       {
-        "id" : "B326A584-B618-410A-B304-1575F08FB9A3",
+        "id" : "rotor",
         "amount" : 3
       },
       {
-        "id" : "6E092C8B-4D3F-42FE-93DD-F1ED2970B27A",
+        "id" : "stator",
         "amount" : 3
       },
       {
-        "id" : "7BE99766-CBFD-44D8-BDF8-55B0AFEA9AFB",
+        "id" : "crystal-oscillator",
         "amount" : 1
       }
     ],
-    "id" : "B581D885-1781-49D4-B656-19296C7DDE9E",
-    "duration" : 48,
+    "id" : "alternate-rigour-motor",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 48,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Rigour Motor"
   },
   {
     "output" : [
       {
-        "id" : "88655D85-EE13-4CC8-9250-384E4413FA4B",
+        "id" : "battery",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "75F79F3B-E11C-4479-B429-C624E3F48160",
+        "id" : "sulfur",
         "amount" : 6
       },
       {
-        "id" : "82FBC8F2-1EB8-413D-BDF2-238164B5D115",
+        "id" : "alclad-aluminum-sheet",
         "amount" : 7
       },
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 8
       },
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 12
       }
     ],
-    "id" : "E1190278-FF4B-4243-A539-424A55B709BD",
-    "duration" : 8,
+    "id" : "alternate-classic-battery",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 8,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Classic Battery"
   },
   {
     "output" : [
       {
-        "id" : "0CE458AD-D38B-4B74-A9A4-64090D8200C8",
+        "id" : "high-speed-connector",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "072C0A64-D069-4804-B389-43662A38007B",
+        "id" : "quickwire",
         "amount" : 56
       },
       {
-        "id" : "E3C161A3-DE19-4AF4-848F-C5995D96D40F",
+        "id" : "cable",
         "amount" : 10
       },
       {
-        "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
+        "id" : "circuit-board",
         "amount" : 1
       }
     ],
-    "id" : "DFFA1879-120E-4302-AF32-DBD1B7310E8E",
-    "duration" : 16,
+    "id" : "high-speed-connector",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 16,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "High-Speed Connector"
   },
   {
     "output" : [
       {
-        "id" : "0CE458AD-D38B-4B74-A9A4-64090D8200C8",
+        "id" : "high-speed-connector",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "072C0A64-D069-4804-B389-43662A38007B",
+        "id" : "quickwire",
         "amount" : 60
       },
       {
-        "id" : "41CBFA94-7C33-4BE3-A4C9-5AD71E8ACDE9",
+        "id" : "silica",
         "amount" : 25
       },
       {
-        "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
+        "id" : "circuit-board",
         "amount" : 2
       }
     ],
-    "id" : "13FD26D6-7C6D-42EC-9F32-BBA39CBD02D7",
-    "duration" : 40,
+    "id" : "alternate-silicone-high-speed-connector",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 40,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Silicone High-Speed Connector"
   },
   {
     "output" : [
       {
-        "id" : "F5357BDE-84AB-4FC8-8D4F-B19ABE0E60D4",
+        "id" : "computer",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
+        "id" : "circuit-board",
         "amount" : 10
       },
       {
-        "id" : "E3C161A3-DE19-4AF4-848F-C5995D96D40F",
+        "id" : "cable",
         "amount" : 9
       },
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 18
       },
       {
-        "id" : "B18B65F4-F9A2-4A27-972B-C539CF4374ED",
+        "id" : "screw",
         "amount" : 52
       }
     ],
-    "id" : "111F837F-2222-4EEC-8BEE-FBDEE1FEB330",
-    "duration" : 24,
+    "id" : "computer",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 24,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Computer"
   },
   {
     "output" : [
       {
-        "id" : "F5357BDE-84AB-4FC8-8D4F-B19ABE0E60D4",
+        "id" : "computer",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
+        "id" : "circuit-board",
         "amount" : 7
       },
       {
-        "id" : "072C0A64-D069-4804-B389-43662A38007B",
+        "id" : "quickwire",
         "amount" : 28
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 12
       }
     ],
-    "id" : "40F952F9-01D9-4047-B532-070F788E832A",
-    "duration" : 16,
+    "id" : "alternate-caterium-computer",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 16,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Caterium Computer"
   },
   {
     "output" : [
       {
-        "id" : "7BE99766-CBFD-44D8-BDF8-55B0AFEA9AFB",
+        "id" : "crystal-oscillator",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "8DD3E216-7B8F-4C16-910A-85E3EC48C312",
+        "id" : "quartz-crystal",
         "amount" : 36
       },
       {
-        "id" : "E3C161A3-DE19-4AF4-848F-C5995D96D40F",
+        "id" : "cable",
         "amount" : 28
       },
       {
-        "id" : "8EE863E4-7810-4DFD-A762-ED260127477C",
+        "id" : "reinforced-iron-plate",
         "amount" : 5
       }
     ],
-    "id" : "0CC03170-3AD4-488B-9BA8-A11BAA0A11FC",
-    "duration" : 120,
+    "id" : "crystal-oscillator",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 120,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Crystal Oscillator"
   },
   {
     "output" : [
       {
-        "id" : "7BE99766-CBFD-44D8-BDF8-55B0AFEA9AFB",
+        "id" : "crystal-oscillator",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "8DD3E216-7B8F-4C16-910A-85E3EC48C312",
+        "id" : "quartz-crystal",
         "amount" : 10
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 7
       },
       {
-        "id" : "24744743-6137-4A12-A3BB-8E2159078BA7",
+        "id" : "ai-limiter",
         "amount" : 1
       }
     ],
-    "id" : "7006DB1A-CE7D-4D60-8A89-1F726D828AE9",
-    "duration" : 32,
+    "id" : "alternate-insulated-crystal-oscillator",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 32,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Insulated Crystal Oscillator"
   },
   {
     "output" : [
       {
-        "id" : "C0033EED-EBE1-43F4-B4A1-9DCBC3031416",
+        "id" : "supercomputer",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "F5357BDE-84AB-4FC8-8D4F-B19ABE0E60D4",
+        "id" : "computer",
         "amount" : 2
       },
       {
-        "id" : "24744743-6137-4A12-A3BB-8E2159078BA7",
+        "id" : "ai-limiter",
         "amount" : 2
       },
       {
-        "id" : "0CE458AD-D38B-4B74-A9A4-64090D8200C8",
+        "id" : "high-speed-connector",
         "amount" : 3
       },
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 28
       }
     ],
-    "id" : "7FF83F8B-C403-4DAE-A6B1-D5AC55DA75D2",
-    "duration" : 32,
+    "id" : "supercomputer",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 32,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Supercomputer"
   },
   {
     "output" : [
       {
-        "id" : "C0033EED-EBE1-43F4-B4A1-9DCBC3031416",
+        "id" : "supercomputer",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "08AF4BD4-88CB-4560-8226-E13182E7D1A6",
+        "id" : "radio-control-unit",
         "amount" : 3
       },
       {
-        "id" : "059FEB59-5C36-4AF5-86F4-D47551AA453C",
+        "id" : "cooling-system",
         "amount" : 3
       }
     ],
-    "id" : "A4472298-B491-4107-B842-23DE52A8B3EC",
-    "duration" : 20,
+    "id" : "alternate-oc-supercomputer",
     "isDefault" : false,
-    "machine" : "40A8632F-21C0-49FC-B6A8-1D0A818C185C",
+    "duration" : 20,
+    "machines" : [
+      "assembler"
+    ],
     "name" : "Alternate: OC Supercomputer"
   },
   {
     "output" : [
       {
-        "id" : "08AF4BD4-88CB-4560-8226-E13182E7D1A6",
+        "id" : "radio-control-unit",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "4F81F26F-183E-4612-8332-03158C61D97F",
+        "id" : "aluminum-casing",
         "amount" : 32
       },
       {
-        "id" : "7BE99766-CBFD-44D8-BDF8-55B0AFEA9AFB",
+        "id" : "crystal-oscillator",
         "amount" : 1
       },
       {
-        "id" : "F5357BDE-84AB-4FC8-8D4F-B19ABE0E60D4",
+        "id" : "computer",
         "amount" : 1
       }
     ],
-    "id" : "1045AC78-E3F0-4CF2-A1F8-6FAF9D835722",
-    "duration" : 48,
+    "id" : "radio-control-unit",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 48,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Radio Control Unit"
   },
   {
     "output" : [
       {
-        "id" : "08AF4BD4-88CB-4560-8226-E13182E7D1A6",
+        "id" : "radio-control-unit",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "58F25DD7-56C4-4D9A-B72F-689725ACDF97",
+        "id" : "heat-sink",
         "amount" : 4
       },
       {
-        "id" : "0CE458AD-D38B-4B74-A9A4-64090D8200C8",
+        "id" : "high-speed-connector",
         "amount" : 2
       },
       {
-        "id" : "8DD3E216-7B8F-4C16-910A-85E3EC48C312",
+        "id" : "quartz-crystal",
         "amount" : 12
       }
     ],
-    "id" : "0DE50182-96D4-4326-9D27-EDAA4AB61E34",
-    "duration" : 16,
+    "id" : "alternate-radio-connection-unit",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 16,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Radio Connection Unit"
   },
   {
     "output" : [
       {
-        "id" : "08AF4BD4-88CB-4560-8226-E13182E7D1A6",
+        "id" : "radio-control-unit",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "7BE99766-CBFD-44D8-BDF8-55B0AFEA9AFB",
+        "id" : "crystal-oscillator",
         "amount" : 1
       },
       {
-        "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
+        "id" : "circuit-board",
         "amount" : 10
       },
       {
-        "id" : "4F81F26F-183E-4612-8332-03158C61D97F",
+        "id" : "aluminum-casing",
         "amount" : 60
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 30
       }
     ],
-    "id" : "50444D71-9A92-444A-8BFF-72AC61C94062",
-    "duration" : 40,
+    "id" : "alternate-radio-control-system",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 40,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Radio Control System"
   },
   {
     "output" : [
       {
-        "id" : "C2E592FE-6885-4858-B34C-584A7029EE55",
+        "id" : "uranium-fuel-rod",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "780504F0-53D6-49B3-9A30-864D4C4697D0",
+        "id" : "encased-uranium-cell",
         "amount" : 50
       },
       {
-        "id" : "7A5CBE4C-A6CD-43FF-B44D-9C3A02F94743",
+        "id" : "encased-industrial-beam",
         "amount" : 3
       },
       {
-        "id" : "A62300C6-1416-4A3A-9B9F-AC48B9927196",
+        "id" : "electromagnetic-control-rod",
         "amount" : 5
       }
     ],
-    "id" : "F9E7F142-8B98-46CB-83C9-75700B6CC6B1",
-    "duration" : 150,
+    "id" : "uranium-fuel-rod",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 150,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Uranium Fuel Rod"
   },
   {
     "output" : [
       {
-        "id" : "C2E592FE-6885-4858-B34C-584A7029EE55",
+        "id" : "uranium-fuel-rod",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "780504F0-53D6-49B3-9A30-864D4C4697D0",
+        "id" : "encased-uranium-cell",
         "amount" : 100
       },
       {
-        "id" : "A62300C6-1416-4A3A-9B9F-AC48B9927196",
+        "id" : "electromagnetic-control-rod",
         "amount" : 10
       },
       {
-        "id" : "7BE99766-CBFD-44D8-BDF8-55B0AFEA9AFB",
+        "id" : "crystal-oscillator",
         "amount" : 3
       },
       {
-        "id" : "FCFA7BF9-7AB5-48B2-A03D-FBDD69A227E0",
+        "id" : "beacon",
         "amount" : 6
       }
     ],
-    "id" : "F92C787B-A852-4B98-9197-D18DA0FC60A0",
-    "duration" : 300,
+    "id" : "alternate-uranium-fuel-unit",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 300,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Uranium Fuel Unit"
   },
   {
     "output" : [
       {
-        "id" : "780504F0-53D6-49B3-9A30-864D4C4697D0",
+        "id" : "encased-uranium-cell",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "FE5A51FF-5244-4AF8-886B-5D0575E6615B",
+        "id" : "uranium",
         "amount" : 5
       },
       {
-        "id" : "41CBFA94-7C33-4BE3-A4C9-5AD71E8ACDE9",
+        "id" : "silica",
         "amount" : 3
       },
       {
-        "id" : "75F79F3B-E11C-4479-B429-C624E3F48160",
+        "id" : "sulfur",
         "amount" : 5
       },
       {
-        "id" : "072C0A64-D069-4804-B389-43662A38007B",
+        "id" : "quickwire",
         "amount" : 15
       }
     ],
-    "id" : "8117AF91-E19F-44E3-B7B7-A7E8202D11F7",
-    "duration" : 12,
+    "id" : "alternate-infused-uranium-cell",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 12,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Infused Uranium Cell"
   },
   {
     "output" : [
       {
-        "id" : "FE764C83-13D9-40A6-A155-D490FEECD8C0",
+        "id" : "plutonium-fuel-rod",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "4CEA8485-3DF0-45C1-AAEC-2300CC5E6AD9",
+        "id" : "encased-plutonium-cell",
         "amount" : 30
       },
       {
-        "id" : "857B2CAE-6247-4F48-9542-2AA077EBE1E2",
+        "id" : "steel-beam",
         "amount" : 18
       },
       {
-        "id" : "A62300C6-1416-4A3A-9B9F-AC48B9927196",
+        "id" : "electromagnetic-control-rod",
         "amount" : 6
       },
       {
-        "id" : "58F25DD7-56C4-4D9A-B72F-689725ACDF97",
+        "id" : "heat-sink",
         "amount" : 10
       }
     ],
-    "id" : "41FD0617-7F4D-4A79-9A90-A6987389FCC4",
-    "duration" : 240,
+    "id" : "plutonium-fuel-rod",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 240,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Plutonium Fuel Rod"
   },
   {
     "output" : [
       {
-        "id" : "31CC09BA-0B51-4898-A9F7-0DD714A393B7",
+        "id" : "gas-filter",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "458A24C9-BAD8-40F9-A452-E6A778A2E697",
+        "id" : "coal",
         "amount" : 5
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 2
       },
       {
-        "id" : "37AF11C7-BBDE-4ECF-8EBD-919DFBF1871B",
+        "id" : "fabric",
         "amount" : 2
       }
     ],
-    "id" : "FFE63C0D-C13C-4F1D-A6F7-D012F7D8E4C0",
-    "duration" : 8,
+    "id" : "gas-filter",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 8,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Gas Filter"
   },
   {
     "output" : [
       {
-        "id" : "A5371260-B60B-4A8D-AC4C-53B66E1CA9E7",
+        "id" : "iodine-infused-filter",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "31CC09BA-0B51-4898-A9F7-0DD714A393B7",
+        "id" : "gas-filter",
         "amount" : 1
       },
       {
-        "id" : "072C0A64-D069-4804-B389-43662A38007B",
+        "id" : "quickwire",
         "amount" : 8
       },
       {
-        "id" : "4F81F26F-183E-4612-8332-03158C61D97F",
+        "id" : "aluminum-casing",
         "amount" : 1
       }
     ],
-    "id" : "0A161966-CFF4-4E9F-A572-5428B92DA9D4",
-    "duration" : 16,
+    "id" : "iodine-infused-filter",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 16,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Iodine Infused Filter"
   },
   {
     "output" : [
       {
-        "id" : "8F0F53EB-81CF-473B-9B40-FF9359617130",
+        "id" : "rifle-cartridge",
         "amount" : 5
       }
     ],
     "input" : [
       {
-        "id" : "FCFA7BF9-7AB5-48B2-A03D-FBDD69A227E0",
+        "id" : "beacon",
         "amount" : 1
       },
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 10
       },
       {
-        "id" : "03EA5485-8266-4408-9933-09853BDA0C3F",
+        "id" : "black-powder",
         "amount" : 10
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 10
       }
     ],
-    "id" : "6A885F12-002A-4590-B60C-FE5304ABB1CB",
-    "duration" : 20,
+    "id" : "rifle-cartridge",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 20,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Rifle Cartridge"
   },
   {
     "output" : [
       {
-        "id" : "2DBBE452-0117-422F-860E-35C351BE89C4",
+        "id" : "nobelisk",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "03EA5485-8266-4408-9933-09853BDA0C3F",
+        "id" : "black-powder",
         "amount" : 8
       },
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 8
       },
       {
-        "id" : "7BE99766-CBFD-44D8-BDF8-55B0AFEA9AFB",
+        "id" : "crystal-oscillator",
         "amount" : 1
       }
     ],
-    "id" : "FFB612B1-F5EC-44ED-BBB9-66E45C7E5AF9",
-    "duration" : 40,
+    "id" : "alternate-seismic-nobelisk",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 40,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Seismic Nobelisk"
   },
   {
     "output" : [
       {
-        "id" : "4EA56515-04D4-4BB1-80A4-D01994DBE4B2",
+        "id" : "modular-engine",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "567032CD-BF02-4928-87F9-1E2139F4E2E7",
+        "id" : "motor",
         "amount" : 2
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 15
       },
       {
-        "id" : "2BA26A07-7F1E-4EC0-AFBD-035DE23A08D7",
+        "id" : "smart-plating",
         "amount" : 2
       }
     ],
-    "id" : "3D2A019A-34AC-4BFE-8AA1-72137401B5FD",
-    "duration" : 60,
+    "id" : "modular-engine",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 60,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Modular Engine"
   },
   {
     "output" : [
       {
-        "id" : "D63DDBB3-0371-4A4B-84B8-4C46A278DC2D",
+        "id" : "adaptive-control-unit",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "83899715-1975-44D2-A2F9-2286D0A923B4",
+        "id" : "automated-wiring",
         "amount" : 15
       },
       {
-        "id" : "27E56DC6-F68C-432B-A4F2-0A35FBD6E764",
+        "id" : "circuit-board",
         "amount" : 10
       },
       {
-        "id" : "004E4D1A-125E-4D9F-915E-365EE030B386",
+        "id" : "heavy-modular-frame",
         "amount" : 2
       },
       {
-        "id" : "F5357BDE-84AB-4FC8-8D4F-B19ABE0E60D4",
+        "id" : "computer",
         "amount" : 2
       }
     ],
-    "id" : "E57CCF1A-6A6D-406F-981E-59BA82EB94C3",
-    "duration" : 120,
+    "id" : "adaptive-control-unit",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 120,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Adaptive Control Unit"
   },
   {
     "output" : [
       {
-        "id" : "544101B0-C30C-4558-817F-04D6EE68D97B",
+        "id" : "magnetic-field-generator",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "C85BB88A-BAF4-4937-82A9-02406AAB75A8",
+        "id" : "versatile-framework",
         "amount" : 5
       },
       {
-        "id" : "A62300C6-1416-4A3A-9B9F-AC48B9927196",
+        "id" : "electromagnetic-control-rod",
         "amount" : 2
       },
       {
-        "id" : "88655D85-EE13-4CC8-9250-384E4413FA4B",
+        "id" : "battery",
         "amount" : 10
       }
     ],
-    "id" : "D54CBFF9-0C53-4EE1-8985-140EDD6246E4",
-    "duration" : 120,
+    "id" : "magnetic-field-generator",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 120,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Magnetic Field Generator"
   },
   {
     "output" : [
       {
-        "id" : "7A48C90E-61CF-4FE4-8D47-8EA35538B7F7",
+        "id" : "thermal-propulsion-rocket",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "4EA56515-04D4-4BB1-80A4-D01994DBE4B2",
+        "id" : "modular-engine",
         "amount" : 5
       },
       {
-        "id" : "D3134E3D-F249-44F8-9EF7-09526CED4BE9",
+        "id" : "turbo-motor",
         "amount" : 2
       },
       {
-        "id" : "059FEB59-5C36-4AF5-86F4-D47551AA453C",
+        "id" : "cooling-system",
         "amount" : 6
       },
       {
-        "id" : "A81DF570-7B8E-4344-B727-F65F5449DF58",
+        "id" : "fused-modular-frame",
         "amount" : 2
       }
     ],
-    "id" : "2A17D5A1-C2A5-44BF-9F78-1A23D9094303",
-    "duration" : 120,
+    "id" : "thermal-propulsion-rocket",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 120,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Thermal Propulsion Rocket"
   },
   {
     "output" : [
       {
-        "id" : "2BA26A07-7F1E-4EC0-AFBD-035DE23A08D7",
+        "id" : "smart-plating",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "8EE863E4-7810-4DFD-A762-ED260127477C",
+        "id" : "reinforced-iron-plate",
         "amount" : 1
       },
       {
-        "id" : "B326A584-B618-410A-B304-1575F08FB9A3",
+        "id" : "rotor",
         "amount" : 1
       },
       {
-        "id" : "21E724B8-217B-4512-86DD-E696B64DB348",
+        "id" : "plastic",
         "amount" : 3
       }
     ],
-    "id" : "707DD1CD-2799-4AEF-A3D4-AA90D45A12B7",
-    "duration" : 24,
+    "id" : "alternate-plastic-smart-plating",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 24,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Plastic Smart Plating"
   },
   {
     "output" : [
       {
-        "id" : "C85BB88A-BAF4-4937-82A9-02406AAB75A8",
+        "id" : "versatile-framework",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "66D9BE6D-CE27-4647-9AC1-DB9B33E1AE48",
+        "id" : "modular-frame",
         "amount" : 1
       },
       {
-        "id" : "857B2CAE-6247-4F48-9542-2AA077EBE1E2",
+        "id" : "steel-beam",
         "amount" : 6
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 8
       }
     ],
-    "id" : "E58CF66F-9E72-4781-9BCC-21E66D5FA91A",
-    "duration" : 16,
+    "id" : "alternate-flexible-framework",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 16,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Flexible Framework"
   },
   {
     "output" : [
       {
-        "id" : "83899715-1975-44D2-A2F9-2286D0A923B4",
+        "id" : "automated-wiring",
         "amount" : 4
       }
     ],
     "input" : [
       {
-        "id" : "6E092C8B-4D3F-42FE-93DD-F1ED2970B27A",
+        "id" : "stator",
         "amount" : 2
       },
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 40
       },
       {
-        "id" : "0CE458AD-D38B-4B74-A9A4-64090D8200C8",
+        "id" : "high-speed-connector",
         "amount" : 1
       }
     ],
-    "id" : "3680D872-FB80-4BB1-A3B9-09ACE73220A9",
-    "duration" : 32,
+    "id" : "alternate-automated-speed-wiring",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 32,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Automated Speed Wiring"
   },
   {
     "output" : [
       {
-        "id" : "FCFA7BF9-7AB5-48B2-A03D-FBDD69A227E0",
+        "id" : "beacon",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
+        "id" : "iron-plate",
         "amount" : 3
       },
       {
-        "id" : "BA6FE6CF-7262-42CE-9144-000FF4D5B1AE",
+        "id" : "iron-rod",
         "amount" : 1
       },
       {
-        "id" : "42359DEC-FBB2-4D6F-8D68-6109D65BCE53",
+        "id" : "wire",
         "amount" : 15
       },
       {
-        "id" : "E3C161A3-DE19-4AF4-848F-C5995D96D40F",
+        "id" : "cable",
         "amount" : 2
       }
     ],
-    "id" : "64A43BE2-5D91-453D-8818-9D720AAB16B5",
-    "duration" : 8,
+    "id" : "beacon",
     "isDefault" : true,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 8,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Beacon"
   },
   {
     "output" : [
       {
-        "id" : "FCFA7BF9-7AB5-48B2-A03D-FBDD69A227E0",
+        "id" : "beacon",
         "amount" : 20
       }
     ],
     "input" : [
       {
-        "id" : "857B2CAE-6247-4F48-9542-2AA077EBE1E2",
+        "id" : "steel-beam",
         "amount" : 4
       },
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 16
       },
       {
-        "id" : "7BE99766-CBFD-44D8-BDF8-55B0AFEA9AFB",
+        "id" : "crystal-oscillator",
         "amount" : 1
       }
     ],
-    "id" : "DCB2FF5A-5FB5-485D-8521-561454D55486",
-    "duration" : 120,
+    "id" : "alternate-crystal-beacon",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 120,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Crystal Beacon"
   },
   {
     "output" : [
       {
-        "id" : "E68E148B-2702-4D0E-A051-18EF06D17399",
+        "id" : "portable-miner",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "567032CD-BF02-4928-87F9-1E2139F4E2E7",
+        "id" : "motor",
         "amount" : 1
       },
       {
-        "id" : "D0B47664-41A0-409C-B16C-98579BB2588E",
+        "id" : "steel-pipe",
         "amount" : 4
       },
       {
-        "id" : "BA6FE6CF-7262-42CE-9144-000FF4D5B1AE",
+        "id" : "iron-rod",
         "amount" : 4
       },
       {
-        "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
+        "id" : "iron-plate",
         "amount" : 2
       }
     ],
-    "id" : "9311A616-DBA4-4FC1-AE79-0EB900E429EF",
-    "duration" : 60,
+    "id" : "alternate-automated-miner",
     "isDefault" : false,
-    "machine" : "42291F51-2DE0-4239-97E7-60275D3B9805",
+    "duration" : 60,
+    "machines" : [
+      "manufacturer"
+    ],
     "name" : "Alternate: Automated Miner"
   },
   {
     "output" : [
       {
-        "id" : "059FEB59-5C36-4AF5-86F4-D47551AA453C",
+        "id" : "cooling-system",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "58F25DD7-56C4-4D9A-B72F-689725ACDF97",
+        "id" : "heat-sink",
         "amount" : 2
       },
       {
-        "id" : "7A1A7C94-18C4-4CFD-8F53-75CB732746AC",
+        "id" : "rubber",
         "amount" : 2
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 5
       },
       {
-        "id" : "2E807E3A-C4FB-4D97-B654-9249C0222C9D",
+        "id" : "nitrogen-gas",
         "amount" : 25
       }
     ],
-    "id" : "E23CF815-420D-42FD-9CFA-B5F8BC70C017",
-    "duration" : 10,
+    "id" : "cooling-system",
     "isDefault" : true,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 10,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Cooling System"
   },
   {
     "output" : [
       {
-        "id" : "059FEB59-5C36-4AF5-86F4-D47551AA453C",
+        "id" : "cooling-system",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "58F25DD7-56C4-4D9A-B72F-689725ACDF97",
+        "id" : "heat-sink",
         "amount" : 5
       },
       {
-        "id" : "567032CD-BF02-4928-87F9-1E2139F4E2E7",
+        "id" : "motor",
         "amount" : 1
       },
       {
-        "id" : "2E807E3A-C4FB-4D97-B654-9249C0222C9D",
+        "id" : "nitrogen-gas",
         "amount" : 24
       }
     ],
-    "id" : "3924E612-F3AA-445E-B925-276B18E2122C",
-    "duration" : 32,
+    "id" : "alternate-cooling-device",
     "isDefault" : false,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 32,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Alternate: Cooling Device"
   },
   {
     "output" : [
       {
-        "id" : "A81DF570-7B8E-4344-B727-F65F5449DF58",
+        "id" : "fused-modular-frame",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "004E4D1A-125E-4D9F-915E-365EE030B386",
+        "id" : "heavy-modular-frame",
         "amount" : 1
       },
       {
-        "id" : "4F81F26F-183E-4612-8332-03158C61D97F",
+        "id" : "aluminum-casing",
         "amount" : 50
       },
       {
-        "id" : "2E807E3A-C4FB-4D97-B654-9249C0222C9D",
+        "id" : "nitrogen-gas",
         "amount" : 25
       }
     ],
-    "id" : "74C9D530-E1ED-44C5-8673-01EC0B995247",
-    "duration" : 40,
+    "id" : "fused-modular-frame",
     "isDefault" : true,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 40,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Fused Modular Frame"
   },
   {
     "output" : [
       {
-        "id" : "A81DF570-7B8E-4344-B727-F65F5449DF58",
+        "id" : "fused-modular-frame",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "004E4D1A-125E-4D9F-915E-365EE030B386",
+        "id" : "heavy-modular-frame",
         "amount" : 1
       },
       {
-        "id" : "B7B5E0C0-861B-4B01-BF0A-07F4AE9518AB",
+        "id" : "aluminum-ingot",
         "amount" : 50
       },
       {
-        "id" : "0F7EA2D3-6B37-4056-9700-2AA343B00484",
+        "id" : "nitric-acid",
         "amount" : 8
       },
       {
-        "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
+        "id" : "fuel",
         "amount" : 10
       }
     ],
-    "id" : "9FE7043F-F944-409F-995F-C8AD78B0A446",
-    "duration" : 20,
+    "id" : "alternate-heat-fused-frame",
     "isDefault" : false,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 20,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Alternate: Heat-Fused Frame"
   },
   {
     "output" : [
       {
-        "id" : "88655D85-EE13-4CC8-9250-384E4413FA4B",
+        "id" : "battery",
         "amount" : 1
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 1.5
       }
     ],
     "input" : [
       {
-        "id" : "9E0131D9-45A5-4C08-916E-AABC8DFB87E7",
+        "id" : "sulfuric-acid",
         "amount" : 2.5
       },
       {
-        "id" : "074290F3-33DB-484D-B9D9-9060768D8353",
+        "id" : "alumina-solution",
         "amount" : 2
       },
       {
-        "id" : "4F81F26F-183E-4612-8332-03158C61D97F",
+        "id" : "aluminum-casing",
         "amount" : 1
       }
     ],
-    "id" : "30204D68-780A-49A4-BDD6-2A72E8B16BDD",
-    "duration" : 3,
+    "id" : "battery",
     "isDefault" : true,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 3,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Battery"
   },
   {
     "output" : [
       {
-        "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
+        "id" : "fuel",
         "amount" : 10
       }
     ],
     "input" : [
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 5
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 10
       }
     ],
-    "id" : "AD0C6306-0E0F-4CF9-ADBF-447139732164",
-    "duration" : 6,
+    "id" : "alternate-diluted-fuel",
     "isDefault" : false,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 6,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Alternate: Diluted Fuel"
   },
   {
     "output" : [
       {
-        "id" : "3EFCFDE3-6FF0-44D6-BAA9-AC059449BA16",
+        "id" : "turbofuel",
         "amount" : 6
       }
     ],
     "input" : [
       {
-        "id" : "F0E72FC3-4D12-4C35-AB90-04F780770670",
+        "id" : "fuel",
         "amount" : 2
       },
       {
-        "id" : "FBCB2265-964E-4DDE-BCEE-E9AF6ECFCA2F",
+        "id" : "heavy-oil-residue",
         "amount" : 4
       },
       {
-        "id" : "75F79F3B-E11C-4479-B429-C624E3F48160",
+        "id" : "sulfur",
         "amount" : 3
       },
       {
-        "id" : "23C72668-6A67-4AAD-9301-ABBE35A89E37",
+        "id" : "petroleum-coke",
         "amount" : 3
       }
     ],
-    "id" : "1C002372-AAF4-4835-91AE-C3FE0C45C89F",
-    "duration" : 8,
+    "id" : "alternate-turbo-blend-fuel",
     "isDefault" : false,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 8,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Alternate: Turbo Blend Fuel"
   },
   {
     "output" : [
       {
-        "id" : "20B17438-D6B8-422D-98E3-4D09767FB592",
+        "id" : "non-fissile-uranium",
         "amount" : 20
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 6
       }
     ],
     "input" : [
       {
-        "id" : "D94EC364-FB38-41F4-80CF-8BA3158A61F9",
+        "id" : "uranium-waste",
         "amount" : 15
       },
       {
-        "id" : "41CBFA94-7C33-4BE3-A4C9-5AD71E8ACDE9",
+        "id" : "silica",
         "amount" : 10
       },
       {
-        "id" : "0F7EA2D3-6B37-4056-9700-2AA343B00484",
+        "id" : "nitric-acid",
         "amount" : 6
       },
       {
-        "id" : "9E0131D9-45A5-4C08-916E-AABC8DFB87E7",
+        "id" : "sulfuric-acid",
         "amount" : 6
       }
     ],
-    "id" : "3C424936-C8A5-4175-932F-B804028D1E24",
-    "duration" : 24,
+    "id" : "non-fissile-uranium",
     "isDefault" : true,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 24,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Non-fissile Uranium"
   },
   {
     "output" : [
       {
-        "id" : "20B17438-D6B8-422D-98E3-4D09767FB592",
+        "id" : "non-fissile-uranium",
         "amount" : 20
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 8
       }
     ],
     "input" : [
       {
-        "id" : "FE5A51FF-5244-4AF8-886B-5D0575E6615B",
+        "id" : "uranium",
         "amount" : 5
       },
       {
-        "id" : "D94EC364-FB38-41F4-80CF-8BA3158A61F9",
+        "id" : "uranium-waste",
         "amount" : 5
       },
       {
-        "id" : "0F7EA2D3-6B37-4056-9700-2AA343B00484",
+        "id" : "nitric-acid",
         "amount" : 3
       },
       {
-        "id" : "9E0131D9-45A5-4C08-916E-AABC8DFB87E7",
+        "id" : "sulfuric-acid",
         "amount" : 5
       }
     ],
-    "id" : "B8F8CB03-0F4B-45B5-9E6C-0A76CF85CAAA",
-    "duration" : 12,
+    "id" : "alternate-fertile-uranium",
     "isDefault" : false,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 12,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Alternate: Fertile Uranium"
   },
   {
     "output" : [
       {
-        "id" : "780504F0-53D6-49B3-9A30-864D4C4697D0",
+        "id" : "encased-uranium-cell",
         "amount" : 5
       },
       {
-        "id" : "9E0131D9-45A5-4C08-916E-AABC8DFB87E7",
+        "id" : "sulfuric-acid",
         "amount" : 2
       }
     ],
     "input" : [
       {
-        "id" : "FE5A51FF-5244-4AF8-886B-5D0575E6615B",
+        "id" : "uranium",
         "amount" : 10
       },
       {
-        "id" : "CD2BD00F-E4F0-4A40-AAB9-B84D09B5E9B9",
+        "id" : "concrete",
         "amount" : 3
       },
       {
-        "id" : "9E0131D9-45A5-4C08-916E-AABC8DFB87E7",
+        "id" : "sulfuric-acid",
         "amount" : 8
       }
     ],
-    "id" : "52144138-2DD3-4839-BF39-CC8264D08F46",
-    "duration" : 12,
+    "id" : "encased-uranium-cell",
     "isDefault" : true,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 12,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Encased Uranium Cell"
   },
   {
     "output" : [
       {
-        "id" : "0F7EA2D3-6B37-4056-9700-2AA343B00484",
+        "id" : "nitric-acid",
         "amount" : 3
       }
     ],
     "input" : [
       {
-        "id" : "2E807E3A-C4FB-4D97-B654-9249C0222C9D",
+        "id" : "nitrogen-gas",
         "amount" : 12
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 3
       },
       {
-        "id" : "C2CEAF4D-8074-4DBF-B27F-73566AA1246F",
+        "id" : "iron-plate",
         "amount" : 1
       }
     ],
-    "id" : "E0A2BB95-5F3F-489E-9330-9DE97B4F72C3",
-    "duration" : 6,
+    "id" : "nitric-acid",
     "isDefault" : true,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 6,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Nitric Acid"
   },
   {
     "output" : [
       {
-        "id" : "9BEC0ED6-31E7-46D2-A012-91E3F6092006",
+        "id" : "aluminum-scrap",
         "amount" : 30
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 5
       }
     ],
     "input" : [
       {
-        "id" : "F2F3F4D9-E0B3-479D-B491-ED7AB77D5F54",
+        "id" : "bauxite",
         "amount" : 15
       },
       {
-        "id" : "458A24C9-BAD8-40F9-A452-E6A778A2E697",
+        "id" : "coal",
         "amount" : 10
       },
       {
-        "id" : "9E0131D9-45A5-4C08-916E-AABC8DFB87E7",
+        "id" : "sulfuric-acid",
         "amount" : 5
       },
       {
-        "id" : "0CEFEE20-CECC-464E-BF52-7AE2BF055DEF",
+        "id" : "water",
         "amount" : 6
       }
     ],
-    "id" : "6487634D-D956-408B-9A4E-FB7873EF84EE",
-    "duration" : 6,
+    "id" : "alternate-instant-scrap",
     "isDefault" : false,
-    "machine" : "23442C1D-B387-43BC-89A1-B5888D8FF39C",
+    "duration" : 6,
+    "machines" : [
+      "blender"
+    ],
     "name" : "Alternate: instant Scrap"
   },
   {
     "output" : [
       {
-        "id" : "A20A0D40-8658-4697-8C5E-798CD589C302",
+        "id" : "plutonium-pellet",
         "amount" : 30
       }
     ],
     "input" : [
       {
-        "id" : "20B17438-D6B8-422D-98E3-4D09767FB592",
+        "id" : "non-fissile-uranium",
         "amount" : 100
       },
       {
-        "id" : "D94EC364-FB38-41F4-80CF-8BA3158A61F9",
+        "id" : "uranium-waste",
         "amount" : 25
       }
     ],
-    "id" : "C23F1831-590B-46F3-AB70-5FB412CCCB66",
-    "duration" : 60,
+    "id" : "plutonium-pellet",
     "isDefault" : true,
-    "machine" : "C0C2AD43-9FD0-4484-8532-63636045F0BF",
+    "duration" : 60,
+    "machines" : [
+      "particle-accelerator"
+    ],
     "name" : "Plutonium Pellet"
   },
   {
     "output" : [
       {
-        "id" : "4CEA8485-3DF0-45C1-AAEC-2300CC5E6AD9",
+        "id" : "encased-plutonium-cell",
         "amount" : 20
       }
     ],
     "input" : [
       {
-        "id" : "20B17438-D6B8-422D-98E3-4D09767FB592",
+        "id" : "non-fissile-uranium",
         "amount" : 150
       },
       {
-        "id" : "4F81F26F-183E-4612-8332-03158C61D97F",
+        "id" : "aluminum-casing",
         "amount" : 20
       }
     ],
-    "id" : "0DB48E16-C72A-4F32-B031-D325DB574976",
-    "duration" : 120,
+    "id" : "alternate-instant-plutonium-cell",
     "isDefault" : false,
-    "machine" : "C0C2AD43-9FD0-4484-8532-63636045F0BF",
+    "duration" : 120,
+    "machines" : [
+      "particle-accelerator"
+    ],
     "name" : "Alternate: Instant Plutonium Cell"
   },
   {
     "output" : [
       {
-        "id" : "A1C328DA-8F33-4273-B8BE-091380EBC9BD",
+        "id" : "nuclear-pasta",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "34A3D2B7-B67A-4027-B1F6-E8D6228BC1A6",
+        "id" : "copper-powder",
         "amount" : 200
       },
       {
-        "id" : "DE4227AB-0EDE-4377-9FD4-5C1E37D01462",
+        "id" : "pressure-conversion-cube",
         "amount" : 1
       }
     ],
-    "id" : "BB8C0BB7-DB43-47D8-85F8-DA15E6A771B8",
-    "duration" : 120,
+    "id" : "nuclear-pasta",
     "isDefault" : true,
-    "machine" : "C0C2AD43-9FD0-4484-8532-63636045F0BF",
+    "duration" : 120,
+    "machines" : [
+      "particle-accelerator"
+    ],
     "name" : "Nuclear Pasta"
+  },
+  {
+    "output" : [
+      {
+        "id" : "the-hub",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "hub-parts",
+        "amount" : 1
+      }
+    ],
+    "id" : "the-hub",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "The HUB"
+  },
+  {
+    "output" : [
+      {
+        "id" : "craft-bench",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 3
+      },
+      {
+        "id" : "iron-rod",
+        "amount" : 3
+      }
+    ],
+    "id" : "craft-bench",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Craft Bench"
+  },
+  {
+    "output" : [
+      {
+        "id" : "equipment-workshop",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-rod",
+        "amount" : 10
+      }
+    ],
+    "id" : "equipment-workshop",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Equipment Workshop"
+  },
+  {
+    "output" : [
+      {
+        "id" : "smelter",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-rod",
+        "amount" : 5
+      },
+      {
+        "id" : "wire",
+        "amount" : 8
+      }
+    ],
+    "id" : "smelter",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Smelter"
+  },
+  {
+    "output" : [
+      {
+        "id" : "constructor",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "reinforced-iron-plate",
+        "amount" : 2
+      },
+      {
+        "id" : "cable",
+        "amount" : 8
+      }
+    ],
+    "id" : "constructor",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Constructor"
+  },
+  {
+    "output" : [
+      {
+        "id" : "power-pole-mk-1",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "wire",
+        "amount" : 3
+      },
+      {
+        "id" : "iron-rod",
+        "amount" : 1
+      },
+      {
+        "id" : "concrete",
+        "amount" : 1
+      }
+    ],
+    "id" : "power-pole-mk-1",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Power Pole MK.1"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-pole",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-rod",
+        "amount" : 1
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 1
+      },
+      {
+        "id" : "concrete",
+        "amount" : 1
+      }
+    ],
+    "id" : "conveyor-pole",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Pole"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-belt-mk-1",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 1
+      }
+    ],
+    "id" : "conveyor-belt-mk-1",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Belt MK.1"
+  },
+  {
+    "output" : [
+      {
+        "id" : "miner-mk-1",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "portable-miner",
+        "amount" : 1
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 10
+      },
+      {
+        "id" : "concrete",
+        "amount" : 10
+      }
+    ],
+    "id" : "miner-mk-1",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Miner MK.1"
+  },
+  {
+    "output" : [
+      {
+        "id" : "storage-container",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 10
+      },
+      {
+        "id" : "iron-rod",
+        "amount" : 10
+      }
+    ],
+    "id" : "storage-container",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Storage Container"
+  },
+  {
+    "output" : [
+      {
+        "id" : "space-elevator",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "concrete",
+        "amount" : 500
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 250
+      },
+      {
+        "id" : "iron-rod",
+        "amount" : 400
+      },
+      {
+        "id" : "wire",
+        "amount" : 1500
+      }
+    ],
+    "id" : "space-elevator",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Space Elevator"
+  },
+  {
+    "output" : [
+      {
+        "id" : "biomass-burner",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 15
+      },
+      {
+        "id" : "iron-rod",
+        "amount" : 15
+      },
+      {
+        "id" : "wire",
+        "amount" : 25
+      }
+    ],
+    "id" : "biomass-burner",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Biomass Burner"
+  },
+  {
+    "output" : [
+      {
+        "id" : "lookout-tower",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 5
+      },
+      {
+        "id" : "iron-rod",
+        "amount" : 5
+      }
+    ],
+    "id" : "lookout-tower",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Lookout Tower"
+  },
+  {
+    "output" : [
+      {
+        "id" : "foundation-8m-x-1m",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "concrete",
+        "amount" : 5
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      }
+    ],
+    "id" : "foundation-8m-x-1m",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Foundation 8m x 1m"
+  },
+  {
+    "output" : [
+      {
+        "id" : "foundation-8m-x-2m",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "concrete",
+        "amount" : 5
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      }
+    ],
+    "id" : "foundation-8m-x-2m",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Foundation 8m x 2m"
+  },
+  {
+    "output" : [
+      {
+        "id" : "foundation-8m-x-4m",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "concrete",
+        "amount" : 5
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      }
+    ],
+    "id" : "foundation-8m-x-4m",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Foundation 8m x 4m"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ramp-8m-x-1m",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "concrete",
+        "amount" : 5
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      }
+    ],
+    "id" : "ramp-8m-x-1m",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Ramp 8m x 1m"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ramp-8m-x-2m",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "concrete",
+        "amount" : 5
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      }
+    ],
+    "id" : "ramp-8m-x-2m",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Ramp 8m x 2m"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ramp-8m-x-4m",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "concrete",
+        "amount" : 5
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      }
+    ],
+    "id" : "ramp-8m-x-4m",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Ramp 8m x 4m"
+  },
+  {
+    "output" : [
+      {
+        "id" : "wall-8m-x-4m",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "concrete",
+        "amount" : 2
+      }
+    ],
+    "id" : "wall-8m-x-4m",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Wall 8m x 4m"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-splitter",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      },
+      {
+        "id" : "cable",
+        "amount" : 2
+      }
+    ],
+    "id" : "conveyor-splitter",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Splitter"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-merger",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      },
+      {
+        "id" : "iron-rod",
+        "amount" : 2
+      }
+    ],
+    "id" : "conveyor-merger",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Merger"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-lift-mk-1",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      }
+    ],
+    "id" : "conveyor-lift-mk-1",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Lift MK.1"
+  },
+  {
+    "output" : [
+      {
+        "id" : "mam",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "reinforced-iron-plate",
+        "amount" : 5
+      },
+      {
+        "id" : "cable",
+        "amount" : 15
+      },
+      {
+        "id" : "wire",
+        "amount" : 45
+      }
+    ],
+    "id" : "mam",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "MAM"
+  },
+  {
+    "output" : [
+      {
+        "id" : "personal-storage-box",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 6
+      },
+      {
+        "id" : "iron-rod",
+        "amount" : 6
+      }
+    ],
+    "id" : "personal-storage-box",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Personal Storage Box"
+  },
+  {
+    "output" : [
+      {
+        "id" : "assembler",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "reinforced-iron-plate",
+        "amount" : 8
+      },
+      {
+        "id" : "rotor",
+        "amount" : 4
+      },
+      {
+        "id" : "cable",
+        "amount" : 10
+      }
+    ],
+    "id" : "assembler",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Assembler"
+  },
+  {
+    "output" : [
+      {
+        "id" : "awesome-sink",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "reinforced-iron-plate",
+        "amount" : 15
+      },
+      {
+        "id" : "cable",
+        "amount" : 30
+      },
+      {
+        "id" : "concrete",
+        "amount" : 45
+      }
+    ],
+    "id" : "awesome-sink",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "AWESOME Sink"
+  },
+  {
+    "output" : [
+      {
+        "id" : "awesome-shop",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "screw",
+        "amount" : 200
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 10
+      },
+      {
+        "id" : "cable",
+        "amount" : 10
+      }
+    ],
+    "id" : "awesome-shop",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "AWESOME Shop"
+  },
+  {
+    "output" : [
+      {
+        "id" : "jump-pad",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "rotor",
+        "amount" : 2
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 15
+      },
+      {
+        "id" : "cable",
+        "amount" : 10
+      }
+    ],
+    "id" : "jump-pad",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Jump Pad"
+  },
+  {
+    "output" : [
+      {
+        "id" : "u-jelly-landing-pad",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "rotor",
+        "amount" : 2
+      },
+      {
+        "id" : "cable",
+        "amount" : 20
+      },
+      {
+        "id" : "biomass",
+        "amount" : 200
+      }
+    ],
+    "id" : "u-jelly-landing-pad",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "U-Jelly Landing Pad"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-belt-mk-2",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "reinforced-iron-plate",
+        "amount" : 1
+      }
+    ],
+    "id" : "conveyor-belt-mk-2",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Belt MK.2"
+  },
+  {
+    "output" : [
+      {
+        "id" : "stackable-conveyor-pole",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-rod",
+        "amount" : 2
+      },
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      },
+      {
+        "id" : "concrete",
+        "amount" : 2
+      }
+    ],
+    "id" : "stackable-conveyor-pole",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Stackable Conveyor Pole"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-lift-mk-2",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "reinforced-iron-plate",
+        "amount" : 2
+      }
+    ],
+    "id" : "conveyor-lift-mk-2",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Lift MK.2"
+  },
+  {
+    "output" : [
+      {
+        "id" : "coal-generator",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "reinforced-iron-plate",
+        "amount" : 20
+      },
+      {
+        "id" : "rotor",
+        "amount" : 10
+      },
+      {
+        "id" : "cable",
+        "amount" : 30
+      }
+    ],
+    "id" : "coal-generator",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Coal Generator"
+  },
+  {
+    "output" : [
+      {
+        "id" : "water-extractor",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "copper-sheet",
+        "amount" : 20
+      },
+      {
+        "id" : "reinforced-iron-plate",
+        "amount" : 10
+      },
+      {
+        "id" : "rotor",
+        "amount" : 10
+      }
+    ],
+    "id" : "water-extractor",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Water Extractor"
+  },
+  {
+    "output" : [
+      {
+        "id" : "pipeline-mk-1",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "copper-sheet",
+        "amount" : 1
+      }
+    ],
+    "id" : "pipeline-mk-1",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Pipeline MK.1"
+  },
+  {
+    "output" : [
+      {
+        "id" : "pipeline-support",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      },
+      {
+        "id" : "concrete",
+        "amount" : 2
+      }
+    ],
+    "id" : "pipeline-support",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Pipeline Support"
+  },
+  {
+    "output" : [
+      {
+        "id" : "pipeline-junction-cross",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "copper-sheet",
+        "amount" : 2
+      }
+    ],
+    "id" : "pipeline-junction-cross",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Pipeline Junction Cross"
+  },
+  {
+    "output" : [
+      {
+        "id" : "pipeline-pump-mk-1",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "copper-sheet",
+        "amount" : 2
+      },
+      {
+        "id" : "rotor",
+        "amount" : 2
+      }
+    ],
+    "id" : "pipeline-pump-mk-1",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Pipeline Pump MK.1"
+  },
+  {
+    "output" : [
+      {
+        "id" : "fluid-buffer",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "copper-sheet",
+        "amount" : 10
+      },
+      {
+        "id" : "modular-frame",
+        "amount" : 5
+      }
+    ],
+    "id" : "fluid-buffer",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Fluid Buffer"
+  },
+  {
+    "output" : [
+      {
+        "id" : "foundry",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "modular-frame",
+        "amount" : 10
+      },
+      {
+        "id" : "rotor",
+        "amount" : 10
+      },
+      {
+        "id" : "concrete",
+        "amount" : 20
+      }
+    ],
+    "id" : "foundry",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Foundry"
+  },
+  {
+    "output" : [
+      {
+        "id" : "truck-station",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "modular-frame",
+        "amount" : 15
+      },
+      {
+        "id" : "rotor",
+        "amount" : 20
+      },
+      {
+        "id" : "cable",
+        "amount" : 50
+      }
+    ],
+    "id" : "truck-station",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Truck Station"
+  },
+  {
+    "output" : [
+      {
+        "id" : "miner-mk-2",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "portable-miner",
+        "amount" : 2
+      },
+      {
+        "id" : "encased-industrial-beam",
+        "amount" : 10
+      },
+      {
+        "id" : "steel-pipe",
+        "amount" : 20
+      },
+      {
+        "id" : "modular-frame",
+        "amount" : 10
+      }
+    ],
+    "id" : "miner-mk-2",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Miner MK.2"
+  },
+  {
+    "output" : [
+      {
+        "id" : "hyper-tube-entrance",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "encased-industrial-beam",
+        "amount" : 4
+      },
+      {
+        "id" : "rotor",
+        "amount" : 4
+      },
+      {
+        "id" : "steel-pipe",
+        "amount" : 10
+      }
+    ],
+    "id" : "hyper-tube-entrance",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Hyper Tube Entrance"
+  },
+  {
+    "output" : [
+      {
+        "id" : "hyper-tube",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "copper-sheet",
+        "amount" : 1
+      },
+      {
+        "id" : "steel-pipe",
+        "amount" : 1
+      }
+    ],
+    "id" : "hyper-tube",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Hyper Tube"
+  },
+  {
+    "output" : [
+      {
+        "id" : "hyper-tube-support",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 2
+      },
+      {
+        "id" : "concrete",
+        "amount" : 2
+      }
+    ],
+    "id" : "hyper-tube-support",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Hyper Tube Support"
+  },
+  {
+    "output" : [
+      {
+        "id" : "stackable-hyper-tube-support",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 4
+      },
+      {
+        "id" : "iron-rod",
+        "amount" : 2
+      },
+      {
+        "id" : "concrete",
+        "amount" : 4
+      }
+    ],
+    "id" : "stackable-hyper-tube-support",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Stackable Hyper Tube Support"
+  },
+  {
+    "output" : [
+      {
+        "id" : "power-storage",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "wire",
+        "amount" : 100
+      },
+      {
+        "id" : "modular-frame",
+        "amount" : 10
+      },
+      {
+        "id" : "stator",
+        "amount" : 5
+      }
+    ],
+    "id" : "power-storage",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Power Storage"
+  },
+  {
+    "output" : [
+      {
+        "id" : "industrial-storage-container",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "steel-beam",
+        "amount" : 20
+      },
+      {
+        "id" : "steel-pipe",
+        "amount" : 20
+      }
+    ],
+    "id" : "industrial-storage-container",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Industrial Storage Container"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-belt-mk-3",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "steel-beam",
+        "amount" : 1
+      }
+    ],
+    "id" : "conveyor-belt-mk-3",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Belt MK.3"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-lift-mk-3",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "steel-beam",
+        "amount" : 2
+      }
+    ],
+    "id" : "conveyor-lift-mk-3",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Lift MK.3"
+  },
+  {
+    "output" : [
+      {
+        "id" : "stackable-pipeline-support",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-plate",
+        "amount" : 4
+      },
+      {
+        "id" : "iron-rod",
+        "amount" : 2
+      },
+      {
+        "id" : "concrete",
+        "amount" : 2
+      }
+    ],
+    "id" : "stackable-pipeline-support",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Stackable Pipeline Support"
+  },
+  {
+    "output" : [
+      {
+        "id" : "oil-extractor",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "motor",
+        "amount" : 15
+      },
+      {
+        "id" : "encased-industrial-beam",
+        "amount" : 20
+      },
+      {
+        "id" : "cable",
+        "amount" : 60
+      }
+    ],
+    "id" : "oil-extractor",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Oil Extractor"
+  },
+  {
+    "output" : [
+      {
+        "id" : "refinery",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "motor",
+        "amount" : 10
+      },
+      {
+        "id" : "encased-industrial-beam",
+        "amount" : 10
+      },
+      {
+        "id" : "steel-pipe",
+        "amount" : 30
+      },
+      {
+        "id" : "copper-sheet",
+        "amount" : 20
+      }
+    ],
+    "id" : "refinery",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Refinery"
+  },
+  {
+    "output" : [
+      {
+        "id" : "valve",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "rubber",
+        "amount" : 4
+      },
+      {
+        "id" : "steel-beam",
+        "amount" : 4
+      }
+    ],
+    "id" : "valve",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Valve"
+  },
+  {
+    "output" : [
+      {
+        "id" : "packager",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "steel-beam",
+        "amount" : 20
+      },
+      {
+        "id" : "rubber",
+        "amount" : 10
+      },
+      {
+        "id" : "plastic",
+        "amount" : 10
+      }
+    ],
+    "id" : "packager",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Packager"
+  },
+  {
+    "output" : [
+      {
+        "id" : "industrial-fluid-buffer",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "plastic",
+        "amount" : 30
+      },
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 3
+      }
+    ],
+    "id" : "industrial-fluid-buffer",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Industrial Fluid Buffer"
+  },
+  {
+    "output" : [
+      {
+        "id" : "manufacturer",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "motor",
+        "amount" : 5
+      },
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 10
+      },
+      {
+        "id" : "cable",
+        "amount" : 50
+      },
+      {
+        "id" : "plastic",
+        "amount" : 50
+      }
+    ],
+    "id" : "manufacturer",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Manufacturer"
+  },
+  {
+    "output" : [
+      {
+        "id" : "fuel-generator",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "computer",
+        "amount" : 5
+      },
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 10
+      },
+      {
+        "id" : "motor",
+        "amount" : 15
+      },
+      {
+        "id" : "rubber",
+        "amount" : 50
+      },
+      {
+        "id" : "quickwire",
+        "amount" : 50
+      }
+    ],
+    "id" : "fuel-generator",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Fuel Generator"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-belt-mk-4",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "encased-industrial-beam",
+        "amount" : 1
+      }
+    ],
+    "id" : "conveyor-belt-mk-4",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Belt MK.4"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-lift-mk-4",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "encased-industrial-beam",
+        "amount" : 2
+      }
+    ],
+    "id" : "conveyor-lift-mk-4",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Lift MK.4"
+  },
+  {
+    "output" : [
+      {
+        "id" : "train-station",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 4
+      },
+      {
+        "id" : "computer",
+        "amount" : 8
+      },
+      {
+        "id" : "concrete",
+        "amount" : 50
+      },
+      {
+        "id" : "cable",
+        "amount" : 25
+      }
+    ],
+    "id" : "train-station",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Train Station"
+  },
+  {
+    "output" : [
+      {
+        "id" : "freight-platform",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 6
+      },
+      {
+        "id" : "computer",
+        "amount" : 2
+      },
+      {
+        "id" : "concrete",
+        "amount" : 50
+      },
+      {
+        "id" : "cable",
+        "amount" : 25
+      },
+      {
+        "id" : "motor",
+        "amount" : 5
+      }
+    ],
+    "id" : "freight-platform",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Freight Platform"
+  },
+  {
+    "output" : [
+      {
+        "id" : "fluid-freight-platform",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 6
+      },
+      {
+        "id" : "computer",
+        "amount" : 2
+      },
+      {
+        "id" : "concrete",
+        "amount" : 50
+      },
+      {
+        "id" : "cable",
+        "amount" : 25
+      },
+      {
+        "id" : "motor",
+        "amount" : 5
+      }
+    ],
+    "id" : "fluid-freight-platform",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Fluid Freight Platform"
+  },
+  {
+    "output" : [
+      {
+        "id" : "empty-platform",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 6
+      },
+      {
+        "id" : "concrete",
+        "amount" : 50
+      }
+    ],
+    "id" : "empty-platform",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Empty Platform"
+  },
+  {
+    "output" : [
+      {
+        "id" : "pipeline-mk-2",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "copper-sheet",
+        "amount" : 2
+      },
+      {
+        "id" : "plastic",
+        "amount" : 1
+      }
+    ],
+    "id" : "pipeline-mk-2",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Pipeline MK.2"
+  },
+  {
+    "output" : [
+      {
+        "id" : "pipeline-pump-mk-2",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "motor",
+        "amount" : 2
+      },
+      {
+        "id" : "encased-industrial-beam",
+        "amount" : 4
+      },
+      {
+        "id" : "plastic",
+        "amount" : 8
+      }
+    ],
+    "id" : "pipeline-pump-mk-2",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Pipeline Pump MK.2"
+  },
+  {
+    "output" : [
+      {
+        "id" : "blender",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "motor",
+        "amount" : 20
+      },
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 10
+      },
+      {
+        "id" : "aluminum-casing",
+        "amount" : 50
+      },
+      {
+        "id" : "radio-control-unit",
+        "amount" : 5
+      }
+    ],
+    "id" : "blender",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Blender"
+  },
+  {
+    "output" : [
+      {
+        "id" : "drone-port",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 20
+      },
+      {
+        "id" : "high-speed-connector",
+        "amount" : 20
+      },
+      {
+        "id" : "alclad-aluminum-sheet",
+        "amount" : 50
+      },
+      {
+        "id" : "aluminum-casing",
+        "amount" : 50
+      },
+      {
+        "id" : "radio-control-unit",
+        "amount" : 10
+      }
+    ],
+    "id" : "drone-port",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Drone Port"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-belt-mk-5",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "alclad-aluminum-sheet",
+        "amount" : 1
+      }
+    ],
+    "id" : "conveyor-belt-mk-5",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Belt MK.5"
+  },
+  {
+    "output" : [
+      {
+        "id" : "conveyor-lift-mk-5",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "alclad-aluminum-sheet",
+        "amount" : 2
+      }
+    ],
+    "id" : "conveyor-lift-mk-5",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Conveyor Lift MK.5"
+  },
+  {
+    "output" : [
+      {
+        "id" : "particle-accelerator",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "radio-control-unit",
+        "amount" : 25
+      },
+      {
+        "id" : "electromagnetic-control-rod",
+        "amount" : 100
+      },
+      {
+        "id" : "supercomputer",
+        "amount" : 10
+      },
+      {
+        "id" : "cooling-system",
+        "amount" : 50
+      },
+      {
+        "id" : "fused-modular-frame",
+        "amount" : 20
+      },
+      {
+        "id" : "turbo-motor",
+        "amount" : 10
+      }
+    ],
+    "id" : "particle-accelerator",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Particle Accelerator"
+  },
+  {
+    "output" : [
+      {
+        "id" : "nuclear-power-plant",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "concrete",
+        "amount" : 250
+      },
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 25
+      },
+      {
+        "id" : "supercomputer",
+        "amount" : 5
+      },
+      {
+        "id" : "cable",
+        "amount" : 100
+      },
+      {
+        "id" : "alclad-aluminum-sheet",
+        "amount" : 100
+      }
+    ],
+    "id" : "nuclear-power-plant",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Nuclear Power Plant"
+  },
+  {
+    "output" : [
+      {
+        "id" : "power-pole-mk-2",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "quickwire",
+        "amount" : 6
+      },
+      {
+        "id" : "iron-rod",
+        "amount" : 2
+      },
+      {
+        "id" : "concrete",
+        "amount" : 2
+      }
+    ],
+    "id" : "power-pole-mk-2",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Power Pole MK.2"
+  },
+  {
+    "output" : [
+      {
+        "id" : "smart-splitter",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "reinforced-iron-plate",
+        "amount" : 2
+      },
+      {
+        "id" : "rotor",
+        "amount" : 2
+      },
+      {
+        "id" : "ai-limiter",
+        "amount" : 1
+      }
+    ],
+    "id" : "smart-splitter",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Smart Splitter"
+  },
+  {
+    "output" : [
+      {
+        "id" : "power-switch",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "quickwire",
+        "amount" : 20
+      },
+      {
+        "id" : "steel-beam",
+        "amount" : 4
+      },
+      {
+        "id" : "ai-limiter",
+        "amount" : 1
+      }
+    ],
+    "id" : "power-switch",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Power Switch"
+  },
+  {
+    "output" : [
+      {
+        "id" : "power-pole-mk-3",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "high-speed-connector",
+        "amount" : 2
+      },
+      {
+        "id" : "steel-pipe",
+        "amount" : 2
+      },
+      {
+        "id" : "rubber",
+        "amount" : 3
+      }
+    ],
+    "id" : "power-pole-mk-3",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Power Pole MK.3"
+  },
+  {
+    "output" : [
+      {
+        "id" : "programmable-splitter",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 1
+      },
+      {
+        "id" : "motor",
+        "amount" : 1
+      },
+      {
+        "id" : "supercomputer",
+        "amount" : 1
+      }
+    ],
+    "id" : "programmable-splitter",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Programmable Splitter"
+  },
+  {
+    "output" : [
+      {
+        "id" : "geothermal-generator",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "supercomputer",
+        "amount" : 8
+      },
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 16
+      },
+      {
+        "id" : "high-speed-connector",
+        "amount" : 16
+      },
+      {
+        "id" : "copper-sheet",
+        "amount" : 40
+      },
+      {
+        "id" : "rubber",
+        "amount" : 80
+      }
+    ],
+    "id" : "geothermal-generator",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Geothermal Generator"
+  },
+  {
+    "output" : [
+      {
+        "id" : "radar-tower",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 30
+      },
+      {
+        "id" : "crystal-oscillator",
+        "amount" : 30
+      },
+      {
+        "id" : "beacon",
+        "amount" : 20
+      },
+      {
+        "id" : "cable",
+        "amount" : 100
+      }
+    ],
+    "id" : "radar-tower",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Radar Tower"
   }
 ]

@@ -43,16 +43,10 @@
 		45115BE024BF559E00D58F6A /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BDE24BF559E00D58F6A /* ItemRow.swift */; };
 		45115BE524BF578F00D58F6A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BE424BF578F00D58F6A /* RecipeView.swift */; };
 		45115BE624BF578F00D58F6A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BE424BF578F00D58F6A /* RecipeView.swift */; };
-		459A945A24CD6A5E00C260BB /* ItemRecipeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459A945924CD6A5E00C260BB /* ItemRecipeSelection.swift */; };
-		459A945C24CD6AEB00C260BB /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459A945B24CD6AEB00C260BB /* RecipesView.swift */; };
-		459A945E24CD6DDD00C260BB /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459A945D24CD6DDD00C260BB /* TestView.swift */; };
-		459A945F24CD6DDD00C260BB /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459A945D24CD6DDD00C260BB /* TestView.swift */; };
 		F934D78326505022002E7723 /* exctractionRates.json in Resources */ = {isa = PBXBuildFile; fileRef = F934D78226505022002E7723 /* exctractionRates.json */; };
 		F934D78426505022002E7723 /* exctractionRates.json in Resources */ = {isa = PBXBuildFile; fileRef = F934D78226505022002E7723 /* exctractionRates.json */; };
 		F946413926A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */; };
 		F946413A26A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */; };
-		F946413C26A36198001F8ACF /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413B26A36198001F8ACF /* ArrayExtensions.swift */; };
-		F946413D26A36198001F8ACF /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413B26A36198001F8ACF /* ArrayExtensions.swift */; };
 		F946413F26A361E2001F8ACF /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413E26A361E2001F8ACF /* ItemListView.swift */; };
 		F946414026A361E2001F8ACF /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413E26A361E2001F8ACF /* ItemListView.swift */; };
 		F946414226A36294001F8ACF /* RecipeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946414126A36294001F8ACF /* RecipeSelectionView.swift */; };
@@ -61,6 +55,28 @@
 		F946414626A36326001F8ACF /* ProductionStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946414426A36326001F8ACF /* ProductionStartView.swift */; };
 		F946414826A36399001F8ACF /* CloseButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946414726A36399001F8ACF /* CloseButtonView.swift */; };
 		F946414926A36399001F8ACF /* CloseButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946414726A36399001F8ACF /* CloseButtonView.swift */; };
+		F95FAAA3273C2F4B0043D3C4 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAA2273C2F4B0043D3C4 /* PersistentStorage.swift */; };
+		F95FAAA5273C3E7E0043D3C4 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAA4273C3E7E0043D3C4 /* DataProvider.swift */; };
+		F95FAAA7273C3F210043D3C4 /* version.json in Resources */ = {isa = PBXBuildFile; fileRef = F95FAAA6273C3F210043D3C4 /* version.json */; };
+		F95FAAA8273C3F210043D3C4 /* version.json in Resources */ = {isa = PBXBuildFile; fileRef = F95FAAA6273C3F210043D3C4 /* version.json */; };
+		F95FAAAA273C3F390043D3C4 /* VersionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAA9273C3F390043D3C4 /* VersionNetwork.swift */; };
+		F95FAAAB273C3F390043D3C4 /* VersionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAA9273C3F390043D3C4 /* VersionNetwork.swift */; };
+		F95FAAB2273D0EE80043D3C4 /* InMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAB1273D0EE80043D3C4 /* InMemoryStorage.swift */; };
+		F95FAAB3273D0EE80043D3C4 /* InMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAB1273D0EE80043D3C4 /* InMemoryStorage.swift */; };
+		F98BB2C9273D356A000556E9 /* BuildingPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C8273D34A1000556E9 /* BuildingPersistent.swift */; };
+		F98BB2CA273D356A000556E9 /* RecipePersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C6273D34A1000556E9 /* RecipePersistent.swift */; };
+		F98BB2CB273D356A000556E9 /* PartPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C3273D34A1000556E9 /* PartPersistent.swift */; };
+		F98BB2CC273D356A000556E9 /* VersionPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C7273D34A1000556E9 /* VersionPersistent.swift */; };
+		F98BB2CD273D356A000556E9 /* EquipmentPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C4273D34A1000556E9 /* EquipmentPersistent.swift */; };
+		F98BB2CE273D356A000556E9 /* VehiclePersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C5273D34A1000556E9 /* VehiclePersistent.swift */; };
+		F98BB2CF273D356A000556E9 /* BuildingPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C8273D34A1000556E9 /* BuildingPersistent.swift */; };
+		F98BB2D0273D356A000556E9 /* RecipePersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C6273D34A1000556E9 /* RecipePersistent.swift */; };
+		F98BB2D1273D356A000556E9 /* PartPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C3273D34A1000556E9 /* PartPersistent.swift */; };
+		F98BB2D2273D356A000556E9 /* VersionPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C7273D34A1000556E9 /* VersionPersistent.swift */; };
+		F98BB2D3273D356A000556E9 /* EquipmentPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C4273D34A1000556E9 /* EquipmentPersistent.swift */; };
+		F98BB2D4273D356A000556E9 /* VehiclePersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C5273D34A1000556E9 /* VehiclePersistent.swift */; };
+		F98BB2D5273E6C66000556E9 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAA2273C2F4B0043D3C4 /* PersistentStorage.swift */; };
+		F98BB2D6273E6CCF000556E9 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAA4273C3E7E0043D3C4 /* DataProvider.swift */; };
 		F98F3B26273AB9D000CE2580 /* PartNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B25273AB9D000CE2580 /* PartNetwork.swift */; };
 		F98F3B27273AB9D000CE2580 /* PartNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B25273AB9D000CE2580 /* PartNetwork.swift */; };
 		F98F3B29273ABD0800CE2580 /* EquipmentNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B28273ABD0800CE2580 /* EquipmentNetwork.swift */; };
@@ -71,10 +87,6 @@
 		F98F3B30273ABE9400CE2580 /* VehicleNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B2E273ABE9400CE2580 /* VehicleNetwork.swift */; };
 		F98F3B32273ABF0800CE2580 /* RecipeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B31273ABF0800CE2580 /* RecipeNetwork.swift */; };
 		F98F3B33273ABF0800CE2580 /* RecipeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B31273ABF0800CE2580 /* RecipeNetwork.swift */; };
-		F99250282651377C00AE5E99 /* HeavyModularFrameProductionTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D9514226512ECC00D42A78 /* HeavyModularFrameProductionTestView.swift */; };
-		F9BAC16826A1C7A40062A4DC /* UUIDExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAC16726A1C7A40062A4DC /* UUIDExtension.swift */; };
-		F9BAC16926A1C7A40062A4DC /* UUIDExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAC16726A1C7A40062A4DC /* UUIDExtension.swift */; };
-		F9D9514326512ECC00D42A78 /* HeavyModularFrameProductionTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D9514226512ECC00D42A78 /* HeavyModularFrameProductionTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,23 +113,28 @@
 		45115BDA24BF51EF00D58F6A /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
 		45115BDE24BF559E00D58F6A /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		45115BE424BF578F00D58F6A /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
-		459A945924CD6A5E00C260BB /* ItemRecipeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRecipeSelection.swift; sourceTree = "<group>"; };
-		459A945B24CD6AEB00C260BB /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
-		459A945D24CD6DDD00C260BB /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		F934D78226505022002E7723 /* exctractionRates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exctractionRates.json; sourceTree = "<group>"; };
 		F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointFormatStyle.swift; sourceTree = "<group>"; };
-		F946413B26A36198001F8ACF /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		F946413E26A361E2001F8ACF /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		F946414126A36294001F8ACF /* RecipeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSelectionView.swift; sourceTree = "<group>"; };
 		F946414426A36326001F8ACF /* ProductionStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionStartView.swift; sourceTree = "<group>"; };
 		F946414726A36399001F8ACF /* CloseButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonView.swift; sourceTree = "<group>"; };
+		F95FAAA2273C2F4B0043D3C4 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		F95FAAA4273C3E7E0043D3C4 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		F95FAAA6273C3F210043D3C4 /* version.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = version.json; sourceTree = "<group>"; };
+		F95FAAA9273C3F390043D3C4 /* VersionNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionNetwork.swift; sourceTree = "<group>"; };
+		F95FAAB1273D0EE80043D3C4 /* InMemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorage.swift; sourceTree = "<group>"; };
+		F98BB2C3273D34A1000556E9 /* PartPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartPersistent.swift; sourceTree = "<group>"; };
+		F98BB2C4273D34A1000556E9 /* EquipmentPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentPersistent.swift; sourceTree = "<group>"; };
+		F98BB2C5273D34A1000556E9 /* VehiclePersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePersistent.swift; sourceTree = "<group>"; };
+		F98BB2C6273D34A1000556E9 /* RecipePersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePersistent.swift; sourceTree = "<group>"; };
+		F98BB2C7273D34A1000556E9 /* VersionPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionPersistent.swift; sourceTree = "<group>"; };
+		F98BB2C8273D34A1000556E9 /* BuildingPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingPersistent.swift; sourceTree = "<group>"; };
 		F98F3B25273AB9D000CE2580 /* PartNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartNetwork.swift; sourceTree = "<group>"; };
 		F98F3B28273ABD0800CE2580 /* EquipmentNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentNetwork.swift; sourceTree = "<group>"; };
 		F98F3B2B273ABE0000CE2580 /* BuildingNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingNetwork.swift; sourceTree = "<group>"; };
 		F98F3B2E273ABE9400CE2580 /* VehicleNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleNetwork.swift; sourceTree = "<group>"; };
 		F98F3B31273ABF0800CE2580 /* RecipeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNetwork.swift; sourceTree = "<group>"; };
-		F9BAC16726A1C7A40062A4DC /* UUIDExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDExtension.swift; sourceTree = "<group>"; };
-		F9D9514226512ECC00D42A78 /* HeavyModularFrameProductionTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeavyModularFrameProductionTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,11 +168,12 @@
 		450BD18E24A6395700948B47 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				45115BDD24BF559300D58F6A /* UI */,
-				450BD1BB24A639FD00948B47 /* Extensions */,
+				F95FAAA4273C3E7E0043D3C4 /* DataProvider.swift */,
 				450BD1C424A639FD00948B47 /* JSON */,
+				F9B91033273E9FA400274EE3 /* Storage */,
 				450BD1B124A639FD00948B47 /* Models */,
-				450BD1CA24A639FD00948B47 /* Storage.swift */,
+				450BD1BB24A639FD00948B47 /* Extensions */,
+				45115BDD24BF559300D58F6A /* UI */,
 				450BD18F24A6395700948B47 /* SatisfactoryApp.swift */,
 				450BD19124A6395700948B47 /* Assets.xcassets */,
 				45115BDA24BF51EF00D58F6A /* NumberFormatters.swift */,
@@ -193,6 +211,7 @@
 		450BD1B124A639FD00948B47 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F98BB2C2273D3496000556E9 /* Persistent */,
 				F98F3B23273AB95200CE2580 /* Network */,
 				450BD1B624A639FD00948B47 /* Item.swift */,
 				450BD1B724A639FD00948B47 /* Part.swift */,
@@ -208,9 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				450BD1BD24A639FD00948B47 /* BundleExtension.swift */,
-				F9BAC16726A1C7A40062A4DC /* UUIDExtension.swift */,
 				F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */,
-				F946413B26A36198001F8ACF /* ArrayExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -224,6 +241,7 @@
 				450BD1C824A639FD00948B47 /* parts.json */,
 				450BD1C924A639FD00948B47 /* equipment.json */,
 				F934D78226505022002E7723 /* exctractionRates.json */,
+				F95FAAA6273C3F210043D3C4 /* version.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -233,7 +251,6 @@
 			children = (
 				45115BDE24BF559E00D58F6A /* ItemRow.swift */,
 				45115BE424BF578F00D58F6A /* RecipeView.swift */,
-				459A945D24CD6DDD00C260BB /* TestView.swift */,
 				F946413E26A361E2001F8ACF /* ItemListView.swift */,
 				F946414126A36294001F8ACF /* RecipeSelectionView.swift */,
 				F946414426A36326001F8ACF /* ProductionStartView.swift */,
@@ -245,11 +262,21 @@
 		459A945824CD6A4D00C260BB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				459A945924CD6A5E00C260BB /* ItemRecipeSelection.swift */,
-				459A945B24CD6AEB00C260BB /* RecipesView.swift */,
-				F9D9514226512ECC00D42A78 /* HeavyModularFrameProductionTestView.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		F98BB2C2273D3496000556E9 /* Persistent */ = {
+			isa = PBXGroup;
+			children = (
+				F98BB2C3273D34A1000556E9 /* PartPersistent.swift */,
+				F98BB2C4273D34A1000556E9 /* EquipmentPersistent.swift */,
+				F98BB2C8273D34A1000556E9 /* BuildingPersistent.swift */,
+				F98BB2C5273D34A1000556E9 /* VehiclePersistent.swift */,
+				F98BB2C6273D34A1000556E9 /* RecipePersistent.swift */,
+				F98BB2C7273D34A1000556E9 /* VersionPersistent.swift */,
+			);
+			path = Persistent;
 			sourceTree = "<group>";
 		};
 		F98F3B23273AB95200CE2580 /* Network */ = {
@@ -260,8 +287,19 @@
 				F98F3B2B273ABE0000CE2580 /* BuildingNetwork.swift */,
 				F98F3B2E273ABE9400CE2580 /* VehicleNetwork.swift */,
 				F98F3B31273ABF0800CE2580 /* RecipeNetwork.swift */,
+				F95FAAA9273C3F390043D3C4 /* VersionNetwork.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		F9B91033273E9FA400274EE3 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F95FAAA2273C2F4B0043D3C4 /* PersistentStorage.swift */,
+				F95FAAB1273D0EE80043D3C4 /* InMemoryStorage.swift */,
+				450BD1CA24A639FD00948B47 /* Storage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +382,7 @@
 			files = (
 				450BD1F824A639FE00948B47 /* parts.json in Resources */,
 				450BD1F624A639FE00948B47 /* vehicles.json in Resources */,
+				F95FAAA7273C3F210043D3C4 /* version.json in Resources */,
 				450BD1FA24A639FE00948B47 /* equipment.json in Resources */,
 				F934D78326505022002E7723 /* exctractionRates.json in Resources */,
 				450BD1A624A6395700948B47 /* Assets.xcassets in Resources */,
@@ -358,6 +397,7 @@
 			files = (
 				450BD1F924A639FE00948B47 /* parts.json in Resources */,
 				450BD1F724A639FE00948B47 /* vehicles.json in Resources */,
+				F95FAAA8273C3F210043D3C4 /* version.json in Resources */,
 				450BD1FB24A639FE00948B47 /* equipment.json in Resources */,
 				F934D78426505022002E7723 /* exctractionRates.json in Resources */,
 				450BD1A724A6395700948B47 /* Assets.xcassets in Resources */,
@@ -375,30 +415,36 @@
 			files = (
 				450BD1D824A639FE00948B47 /* Vehicle.swift in Sources */,
 				45115BDF24BF559E00D58F6A /* ItemRow.swift in Sources */,
-				459A945E24CD6DDD00C260BB /* TestView.swift in Sources */,
 				45115BDB24BF51EF00D58F6A /* NumberFormatters.swift in Sources */,
 				450BD1FC24A639FE00948B47 /* Storage.swift in Sources */,
-				F946413C26A36198001F8ACF /* ArrayExtensions.swift in Sources */,
+				F98BB2CD273D356A000556E9 /* EquipmentPersistent.swift in Sources */,
 				F946413926A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
 				450BD1E624A639FE00948B47 /* BundleExtension.swift in Sources */,
 				F98F3B2C273ABE0000CE2580 /* BuildingNetwork.swift in Sources */,
+				F98BB2CC273D356A000556E9 /* VersionPersistent.swift in Sources */,
 				F946414526A36326001F8ACF /* ProductionStartView.swift in Sources */,
 				450BD1D224A639FE00948B47 /* Building.swift in Sources */,
 				F98F3B32273ABF0800CE2580 /* RecipeNetwork.swift in Sources */,
 				450BD1A224A6395700948B47 /* SatisfactoryApp.swift in Sources */,
 				450BD1DC24A639FE00948B47 /* Part.swift in Sources */,
 				F98F3B2F273ABE9400CE2580 /* VehicleNetwork.swift in Sources */,
+				F98BB2CB273D356A000556E9 /* PartPersistent.swift in Sources */,
+				F95FAAB2273D0EE80043D3C4 /* InMemoryStorage.swift in Sources */,
 				45115BE524BF578F00D58F6A /* RecipeView.swift in Sources */,
-				F99250282651377C00AE5E99 /* HeavyModularFrameProductionTestView.swift in Sources */,
+				F95FAAAA273C3F390043D3C4 /* VersionNetwork.swift in Sources */,
 				450BD1DA24A639FE00948B47 /* Item.swift in Sources */,
+				F95FAAA3273C2F4B0043D3C4 /* PersistentStorage.swift in Sources */,
 				F946414826A36399001F8ACF /* CloseButtonView.swift in Sources */,
 				F946413F26A361E2001F8ACF /* ItemListView.swift in Sources */,
 				450BD1D424A639FE00948B47 /* Recipe.swift in Sources */,
 				F946414226A36294001F8ACF /* RecipeSelectionView.swift in Sources */,
 				450BD1D624A639FE00948B47 /* Equipment.swift in Sources */,
+				F98BB2CA273D356A000556E9 /* RecipePersistent.swift in Sources */,
+				F95FAAA5273C3E7E0043D3C4 /* DataProvider.swift in Sources */,
 				F98F3B29273ABD0800CE2580 /* EquipmentNetwork.swift in Sources */,
 				F98F3B26273AB9D000CE2580 /* PartNetwork.swift in Sources */,
-				F9BAC16826A1C7A40062A4DC /* UUIDExtension.swift in Sources */,
+				F98BB2C9273D356A000556E9 /* BuildingPersistent.swift in Sources */,
+				F98BB2CE273D356A000556E9 /* VehiclePersistent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,30 +456,34 @@
 				450BD1D924A639FE00948B47 /* Vehicle.swift in Sources */,
 				F946414026A361E2001F8ACF /* ItemListView.swift in Sources */,
 				45115BE024BF559E00D58F6A /* ItemRow.swift in Sources */,
-				459A945F24CD6DDD00C260BB /* TestView.swift in Sources */,
+				F98BB2D3273D356A000556E9 /* EquipmentPersistent.swift in Sources */,
 				45115BDC24BF51EF00D58F6A /* NumberFormatters.swift in Sources */,
 				450BD1FD24A639FE00948B47 /* Storage.swift in Sources */,
 				F98F3B2A273ABD0800CE2580 /* EquipmentNetwork.swift in Sources */,
 				450BD1E724A639FE00948B47 /* BundleExtension.swift in Sources */,
+				F98BB2D2273D356A000556E9 /* VersionPersistent.swift in Sources */,
 				F946413A26A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
+				F98BB2D5273E6C66000556E9 /* PersistentStorage.swift in Sources */,
 				450BD1D324A639FE00948B47 /* Building.swift in Sources */,
 				F946414926A36399001F8ACF /* CloseButtonView.swift in Sources */,
 				450BD1A324A6395700948B47 /* SatisfactoryApp.swift in Sources */,
 				450BD1DD24A639FE00948B47 /* Part.swift in Sources */,
-				F946413D26A36198001F8ACF /* ArrayExtensions.swift in Sources */,
+				F98BB2D6273E6CCF000556E9 /* DataProvider.swift in Sources */,
+				F98BB2D1273D356A000556E9 /* PartPersistent.swift in Sources */,
+				F95FAAB3273D0EE80043D3C4 /* InMemoryStorage.swift in Sources */,
 				F98F3B2D273ABE0000CE2580 /* BuildingNetwork.swift in Sources */,
+				F95FAAAB273C3F390043D3C4 /* VersionNetwork.swift in Sources */,
 				45115BE624BF578F00D58F6A /* RecipeView.swift in Sources */,
-				F9D9514326512ECC00D42A78 /* HeavyModularFrameProductionTestView.swift in Sources */,
 				450BD1DB24A639FE00948B47 /* Item.swift in Sources */,
 				450BD1D524A639FE00948B47 /* Recipe.swift in Sources */,
 				F98F3B27273AB9D000CE2580 /* PartNetwork.swift in Sources */,
 				450BD1D724A639FE00948B47 /* Equipment.swift in Sources */,
-				459A945C24CD6AEB00C260BB /* RecipesView.swift in Sources */,
 				F946414326A36294001F8ACF /* RecipeSelectionView.swift in Sources */,
-				459A945A24CD6A5E00C260BB /* ItemRecipeSelection.swift in Sources */,
-				F9BAC16926A1C7A40062A4DC /* UUIDExtension.swift in Sources */,
+				F98BB2D0273D356A000556E9 /* RecipePersistent.swift in Sources */,
 				F98F3B30273ABE9400CE2580 /* VehicleNetwork.swift in Sources */,
 				F98F3B33273ABF0800CE2580 /* RecipeNetwork.swift in Sources */,
+				F98BB2CF273D356A000556E9 /* BuildingPersistent.swift in Sources */,
+				F98BB2D4273D356A000556E9 /* VehiclePersistent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +542,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -546,6 +597,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -562,7 +614,6 @@
 				DEVELOPMENT_TEAM = 7R7GVTFP58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -584,7 +635,6 @@
 				DEVELOPMENT_TEAM = 7R7GVTFP58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -615,7 +665,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.endios.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = macosx;
@@ -640,7 +689,6 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.endios.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = macosx;

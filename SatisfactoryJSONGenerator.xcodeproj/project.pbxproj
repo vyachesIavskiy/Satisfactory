@@ -10,7 +10,7 @@
 		4531C4AD2401523200948CFA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4AC2401523200948CFA /* main.swift */; };
 		4531C4B42401693C00948CFA /* PartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4B32401693C00948CFA /* PartType.swift */; };
 		4531C4B62401694C00948CFA /* Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4B52401694C00948CFA /* Part.swift */; };
-		4531C4BC24016CA600948CFA /* EquipmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4BB24016CA600948CFA /* EquipmentType.swift */; };
+		4531C4BC24016CA600948CFA /* EquipmentSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4BB24016CA600948CFA /* EquipmentSlot.swift */; };
 		4531C4C224016CD700948CFA /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4C124016CD700948CFA /* Equipment.swift */; };
 		4531C4C424016D1400948CFA /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4C324016D1400948CFA /* Vehicle.swift */; };
 		4531C4C724016DEA00948CFA /* BuildingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531C4C624016DEA00948CFA /* BuildingType.swift */; };
@@ -79,6 +79,8 @@
 		F934D77F265046D7002E7723 /* BlenderRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934D77E265046D7002E7723 /* BlenderRecipes.swift */; };
 		F934D78126504CF2002E7723 /* ParticleAcceleratorRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934D78026504CF2002E7723 /* ParticleAcceleratorRecipes.swift */; };
 		F9498A60262AFD56009AEDEF /* Lights.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9498A5F262AFD56009AEDEF /* Lights.swift */; };
+		F95FAAAD273D0A770043D3C4 /* NuclearPowerPlantRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAAC273D0A770043D3C4 /* NuclearPowerPlantRecipes.swift */; };
+		F95FAAB0273D0BCE0043D3C4 /* VehicleRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAAF273D0BCE0043D3C4 /* VehicleRecipes.swift */; };
 		F98F3B1B273AA09A00CE2580 /* TierBuildingRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B1A273AA09A00CE2580 /* TierBuildingRecipes.swift */; };
 		F98F3B1E273AB41E00CE2580 /* BuildingRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B1D273AB41E00CE2580 /* BuildingRecipes.swift */; };
 		F98F3B22273AB4C000CE2580 /* MAMBuildingRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B21273AB4C000CE2580 /* MAMBuildingRecipes.swift */; };
@@ -105,7 +107,7 @@
 		4531C4AC2401523200948CFA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4531C4B32401693C00948CFA /* PartType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartType.swift; sourceTree = "<group>"; };
 		4531C4B52401694C00948CFA /* Part.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part.swift; sourceTree = "<group>"; };
-		4531C4BB24016CA600948CFA /* EquipmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentType.swift; sourceTree = "<group>"; };
+		4531C4BB24016CA600948CFA /* EquipmentSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentSlot.swift; sourceTree = "<group>"; };
 		4531C4C124016CD700948CFA /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		4531C4C324016D1400948CFA /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		4531C4C624016DEA00948CFA /* BuildingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingType.swift; sourceTree = "<group>"; };
@@ -174,6 +176,8 @@
 		F934D77E265046D7002E7723 /* BlenderRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlenderRecipes.swift; sourceTree = "<group>"; };
 		F934D78026504CF2002E7723 /* ParticleAcceleratorRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleAcceleratorRecipes.swift; sourceTree = "<group>"; };
 		F9498A5F262AFD56009AEDEF /* Lights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lights.swift; sourceTree = "<group>"; };
+		F95FAAAC273D0A770043D3C4 /* NuclearPowerPlantRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuclearPowerPlantRecipes.swift; sourceTree = "<group>"; };
+		F95FAAAF273D0BCE0043D3C4 /* VehicleRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRecipes.swift; sourceTree = "<group>"; };
 		F98F3B1A273AA09A00CE2580 /* TierBuildingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierBuildingRecipes.swift; sourceTree = "<group>"; };
 		F98F3B1D273AB41E00CE2580 /* BuildingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingRecipes.swift; sourceTree = "<group>"; };
 		F98F3B21273AB4C000CE2580 /* MAMBuildingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMBuildingRecipes.swift; sourceTree = "<group>"; };
@@ -244,7 +248,7 @@
 		4531C4BA24016C9A00948CFA /* Equipment */ = {
 			isa = PBXGroup;
 			children = (
-				4531C4BB24016CA600948CFA /* EquipmentType.swift */,
+				4531C4BB24016CA600948CFA /* EquipmentSlot.swift */,
 				4531C4C124016CD700948CFA /* Equipment.swift */,
 			);
 			path = Equipment;
@@ -263,6 +267,7 @@
 		4531C4CA2401899700948CFA /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				F95FAAAE273D0BAB0043D3C4 /* VehicleRecipes */,
 				F98F3B1F273AB48D00CE2580 /* Building Recipes */,
 				455F634F2479DB25001D5870 /* Recipes by Machines */,
 				4531C4CB240189A300948CFA /* RecipePart.swift */,
@@ -284,6 +289,7 @@
 				455F63582479DDBC001D5870 /* ManufacturerRecipes.swift */,
 				F934D77E265046D7002E7723 /* BlenderRecipes.swift */,
 				F934D78026504CF2002E7723 /* ParticleAcceleratorRecipes.swift */,
+				F95FAAAC273D0A770043D3C4 /* NuclearPowerPlantRecipes.swift */,
 			);
 			path = "Recipes by Machines";
 			sourceTree = "<group>";
@@ -328,6 +334,14 @@
 				F9EB2B13264FC2E40079074D /* Transportation */,
 			);
 			path = "Buildsing by Categories";
+			sourceTree = "<group>";
+		};
+		F95FAAAE273D0BAB0043D3C4 /* VehicleRecipes */ = {
+			isa = PBXGroup;
+			children = (
+				F95FAAAF273D0BCE0043D3C4 /* VehicleRecipes.swift */,
+			);
+			path = VehicleRecipes;
 			sourceTree = "<group>";
 		};
 		F98F3B1F273AB48D00CE2580 /* Building Recipes */ = {
@@ -495,6 +509,7 @@
 				455F63BD2479E58C001D5870 /* Jump Pads.swift in Sources */,
 				455F637A2479E14E001D5870 /* Communications.swift in Sources */,
 				F9EB2B15264FC4A70079074D /* Gases.swift in Sources */,
+				F95FAAB0273D0BCE0043D3C4 /* VehicleRecipes.swift in Sources */,
 				455F63532479DB47001D5870 /* FoundryRecipes.swift in Sources */,
 				F98F3B1B273AA09A00CE2580 /* TierBuildingRecipes.swift in Sources */,
 				F99B673E26503693008E75AE /* PackagerRecipes.swift in Sources */,
@@ -529,7 +544,7 @@
 				455F63742479E133001D5870 /* Power Shards.swift in Sources */,
 				455F63BF2479E595001D5870 /* Motor Vehicles.swift in Sources */,
 				455F63972479E4E9001D5870 /* Conveyor Belts.swift in Sources */,
-				4531C4BC24016CA600948CFA /* EquipmentType.swift in Sources */,
+				4531C4BC24016CA600948CFA /* EquipmentSlot.swift in Sources */,
 				455F63932479E47E001D5870 /* Power Poles.swift in Sources */,
 				4531C4C924016F1300948CFA /* Building.swift in Sources */,
 				455F63B92479E578001D5870 /* Ramps Inverted.swift in Sources */,
@@ -544,6 +559,7 @@
 				455F635E2479E0CE001D5870 /* HubParts.swift in Sources */,
 				F934D78126504CF2002E7723 /* ParticleAcceleratorRecipes.swift in Sources */,
 				455F63B52479E568001D5870 /* Quater-Pipes.swift in Sources */,
+				F95FAAAD273D0A770043D3C4 /* NuclearPowerPlantRecipes.swift in Sources */,
 				455F637E2479E163001D5870 /* Oil Products.swift in Sources */,
 				455F63572479DCBD001D5870 /* AssemblerRecipes.swift in Sources */,
 				455F63512479DB30001D5870 /* SmelterRecipes.swift in Sources */,

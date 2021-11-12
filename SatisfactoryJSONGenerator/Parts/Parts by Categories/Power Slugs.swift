@@ -4,12 +4,14 @@ private extension Part {
     }
 }
 
-let greenPowerSlug = Part(name: "Green Power Slug", sortingPriority: 3)
+//let greenPowerSlug = Part(name: "Green Power Slug", sortingPriority: 3)
+let bluePowerSlug = Part(name: "Blue Power Slug", sortingPriority: 3)
 let yellowPowerSlug = Part(name: "Yellow Power Slug", sortingPriority: 4)
 let purplePowerSlug = Part(name: "Purple Power Slug", sortingPriority: 5)
 
 let PowerSlugs = [
-    greenPowerSlug,
+//    greenPowerSlug,
+    bluePowerSlug,
     yellowPowerSlug,
     purplePowerSlug
 ]

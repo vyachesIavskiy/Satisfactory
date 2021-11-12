@@ -1,7 +1,7 @@
 import Foundation
 
 struct Recipe: Identifiable {
-    struct RecipePartOld: Hashable, Identifiable {
+    struct RecipePart: Hashable, Identifiable {
         let item: Item
         let amount: Double
         
@@ -10,8 +10,6 @@ struct Recipe: Identifiable {
         }
         
         fileprivate var recipeDuration = 0
-        
-        var productionRecipes: [Recipe] { item.recipes }
         
         var amountPerMinute: Double {
             amount * (60 / Double(recipeDuration))
@@ -22,7 +20,7 @@ struct Recipe: Identifiable {
             self.amount = amount
         }
         
-        static func == (lhs: Recipe.RecipePartOld, rhs: Recipe.RecipePartOld) -> Bool {
+        static func == (lhs: Recipe.RecipePart, rhs: Recipe.RecipePart) -> Bool {
             lhs.item.id == rhs.item.id
         }
         
@@ -37,23 +35,12 @@ struct Recipe: Identifiable {
     
     let id: String
     let name: String
-    private(set) var input: [RecipePartOld]
-    private(set) var output: [RecipePartOld]
+    private(set) var input: [RecipePart]
+    private(set) var output: [RecipePart]
     let machines: [Building]
     let duration: Int
     let isDefault: Bool
-    var isFavorite: Bool {
-        get {
-            UserDefaults.standard.bool(forKey: id)
-        }
-        set {
-            if newValue {
-                UserDefaults.standard.set(newValue, forKey: id)
-            } else {
-                UserDefaults.standard.removeObject(forKey: id)
-            }
-        }
-    }
+    var isFavorite: Bool
     
     var canBeInitial: Bool {
         input.reduce(true) { partialResult, input in
@@ -64,11 +51,12 @@ struct Recipe: Identifiable {
     init(
         id: String,
         name: String,
-        input: [RecipePartOld],
-        output: [RecipePartOld],
+        input: [RecipePart],
+        output: [RecipePart],
         machines: [Building],
         duration: Int,
-        isDefault: Bool
+        isDefault: Bool,
+        isFavorite: Bool
     ) {
         self.id = id
         self.name = name
@@ -77,6 +65,7 @@ struct Recipe: Identifiable {
         self.machines = machines
         self.duration = duration
         self.isDefault = isDefault
+        self.isFavorite = isFavorite
         
         self.input.enumerated().forEach { (index, _) in
             self.input[index].recipeDuration = duration

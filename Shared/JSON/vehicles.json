@@ -1,26 +1,131 @@
 [
   {
     "id" : "tractor",
-    "name" : "Tractor"
+    "name" : "Tractor",
+    "fuel" : [
+      "leaves",
+      "wood",
+      "mycelia",
+      "alien-carapace",
+      "alien-organs",
+      "flower-petals",
+      "color-cartridge",
+      "fabric",
+      "biomass",
+      "solid-biofuel",
+      "coal",
+      "compacted-coal",
+      "petroleum-coke",
+      "packaged-oil",
+      "packaged-heavy-oil-residue",
+      "packaged-fuel",
+      "packaged-turbofuel",
+      "packaged-liquid-biofuel",
+      "battery",
+      "uranium-fuel-rod",
+      "plutonium-fuel-rod"
+    ]
   },
   {
     "id" : "truck",
-    "name" : "Truck"
+    "name" : "Truck",
+    "fuel" : [
+      "leaves",
+      "wood",
+      "mycelia",
+      "alien-carapace",
+      "alien-organs",
+      "flower-petals",
+      "color-cartridge",
+      "fabric",
+      "biomass",
+      "solid-biofuel",
+      "coal",
+      "compacted-coal",
+      "petroleum-coke",
+      "packaged-oil",
+      "packaged-heavy-oil-residue",
+      "packaged-fuel",
+      "packaged-turbofuel",
+      "packaged-liquid-biofuel",
+      "battery",
+      "uranium-fuel-rod",
+      "plutonium-fuel-rod"
+    ]
   },
   {
     "id" : "explorer",
-    "name" : "Explorer"
+    "name" : "Explorer",
+    "fuel" : [
+      "leaves",
+      "wood",
+      "mycelia",
+      "alien-carapace",
+      "alien-organs",
+      "flower-petals",
+      "color-cartridge",
+      "fabric",
+      "biomass",
+      "solid-biofuel",
+      "coal",
+      "compacted-coal",
+      "petroleum-coke",
+      "packaged-oil",
+      "packaged-heavy-oil-residue",
+      "packaged-fuel",
+      "packaged-turbofuel",
+      "packaged-liquid-biofuel",
+      "battery",
+      "uranium-fuel-rod",
+      "plutonium-fuel-rod"
+    ]
+  },
+  {
+    "id" : "cyber-wagon",
+    "name" : "Cyber Wagon",
+    "fuel" : [
+      "leaves",
+      "wood",
+      "mycelia",
+      "alien-carapace",
+      "alien-organs",
+      "flower-petals",
+      "color-cartridge",
+      "fabric",
+      "biomass",
+      "solid-biofuel",
+      "coal",
+      "compacted-coal",
+      "petroleum-coke",
+      "packaged-oil",
+      "packaged-heavy-oil-residue",
+      "packaged-fuel",
+      "packaged-turbofuel",
+      "packaged-liquid-biofuel",
+      "battery",
+      "uranium-fuel-rod",
+      "plutonium-fuel-rod"
+    ]
   },
   {
     "id" : "drone",
-    "name" : "Drone"
+    "name" : "Drone",
+    "fuel" : [
+      "battery"
+    ]
   },
   {
     "id" : "electric-locomotive",
-    "name" : "Electric Locomotive"
+    "name" : "Electric Locomotive",
+    "fuel" : [
+
+    ]
   },
   {
     "id" : "freight-car",
-    "name" : "Freight Car"
+    "name" : "Freight Car",
+    "fuel" : [
+
+    ]
   }
 ]

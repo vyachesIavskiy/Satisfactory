@@ -59,4 +59,8 @@ let Recipes
     + ManufacturerRecipes
     + BlenderRecipes
     + ParticleAcceleratorRecipes
+    + NuclearPowerPlantRecipes
+
     + BuildingRecipes
+
+    + VehicleRecipes

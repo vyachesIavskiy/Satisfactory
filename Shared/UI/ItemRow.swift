@@ -56,11 +56,13 @@ struct ItemCell: View {
 }
 
 struct ItemRow_Previews: PreviewProvider {
+    @StateObject private static var storage: BaseStorage = PreviewStorage()
+    
     static var previews: some View {
-        ItemRow(item: Storage.shared[partName: "Iron Plate"]!)
+        ItemRow(item: storage[partID: "iron-plate"]!)
             .previewLayout(.sizeThatFits)
         
-        ItemCell(item: Storage.shared[partName: "Reinforced Iron Plate"]!, amountPerMinute: "10")
+        ItemCell(item: storage[partID: "reinforced-iron-plate"]!, amountPerMinute: "10")
             .previewLayout(.sizeThatFits)
     }
 }

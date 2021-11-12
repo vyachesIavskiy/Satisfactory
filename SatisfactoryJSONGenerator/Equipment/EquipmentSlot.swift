@@ -1,6 +1,6 @@
 import Foundation
 
-enum EquipmentType: String, Codable {
+enum EquipmentSlot: String, Codable {
     case hands = "Hands"
     case body = "Body"
 }

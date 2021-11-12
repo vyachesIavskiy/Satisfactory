@@ -164,11 +164,11 @@
   {
     "partType" : "Power Slugs",
     "rawResource" : true,
-    "id" : "green-power-slug",
+    "id" : "blue-power-slug",
     "sortingPriority" : 3,
     "tier" : 0,
     "milestone" : 0,
-    "name" : "Green Power Slug"
+    "name" : "Blue Power Slug"
   },
   {
     "partType" : "Power Slugs",

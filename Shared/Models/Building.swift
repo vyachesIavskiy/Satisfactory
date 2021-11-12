@@ -39,8 +39,4 @@ struct Building: Item, Hashable {
     let id: String
     let name: String
     let buildingType: BuildingType
-    
-    var recipes: [Recipe] {
-        Storage[recipesFor: id]
-    }
 }

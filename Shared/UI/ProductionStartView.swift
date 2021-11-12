@@ -39,7 +39,10 @@ struct ProductionStartView: View {
 }
 
 struct ProductionStartPreview: PreviewProvider {
+    @StateObject private static var storage: BaseStorage = PreviewStorage()
+    
     static var previews: some View {
-        ProductionStartView(item: Storage[partName: "Turbo Motor"]!)
+        ProductionStartView(item: storage[partID: "turbo-motor"]!)
+            .environmentObject(storage)
     }
 }

@@ -939,7 +939,7 @@
     ],
     "input" : [
       {
-        "id" : "green-power-slug",
+        "id" : "blue-power-slug",
         "amount" : 1
       }
     ],
@@ -5062,6 +5062,48 @@
   {
     "output" : [
       {
+        "id" : "uranium-waste",
+        "amount" : 50
+      }
+    ],
+    "input" : [
+      {
+        "id" : "uranium-fuel-rod",
+        "amount" : 1
+      }
+    ],
+    "id" : "uranium-waste",
+    "isDefault" : true,
+    "duration" : 300,
+    "machines" : [
+      "nuclear-power-plant"
+    ],
+    "name" : "Uranium Waste"
+  },
+  {
+    "output" : [
+      {
+        "id" : "plutonium-waste",
+        "amount" : 10
+      }
+    ],
+    "input" : [
+      {
+        "id" : "plutonium-fuel-rod",
+        "amount" : 1
+      }
+    ],
+    "id" : "plutonium-waste",
+    "isDefault" : true,
+    "duration" : 600,
+    "machines" : [
+      "nuclear-power-plant"
+    ],
+    "name" : "Plutonium Waste"
+  },
+  {
+    "output" : [
+      {
         "id" : "the-hub",
         "amount" : 1
       }
@@ -7250,5 +7292,224 @@
 
     ],
     "name" : "Radar Tower"
+  },
+  {
+    "output" : [
+      {
+        "id" : "tractor",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "modular-frame",
+        "amount" : 5
+      },
+      {
+        "id" : "beacon",
+        "amount" : 5
+      },
+      {
+        "id" : "rotor",
+        "amount" : 10
+      }
+    ],
+    "id" : "tractor",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Tractor"
+  },
+  {
+    "output" : [
+      {
+        "id" : "truck",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "motor",
+        "amount" : 8
+      },
+      {
+        "id" : "computer",
+        "amount" : 10
+      },
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 4
+      },
+      {
+        "id" : "rubber",
+        "amount" : 50
+      },
+      {
+        "id" : "beacon",
+        "amount" : 10
+      }
+    ],
+    "id" : "truck",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Truck"
+  },
+  {
+    "output" : [
+      {
+        "id" : "explorer",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "crystal-oscillator",
+        "amount" : 5
+      },
+      {
+        "id" : "motor",
+        "amount" : 5
+      },
+      {
+        "id" : "beacon",
+        "amount" : 15
+      },
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 5
+      }
+    ],
+    "id" : "explorer",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Explorer"
+  },
+  {
+    "output" : [
+      {
+        "id" : "cyber-wagon",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "reinforced-iron-plate",
+        "amount" : 10
+      }
+    ],
+    "id" : "cyber-wagon",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Cyber Wagon"
+  },
+  {
+    "output" : [
+      {
+        "id" : "drone",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "motor",
+        "amount" : 4
+      },
+      {
+        "id" : "alclad-aluminum-sheet",
+        "amount" : 10
+      },
+      {
+        "id" : "radio-control-unit",
+        "amount" : 1
+      },
+      {
+        "id" : "ai-limiter",
+        "amount" : 2
+      },
+      {
+        "id" : "portable-miner",
+        "amount" : 1
+      }
+    ],
+    "id" : "drone",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Drone"
+  },
+  {
+    "output" : [
+      {
+        "id" : "electric-locomotive",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 5
+      },
+      {
+        "id" : "motor",
+        "amount" : 10
+      },
+      {
+        "id" : "steel-pipe",
+        "amount" : 15
+      },
+      {
+        "id" : "computer",
+        "amount" : 5
+      },
+      {
+        "id" : "beacon",
+        "amount" : 5
+      }
+    ],
+    "id" : "electric-locomotive",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Electric Locomotive"
+  },
+  {
+    "output" : [
+      {
+        "id" : "freight-car",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "heavy-modular-frame",
+        "amount" : 4
+      },
+      {
+        "id" : "steel-pipe",
+        "amount" : 10
+      }
+    ],
+    "id" : "freight-car",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Freight Car"
   }
 ]

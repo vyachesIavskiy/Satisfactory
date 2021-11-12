@@ -58,7 +58,7 @@ struct RecipeView: View {
 }
 
 struct ItemInRecipeView: View {
-    let recipePart: Recipe.RecipePartOld
+    let recipePart: Recipe.RecipePart
     
     private var amountPerMinuteDisplayString: String {
         recipePart.amountPerMinute.formatted(.fractionFromZeroToFour)
@@ -70,6 +70,8 @@ struct ItemInRecipeView: View {
 }
 
 struct RecipeView_Previews: PreviewProvider {
+    static private var storage: BaseStorage = PreviewStorage()
+    
     static var previews: some View {
         ZStack {
             LinearGradient(
@@ -80,9 +82,9 @@ struct RecipeView_Previews: PreviewProvider {
                 .ignoresSafeArea()
             
             VStack(spacing: 10) {
-                RecipeView(recipe: Storage.shared[partName: "Iron Ingot"]!.recipes[0])
-                RecipeView(recipe: Storage.shared[partName: "Modular Frame"]!.recipes[0])
-                RecipeView(recipe: Storage.shared[partName: "Computer"]!.recipes[1])
+                RecipeView(recipe: storage[recipesFor: "iron-ingot"][0])
+                RecipeView(recipe: storage[recipesFor: "modular-frame"][0])
+                RecipeView(recipe: storage[recipesFor: "computer"][1])
             }
         }
     }

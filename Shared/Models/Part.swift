@@ -68,8 +68,6 @@ struct Part: Item, Hashable, Identifiable {
     
     var isLiquid: Bool { partType == .liquids }
     var isGas: Bool { partType == .gases }
-    
-    var recipes: [Recipe] { Storage.shared[recipesFor: id] }
 }
 
 extension Array where Element == Part {

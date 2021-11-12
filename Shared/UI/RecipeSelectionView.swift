@@ -7,43 +7,17 @@
 
 import SwiftUI
 
-struct RecipeSelectionView_Old: View {
-    let item: Item
-    @Binding var selectedRecipe: Recipe?
-    
-    private var sortedRecipes: [Recipe] {
-        item.recipes.sorted { lhs, _ in
-            lhs.isDefault
-        }
-    }
-    
-    var body: some View {
-        List(selection: $selectedRecipe) {
-            ForEach(sortedRecipes) { recipe in
-                Section(recipe.name) {
-                    Button {
-                        selectedRecipe = recipe
-                    } label: {
-                        RecipeView(recipe: recipe)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                }
-            }
-        }
-    }
-}
-
 struct RecipeSelectionView: View {
     var item: Item
     
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var storage: BaseStorage
     @State private var isShowingConfirmation = false
     
     @Binding var selectedRecipe: Recipe?
     
     private var favoriteRecipes: [Recipe] {
-        item.recipes.filter {
+        storage[recipesFor: item.id].filter {
             $0.isFavorite
         }.sorted { lhs, _ in
             lhs.isDefault
@@ -51,7 +25,7 @@ struct RecipeSelectionView: View {
     }
     
     private var sortedRecipes: [Recipe] {
-        item.recipes.filter {
+        storage[recipesFor: item.id].filter {
             !$0.isFavorite
         }.sorted { lhs, _ in
             lhs.isDefault
@@ -89,18 +63,16 @@ struct RecipeSelectionView: View {
             .onTapGesture {
                 selectedRecipe = recipe
             }
-            .contextMenu {
+            .swipeActions(edge: .leading, allowsFullSwipe: true) {
                 Button {
-                    if recipe.isFavorite {
-                        UserDefaults.standard.removeObject(forKey: recipe.id)
-                    } else {
-                        UserDefaults.standard.set(true, forKey: recipe.id)
-                    }
+                    storage[recipeID: recipe.id]?.isFavorite.toggle()
                 } label: {
                     Label(
                         recipe.isFavorite ? "Unfavorite" : "Favorite",
-                        systemImage:recipe.isFavorite ? "heart.slash" : "heart")
+                        systemImage: recipe.isFavorite ? "heart.slash" : "heart"
+                    )
                 }
+                .tint(.yellow)
             }
             .listRowSeparator(.hidden)
             
@@ -114,9 +86,14 @@ struct RecipeSelectionView: View {
 }
 
 struct RecipeSelectionPreview: PreviewProvider {
-    static let turboMotor = Storage[itemName: "Turbo Motor"]!
+    @StateObject static private var storage: BaseStorage = PreviewStorage()
     
+    static private var turboMotor: Part {
+        storage[partID: "turbo-motor"]!
+    }
+
     static var previews: some View {
         RecipeSelectionView(item: turboMotor, selectedRecipe: .constant(nil))
+            .environmentObject(storage)
     }
 }

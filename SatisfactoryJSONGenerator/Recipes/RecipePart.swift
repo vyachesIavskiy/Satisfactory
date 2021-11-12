@@ -38,4 +38,9 @@ struct RecipePart: Codable {
         id = building.id
         amount = 1
     }
+    
+    init(_ vehicle: Vehicle) {
+        id = vehicle.id
+        amount = 1
+    }
 }

@@ -401,7 +401,8 @@ let colorCartridgeRecipe = Recipe(
 let powerShard1Recipe = Recipe(
     name: "Power Shard (1)",
     input: [
-        .init(greenPowerSlug, amount: 1)
+//        .init(greenPowerSlug, amount: 1)
+        .init(bluePowerSlug, amount: 1)
     ],
     output: [
         .init(powerShard, amount: 1)

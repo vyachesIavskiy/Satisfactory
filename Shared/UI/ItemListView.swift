@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct ItemListView: View {
-    private let parts = Storage.shared.parts.sortedByTiers()
-    private let equipments = Storage.shared.equipments
+    @EnvironmentObject var storage: BaseStorage
+    
+    private var parts: [Part] {
+        storage.parts.sortedByTiers()
+    }
+    
+    private var equipments: [Equipment] {
+        storage.equipments
+    }
     
     @State private var searchTerm = ""
     
@@ -31,7 +38,7 @@ struct ItemListView: View {
                 Section(header: Text("Parts")) {
                     ForEach(filteredParts) { part in
                         Group {
-                            if part.recipes.isEmpty {
+                            if storage[recipesFor: part.id].isEmpty {
                                 ItemRow(item: part)
                             } else {
                                 NavigationLink {
@@ -47,7 +54,7 @@ struct ItemListView: View {
                 Section(header: Text("Equipment")) {
                     ForEach(filteredEquipment) { equipment in
                         Group {
-                            if equipment.recipes.isEmpty {
+                            if storage[recipesFor: equipment.id].isEmpty {
                                 ItemRow(item: equipment)
                             } else {
                                 NavigationLink {
@@ -83,7 +90,10 @@ struct ItemListView: View {
 }
 
 struct ItemListPreview: PreviewProvider {
+    @StateObject private static var storage: BaseStorage = PreviewStorage()
+    
     static var previews: some View {
         ItemListView()
+            .environmentObject(storage)
     }
 }

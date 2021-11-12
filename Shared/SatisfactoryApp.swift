@@ -2,14 +2,120 @@ import SwiftUI
 
 @main
 struct SatisfactoryApp: App {
-    private var parts: [Part] {
-        Storage.shared.parts
-    }
+    @State private var isLoaded = false
+    @StateObject private var storage: BaseStorage = Storage()
     
     var body: some Scene {
         WindowGroup {
-            ItemListView()
+            Group {
+                if isLoaded {
+                    ItemListView()
+                } else {
+                    LoadingView(isLoaded: $isLoaded)
+                }
+            }
+            .environmentObject(storage)
         }
+    }
+}
+
+struct Downloader {
+    var dataProvider: DataProviderProtocol
+    var storage: BaseStorage
+    
+    func execute() async {
+        storage.version = await dataProvider.version
+        
+        storage.parts = await dataProvider.parts.map { part in
+            Part(
+                id: part.id,
+                name: part.name,
+                partType: PartType(rawValue: part.partType)!,
+                tier: Tier(rawValue: part.tier)!,
+                milestone: part.milestone,
+                sortingPriority: part.sortingPriority,
+                rawResource: part.rawResource
+            )
+        }
+        
+        storage.equipments = await dataProvider.equipments.map { equipment in
+            Equipment(
+                id: equipment.id,
+                name: equipment.name,
+                slot: EquipmentSlot(rawValue: equipment.slot)!,
+                fuel: storage[partID: equipment.fuel ?? ""],
+                ammo: storage[partID: equipment.ammo ?? ""],
+                consumes: storage[partID: equipment.consumes ?? ""]
+            )
+        }
+        
+        storage.buildings = await dataProvider.buildings.map { building in
+            Building(
+                id: building.id,
+                name: building.name,
+                buildingType: BuildingType(rawValue: building.buildingType)!
+            )
+        }
+        
+        storage.vehicles = await dataProvider.vehicles.map { vehicle in
+            Vehicle(
+                id: vehicle.id,
+                name: vehicle.name,
+                fuel: vehicle.fuel.compactMap { fuel in
+                    storage[partID: fuel]
+                }
+            )
+        }
+        
+        storage.recipes = await dataProvider.recipes.map { recipe in
+            Recipe(
+                id: recipe.id,
+                name: recipe.name,
+                input: recipe.input.map { input in
+                    Recipe.RecipePart(item: storage[itemID: input.id]!, amount: input.amount)
+                },
+                output: recipe.output.map { output in
+                    Recipe.RecipePart(item: storage[itemID: output.id]!, amount: output.amount)
+                },
+                machines: recipe.machines.compactMap { machine in
+                    storage[buildingID: machine]
+                },
+                duration: recipe.duration,
+                isDefault: recipe.isDefault,
+                isFavorite: false
+            )
+        }
+        
+        storage.save()
+    }
+}
+
+struct LoadingView: View {
+    @Environment(\.dataProvider) private var dataProvider
+    @EnvironmentObject private var storage: BaseStorage
+    
+    @Binding var isLoaded: Bool
+    
+    @State private var status = Status.loading
+    
+    private enum Status: String {
+        case loading = ""
+        case downloading = "Downloading"
+    }
+    
+    var body: some View {
+        ProgressView(status.rawValue)
+            .task {
+                let version = await dataProvider.version
+                let currentVersion = storage.version
+                if version > currentVersion {
+                    status = .downloading
+                    await Downloader(dataProvider: dataProvider, storage: storage).execute()
+                } else {
+                    storage.load()
+                }
+                isLoaded = true
+            }
     }
 }
 
@@ -242,6 +348,8 @@ struct CalculationStatistics: View {
 }
 
 class RecipeSelectionModel: ObservableObject, Identifiable {
+    @EnvironmentObject private var storage: BaseStorage
+    
     @ObservedObject var recipeTree: RecipeTreeNode
     let itemID: String
     let nodeID: UUID
@@ -249,7 +357,7 @@ class RecipeSelectionModel: ObservableObject, Identifiable {
     var id: UUID { nodeID }
     
     var item: Item {
-        Storage[itemId: itemID]!
+        storage[itemID: itemID]!
     }
     
     var hasMultipleOfItem: Bool { recipeTree.hasMultiple(of: item) }
@@ -460,18 +568,18 @@ class RecipeTreeNode: Identifiable, ObservableObject {
     }
     
     func checkInput(for recipe: Recipe) {
-        for input in recipe.input {
-            guard (input.item as? Part)?.rawResource == false else { continue }
-            
-            let recipeCount = input.item.recipes.count
-            let favoriteCount = input.item.recipes.filter(\.isFavorite).count
-            
-            if recipeCount == 1 {
-                add(recipe: input.item.recipes[0], for: input.item)
-            } else if favoriteCount == 1 {
-                add(recipe: input.item.recipes.filter(\.isFavorite)[0], for: input.item)
-            }
-        }
+//        for input in recipe.input {
+//            guard (input.item as? Part)?.rawResource == false else { continue }
+//
+//            let recipeCount = input.item.recipes.count
+//            let favoriteCount = input.item.recipes.filter(\.isFavorite).count
+//
+//            if recipeCount == 1 {
+//                add(recipe: input.item.recipes[0], for: input.item)
+//            } else if favoriteCount == 1 {
+//                add(recipe: input.item.recipes.filter(\.isFavorite)[0], for: input.item)
+//            }
+//        }
     }
     
     func hasRecipe(for item: Item) -> Bool {

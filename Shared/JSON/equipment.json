@@ -2,107 +2,107 @@
   {
     "id" : "xeno-zapper",
     "name" : "Xeno-Zapper",
-    "equipmentType" : "Hands"
+    "slot" : "Hands"
   },
   {
     "id" : "portable-miner",
     "name" : "Portable Miner",
-    "equipmentType" : "Hands"
+    "slot" : "Hands"
   },
   {
+    "slot" : "Hands",
     "id" : "chainsaw",
     "fuel" : "solid-biofuel",
-    "equipmentType" : "Hands",
     "name" : "Chainsaw"
   },
   {
     "id" : "object-scanner",
     "name" : "Object Scanner",
-    "equipmentType" : "Hands"
+    "slot" : "Hands"
   },
   {
     "id" : "beacon",
     "name" : "Beacon",
-    "equipmentType" : "Hands"
+    "slot" : "Hands"
   },
   {
-    "ammo" : "spiked-rebar",
+    "slot" : "Hands",
     "id" : "rebar-gun",
-    "equipmentType" : "Hands",
+    "ammo" : "spiked-rebar",
     "name" : "Rebar Gun"
   },
   {
     "id" : "xeno-basher",
     "name" : "Xeno-Basher",
-    "equipmentType" : "Hands"
+    "slot" : "Hands"
   },
   {
     "id" : "zipline",
     "name" : "Zipline",
-    "equipmentType" : "Hands"
+    "slot" : "Hands"
   },
   {
     "id" : "factory-cart",
     "name" : "Factory Cart™",
-    "equipmentType" : "Hands"
+    "slot" : "Hands"
   },
   {
     "id" : "golden-factory-cart",
     "name" : "Golden Factory Cart™",
-    "equipmentType" : "Hands"
+    "slot" : "Hands"
   },
   {
     "id" : "medicinal-inhaler",
     "name" : "Medicinal Inhaler",
-    "equipmentType" : "Hands"
+    "slot" : "Hands"
   },
   {
-    "ammo" : "nobelisk",
+    "slot" : "Hands",
     "id" : "nobelisk-detonator",
-    "equipmentType" : "Hands",
+    "ammo" : "nobelisk",
     "name" : "Nobelisk Detonator"
   },
   {
     "id" : "ficsit-coffe-cup",
     "name" : "FICSIT™ Coffe Cup",
-    "equipmentType" : "Hands"
+    "slot" : "Hands"
   },
   {
     "id" : "ficsit-gold-coffee-cup",
     "name" : "FICSIT™ Gold Coffee Cup",
-    "equipmentType" : "Hands"
+    "slot" : "Hands"
   },
   {
     "id" : "blade-runners",
     "name" : "Blade Runners",
-    "equipmentType" : "Body"
+    "slot" : "Body"
   },
   {
     "id" : "parachute",
     "name" : "Parachute",
-    "equipmentType" : "Body"
+    "slot" : "Body"
   },
   {
+    "slot" : "Body",
     "id" : "jetpack",
     "fuel" : "packaged-fuel",
-    "equipmentType" : "Body",
     "name" : "Jetpack"
   },
   {
     "id" : "hover-pack",
     "name" : "Hover Pack",
-    "equipmentType" : "Body"
+    "slot" : "Body"
   },
   {
+    "slot" : "Body",
     "id" : "gas-mask",
-    "fuel" : "gas-filter",
-    "equipmentType" : "Body",
+    "consumes" : "gas-filter",
     "name" : "Gas Mask"
   },
   {
+    "slot" : "Body",
     "id" : "hazmat-suit",
-    "fuel" : "iodine-infused-filter",
-    "equipmentType" : "Body",
+    "consumes" : "iodine-infused-filter",
     "name" : "Hazmat Suit"
   }
 ]

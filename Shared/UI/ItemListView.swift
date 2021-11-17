@@ -1,10 +1,3 @@
-//
-//  ItemListView.swift
-//  ItemListView
-//
-//  Created by Slava Nagornyak on 17.07.2021.
-//
-
 import SwiftUI
 
 struct ItemListView: View {

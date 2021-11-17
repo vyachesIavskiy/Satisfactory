@@ -17,7 +17,7 @@ struct ItemRow: View {
 struct ItemCell: View {
     var item: Item
     var amountPerMinute: String
-    var isSelected: Bool
+    var isSelected: Bool = false
     
     var body: some View {
         Image(item.name)
@@ -46,12 +46,6 @@ struct ItemCell: View {
                         .cornerRadius(3)
                 }
             )
-    }
-    
-    init(item: Item, amountPerMinute: String, isSelected: Bool = false) {
-        self.item = item
-        self.amountPerMinute = amountPerMinute
-        self.isSelected = isSelected
     }
 }
 

@@ -1,10 +1,3 @@
-//
-//  RecipeSelectionView.swift
-//  RecipeSelectionView
-//
-//  Created by Slava Nagornyak on 17.07.2021.
-//
-
 import SwiftUI
 
 struct RecipeSelectionView: View {

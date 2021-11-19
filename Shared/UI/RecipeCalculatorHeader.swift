@@ -3,6 +3,7 @@ import SwiftUI
 struct RecipeCalculatorHeader: View {
     let item: Item
     @Binding var amount: Double
+    @FocusState private var focusField: Int?
     
     var body: some View {
         HStack {
@@ -11,10 +12,23 @@ struct RecipeCalculatorHeader: View {
             Spacer()
             
             TextField("", value: $amount, format: .fractionFromZeroToFour)
+                .keyboardType(.numberPad)
                 .textFieldStyle(.roundedBorder)
                 .labelsHidden()
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 100)
+                .focused($focusField, equals: 0)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        HStack {
+                            Spacer()
+                            
+                            Button("Done") {
+                                focusField = nil
+                            }
+                        }
+                    }
+                }
             
             Text("/ min")
                 .fontWeight(.semibold)

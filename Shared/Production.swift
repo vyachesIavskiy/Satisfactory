@@ -9,28 +9,71 @@ extension RecipeTree {
     }
 }
 
-// MARK: - Production
-final class Production: ObservableObject {
-    var productionTree: RecipeTree
-    var storage: BaseStorage!
-    var item: Item
-    var recipe: Recipe
+struct ProductionChain {
+    fileprivate(set) var productionTree: RecipeTree
+    
+    var id: String {
+        "\(item.id)-\(recipe.id)-\(amount.formatted(.fractionFromZeroToFour))"
+    }
+    
+    var item: Item {
+        productionTree.element.item
+    }
+    
+    var recipe: Recipe {
+        productionTree.element.recipe
+    }
     
     var amount: Double {
-        didSet {
-            recalculate()
+        get {
+            productionTree.element.amount
+        }
+        set {
+            productionTree.element.amount = newValue
         }
     }
     
     init(item: Item, recipe: Recipe, amount: Double) {
         productionTree = RecipeTree(item: item, recipe: recipe, amount: amount)
+    }
+}
+
+// MARK: - Production
+final class Production: ObservableObject {
+    var productionChain: ProductionChain
+    
+    var productionChainArray: [RecipeTree] {
+        productionChain.productionTree.arrayLevels
+    }
+    
+    var storage: BaseStorage!
+    
+    var item: Item {
+        productionChain.item
+    }
+    
+    var recipe: Recipe {
+        productionChain.recipe
+    }
+    
+    var amount: Double {
+        get {
+            productionChain.amount
+        }
+        set {
+            productionChain.amount = newValue
+            
+            recalculate()
+        }
+    }
+    
+    init(item: Item, recipe: Recipe, amount: Double) {
+        productionChain = ProductionChain(item: item, recipe: recipe, amount: amount)
         self.amount = amount
-        self.item = item
-        self.recipe = recipe
     }
     
     var statistics: [CalculationStatisticsModel] {
-        [.init(item: item, amount: amount)] + productionTree.reduce(strategy: .depth, into: []) { partialResult, tree in
+        [.init(item: item, amount: amount)] + productionChain.productionTree.reduce(strategy: .depth, into: []) { partialResult, tree in
             for input in tree.element.recipe.input {
                 if let index = partialResult.firstIndex(where: { $0.item.id == input.item.id }) {
                     partialResult[index].amount += tree.element.amount(for: input.item)
@@ -42,7 +85,7 @@ final class Production: ObservableObject {
     }
     
     var machineStatistics: [CalculationMachineStatisticsModel] {
-        productionTree.reduce(strategy: .depth, into: [CalculationMachineStatisticsModel]()) { partialResult, tree in
+        productionChain.productionTree.reduce(strategy: .depth, into: [CalculationMachineStatisticsModel]()) { partialResult, tree in
             if let index = partialResult.firstIndex(where: { $0.item.id == tree.element.item.id }), partialResult[index].recipe.id == tree.element.recipe.id {
                 partialResult[index].amount += Double(tree.element.numberOfMachines)
             } else {
@@ -74,7 +117,7 @@ final class Production: ObservableObject {
     func add(recipe: Recipe, for item: Item, at branch: Tree<RecipeElement>) {
         objectWillChange.send()
         
-        productionTree.apply { tree in
+        productionChain.productionTree.apply { tree in
             tree.element.id == branch.element.id
         } transform: { tree in
             tree.removeChild(where: { $0.element.item.id == item.id })
@@ -88,7 +131,7 @@ final class Production: ObservableObject {
     func add(recipe: Recipe, for item: Item) {
         objectWillChange.send()
         
-        productionTree.apply { tree in
+        productionChain.productionTree.apply { tree in
             tree.element.recipe.input.contains { $0.item.id == item.id }
         } transform: { tree in
             tree.removeChild(where: { $0.element.item.id == item.id })
@@ -102,7 +145,7 @@ final class Production: ObservableObject {
     func addRemaining(recipe: Recipe, for item: Item) {
         objectWillChange.send()
         
-        productionTree.apply { tree in
+        productionChain.productionTree.apply { tree in
             guard tree.element.recipe.input.contains(where: { $0.item.id == item.id }),
                   let index = tree.children.firstIndex(where: { $0.element.item.id == item.id }),
                   tree.children[index].children.isEmpty else { return false }
@@ -118,25 +161,29 @@ final class Production: ObservableObject {
     }
     
     func hasRecipe(for item: Item) -> Bool {
-        productionTree.children.contains { tree in
+        productionChain.productionTree.children.contains { tree in
             tree.element.item.id == item.id
         } || (item as? Part)?.rawResource == true
     }
     
     func hasMultiple(of item: Item) -> Bool {
-        productionTree.reduce(strategy: .depth, []) { partialResult, tree in
+        productionChain.productionTree.reduce(strategy: .depth, []) { partialResult, tree in
             partialResult + tree.element.recipe.input.map(\.item)
         }
         .filter { $0.id == item.id }
         .count > 1
     }
     
+    func save() {
+        storage[productionChainID: productionChain.id] = productionChain
+    }
+    
     private func recalculate() {
         objectWillChange.send()
         
-        productionTree.element.amount = amount
+        productionChain.productionTree.element.amount = amount
         
-        productionTree.apply { tree in
+        productionChain.productionTree.apply { tree in
             tree.children.enumerated().forEach { (index, child) in
                 tree.children[index].element.amount = tree.element.amount(for: child.element.item)
             }

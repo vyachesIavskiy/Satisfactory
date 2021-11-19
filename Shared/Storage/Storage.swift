@@ -1,20 +1,13 @@
 import SwiftUI
 
 class BaseStorage: ObservableObject {
-    var inMemoryStorage: InMemoryStorageProtocol
-    var persistentStorage: PersistentStorageProtocol
-    
     var version = 0
     @Published var parts = [Part]()
     @Published var equipments = [Equipment]()
     @Published var buildings = [Building]()
     @Published var vehicles = [Vehicle]()
     @Published var recipes = [Recipe]()
-    
-    init(inMemoryStorage: InMemoryStorageProtocol, persistentStorage: PersistentStorageProtocol) {
-        self.inMemoryStorage = inMemoryStorage
-        self.persistentStorage = persistentStorage
-    }
+    @Published var productionChains = [ProductionChain]()
     
     func save() {
         fatalError("Should be overriden")
@@ -77,9 +70,20 @@ class BaseStorage: ObservableObject {
         fatalError("Should be overriden")
     }
     
+    subscript(productionChainID id: String) -> ProductionChain? {
+        get {
+            fatalError("Should be overriden")
+        }
+        set {
+            
+        }
+    }
 }
 
 class Storage: BaseStorage {
+    var inMemoryStorage: InMemoryStorageProtocol
+    var persistentStorage: PersistentStorageProtocol
+    
     override var version: Int {
         get {
             (try? persistentStorage.load(VersionPersistent.self).first?.version) ?? 0
@@ -119,8 +123,17 @@ class Storage: BaseStorage {
         set { inMemoryStorage.recipes = newValue }
     }
     
-    init() {
-        super.init(inMemoryStorage: InMemoryStorage(), persistentStorage: PersistentStorage())
+    override var productionChains: [ProductionChain] {
+        get { inMemoryStorage.productionChains }
+        set { inMemoryStorage.productionChains = newValue }
+    }
+    
+    init(
+        inMemoryStorage: InMemoryStorageProtocol = InMemoryStorage(),
+        persistentStorage: PersistentStorageProtocol = PersistentStorage()
+    ) {
+        self.inMemoryStorage = inMemoryStorage
+        self.persistentStorage = persistentStorage
     }
     
     override func save() {
@@ -132,6 +145,7 @@ class Storage: BaseStorage {
             try buildings.forEach(save)
             try vehicles.forEach(save)
             try recipes.forEach(save)
+            try productionChains.forEach(save)
         } catch {
             fatalError("Could not save! Error: \(error)")
         }
@@ -203,6 +217,27 @@ class Storage: BaseStorage {
         )
         try persistentStorage.save(recipeToSave)
     }
+    
+    private func save(productionChain: ProductionChain) throws {
+        let nodesToSave = productionChain.productionTree.arrayLevels.map { node in
+            ProductionTreePersistent(
+                id: node.element.id.uuidString,
+                itemID: node.element.item.id,
+                recipeID: node.element.recipe.id,
+                children: node.children.map(\.element.id.uuidString)
+            )
+        }
+        
+        guard !nodesToSave.isEmpty else { return }
+        
+        let productionToSave = ProductionPersistent(
+            productionTreeRootID: nodesToSave[0].id,
+            amount: productionChain.amount,
+            productionChain: nodesToSave
+        )
+        
+        try persistentStorage.save(productionToSave)
+    }
     // MARK: -
     
     override func load() {
@@ -267,6 +302,11 @@ class Storage: BaseStorage {
                     isFavorite: recipe.isFavorite
                 )
             }
+            
+//            let loadedProductionChains = try persistentStorage.load(ProductionPersistent.self)
+//            productionChains = loadedProductionChains.map { productionChain in
+//                ProductionChain(productionChainPersistent: productionChain)
+//            }
         } catch {
             fatalError("Could not load! Error: \(error)")
         }
@@ -285,7 +325,7 @@ class Storage: BaseStorage {
                     try save(part: newValue)
                 }
             } catch {
-                fatalError("Could not save parts! Error: \(error)")
+                fatalError("Could not save part! Error: \(error)")
             }
         }
     }
@@ -299,7 +339,7 @@ class Storage: BaseStorage {
                     try save(equipment: newValue)
                 }
             } catch {
-                fatalError("Could not save equipments! Error: \(error)")
+                fatalError("Could not save equipment! Error: \(error)")
             }
         }
     }
@@ -313,7 +353,7 @@ class Storage: BaseStorage {
                     try save(building: newValue)
                 }
             } catch {
-                fatalError("Could not save buildings! Error: \(error)")
+                fatalError("Could not save building! Error: \(error)")
             }
         }
     }
@@ -327,7 +367,7 @@ class Storage: BaseStorage {
                     try save(vehicle: newValue)
                 }
             } catch {
-                fatalError("Could not save vehicles! Error: \(error)")
+                fatalError("Could not save vehicle! Error: \(error)")
             }
         }
     }
@@ -341,7 +381,7 @@ class Storage: BaseStorage {
                     try save(recipe: newValue)
                 }
             } catch {
-                fatalError("Could not save recipes! Error: \(error)")
+                fatalError("Could not save recipe! Error: \(error)")
             }
         }
     }
@@ -349,11 +389,28 @@ class Storage: BaseStorage {
     override subscript(recipesFor id: String) -> [Recipe] {
         inMemoryStorage[recipesFor: id]
     }
+    
+    override subscript(productionChainID id: String) -> ProductionChain? {
+        get { inMemoryStorage[productionChainID: id] }
+        set {
+            inMemoryStorage[productionChainID: id] = newValue
+            do {
+                if let newValue = newValue {
+                    try save(productionChain: newValue)
+                }
+            } catch {
+                fatalError("Could not save production chain! Error: \(error)")
+            }
+        }
+    }
 }
 
 class PreviewStorage: Storage {
-    override init() {
-        super.init()
+    override init(
+        inMemoryStorage: InMemoryStorageProtocol = InMemoryStorage(),
+        persistentStorage: PersistentStorageProtocol = PersistentStorage()
+    ) {
+        super.init(inMemoryStorage: inMemoryStorage, persistentStorage: persistentStorage)
         
         load()
     }

@@ -69,6 +69,7 @@ struct ItemListView: View {
             .navigationTitle("Select an item to produce")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationViewStyle(.stack)
     }
     
     func parts(in rawValue: Int) -> [Part] {

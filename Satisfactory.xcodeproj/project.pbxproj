@@ -95,6 +95,8 @@
 		F9B91042273EA74C00274EE3 /* CalculationStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91040273EA74C00274EE3 /* CalculationStatistics.swift */; };
 		F9B91044273EA79700274EE3 /* RecipeSelectionForProductionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91043273EA79700274EE3 /* RecipeSelectionForProductionItemView.swift */; };
 		F9B91045273EA79700274EE3 /* RecipeSelectionForProductionItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91043273EA79700274EE3 /* RecipeSelectionForProductionItemView.swift */; };
+		F9D1CD3B2747B06300125C2A /* ProductionPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1CD3A2747B06300125C2A /* ProductionPersistent.swift */; };
+		F9D1CD3C2747B06300125C2A /* ProductionPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1CD3A2747B06300125C2A /* ProductionPersistent.swift */; };
 		F9E27167273FC9550068B36E /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E27166273FC9550068B36E /* Tree.swift */; };
 		F9E27168273FC9550068B36E /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E27166273FC9550068B36E /* Tree.swift */; };
 		F9EB45CC27454C8800FB8926 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EB45CB27454C8800FB8926 /* Production.swift */; };
@@ -153,6 +155,7 @@
 		F9B9103D273EA6C800274EE3 /* RecipeCalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCalculationView.swift; sourceTree = "<group>"; };
 		F9B91040273EA74C00274EE3 /* CalculationStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationStatistics.swift; sourceTree = "<group>"; };
 		F9B91043273EA79700274EE3 /* RecipeSelectionForProductionItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSelectionForProductionItemView.swift; sourceTree = "<group>"; };
+		F9D1CD3A2747B06300125C2A /* ProductionPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionPersistent.swift; sourceTree = "<group>"; };
 		F9E27166273FC9550068B36E /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		F9EB45CB27454C8800FB8926 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		F9EB45CE27454CCE00FB8926 /* RecipeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeElement.swift; sourceTree = "<group>"; };
@@ -303,6 +306,7 @@
 				F98BB2C5273D34A1000556E9 /* VehiclePersistent.swift */,
 				F98BB2C6273D34A1000556E9 /* RecipePersistent.swift */,
 				F98BB2C7273D34A1000556E9 /* VersionPersistent.swift */,
+				F9D1CD3A2747B06300125C2A /* ProductionPersistent.swift */,
 			);
 			path = Persistent;
 			sourceTree = "<group>";
@@ -470,6 +474,7 @@
 				F946413F26A361E2001F8ACF /* ItemListView.swift in Sources */,
 				450BD1D424A639FE00948B47 /* Recipe.swift in Sources */,
 				F9EB45CF27454CCE00FB8926 /* RecipeElement.swift in Sources */,
+				F9D1CD3B2747B06300125C2A /* ProductionPersistent.swift in Sources */,
 				F946414226A36294001F8ACF /* RecipeSelectionView.swift in Sources */,
 				450BD1D624A639FE00948B47 /* Equipment.swift in Sources */,
 				F9B9103B273EA5E200274EE3 /* RecipeCalculationList.swift in Sources */,
@@ -516,6 +521,7 @@
 				450BD1DB24A639FE00948B47 /* Item.swift in Sources */,
 				450BD1D524A639FE00948B47 /* Recipe.swift in Sources */,
 				F9EB45D027454CCE00FB8926 /* RecipeElement.swift in Sources */,
+				F9D1CD3C2747B06300125C2A /* ProductionPersistent.swift in Sources */,
 				F98F3B27273AB9D000CE2580 /* PartNetwork.swift in Sources */,
 				450BD1D724A639FE00948B47 /* Equipment.swift in Sources */,
 				F9B9103C273EA5E200274EE3 /* RecipeCalculationList.swift in Sources */,
@@ -664,7 +670,7 @@
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -685,7 +691,7 @@
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

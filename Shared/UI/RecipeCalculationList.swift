@@ -4,6 +4,7 @@ struct RecipeCalculationList: View {
     @EnvironmentObject var storage: BaseStorage
     
     @Binding var isShowingStatistics: Bool
+    @State private var isShowingSaveAlert = false
     
     @StateObject private var production: Production
     @Binding private var amount: Double
@@ -18,12 +19,30 @@ struct RecipeCalculationList: View {
         .padding(.vertical, 15)
     }
     
+    private var saveProductionButton: some View {
+        Button("Save production chain") {
+            production.save()
+            
+            isShowingSaveAlert = true
+        }
+        .buttonStyle(.borderedProminent)
+        .padding(.vertical, 15)
+        .alert("Saved!", isPresented: $isShowingSaveAlert) {
+            Button("OK") {
+                isShowingSaveAlert = false
+            }
+        }
+    }
+    
     var body: some View {
         VStack {
-            statisticsButton
+            HStack {
+                statisticsButton
+                saveProductionButton
+            }
             
             List {
-                ForEach(production.productionTree.arrayLevels) { node in
+                ForEach(production.productionChainArray) { node in
                     recipeTreeEntry(node)
                 }
                 .listRowSeparator(.hidden)

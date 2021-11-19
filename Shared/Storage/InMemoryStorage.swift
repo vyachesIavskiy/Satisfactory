@@ -6,6 +6,7 @@ protocol InMemoryStorageProtocol {
     var buildings: [Building] { get set }
     var vehicles: [Vehicle] { get set }
     var recipes: [Recipe] { get set }
+    var productionChains: [ProductionChain] { get set }
     
     subscript(itemID id: String) -> Item? { get }
     subscript(partID id: String) -> Part? { get set }
@@ -14,6 +15,7 @@ protocol InMemoryStorageProtocol {
     subscript(vehicleID id: String) -> Vehicle? { get set }
     subscript(recipeID id: String) -> Recipe? { get set }
     subscript(recipesFor id: String) -> [Recipe] { get }
+    subscript(productionChainID id: String) -> ProductionChain? { get set }
 }
 
 extension InMemoryStorageProtocol {
@@ -101,6 +103,21 @@ extension InMemoryStorageProtocol {
             }
         }
     }
+    
+    subscript(productionChainID id: String) -> ProductionChain? {
+        get {
+            productionChains.first { $0.id == id }
+        }
+        set {
+            guard let newValue = newValue else { return }
+            
+            if let index = productionChains.firstIndex(where: { $0.id == id }) {
+                productionChains[index] = newValue
+            } else {
+                productionChains.append(newValue)
+            }
+        }
+    }
 }
 
 struct InMemoryStorage: InMemoryStorageProtocol {
@@ -109,6 +126,7 @@ struct InMemoryStorage: InMemoryStorageProtocol {
     var buildings = [Building]()
     var vehicles = [Vehicle]()
     var recipes = [Recipe]()
+    var productionChains = [ProductionChain]()
 }
 
 private extension Array {

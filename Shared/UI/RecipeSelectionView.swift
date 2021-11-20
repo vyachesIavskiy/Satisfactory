@@ -36,6 +36,7 @@ struct RecipeSelectionView: View {
             
             recipesList(sortedRecipes)
         }
+        .frame(maxWidth: 700)
     }
     
     private func recipesList(_ recipes: [Recipe]) -> some View {

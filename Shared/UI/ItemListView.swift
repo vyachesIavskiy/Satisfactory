@@ -2,6 +2,8 @@ import SwiftUI
 
 struct ItemListView: View {
     @EnvironmentObject var storage: BaseStorage
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.verticalSizeClass) var verticalSizeClass
     
     private var parts: [Part] {
         storage.parts.sortedByTiers()
@@ -27,68 +29,86 @@ struct ItemListView: View {
         return equipments.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
     }
     
-    var body: some View {
+    private var compactBody: some View {
         NavigationView {
-            List {
-                if !filteredParts.isEmpty {
-                    Section(header: Text("Parts")) {
-                        ForEach(filteredParts) { part in
-                            Group {
-                                if storage[recipesFor: part.id].isEmpty {
-                                    ItemRow(item: part)
-                                } else {
-                                    NavigationLink {
-                                        RecipeCalculationView(item: part)
-                                    } label: {
-                                        ItemRow(item: part)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                
-                if !filteredEquipment.isEmpty {
-                    Section(header: Text("Equipment")) {
-                        ForEach(filteredEquipment) { equipment in
-                            Group {
-                                if storage[recipesFor: equipment.id].isEmpty {
-                                    ItemRow(item: equipment)
-                                } else {
-                                    NavigationLink {
-                                        RecipeCalculationView(item: equipment)
-                                    } label: {
-                                        ItemRow(item: equipment)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            .listStyle(.insetGrouped)
-            .searchable(
-                text: $searchTerm,
-                placement: .navigationBarDrawer(displayMode: .always),
-                prompt: "Search for an item..."
-            )
-            .navigationTitle("Select an item to produce")
-            .navigationBarTitleDisplayMode(.inline)
-            
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        isPresentingSettings = true
-                    } label: {
-                        Image(systemName: "gear")
-                    }
-                }
-            }
-            .sheet(isPresented: $isPresentingSettings) {
-                SettingsView()
-            }
+            list
         }
         .navigationViewStyle(.stack)
+    }
+    
+    private var regularBody: some View {
+        NavigationView {
+            list
+        }
+        .navigationViewStyle(.columns)
+    }
+    
+    private var list: some View {
+        List {
+            if !filteredParts.isEmpty {
+                Section(header: Text("Parts")) {
+                    ForEach(filteredParts) { part in
+                        Group {
+                            if storage[recipesFor: part.id].isEmpty {
+                                ItemRow(item: part)
+                            } else {
+                                NavigationLink {
+                                    RecipeCalculationView(item: part)
+                                } label: {
+                                    ItemRow(item: part)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if !filteredEquipment.isEmpty {
+                Section(header: Text("Equipment")) {
+                    ForEach(filteredEquipment) { equipment in
+                        Group {
+                            if storage[recipesFor: equipment.id].isEmpty {
+                                ItemRow(item: equipment)
+                            } else {
+                                NavigationLink {
+                                    RecipeCalculationView(item: equipment)
+                                } label: {
+                                    ItemRow(item: equipment)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .listStyle(.insetGrouped)
+        .searchable(
+            text: $searchTerm,
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: "Search for an item..."
+        )
+        .navigationTitle("Select an item to produce")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    isPresentingSettings = true
+                } label: {
+                    Image(systemName: "gear")
+                }
+            }
+        }
+        .sheet(isPresented: $isPresentingSettings) {
+            SettingsView()
+        }
+    }
+    
+    var body: some View {
+        if horizontalSizeClass == .regular && verticalSizeClass == .regular {
+            regularBody
+        } else {
+            compactBody
+        }
     }
     
     func parts(in rawValue: Int) -> [Part] {

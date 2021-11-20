@@ -15,6 +15,7 @@ struct RecipeCalculationView: View {
         VStack {
             RecipeCalculatorHeader(item: item, amount: $amount)
                 .padding(.horizontal)
+                .frame(maxWidth: 700)
             
             if let recipe = recipe {
                 RecipeCalculationList(item: item, recipe: recipe, amount: $amount, isShowingStatistics: $isShowingStatistics)

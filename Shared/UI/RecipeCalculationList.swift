@@ -44,7 +44,12 @@ struct RecipeCalculationList: View {
             
             List {
                 ForEach(production.productionChainArray) { node in
-                    recipeTreeEntry(node)
+                    HStack {
+                        Spacer()
+                        recipeTreeEntry(node)
+                            .frame(maxWidth: 700)
+                        Spacer()
+                    }
                 }
                 .listRowSeparator(.hidden)
             }
@@ -83,7 +88,7 @@ struct RecipeCalculationList: View {
     }
     
     private func recipeTreeEntry(_ tree: RecipeTree) -> some View {
-        VStack(alignment: .leading) {
+        VStack {
             Text(tree.element.recipe.name)
                 .fontWeight(.semibold)
             

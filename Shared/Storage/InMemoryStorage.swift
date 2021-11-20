@@ -16,6 +16,8 @@ protocol InMemoryStorageProtocol {
     subscript(recipeID id: String) -> Recipe? { get set }
     subscript(recipesFor id: String) -> [Recipe] { get }
     subscript(productionChainID id: String) -> ProductionChain? { get set }
+    
+    func productionChains(where predicate: (ProductionChain) -> Bool) -> [ProductionChain]
 }
 
 extension InMemoryStorageProtocol {
@@ -109,14 +111,22 @@ extension InMemoryStorageProtocol {
             productionChains.first { $0.id == id }
         }
         set {
-            guard let newValue = newValue else { return }
-            
-            if let index = productionChains.firstIndex(where: { $0.id == id }) {
-                productionChains[index] = newValue
+            if let newValue = newValue {
+                if let index = productionChains.firstIndex(where: { $0.id == id }) {
+                    productionChains[index] = newValue
+                } else {
+                    productionChains.append(newValue)
+                }
             } else {
-                productionChains.append(newValue)
+                if let index = productionChains.firstIndex(where: { $0.id == id }) {
+                    productionChains.remove(at: index)
+                }
             }
         }
+    }
+    
+    func productionChains(where predicate: (ProductionChain) -> Bool) -> [ProductionChain] {
+        productionChains.filter(predicate)
     }
 }
 

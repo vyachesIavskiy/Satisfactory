@@ -38,7 +38,12 @@ struct RecipeSelectionForProductionItemView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        RecipeSelectionView(item: model.item, selectedRecipe: $selectedRecipe)
+        RecipeSelectionView(
+            item: model.item,
+            selectedRecipe: $selectedRecipe,
+            selectedProductionChain: .constant(nil),
+            showProductionChains: false
+        )
             .onChange(of: selectedRecipe) { newRecipe in
                 guard let newRecipe = newRecipe else { return }
 

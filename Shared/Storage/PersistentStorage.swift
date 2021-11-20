@@ -8,7 +8,7 @@ protocol PersistentStoragable: Codable {
 protocol PersistentStorageProtocol {
     func save<Model: PersistentStoragable>(_ model: Model) throws
     func load<Model: PersistentStoragable>(_ model: Model.Type) throws -> [Model]
-    func load<Model: PersistentStoragable>(_ model: Model.Type, name: String) throws -> Model
+    func delete<Model: PersistentStoragable>(_ model: Model.Type, filename: String) throws
 }
 
 struct PersistentStorage: PersistentStorageProtocol {
@@ -38,18 +38,29 @@ struct PersistentStorage: PersistentStorageProtocol {
         try encoder.encode(model).write(to: filenameURL)
     }
     
-    func load<Model: PersistentStoragable>(_ model: Model.Type, name: String) throws -> Model {
-        let domainURL = try documentsURL.appendingPathComponent(Model.domain)
-        let filenameURL = domainURL.appendingPathComponent("\(name).json")
-        return try load(model, url: filenameURL)
-    }
-    
     func load<Model: PersistentStoragable>(_ model: Model.Type) throws -> [Model] {
         let domainURL = try documentsURL.appendingPathComponent(Model.domain)
-        let fileNameURLs = try fileManager.contentsOfDirectory(at: domainURL, includingPropertiesForKeys: nil)
-        return try fileNameURLs.filter { $0.pathExtension == "json" }.map { url in
+        guard fileManager.fileExists(atPath: domainURL.path) else { return [] }
+        let filenameURLs = try fileManager.contentsOfDirectory(at: domainURL, includingPropertiesForKeys: nil)
+        return try filenameURLs.filter { $0.pathExtension == "json" }.map { url in
             try load(model, url: url)
         }
+    }
+    
+    func loadIfExist<Model: PersistentStoragable>(_ model: Model.Type) throws -> [Model] {
+        let domainURL = try documentsURL.appendingPathComponent(Model.domain)
+        guard fileManager.fileExists(atPath: domainURL.path) else { return [] }
+        let filenameURLs = try fileManager.contentsOfDirectory(at: domainURL, includingPropertiesForKeys: nil)
+        return try filenameURLs.filter { $0.pathExtension == "json" }.map { url in
+            try load(model, url: url)
+        }
+    }
+    
+    func delete<Model: PersistentStoragable>(_ model: Model.Type, filename: String) throws {
+        let domainURL = try documentsURL.appendingPathComponent(Model.domain)
+        let filenameURL = domainURL.appendingPathComponent("\(filename).json")
+        guard fileManager.fileExists(atPath: filenameURL.path) else { return }
+        try fileManager.removeItem(at: filenameURL)
     }
     
     private func createDirectoryIfNeeded(_ url: URL) throws {

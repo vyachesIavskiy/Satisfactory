@@ -12,6 +12,8 @@ struct RecipeCalculationList: View {
     
     @State private var recipeSelectionModel: RecipeSelectionModel?
     
+    private var isStartingAnew = true
+    
     private var statisticsButton: some View {
         Button("Show item statistics") {
             isShowingStatistics = true
@@ -56,7 +58,9 @@ struct RecipeCalculationList: View {
             .listStyle(.plain)
             .onAppear {
                 production.storage = storage
-                production.checkInput(for: production.recipe)
+                if isStartingAnew {
+                    production.checkInput(for: production.recipe)
+                }
             }
             .onChange(of: amount) { newAmount in
                 production.amount = newAmount
@@ -79,12 +83,25 @@ struct RecipeCalculationList: View {
                     )
             }
         }
+        .onAppear {
+            if !isStartingAnew {
+                amount = production.amount
+                production.amount = amount
+            }
+        }
     }
     
     init(item: Item, recipe: Recipe, amount: Binding<Double>, isShowingStatistics: Binding<Bool>) {
         _amount = amount
         _isShowingStatistics = isShowingStatistics
         _production = .init(wrappedValue: Production(item: item, recipe: recipe, amount: amount.wrappedValue))
+    }
+    
+    init(productionChain: ProductionChain, amount: Binding<Double>, isShowingStatistics: Binding<Bool>) {
+        _amount = amount
+        _isShowingStatistics = isShowingStatistics
+        _production = .init(wrappedValue: Production(productionChain: productionChain))
+        isStartingAnew = false
     }
     
     private func recipeTreeEntry(_ tree: RecipeTree) -> some View {

@@ -7,6 +7,8 @@ struct RecipeCalculationView: View {
     
     @State private var recipe: Recipe?
     
+    @State private var productionChain: ProductionChain?
+    
     @State private var isShowingAlert = false
     
     @State private var isShowingStatistics = false
@@ -19,15 +21,21 @@ struct RecipeCalculationView: View {
             
             if let recipe = recipe {
                 RecipeCalculationList(item: item, recipe: recipe, amount: $amount, isShowingStatistics: $isShowingStatistics)
+            } else if let productionChain = productionChain {
+                RecipeCalculationList(productionChain: productionChain, amount: $amount, isShowingStatistics: $isShowingStatistics)
             } else {
-                RecipeSelectionView(item: item, selectedRecipe: $recipe)
+                RecipeSelectionView(
+                    item: item,
+                    selectedRecipe: $recipe,
+                    selectedProductionChain: $productionChain
+                )
             }
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(
             trailing:
                 HStack {
-                    if recipe != nil {
+                    if recipe != nil || productionChain != nil {
                         Button("Change recipe") {
                             isShowingAlert = true
                         }
@@ -37,6 +45,7 @@ struct RecipeCalculationView: View {
                                 message: Text("If you change recipe, all previously selected recipes will be dismissed"),
                                 primaryButton: .destructive(Text("Change")) {
                                     recipe = nil
+                                    productionChain = nil
                                 },
                                 secondaryButton: .cancel()
                             )

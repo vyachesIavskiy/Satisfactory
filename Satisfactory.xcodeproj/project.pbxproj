@@ -678,6 +678,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = iphoneos;
@@ -699,6 +700,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = iphoneos;

@@ -78,6 +78,10 @@ class BaseStorage: ObservableObject {
             
         }
     }
+    
+    subscript(productionChainsFor id: String) -> [ProductionChain] {
+        fatalError("Should be overriden")
+    }
 }
 
 class Storage: BaseStorage {
@@ -238,6 +242,10 @@ class Storage: BaseStorage {
         
         try persistentStorage.save(productionToSave)
     }
+    
+    private func delete(productionChainID: String) throws {
+        try persistentStorage.delete(ProductionPersistent.self, filename: productionChainID)
+    }
     // MARK: -
     
     override func load() {
@@ -303,10 +311,30 @@ class Storage: BaseStorage {
                 )
             }
             
-//            let loadedProductionChains = try persistentStorage.load(ProductionPersistent.self)
-//            productionChains = loadedProductionChains.map { productionChain in
-//                ProductionChain(productionChainPersistent: productionChain)
-//            }
+            let loadedProductionChains = try persistentStorage.load(ProductionPersistent.self)
+            
+            productionChains = loadedProductionChains.map { loadedProductionChain in
+                let treeNodes: [RecipeTree] = loadedProductionChain.productionChain.map { chain in
+                    let item = self[itemID: chain.itemID]!
+                    let recipe = self[recipeID: chain.recipeID]!
+                    return RecipeTree(id: UUID(uuidString: chain.id)!, item: item, recipe: recipe, amount: 0)
+                }
+                var root = treeNodes.first!
+                root.element.amount = loadedProductionChain.amount
+                loadedProductionChain.productionChain.forEach { loadedChain in
+                    treeNodes.filter { node in
+                        loadedChain.children.contains(where: { node.element.id.uuidString == $0 })
+                    }.forEach {
+                        root.add(child: $0) { check in
+                            check.element.id.uuidString == loadedChain.id
+                        }
+                    }
+                }
+                
+                return ProductionChain(productionTree: root)
+            }
+            
+            print(productionChains)
         } catch {
             fatalError("Could not load! Error: \(error)")
         }
@@ -393,14 +421,23 @@ class Storage: BaseStorage {
     override subscript(productionChainID id: String) -> ProductionChain? {
         get { inMemoryStorage[productionChainID: id] }
         set {
-            inMemoryStorage[productionChainID: id] = newValue
             do {
+                inMemoryStorage[productionChainID: id] = newValue
+                
                 if let newValue = newValue {
                     try save(productionChain: newValue)
+                } else {
+                    try delete(productionChainID: id)
                 }
             } catch {
                 fatalError("Could not save production chain! Error: \(error)")
             }
+        }
+    }
+    
+    override subscript(productionChainsFor id: String) -> [ProductionChain] {
+        inMemoryStorage.productionChains { chain in
+            chain.id.hasPrefix(id)
         }
     }
 }

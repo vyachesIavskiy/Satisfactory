@@ -9,6 +9,16 @@ struct Tree<Element> {
         children.append(child)
     }
     
+    mutating func add(child: Tree, where predicate: (Tree) -> Bool) {
+        if predicate(self) {
+            children.append(child)
+        } else {
+            children.enumerated().forEach { index, _ in
+                children[index].add(child: child, where: predicate)
+            }
+        }
+    }
+    
     mutating func removeChild(where predicate: (Tree) -> Bool) {
         if let index = children.firstIndex(where: predicate) {
             children.remove(at: index)

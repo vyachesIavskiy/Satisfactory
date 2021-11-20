@@ -63,7 +63,7 @@ private struct Downloader {
                 },
                 duration: recipe.duration,
                 isDefault: recipe.isDefault,
-                isFavorite: false
+                isFavorite: storage[recipeID: recipe.id]?.isFavorite == true
             )
         }
         
@@ -89,11 +89,10 @@ struct LoadingView: View {
             .task {
                 let version = await dataProvider.version
                 let currentVersion = storage.version
+                storage.load()
                 if version > currentVersion {
                     status = .downloading
                     await Downloader(dataProvider: dataProvider, storage: storage).execute()
-                } else {
-                    storage.load()
                 }
                 isLoaded = true
             }

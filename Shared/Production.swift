@@ -4,8 +4,26 @@ import Foundation
 typealias RecipeTree = Tree<RecipeElement>
 
 extension RecipeTree {
-    init(item: Item, recipe: Recipe, amount: Double) {
-        self.init(element: RecipeElement(item: item, recipe: recipe, amount: amount))
+    init(id: UUID = UUID(), item: Item, recipe: Recipe, amount: Double) {
+        self.init(element: RecipeElement(id: id, item: item, recipe: recipe, amount: amount))
+    }
+}
+
+extension RecipeTree: CustomStringConvertible {
+    var description: String {
+        description(with: "")
+    }
+    
+    private func description(with prefix: String) -> String {
+        """
+        
+        \(prefix)Item: \(element.item.name)
+        \(prefix)Recipe: \(element.recipe.name)
+        \(prefix)Amount: \(element.amount.formatted(.fractionFromZeroToFour))
+        
+        """
+        +
+        children.map { $0.description(with: "\(prefix)\t") }.joined()
     }
 }
 
@@ -36,7 +54,13 @@ struct ProductionChain {
     init(item: Item, recipe: Recipe, amount: Double) {
         productionTree = RecipeTree(item: item, recipe: recipe, amount: amount)
     }
+    
+    init(productionTree: RecipeTree) {
+        self.productionTree = productionTree
+    }
 }
+
+extension ProductionChain: Identifiable {}
 
 // MARK: - Production
 final class Production: ObservableObject {
@@ -70,6 +94,10 @@ final class Production: ObservableObject {
     init(item: Item, recipe: Recipe, amount: Double) {
         productionChain = ProductionChain(item: item, recipe: recipe, amount: amount)
         self.amount = amount
+    }
+    
+    init(productionChain: ProductionChain) {
+        self.productionChain = productionChain
     }
     
     var statistics: [CalculationStatisticsModel] {

@@ -1,7 +1,7 @@
 import Foundation
 
 struct RecipeElement: Identifiable {
-    let id = UUID()
+    var id = UUID()
     let item: Item
     var recipe: Recipe
     var amount: Double

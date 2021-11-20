@@ -9,6 +9,13 @@ struct RecipeSelectionView: View {
     @State private var isShowingConfirmation = false
     
     @Binding var selectedRecipe: Recipe?
+    @Binding var selectedProductionChain: ProductionChain?
+    
+    var showProductionChains = true
+    
+    private var productionChains: [ProductionChain] {
+        storage[productionChainsFor: item.id]
+    }
     
     private var favoriteRecipes: [Recipe] {
         storage[recipesFor: item.id].filter {
@@ -28,14 +35,26 @@ struct RecipeSelectionView: View {
     
     var body: some View {
         List {
+            if !productionChains.isEmpty && showProductionChains {
+                Section("Saved productions") {
+                    productionList()
+                }
+                .listRowSeparator(.hidden)
+            }
+            
             if !favoriteRecipes.isEmpty {
                 Section("Favorite Recipes") {
                     recipesList(favoriteRecipes)
                 }
+                .listRowSeparator(.hidden)
             }
             
-            recipesList(sortedRecipes)
+            Section("Unsorted Recipes") {
+                recipesList(sortedRecipes)
+            }
+            .listRowSeparator(.hidden)
         }
+        .listStyle(.plain)
         .frame(maxWidth: 700)
     }
     
@@ -57,6 +76,7 @@ struct RecipeSelectionView: View {
                         .foregroundColor(.orange)
                 }
             }
+            .listRowSeparator(.hidden)
             .onTapGesture {
                 selectedRecipe = recipe
             }
@@ -71,11 +91,10 @@ struct RecipeSelectionView: View {
                 }
                 .tint(.yellow)
             }
-            .listRowSeparator(.hidden)
             
             if recipe.id != recipes.last?.id {
                 Spacer()
-                    .frame(height: 20)
+                    .frame(height: 10)
                     .listRowSeparator(.hidden)
             }
         }
@@ -96,6 +115,41 @@ struct RecipeSelectionView: View {
         RecipeView(recipe: recipe)
             .contentShape(Rectangle())
     }
+    
+    private func productionList() -> some View {
+        ForEach(productionChains) { productionChain in
+            VStack(alignment: .leading) {
+                Text(productionChain.recipe.name)
+                    .fontWeight(.semibold)
+                
+                switch settings.itemViewStyle {
+                case .icon: recipeIconView(recipe: productionChain.recipe)
+                case .row: recipeRowView(recipe: productionChain.recipe)
+                }
+                
+                HStack(spacing: 12) {
+                    Text("Amount: ")
+                    Text(productionChain.amount.formatted(.fractionFromZeroToFour))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 4)
+                        .background(Color.orange)
+                        .clipShape(RoundedRectangle(cornerRadius: 3))
+                }
+            }
+            .onTapGesture {
+                selectedProductionChain = productionChain
+            }
+            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                Button {
+                    storage[productionChainID: productionChain.id] = nil
+                } label: {
+                    Label("Delete", systemImage: "trash")
+                }
+                .tint(.red)
+            }
+        }
+    }
 }
 
 struct RecipeSelectionPreview: PreviewProvider {
@@ -106,7 +160,11 @@ struct RecipeSelectionPreview: PreviewProvider {
     }
 
     static var previews: some View {
-        RecipeSelectionView(item: turboMotor, selectedRecipe: .constant(nil))
+        RecipeSelectionView(
+            item: turboMotor,
+            selectedRecipe: .constant(nil),
+            selectedProductionChain: .constant(nil)
+        )
             .environmentObject(storage)
             .environmentObject(Settings())
     }

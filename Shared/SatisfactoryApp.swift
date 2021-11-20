@@ -9,12 +9,13 @@ struct SatisfactoryApp: App {
         WindowGroup {
             Group {
                 if isLoaded {
-                    ItemListView()
+                    ContentView()
                 } else {
                     LoadingView(isLoaded: $isLoaded)
                 }
             }
             .environmentObject(storage)
+            .environmentObject(Settings())
         }
     }
 }

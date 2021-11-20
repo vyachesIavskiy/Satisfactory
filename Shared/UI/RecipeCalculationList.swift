@@ -2,6 +2,7 @@ import SwiftUI
 
 struct RecipeCalculationList: View {
     @EnvironmentObject var storage: BaseStorage
+    @EnvironmentObject var settings: Settings
     
     @Binding var isShowingStatistics: Bool
     @State private var isShowingSaveAlert = false
@@ -86,23 +87,12 @@ struct RecipeCalculationList: View {
             Text(tree.element.recipe.name)
                 .fontWeight(.semibold)
             
-            HStack {
-                ForEach(tree.element.recipe.input) { input in
-                    Button {
-                        if (input.item as? Part)?.rawResource == false {
-                            recipeSelectionModel = .init(production: production, item: input.item, branch: tree)
-                        }
-                    } label: {
-                        ItemCell(
-                            item: input.item,
-                            amountPerMinute: "\(tree.element.amount(for: input.item).formatted(.fractionFromZeroToFour))",
-                            isSelected: (input.item as? Part)?.rawResource == true || tree.children.contains {
-                                $0.element.item.id == input.item.id
-                            }
-                        )
-                    }
-                    .buttonStyle(.plain)
-                }
+            switch settings.itemViewStyle {
+            case .icon:
+                itemCells(tree: tree)
+                
+            case .row:
+                itemRows(tree: tree)
             }
             
             HStack(spacing: 0) {
@@ -112,6 +102,47 @@ struct RecipeCalculationList: View {
                 Text(tree.element.recipe.machines[0].name)
                     .fontWeight(.semibold)
                     .foregroundColor(.accentColor)
+            }
+        }
+    }
+    
+    private func itemCells(tree: RecipeTree) -> some View {
+        HStack {
+            ForEach(tree.element.recipe.input) { input in
+                Button {
+                    if (input.item as? Part)?.rawResource == false {
+                        recipeSelectionModel = .init(production: production, item: input.item, branch: tree)
+                    }
+                } label: {
+                    ItemCell(
+                        item: input.item,
+                        amountPerMinute: "\(tree.element.amount(for: input.item).formatted(.fractionFromZeroToFour))",
+                        isSelected: (input.item as? Part)?.rawResource == true || tree.children.contains {
+                            $0.element.item.id == input.item.id
+                        }
+                    )
+                }
+                .buttonStyle(.plain)
+            }
+        }
+    }
+    
+    private func itemRows(tree: RecipeTree) -> some View {
+        VStack {
+            ForEach(tree.element.recipe.input) { input in
+                Button {
+                    if (input.item as? Part)?.rawResource == false {
+                        recipeSelectionModel = .init(production: production, item: input.item, branch: tree)
+                    }
+                } label: {
+                    ItemRowInRecipe(
+                        item: input.item,
+                        amountPerMinute: "\(tree.element.amount(for: input.item).formatted(.fractionFromZeroToFour))",
+                        isSelected: (input.item as? Part)?.rawResource == true || tree.children.contains { $0.element.item.id == input.item.id }
+                    )
+                        .cornerRadius(4)
+                }
+                .buttonStyle(.plain)
             }
         }
     }
@@ -133,6 +164,7 @@ struct RecipeCalculationListPreviews: PreviewProvider {
     static var previews: some View {
         RecipeCalculationList(item: item, recipe: recipe, amount: .constant(40), isShowingStatistics: .constant(false))
             .environmentObject(storage)
+            .environmentObject(Settings())
     }
 }
 

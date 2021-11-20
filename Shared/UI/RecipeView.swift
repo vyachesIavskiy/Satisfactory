@@ -2,6 +2,7 @@ import SwiftUI
 
 struct RecipeView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @EnvironmentObject var settings: Settings
     
     var recipe: Recipe
     
@@ -18,7 +19,7 @@ struct RecipeView: View {
             
             Image(systemName: "arrowtriangle.right.fill")
                 .font(.title)
-                .foregroundColor(.gray)
+                .foregroundColor(.secondary)
             
             HStack {
                 ForEach(recipe.output) { output in
@@ -48,11 +49,42 @@ struct RecipeView: View {
         }
     }
     
+    private var rowBody: some View {
+        VStack(spacing: 15) {
+            VStack(spacing: 0) {
+                ForEach(recipe.input) { input in
+                    ItemRowInRecipeView(recipePart: input)
+                }
+            }
+            .cornerRadius(4)
+            
+            HStack {
+                Image(systemName: "arrowtriangle.down.fill")
+                    .font(.title)
+                    .foregroundColor(.secondary)
+            }
+            
+            
+            VStack {
+                ForEach(recipe.output) { output in
+                    ItemRowInRecipeView(recipePart: output)
+                }
+            }
+            .cornerRadius(4)
+        }
+    }
+    
     var body: some View {
-        if horizontalSizeClass == .compact {
-            compactBody
-        } else {
-            regularBody
+        switch settings.itemViewStyle {
+        case .icon:
+            if horizontalSizeClass == .compact {
+                compactBody
+            } else {
+                regularBody
+            }
+            
+        case .row:
+            rowBody
         }
     }
 }
@@ -66,6 +98,18 @@ struct ItemInRecipeView: View {
     
     var body: some View {
         ItemCell(item: recipePart.item, amountPerMinute: amountPerMinuteDisplayString)
+    }
+}
+
+struct ItemRowInRecipeView: View {
+    let recipePart: Recipe.RecipePart
+    
+    private var amountPerMinuteDisplayString: String {
+        recipePart.amountPerMinute.formatted(.fractionFromZeroToFour)
+    }
+    
+    var body: some View {
+        ItemRowInRecipe(item: recipePart.item, amountPerMinute: amountPerMinuteDisplayString)
     }
 }
 
@@ -86,6 +130,7 @@ struct RecipeView_Previews: PreviewProvider {
                 RecipeView(recipe: storage[recipesFor: "modular-frame"][0])
                 RecipeView(recipe: storage[recipesFor: "computer"][1])
             }
+            .environmentObject(Settings())
         }
     }
 }

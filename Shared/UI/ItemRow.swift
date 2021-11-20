@@ -49,6 +49,34 @@ struct ItemCell: View {
     }
 }
 
+struct ItemRowInRecipe: View {
+    var item: Item
+    var amountPerMinute: String
+    var isSelected: Bool = false
+    
+    var body: some View {
+        HStack(spacing: 10.0) {
+            Image(item.name)
+                .resizable()
+                .frame(width: 30, height: 30)
+            
+            Text(item.name)
+            
+            Spacer()
+            
+            Text(amountPerMinute)
+                .fontWeight(.semibold)
+                .lineLimit(1)
+                .padding(.trailing, 4)
+        }
+        .padding(8)
+        .background(.thinMaterial)
+        .background(
+            isSelected ? Color.green : Color.clear
+        )
+    }
+}
+
 struct ItemRow_Previews: PreviewProvider {
     @StateObject private static var storage: BaseStorage = PreviewStorage()
     
@@ -56,7 +84,30 @@ struct ItemRow_Previews: PreviewProvider {
         ItemRow(item: storage[partID: "iron-plate"]!)
             .previewLayout(.sizeThatFits)
         
-        ItemCell(item: storage[partID: "reinforced-iron-plate"]!, amountPerMinute: "10")
+        ItemCell(
+            item: storage[partID: "reinforced-iron-plate"]!,
+            amountPerMinute: "10"
+        )
+            .previewLayout(.sizeThatFits)
+        
+        ItemCell(
+            item: storage[partID: "reinforced-iron-plate"]!,
+            amountPerMinute: "10",
+            isSelected: true
+        )
+            .previewLayout(.sizeThatFits)
+        
+        ItemRowInRecipe(
+            item: storage[partID: "heavy-modular-frame"]!,
+            amountPerMinute: "25"
+        )
+            .previewLayout(.sizeThatFits)
+        
+        ItemRowInRecipe(
+            item: storage[partID: "heavy-modular-frame"]!,
+            amountPerMinute: "25",
+            isSelected: true
+        )
             .previewLayout(.sizeThatFits)
     }
 }

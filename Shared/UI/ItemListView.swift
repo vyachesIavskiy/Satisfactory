@@ -13,6 +13,8 @@ struct ItemListView: View {
     
     @State private var searchTerm = ""
     
+    @State private var isPresentingSettings = false
+    
     private var filteredParts: [Part] {
         guard !searchTerm.isEmpty else { return parts }
         
@@ -28,32 +30,36 @@ struct ItemListView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Parts")) {
-                    ForEach(filteredParts) { part in
-                        Group {
-                            if storage[recipesFor: part.id].isEmpty {
-                                ItemRow(item: part)
-                            } else {
-                                NavigationLink {
-                                    RecipeCalculationView(item: part)
-                                } label: {
+                if !filteredParts.isEmpty {
+                    Section(header: Text("Parts")) {
+                        ForEach(filteredParts) { part in
+                            Group {
+                                if storage[recipesFor: part.id].isEmpty {
                                     ItemRow(item: part)
+                                } else {
+                                    NavigationLink {
+                                        RecipeCalculationView(item: part)
+                                    } label: {
+                                        ItemRow(item: part)
+                                    }
                                 }
                             }
                         }
                     }
                 }
                 
-                Section(header: Text("Equipment")) {
-                    ForEach(filteredEquipment) { equipment in
-                        Group {
-                            if storage[recipesFor: equipment.id].isEmpty {
-                                ItemRow(item: equipment)
-                            } else {
-                                NavigationLink {
-                                    RecipeCalculationView(item: equipment)
-                                } label: {
+                if !filteredEquipment.isEmpty {
+                    Section(header: Text("Equipment")) {
+                        ForEach(filteredEquipment) { equipment in
+                            Group {
+                                if storage[recipesFor: equipment.id].isEmpty {
                                     ItemRow(item: equipment)
+                                } else {
+                                    NavigationLink {
+                                        RecipeCalculationView(item: equipment)
+                                    } label: {
+                                        ItemRow(item: equipment)
+                                    }
                                 }
                             }
                         }
@@ -68,6 +74,19 @@ struct ItemListView: View {
             )
             .navigationTitle("Select an item to produce")
             .navigationBarTitleDisplayMode(.inline)
+            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        isPresentingSettings = true
+                    } label: {
+                        Image(systemName: "gear")
+                    }
+                }
+            }
+            .sheet(isPresented: $isPresentingSettings) {
+                SettingsView()
+            }
         }
         .navigationViewStyle(.stack)
     }

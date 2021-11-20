@@ -146,11 +146,11 @@ final class Production: ObservableObject {
         objectWillChange.send()
         
         productionChain.productionTree.apply { tree in
-            guard tree.element.recipe.input.contains(where: { $0.item.id == item.id }),
-                  let index = tree.children.firstIndex(where: { $0.element.item.id == item.id }),
-                  tree.children[index].children.isEmpty else { return false }
+            guard tree.element.recipe.input.contains(where: { $0.item.id == item.id }) else { return false }
+                  
+            guard let index = tree.children.firstIndex(where: { $0.element.item.id == item.id }) else { return true }
             
-            return true
+            return tree.children[index].children.isEmpty
         } transform: { tree in
             tree.removeChild(where: { $0.element.item.id == item.id })
             

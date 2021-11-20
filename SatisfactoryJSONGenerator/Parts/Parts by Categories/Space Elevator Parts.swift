@@ -1,6 +1,6 @@
 private extension Part {
     init(name: String, tier: Tier, milestone: Int, sortingPriority: Int) {
-        self.init(name: name, partType: .nuclear, tier: tier, milestone: milestone, sortingPriority: sortingPriority)
+        self.init(name: name, partType: .spaceElevatorParts, tier: tier, milestone: milestone, sortingPriority: sortingPriority)
     }
 }
 

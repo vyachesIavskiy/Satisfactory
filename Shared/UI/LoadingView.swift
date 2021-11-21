@@ -15,7 +15,8 @@ private struct Downloader {
                 tier: Tier(rawValue: part.tier)!,
                 milestone: part.milestone,
                 sortingPriority: part.sortingPriority,
-                rawResource: part.rawResource
+                rawResource: part.rawResource,
+                isFavorite: storage[partID: part.id]?.isFavorite == true
             )
         }
         
@@ -26,7 +27,8 @@ private struct Downloader {
                 slot: EquipmentSlot(rawValue: equipment.slot)!,
                 fuel: storage[partID: equipment.fuel ?? ""],
                 ammo: storage[partID: equipment.ammo ?? ""],
-                consumes: storage[partID: equipment.consumes ?? ""]
+                consumes: storage[partID: equipment.consumes ?? ""],
+                isFavorite: storage[equipmentID: equipment.id]?.isFavorite == true
             )
         }
         
@@ -34,7 +36,8 @@ private struct Downloader {
             Building(
                 id: building.id,
                 name: building.name,
-                buildingType: BuildingType(rawValue: building.buildingType)!
+                buildingType: BuildingType(rawValue: building.buildingType)!,
+                isFavorite: storage[buildingID: building.id]?.isFavorite == true
             )
         }
         
@@ -44,7 +47,8 @@ private struct Downloader {
                 name: vehicle.name,
                 fuel: vehicle.fuel.compactMap { fuel in
                     storage[partID: fuel]
-                }
+                },
+                isFavorite: storage[vehicleID: vehicle.id]?.isFavorite == true
             )
         }
         

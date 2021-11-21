@@ -169,7 +169,8 @@ class Storage: BaseStorage {
             tier: part.tier.rawValue,
             milestone: part.milestone,
             sortingPriority: part.sortingPriority,
-            rawResource: part.rawResource
+            rawResource: part.rawResource,
+            isFavorite: part.isFavorite
         )
         try persistentStorage.save(partToSave)
     }
@@ -181,7 +182,8 @@ class Storage: BaseStorage {
             slot: equipment.slot.rawValue,
             fuel: equipment.fuel?.id,
             ammo: equipment.ammo?.id,
-            consumes: equipment.consumes?.id
+            consumes: equipment.consumes?.id,
+            isFavorite: equipment.isFavorite
         )
         try persistentStorage.save(equipmentToSave)
     }
@@ -190,7 +192,8 @@ class Storage: BaseStorage {
         let buildingToSave = BuildingPersistent(
             id: building.id,
             name: building.name,
-            buildingType: building.buildingType.rawValue
+            buildingType: building.buildingType.rawValue,
+            isFavorite: building.isFavorite
         )
         try persistentStorage.save(buildingToSave)
     }
@@ -199,7 +202,8 @@ class Storage: BaseStorage {
         let vehicleToSave = VehiclePersistent(
             id: vehicle.id,
             name: vehicle.name,
-            fuel: vehicle.fuel.map(\.id)
+            fuel: vehicle.fuel.map(\.id),
+            isFavorite: vehicle.isFavorite
         )
         try persistentStorage.save(vehicleToSave)
     }
@@ -259,7 +263,8 @@ class Storage: BaseStorage {
                     tier: Tier(rawValue: part.tier)!,
                     milestone: part.milestone,
                     sortingPriority: part.sortingPriority,
-                    rawResource: part.rawResource
+                    rawResource: part.rawResource,
+                    isFavorite: inMemoryStorage[partID: part.id]?.isFavorite == true
                 )
             }
             
@@ -271,7 +276,8 @@ class Storage: BaseStorage {
                     slot: EquipmentSlot(rawValue: equipment.slot)!,
                     fuel: inMemoryStorage[partID: equipment.fuel ?? ""],
                     ammo: inMemoryStorage[partID: equipment.ammo ?? ""],
-                    consumes: inMemoryStorage[partID: equipment.consumes ?? ""]
+                    consumes: inMemoryStorage[partID: equipment.consumes ?? ""],
+                    isFavorite: inMemoryStorage[equipmentID: equipment.id]?.isFavorite == true
                 )
             }
             
@@ -280,7 +286,8 @@ class Storage: BaseStorage {
                 Building(
                     id: building.id,
                     name: building.name,
-                    buildingType: BuildingType(rawValue: building.buildingType)!
+                    buildingType: BuildingType(rawValue: building.buildingType)!,
+                    isFavorite: inMemoryStorage[buildingID: building.id]?.isFavorite == true
                 )
             }
             
@@ -289,7 +296,8 @@ class Storage: BaseStorage {
                 Vehicle(
                     id: vehicle.id,
                     name: vehicle.name,
-                    fuel: vehicle.fuel.compactMap { inMemoryStorage[partID: $0] }
+                    fuel: vehicle.fuel.compactMap { inMemoryStorage[partID: $0] },
+                    isFavorite: inMemoryStorage[vehicleID: vehicle.id]?.isFavorite == true
                 )
             }
             
@@ -465,7 +473,8 @@ class PreviewStorage: Storage {
                 tier: Tier(rawValue: part.tier)!,
                 milestone: part.milestone,
                 sortingPriority: part.sortingPriority,
-                rawResource: part.rawResource
+                rawResource: part.rawResource,
+                isFavorite: false
             )
         }
         
@@ -476,7 +485,8 @@ class PreviewStorage: Storage {
                 slot: EquipmentSlot(rawValue: equipment.slot)!,
                 fuel: self[partID: equipment.fuel ?? ""],
                 ammo: self[partID: equipment.ammo ?? ""],
-                consumes: self[partID: equipment.consumes ?? ""]
+                consumes: self[partID: equipment.consumes ?? ""],
+                isFavorite: false
             )
         }
         
@@ -484,7 +494,8 @@ class PreviewStorage: Storage {
             Building(
                 id: building.id,
                 name: building.name,
-                buildingType: BuildingType(rawValue: building.buildingType)!
+                buildingType: BuildingType(rawValue: building.buildingType)!,
+                isFavorite: false
             )
         }
         
@@ -492,7 +503,8 @@ class PreviewStorage: Storage {
             Vehicle(
                 id: vehicle.id,
                 name: vehicle.name,
-                fuel: vehicle.fuel.compactMap { self[partID: $0] }
+                fuel: vehicle.fuel.compactMap { self[partID: $0] },
+                isFavorite: false
             )
         }
         

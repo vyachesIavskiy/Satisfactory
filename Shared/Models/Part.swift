@@ -65,6 +65,7 @@ struct Part: Item, Hashable, Identifiable {
     let milestone: Int
     let sortingPriority: Int
     let rawResource: Bool
+    var isFavorite: Bool
     
     var isLiquid: Bool { partType == .liquids }
     var isGas: Bool { partType == .gases }

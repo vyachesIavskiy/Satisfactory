@@ -12,4 +12,5 @@ struct Equipment: Item, Hashable, Identifiable {
     let fuel: Part?
     let ammo: Part?
     let consumes: Part?
+    var isFavorite: Bool
 }

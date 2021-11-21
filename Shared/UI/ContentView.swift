@@ -21,7 +21,7 @@ struct ContentView: View {
 }
 
 struct ContentPreviews: PreviewProvider {
-    @State private static var storage: BaseStorage = PreviewStorage()
+    @State private static var storage: Storage = PreviewStorage()
     
     static var previews: some View {
         ContentView()

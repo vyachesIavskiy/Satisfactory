@@ -37,7 +37,7 @@ struct RecipeCalculatorHeader: View {
 }
 
 struct RecipeCalculatorHeaderPreviews: PreviewProvider {
-    private static var storage: BaseStorage = PreviewStorage()
+    private static var storage: Storage = PreviewStorage()
     
     static var previews: some View {
         RecipeCalculatorHeader(item: storage[partID: "copper-sheet"]!, amount: .constant(34))

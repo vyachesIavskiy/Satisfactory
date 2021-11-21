@@ -114,7 +114,7 @@ struct ItemRowInRecipeView: View {
 }
 
 struct RecipeView_Previews: PreviewProvider {
-    static private var storage: BaseStorage = PreviewStorage()
+    static private var storage: Storage = PreviewStorage()
     
     static var previews: some View {
         ZStack {

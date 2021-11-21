@@ -8,7 +8,7 @@ protocol InMemoryStorageProtocol {
     var recipes: [Recipe] { get set }
     var productionChains: [ProductionChain] { get set }
     
-    subscript(itemID id: String) -> Item? { get }
+    subscript(itemID id: String) -> Item? { get set }
     subscript(partID id: String) -> Part? { get set }
     subscript(equipmentID id: String) -> Equipment? { get set }
     subscript(buildingID id: String) -> Building? { get set }
@@ -22,10 +22,31 @@ protocol InMemoryStorageProtocol {
 
 extension InMemoryStorageProtocol {
     subscript(itemID id: String) -> Item? {
-        self[partID: id] ??
-        self[equipmentID: id] ??
-        self[buildingID: id] ??
-        self[vehicleID: id]
+        get {
+            self[partID: id] ??
+            self[equipmentID: id] ??
+            self[buildingID: id] ??
+            self[vehicleID: id]
+        }
+        set {
+            guard let newValue = newValue else { return }
+            
+            if let index = parts.firstIndex(of: id),
+               let part = newValue as? Part {
+                parts[index] = part
+            } else if let index = equipments.firstIndex(of: id),
+                      let equipment = newValue as? Equipment {
+                equipments[index] = equipment
+            } else if let index = buildings.firstIndex(of: id),
+                      let building = newValue as? Building {
+                buildings[index] = building
+            } else if let index = vehicles.firstIndex(of: id),
+                      let vehicle = newValue as? Vehicle {
+                vehicles[index] = vehicle
+            } else {
+                fatalError("There is no item with id: \(id)")
+            }
+        }
     }
     
     subscript(partID id: String) -> Part? {

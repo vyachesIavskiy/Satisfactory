@@ -2,7 +2,7 @@ import SwiftUI
 
 private struct Downloader {
     var dataProvider: DataProviderProtocol
-    var storage: BaseStorage
+    var storage: Storage
     
     func execute() async {
         storage.version = await dataProvider.version
@@ -77,7 +77,7 @@ private struct Downloader {
 
 struct LoadingView: View {
     @Environment(\.dataProvider) private var dataProvider
-    @EnvironmentObject private var storage: BaseStorage
+    @EnvironmentObject private var storage: Storage
     
     @Binding var isLoaded: Bool
     
@@ -105,7 +105,7 @@ struct LoadingView: View {
 
 struct LoadingPreviews: PreviewProvider {
     @State private static var isLoaded = false
-    @StateObject private static var storage: BaseStorage = PreviewStorage()
+    @StateObject private static var storage: Storage = PreviewStorage()
     
     static var previews: some View {
         LoadingView(isLoaded: $isLoaded)

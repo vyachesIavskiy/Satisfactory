@@ -78,7 +78,7 @@ struct ItemRowInRecipe: View {
 }
 
 struct ItemRow_Previews: PreviewProvider {
-    @StateObject private static var storage: BaseStorage = PreviewStorage()
+    @StateObject private static var storage: Storage = PreviewStorage()
     
     static var previews: some View {
         ItemRow(item: storage[partID: "iron-plate"]!)

@@ -10,7 +10,7 @@ class Settings: ObservableObject {
 }
 
 struct SettingsView: View {
-    @EnvironmentObject var storage: BaseStorage
+    @EnvironmentObject var storage: Storage
     @EnvironmentObject var settings: Settings
     
     var body: some View {
@@ -41,7 +41,7 @@ struct SettingsView: View {
 }
 
 struct SettingsPreviews: PreviewProvider {
-    @State private static var storage: BaseStorage = PreviewStorage()
+    @State private static var storage: Storage = PreviewStorage()
     
     static var previews: some View {
         SettingsView()

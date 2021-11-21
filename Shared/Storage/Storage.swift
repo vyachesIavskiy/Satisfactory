@@ -1,94 +1,10 @@
 import SwiftUI
 
-class BaseStorage: ObservableObject {
-    var version = 0
-    @Published var parts = [Part]()
-    @Published var equipments = [Equipment]()
-    @Published var buildings = [Building]()
-    @Published var vehicles = [Vehicle]()
-    @Published var recipes = [Recipe]()
-    @Published var productionChains = [ProductionChain]()
+class Storage: ObservableObject {
+    private var inMemoryStorage: InMemoryStorageProtocol
+    private var persistentStorage: PersistentStorageProtocol
     
-    func save() {
-        fatalError("Should be overriden")
-    }
-    
-    func load() {
-        fatalError("Should be overriden")
-    }
-    
-    subscript(itemID id: String) -> Item? {
-        fatalError("Should be overriden")
-    }
-    
-    subscript(partID id: String) -> Part? {
-        get {
-            fatalError("Should be overriden")
-        }
-        set {
-            
-        }
-    }
-    
-    subscript(equipmentID id: String) -> Equipment? {
-        get {
-            fatalError("Should be overriden")
-        }
-        set {
-            
-        }
-    }
-    
-    subscript(buildingID id: String) -> Building? {
-        get {
-            fatalError("Should be overriden")
-        }
-        set {
-            
-        }
-    }
-    
-    subscript(vehicleID id: String) -> Vehicle? {
-        get {
-            fatalError("Should be overriden")
-        }
-        set {
-            
-        }
-    }
-    
-    subscript(recipeID id: String) -> Recipe? {
-        get {
-            fatalError("Should be overriden")
-        }
-        set {
-            
-        }
-    }
-    
-    subscript(recipesFor id: String) -> [Recipe] {
-        fatalError("Should be overriden")
-    }
-    
-    subscript(productionChainID id: String) -> ProductionChain? {
-        get {
-            fatalError("Should be overriden")
-        }
-        set {
-            
-        }
-    }
-    
-    subscript(productionChainsFor id: String) -> [ProductionChain] {
-        fatalError("Should be overriden")
-    }
-}
-
-class Storage: BaseStorage {
-    var inMemoryStorage: InMemoryStorageProtocol
-    var persistentStorage: PersistentStorageProtocol
-    
-    override var version: Int {
+    var version: Int {
         get {
             (try? persistentStorage.load(VersionPersistent.self).first?.version) ?? 0
         }
@@ -102,32 +18,32 @@ class Storage: BaseStorage {
         }
     }
     
-    override var parts: [Part] {
+    var parts: [Part] {
         get { inMemoryStorage.parts }
         set { inMemoryStorage.parts = newValue }
     }
     
-    override var equipments: [Equipment] {
+    var equipments: [Equipment] {
         get { inMemoryStorage.equipments }
         set { inMemoryStorage.equipments = newValue }
     }
     
-    override var buildings: [Building] {
+    var buildings: [Building] {
         get { inMemoryStorage.buildings }
         set { inMemoryStorage.buildings = newValue }
     }
     
-    override var vehicles: [Vehicle] {
+    var vehicles: [Vehicle] {
         get { inMemoryStorage.vehicles }
         set { inMemoryStorage.vehicles = newValue }
     }
     
-    override var recipes: [Recipe] {
+    var recipes: [Recipe] {
         get { inMemoryStorage.recipes }
         set { inMemoryStorage.recipes = newValue }
     }
     
-    override var productionChains: [ProductionChain] {
+    var productionChains: [ProductionChain] {
         get { inMemoryStorage.productionChains }
         set { inMemoryStorage.productionChains = newValue }
     }
@@ -140,7 +56,7 @@ class Storage: BaseStorage {
         self.persistentStorage = persistentStorage
     }
     
-    override func save() {
+    func save() {
         do {
             try saveVersion()
             
@@ -247,12 +163,30 @@ class Storage: BaseStorage {
         try persistentStorage.save(productionToSave)
     }
     
+    private func save(item: Item) throws {
+        if let part = item as? Part {
+            try save(part: part)
+        } else if let equipment = item as? Equipment {
+            try save(equipment: equipment)
+        } else if let building = item as? Building {
+            try save(building: building)
+        } else if let vehicle = item as? Vehicle {
+            try save(vehicle: vehicle)
+        } else {
+            enum SaveError: Error {
+                case cannotSaveItemWithID(String)
+            }
+            
+            throw SaveError.cannotSaveItemWithID(item.id)
+        }
+    }
+    
     private func delete(productionChainID: String) throws {
         try persistentStorage.delete(ProductionPersistent.self, filename: productionChainID)
     }
     // MARK: -
     
-    override func load() {
+    func load() {
         do {
             let loadedParts = try persistentStorage.load(PartPersistent.self)
             parts = loadedParts.map { part in
@@ -264,7 +198,7 @@ class Storage: BaseStorage {
                     milestone: part.milestone,
                     sortingPriority: part.sortingPriority,
                     rawResource: part.rawResource,
-                    isFavorite: inMemoryStorage[partID: part.id]?.isFavorite == true
+                    isFavorite: part.isFavorite
                 )
             }
             
@@ -277,7 +211,7 @@ class Storage: BaseStorage {
                     fuel: inMemoryStorage[partID: equipment.fuel ?? ""],
                     ammo: inMemoryStorage[partID: equipment.ammo ?? ""],
                     consumes: inMemoryStorage[partID: equipment.consumes ?? ""],
-                    isFavorite: inMemoryStorage[equipmentID: equipment.id]?.isFavorite == true
+                    isFavorite: equipment.isFavorite
                 )
             }
             
@@ -287,7 +221,7 @@ class Storage: BaseStorage {
                     id: building.id,
                     name: building.name,
                     buildingType: BuildingType(rawValue: building.buildingType)!,
-                    isFavorite: inMemoryStorage[buildingID: building.id]?.isFavorite == true
+                    isFavorite: building.isFavorite
                 )
             }
             
@@ -297,7 +231,7 @@ class Storage: BaseStorage {
                     id: vehicle.id,
                     name: vehicle.name,
                     fuel: vehicle.fuel.compactMap { inMemoryStorage[partID: $0] },
-                    isFavorite: inMemoryStorage[vehicleID: vehicle.id]?.isFavorite == true
+                    isFavorite: vehicle.isFavorite
                 )
             }
             
@@ -341,20 +275,34 @@ class Storage: BaseStorage {
                 
                 return ProductionChain(productionTree: root)
             }
-            
-            print(productionChains)
         } catch {
             fatalError("Could not load! Error: \(error)")
         }
     }
     
-    override subscript(itemID id: String) -> Item? {
-        inMemoryStorage[itemID: id]
+    subscript(itemID id: String) -> Item? {
+        get {
+            inMemoryStorage[itemID: id]
+        }
+        set {
+            objectWillChange.send()
+            
+            inMemoryStorage[itemID: id] = newValue
+            do {
+                if let newValue = newValue {
+                    try save(item: newValue)
+                }
+            } catch {
+                fatalError("Could not save item! Error: \(error)")
+            }
+        }
     }
     
-    override subscript(partID id: String) -> Part? {
+    subscript(partID id: String) -> Part? {
         get { inMemoryStorage[partID: id] }
         set {
+            objectWillChange.send()
+            
             inMemoryStorage[partID: id] = newValue
             do {
                 if let newValue = newValue {
@@ -366,9 +314,11 @@ class Storage: BaseStorage {
         }
     }
     
-    override subscript(equipmentID id: String) -> Equipment? {
+    subscript(equipmentID id: String) -> Equipment? {
         get { inMemoryStorage[equipmentID: id] }
         set {
+            objectWillChange.send()
+            
             inMemoryStorage[equipmentID: id] = newValue
             do {
                 if let newValue = newValue {
@@ -380,9 +330,11 @@ class Storage: BaseStorage {
         }
     }
     
-    override subscript(buildingID id: String) -> Building? {
+    subscript(buildingID id: String) -> Building? {
         get { inMemoryStorage[buildingID: id] }
         set {
+            objectWillChange.send()
+            
             inMemoryStorage[buildingID: id] = newValue
             do {
                 if let newValue = newValue {
@@ -394,9 +346,11 @@ class Storage: BaseStorage {
         }
     }
     
-    override subscript(vehicleID id: String) -> Vehicle? {
+    subscript(vehicleID id: String) -> Vehicle? {
         get { inMemoryStorage[vehicleID: id] }
         set {
+            objectWillChange.send()
+            
             inMemoryStorage[vehicleID: id] = newValue
             do {
                 if let newValue = newValue {
@@ -408,9 +362,11 @@ class Storage: BaseStorage {
         }
     }
     
-    override subscript(recipeID id: String) -> Recipe? {
+    subscript(recipeID id: String) -> Recipe? {
         get { inMemoryStorage[recipeID: id] }
         set {
+            objectWillChange.send()
+            
             inMemoryStorage[recipeID: id] = newValue
             do {
                 if let newValue = newValue {
@@ -422,14 +378,16 @@ class Storage: BaseStorage {
         }
     }
     
-    override subscript(recipesFor id: String) -> [Recipe] {
+    subscript(recipesFor id: String) -> [Recipe] {
         inMemoryStorage[recipesFor: id]
     }
     
-    override subscript(productionChainID id: String) -> ProductionChain? {
+    subscript(productionChainID id: String) -> ProductionChain? {
         get { inMemoryStorage[productionChainID: id] }
         set {
             do {
+                objectWillChange.send()
+                
                 inMemoryStorage[productionChainID: id] = newValue
                 
                 if let newValue = newValue {
@@ -443,7 +401,7 @@ class Storage: BaseStorage {
         }
     }
     
-    override subscript(productionChainsFor id: String) -> [ProductionChain] {
+    subscript(productionChainsFor id: String) -> [ProductionChain] {
         inMemoryStorage.productionChains { chain in
             chain.id.hasPrefix(id)
         }

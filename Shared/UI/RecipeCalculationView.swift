@@ -61,7 +61,7 @@ struct RecipeCalculationView: View {
 }
 
 struct RecipeCalculationPreviews: PreviewProvider {
-    @StateObject private static var storage: BaseStorage = PreviewStorage()
+    @StateObject private static var storage: Storage = PreviewStorage()
     
     private static var item: Item {
         storage[partID: "turbo-motor"]!

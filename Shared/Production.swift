@@ -70,7 +70,7 @@ final class Production: ObservableObject {
         productionChain.productionTree.arrayLevels
     }
     
-    var storage: BaseStorage!
+    var storage: Storage!
     
     var item: Item {
         productionChain.item

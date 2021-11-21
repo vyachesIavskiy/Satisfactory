@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RecipeCalculationList: View {
-    @EnvironmentObject var storage: BaseStorage
+    @EnvironmentObject var storage: Storage
     @EnvironmentObject var settings: Settings
     
     @Binding var isShowingStatistics: Bool
@@ -171,7 +171,7 @@ struct RecipeCalculationList: View {
 }
 
 struct RecipeCalculationListPreviews: PreviewProvider {
-    @StateObject private static var storage: BaseStorage = PreviewStorage()
+    @StateObject private static var storage: Storage = PreviewStorage()
     
     private static let partID = "reinforced-iron-plate"
     

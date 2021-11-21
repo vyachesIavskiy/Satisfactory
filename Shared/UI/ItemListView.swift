@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ItemListView: View {
-    @EnvironmentObject var storage: BaseStorage
+    @EnvironmentObject var storage: Storage
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     
@@ -18,15 +18,39 @@ struct ItemListView: View {
     @State private var isPresentingSettings = false
     
     private var filteredParts: [Part] {
-        guard !searchTerm.isEmpty else { return parts }
+        let unfavoriteParts = parts.filter { !$0.isFavorite }
         
-        return parts.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
+        guard !searchTerm.isEmpty else { return unfavoriteParts }
+        
+        return unfavoriteParts.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
     }
     
-    private var filteredEquipment: [Equipment] {
-        guard !searchTerm.isEmpty else { return equipments }
+    private var filteredFavoriteParts: [Part] {
+        let favoriteParts = parts.filter(\.isFavorite)
+        
+        guard !searchTerm.isEmpty else {
+            return favoriteParts
+        }
+        
+        return favoriteParts.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
+    }
+    
+    private var filteredEquipments: [Equipment] {
+        let unfavoriteEquipments = equipments.filter { !$0.isFavorite }
+        
+        guard !searchTerm.isEmpty else { return unfavoriteEquipments }
         
         return equipments.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
+    }
+    
+    private var filteredFavoriteEquipments: [Equipment] {
+        let favoriteEquipments = equipments.filter(\.isFavorite)
+        
+        guard !searchTerm.isEmpty else {
+            return favoriteEquipments
+        }
+        
+        return favoriteEquipments.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
     }
     
     private var compactBody: some View {
@@ -45,39 +69,36 @@ struct ItemListView: View {
     
     private var list: some View {
         List {
+            if !filteredFavoriteParts.isEmpty {
+                Section {
+                    itemsList(filteredFavoriteParts)
+                } header: {
+                    Text("Favorite parts")
+                }
+
+            }
+            
             if !filteredParts.isEmpty {
-                Section(header: Text("Parts")) {
-                    ForEach(filteredParts) { part in
-                        Group {
-                            if storage[recipesFor: part.id].isEmpty {
-                                ItemRow(item: part)
-                            } else {
-                                NavigationLink {
-                                    RecipeCalculationView(item: part)
-                                } label: {
-                                    ItemRow(item: part)
-                                }
-                            }
-                        }
-                    }
+                Section {
+                    itemsList(filteredParts)
+                } header: {
+                    Text("Parts")
                 }
             }
             
-            if !filteredEquipment.isEmpty {
-                Section(header: Text("Equipment")) {
-                    ForEach(filteredEquipment) { equipment in
-                        Group {
-                            if storage[recipesFor: equipment.id].isEmpty {
-                                ItemRow(item: equipment)
-                            } else {
-                                NavigationLink {
-                                    RecipeCalculationView(item: equipment)
-                                } label: {
-                                    ItemRow(item: equipment)
-                                }
-                            }
-                        }
-                    }
+            if !filteredFavoriteEquipments.isEmpty {
+                Section {
+                    itemsList(filteredFavoriteEquipments)
+                } header: {
+                    Text("Favorite equipment")
+                }
+            }
+            
+            if !filteredEquipments.isEmpty {
+                Section {
+                    itemsList(filteredEquipments)
+                } header: {
+                    Text("Equipment")
                 }
             }
         }
@@ -111,19 +132,42 @@ struct ItemListView: View {
         }
     }
     
-    func parts(in rawValue: Int) -> [Part] {
-        guard let tier = Tier(rawValue: rawValue) else { return [] }
-        return parts.filter { $0.tier == tier }
+    private func itemsList(_ items: [Item]) -> some View {
+        ForEach(items, id: \.id) { item in
+            itemView(item)
+        }
     }
     
-    func parts(in rawValue: Int, milestone: Int) -> [Part] {
-        guard let tier = Tier(rawValue: rawValue) else { return [] }
-        return parts.filter { $0.tier == tier && $0.milestone == milestone }
+    private func itemView(_ item: Item) -> some View {
+        Group {
+            if storage[recipesFor: item.id].isEmpty {
+                ItemRow(item: item)
+            } else {
+                NavigationLink {
+                    RecipeCalculationView(item: item)
+                } label: {
+                    ItemRow(item: item)
+                }
+            }
+        }
+        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+            Button {
+                withAnimation {
+                    storage[itemID: item.id]?.isFavorite.toggle()
+                }
+            } label: {
+                Label(
+                    item.isFavorite ? "Unfavorite" : "Favorite",
+                    systemImage: item.isFavorite ? "heart.slash" : "heart"
+                )
+            }
+            .tint(.yellow)
+        }
     }
 }
 
 struct ItemListPreview: PreviewProvider {
-    @StateObject private static var storage: BaseStorage = PreviewStorage()
+    @StateObject private static var storage: Storage = PreviewStorage()
     
     static var previews: some View {
         ItemListView()

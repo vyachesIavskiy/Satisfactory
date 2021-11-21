@@ -3,7 +3,7 @@ import SwiftUI
 @main
 struct SatisfactoryApp: App {
     @State private var isLoaded = false
-    @StateObject private var storage: BaseStorage = Storage()
+    @StateObject private var storage: Storage = Storage()
     
     var body: some Scene {
         WindowGroup {

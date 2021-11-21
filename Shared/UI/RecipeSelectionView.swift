@@ -4,7 +4,7 @@ struct RecipeSelectionView: View {
     var item: Item
     
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject private var storage: BaseStorage
+    @EnvironmentObject private var storage: Storage
     @EnvironmentObject private var settings: Settings
     @State private var isShowingConfirmation = false
     
@@ -82,7 +82,9 @@ struct RecipeSelectionView: View {
             }
             .swipeActions(edge: .leading, allowsFullSwipe: true) {
                 Button {
-                    storage[recipeID: recipe.id]?.isFavorite.toggle()
+                    withAnimation {
+                        storage[recipeID: recipe.id]?.isFavorite.toggle()
+                    }
                 } label: {
                     Label(
                         recipe.isFavorite ? "Unfavorite" : "Favorite",
@@ -153,7 +155,7 @@ struct RecipeSelectionView: View {
 }
 
 struct RecipeSelectionPreview: PreviewProvider {
-    @StateObject static private var storage: BaseStorage = PreviewStorage()
+    @StateObject static private var storage: Storage = PreviewStorage()
     
     static private var turboMotor: Part {
         storage[partID: "turbo-motor"]!

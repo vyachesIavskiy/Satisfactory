@@ -161,7 +161,7 @@ struct ItemListView: View {
                     systemImage: item.isFavorite ? "heart.slash" : "heart"
                 )
             }
-            .tint(.yellow)
+            .tint(.orange)
         }
     }
 }

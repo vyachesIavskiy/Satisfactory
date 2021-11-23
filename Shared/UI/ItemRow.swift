@@ -52,7 +52,7 @@ struct ItemCell: View {
                 .thinMaterial
             )
             .background(
-                isSelected ? Color.green : Color.clear
+                isSelected ? Color.orange : Color.clear
             )
             .cornerRadius(6)
             .overlay(
@@ -94,7 +94,7 @@ struct ItemRowInRecipe: View {
         .padding(8)
         .background(.thinMaterial)
         .background(
-            isSelected ? Color.green : Color.clear
+            isSelected ? Color.orange : Color.clear
         )
     }
 }

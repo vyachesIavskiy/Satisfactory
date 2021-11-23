@@ -91,7 +91,7 @@ struct RecipeSelectionView: View {
                         systemImage: recipe.isFavorite ? "heart.slash" : "heart"
                     )
                 }
-                .tint(.yellow)
+                .tint(.orange)
             }
             
             if recipe.id != recipes.last?.id {

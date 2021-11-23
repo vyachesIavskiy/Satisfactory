@@ -141,12 +141,12 @@ struct ItemListView: View {
     private func itemView(_ item: Item) -> some View {
         Group {
             if storage[recipesFor: item.id].isEmpty {
-                ItemRow(item: item)
+                ItemRow(item: item, showAmountOfProductionChains: true)
             } else {
                 NavigationLink {
                     RecipeCalculationView(item: item)
                 } label: {
-                    ItemRow(item: item)
+                    ItemRow(item: item, showAmountOfProductionChains: true)
                 }
             }
         }

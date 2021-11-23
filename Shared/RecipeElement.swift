@@ -6,10 +6,10 @@ struct RecipeElement: Identifiable {
     var recipe: Recipe
     var amount: Double
     
-    var numberOfMachines: Int {
+    var numberOfMachines: Double {
         guard let output = recipe.output.first(contains: item) else { return 1 }
         
-        return Int(ceil(amount / output.amountPerMinute))
+        return amount / output.amountPerMinute
     }
     
     func amount(for inputItem: Item) -> Double {

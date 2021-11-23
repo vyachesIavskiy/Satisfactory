@@ -118,7 +118,7 @@ struct RecipeCalculationList: View {
             }
             
             HStack(spacing: 0) {
-                Text("\(tree.element.numberOfMachines) x ")
+                Text("\(tree.element.numberOfMachines.formatted(.fractionFromZeroToFour)) x ")
                     .fontWeight(.semibold)
                 
                 Text(tree.element.recipe.machines[0].name)

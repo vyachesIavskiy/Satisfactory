@@ -114,18 +114,21 @@ final class Production: ObservableObject {
     
     var machineStatistics: [CalculationMachineStatisticsModel] {
         productionChain.productionTree.reduce(strategy: .depth, into: [CalculationMachineStatisticsModel]()) { partialResult, tree in
-            if let index = partialResult.firstIndex(where: { $0.item.id == tree.element.item.id }), partialResult[index].recipe.id == tree.element.recipe.id {
-                partialResult[index].amount += Double(tree.element.numberOfMachines)
+            if let index = partialResult.firstIndex(where: { $0.recipe.id == tree.element.recipe.id }) {
+                partialResult[index].amountOfMachines += tree.element.numberOfMachines
+                partialResult[index].amount += tree.element.amount
             } else {
-                partialResult.append(.init(recipe: tree.element.recipe, item: tree.element.item, amount: Double(tree.element.numberOfMachines)))
+                partialResult.append(
+                    .init(
+                        recipe: tree.element.recipe,
+                        item: tree.element.item,
+                        amount: tree.element.amount,
+                        amountOfMachines: tree.element.numberOfMachines
+                    )
+                )
             }
-        }
-        .reduce(into: []) { partialResult, statisticsModel in
-            if let index = partialResult.firstIndex(where: { $0.machine.id == statisticsModel.machine.id }) {
-                partialResult[index].amount += ceil(statisticsModel.amount)
-            } else {
-                partialResult.append(.init(recipe: statisticsModel.recipe, item: statisticsModel.item, amount: ceil(statisticsModel.amount)))
-            }
+        }.sorted { lhs, rhs in
+            (lhs.item as? Part)?.sortingPriority ?? 1 > (rhs.item as? Part)?.sortingPriority ?? 0
         }
     }
     

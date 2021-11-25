@@ -170,7 +170,7 @@ let nitricAcidRecipe = Recipe(
 )
 
 let aluminumScrapRecipe2 = Recipe(
-    name: "Alternate: instant Scrap",
+    name: "Alternate: Instant Scrap",
     input: [
         .init(bauxite, amount: 15),
         .init(coal, amount: 10),

@@ -37,8 +37,6 @@
 		450BD1FB24A639FE00948B47 /* equipment.json in Resources */ = {isa = PBXBuildFile; fileRef = 450BD1C924A639FD00948B47 /* equipment.json */; };
 		450BD1FC24A639FE00948B47 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450BD1CA24A639FD00948B47 /* Storage.swift */; };
 		450BD1FD24A639FE00948B47 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450BD1CA24A639FD00948B47 /* Storage.swift */; };
-		45115BDB24BF51EF00D58F6A /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BDA24BF51EF00D58F6A /* NumberFormatters.swift */; };
-		45115BDC24BF51EF00D58F6A /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BDA24BF51EF00D58F6A /* NumberFormatters.swift */; };
 		45115BDF24BF559E00D58F6A /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BDE24BF559E00D58F6A /* ItemRow.swift */; };
 		45115BE024BF559E00D58F6A /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BDE24BF559E00D58F6A /* ItemRow.swift */; };
 		45115BE524BF578F00D58F6A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BE424BF578F00D58F6A /* RecipeView.swift */; };
@@ -130,7 +128,6 @@
 		450BD1C824A639FD00948B47 /* parts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = parts.json; sourceTree = "<group>"; };
 		450BD1C924A639FD00948B47 /* equipment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = equipment.json; sourceTree = "<group>"; };
 		450BD1CA24A639FD00948B47 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		45115BDA24BF51EF00D58F6A /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
 		45115BDE24BF559E00D58F6A /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		45115BE424BF578F00D58F6A /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		F934D78226505022002E7723 /* exctractionRates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = exctractionRates.json; sourceTree = "<group>"; };
@@ -208,7 +205,6 @@
 				F9EB45CE27454CCE00FB8926 /* RecipeElement.swift */,
 				450BD18F24A6395700948B47 /* SatisfactoryApp.swift */,
 				450BD19124A6395700948B47 /* Assets.xcassets */,
-				45115BDA24BF51EF00D58F6A /* NumberFormatters.swift */,
 				F9E27166273FC9550068B36E /* Tree.swift */,
 			);
 			path = Shared;
@@ -456,7 +452,6 @@
 				450BD1D824A639FE00948B47 /* Vehicle.swift in Sources */,
 				45115BDF24BF559E00D58F6A /* ItemRow.swift in Sources */,
 				F9EB45CC27454C8800FB8926 /* Production.swift in Sources */,
-				45115BDB24BF51EF00D58F6A /* NumberFormatters.swift in Sources */,
 				450BD1FC24A639FE00948B47 /* Storage.swift in Sources */,
 				F98BB2CD273D356A000556E9 /* EquipmentPersistent.swift in Sources */,
 				F946413926A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
@@ -507,7 +502,6 @@
 				F9EB45CD27454C8800FB8926 /* Production.swift in Sources */,
 				45115BE024BF559E00D58F6A /* ItemRow.swift in Sources */,
 				F98BB2D3273D356A000556E9 /* EquipmentPersistent.swift in Sources */,
-				45115BDC24BF51EF00D58F6A /* NumberFormatters.swift in Sources */,
 				450BD1FD24A639FE00948B47 /* Storage.swift in Sources */,
 				F98F3B2A273ABD0800CE2580 /* EquipmentNetwork.swift in Sources */,
 				450BD1E724A639FE00948B47 /* BundleExtension.swift in Sources */,

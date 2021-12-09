@@ -1051,5 +1051,104 @@
     "tier" : 8,
     "milestone" : 3,
     "name" : "Nuclear Pasta"
+  },
+  {
+    "partType" : "FICSMAS",
+    "rawResource" : true,
+    "id" : "ficsmas-gift",
+    "sortingPriority" : 118,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "FICSMAS Gift"
+  },
+  {
+    "partType" : "FICSMAS",
+    "rawResource" : false,
+    "id" : "ficsmas-tree-branch",
+    "sortingPriority" : 119,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "FICSMAS Tree Branch"
+  },
+  {
+    "partType" : "FICSMAS",
+    "rawResource" : false,
+    "id" : "candy-cane",
+    "sortingPriority" : 120,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Candy Cane"
+  },
+  {
+    "partType" : "FICSMAS",
+    "rawResource" : false,
+    "id" : "ficsmas-bow",
+    "sortingPriority" : 121,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "FICSMAS Bow"
+  },
+  {
+    "partType" : "FICSMAS",
+    "rawResource" : false,
+    "id" : "red-ficsmas-ornament",
+    "sortingPriority" : 122,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Red FICSMAS Ornament"
+  },
+  {
+    "partType" : "FICSMAS",
+    "rawResource" : false,
+    "id" : "blue-ficsmas-ornament",
+    "sortingPriority" : 123,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Blue FICSMAS Ornament"
+  },
+  {
+    "partType" : "FICSMAS",
+    "rawResource" : false,
+    "id" : "actual-snow",
+    "sortingPriority" : 124,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Actual Snow"
+  },
+  {
+    "partType" : "FICSMAS",
+    "rawResource" : false,
+    "id" : "copper-ficsmas-ornament",
+    "sortingPriority" : 125,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Copper FICSMAS Ornament"
+  },
+  {
+    "partType" : "FICSMAS",
+    "rawResource" : false,
+    "id" : "iron-ficsmas-ornament",
+    "sortingPriority" : 126,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Iron FICSMAS Ornament"
+  },
+  {
+    "partType" : "FICSMAS",
+    "rawResource" : false,
+    "id" : "ficsmas-ornament-bundle",
+    "sortingPriority" : 127,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "FICSMAS Ornament Bundle"
+  },
+  {
+    "partType" : "FICSMAS",
+    "rawResource" : false,
+    "id" : "ficsmas-decoration",
+    "sortingPriority" : 128,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "FICSMAS Decoration"
   }
 ]

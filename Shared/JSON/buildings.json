@@ -1,5 +1,40 @@
 [
   {
+    "id" : "giant-ficsmas-tree",
+    "name" : "Giant FICSMAS Tree",
+    "buildingType" : "FICSMAS"
+  },
+  {
+    "id" : "candy-cane",
+    "name" : "Candy Cane",
+    "buildingType" : "FICSMAS"
+  },
+  {
+    "id" : "snowman",
+    "name" : "Snowman",
+    "buildingType" : "FICSMAS"
+  },
+  {
+    "id" : "ficsmas-gift-tree",
+    "name" : "FICSMAS Gift Tree",
+    "buildingType" : "FICSMAS"
+  },
+  {
+    "id" : "ficsmas-power-light",
+    "name" : "FICSMAS Power Light",
+    "buildingType" : "FICSMAS"
+  },
+  {
+    "id" : "ficsmas-snow-dispenser",
+    "name" : "FICSMAS Snow Dispenser",
+    "buildingType" : "FICSMAS"
+  },
+  {
+    "id" : "ficsmas-wreath",
+    "name" : "FICSMAS Wreath",
+    "buildingType" : "FICSMAS"
+  },
+  {
     "id" : "the-hub",
     "name" : "The HUB",
     "buildingType" : "Special"

@@ -104,5 +104,10 @@
     "id" : "hazmat-suit",
     "consumes" : "iodine-infused-filter",
     "name" : "Hazmat Suit"
+  },
+  {
+    "id" : "candy-cane-basher",
+    "name" : "Candy Cane Basher",
+    "slot" : "Hands"
   }
 ]

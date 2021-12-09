@@ -86,6 +86,48 @@
   {
     "output" : [
       {
+        "id" : "red-ficsmas-ornament",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "ficsmas-gift",
+        "amount" : 1
+      }
+    ],
+    "id" : "red-ficsmas-ornament",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "smelter"
+    ],
+    "name" : "Red FICSMAS Ornament"
+  },
+  {
+    "output" : [
+      {
+        "id" : "blue-ficsmas-ornament",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "ficsmas-gift",
+        "amount" : 1
+      }
+    ],
+    "id" : "blue-ficsmas-ornament",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "smelter"
+    ],
+    "name" : "Blue FICSMAS Ornament"
+  },
+  {
+    "output" : [
+      {
         "id" : "steel-ingot",
         "amount" : 3
       }
@@ -257,6 +299,56 @@
       "foundry"
     ],
     "name" : "Aluminum Ingot"
+  },
+  {
+    "output" : [
+      {
+        "id" : "copper-ficsmas-ornament",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "red-ficsmas-ornament",
+        "amount" : 2
+      },
+      {
+        "id" : "copper-ingot",
+        "amount" : 2
+      }
+    ],
+    "id" : "copper-ficsmas-ornament",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "foundry"
+    ],
+    "name" : "Copper FICSMAS Ornament"
+  },
+  {
+    "output" : [
+      {
+        "id" : "iron-ficsmas-ornament",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "blue-ficsmas-ornament",
+        "amount" : 3
+      },
+      {
+        "id" : "iron-ingot",
+        "amount" : 3
+      }
+    ],
+    "id" : "iron-ficsmas-ornament",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "foundry"
+    ],
+    "name" : "Iron FICSMAS Ornament"
   },
   {
     "output" : [
@@ -992,6 +1084,90 @@
       "constructor"
     ],
     "name" : "Power Shard (5)"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ficsmas-tree-branch",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "ficsmas-gift",
+        "amount" : 1
+      }
+    ],
+    "id" : "ficsmas-tree-branch",
+    "isDefault" : true,
+    "duration" : 6,
+    "machines" : [
+      "constructor"
+    ],
+    "name" : "FICSMAS Tree Branch"
+  },
+  {
+    "output" : [
+      {
+        "id" : "candy-cane",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "ficsmas-gift",
+        "amount" : 3
+      }
+    ],
+    "id" : "candy-cane",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "constructor"
+    ],
+    "name" : "Candy Cane"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ficsmas-bow",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "ficsmas-gift",
+        "amount" : 2
+      }
+    ],
+    "id" : "ficsmas-bow",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "constructor"
+    ],
+    "name" : "FICSMAS Bow"
+  },
+  {
+    "output" : [
+      {
+        "id" : "actual-snow",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "ficsmas-gift",
+        "amount" : 5
+      }
+    ],
+    "id" : "actual-snow",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "constructor"
+    ],
+    "name" : "Actual Snow"
   },
   {
     "output" : [
@@ -2250,6 +2426,56 @@
       "assembler"
     ],
     "name" : "Alternate: Coated Iron Canister"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ficsmas-ornament-bundle",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "copper-ficsmas-ornament",
+        "amount" : 1
+      },
+      {
+        "id" : "iron-ficsmas-ornament",
+        "amount" : 1
+      }
+    ],
+    "id" : "ficsmas-ornament-bundle",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
+    "name" : "FICSMAS Ornament Bundle"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ficsmas-decoration",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "ficsmas-tree-branch",
+        "amount" : 15
+      },
+      {
+        "id" : "ficsmas-ornament-bundle",
+        "amount" : 6
+      }
+    ],
+    "id" : "ficsmas-decoration",
+    "isDefault" : true,
+    "duration" : 60,
+    "machines" : [
+      "assembler"
+    ],
+    "name" : "FICSMAS Decoration"
   },
   {
     "output" : [
@@ -7292,6 +7518,184 @@
 
     ],
     "name" : "Radar Tower"
+  },
+  {
+    "output" : [
+      {
+        "id" : "giant-ficsmas-tree",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "ficsmas-tree-branch",
+        "amount" : 100
+      },
+      {
+        "id" : "reinforced-iron-plate",
+        "amount" : 50
+      },
+      {
+        "id" : "concrete",
+        "amount" : 500
+      }
+    ],
+    "id" : "giant-ficsmas-tree",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Giant FICSMAS Tree"
+  },
+  {
+    "output" : [
+      {
+        "id" : "snowman",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "actual-snow",
+        "amount" : 50
+      },
+      {
+        "id" : "candy-cane",
+        "amount" : 3
+      },
+      {
+        "id" : "ficsmas-bow",
+        "amount" : 1
+      },
+      {
+        "id" : "red-ficsmas-ornament",
+        "amount" : 3
+      },
+      {
+        "id" : "blue-ficsmas-ornament",
+        "amount" : 2
+      }
+    ],
+    "id" : "snowman",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "Snowman"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ficsmas-gift-tree",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "ficsmas-gift",
+        "amount" : 50
+      },
+      {
+        "id" : "ficsmas-tree-branch",
+        "amount" : 100
+      },
+      {
+        "id" : "copper-ficsmas-ornament",
+        "amount" : 20
+      },
+      {
+        "id" : "iron-ficsmas-ornament",
+        "amount" : 20
+      }
+    ],
+    "id" : "ficsmas-gift-tree",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "FICSMAS Gift Tree"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ficsmas-power-light",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "cable",
+        "amount" : 1
+      },
+      {
+        "id" : "ficsmas-ornament-bundle",
+        "amount" : 1
+      }
+    ],
+    "id" : "ficsmas-power-light",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "FICSMAS Power Light"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ficsmas-snow-dispenser",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "candy-cane",
+        "amount" : 10
+      },
+      {
+        "id" : "actual-snow",
+        "amount" : 100
+      },
+      {
+        "id" : "ficsmas-decoration",
+        "amount" : 2
+      }
+    ],
+    "id" : "ficsmas-snow-dispenser",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "FICSMAS Snow Dispenser"
+  },
+  {
+    "output" : [
+      {
+        "id" : "ficsmas-wreath",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "ficsmas-decoration",
+        "amount" : 1
+      },
+      {
+        "id" : "ficsmas-bow",
+        "amount" : 1
+      }
+    ],
+    "id" : "ficsmas-wreath",
+    "isDefault" : true,
+    "duration" : 0,
+    "machines" : [
+
+    ],
+    "name" : "FICSMAS Wreath"
   },
   {
     "output" : [

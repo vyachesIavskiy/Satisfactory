@@ -1,3 +1,22 @@
+private extension Recipe {
+    init(
+        name: String,
+        input: [RecipePart],
+        output: [RecipePart],
+        duration: Int,
+        isDefault: Bool = true
+    ) {
+        self.init(
+            name: name,
+            input: input,
+            output: output,
+            machines: [smelter],
+            duration: duration,
+            isDefault: isDefault
+        )
+    }
+}
+
 // MARK: - Ingots
 let ironIngotRecipe = Recipe(
     name: "Iron Ingot",
@@ -7,7 +26,6 @@ let ironIngotRecipe = Recipe(
     output: [
         .init(ironIngot, amount: 1)
     ],
-    machines: [smelter],
     duration: 2
 )
 
@@ -19,7 +37,6 @@ let copperIngotRecipe = Recipe(
     output: [
         .init(copperIngot, amount: 1)
     ],
-    machines: [smelter],
     duration: 2
 )
 
@@ -31,7 +48,6 @@ let cateriumIngotRecipe = Recipe(
     output: [
         .init(cateriumIngot, amount: 1)
     ],
-    machines: [smelter],
     duration: 4
 )
 
@@ -43,9 +59,31 @@ let aluminumIngotRecipe1 = Recipe(
     output: [
         .init(aluminumIngot, amount: 1)
     ],
-    machines: [smelter],
     duration: 2,
     isDefault: false
+)
+
+// MARK: - FICSMAS
+let redFicsmasOrnamentRecipe = Recipe(
+    name: "Red FICSMAS Ornament",
+    input: [
+        .init(ficsmasGift, amount: 1)
+    ],
+    output: [
+        .init(redFicsmasOrnament, amount: 1)
+    ],
+    duration: 12
+)
+
+let blueFicsmasOrnamentRecipe = Recipe(
+    name: "Blue FICSMAS Ornament",
+    input: [
+        .init(ficsmasGift, amount: 1)
+    ],
+    output: [
+        .init(blueFicsmasOrnament, amount: 2)
+    ],
+    duration: 12
 )
 
 let SmelterRecipes = [
@@ -53,5 +91,9 @@ let SmelterRecipes = [
     ironIngotRecipe,
     copperIngotRecipe,
     cateriumIngotRecipe,
-    aluminumIngotRecipe1
+    aluminumIngotRecipe1,
+    
+    // FICSMAS
+    redFicsmasOrnamentRecipe,
+    blueFicsmasOrnamentRecipe
 ]

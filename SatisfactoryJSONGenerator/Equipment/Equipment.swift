@@ -65,6 +65,8 @@ let medicinalInhaler = Equipment(name: "Medicinal Inhaler", slot: .hands)
 let nobeliskDetonator = Equipment(name: "Nobelisk Detonator", slot: .hands, ammo: nobelisk)
 let coffeCup = Equipment(name: "FICSIT™ Coffe Cup", slot: .hands)
 let goldCoffeCup = Equipment(name: "FICSIT™ Gold Coffee Cup", slot: .hands)
+let candyCaneBasher = Equipment(name: "Candy Cane Basher", slot: .hands)
+// snowballs
 
 // MARK: - Body
 let bladeRunners = Equipment(name: "Blade Runners", slot: .body)
@@ -96,5 +98,7 @@ let Equipments = [
     jetpack,
     hoverPack,
     gasMask,
-    hazmatSuit
+    hazmatSuit,
+    
+    candyCaneBasher
 ]

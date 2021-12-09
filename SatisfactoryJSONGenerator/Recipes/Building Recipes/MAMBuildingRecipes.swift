@@ -64,7 +64,6 @@ let geothermalGeneratorRecipe = Recipe(
 )
 
 // MARK: - Quartz
-
 let radarTowerRecipe = Recipe(
     input: [
         .init(heavyModularFrame, amount: 30),
@@ -75,6 +74,62 @@ let radarTowerRecipe = Recipe(
     building: radarTower
 )
 
+// MARK: - FICSMAS
+let giantFicsmasTreeRecipe = Recipe(
+    input: [
+        .init(ficsmasTreeBranch, amount: 100),
+        .init(reinforcedIronPlate, amount: 50),
+        .init(concrete, amount: 500)
+    ],
+    building: giantFicsmasTree
+)
+
+let snowmanRecipe = Recipe(
+    input: [
+        .init(actualSnow, amount: 50),
+        .init(candyCanePart, amount: 3),
+        .init(ficsmasBow, amount: 1),
+        .init(redFicsmasOrnament, amount: 3),
+        .init(blueFicsmasOrnament, amount: 2)
+    ],
+    building: snowman
+)
+
+let ficsmasGiftTreeRecipe = Recipe(
+    input: [
+        .init(ficsmasGift, amount: 50),
+        .init(ficsmasTreeBranch, amount: 100),
+        .init(copperFicsmasOrnament, amount: 20),
+        .init(ironFicsmasOrnament, amount: 20)
+    ],
+    building: ficsmasGiftTree
+)
+
+let ficsmasPowerLightRecipe = Recipe(
+    input: [
+        .init(cable, amount: 1),
+        .init(ficsmasOrnamentBundle, amount: 1)
+    ],
+    building: ficsmasPowerLight
+)
+
+let ficsmasSnowDispenserRecipe = Recipe(
+    input: [
+        .init(candyCanePart, amount: 10),
+        .init(actualSnow, amount: 100),
+        .init(ficsmasDecoration, amount: 2)
+    ],
+    building: ficsmasSnowDispenser
+)
+
+let ficsmasWreathRecipe = Recipe(
+    input: [
+        .init(ficsmasDecoration, amount: 1),
+        .init(ficsmasBow, amount: 1)
+    ],
+    building: ficsmasWreath
+)
+
 let MAMBuildingRecipes = [
     powerPoleMK2Recipe,
     smartSplitterRecipe,
@@ -82,5 +137,13 @@ let MAMBuildingRecipes = [
     powerPoleMK3Recipe,
     programmableSplitterRecipe,
     geothermalGeneratorRecipe,
-    radarTowerRecipe
+    
+    radarTowerRecipe,
+    
+    giantFicsmasTreeRecipe,
+    snowmanRecipe,
+    ficsmasGiftTreeRecipe,
+    ficsmasPowerLightRecipe,
+    ficsmasSnowDispenserRecipe,
+    ficsmasWreathRecipe
 ]

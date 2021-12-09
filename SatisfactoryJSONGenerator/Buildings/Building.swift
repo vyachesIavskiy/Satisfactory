@@ -13,7 +13,9 @@ struct Building: Item, Encodable {
 }
 
 let Buildings
-    = Special
+    = FICSMASBuildings
+
+    + Special
     
     + FluidProduction
     + Manufacturers

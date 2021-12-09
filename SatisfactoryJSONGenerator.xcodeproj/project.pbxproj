@@ -79,6 +79,8 @@
 		F934D77F265046D7002E7723 /* BlenderRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934D77E265046D7002E7723 /* BlenderRecipes.swift */; };
 		F934D78126504CF2002E7723 /* ParticleAcceleratorRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934D78026504CF2002E7723 /* ParticleAcceleratorRecipes.swift */; };
 		F9498A60262AFD56009AEDEF /* Lights.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9498A5F262AFD56009AEDEF /* Lights.swift */; };
+		F953605527625499000CE360 /* FicsmasParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F953605427625499000CE360 /* FicsmasParts.swift */; };
+		F953605727625D71000CE360 /* FicsmasBuildings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F953605627625D71000CE360 /* FicsmasBuildings.swift */; };
 		F95FAAAD273D0A770043D3C4 /* NuclearPowerPlantRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAAC273D0A770043D3C4 /* NuclearPowerPlantRecipes.swift */; };
 		F95FAAB0273D0BCE0043D3C4 /* VehicleRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAAF273D0BCE0043D3C4 /* VehicleRecipes.swift */; };
 		F98F3B1B273AA09A00CE2580 /* TierBuildingRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B1A273AA09A00CE2580 /* TierBuildingRecipes.swift */; };
@@ -176,6 +178,8 @@
 		F934D77E265046D7002E7723 /* BlenderRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlenderRecipes.swift; sourceTree = "<group>"; };
 		F934D78026504CF2002E7723 /* ParticleAcceleratorRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleAcceleratorRecipes.swift; sourceTree = "<group>"; };
 		F9498A5F262AFD56009AEDEF /* Lights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lights.swift; sourceTree = "<group>"; };
+		F953605427625499000CE360 /* FicsmasParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FicsmasParts.swift; sourceTree = "<group>"; };
+		F953605627625D71000CE360 /* FicsmasBuildings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FicsmasBuildings.swift; sourceTree = "<group>"; };
 		F95FAAAC273D0A770043D3C4 /* NuclearPowerPlantRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuclearPowerPlantRecipes.swift; sourceTree = "<group>"; };
 		F95FAAAF273D0BCE0043D3C4 /* VehicleRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRecipes.swift; sourceTree = "<group>"; };
 		F98F3B1A273AA09A00CE2580 /* TierBuildingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TierBuildingRecipes.swift; sourceTree = "<group>"; };
@@ -317,6 +321,7 @@
 				455F637D2479E163001D5870 /* Oil Products.swift */,
 				455F637F2479E169001D5870 /* Nuclear.swift */,
 				455F63812479E172001D5870 /* Space Elevator Parts.swift */,
+				F953605427625499000CE360 /* FicsmasParts.swift */,
 			);
 			path = "Parts by Categories";
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 		455F63832479E42B001D5870 /* Buildsing by Categories */ = {
 			isa = PBXGroup;
 			children = (
+				F953605627625D71000CE360 /* FicsmasBuildings.swift */,
 				455F63842479E44B001D5870 /* Special.swift */,
 				F9EB2B0D264FC0B40079074D /* Production */,
 				F9EB2B0E264FC0C00079074D /* Power */,
@@ -506,6 +512,7 @@
 				F9498A60262AFD56009AEDEF /* Lights.swift in Sources */,
 				455F63992479E4F5001D5870 /* Conveyor Lifts.swift in Sources */,
 				455F63A72479E533001D5870 /* Towers.swift in Sources */,
+				F953605527625499000CE360 /* FicsmasParts.swift in Sources */,
 				455F63BD2479E58C001D5870 /* Jump Pads.swift in Sources */,
 				455F637A2479E14E001D5870 /* Communications.swift in Sources */,
 				F9EB2B15264FC4A70079074D /* Gases.swift in Sources */,
@@ -531,6 +538,7 @@
 				455F63822479E172001D5870 /* Space Elevator Parts.swift in Sources */,
 				455F63AF2479E552001D5870 /* Walls.swift in Sources */,
 				455F638F2479E46F001D5870 /* Workstations.swift in Sources */,
+				F953605727625D71000CE360 /* FicsmasBuildings.swift in Sources */,
 				4531C4CC240189A300948CFA /* RecipePart.swift in Sources */,
 				455F63622479E0DD001D5870 /* Fuels.swift in Sources */,
 				455F63592479DDBC001D5870 /* ManufacturerRecipes.swift in Sources */,

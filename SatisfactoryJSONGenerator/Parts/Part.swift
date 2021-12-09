@@ -48,3 +48,4 @@ let Parts
     + OilProducts
     + Nuclear
     + SpaceElevatorParts
+    + FICSMASParts

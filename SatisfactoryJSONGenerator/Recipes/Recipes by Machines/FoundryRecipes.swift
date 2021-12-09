@@ -1,3 +1,22 @@
+private extension Recipe {
+    init(
+        name: String,
+        input: [RecipePart],
+        output: [RecipePart],
+        duration: Int,
+        isDefault: Bool = true
+    ) {
+        self.init(
+            name: name,
+            input: input,
+            output: output,
+            machines: [foundry],
+            duration: duration,
+            isDefault: isDefault
+        )
+    }
+}
+
 // MARK: - Ingots
 let steelIngotRecipe = Recipe(
     name: "Steel Ingot",
@@ -8,7 +27,6 @@ let steelIngotRecipe = Recipe(
     output: [
         .init(steelIngot, amount: 3)
     ],
-    machines: [foundry],
     duration: 4
 )
 
@@ -21,7 +39,6 @@ let steelIngotRecipe1 = Recipe(
     output: [
         .init(steelIngot, amount: 3)
     ],
-    machines: [foundry],
     duration: 3,
     isDefault: false
 )
@@ -35,7 +52,6 @@ let steelIngotRecipe2 = Recipe(
     output: [
         .init(steelIngot, amount: 10)
     ],
-    machines: [foundry],
     duration: 16,
     isDefault: false
 )
@@ -49,7 +65,6 @@ let steelIngotRecipe3 = Recipe(
     output: [
         .init(steelIngot, amount: 20)
     ],
-    machines: [foundry],
     duration: 12,
     isDefault: false
 )
@@ -63,7 +78,6 @@ let ironIngotRecipe1 = Recipe(
     output: [
         .init(ironIngot, amount: 5)
     ],
-    machines: [foundry],
     duration: 6,
     isDefault: false
 )
@@ -77,7 +91,6 @@ let copperIngotRecipe1 = Recipe(
     output: [
         .init(copperIngot, amount: 20)
     ],
-    machines: [foundry],
     duration: 12,
     isDefault: false
 )
@@ -91,8 +104,32 @@ let aluminumIngotRecipe = Recipe(
     output: [
         .init(aluminumIngot, amount: 4)
     ],
-    machines: [foundry],
     duration: 4
+)
+
+// MARK: - FICSMAS
+let copperFicsmasOrnamentRecipe = Recipe(
+    name: "Copper FICSMAS Ornament",
+    input: [
+        .init(redFicsmasOrnament, amount: 2),
+        .init(copperIngot, amount: 2)
+    ],
+    output: [
+        .init(copperFicsmasOrnament, amount: 1)
+    ],
+    duration: 12
+)
+
+let ironFicsmasOrnamentRecipe = Recipe(
+    name: "Iron FICSMAS Ornament",
+    input: [
+        .init(blueFicsmasOrnament, amount: 3),
+        .init(ironIngot, amount: 3)
+    ],
+    output: [
+        .init(ironFicsmasOrnament, amount: 1)
+    ],
+    duration: 12
 )
 
 let FoundryRecipes = [
@@ -103,5 +140,9 @@ let FoundryRecipes = [
     steelIngotRecipe3,
     ironIngotRecipe1,
     copperIngotRecipe1,
-    aluminumIngotRecipe
+    aluminumIngotRecipe,
+    
+    // FICSMAS
+    copperFicsmasOrnamentRecipe,
+    ironFicsmasOrnamentRecipe
 ]

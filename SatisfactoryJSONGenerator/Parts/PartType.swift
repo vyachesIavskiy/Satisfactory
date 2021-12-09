@@ -21,4 +21,5 @@ enum PartType: String, Codable {
     case oilProducts = "Oil Products"
     case nuclear = "Nuclear"
     case spaceElevatorParts = "Space Elevator Parts"
+    case ficsmas = "FICSMAS"
 }

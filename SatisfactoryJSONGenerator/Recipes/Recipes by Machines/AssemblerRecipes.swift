@@ -1,3 +1,22 @@
+private extension Recipe {
+    init(
+        name: String,
+        input: [RecipePart],
+        output: [RecipePart],
+        duration: Int,
+        isDefault: Bool = true
+    ) {
+        self.init(
+            name: name,
+            input: input,
+            output: output,
+            machines: [assembler],
+            duration: duration,
+            isDefault: isDefault
+        )
+    }
+}
+
 // MARK: - Standart Parts
 let reinforcedIronPlateRecipe = Recipe(
     name: "Reinforced Iron Plate",
@@ -8,7 +27,6 @@ let reinforcedIronPlateRecipe = Recipe(
     output: [
         .init(reinforcedIronPlate, amount: 1)
     ],
-    machines: [assembler],
     duration: 12
 )
 
@@ -21,7 +39,6 @@ let reinforcedIronPlateRecipe1 = Recipe(
     output: [
         .init(reinforcedIronPlate, amount: 1)
     ],
-    machines: [assembler],
     duration: 16,
     isDefault: false
 )
@@ -35,7 +52,6 @@ let reinforcedIronPlateRecipe2 = Recipe(
     output: [
         .init(reinforcedIronPlate, amount: 3)
     ],
-    machines: [assembler],
     duration: 12,
     isDefault: false
 )
@@ -49,7 +65,6 @@ let reinforcedIronPlateRecipe3 = Recipe(
     output: [
         .init(reinforcedIronPlate, amount: 3)
     ],
-    machines: [assembler],
     duration: 32,
     isDefault: false
 )
@@ -63,7 +78,6 @@ let modularFrameRecipe = Recipe(
     output: [
         .init(modularFrame, amount: 2)
     ],
-    machines: [assembler],
     duration: 60
 )
 
@@ -76,7 +90,6 @@ let modularFrameRecipe1 = Recipe(
     output: [
         .init(modularFrame, amount: 2)
     ],
-    machines: [assembler],
     duration: 24,
     isDefault: false
 )
@@ -90,7 +103,6 @@ let modularFrameRecipe2 = Recipe(
     output: [
         .init(modularFrame, amount: 3)
     ],
-    machines: [assembler],
     duration: 60,
     isDefault: false
 )
@@ -104,7 +116,6 @@ let encasedIndustrialBeamRecipe = Recipe(
     output: [
         .init(encasedIndustrialBeam, amount: 1)
     ],
-    machines: [assembler],
     duration: 10
 )
 
@@ -117,7 +128,6 @@ let encasedIndustrialBeamRecipe1 = Recipe(
     output: [
         .init(encasedIndustrialBeam, amount: 1)
     ],
-    machines: [assembler],
     duration: 15,
     isDefault: false
 )
@@ -131,7 +141,6 @@ let alcladAluminumSheetRecipe = Recipe(
     output: [
         .init(alcladAluminumSheet, amount: 3)
     ],
-    machines: [assembler],
     duration: 6
 )
 
@@ -144,7 +153,6 @@ let ironPlateRecipe1 = Recipe(
     output: [
         .init(ironPlate, amount: 15)
     ],
-    machines: [assembler],
     duration: 12,
     isDefault: false
 )
@@ -158,7 +166,6 @@ let ironPlateRecipe2 = Recipe(
     output: [
         .init(ironPlate, amount: 18)
     ],
-    machines: [assembler],
     duration: 24,
     isDefault: false
 )
@@ -172,7 +179,6 @@ let aluminumCasingRecipe1 = Recipe(
     output: [
         .init(aluminumCasing, amount: 15)
     ],
-    machines: [assembler],
     duration: 8,
     isDefault: false
 )
@@ -187,7 +193,6 @@ let rotorRecipe = Recipe(
     output: [
         .init(rotor, amount: 1)
     ],
-    machines: [assembler],
     duration: 15
 )
 
@@ -200,7 +205,6 @@ let rotorRecipe1 = Recipe(
     output: [
         .init(rotor, amount: 3)
     ],
-    machines: [assembler],
     duration: 16,
     isDefault: false
 )
@@ -214,7 +218,6 @@ let rotorRecipe2 = Recipe(
     output: [
         .init(rotor, amount: 1)
     ],
-    machines: [assembler],
     duration: 12,
     isDefault: false
 )
@@ -228,7 +231,6 @@ let statorRecipe = Recipe(
     output: [
         .init(stator, amount: 1)
     ],
-    machines: [assembler],
     duration: 12
 )
 
@@ -241,7 +243,6 @@ let statorRecipe1 = Recipe(
     output: [
         .init(stator, amount: 2)
     ],
-    machines: [assembler],
     duration: 15,
     isDefault: false
 )
@@ -255,7 +256,6 @@ let motorRecipe = Recipe(
     output: [
         .init(motor, amount: 1)
     ],
-    machines: [assembler],
     duration: 12
 )
 
@@ -268,7 +268,6 @@ let motorRecipe1 = Recipe(
     output: [
         .init(motor, amount: 2)
     ],
-    machines: [assembler],
     duration: 16,
     isDefault: false
 )
@@ -282,7 +281,6 @@ let heatSinkRecipe = Recipe(
     output: [
         .init(heatSink, amount: 1)
     ],
-    machines: [assembler],
     duration: 8
 )
 
@@ -295,7 +293,6 @@ let heatSinkRecipe1 = Recipe(
     output: [
         .init(heatSink, amount: 1)
     ],
-    machines: [assembler],
     duration: 6,
     isDefault: false
 )
@@ -310,7 +307,6 @@ let circuitBoardRecipe = Recipe(
     output: [
         .init(circuitBoard, amount: 1)
     ],
-    machines: [assembler],
     duration: 8
 )
 
@@ -323,7 +319,6 @@ let circuitBoardRecipe1 = Recipe(
     output: [
         .init(circuitBoard, amount: 1)
     ],
-    machines: [assembler],
     duration: 12,
     isDefault: false
 )
@@ -337,7 +332,6 @@ let circuitBoardRecipe2 = Recipe(
     output: [
         .init(circuitBoard, amount: 5)
     ],
-    machines: [assembler],
     duration: 24,
     isDefault: false
 )
@@ -351,7 +345,6 @@ let circuitBoardRecipe3 = Recipe(
     output: [
         .init(circuitBoard, amount: 7)
     ],
-    machines: [assembler],
     duration: 48,
     isDefault: false
 )
@@ -365,7 +358,6 @@ let aiLimiterRecipe = Recipe(
     output: [
         .init(aiLimiter, amount: 1)
     ],
-    machines: [assembler],
     duration: 12
 )
 
@@ -378,7 +370,6 @@ let wireRecipe3 = Recipe(
     output: [
         .init(wire, amount: 30)
     ],
-    machines: [assembler],
     duration: 20,
     isDefault: false
 )
@@ -392,7 +383,6 @@ let cableRecipe1 = Recipe(
     output: [
         .init(cable, amount: 20)
     ],
-    machines: [assembler],
     duration: 12,
     isDefault: false
 )
@@ -406,7 +396,6 @@ let cableRecipe2 = Recipe(
     output: [
         .init(cable, amount: 11)
     ],
-    machines: [assembler],
     duration: 24,
     isDefault: false
 )
@@ -420,7 +409,6 @@ let quickwireRecipe1 = Recipe(
     output: [
         .init(quickwire, amount: 12)
     ],
-    machines: [assembler],
     duration: 8,
     isDefault: false
 )
@@ -434,7 +422,6 @@ let computerRecipe1 = Recipe(
     output: [
         .init(computer, amount: 3)
     ],
-    machines: [assembler],
     duration: 64,
     isDefault: false
 )
@@ -448,7 +435,6 @@ let supercomputerRecipe2 = Recipe(
     output: [
         .init(supercomputer, amount: 1)
     ],
-    machines: [assembler],
     duration: 20,
     isDefault: false
 )
@@ -463,7 +449,6 @@ let concreteRecipe1 = Recipe(
     output: [
         .init(concrete, amount: 9)
     ],
-    machines: [assembler],
     duration: 12,
     isDefault: false
 )
@@ -477,7 +462,6 @@ let concreteRecipe2 = Recipe(
     output: [
         .init(concrete, amount: 10)
     ],
-    machines: [assembler],
     duration: 24,
     isDefault: false
 )
@@ -491,7 +475,6 @@ let compactedCoalRecipe = Recipe(
     output: [
         .init(compactedCoal, amount: 5)
     ],
-    machines: [assembler],
     duration: 12,
     isDefault: false
 )
@@ -505,7 +488,6 @@ let silicaRecipe1 = Recipe(
     output: [
         .init(silica, amount: 7)
     ],
-    machines: [assembler],
     duration: 16,
     isDefault: false
 )
@@ -520,7 +502,6 @@ let electromagneticControlRodRecipe = Recipe(
     output: [
         .init(electromagneticControlRod, amount: 2)
     ],
-    machines: [assembler],
     duration: 30
 )
 
@@ -533,7 +514,6 @@ let electromagneticControlRodRecipe1 = Recipe(
     output: [
         .init(electromagneticControlRod, amount: 2)
     ],
-    machines: [assembler],
     duration: 15,
     isDefault: false
 )
@@ -560,7 +540,6 @@ let encasedPlutoniumCellRecipe = Recipe(
     output: [
         .init(encasedPlutoniumCell, amount: 1)
     ],
-    machines: [assembler],
     duration: 12
 )
 
@@ -573,7 +552,6 @@ let plutoniumFuelRodRecipe1 = Recipe(
     output: [
         .init(plutoniumFuelRod, amount: 1)
     ],
-    machines: [assembler],
     duration: 120,
     isDefault: false
 )
@@ -588,7 +566,6 @@ let blackPowderRecipe = Recipe(
     output: [
         .init(blackPowder, amount: 1)
     ],
-    machines: [assembler],
     duration: 8
 )
 
@@ -601,7 +578,6 @@ let blackPowderRecipe1 = Recipe(
     output: [
         .init(blackPowder, amount: 4)
     ],
-    machines: [assembler],
     duration: 16,
     isDefault: false
 )
@@ -615,7 +591,6 @@ let nobeliskRecipe = Recipe(
     output: [
         .init(nobelisk, amount: 1)
     ],
-    machines: [assembler],
     duration: 20
 )
 
@@ -629,7 +604,6 @@ let smartPlatingRecipe = Recipe(
     output: [
         .init(smartPlating, amount: 1)
     ],
-    machines: [assembler],
     duration: 30
 )
 
@@ -642,7 +616,6 @@ let versatileFrameworkRecipe = Recipe(
     output: [
         .init(versatileFramework, amount: 2)
     ],
-    machines: [assembler],
     duration: 24
 )
 
@@ -655,7 +628,6 @@ let automatedWiringRecipe = Recipe(
     output: [
         .init(automatedWiring, amount: 1)
     ],
-    machines: [assembler],
     duration: 24
 )
 
@@ -668,7 +640,6 @@ let assemblyDirectorSystemRecipe = Recipe(
     output: [
         .init(assemblyDirectorSystem, amount: 1)
     ],
-    machines: [assembler],
     duration: 80
 )
 
@@ -682,7 +653,6 @@ let fabricRecipe = Recipe(
     output: [
         .init(fabric, amount: 1)
     ],
-    machines: [assembler],
     duration: 4
 )
 
@@ -696,7 +666,6 @@ let pressureConversionCubeRecipe = Recipe(
     output: [
         .init(pressureConversionCube, amount: 1)
     ],
-    machines: [assembler],
     duration: 60
 )
 
@@ -709,9 +678,33 @@ let emptyCanisterRecipe2 = Recipe(
     output: [
         .init(emptyCanister, amount: 4)
     ],
-    machines: [assembler],
     duration: 4,
     isDefault: false
+)
+
+// MARK: - FICSMAS
+let ficsmasOrnamentBundleRecipe = Recipe(
+    name: "FICSMAS Ornament Bundle",
+    input: [
+        .init(copperFicsmasOrnament, amount: 1),
+        .init(ironFicsmasOrnament, amount: 1)
+    ],
+    output: [
+        .init(ficsmasOrnamentBundle, amount: 1)
+    ],
+    duration: 12
+)
+
+let ficsmasDecorationRecipe = Recipe(
+    name: "FICSMAS Decoration",
+    input: [
+        .init(ficsmasTreeBranch, amount: 15),
+        .init(ficsmasOrnamentBundle, amount: 6)
+    ],
+    output: [
+        .init(ficsmasDecoration, amount: 2)
+    ],
+    duration: 60
 )
 
 let AssemblerRecipes = [
@@ -781,5 +774,9 @@ let AssemblerRecipes = [
     
     // Containers
     pressureConversionCubeRecipe,
-    emptyCanisterRecipe2
+    emptyCanisterRecipe2,
+    
+    // FICSMAS
+    ficsmasOrnamentBundleRecipe,
+    ficsmasDecorationRecipe
 ]

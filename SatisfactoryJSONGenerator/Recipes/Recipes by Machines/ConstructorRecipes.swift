@@ -1,3 +1,22 @@
+private extension Recipe {
+    init(
+        name: String,
+        input: [RecipePart],
+        output: [RecipePart],
+        duration: Int,
+        isDefault: Bool = true
+    ) {
+        self.init(
+            name: name,
+            input: input,
+            output: output,
+            machines: [constructor],
+            duration: duration,
+            isDefault: isDefault
+        )
+    }
+}
+
 // MARK: - Standart Parts
 let ironPlateRecipe = Recipe(
     name: "Iron Plate",
@@ -7,7 +26,6 @@ let ironPlateRecipe = Recipe(
     output: [
         .init(ironPlate, amount: 2)
     ],
-    machines: [constructor],
     duration: 6
 )
 
@@ -19,7 +37,6 @@ let ironRodRecipe = Recipe(
     output: [
         .init(ironRod, amount: 1)
     ],
-    machines: [constructor],
     duration: 4
 )
 
@@ -31,7 +48,6 @@ let ironRodRecipe1 = Recipe(
     output: [
         .init(ironRod, amount: 4)
     ],
-    machines: [constructor],
     duration: 5,
     isDefault: false
 )
@@ -44,7 +60,6 @@ let screwRecipe = Recipe(
     output: [
         .init(screw, amount: 4)
     ],
-    machines: [constructor],
     duration: 6
 )
 
@@ -56,7 +71,6 @@ let screwRecipe1 = Recipe(
     output: [
         .init(screw, amount: 20)
     ],
-    machines: [constructor],
     duration: 24,
     isDefault: false
 )
@@ -69,7 +83,6 @@ let screwRecipe2 = Recipe(
     output: [
         .init(screw, amount: 52)
     ],
-    machines: [constructor],
     duration: 12,
     isDefault: false
 )
@@ -82,7 +95,6 @@ let copperSheetRecipe = Recipe(
     output: [
         .init(copperSheet, amount: 1)
     ],
-    machines: [constructor],
     duration: 6
 )
 
@@ -94,7 +106,6 @@ let steelBeamRecipe = Recipe(
     output: [
         .init(steelBeam, amount: 1)
     ],
-    machines: [constructor],
     duration: 4
 )
 
@@ -106,7 +117,6 @@ let steelPipeRecipe = Recipe(
     output: [
         .init(steelPipe, amount: 2)
     ],
-    machines: [constructor],
     duration: 6
 )
 
@@ -118,7 +128,6 @@ let aluminumCasingRecipe = Recipe(
     output: [
         .init(aluminumCasing, amount: 2)
     ],
-    machines: [constructor],
     duration: 2
 )
 
@@ -131,7 +140,6 @@ let wireRecipe = Recipe(
     output: [
         .init(wire, amount: 2)
     ],
-    machines: [constructor],
     duration: 4
 )
 
@@ -143,7 +151,6 @@ let wireRecipe1 = Recipe(
     output: [
         .init(wire, amount: 9)
     ],
-    machines: [constructor],
     duration: 24,
     isDefault: false
 )
@@ -156,7 +163,6 @@ let wireRecipe2 = Recipe(
     output: [
         .init(wire, amount: 8)
     ],
-    machines: [constructor],
     duration: 4,
     isDefault: false
 )
@@ -169,7 +175,6 @@ let cableRecipe = Recipe(
     output: [
         .init(cable, amount: 1)
     ],
-    machines: [constructor],
     duration: 2
 )
 
@@ -181,7 +186,6 @@ let quickwireRecipe = Recipe(
     output: [
         .init(quickwire, amount: 5)
     ],
-    machines: [constructor],
     duration: 5
 )
 
@@ -194,7 +198,6 @@ let concreteRecipe = Recipe(
     output: [
         .init(concrete, amount: 1)
     ],
-    machines: [constructor],
     duration: 4
 )
 
@@ -206,7 +209,6 @@ let quartzCrystalRecipe = Recipe(
     output: [
         .init(quartzCrystal, amount: 3)
     ],
-    machines: [constructor],
     duration: 8
 )
 
@@ -218,7 +220,6 @@ let silicaRecipe = Recipe(
     output: [
         .init(silica, amount: 5)
     ],
-    machines: [constructor],
     duration: 8
 )
 
@@ -230,7 +231,6 @@ let copperPowderRecipe = Recipe(
     output: [
         .init(copperPowder, amount: 5)
     ],
-    machines: [constructor],
     duration: 6
 )
 
@@ -243,7 +243,6 @@ let biomassLeavesRecipe = Recipe(
     output: [
         .init(biomass, amount: 5)
     ],
-    machines: [constructor],
     duration: 5
 )
 
@@ -255,7 +254,6 @@ let biomassWoodRecipe = Recipe(
     output: [
         .init(biomass, amount: 20)
     ],
-    machines: [constructor],
     duration: 4
 )
 
@@ -267,7 +265,6 @@ let biomassAlienCarapaceRecipe = Recipe(
     output: [
         .init(biomass, amount: 100)
     ],
-    machines: [constructor],
     duration: 4
 )
 
@@ -279,7 +276,6 @@ let biomassAlienOrgansRecipe = Recipe(
     output: [
         .init(biomass, amount: 200)
     ],
-    machines: [constructor],
     duration: 8
 )
 
@@ -291,7 +287,6 @@ let biomassMyceliaRecipe = Recipe(
     output: [
         .init(biomass, amount: 10)
     ],
-    machines: [constructor],
     duration: 4
 )
 
@@ -303,7 +298,6 @@ let solidBiofuelRecipe = Recipe(
     output: [
         .init(solidBiofuel, amount: 4)
     ],
-    machines: [constructor],
     duration: 4
 )
 
@@ -316,7 +310,6 @@ let bioCoalRecipe = Recipe(
     output: [
         .init(coal, amount: 6)
     ],
-    machines: [constructor],
     duration: 8,
     isDefault: false
 )
@@ -329,7 +322,6 @@ let charcoalRecipe = Recipe(
     output: [
         .init(coal, amount: 10)
     ],
-    machines: [constructor],
     duration: 4,
     isDefault: false
 )
@@ -343,7 +335,6 @@ let emptyCanisterRecipe = Recipe(
     output: [
         .init(emptyCanister, amount: 4)
     ],
-    machines: [constructor],
     duration: 4
 )
 
@@ -355,7 +346,6 @@ let emptyCanisterRecipe1 = Recipe(
     output: [
         .init(emptyCanister, amount: 2)
     ],
-    machines: [constructor],
     duration: 3,
     isDefault: false
 )
@@ -368,7 +358,6 @@ let emptyFluidTankRecipe = Recipe(
     output: [
         .init(emptyFluidTank, amount: 1)
     ],
-    machines: [constructor],
     duration: 1
 )
 
@@ -381,7 +370,6 @@ let spikedRebarRecipe = Recipe(
     output: [
         .init(spikedRebar, amount: 1)
     ],
-    machines: [constructor],
     duration: 4
 )
 
@@ -393,7 +381,6 @@ let colorCartridgeRecipe = Recipe(
     output: [
         .init(colorCartridge, amount: 10)
     ],
-    machines: [constructor],
     duration: 8
 )
 
@@ -407,7 +394,6 @@ let powerShard1Recipe = Recipe(
     output: [
         .init(powerShard, amount: 1)
     ],
-    machines: [constructor],
     duration: 8
 )
 
@@ -419,7 +405,6 @@ let powerShard2Recipe = Recipe(
     output: [
         .init(powerShard, amount: 2)
     ],
-    machines: [constructor],
     duration: 12
 )
 
@@ -431,8 +416,52 @@ let powerShard5Recipe = Recipe(
     output: [
         .init(powerShard, amount: 5)
     ],
-    machines: [constructor],
     duration: 24
+)
+
+// MARK: - FICSMAS
+let ficsmasTreeBranchRecipe = Recipe(
+    name: "FICSMAS Tree Branch",
+    input: [
+        .init(ficsmasGift, amount: 1)
+    ],
+    output: [
+        .init(ficsmasTreeBranch, amount: 1)
+    ],
+    duration: 6
+)
+
+let candyCanePartRecipe = Recipe(
+    name: "Candy Cane",
+    input: [
+        .init(ficsmasGift, amount: 3)
+    ],
+    output: [
+        .init(candyCanePart, amount: 1)
+    ],
+    duration: 12
+)
+
+let ficsmasBowRecipe = Recipe(
+    name: "FICSMAS Bow",
+    input: [
+        .init(ficsmasGift, amount: 2)
+    ],
+    output: [
+        .init(ficsmasBow, amount: 1)
+    ],
+    duration: 12
+)
+
+let actualSnowRecipe = Recipe(
+    name: "Actual Snow",
+    input: [
+        .init(ficsmasGift, amount: 5)
+    ],
+    output: [
+        .init(actualSnow, amount: 2)
+    ],
+    duration: 12
 )
 
 let ConstructorRecipes = [
@@ -486,4 +515,10 @@ let ConstructorRecipes = [
     powerShard1Recipe,
     powerShard2Recipe,
     powerShard5Recipe,
+    
+    // FICSMAS
+    ficsmasTreeBranchRecipe,
+    candyCanePartRecipe,
+    ficsmasBowRecipe,
+    actualSnowRecipe
 ]

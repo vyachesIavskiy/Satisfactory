@@ -21,6 +21,7 @@ enum PartType: String, Hashable, CaseIterable {
     case oilProducts = "Oil Products"
     case nuclear = "Nuclear"
     case spaceElevatorParts = "Space Elevator Parts"
+    case ficsmas = "FICSMAS"
 }
 
 enum Tier: Int {

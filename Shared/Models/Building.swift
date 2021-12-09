@@ -1,6 +1,7 @@
 import Foundation
 
 enum BuildingType: String, Hashable, CaseIterable {
+    case ficsmas = "FICSMAS"
     case special = "Special"
     case fluidExtractors = "Fluid Extractors"
     case manufacturers = "Manufacturers"

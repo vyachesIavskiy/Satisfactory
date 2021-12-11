@@ -10,7 +10,7 @@ let snowman = Building(name: "Snowman")
 let ficsmasGiftTree = Building(name: "FICSMAS Gift Tree")
 let ficsmasPowerLight = Building(name: "FICSMAS Power Light")
 let ficsmasSnowDispenser = Building(name: "FICSMAS Snow Dispenser")
-let ficsmasWreath = Building(name: "FICSMAS Wreath")
+let ficsmasWreathBuilding = Building(name: "FICSMAS Wreath")
 
 let FICSMASBuildings = [
     giantFicsmasTree,
@@ -19,5 +19,5 @@ let FICSMASBuildings = [
     ficsmasGiftTree,
     ficsmasPowerLight,
     ficsmasSnowDispenser,
-    ficsmasWreath
+    ficsmasWreathBuilding
 ]

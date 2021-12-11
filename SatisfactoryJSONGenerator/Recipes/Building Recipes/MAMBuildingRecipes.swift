@@ -122,12 +122,12 @@ let ficsmasSnowDispenserRecipe = Recipe(
     building: ficsmasSnowDispenser
 )
 
-let ficsmasWreathRecipe = Recipe(
+let ficsmasWreathBuildingRecipe = Recipe(
     input: [
         .init(ficsmasDecoration, amount: 1),
         .init(ficsmasBow, amount: 1)
     ],
-    building: ficsmasWreath
+    building: ficsmasWreathBuilding
 )
 
 let MAMBuildingRecipes = [
@@ -145,5 +145,5 @@ let MAMBuildingRecipes = [
     ficsmasGiftTreeRecipe,
     ficsmasPowerLightRecipe,
     ficsmasSnowDispenserRecipe,
-    ficsmasWreathRecipe
+    ficsmasWreathBuildingRecipe
 ]

@@ -15,6 +15,9 @@ let copperFicsmasOrnament = Part(name: "Copper FICSMAS Ornament", sortingPriorit
 let ironFicsmasOrnament = Part(name: "Iron FICSMAS Ornament", sortingPriority: 126)
 let ficsmasOrnamentBundle = Part(name: "FICSMAS Ornament Bundle", sortingPriority: 127)
 let ficsmasDecoration = Part(name: "FICSMAS Decoration", sortingPriority: 128)
+let ficsmasWreathPart = Part(name: "FICSMAS Wreath", sortingPriority: 129)
+let ficsmasWonderStar = Part(name: "FICSMAS Wonder Star", sortingPriority: 130)
+let snowball = Part(name: "Snowball", sortingPriority: 131)
 
 let FICSMASParts = [
     ficsmasGift,
@@ -27,5 +30,8 @@ let FICSMASParts = [
     copperFicsmasOrnament,
     ironFicsmasOrnament,
     ficsmasOrnamentBundle,
-    ficsmasDecoration
+    ficsmasDecoration,
+    ficsmasWreathPart,
+    ficsmasWonderStar,
+    snowball
 ]

@@ -19,8 +19,15 @@ struct Recipe: Encodable {
         case isDefault
     }
     
-    init(name: String, input: [RecipePart], output: [RecipePart], machines: [Building], duration: Int, isDefault: Bool = true) {
-        self.id = name.idFromName
+    init(
+        name: String,
+        input: [RecipePart],
+        output: [RecipePart],
+        machines: [Building],
+        duration: Int,
+        isDefault: Bool = true
+    ) {
+        self.id = "recipe-\(name.idFromName)"
         self.name = name
         self.input = input
         self.output = output

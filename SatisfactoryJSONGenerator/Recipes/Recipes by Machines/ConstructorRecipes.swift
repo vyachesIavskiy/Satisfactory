@@ -464,6 +464,17 @@ let actualSnowRecipe = Recipe(
     duration: 12
 )
 
+let snowballRecipe = Recipe(
+    name: "Snowball",
+    input: [
+        .init(actualSnow, amount: 3)
+    ],
+    output: [
+        .init(snowball, amount: 1)
+    ],
+    duration: 12
+)
+
 let ConstructorRecipes = [
     // Standard Parts
     ironPlateRecipe,
@@ -520,5 +531,6 @@ let ConstructorRecipes = [
     ficsmasTreeBranchRecipe,
     candyCanePartRecipe,
     ficsmasBowRecipe,
-    actualSnowRecipe
+    actualSnowRecipe,
+    snowballRecipe
 ]

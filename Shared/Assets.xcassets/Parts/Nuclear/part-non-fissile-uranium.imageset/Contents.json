@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "part-non-fissile-uranium.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

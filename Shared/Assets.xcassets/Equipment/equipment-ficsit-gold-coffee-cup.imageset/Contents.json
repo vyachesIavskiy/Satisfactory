@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "equipment-ficsit-gold-coffee-cup.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

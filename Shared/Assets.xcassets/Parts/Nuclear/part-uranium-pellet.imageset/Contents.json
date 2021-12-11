@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "part-uranium-pellet.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "building-craft-bench.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

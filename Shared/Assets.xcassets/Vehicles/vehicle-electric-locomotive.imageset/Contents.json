@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "vehicle-electric-locomotive.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

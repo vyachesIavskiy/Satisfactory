@@ -12,7 +12,7 @@ struct Vehicle: Encodable {
     }
     
     init(name: String, fuel: [Part]) {
-        id = name.idFromName
+        id = "vehicle-\(name.idFromName)"
         self.name = name
         self.fuel = fuel
     }

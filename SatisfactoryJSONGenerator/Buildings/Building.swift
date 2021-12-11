@@ -6,7 +6,7 @@ struct Building: Item, Encodable {
     let buildingType: BuildingType
     
     init(name: String, buildingType: BuildingType) {
-        self.id = name.idFromName
+        self.id = "building-\(name.idFromName)"
         self.name = name
         self.buildingType = buildingType
     }

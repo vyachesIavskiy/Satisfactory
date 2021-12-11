@@ -12,7 +12,7 @@ struct ItemRow: View {
     
     var body: some View {
         HStack(spacing: 10.0) {
-            Image(item.name)
+            Image(item.imageName)
                 .resizable()
                 .frame(width: 30, height: 30)
             
@@ -42,7 +42,7 @@ struct ItemCell: View {
     var isSelected: Bool = false
     
     var body: some View {
-        Image(item.name)
+        Image(item.imageName)
             .resizable()
             .aspectRatio(1, contentMode: .fit)
             .padding([.top, .leading, .trailing], 4)
@@ -78,7 +78,7 @@ struct ItemRowInRecipe: View {
     
     var body: some View {
         HStack(spacing: 10.0) {
-            Image(item.name)
+            Image(item.imageName)
                 .resizable()
                 .frame(width: 30, height: 30)
             

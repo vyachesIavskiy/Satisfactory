@@ -13,4 +13,6 @@ struct Equipment: Item, Hashable, Identifiable {
     let ammo: Part?
     let consumes: Part?
     var isFavorite: Bool
+    
+    var imageName: String { "equipment-\(id)" }
 }

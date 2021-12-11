@@ -5,4 +5,6 @@ struct Vehicle: Item {
     let name: String
     let fuel: [Part]
     var isFavorite: Bool
+    
+    var imageName: String { "vehicle-\(id)" }
 }

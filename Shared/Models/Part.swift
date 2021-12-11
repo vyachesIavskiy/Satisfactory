@@ -68,6 +68,7 @@ struct Part: Item, Hashable, Identifiable {
     let rawResource: Bool
     var isFavorite: Bool
     
+    var imageName: String { "part-\(id)" }
     var isLiquid: Bool { partType == .liquids }
     var isGas: Bool { partType == .gases }
 }

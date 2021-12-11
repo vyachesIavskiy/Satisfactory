@@ -67,7 +67,7 @@ struct CalculationStatistics: View {
     
     private func machineViewIcon(_ machine: CalculationMachineStatisticsModel) -> some View {
         HStack {
-            Image(machine.item.name)
+            Image(machine.item.imageName)
                 .resizable()
                 .frame(width: 30, height: 30)
                 .padding(3)
@@ -93,7 +93,7 @@ struct CalculationStatistics: View {
     private func machineStatisticsView(_ machine: CalculationMachineStatisticsModel) -> some View {
         HStack {
             HStack(spacing: 10) {
-                Image(machine.machine.name)
+                Image(machine.machine.imageName)
                     .resizable()
                     .frame(width: 30, height: 30)
                 

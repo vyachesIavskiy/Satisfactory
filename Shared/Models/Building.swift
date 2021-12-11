@@ -41,4 +41,6 @@ struct Building: Item, Hashable {
     let name: String
     let buildingType: BuildingType
     var isFavorite: Bool
+    
+    var imageName: String { "building-\(id)" }
 }

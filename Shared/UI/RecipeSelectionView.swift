@@ -1,12 +1,13 @@
 import SwiftUI
 
 struct RecipeSelectionView: View {
-    var item: Item
-    
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var storage: Storage
     @EnvironmentObject private var settings: Settings
+    
     @State private var isShowingConfirmation = false
+    
+    var item: Item
     
     @Binding var selectedRecipe: Recipe?
     @Binding var selectedProductionChain: ProductionChain?

@@ -2,8 +2,13 @@ import SwiftUI
 
 struct ItemListView: View {
     @EnvironmentObject var storage: Storage
+    
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
+    
+    @State private var searchTerm = ""
+    @State private var isShowingStatistics = false
+    @State private var isPresentingSettings = false
     
     private var parts: [Part] {
         storage.parts.sortedByTiers()
@@ -12,10 +17,6 @@ struct ItemListView: View {
     private var equipments: [Equipment] {
         storage.equipments
     }
-    
-    @State private var searchTerm = ""
-    
-    @State private var isPresentingSettings = false
     
     private var filteredParts: [Part] {
         let unfavoriteParts = parts.filter { !$0.isFavorite }
@@ -53,6 +54,28 @@ struct ItemListView: View {
         return favoriteEquipments.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
     }
     
+    private var productions: [ProductionChain] {
+        storage.productionChains.sortedByTiers()
+    }
+    
+    private var statistics: [CalculationStatisticsModel] {
+        productions
+            .map(\.statistics)
+            .reduce([], +)
+            .reduceDuplicates()
+    }
+    
+    private var machineStatistics: [CalculationMachineStatisticsModel] {
+        productions
+            .map(\.machineStatistics)
+            .reduce([], +)
+            .reduceDuplicates()
+            .sorted { lhs, rhs in
+                (lhs.item as? Part)?.sortingPriority ?? 1 > (rhs.item as? Part)?.sortingPriority ?? 0
+            }
+    }
+    
+    // MARK: - UI
     private var compactBody: some View {
         NavigationView {
             list
@@ -78,19 +101,19 @@ struct ItemListView: View {
 
             }
             
-            if !filteredParts.isEmpty {
-                Section {
-                    itemsList(filteredParts)
-                } header: {
-                    Text("Parts")
-                }
-            }
-            
             if !filteredFavoriteEquipments.isEmpty {
                 Section {
                     itemsList(filteredFavoriteEquipments)
                 } header: {
                     Text("Favorite equipment")
+                }
+            }
+            
+            if !filteredParts.isEmpty {
+                Section {
+                    itemsList(filteredParts)
+                } header: {
+                    Text("Parts")
                 }
             }
             
@@ -117,10 +140,35 @@ struct ItemListView: View {
                 } label: {
                     Image(systemName: "gear")
                 }
+                .sheet(isPresented: $isPresentingSettings) {
+                    SettingsView()
+                }
             }
         }
-        .sheet(isPresented: $isPresentingSettings) {
-            SettingsView()
+        .safeAreaInset(edge: .bottom) {
+            if !productions.isEmpty {
+                Button {
+                    isShowingStatistics = true
+                } label: {
+                    Text("Production chains statistics")
+                }
+                .buttonStyle(.borderedProminent)
+                .padding(.bottom)
+                .sheet(isPresented: $isShowingStatistics) {
+                    NavigationView {
+                        CalculationStatistics(data: statistics, machines: machineStatistics)
+                            .toolbar {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    Button("Done") {
+                                        isShowingStatistics = false
+                                    }
+                                }
+                            }
+                            .navigationTitle("Production chains statistics")
+                            .navigationBarTitleDisplayMode(.inline)
+                    }
+                }
+            }
         }
     }
     

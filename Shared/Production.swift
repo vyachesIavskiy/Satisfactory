@@ -57,10 +57,72 @@ struct ProductionChain {
     
     init(productionTree: RecipeTree) {
         self.productionTree = productionTree
+        recalculate()
+    }
+    
+    var statistics: [CalculationStatisticsModel] {
+        [.init(item: item, amount: amount)] + productionTree.reduce(strategy: .depth, into: []) { partialResult, tree in
+            for input in tree.element.recipe.input {
+                if let index = partialResult.firstIndex(where: { $0.item.id == input.item.id }) {
+                    partialResult[index].amount += tree.element.amount(for: input.item)
+                } else {
+                    partialResult.append(.init(item: input.item, amount: tree.element.amount(for: input.item)))
+                }
+            }
+        }
+    }
+    
+    var machineStatistics: [CalculationMachineStatisticsModel] {
+        productionTree.reduce(strategy: .depth, into: [CalculationMachineStatisticsModel]()) { partialResult, tree in
+            if let index = partialResult.firstIndex(where: { $0.recipe.id == tree.element.recipe.id }) {
+                partialResult[index].amountOfMachines += tree.element.numberOfMachines
+                partialResult[index].amount += tree.element.amount
+            } else {
+                partialResult.append(
+                    .init(
+                        recipe: tree.element.recipe,
+                        item: tree.element.item,
+                        amount: tree.element.amount,
+                        amountOfMachines: tree.element.numberOfMachines
+                    )
+                )
+            }
+        }
+    }
+    
+    mutating func recalculate() {
+        productionTree.element.amount = amount
+        
+        productionTree.apply { tree in
+            tree.children.enumerated().forEach { (index, child) in
+                tree.children[index].element.amount = tree.element.amount(for: child.element.item)
+            }
+        }
     }
 }
 
 extension ProductionChain: Identifiable {}
+
+extension Array where Element == ProductionChain {
+    func sortedByTiers() -> Self {
+        sorted { lhs, rhs in
+            guard let lhsPart = lhs.item as? Part,
+                  let rhsPart = rhs.item as? Part else { return true }
+            
+            if lhsPart.tier < rhsPart.tier {
+                return true
+            } else if lhsPart.tier == rhsPart.tier {
+                if lhsPart.milestone < rhsPart.milestone {
+                    return true
+                } else if lhsPart.milestone == rhsPart.milestone {
+                    return lhsPart.sortingPriority < rhsPart.sortingPriority
+                }
+            }
+            
+            return false
+        }
+    }
+}
 
 // MARK: - Production
 final class Production: ObservableObject {
@@ -101,35 +163,11 @@ final class Production: ObservableObject {
     }
     
     var statistics: [CalculationStatisticsModel] {
-        [.init(item: item, amount: amount)] + productionChain.productionTree.reduce(strategy: .depth, into: []) { partialResult, tree in
-            for input in tree.element.recipe.input {
-                if let index = partialResult.firstIndex(where: { $0.item.id == input.item.id }) {
-                    partialResult[index].amount += tree.element.amount(for: input.item)
-                } else {
-                    partialResult.append(.init(item: input.item, amount: tree.element.amount(for: input.item)))
-                }
-            }
-        }
+        productionChain.statistics
     }
     
     var machineStatistics: [CalculationMachineStatisticsModel] {
-        productionChain.productionTree.reduce(strategy: .depth, into: [CalculationMachineStatisticsModel]()) { partialResult, tree in
-            if let index = partialResult.firstIndex(where: { $0.recipe.id == tree.element.recipe.id }) {
-                partialResult[index].amountOfMachines += tree.element.numberOfMachines
-                partialResult[index].amount += tree.element.amount
-            } else {
-                partialResult.append(
-                    .init(
-                        recipe: tree.element.recipe,
-                        item: tree.element.item,
-                        amount: tree.element.amount,
-                        amountOfMachines: tree.element.numberOfMachines
-                    )
-                )
-            }
-        }.sorted { lhs, rhs in
-            (lhs.item as? Part)?.sortingPriority ?? 1 > (rhs.item as? Part)?.sortingPriority ?? 0
-        }
+        productionChain.machineStatistics
     }
     
     func checkInput(for recipe: Recipe) {
@@ -212,12 +250,6 @@ final class Production: ObservableObject {
     private func recalculate() {
         objectWillChange.send()
         
-        productionChain.productionTree.element.amount = amount
-        
-        productionChain.productionTree.apply { tree in
-            tree.children.enumerated().forEach { (index, child) in
-                tree.children[index].element.amount = tree.element.amount(for: child.element.item)
-            }
-        }
+        productionChain.recalculate()
     }
 }

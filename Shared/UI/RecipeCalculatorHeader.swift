@@ -12,7 +12,7 @@ struct RecipeCalculatorHeader: View {
             Spacer()
             
             TextField("", value: $amount, format: .fractionFromZeroToFour)
-                .keyboardType(.numberPad)
+                .keyboardType(.decimalPad)
                 .textFieldStyle(.roundedBorder)
                 .labelsHidden()
                 .multilineTextAlignment(.center)

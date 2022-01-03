@@ -1,22 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    
     var body: some View {
         ItemListView()
-        
-//        TabView {
-//            ItemListView()
-//                .tabItem {
-//                    Label("Production", systemImage: "square.stack.fill")
-//                }
-//
-//            SettingsView()
-//                .tabItem {
-//                    Label("Settings", systemImage: "gear")
-//                }
-//        }
     }
 }
 

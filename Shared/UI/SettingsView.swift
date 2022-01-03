@@ -6,7 +6,8 @@ class Settings: ObservableObject {
         case row
     }
     
-    @AppStorage("itemViewStyle") var itemViewStyle: ItemViewStyle = .icon
+    @AppStorage("itemViewStyle")
+    var itemViewStyle: ItemViewStyle = .icon
 }
 
 struct SettingsView: View {

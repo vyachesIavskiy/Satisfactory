@@ -15,6 +15,19 @@ extension Array where Element == CalculationStatisticsModel {
             return left.sortingPriority > right.sortingPriority
         }
     }
+    
+    func reduceDuplicates() -> Self {
+        var result = [CalculationStatisticsModel]()
+        for element in self {
+            if let index = result.firstIndex(where: { $0.id == element.id }) {
+                result[index].amount += element.amount
+            } else {
+                result.append(element)
+            }
+        }
+        
+        return result
+    }
 }
 
 struct CalculationMachineStatisticsModel: Identifiable {
@@ -27,6 +40,22 @@ struct CalculationMachineStatisticsModel: Identifiable {
     }
     
     var id: String { recipe.id }
+}
+
+extension Array where Element == CalculationMachineStatisticsModel {
+    func reduceDuplicates() -> Self {
+        var result = [CalculationMachineStatisticsModel]()
+        for element in self {
+            if let index = result.firstIndex(where: { $0.recipe.id == element.recipe.id }) {
+                result[index].amount += element.amount
+                result[index].amountOfMachines += element.amountOfMachines
+            } else {
+                result.append(element)
+            }
+        }
+        
+        return result
+    }
 }
 
 struct CalculationStatistics: View {

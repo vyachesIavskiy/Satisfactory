@@ -4,13 +4,14 @@ struct RecipeCalculationList: View {
     @EnvironmentObject var storage: Storage
     @EnvironmentObject var settings: Settings
     
-    @Binding var isShowingStatistics: Bool
     @State private var isShowingSaveAlert = false
+    @State private var productionChainSaveName = ""
+    @State private var recipeSelectionModel: RecipeSelectionModel?
     
     @StateObject private var production: Production
-    @Binding private var amount: Double
     
-    @State private var recipeSelectionModel: RecipeSelectionModel?
+    @Binding private var amount: Double
+    @Binding var isShowingStatistics: Bool
     
     private var isStartingAnew = true
     
@@ -132,7 +133,11 @@ struct RecipeCalculationList: View {
         HStack {
             ForEach(tree.element.recipe.input) { input in
                 Button {
-                    if (input.item as? Part)?.rawResource == false {
+                    if let part = input.item as? Part {
+                        if !part.rawResource {
+                            recipeSelectionModel = .init(production: production, item: input.item, branch: tree)
+                        }
+                    } else {
                         recipeSelectionModel = .init(production: production, item: input.item, branch: tree)
                     }
                 } label: {

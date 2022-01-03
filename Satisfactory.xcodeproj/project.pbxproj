@@ -57,6 +57,10 @@
 		F95FAAAB273C3F390043D3C4 /* VersionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAA9273C3F390043D3C4 /* VersionNetwork.swift */; };
 		F95FAAB2273D0EE80043D3C4 /* InMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAB1273D0EE80043D3C4 /* InMemoryStorage.swift */; };
 		F95FAAB3273D0EE80043D3C4 /* InMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAB1273D0EE80043D3C4 /* InMemoryStorage.swift */; };
+		F96FC00927834E9600307A78 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96FC00827834E9600307A78 /* ItemCell.swift */; };
+		F96FC00A27834E9600307A78 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96FC00827834E9600307A78 /* ItemCell.swift */; };
+		F96FC00C27834EB900307A78 /* ItemRowInRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96FC00B27834EB900307A78 /* ItemRowInRecipe.swift */; };
+		F96FC00D27834EB900307A78 /* ItemRowInRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96FC00B27834EB900307A78 /* ItemRowInRecipe.swift */; };
 		F98BB2C9273D356A000556E9 /* BuildingPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C8273D34A1000556E9 /* BuildingPersistent.swift */; };
 		F98BB2CA273D356A000556E9 /* RecipePersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C6273D34A1000556E9 /* RecipePersistent.swift */; };
 		F98BB2CB273D356A000556E9 /* PartPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C3273D34A1000556E9 /* PartPersistent.swift */; };
@@ -139,6 +143,8 @@
 		F95FAAA6273C3F210043D3C4 /* version.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = version.json; sourceTree = "<group>"; };
 		F95FAAA9273C3F390043D3C4 /* VersionNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionNetwork.swift; sourceTree = "<group>"; };
 		F95FAAB1273D0EE80043D3C4 /* InMemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorage.swift; sourceTree = "<group>"; };
+		F96FC00827834E9600307A78 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		F96FC00B27834EB900307A78 /* ItemRowInRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowInRecipe.swift; sourceTree = "<group>"; };
 		F98BB2C3273D34A1000556E9 /* PartPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartPersistent.swift; sourceTree = "<group>"; };
 		F98BB2C4273D34A1000556E9 /* EquipmentPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentPersistent.swift; sourceTree = "<group>"; };
 		F98BB2C5273D34A1000556E9 /* VehiclePersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePersistent.swift; sourceTree = "<group>"; };
@@ -278,17 +284,17 @@
 		45115BDD24BF559300D58F6A /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				45115BDE24BF559E00D58F6A /* ItemRow.swift */,
-				45115BE424BF578F00D58F6A /* RecipeView.swift */,
+				F96FC00727834E8700307A78 /* Item */,
+				F9CBF0B627493F770020871C /* ContentView.swift */,
+				F9B91034273EA4D000274EE3 /* LoadingView.swift */,
 				F946413E26A361E2001F8ACF /* ItemListView.swift */,
-				F946414126A36294001F8ACF /* RecipeSelectionView.swift */,
 				F9B9103D273EA6C800274EE3 /* RecipeCalculationView.swift */,
+				F946414126A36294001F8ACF /* RecipeSelectionView.swift */,
 				F9B9103A273EA5E200274EE3 /* RecipeCalculationList.swift */,
 				F9B91037273EA53C00274EE3 /* RecipeCalculatorHeader.swift */,
-				F9B91034273EA4D000274EE3 /* LoadingView.swift */,
+				45115BE424BF578F00D58F6A /* RecipeView.swift */,
 				F9B91043273EA79700274EE3 /* RecipeSelectionForProductionItemView.swift */,
 				F9B91040273EA74C00274EE3 /* CalculationStatistics.swift */,
-				F9CBF0B627493F770020871C /* ContentView.swift */,
 				F9CBF0B927493FD90020871C /* SettingsView.swift */,
 			);
 			path = UI;
@@ -299,6 +305,16 @@
 			children = (
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		F96FC00727834E8700307A78 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				45115BDE24BF559E00D58F6A /* ItemRow.swift */,
+				F96FC00B27834EB900307A78 /* ItemRowInRecipe.swift */,
+				F96FC00827834E9600307A78 /* ItemCell.swift */,
+			);
+			path = Item;
 			sourceTree = "<group>";
 		};
 		F98BB2C2273D3496000556E9 /* Persistent */ = {
@@ -481,6 +497,8 @@
 				F9EB45CF27454CCE00FB8926 /* RecipeElement.swift in Sources */,
 				F9D1CD3B2747B06300125C2A /* ProductionPersistent.swift in Sources */,
 				F946414226A36294001F8ACF /* RecipeSelectionView.swift in Sources */,
+				F96FC00927834E9600307A78 /* ItemCell.swift in Sources */,
+				F96FC00C27834EB900307A78 /* ItemRowInRecipe.swift in Sources */,
 				450BD1D624A639FE00948B47 /* Equipment.swift in Sources */,
 				F9B9103B273EA5E200274EE3 /* RecipeCalculationList.swift in Sources */,
 				F98BB2CA273D356A000556E9 /* RecipePersistent.swift in Sources */,
@@ -529,6 +547,8 @@
 				F9EB45D027454CCE00FB8926 /* RecipeElement.swift in Sources */,
 				F9D1CD3C2747B06300125C2A /* ProductionPersistent.swift in Sources */,
 				F98F3B27273AB9D000CE2580 /* PartNetwork.swift in Sources */,
+				F96FC00A27834E9600307A78 /* ItemCell.swift in Sources */,
+				F96FC00D27834EB900307A78 /* ItemRowInRecipe.swift in Sources */,
 				450BD1D724A639FE00948B47 /* Equipment.swift in Sources */,
 				F9B9103C273EA5E200274EE3 /* RecipeCalculationList.swift in Sources */,
 				F946414326A36294001F8ACF /* RecipeSelectionView.swift in Sources */,
@@ -672,7 +692,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = iphoneos;
@@ -694,7 +714,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = iphoneos;

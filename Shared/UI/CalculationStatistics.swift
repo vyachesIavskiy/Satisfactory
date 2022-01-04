@@ -10,7 +10,7 @@ struct CalculationStatisticsModel: Identifiable {
 extension Array where Element == CalculationStatisticsModel {
     func sorted() -> Self {
         sorted {
-            guard let left = $0.item as? Part, let right = $1.item as? Part else { return false }
+            guard let left = $0.item as? Part, let right = $1.item as? Part else { return true }
             
             return left.sortingPriority > right.sortingPriority
         }

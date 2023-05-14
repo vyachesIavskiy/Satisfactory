@@ -83,6 +83,9 @@ struct LoadingView: View {
     
     @State private var status = Status.loading
     
+    @AppStorage("flushed_v1.4")
+    private var flushed_v1_4 = false
+    
     private enum Status: String {
         case loading = ""
         case downloading = "Downloading"
@@ -93,11 +96,20 @@ struct LoadingView: View {
             .task {
                 let version = await dataProvider.version
                 let currentVersion = storage.version
-                storage.load()
-                if version > currentVersion {
+                if flushed_v1_4 {
+                    storage.load()
+                    
+                    if version > currentVersion {
+                        status = .downloading
+                        await Downloader(dataProvider: dataProvider, storage: storage).execute()
+                    }
+                } else {
                     status = .downloading
                     await Downloader(dataProvider: dataProvider, storage: storage).execute()
+                    
+                    flushed_v1_4 = true
                 }
+                
                 isLoaded = true
             }
     }

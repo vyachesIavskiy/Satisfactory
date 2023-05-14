@@ -23,10 +23,14 @@ protocol InMemoryStorageProtocol {
 extension InMemoryStorageProtocol {
     subscript(itemID id: String) -> Item? {
         get {
-            self[partID: id] ??
+            let result: Item? = self[partID: id] ??
             self[equipmentID: id] ??
             self[buildingID: id] ??
             self[vehicleID: id]
+            
+            assert(result != nil, "Item '\(id)' is not found")
+            
+            return result
         }
         set {
             guard let newValue = newValue else { return }

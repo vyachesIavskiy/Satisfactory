@@ -70,6 +70,7 @@ struct RecipeCalculationPreviews: PreviewProvider {
     static var previews: some View {
         RecipeCalculationView(item: item)
             .environmentObject(storage)
+            .environmentObject(Settings())
     }
 }
 

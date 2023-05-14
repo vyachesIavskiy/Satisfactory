@@ -8,35 +8,57 @@ class Settings: ObservableObject {
     
     @AppStorage("itemViewStyle")
     var itemViewStyle: ItemViewStyle = .icon
+    
+    @AppStorage("showWithoutRecipes")
+    var showItemsWithoutRecipes = true
 }
 
 struct SettingsView: View {
     @EnvironmentObject var storage: Storage
     @EnvironmentObject var settings: Settings
     
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         NavigationView {
-            VStack {
-                VStack(alignment: .leading) {
-                    Text("Select item view style:")
-                    
-                    Picker(selection: settings.$itemViewStyle) {
-                        Text("Icon").tag(Settings.ItemViewStyle.icon)
-                        Text("Row").tag(Settings.ItemViewStyle.row)
-                    } label: {
-                        Label("Select item view style", systemImage: "")
+            Form {
+                Section {
+                    RecipeView(recipe: storage[recipesFor: "non-fissile-uranium"][0])
+                        .frame(maxWidth: .infinity)
+                } header: {
+                    VStack(alignment: .leading) {
+                        Text("Select item view style:")
+                        
+                        Picker(selection: settings.$itemViewStyle) {
+                            Text("Icon").tag(Settings.ItemViewStyle.icon)
+                            Text("Row").tag(Settings.ItemViewStyle.row)
+                        } label: {
+                            Label("Select item view style", systemImage: "")
+                        }
+                        .pickerStyle(.segmented)
                     }
-                    .pickerStyle(.segmented)
+                    .padding(.bottom)
                 }
-                .padding(.horizontal)
                 
-                RecipeView(recipe: storage[recipesFor: "heavy-modular-frame"][0])
-                    .padding()
-                
-                Spacer()
+                Section {
+                    Toggle("Show items without recipes", isOn: $settings.showItemsWithoutRecipes)
+                        .tint(Color("Factory Primary"))
+                } footer: {
+                    Text("Items without recipes \(settings.showItemsWithoutRecipes ? "will" : "will not") be visible in items list.")
+                }
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Done")
+                            .bold()
+                    }
+                }
+            }
         }
     }
 }

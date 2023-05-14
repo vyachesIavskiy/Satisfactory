@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct ItemListView: View {
-    @EnvironmentObject var storage: Storage
+    @EnvironmentObject private var storage: Storage
+    @EnvironmentObject private var settings: Settings
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
@@ -11,11 +12,21 @@ struct ItemListView: View {
     @State private var isPresentingSettings = false
     
     private var parts: [Part] {
-        storage.parts.sortedByTiers()
+        var result = storage.parts
+        if !settings.showItemsWithoutRecipes {
+            result = result.filter { !storage[recipesFor: $0.id].isEmpty }
+        }
+        
+        return result.sortedByTiers()
     }
     
     private var equipments: [Equipment] {
-        storage.equipments
+        var result = storage.equipments
+        if !settings.showItemsWithoutRecipes {
+            result = result.filter { !storage[recipesFor: $0.id].isEmpty }
+        }
+        
+        return result
     }
     
     private var filteredParts: [Part] {
@@ -220,5 +231,6 @@ struct ItemListPreview: PreviewProvider {
     static var previews: some View {
         ItemListView()
             .environmentObject(storage)
+            .environmentObject(Settings())
     }
 }

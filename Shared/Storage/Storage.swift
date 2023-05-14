@@ -255,13 +255,27 @@ class Storage: ObservableObject {
             
             let loadedProductionChains = try persistentStorage.load(ProductionPersistent.self)
             
-            productionChains = loadedProductionChains.map { loadedProductionChain in
-                let treeNodes: [RecipeTree] = loadedProductionChain.productionChain.map { chain in
-                    let item = self[itemID: chain.itemID]!
-                    let recipe = self[recipeID: chain.recipeID]!
+            productionChains = loadedProductionChains.compactMap { loadedProductionChain in
+                let treeNodes: [RecipeTree] = loadedProductionChain.productionChain.compactMap { chain in
+                    guard let item = self[itemID: chain.itemID],
+                          let recipe = self[recipeID: chain.recipeID] else {
+                        return nil
+                    }
+                    
                     return RecipeTree(id: UUID(uuidString: chain.id)!, item: item, recipe: recipe, amount: 0)
                 }
-                var root = treeNodes.first!
+                
+                guard treeNodes.count == loadedProductionChain.productionChain.count else {
+                    // This means saved production chain was using old parts or recipes
+                    // so we can't load it
+                    return nil
+                }
+                
+                guard var root = treeNodes.first else {
+                    // Just a safety measure for unpredicted results
+                    return nil
+                }
+                
                 root.element.amount = loadedProductionChain.amount
                 loadedProductionChain.productionChain.forEach { loadedChain in
                     treeNodes.filter { node in

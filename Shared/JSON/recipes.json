@@ -86,48 +86,6 @@
   {
     "output" : [
       {
-        "id" : "red-ficsmas-ornament",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "ficsmas-gift",
-        "amount" : 1
-      }
-    ],
-    "id" : "red-ficsmas-ornament",
-    "isDefault" : true,
-    "duration" : 12,
-    "machines" : [
-      "smelter"
-    ],
-    "name" : "Red FICSMAS Ornament"
-  },
-  {
-    "output" : [
-      {
-        "id" : "blue-ficsmas-ornament",
-        "amount" : 2
-      }
-    ],
-    "input" : [
-      {
-        "id" : "ficsmas-gift",
-        "amount" : 1
-      }
-    ],
-    "id" : "blue-ficsmas-ornament",
-    "isDefault" : true,
-    "duration" : 12,
-    "machines" : [
-      "smelter"
-    ],
-    "name" : "Blue FICSMAS Ornament"
-  },
-  {
-    "output" : [
-      {
         "id" : "steel-ingot",
         "amount" : 3
       }
@@ -299,56 +257,6 @@
       "foundry"
     ],
     "name" : "Aluminum Ingot"
-  },
-  {
-    "output" : [
-      {
-        "id" : "copper-ficsmas-ornament",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "red-ficsmas-ornament",
-        "amount" : 2
-      },
-      {
-        "id" : "copper-ingot",
-        "amount" : 2
-      }
-    ],
-    "id" : "copper-ficsmas-ornament",
-    "isDefault" : true,
-    "duration" : 12,
-    "machines" : [
-      "foundry"
-    ],
-    "name" : "Copper FICSMAS Ornament"
-  },
-  {
-    "output" : [
-      {
-        "id" : "iron-ficsmas-ornament",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "blue-ficsmas-ornament",
-        "amount" : 3
-      },
-      {
-        "id" : "iron-ingot",
-        "amount" : 3
-      }
-    ],
-    "id" : "iron-ficsmas-ornament",
-    "isDefault" : true,
-    "duration" : 12,
-    "machines" : [
-      "foundry"
-    ],
-    "name" : "Iron FICSMAS Ornament"
   },
   {
     "output" : [
@@ -800,38 +708,17 @@
     ],
     "input" : [
       {
-        "id" : "alien-carapace",
+        "id" : "alien-protein",
         "amount" : 1
       }
     ],
-    "id" : "biomass-(alien-carapace)",
+    "id" : "biomass-(alien-protein)",
     "isDefault" : true,
     "duration" : 4,
     "machines" : [
       "constructor"
     ],
-    "name" : "Biomass (Alien Carapace)"
-  },
-  {
-    "output" : [
-      {
-        "id" : "biomass",
-        "amount" : 200
-      }
-    ],
-    "input" : [
-      {
-        "id" : "alien-organs",
-        "amount" : 1
-      }
-    ],
-    "id" : "biomass-(alien-organs)",
-    "isDefault" : true,
-    "duration" : 8,
-    "machines" : [
-      "constructor"
-    ],
-    "name" : "Biomass (Alien Organs)"
+    "name" : "Biomass (Alien Protein)"
   },
   {
     "output" : [
@@ -843,7 +730,7 @@
     "input" : [
       {
         "id" : "mycelia",
-        "amount" : 10
+        "amount" : 1
       }
     ],
     "id" : "biomass-(mycelia)",
@@ -983,7 +870,7 @@
   {
     "output" : [
       {
-        "id" : "spiked-rebar",
+        "id" : "iron-rebar",
         "amount" : 1
       }
     ],
@@ -993,13 +880,92 @@
         "amount" : 1
       }
     ],
-    "id" : "spiked-rebar",
+    "id" : "iron-rebar",
     "isDefault" : true,
     "duration" : 4,
     "machines" : [
       "constructor"
     ],
-    "name" : "Spiked Rebar"
+    "name" : "Iron Rebar"
+  },
+  {
+    "output" : [
+      {
+        "id" : "stun-rebar",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-rebar",
+        "amount" : 1
+      },
+      {
+        "id" : "quickwire",
+        "amount" : 5
+      }
+    ],
+    "id" : "stun-rebar",
+    "isDefault" : true,
+    "duration" : 6,
+    "machines" : [
+      "assembler"
+    ],
+    "name" : "Stun Rebar"
+  },
+  {
+    "output" : [
+      {
+        "id" : "shatter-rebar",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-rebar",
+        "amount" : 2
+      },
+      {
+        "id" : "quartz-crystal",
+        "amount" : 3
+      }
+    ],
+    "id" : "shatter-rebar",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
+    "name" : "Shutter Rebar"
+  },
+  {
+    "output" : [
+      {
+        "id" : "explosive-rebar",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "iron-rebar",
+        "amount" : 2
+      },
+      {
+        "id" : "smokeless-powder",
+        "amount" : 2
+      },
+      {
+        "id" : "steel-pipe",
+        "amount" : 2
+      }
+    ],
+    "id" : "explosive-rebar",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "manufacturer"
+    ],
+    "name" : "Explosive Rebar"
   },
   {
     "output" : [
@@ -1016,7 +982,7 @@
     ],
     "id" : "color-cartridge",
     "isDefault" : true,
-    "duration" : 8,
+    "duration" : 6,
     "machines" : [
       "constructor"
     ],
@@ -1084,90 +1050,6 @@
       "constructor"
     ],
     "name" : "Power Shard (5)"
-  },
-  {
-    "output" : [
-      {
-        "id" : "ficsmas-tree-branch",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "ficsmas-gift",
-        "amount" : 1
-      }
-    ],
-    "id" : "ficsmas-tree-branch",
-    "isDefault" : true,
-    "duration" : 6,
-    "machines" : [
-      "constructor"
-    ],
-    "name" : "FICSMAS Tree Branch"
-  },
-  {
-    "output" : [
-      {
-        "id" : "candy-cane",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "ficsmas-gift",
-        "amount" : 3
-      }
-    ],
-    "id" : "candy-cane",
-    "isDefault" : true,
-    "duration" : 12,
-    "machines" : [
-      "constructor"
-    ],
-    "name" : "Candy Cane"
-  },
-  {
-    "output" : [
-      {
-        "id" : "ficsmas-bow",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "ficsmas-gift",
-        "amount" : 2
-      }
-    ],
-    "id" : "ficsmas-bow",
-    "isDefault" : true,
-    "duration" : 12,
-    "machines" : [
-      "constructor"
-    ],
-    "name" : "FICSMAS Bow"
-  },
-  {
-    "output" : [
-      {
-        "id" : "actual-snow",
-        "amount" : 2
-      }
-    ],
-    "input" : [
-      {
-        "id" : "ficsmas-gift",
-        "amount" : 5
-      }
-    ],
-    "id" : "actual-snow",
-    "isDefault" : true,
-    "duration" : 12,
-    "machines" : [
-      "constructor"
-    ],
-    "name" : "Actual Snow"
   },
   {
     "output" : [
@@ -2181,7 +2063,7 @@
     "output" : [
       {
         "id" : "black-powder",
-        "amount" : 1
+        "amount" : 2
       }
     ],
     "input" : [
@@ -2191,12 +2073,12 @@
       },
       {
         "id" : "sulfur",
-        "amount" : 2
+        "amount" : 1
       }
     ],
     "id" : "black-powder",
     "isDefault" : true,
-    "duration" : 8,
+    "duration" : 4,
     "machines" : [
       "assembler"
     ],
@@ -2230,27 +2112,27 @@
   {
     "output" : [
       {
-        "id" : "nobelisk",
-        "amount" : 1
+        "id" : "smokeless-powder",
+        "amount" : 2
       }
     ],
     "input" : [
       {
         "id" : "black-powder",
-        "amount" : 5
+        "amount" : 2
       },
       {
-        "id" : "steel-pipe",
-        "amount" : 10
+        "id" : "heavy-oil-residue",
+        "amount" : 1
       }
     ],
-    "id" : "nobelisk",
+    "id" : "alternate-fine-black-powder",
     "isDefault" : true,
-    "duration" : 20,
+    "duration" : 6,
     "machines" : [
-      "assembler"
+      "refinery"
     ],
-    "name" : "Nobelisk"
+    "name" : "Smokeless Powder"
   },
   {
     "output" : [
@@ -2430,56 +2312,6 @@
   {
     "output" : [
       {
-        "id" : "ficsmas-ornament-bundle",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "copper-ficsmas-ornament",
-        "amount" : 1
-      },
-      {
-        "id" : "iron-ficsmas-ornament",
-        "amount" : 1
-      }
-    ],
-    "id" : "ficsmas-ornament-bundle",
-    "isDefault" : true,
-    "duration" : 12,
-    "machines" : [
-      "assembler"
-    ],
-    "name" : "FICSMAS Ornament Bundle"
-  },
-  {
-    "output" : [
-      {
-        "id" : "ficsmas-decoration",
-        "amount" : 2
-      }
-    ],
-    "input" : [
-      {
-        "id" : "ficsmas-tree-branch",
-        "amount" : 15
-      },
-      {
-        "id" : "ficsmas-ornament-bundle",
-        "amount" : 6
-      }
-    ],
-    "id" : "ficsmas-decoration",
-    "isDefault" : true,
-    "duration" : 60,
-    "machines" : [
-      "assembler"
-    ],
-    "name" : "FICSMAS Decoration"
-  },
-  {
-    "output" : [
-      {
         "id" : "iron-ingot",
         "amount" : 13
       }
@@ -2612,16 +2444,16 @@
     "input" : [
       {
         "id" : "polymer-resin",
-        "amount" : 16
+        "amount" : 1
       },
       {
         "id" : "water",
-        "amount" : 10
+        "amount" : 1
       }
     ],
     "id" : "alternate-polyester-fabric",
     "isDefault" : false,
-    "duration" : 12,
+    "duration" : 2,
     "machines" : [
       "refinery"
     ],
@@ -2793,7 +2625,7 @@
     "output" : [
       {
         "id" : "sulfuric-acid",
-        "amount" : 10
+        "amount" : 5
       }
     ],
     "input" : [
@@ -3084,7 +2916,7 @@
   {
     "output" : [
       {
-        "id" : "fuel",
+        "id" : "packaged-fuel",
         "amount" : 2
       }
     ],
@@ -3911,6 +3743,31 @@
   {
     "output" : [
       {
+        "id" : "motor",
+        "amount" : 2
+      }
+    ],
+    "input" : [
+      {
+        "id" : "electromagnetic-control-rod",
+        "amount" : 1
+      },
+      {
+        "id" : "rotor",
+        "amount" : 2
+      }
+    ],
+    "id" : "alternate-electric-motor",
+    "isDefault" : false,
+    "duration" : 16,
+    "machines" : [
+      "assembler"
+    ],
+    "name" : "Alternate: Electric Motor"
+  },
+  {
+    "output" : [
+      {
         "id" : "battery",
         "amount" : 4
       }
@@ -4457,64 +4314,243 @@
   {
     "output" : [
       {
-        "id" : "rifle-cartridge",
-        "amount" : 5
+        "id" : "rifle-ammo",
+        "amount" : 15
       }
     ],
     "input" : [
       {
-        "id" : "beacon",
-        "amount" : 1
+        "id" : "copper-sheet",
+        "amount" : 3
       },
       {
-        "id" : "steel-pipe",
-        "amount" : 10
-      },
+        "id" : "smokeless-powder",
+        "amount" : 2
+      }
+    ],
+    "id" : "rifle-ammo",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
+    "name" : "Rifle Ammo"
+  },
+  {
+    "output" : [
       {
-        "id" : "black-powder",
-        "amount" : 10
-      },
-      {
-        "id" : "rubber",
+        "id" : "homing-rifle-ammo",
         "amount" : 10
       }
     ],
-    "id" : "rifle-cartridge",
+    "input" : [
+      {
+        "id" : "rifle-ammo",
+        "amount" : 20
+      },
+      {
+        "id" : "high-speed-connector",
+        "amount" : 1
+      }
+    ],
+    "id" : "homing-rifle-ammo",
     "isDefault" : true,
-    "duration" : 20,
+    "duration" : 24,
+    "machines" : [
+      "assembler"
+    ],
+    "name" : "Homing Rifle Ammo"
+  },
+  {
+    "output" : [
+      {
+        "id" : "turbo-rifle-ammo",
+        "amount" : 15
+      }
+    ],
+    "input" : [
+      {
+        "id" : "rifle-ammo",
+        "amount" : 25
+      },
+      {
+        "id" : "aluminum-casing",
+        "amount" : 3
+      },
+      {
+        "id" : "turbofuel",
+        "amount" : 3
+      }
+    ],
+    "id" : "turbo-rifle-ammo-blender",
+    "isDefault" : true,
+    "duration" : 24,
+    "machines" : [
+      "blender"
+    ],
+    "name" : "Turbo Rifle Ammo"
+  },
+  {
+    "output" : [
+      {
+        "id" : "turbo-rifle-ammo",
+        "amount" : 15
+      }
+    ],
+    "input" : [
+      {
+        "id" : "rifle-ammo",
+        "amount" : 25
+      },
+      {
+        "id" : "aluminum-casing",
+        "amount" : 3
+      },
+      {
+        "id" : "packaged-turbofuel",
+        "amount" : 3
+      }
+    ],
+    "id" : "turbo-rifle-ammo-manufacturer",
+    "isDefault" : true,
+    "duration" : 24,
     "machines" : [
       "manufacturer"
     ],
-    "name" : "Rifle Cartridge"
+    "name" : "Turbo Rifle Ammo"
   },
   {
     "output" : [
       {
         "id" : "nobelisk",
-        "amount" : 4
+        "amount" : 1
       }
     ],
     "input" : [
       {
         "id" : "black-powder",
-        "amount" : 8
+        "amount" : 2
       },
       {
         "id" : "steel-pipe",
-        "amount" : 8
+        "amount" : 2
+      }
+    ],
+    "id" : "nobelisk",
+    "isDefault" : true,
+    "duration" : 6,
+    "machines" : [
+      "assembler"
+    ],
+    "name" : "Nobelisk"
+  },
+  {
+    "output" : [
+      {
+        "id" : "gas-nobelisk",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "nobelisk",
+        "amount" : 1
+      },
+      {
+        "id" : "biomass",
+        "amount" : 10
+      }
+    ],
+    "id" : "gas-nobelisk",
+    "isDefault" : true,
+    "duration" : 12,
+    "machines" : [
+      "assembler"
+    ],
+    "name" : "Gas Nobelisk"
+  },
+  {
+    "output" : [
+      {
+        "id" : "pulse-nobelisk",
+        "amount" : 5
+      }
+    ],
+    "input" : [
+      {
+        "id" : "nobelisk",
+        "amount" : 5
       },
       {
         "id" : "crystal-oscillator",
         "amount" : 1
       }
     ],
-    "id" : "alternate-seismic-nobelisk",
-    "isDefault" : false,
-    "duration" : 40,
+    "id" : "pulse-nobelisk",
+    "isDefault" : true,
+    "duration" : 60,
+    "machines" : [
+      "assembler"
+    ],
+    "name" : "Pulse Nobelisk"
+  },
+  {
+    "output" : [
+      {
+        "id" : "cluster-nobelisk",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "nobelisk",
+        "amount" : 3
+      },
+      {
+        "id" : "smokeless-powder",
+        "amount" : 4
+      }
+    ],
+    "id" : "cluster-nobelisk",
+    "isDefault" : true,
+    "duration" : 24,
+    "machines" : [
+      "assembler"
+    ],
+    "name" : "Cluster Nobelisk"
+  },
+  {
+    "output" : [
+      {
+        "id" : "nuke-nobelisk",
+        "amount" : 1
+      }
+    ],
+    "input" : [
+      {
+        "id" : "nobelisk",
+        "amount" : 5
+      },
+      {
+        "id" : "encased-uranium-cell",
+        "amount" : 20
+      },
+      {
+        "id" : "smokeless-powder",
+        "amount" : 10
+      },
+      {
+        "id" : "ai-limiter",
+        "amount" : 6
+      }
+    ],
+    "id" : "nuke-nobelisk",
+    "isDefault" : true,
+    "duration" : 120,
     "machines" : [
       "manufacturer"
     ],
-    "name" : "Alternate: Seismic Nobelisk"
+    "name" : "Nuke Nobelisk"
   },
   {
     "output" : [
@@ -5330,2590 +5366,106 @@
   {
     "output" : [
       {
-        "id" : "the-hub",
+        "id" : "alien-protein",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "hub-parts",
+        "id" : "hog-remains",
         "amount" : 1
       }
     ],
-    "id" : "the-hub",
+    "id" : "hog-protein",
     "isDefault" : true,
-    "duration" : 0,
+    "duration" : 3,
     "machines" : [
-
+      "constructor"
     ],
-    "name" : "The HUB"
+    "name" : "Hog Protein"
   },
   {
     "output" : [
       {
-        "id" : "craft-bench",
+        "id" : "alien-protein",
         "amount" : 1
       }
     ],
     "input" : [
       {
-        "id" : "iron-plate",
-        "amount" : 3
-      },
-      {
-        "id" : "iron-rod",
-        "amount" : 3
-      }
-    ],
-    "id" : "craft-bench",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Craft Bench"
-  },
-  {
-    "output" : [
-      {
-        "id" : "equipment-workshop",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-rod",
-        "amount" : 10
-      }
-    ],
-    "id" : "equipment-workshop",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Equipment Workshop"
-  },
-  {
-    "output" : [
-      {
-        "id" : "smelter",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-rod",
-        "amount" : 5
-      },
-      {
-        "id" : "wire",
-        "amount" : 8
-      }
-    ],
-    "id" : "smelter",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Smelter"
-  },
-  {
-    "output" : [
-      {
-        "id" : "constructor",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "reinforced-iron-plate",
-        "amount" : 2
-      },
-      {
-        "id" : "cable",
-        "amount" : 8
-      }
-    ],
-    "id" : "constructor",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Constructor"
-  },
-  {
-    "output" : [
-      {
-        "id" : "power-pole-mk-1",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "wire",
-        "amount" : 3
-      },
-      {
-        "id" : "iron-rod",
-        "amount" : 1
-      },
-      {
-        "id" : "concrete",
-        "amount" : 1
-      }
-    ],
-    "id" : "power-pole-mk-1",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Power Pole MK.1"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-pole",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-rod",
-        "amount" : 1
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 1
-      },
-      {
-        "id" : "concrete",
-        "amount" : 1
-      }
-    ],
-    "id" : "conveyor-pole",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Pole"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-belt-mk-1",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 1
-      }
-    ],
-    "id" : "conveyor-belt-mk-1",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Belt MK.1"
-  },
-  {
-    "output" : [
-      {
-        "id" : "miner-mk-1",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "portable-miner",
-        "amount" : 1
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 10
-      },
-      {
-        "id" : "concrete",
-        "amount" : 10
-      }
-    ],
-    "id" : "miner-mk-1",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Miner MK.1"
-  },
-  {
-    "output" : [
-      {
-        "id" : "storage-container",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 10
-      },
-      {
-        "id" : "iron-rod",
-        "amount" : 10
-      }
-    ],
-    "id" : "storage-container",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Storage Container"
-  },
-  {
-    "output" : [
-      {
-        "id" : "space-elevator",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "concrete",
-        "amount" : 500
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 250
-      },
-      {
-        "id" : "iron-rod",
-        "amount" : 400
-      },
-      {
-        "id" : "wire",
-        "amount" : 1500
-      }
-    ],
-    "id" : "space-elevator",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Space Elevator"
-  },
-  {
-    "output" : [
-      {
-        "id" : "biomass-burner",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 15
-      },
-      {
-        "id" : "iron-rod",
-        "amount" : 15
-      },
-      {
-        "id" : "wire",
-        "amount" : 25
-      }
-    ],
-    "id" : "biomass-burner",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Biomass Burner"
-  },
-  {
-    "output" : [
-      {
-        "id" : "lookout-tower",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 5
-      },
-      {
-        "id" : "iron-rod",
-        "amount" : 5
-      }
-    ],
-    "id" : "lookout-tower",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Lookout Tower"
-  },
-  {
-    "output" : [
-      {
-        "id" : "foundation-8m-x-1m",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "concrete",
-        "amount" : 5
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      }
-    ],
-    "id" : "foundation-8m-x-1m",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Foundation 8m x 1m"
-  },
-  {
-    "output" : [
-      {
-        "id" : "foundation-8m-x-2m",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "concrete",
-        "amount" : 5
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      }
-    ],
-    "id" : "foundation-8m-x-2m",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Foundation 8m x 2m"
-  },
-  {
-    "output" : [
-      {
-        "id" : "foundation-8m-x-4m",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "concrete",
-        "amount" : 5
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      }
-    ],
-    "id" : "foundation-8m-x-4m",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Foundation 8m x 4m"
-  },
-  {
-    "output" : [
-      {
-        "id" : "ramp-8m-x-1m",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "concrete",
-        "amount" : 5
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      }
-    ],
-    "id" : "ramp-8m-x-1m",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Ramp 8m x 1m"
-  },
-  {
-    "output" : [
-      {
-        "id" : "ramp-8m-x-2m",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "concrete",
-        "amount" : 5
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      }
-    ],
-    "id" : "ramp-8m-x-2m",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Ramp 8m x 2m"
-  },
-  {
-    "output" : [
-      {
-        "id" : "ramp-8m-x-4m",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "concrete",
-        "amount" : 5
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      }
-    ],
-    "id" : "ramp-8m-x-4m",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Ramp 8m x 4m"
-  },
-  {
-    "output" : [
-      {
-        "id" : "wall-8m-x-4m",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "concrete",
-        "amount" : 2
-      }
-    ],
-    "id" : "wall-8m-x-4m",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Wall 8m x 4m"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-splitter",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      },
-      {
-        "id" : "cable",
-        "amount" : 2
-      }
-    ],
-    "id" : "conveyor-splitter",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Splitter"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-merger",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      },
-      {
-        "id" : "iron-rod",
-        "amount" : 2
-      }
-    ],
-    "id" : "conveyor-merger",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Merger"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-lift-mk-1",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      }
-    ],
-    "id" : "conveyor-lift-mk-1",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Lift MK.1"
-  },
-  {
-    "output" : [
-      {
-        "id" : "mam",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "reinforced-iron-plate",
-        "amount" : 5
-      },
-      {
-        "id" : "cable",
-        "amount" : 15
-      },
-      {
-        "id" : "wire",
-        "amount" : 45
-      }
-    ],
-    "id" : "mam",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "MAM"
-  },
-  {
-    "output" : [
-      {
-        "id" : "personal-storage-box",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 6
-      },
-      {
-        "id" : "iron-rod",
-        "amount" : 6
-      }
-    ],
-    "id" : "personal-storage-box",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Personal Storage Box"
-  },
-  {
-    "output" : [
-      {
-        "id" : "assembler",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "reinforced-iron-plate",
-        "amount" : 8
-      },
-      {
-        "id" : "rotor",
-        "amount" : 4
-      },
-      {
-        "id" : "cable",
-        "amount" : 10
-      }
-    ],
-    "id" : "assembler",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Assembler"
-  },
-  {
-    "output" : [
-      {
-        "id" : "awesome-sink",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "reinforced-iron-plate",
-        "amount" : 15
-      },
-      {
-        "id" : "cable",
-        "amount" : 30
-      },
-      {
-        "id" : "concrete",
-        "amount" : 45
-      }
-    ],
-    "id" : "awesome-sink",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "AWESOME Sink"
-  },
-  {
-    "output" : [
-      {
-        "id" : "awesome-shop",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "screw",
-        "amount" : 200
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 10
-      },
-      {
-        "id" : "cable",
-        "amount" : 10
-      }
-    ],
-    "id" : "awesome-shop",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "AWESOME Shop"
-  },
-  {
-    "output" : [
-      {
-        "id" : "jump-pad",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "rotor",
-        "amount" : 2
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 15
-      },
-      {
-        "id" : "cable",
-        "amount" : 10
-      }
-    ],
-    "id" : "jump-pad",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Jump Pad"
-  },
-  {
-    "output" : [
-      {
-        "id" : "u-jelly-landing-pad",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "rotor",
-        "amount" : 2
-      },
-      {
-        "id" : "cable",
-        "amount" : 20
-      },
-      {
-        "id" : "biomass",
-        "amount" : 200
-      }
-    ],
-    "id" : "u-jelly-landing-pad",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "U-Jelly Landing Pad"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-belt-mk-2",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "reinforced-iron-plate",
-        "amount" : 1
-      }
-    ],
-    "id" : "conveyor-belt-mk-2",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Belt MK.2"
-  },
-  {
-    "output" : [
-      {
-        "id" : "stackable-conveyor-pole",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-rod",
-        "amount" : 2
-      },
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      },
-      {
-        "id" : "concrete",
-        "amount" : 2
-      }
-    ],
-    "id" : "stackable-conveyor-pole",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Stackable Conveyor Pole"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-lift-mk-2",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "reinforced-iron-plate",
-        "amount" : 2
-      }
-    ],
-    "id" : "conveyor-lift-mk-2",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Lift MK.2"
-  },
-  {
-    "output" : [
-      {
-        "id" : "coal-generator",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "reinforced-iron-plate",
-        "amount" : 20
-      },
-      {
-        "id" : "rotor",
-        "amount" : 10
-      },
-      {
-        "id" : "cable",
-        "amount" : 30
-      }
-    ],
-    "id" : "coal-generator",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Coal Generator"
-  },
-  {
-    "output" : [
-      {
-        "id" : "water-extractor",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "copper-sheet",
-        "amount" : 20
-      },
-      {
-        "id" : "reinforced-iron-plate",
-        "amount" : 10
-      },
-      {
-        "id" : "rotor",
-        "amount" : 10
-      }
-    ],
-    "id" : "water-extractor",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Water Extractor"
-  },
-  {
-    "output" : [
-      {
-        "id" : "pipeline-mk-1",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "copper-sheet",
-        "amount" : 1
-      }
-    ],
-    "id" : "pipeline-mk-1",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Pipeline MK.1"
-  },
-  {
-    "output" : [
-      {
-        "id" : "pipeline-support",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      },
-      {
-        "id" : "concrete",
-        "amount" : 2
-      }
-    ],
-    "id" : "pipeline-support",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Pipeline Support"
-  },
-  {
-    "output" : [
-      {
-        "id" : "pipeline-junction-cross",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "copper-sheet",
-        "amount" : 2
-      }
-    ],
-    "id" : "pipeline-junction-cross",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Pipeline Junction Cross"
-  },
-  {
-    "output" : [
-      {
-        "id" : "pipeline-pump-mk-1",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "copper-sheet",
-        "amount" : 2
-      },
-      {
-        "id" : "rotor",
-        "amount" : 2
-      }
-    ],
-    "id" : "pipeline-pump-mk-1",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Pipeline Pump MK.1"
-  },
-  {
-    "output" : [
-      {
-        "id" : "fluid-buffer",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "copper-sheet",
-        "amount" : 10
-      },
-      {
-        "id" : "modular-frame",
-        "amount" : 5
-      }
-    ],
-    "id" : "fluid-buffer",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Fluid Buffer"
-  },
-  {
-    "output" : [
-      {
-        "id" : "foundry",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "modular-frame",
-        "amount" : 10
-      },
-      {
-        "id" : "rotor",
-        "amount" : 10
-      },
-      {
-        "id" : "concrete",
-        "amount" : 20
-      }
-    ],
-    "id" : "foundry",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Foundry"
-  },
-  {
-    "output" : [
-      {
-        "id" : "truck-station",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "modular-frame",
-        "amount" : 15
-      },
-      {
-        "id" : "rotor",
-        "amount" : 20
-      },
-      {
-        "id" : "cable",
-        "amount" : 50
-      }
-    ],
-    "id" : "truck-station",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Truck Station"
-  },
-  {
-    "output" : [
-      {
-        "id" : "miner-mk-2",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "portable-miner",
-        "amount" : 2
-      },
-      {
-        "id" : "encased-industrial-beam",
-        "amount" : 10
-      },
-      {
-        "id" : "steel-pipe",
-        "amount" : 20
-      },
-      {
-        "id" : "modular-frame",
-        "amount" : 10
-      }
-    ],
-    "id" : "miner-mk-2",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Miner MK.2"
-  },
-  {
-    "output" : [
-      {
-        "id" : "hyper-tube-entrance",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "encased-industrial-beam",
-        "amount" : 4
-      },
-      {
-        "id" : "rotor",
-        "amount" : 4
-      },
-      {
-        "id" : "steel-pipe",
-        "amount" : 10
-      }
-    ],
-    "id" : "hyper-tube-entrance",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Hyper Tube Entrance"
-  },
-  {
-    "output" : [
-      {
-        "id" : "hyper-tube",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "copper-sheet",
-        "amount" : 1
-      },
-      {
-        "id" : "steel-pipe",
-        "amount" : 1
-      }
-    ],
-    "id" : "hyper-tube",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Hyper Tube"
-  },
-  {
-    "output" : [
-      {
-        "id" : "hyper-tube-support",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 2
-      },
-      {
-        "id" : "concrete",
-        "amount" : 2
-      }
-    ],
-    "id" : "hyper-tube-support",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Hyper Tube Support"
-  },
-  {
-    "output" : [
-      {
-        "id" : "stackable-hyper-tube-support",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 4
-      },
-      {
-        "id" : "iron-rod",
-        "amount" : 2
-      },
-      {
-        "id" : "concrete",
-        "amount" : 4
-      }
-    ],
-    "id" : "stackable-hyper-tube-support",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Stackable Hyper Tube Support"
-  },
-  {
-    "output" : [
-      {
-        "id" : "power-storage",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "wire",
-        "amount" : 100
-      },
-      {
-        "id" : "modular-frame",
-        "amount" : 10
-      },
-      {
-        "id" : "stator",
-        "amount" : 5
-      }
-    ],
-    "id" : "power-storage",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Power Storage"
-  },
-  {
-    "output" : [
-      {
-        "id" : "industrial-storage-container",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "steel-beam",
-        "amount" : 20
-      },
-      {
-        "id" : "steel-pipe",
-        "amount" : 20
-      }
-    ],
-    "id" : "industrial-storage-container",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Industrial Storage Container"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-belt-mk-3",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "steel-beam",
-        "amount" : 1
-      }
-    ],
-    "id" : "conveyor-belt-mk-3",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Belt MK.3"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-lift-mk-3",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "steel-beam",
-        "amount" : 2
-      }
-    ],
-    "id" : "conveyor-lift-mk-3",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Lift MK.3"
-  },
-  {
-    "output" : [
-      {
-        "id" : "stackable-pipeline-support",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "iron-plate",
-        "amount" : 4
-      },
-      {
-        "id" : "iron-rod",
-        "amount" : 2
-      },
-      {
-        "id" : "concrete",
-        "amount" : 2
-      }
-    ],
-    "id" : "stackable-pipeline-support",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Stackable Pipeline Support"
-  },
-  {
-    "output" : [
-      {
-        "id" : "oil-extractor",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "motor",
-        "amount" : 15
-      },
-      {
-        "id" : "encased-industrial-beam",
-        "amount" : 20
-      },
-      {
-        "id" : "cable",
-        "amount" : 60
-      }
-    ],
-    "id" : "oil-extractor",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Oil Extractor"
-  },
-  {
-    "output" : [
-      {
-        "id" : "refinery",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "motor",
-        "amount" : 10
-      },
-      {
-        "id" : "encased-industrial-beam",
-        "amount" : 10
-      },
-      {
-        "id" : "steel-pipe",
-        "amount" : 30
-      },
-      {
-        "id" : "copper-sheet",
-        "amount" : 20
-      }
-    ],
-    "id" : "refinery",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Refinery"
-  },
-  {
-    "output" : [
-      {
-        "id" : "valve",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "rubber",
-        "amount" : 4
-      },
-      {
-        "id" : "steel-beam",
-        "amount" : 4
-      }
-    ],
-    "id" : "valve",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Valve"
-  },
-  {
-    "output" : [
-      {
-        "id" : "packager",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "steel-beam",
-        "amount" : 20
-      },
-      {
-        "id" : "rubber",
-        "amount" : 10
-      },
-      {
-        "id" : "plastic",
-        "amount" : 10
-      }
-    ],
-    "id" : "packager",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Packager"
-  },
-  {
-    "output" : [
-      {
-        "id" : "industrial-fluid-buffer",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "plastic",
-        "amount" : 30
-      },
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 3
-      }
-    ],
-    "id" : "industrial-fluid-buffer",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Industrial Fluid Buffer"
-  },
-  {
-    "output" : [
-      {
-        "id" : "manufacturer",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "motor",
-        "amount" : 5
-      },
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 10
-      },
-      {
-        "id" : "cable",
-        "amount" : 50
-      },
-      {
-        "id" : "plastic",
-        "amount" : 50
-      }
-    ],
-    "id" : "manufacturer",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Manufacturer"
-  },
-  {
-    "output" : [
-      {
-        "id" : "fuel-generator",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "computer",
-        "amount" : 5
-      },
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 10
-      },
-      {
-        "id" : "motor",
-        "amount" : 15
-      },
-      {
-        "id" : "rubber",
-        "amount" : 50
-      },
-      {
-        "id" : "quickwire",
-        "amount" : 50
-      }
-    ],
-    "id" : "fuel-generator",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Fuel Generator"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-belt-mk-4",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "encased-industrial-beam",
-        "amount" : 1
-      }
-    ],
-    "id" : "conveyor-belt-mk-4",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Belt MK.4"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-lift-mk-4",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "encased-industrial-beam",
-        "amount" : 2
-      }
-    ],
-    "id" : "conveyor-lift-mk-4",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Lift MK.4"
-  },
-  {
-    "output" : [
-      {
-        "id" : "train-station",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 4
-      },
-      {
-        "id" : "computer",
-        "amount" : 8
-      },
-      {
-        "id" : "concrete",
-        "amount" : 50
-      },
-      {
-        "id" : "cable",
-        "amount" : 25
-      }
-    ],
-    "id" : "train-station",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Train Station"
-  },
-  {
-    "output" : [
-      {
-        "id" : "freight-platform",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 6
-      },
-      {
-        "id" : "computer",
-        "amount" : 2
-      },
-      {
-        "id" : "concrete",
-        "amount" : 50
-      },
-      {
-        "id" : "cable",
-        "amount" : 25
-      },
-      {
-        "id" : "motor",
-        "amount" : 5
-      }
-    ],
-    "id" : "freight-platform",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Freight Platform"
-  },
-  {
-    "output" : [
-      {
-        "id" : "fluid-freight-platform",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 6
-      },
-      {
-        "id" : "computer",
-        "amount" : 2
-      },
-      {
-        "id" : "concrete",
-        "amount" : 50
-      },
-      {
-        "id" : "cable",
-        "amount" : 25
-      },
-      {
-        "id" : "motor",
-        "amount" : 5
-      }
-    ],
-    "id" : "fluid-freight-platform",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Fluid Freight Platform"
-  },
-  {
-    "output" : [
-      {
-        "id" : "empty-platform",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 6
-      },
-      {
-        "id" : "concrete",
-        "amount" : 50
-      }
-    ],
-    "id" : "empty-platform",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Empty Platform"
-  },
-  {
-    "output" : [
-      {
-        "id" : "pipeline-mk-2",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "copper-sheet",
-        "amount" : 2
-      },
-      {
-        "id" : "plastic",
-        "amount" : 1
-      }
-    ],
-    "id" : "pipeline-mk-2",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Pipeline MK.2"
-  },
-  {
-    "output" : [
-      {
-        "id" : "pipeline-pump-mk-2",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "motor",
-        "amount" : 2
-      },
-      {
-        "id" : "encased-industrial-beam",
-        "amount" : 4
-      },
-      {
-        "id" : "plastic",
-        "amount" : 8
-      }
-    ],
-    "id" : "pipeline-pump-mk-2",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Pipeline Pump MK.2"
-  },
-  {
-    "output" : [
-      {
-        "id" : "blender",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "motor",
-        "amount" : 20
-      },
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 10
-      },
-      {
-        "id" : "aluminum-casing",
-        "amount" : 50
-      },
-      {
-        "id" : "radio-control-unit",
-        "amount" : 5
-      }
-    ],
-    "id" : "blender",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Blender"
-  },
-  {
-    "output" : [
-      {
-        "id" : "drone-port",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 20
-      },
-      {
-        "id" : "high-speed-connector",
-        "amount" : 20
-      },
-      {
-        "id" : "alclad-aluminum-sheet",
-        "amount" : 50
-      },
-      {
-        "id" : "aluminum-casing",
-        "amount" : 50
-      },
-      {
-        "id" : "radio-control-unit",
-        "amount" : 10
-      }
-    ],
-    "id" : "drone-port",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Drone Port"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-belt-mk-5",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "alclad-aluminum-sheet",
-        "amount" : 1
-      }
-    ],
-    "id" : "conveyor-belt-mk-5",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Belt MK.5"
-  },
-  {
-    "output" : [
-      {
-        "id" : "conveyor-lift-mk-5",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "alclad-aluminum-sheet",
-        "amount" : 2
-      }
-    ],
-    "id" : "conveyor-lift-mk-5",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Conveyor Lift MK.5"
-  },
-  {
-    "output" : [
-      {
-        "id" : "particle-accelerator",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "radio-control-unit",
-        "amount" : 25
-      },
-      {
-        "id" : "electromagnetic-control-rod",
-        "amount" : 100
-      },
-      {
-        "id" : "supercomputer",
-        "amount" : 10
-      },
-      {
-        "id" : "cooling-system",
-        "amount" : 50
-      },
-      {
-        "id" : "fused-modular-frame",
-        "amount" : 20
-      },
-      {
-        "id" : "turbo-motor",
-        "amount" : 10
-      }
-    ],
-    "id" : "particle-accelerator",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Particle Accelerator"
-  },
-  {
-    "output" : [
-      {
-        "id" : "nuclear-power-plant",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "concrete",
-        "amount" : 250
-      },
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 25
-      },
-      {
-        "id" : "supercomputer",
-        "amount" : 5
-      },
-      {
-        "id" : "cable",
-        "amount" : 100
-      },
-      {
-        "id" : "alclad-aluminum-sheet",
-        "amount" : 100
-      }
-    ],
-    "id" : "nuclear-power-plant",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Nuclear Power Plant"
-  },
-  {
-    "output" : [
-      {
-        "id" : "power-pole-mk-2",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "quickwire",
-        "amount" : 6
-      },
-      {
-        "id" : "iron-rod",
-        "amount" : 2
-      },
-      {
-        "id" : "concrete",
-        "amount" : 2
-      }
-    ],
-    "id" : "power-pole-mk-2",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Power Pole MK.2"
-  },
-  {
-    "output" : [
-      {
-        "id" : "smart-splitter",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "reinforced-iron-plate",
-        "amount" : 2
-      },
-      {
-        "id" : "rotor",
-        "amount" : 2
-      },
-      {
-        "id" : "ai-limiter",
-        "amount" : 1
-      }
-    ],
-    "id" : "smart-splitter",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Smart Splitter"
-  },
-  {
-    "output" : [
-      {
-        "id" : "power-switch",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "quickwire",
-        "amount" : 20
-      },
-      {
-        "id" : "steel-beam",
-        "amount" : 4
-      },
-      {
-        "id" : "ai-limiter",
-        "amount" : 1
-      }
-    ],
-    "id" : "power-switch",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Power Switch"
-  },
-  {
-    "output" : [
-      {
-        "id" : "power-pole-mk-3",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "high-speed-connector",
-        "amount" : 2
-      },
-      {
-        "id" : "steel-pipe",
-        "amount" : 2
-      },
-      {
-        "id" : "rubber",
-        "amount" : 3
-      }
-    ],
-    "id" : "power-pole-mk-3",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Power Pole MK.3"
-  },
-  {
-    "output" : [
-      {
-        "id" : "programmable-splitter",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 1
-      },
-      {
-        "id" : "motor",
-        "amount" : 1
-      },
-      {
-        "id" : "supercomputer",
-        "amount" : 1
-      }
-    ],
-    "id" : "programmable-splitter",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Programmable Splitter"
-  },
-  {
-    "output" : [
-      {
-        "id" : "geothermal-generator",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "supercomputer",
-        "amount" : 8
-      },
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 16
-      },
-      {
-        "id" : "high-speed-connector",
-        "amount" : 16
-      },
-      {
-        "id" : "copper-sheet",
-        "amount" : 40
-      },
-      {
-        "id" : "rubber",
-        "amount" : 80
-      }
-    ],
-    "id" : "geothermal-generator",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Geothermal Generator"
-  },
-  {
-    "output" : [
-      {
-        "id" : "radar-tower",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 30
-      },
-      {
-        "id" : "crystal-oscillator",
-        "amount" : 30
-      },
-      {
-        "id" : "beacon",
-        "amount" : 20
-      },
-      {
-        "id" : "cable",
-        "amount" : 100
-      }
-    ],
-    "id" : "radar-tower",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Radar Tower"
-  },
-  {
-    "output" : [
-      {
-        "id" : "giant-ficsmas-tree",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "ficsmas-tree-branch",
-        "amount" : 100
-      },
-      {
-        "id" : "reinforced-iron-plate",
-        "amount" : 50
-      },
-      {
-        "id" : "concrete",
-        "amount" : 500
-      }
-    ],
-    "id" : "giant-ficsmas-tree",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Giant FICSMAS Tree"
-  },
-  {
-    "output" : [
-      {
-        "id" : "snowman",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "actual-snow",
-        "amount" : 50
-      },
-      {
-        "id" : "candy-cane",
-        "amount" : 3
-      },
-      {
-        "id" : "ficsmas-bow",
-        "amount" : 1
-      },
-      {
-        "id" : "red-ficsmas-ornament",
-        "amount" : 3
-      },
-      {
-        "id" : "blue-ficsmas-ornament",
-        "amount" : 2
-      }
-    ],
-    "id" : "snowman",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Snowman"
-  },
-  {
-    "output" : [
-      {
-        "id" : "ficsmas-gift-tree",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "ficsmas-gift",
-        "amount" : 50
-      },
-      {
-        "id" : "ficsmas-tree-branch",
-        "amount" : 100
-      },
-      {
-        "id" : "copper-ficsmas-ornament",
-        "amount" : 20
-      },
-      {
-        "id" : "iron-ficsmas-ornament",
-        "amount" : 20
-      }
-    ],
-    "id" : "ficsmas-gift-tree",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "FICSMAS Gift Tree"
-  },
-  {
-    "output" : [
-      {
-        "id" : "ficsmas-power-light",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "cable",
-        "amount" : 1
-      },
-      {
-        "id" : "ficsmas-ornament-bundle",
-        "amount" : 1
-      }
-    ],
-    "id" : "ficsmas-power-light",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "FICSMAS Power Light"
-  },
-  {
-    "output" : [
-      {
-        "id" : "ficsmas-snow-dispenser",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "candy-cane",
-        "amount" : 10
-      },
-      {
-        "id" : "actual-snow",
-        "amount" : 100
-      },
-      {
-        "id" : "ficsmas-decoration",
-        "amount" : 2
-      }
-    ],
-    "id" : "ficsmas-snow-dispenser",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "FICSMAS Snow Dispenser"
-  },
-  {
-    "output" : [
-      {
-        "id" : "ficsmas-wreath",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "ficsmas-decoration",
-        "amount" : 1
-      },
-      {
-        "id" : "ficsmas-bow",
-        "amount" : 1
-      }
-    ],
-    "id" : "ficsmas-wreath",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "FICSMAS Wreath"
-  },
-  {
-    "output" : [
-      {
-        "id" : "tractor",
-        "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "modular-frame",
-        "amount" : 5
-      },
-      {
-        "id" : "beacon",
-        "amount" : 5
-      },
-      {
-        "id" : "rotor",
-        "amount" : 10
-      }
-    ],
-    "id" : "tractor",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Tractor"
-  },
-  {
-    "output" : [
-      {
-        "id" : "truck",
+        "id" : "plasma-spitter-remains",
         "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "motor",
-        "amount" : 8
-      },
-      {
-        "id" : "computer",
-        "amount" : 10
-      },
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 4
-      },
-      {
-        "id" : "rubber",
-        "amount" : 50
-      },
-      {
-        "id" : "beacon",
-        "amount" : 10
       }
     ],
-    "id" : "truck",
+    "id" : "plasma-spitter-protein",
     "isDefault" : true,
-    "duration" : 0,
+    "duration" : 3,
     "machines" : [
-
+      "constructor"
     ],
-    "name" : "Truck"
+    "name" : "Plasma Spitter Protein"
   },
   {
     "output" : [
       {
-        "id" : "explorer",
+        "id" : "alien-protein",
         "amount" : 1
       }
     ],
     "input" : [
-      {
-        "id" : "crystal-oscillator",
-        "amount" : 5
-      },
-      {
-        "id" : "motor",
-        "amount" : 5
-      },
-      {
-        "id" : "beacon",
-        "amount" : 15
-      },
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 5
-      }
-    ],
-    "id" : "explorer",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Explorer"
-  },
-  {
-    "output" : [
       {
-        "id" : "cyber-wagon",
+        "id" : "stinger-remains",
         "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "reinforced-iron-plate",
-        "amount" : 10
       }
     ],
-    "id" : "cyber-wagon",
+    "id" : "stinger-protein",
     "isDefault" : true,
-    "duration" : 0,
+    "duration" : 3,
     "machines" : [
-
+      "constructor"
     ],
-    "name" : "Cyber Wagon"
+    "name" : "Stinger Protein"
   },
   {
     "output" : [
       {
-        "id" : "drone",
+        "id" : "alien-protein",
         "amount" : 1
       }
     ],
     "input" : [
-      {
-        "id" : "motor",
-        "amount" : 4
-      },
-      {
-        "id" : "alclad-aluminum-sheet",
-        "amount" : 10
-      },
       {
-        "id" : "radio-control-unit",
+        "id" : "hatcher-remains",
         "amount" : 1
-      },
-      {
-        "id" : "ai-limiter",
-        "amount" : 2
-      },
-      {
-        "id" : "portable-miner",
-        "amount" : 1
       }
     ],
-    "id" : "drone",
+    "id" : "hatcher-protein",
     "isDefault" : true,
-    "duration" : 0,
+    "duration" : 3,
     "machines" : [
-
+      "constructor"
     ],
-    "name" : "Drone"
+    "name" : "Hatcher Protein"
   },
   {
     "output" : [
       {
-        "id" : "electric-locomotive",
+        "id" : "alien-dna-capsule",
         "amount" : 1
       }
     ],
     "input" : [
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 5
-      },
       {
-        "id" : "motor",
-        "amount" : 10
-      },
-      {
-        "id" : "steel-pipe",
-        "amount" : 15
-      },
-      {
-        "id" : "computer",
-        "amount" : 5
-      },
-      {
-        "id" : "beacon",
-        "amount" : 5
-      }
-    ],
-    "id" : "electric-locomotive",
-    "isDefault" : true,
-    "duration" : 0,
-    "machines" : [
-
-    ],
-    "name" : "Electric Locomotive"
-  },
-  {
-    "output" : [
-      {
-        "id" : "freight-car",
+        "id" : "alien-protein",
         "amount" : 1
-      }
-    ],
-    "input" : [
-      {
-        "id" : "heavy-modular-frame",
-        "amount" : 4
-      },
-      {
-        "id" : "steel-pipe",
-        "amount" : 10
       }
     ],
-    "id" : "freight-car",
+    "id" : "alien-dna-capsule",
     "isDefault" : true,
-    "duration" : 0,
+    "duration" : 6,
     "machines" : [
-
+      "constructor"
     ],
-    "name" : "Freight Car"
+    "name" : "Alien DNA Capsule"
   }
 ]

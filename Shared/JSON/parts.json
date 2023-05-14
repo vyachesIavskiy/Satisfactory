@@ -146,20 +146,56 @@
   {
     "partType" : "Aliens",
     "rawResource" : true,
-    "id" : "alien-carapace",
+    "id" : "hog-remains",
     "sortingPriority" : 1,
     "tier" : 0,
     "milestone" : 0,
-    "name" : "Alien Carapace"
+    "name" : "Hog Remains"
   },
   {
     "partType" : "Aliens",
     "rawResource" : true,
-    "id" : "alien-organs",
+    "id" : "plasma-spitter-remains",
     "sortingPriority" : 2,
     "tier" : 0,
     "milestone" : 0,
-    "name" : "Alien Organs"
+    "name" : "Plasma Spitter Remains"
+  },
+  {
+    "partType" : "Aliens",
+    "rawResource" : true,
+    "id" : "stinger-remains",
+    "sortingPriority" : 2,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Stinger Remains"
+  },
+  {
+    "partType" : "Aliens",
+    "rawResource" : true,
+    "id" : "hatcher-remains",
+    "sortingPriority" : 2,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Hatcher Remains"
+  },
+  {
+    "partType" : "Aliens",
+    "rawResource" : false,
+    "id" : "alien-protein",
+    "sortingPriority" : 2,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Alien Protein"
+  },
+  {
+    "partType" : "Aliens",
+    "rawResource" : false,
+    "id" : "alien-dna-capsule",
+    "sortingPriority" : 2,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Alien DNA Capsule"
   },
   {
     "partType" : "Power Slugs",
@@ -650,11 +686,38 @@
   {
     "partType" : "Consumed",
     "rawResource" : false,
-    "id" : "spiked-rebar",
+    "id" : "iron-rebar",
     "sortingPriority" : 58,
     "tier" : 0,
     "milestone" : 0,
-    "name" : "Spiked Rebar"
+    "name" : "Iron Rebar"
+  },
+  {
+    "partType" : "Consumed",
+    "rawResource" : false,
+    "id" : "stun-rebar",
+    "sortingPriority" : 58,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Stun Rebar"
+  },
+  {
+    "partType" : "Consumed",
+    "rawResource" : false,
+    "id" : "shatter-rebar",
+    "sortingPriority" : 58,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Shatter Rebar"
+  },
+  {
+    "partType" : "Consumed",
+    "rawResource" : false,
+    "id" : "explosive-rebar",
+    "sortingPriority" : 58,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Explosive Rebar"
   },
   {
     "partType" : "Consumed",
@@ -668,6 +731,15 @@
   {
     "partType" : "Consumed",
     "rawResource" : false,
+    "id" : "smokeless-powder",
+    "sortingPriority" : 45,
+    "tier" : 0,
+    "milestone" : 0,
+    "name" : "Smokeless Powder"
+  },
+  {
+    "partType" : "Consumed",
+    "rawResource" : false,
     "id" : "nobelisk",
     "sortingPriority" : 66,
     "tier" : 3,
@@ -677,11 +749,65 @@
   {
     "partType" : "Consumed",
     "rawResource" : false,
-    "id" : "rifle-cartridge",
+    "id" : "gas-nobelisk",
+    "sortingPriority" : 66,
+    "tier" : 3,
+    "milestone" : 2,
+    "name" : "Gas Nobelisk"
+  },
+  {
+    "partType" : "Consumed",
+    "rawResource" : false,
+    "id" : "pulse-nobelisk",
+    "sortingPriority" : 66,
+    "tier" : 3,
+    "milestone" : 2,
+    "name" : "Pulse Nobelisk"
+  },
+  {
+    "partType" : "Consumed",
+    "rawResource" : false,
+    "id" : "cluster-nobelisk",
+    "sortingPriority" : 66,
+    "tier" : 3,
+    "milestone" : 2,
+    "name" : "Cluster Nobelisk"
+  },
+  {
+    "partType" : "Consumed",
+    "rawResource" : false,
+    "id" : "nuke-nobelisk",
+    "sortingPriority" : 66,
+    "tier" : 3,
+    "milestone" : 2,
+    "name" : "Nuke Nobelisk"
+  },
+  {
+    "partType" : "Consumed",
+    "rawResource" : false,
+    "id" : "rifle-ammo",
     "sortingPriority" : 99,
     "tier" : 5,
     "milestone" : 0,
-    "name" : "Rifle Cartridge"
+    "name" : "Rifle Ammo"
+  },
+  {
+    "partType" : "Consumed",
+    "rawResource" : false,
+    "id" : "homing-rifle-ammo",
+    "sortingPriority" : 99,
+    "tier" : 5,
+    "milestone" : 0,
+    "name" : "Homing Rifle Ammo"
+  },
+  {
+    "partType" : "Consumed",
+    "rawResource" : false,
+    "id" : "turbo-rifle-ammo",
+    "sortingPriority" : 99,
+    "tier" : 5,
+    "milestone" : 0,
+    "name" : "Turbo-Rifle Ammo"
   },
   {
     "partType" : "Consumed",
@@ -1051,104 +1177,5 @@
     "tier" : 8,
     "milestone" : 3,
     "name" : "Nuclear Pasta"
-  },
-  {
-    "partType" : "FICSMAS",
-    "rawResource" : true,
-    "id" : "ficsmas-gift",
-    "sortingPriority" : 118,
-    "tier" : 0,
-    "milestone" : 0,
-    "name" : "FICSMAS Gift"
-  },
-  {
-    "partType" : "FICSMAS",
-    "rawResource" : false,
-    "id" : "ficsmas-tree-branch",
-    "sortingPriority" : 119,
-    "tier" : 0,
-    "milestone" : 0,
-    "name" : "FICSMAS Tree Branch"
-  },
-  {
-    "partType" : "FICSMAS",
-    "rawResource" : false,
-    "id" : "candy-cane",
-    "sortingPriority" : 120,
-    "tier" : 0,
-    "milestone" : 0,
-    "name" : "Candy Cane"
-  },
-  {
-    "partType" : "FICSMAS",
-    "rawResource" : false,
-    "id" : "ficsmas-bow",
-    "sortingPriority" : 121,
-    "tier" : 0,
-    "milestone" : 0,
-    "name" : "FICSMAS Bow"
-  },
-  {
-    "partType" : "FICSMAS",
-    "rawResource" : false,
-    "id" : "red-ficsmas-ornament",
-    "sortingPriority" : 122,
-    "tier" : 0,
-    "milestone" : 0,
-    "name" : "Red FICSMAS Ornament"
-  },
-  {
-    "partType" : "FICSMAS",
-    "rawResource" : false,
-    "id" : "blue-ficsmas-ornament",
-    "sortingPriority" : 123,
-    "tier" : 0,
-    "milestone" : 0,
-    "name" : "Blue FICSMAS Ornament"
-  },
-  {
-    "partType" : "FICSMAS",
-    "rawResource" : false,
-    "id" : "actual-snow",
-    "sortingPriority" : 124,
-    "tier" : 0,
-    "milestone" : 0,
-    "name" : "Actual Snow"
-  },
-  {
-    "partType" : "FICSMAS",
-    "rawResource" : false,
-    "id" : "copper-ficsmas-ornament",
-    "sortingPriority" : 125,
-    "tier" : 0,
-    "milestone" : 0,
-    "name" : "Copper FICSMAS Ornament"
-  },
-  {
-    "partType" : "FICSMAS",
-    "rawResource" : false,
-    "id" : "iron-ficsmas-ornament",
-    "sortingPriority" : 126,
-    "tier" : 0,
-    "milestone" : 0,
-    "name" : "Iron FICSMAS Ornament"
-  },
-  {
-    "partType" : "FICSMAS",
-    "rawResource" : false,
-    "id" : "ficsmas-ornament-bundle",
-    "sortingPriority" : 127,
-    "tier" : 0,
-    "milestone" : 0,
-    "name" : "FICSMAS Ornament Bundle"
-  },
-  {
-    "partType" : "FICSMAS",
-    "rawResource" : false,
-    "id" : "ficsmas-decoration",
-    "sortingPriority" : 128,
-    "tier" : 0,
-    "milestone" : 0,
-    "name" : "FICSMAS Decoration"
   }
 ]

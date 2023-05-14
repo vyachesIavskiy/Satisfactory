@@ -3,7 +3,7 @@ import SwiftUI
 struct RecipeCalculatorHeader: View {
     let item: Item
     @Binding var amount: Double
-    @FocusState private var focusField: Int?
+    @FocusState private var focused: Bool
     
     var body: some View {
         HStack {
@@ -17,14 +17,12 @@ struct RecipeCalculatorHeader: View {
                 .labelsHidden()
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 100)
-                .focused($focusField, equals: 0)
+                .focused($focused)
                 .toolbar {
-                    ToolbarItemGroup(placement: .keyboard) {
-                        HStack {
-                            Spacer()
-                            
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        if focused {
                             Button("Done") {
-                                focusField = nil
+                                focused = false
                             }
                         }
                     }
@@ -40,7 +38,12 @@ struct RecipeCalculatorHeaderPreviews: PreviewProvider {
     private static var storage: Storage = PreviewStorage()
     
     static var previews: some View {
-        RecipeCalculatorHeader(item: storage[partID: "copper-sheet"]!, amount: .constant(34))
+        NavigationView {
+            RecipeCalculatorHeader(item: storage[partID: "copper-sheet"]!, amount: .constant(34))
+                .environmentObject(storage)
+                .navigationTitle("Preview")
+                .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

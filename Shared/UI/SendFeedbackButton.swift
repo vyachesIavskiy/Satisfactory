@@ -49,9 +49,13 @@ struct SendFeedbackButton: View {
                 SendFeedbackView(result: $feedbackResult)
             }
             .onChange(of: feedbackResult) { newValue in
-                guard newValue == .sent else { return }
-                
-                state = .result
+                switch newValue {
+                case .sent:
+                    state = .result
+                    
+                default:
+                    state = .initial
+                }
             }
         }
     }

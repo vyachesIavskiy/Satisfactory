@@ -61,7 +61,7 @@ struct SettingsView: View {
             }
             .safeAreaInset(edge: .bottom, spacing: 16) {
                 SendFeedbackButton()
-                    .padding(.horizontal)
+                    .padding([.horizontal, .bottom])
             }
         }
     }

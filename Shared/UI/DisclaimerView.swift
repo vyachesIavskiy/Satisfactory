@@ -39,7 +39,7 @@ struct DisclaimerView: View {
             }
             .buttonBorderShape(.roundedRectangle(radius: 15))
             .buttonStyle(.borderedProminent)
-            .padding(.horizontal)
+            .padding([.horizontal, .bottom])
         }
         .frame(maxWidth: .infinity)
         .safeAreaInset(edge: .top, spacing: 8) {

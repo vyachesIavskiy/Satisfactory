@@ -12,50 +12,76 @@ struct SendFeedbackButton: View {
     @State private var showSendFeedback = false
     @State private var feedbackResult: SendFeedbackView.Result?
     
+    private var canSendMail: Bool {
+        MFMailComposeViewController.canSendMail()
+    }
+    
     var body: some View {
-        if MFMailComposeViewController.canSendMail() {
-            Button {
-                switch state {
-                case .initial:
-                    state = .loading
-                    showSendFeedback = true
-                    
-                case .loading:
-                    break
-                    
-                case .result:
-                    state = .initial
-                }
-            } label: {
-                Text("Send feedback")
-                    .font(.system(.body, design: .rounded))
-                    .fontWeight(.semibold)
+        Button {
+            switch state {
+            case .initial:
+                state = .loading
+                showSendFeedback = true
+                
+            case .loading:
+                break
+                
+            case .result:
+                state = .initial
             }
-            .buttonStyle(
-                SendFeedbackButtonStyle(state: $state) {
-                    VStack(alignment: .leading, spacing: 16) {
-                        Text("Feedback sent!")
-                            .font(.system(.largeTitle, design: .rounded))
-                            .fontWeight(.semibold)
-                        
-                        Text("Thank you! I appreciate this! Every message helps me making this app better. And now you are a part of this!")
-                            .font(.system(.body, design: .rounded))
-                    }
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
+        } label: {
+            Text("Send feedback")
+                .font(.system(.body, design: .rounded))
+                .fontWeight(.semibold)
+        }
+        .buttonStyle(
+            SendFeedbackButtonStyle(state: $state) {
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("Feedback sent!")
+                        .font(.system(.largeTitle, design: .rounded))
+                        .fontWeight(.semibold)
+                    
+                    Text("Thank you! I appreciate this! Every message helps me making this app better. And now you are a part of this!")
+                        .font(.system(.body, design: .rounded))
                 }
-            )
-            .disabled(state == .loading)
-            .sheet(isPresented: $showSendFeedback) {
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
+        )
+        .disabled(state == .loading)
+        .sheet(isPresented: $showSendFeedback) {
+            // Only real device can send email
+            if canSendMail {
                 SendFeedbackView(result: $feedbackResult)
-            }
-            .onChange(of: feedbackResult) { newValue in
-                switch newValue {
-                case .sent:
-                    state = .result
+            } else {
+                // On simulators or previews we will fake it
+                HStack(spacing: 24) {
+                    Button {
+                        state = .initial
+                        showSendFeedback = false
+                    } label: {
+                        Text("Cancel/Fail")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.bordered)
                     
-                default:
-                    state = .initial
+                    Button {
+                        state = .result
+                        showSendFeedback = false
+                    } label: {
+                        Text("Sent")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
                 }
+            }
+        }
+        .onChange(of: feedbackResult) { newValue in
+            switch newValue {
+            case .sent:
+                state = .result
+                
+            default:
+                state = .initial
             }
         }
     }
@@ -107,6 +133,11 @@ private struct SendFeedbackButtonStyle<ResultView: View>: PrimitiveButtonStyle {
 
 struct SendFeedbackButton_Previews: PreviewProvider {
     static var previews: some View {
-        SendFeedbackButton()
+        VStack {
+            Spacer()
+            
+            SendFeedbackButton()
+                .padding(.horizontal)
+        }
     }
 }

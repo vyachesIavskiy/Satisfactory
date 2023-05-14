@@ -87,6 +87,10 @@
 		F98F3B33273ABF0800CE2580 /* RecipeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98F3B31273ABF0800CE2580 /* RecipeNetwork.swift */; };
 		F998FFEE2A114F5200EB7225 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFED2A114F5200EB7225 /* DisclaimerView.swift */; };
 		F998FFEF2A114F5200EB7225 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFED2A114F5200EB7225 /* DisclaimerView.swift */; };
+		F998FFF12A1159CC00EB7225 /* SendFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF02A1159CC00EB7225 /* SendFeedbackView.swift */; };
+		F998FFF22A1159CC00EB7225 /* SendFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF02A1159CC00EB7225 /* SendFeedbackView.swift */; };
+		F998FFF42A116CED00EB7225 /* SendFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF32A116CED00EB7225 /* SendFeedbackButton.swift */; };
+		F998FFF52A116CED00EB7225 /* SendFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF32A116CED00EB7225 /* SendFeedbackButton.swift */; };
 		F9B91035273EA4D000274EE3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91034273EA4D000274EE3 /* LoadingView.swift */; };
 		F9B91036273EA4D000274EE3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91034273EA4D000274EE3 /* LoadingView.swift */; };
 		F9B91038273EA53C00274EE3 /* RecipeCalculatorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91037273EA53C00274EE3 /* RecipeCalculatorHeader.swift */; };
@@ -159,6 +163,8 @@
 		F98F3B2E273ABE9400CE2580 /* VehicleNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleNetwork.swift; sourceTree = "<group>"; };
 		F98F3B31273ABF0800CE2580 /* RecipeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNetwork.swift; sourceTree = "<group>"; };
 		F998FFED2A114F5200EB7225 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
+		F998FFF02A1159CC00EB7225 /* SendFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackView.swift; sourceTree = "<group>"; };
+		F998FFF32A116CED00EB7225 /* SendFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackButton.swift; sourceTree = "<group>"; };
 		F9B91034273EA4D000274EE3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F9B91037273EA53C00274EE3 /* RecipeCalculatorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCalculatorHeader.swift; sourceTree = "<group>"; };
 		F9B9103A273EA5E200274EE3 /* RecipeCalculationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCalculationList.swift; sourceTree = "<group>"; };
@@ -300,6 +306,8 @@
 				F9B91043273EA79700274EE3 /* RecipeSelectionForProductionItemView.swift */,
 				F9B91040273EA74C00274EE3 /* CalculationStatistics.swift */,
 				F9CBF0B927493FD90020871C /* SettingsView.swift */,
+				F998FFF32A116CED00EB7225 /* SendFeedbackButton.swift */,
+				F998FFF02A1159CC00EB7225 /* SendFeedbackView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -471,6 +479,7 @@
 			files = (
 				450BD1D824A639FE00948B47 /* Vehicle.swift in Sources */,
 				45115BDF24BF559E00D58F6A /* ItemRow.swift in Sources */,
+				F998FFF42A116CED00EB7225 /* SendFeedbackButton.swift in Sources */,
 				F9EB45CC27454C8800FB8926 /* Production.swift in Sources */,
 				450BD1FC24A639FE00948B47 /* Storage.swift in Sources */,
 				F98BB2CD273D356A000556E9 /* EquipmentPersistent.swift in Sources */,
@@ -478,6 +487,7 @@
 				450BD1E624A639FE00948B47 /* BundleExtension.swift in Sources */,
 				F98F3B2C273ABE0000CE2580 /* BuildingNetwork.swift in Sources */,
 				F98BB2CC273D356A000556E9 /* VersionPersistent.swift in Sources */,
+				F998FFF12A1159CC00EB7225 /* SendFeedbackView.swift in Sources */,
 				F9E27167273FC9550068B36E /* Tree.swift in Sources */,
 				450BD1D224A639FE00948B47 /* Building.swift in Sources */,
 				F98F3B32273ABF0800CE2580 /* RecipeNetwork.swift in Sources */,
@@ -522,6 +532,7 @@
 			files = (
 				450BD1D924A639FE00948B47 /* Vehicle.swift in Sources */,
 				F946414026A361E2001F8ACF /* ItemListView.swift in Sources */,
+				F998FFF52A116CED00EB7225 /* SendFeedbackButton.swift in Sources */,
 				F9EB45CD27454C8800FB8926 /* Production.swift in Sources */,
 				45115BE024BF559E00D58F6A /* ItemRow.swift in Sources */,
 				F98BB2D3273D356A000556E9 /* EquipmentPersistent.swift in Sources */,
@@ -529,6 +540,7 @@
 				F98F3B2A273ABD0800CE2580 /* EquipmentNetwork.swift in Sources */,
 				450BD1E724A639FE00948B47 /* BundleExtension.swift in Sources */,
 				F98BB2D2273D356A000556E9 /* VersionPersistent.swift in Sources */,
+				F998FFF22A1159CC00EB7225 /* SendFeedbackView.swift in Sources */,
 				F9E27168273FC9550068B36E /* Tree.swift in Sources */,
 				F946413A26A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
 				F98BB2D5273E6C66000556E9 /* PersistentStorage.swift in Sources */,

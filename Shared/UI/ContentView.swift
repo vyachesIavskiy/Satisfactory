@@ -8,10 +8,9 @@ struct ContentView: View {
     
     var body: some View {
         ItemListView()
-            .task { @MainActor in
+            .onAppear {
                 guard !disclaimerForV1_4Shown else { return }
                 
-                try? await Task.sleep(nanoseconds: 50)
                 showDisclaimer = true
             }
             .fullScreenCover(isPresented: $showDisclaimer) {

@@ -21,11 +21,12 @@ struct RecipeView: View {
                 .font(.title)
                 .foregroundColor(.secondary)
             
-            HStack {
+            LazyVGrid(columns: [gridItem]) {
                 ForEach(recipe.output) { output in
                     ItemInRecipeView(recipePart: output)
                 }
             }
+            .frame(width: 70)
         }
     }
     
@@ -129,6 +130,7 @@ struct RecipeView_Previews: PreviewProvider {
                 RecipeView(recipe: storage[recipesFor: "iron-ingot"][0])
                 RecipeView(recipe: storage[recipesFor: "modular-frame"][0])
                 RecipeView(recipe: storage[recipesFor: "computer"][1])
+                RecipeView(recipe: storage[recipesFor: "non-fissile-uranium"][0])
             }
             .environmentObject(Settings())
         }

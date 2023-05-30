@@ -24,7 +24,7 @@ struct DisclaimerView: View {
                 bulletPoint(color: .green, message: "It's now possible to hide items that do not have recipes.")
                 bulletPoint(color: .green, message: "Fixed a bug with keyboard is not able to hide when you type amount of produced item.")
                 bulletPoint(color: .green, message: "In **Settings** menu there is now a new entry for sending your feedback. With this you can have more direct contact with me. All proposals, issues or anything else related to this app is much appreciated.")
-                bulletPoint(color: .red, message: "Unfortunately if you had any saved production chains for items that are no longer in games (primarely weapons), these production chains are no longer available and you will have to create new ones.")
+                bulletPoint(color: .red, message: "Unfortunately if you had any saved production chains for items that are no longer in game (primarely weapons), these production chains are no longer available and you will have to create new ones.")
             }
             .padding(.horizontal)
             

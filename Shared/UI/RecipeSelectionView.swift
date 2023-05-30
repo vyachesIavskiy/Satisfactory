@@ -89,7 +89,7 @@ struct RecipeSelectionView: View {
                 } label: {
                     Label(
                         recipe.isPinned ? "Unpin" : "Pin",
-                        systemImage: recipe.isPinned ? "pin.fill" : "pin"
+                        systemImage: recipe.isPinned ? "pin.slash" : "pin"
                     )
                 }
                 .tint(.orange)

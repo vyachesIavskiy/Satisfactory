@@ -11,6 +11,8 @@ struct ItemListView: View {
     @State private var isShowingStatistics = false
     @State private var isPresentingSettings = false
     
+    @Namespace private var namespace
+    
     private var parts: [Part] {
         storage.parts
             .filter { !storage[recipesFor: $0.id].isEmpty }
@@ -96,47 +98,18 @@ struct ItemListView: View {
     
     private var list: some View {
         List {
-            if !filteredFavoriteParts.isEmpty {
-                Section {
-                    itemsList(filteredFavoriteParts)
-                } header: {
-                    Text("Favorite parts")
-                }
-
-            }
-            
-            if !filteredFavoriteEquipments.isEmpty {
-                Section {
-                    itemsList(filteredFavoriteEquipments)
-                } header: {
-                    Text("Favorite equipment")
-                }
-            }
-            
-            if !filteredParts.isEmpty {
-                Section {
-                    itemsList(filteredParts)
-                } header: {
-                    Text("Parts")
-                }
-            }
-            
-            if !filteredEquipments.isEmpty {
-                Section {
-                    itemsList(filteredEquipments)
-                } header: {
-                    Text("Equipment")
-                }
-            }
+            section("Pinned parts", items: filteredPinnedParts)
+            section("Pinned equipment", items: filteredPinnedEquipments)
+            section("Parts", items: filteredParts)
+            section("Equipment", items: filteredEquipments)
         }
-        .listStyle(.insetGrouped)
+        .listStyle(.plain)
         .searchable(
             text: $searchTerm,
             placement: .navigationBarDrawer(displayMode: .always),
-            prompt: "Search for an item..."
+            prompt: "Search"
         )
-        .navigationTitle("Select an item to produce")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Production")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -184,6 +157,21 @@ struct ItemListView: View {
         }
     }
     
+    @ViewBuilder private func section(_ title: String, items: [Item]) -> some View {
+        Section {
+            itemsList(items)
+        } header: {
+            if !items.isEmpty {
+                ListSectionHeader(title: title)
+                    .foregroundStyle(.primary)
+            }
+        }
+        .listSectionSeparator(.hidden)
+        .listRowSeparator(.hidden)
+        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+        .listRowBackground(Color.clear)
+    }
+    
     private func itemsList(_ items: [Item]) -> some View {
         ForEach(items, id: \.id) { item in
             itemView(item)
@@ -191,18 +179,17 @@ struct ItemListView: View {
     }
     
     private func itemView(_ item: Item) -> some View {
-        Group {
-            if storage[recipesFor: item.id].isEmpty {
-                ItemRow(item: item, showAmountOfProductionChains: true)
-            } else {
-                NavigationLink {
-                    RecipeCalculationView(item: item)
-                } label: {
-                    ItemRow(item: item, showAmountOfProductionChains: true)
-                }
+        HStack {
+            ListItemRow(item: item)
+            
+            NavigationLink("") {
+                RecipeCalculationView(item: item)
             }
+            .frame(width: 0)
+            .opacity(0)
         }
-        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+        .padding(.horizontal, 10)
+        .contextMenu {
             Button {
                 withAnimation {
                     storage[itemID: item.id]?.isPinned.toggle()
@@ -213,7 +200,6 @@ struct ItemListView: View {
                     systemImage: storage[itemID: item.id]?.isPinned == true ? "pin.fill" : "pin"
                 )
             }
-            .tint(.orange)
         }
     }
 }

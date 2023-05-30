@@ -13,10 +13,6 @@ extension Bundle {
         readJSON(from: "buildings")
     }
     
-    var vehicles: [VehicleNetwork] {
-        readJSON(from: "vehicles")
-    }
-    
     var recipes: [RecipeNetwork] {
         readJSON(from: "recipes")
     }

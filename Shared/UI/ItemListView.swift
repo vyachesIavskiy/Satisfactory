@@ -12,57 +12,50 @@ struct ItemListView: View {
     @State private var isPresentingSettings = false
     
     private var parts: [Part] {
-        var result = storage.parts
-        if !settings.showItemsWithoutRecipes {
-            result = result.filter { !storage[recipesFor: $0.id].isEmpty }
-        }
-        
-        return result.sortedByTiers()
+        storage.parts
+            .filter { !storage[recipesFor: $0.id].isEmpty }
+            .sortedByTiers()
     }
     
     private var equipments: [Equipment] {
-        var result = storage.equipments
-        if !settings.showItemsWithoutRecipes {
-            result = result.filter { !storage[recipesFor: $0.id].isEmpty }
-        }
-        
-        return result
+        storage.equipments
+            .filter { !storage[recipesFor: $0.id].isEmpty }
     }
     
     private var filteredParts: [Part] {
-        let unfavoriteParts = parts.filter { !$0.isFavorite }
+        let unpinnedParts = parts.filter { !$0.isPinned }
         
-        guard !searchTerm.isEmpty else { return unfavoriteParts }
+        guard !searchTerm.isEmpty else { return unpinnedParts }
         
-        return unfavoriteParts.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
+        return unpinnedParts.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
     }
     
-    private var filteredFavoriteParts: [Part] {
-        let favoriteParts = parts.filter(\.isFavorite)
+    private var filteredPinnedParts: [Part] {
+        let pinnedParts = parts.filter(\.isPinned)
         
         guard !searchTerm.isEmpty else {
-            return favoriteParts
+            return pinnedParts
         }
         
-        return favoriteParts.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
+        return pinnedParts.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
     }
     
     private var filteredEquipments: [Equipment] {
-        let unfavoriteEquipments = equipments.filter { !$0.isFavorite }
+        let unpinnedEquipments = equipments.filter { !$0.isPinned }
         
-        guard !searchTerm.isEmpty else { return unfavoriteEquipments }
+        guard !searchTerm.isEmpty else { return unpinnedEquipments }
         
-        return equipments.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
+        return unpinnedEquipments.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
     }
     
-    private var filteredFavoriteEquipments: [Equipment] {
-        let favoriteEquipments = equipments.filter(\.isFavorite)
+    private var filteredPinnedEquipments: [Equipment] {
+        let pinnedEquipments = equipments.filter(\.isPinned)
         
         guard !searchTerm.isEmpty else {
-            return favoriteEquipments
+            return pinnedEquipments
         }
         
-        return favoriteEquipments.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
+        return pinnedEquipments.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
     }
     
     private var productions: [ProductionChain] {
@@ -212,12 +205,12 @@ struct ItemListView: View {
         .swipeActions(edge: .leading, allowsFullSwipe: true) {
             Button {
                 withAnimation {
-                    storage[itemID: item.id]?.isFavorite.toggle()
+                    storage[itemID: item.id]?.isPinned.toggle()
                 }
             } label: {
                 Label(
-                    item.isFavorite ? "Unfavorite" : "Favorite",
-                    systemImage: item.isFavorite ? "heart.slash" : "heart"
+                    storage[itemID: item.id]?.isPinned == true ? "Unpin" : "Pin",
+                    systemImage: storage[itemID: item.id]?.isPinned == true ? "pin.fill" : "pin"
                 )
             }
             .tint(.orange)

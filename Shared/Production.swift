@@ -173,12 +173,12 @@ final class Production: ObservableObject {
     func checkInput(for recipe: Recipe) {
         for input in recipe.input where (input.item as? Part)?.rawResource == false {
             let recipes = storage[recipesFor: input.item.id]
-            let favoriteRecipes = recipes.filter(\.isFavorite)
+            let pinnedRecipes = recipes.filter(\.isPinned)
             
             if recipes.count == 1 {
                 add(recipe: recipes[0], for: input.item)
-            } else if favoriteRecipes.count == 1 {
-                add(recipe: favoriteRecipes[0], for: input.item)
+            } else if pinnedRecipes.count == 1 {
+                add(recipe: pinnedRecipes[0], for: input.item)
             }
         }
     }

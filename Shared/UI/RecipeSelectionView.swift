@@ -18,9 +18,9 @@ struct RecipeSelectionView: View {
         storage[productionChainsFor: item.id]
     }
     
-    private var favoriteRecipes: [Recipe] {
+    private var pinnedRecipes: [Recipe] {
         storage[recipesFor: item.id].filter {
-            $0.isFavorite
+            $0.isPinned
         }.sorted { lhs, _ in
             lhs.isDefault
         }
@@ -28,7 +28,7 @@ struct RecipeSelectionView: View {
     
     private var sortedRecipes: [Recipe] {
         storage[recipesFor: item.id].filter {
-            !$0.isFavorite
+            !$0.isPinned
         }.sorted { lhs, _ in
             lhs.isDefault
         }
@@ -43,14 +43,14 @@ struct RecipeSelectionView: View {
                 .listRowSeparator(.hidden)
             }
             
-            if !favoriteRecipes.isEmpty {
-                Section("Favorite Recipes") {
-                    recipesList(favoriteRecipes)
+            if !pinnedRecipes.isEmpty {
+                Section("Pinned Recipes") {
+                    recipesList(pinnedRecipes)
                 }
                 .listRowSeparator(.hidden)
             }
             
-            Section("Unsorted Recipes") {
+            Section("Recipes") {
                 recipesList(sortedRecipes)
             }
             .listRowSeparator(.hidden)
@@ -84,12 +84,12 @@ struct RecipeSelectionView: View {
             .swipeActions(edge: .leading, allowsFullSwipe: true) {
                 Button {
                     withAnimation {
-                        storage[recipeID: recipe.id]?.isFavorite.toggle()
+                        storage[recipeID: recipe.id]?.isPinned.toggle()
                     }
                 } label: {
                     Label(
-                        recipe.isFavorite ? "Unfavorite" : "Favorite",
-                        systemImage: recipe.isFavorite ? "heart.slash" : "heart"
+                        recipe.isPinned ? "Unpin" : "Pin",
+                        systemImage: recipe.isPinned ? "pin.fill" : "pin"
                     )
                 }
                 .tint(.orange)

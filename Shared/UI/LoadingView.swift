@@ -16,7 +16,7 @@ private struct Downloader {
                 milestone: part.milestone,
                 sortingPriority: part.sortingPriority,
                 rawResource: part.rawResource,
-                isFavorite: storage[partID: part.id]?.isFavorite == true
+                isPinned: storage[partID: part.id]?.isPinned == true
             )
         }
         
@@ -28,7 +28,7 @@ private struct Downloader {
                 fuel: storage[partID: equipment.fuel ?? ""],
                 ammo: storage[partID: equipment.ammo ?? ""],
                 consumes: storage[partID: equipment.consumes ?? ""],
-                isFavorite: storage[equipmentID: equipment.id]?.isFavorite == true
+                isPinned: storage[equipmentID: equipment.id]?.isPinned == true
             )
         }
         
@@ -37,18 +37,7 @@ private struct Downloader {
                 id: building.id,
                 name: building.name,
                 buildingType: BuildingType(rawValue: building.buildingType)!,
-                isFavorite: storage[buildingID: building.id]?.isFavorite == true
-            )
-        }
-        
-        storage.vehicles = await dataProvider.vehicles.map { vehicle in
-            Vehicle(
-                id: vehicle.id,
-                name: vehicle.name,
-                fuel: vehicle.fuel.compactMap { fuel in
-                    storage[partID: fuel]
-                },
-                isFavorite: storage[vehicleID: vehicle.id]?.isFavorite == true
+                isPinned: storage[buildingID: building.id]?.isPinned == true
             )
         }
         
@@ -67,7 +56,7 @@ private struct Downloader {
                 },
                 duration: recipe.duration,
                 isDefault: recipe.isDefault,
-                isFavorite: storage[recipeID: recipe.id]?.isFavorite == true
+                isPinned: storage[recipeID: recipe.id]?.isPinned == true
             )
         }
         

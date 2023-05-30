@@ -4,7 +4,7 @@ protocol Item {
     var id: String { get }
     var name: String { get }
     var imageName: String { get }
-    var isFavorite: Bool { get set }
+    var isPinned: Bool { get set }
 }
 
 extension Array where Element: Item {

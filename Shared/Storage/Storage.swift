@@ -33,11 +33,6 @@ class Storage: ObservableObject {
         set { inMemoryStorage.buildings = newValue }
     }
     
-    var vehicles: [Vehicle] {
-        get { inMemoryStorage.vehicles }
-        set { inMemoryStorage.vehicles = newValue }
-    }
-    
     var recipes: [Recipe] {
         get { inMemoryStorage.recipes }
         set { inMemoryStorage.recipes = newValue }
@@ -63,7 +58,6 @@ class Storage: ObservableObject {
             try parts.forEach(save)
             try equipments.forEach(save)
             try buildings.forEach(save)
-            try vehicles.forEach(save)
             try recipes.forEach(save)
             try productionChains.forEach(save)
         } catch {
@@ -86,7 +80,7 @@ class Storage: ObservableObject {
             milestone: part.milestone,
             sortingPriority: part.sortingPriority,
             rawResource: part.rawResource,
-            isFavorite: part.isFavorite
+            isFavorite: part.isPinned
         )
         try persistentStorage.save(partToSave)
     }
@@ -99,7 +93,7 @@ class Storage: ObservableObject {
             fuel: equipment.fuel?.id,
             ammo: equipment.ammo?.id,
             consumes: equipment.consumes?.id,
-            isFavorite: equipment.isFavorite
+            isFavorite: equipment.isPinned
         )
         try persistentStorage.save(equipmentToSave)
     }
@@ -109,19 +103,9 @@ class Storage: ObservableObject {
             id: building.id,
             name: building.name,
             buildingType: building.buildingType.rawValue,
-            isFavorite: building.isFavorite
+            isFavorite: building.isPinned
         )
         try persistentStorage.save(buildingToSave)
-    }
-    
-    private func save(vehicle: Vehicle) throws {
-        let vehicleToSave = VehiclePersistent(
-            id: vehicle.id,
-            name: vehicle.name,
-            fuel: vehicle.fuel.map(\.id),
-            isFavorite: vehicle.isFavorite
-        )
-        try persistentStorage.save(vehicleToSave)
     }
     
     private func save(recipe: Recipe) throws {
@@ -137,7 +121,7 @@ class Storage: ObservableObject {
             machines: recipe.machines.map(\.id),
             duration: recipe.duration,
             isDefault: recipe.isDefault,
-            isFavorite: recipe.isFavorite
+            isFavorite: recipe.isPinned
         )
         try persistentStorage.save(recipeToSave)
     }
@@ -170,8 +154,6 @@ class Storage: ObservableObject {
             try save(equipment: equipment)
         } else if let building = item as? Building {
             try save(building: building)
-        } else if let vehicle = item as? Vehicle {
-            try save(vehicle: vehicle)
         } else {
             enum SaveError: Error {
                 case cannotSaveItemWithID(String)
@@ -198,7 +180,7 @@ class Storage: ObservableObject {
                     milestone: part.milestone,
                     sortingPriority: part.sortingPriority,
                     rawResource: part.rawResource,
-                    isFavorite: part.isFavorite
+                    isPinned: part.isFavorite
                 )
             }
             
@@ -211,7 +193,7 @@ class Storage: ObservableObject {
                     fuel: inMemoryStorage[partID: equipment.fuel ?? ""],
                     ammo: inMemoryStorage[partID: equipment.ammo ?? ""],
                     consumes: inMemoryStorage[partID: equipment.consumes ?? ""],
-                    isFavorite: equipment.isFavorite
+                    isPinned: equipment.isFavorite
                 )
             }
             
@@ -221,35 +203,35 @@ class Storage: ObservableObject {
                     id: building.id,
                     name: building.name,
                     buildingType: BuildingType(rawValue: building.buildingType)!,
-                    isFavorite: building.isFavorite
-                )
-            }
-            
-            let loadedVehicles = try persistentStorage.load(VehiclePersistent.self)
-            vehicles = loadedVehicles.map { vehicle in
-                Vehicle(
-                    id: vehicle.id,
-                    name: vehicle.name,
-                    fuel: vehicle.fuel.compactMap { inMemoryStorage[partID: $0] },
-                    isFavorite: vehicle.isFavorite
+                    isPinned: building.isFavorite
                 )
             }
             
             let loadedRecipes = try persistentStorage.load(RecipePersistent.self)
-            recipes = loadedRecipes.map { recipe in
-                Recipe(
+            recipes = loadedRecipes.compactMap { recipe in
+                let input: [Recipe.RecipePart] = recipe.input.compactMap { input in
+                    guard let inputItem = inMemoryStorage[itemID: input.id] else { return nil }
+                    
+                    return Recipe.RecipePart(item: inputItem, amount: input.amount)
+                }
+                
+                let output: [Recipe.RecipePart] = recipe.output.compactMap { output in
+                    guard let outputItem = inMemoryStorage[itemID: output.id] else { return nil }
+                    
+                    return Recipe.RecipePart(item: outputItem, amount: output.amount)
+                }
+                
+                guard !input.isEmpty, !output.isEmpty else { return nil }
+                
+                return Recipe(
                     id: recipe.id,
                     name: recipe.name,
-                    input: recipe.input.map { input in
-                        Recipe.RecipePart(item: inMemoryStorage[itemID: input.id]!, amount: input.amount)
-                    },
-                    output: recipe.output.map { output in
-                        Recipe.RecipePart(item: inMemoryStorage[itemID: output.id]!, amount: output.amount)
-                    },
+                    input: input,
+                    output: output,
                     machines: recipe.machines.compactMap { inMemoryStorage[buildingID: $0] },
                     duration: recipe.duration,
                     isDefault: recipe.isDefault,
-                    isFavorite: recipe.isFavorite
+                    isPinned: recipe.isFavorite
                 )
             }
             
@@ -360,22 +342,6 @@ class Storage: ObservableObject {
         }
     }
     
-    subscript(vehicleID id: String) -> Vehicle? {
-        get { inMemoryStorage[vehicleID: id] }
-        set {
-            objectWillChange.send()
-            
-            inMemoryStorage[vehicleID: id] = newValue
-            do {
-                if let newValue = newValue {
-                    try save(vehicle: newValue)
-                }
-            } catch {
-                fatalError("Could not save vehicle! Error: \(error)")
-            }
-        }
-    }
-    
     subscript(recipeID id: String) -> Recipe? {
         get { inMemoryStorage[recipeID: id] }
         set {
@@ -446,7 +412,7 @@ class PreviewStorage: Storage {
                 milestone: part.milestone,
                 sortingPriority: part.sortingPriority,
                 rawResource: part.rawResource,
-                isFavorite: false
+                isPinned: false
             )
         }
         
@@ -458,7 +424,7 @@ class PreviewStorage: Storage {
                 fuel: self[partID: equipment.fuel ?? ""],
                 ammo: self[partID: equipment.ammo ?? ""],
                 consumes: self[partID: equipment.consumes ?? ""],
-                isFavorite: false
+                isPinned: false
             )
         }
         
@@ -467,16 +433,7 @@ class PreviewStorage: Storage {
                 id: building.id,
                 name: building.name,
                 buildingType: BuildingType(rawValue: building.buildingType)!,
-                isFavorite: false
-            )
-        }
-        
-        vehicles = Bundle.main.vehicles.map { vehicle in
-            Vehicle(
-                id: vehicle.id,
-                name: vehicle.name,
-                fuel: vehicle.fuel.compactMap { self[partID: $0] },
-                isFavorite: false
+                isPinned: false
             )
         }
         
@@ -495,7 +452,7 @@ class PreviewStorage: Storage {
                 },
                 duration: recipe.duration,
                 isDefault: recipe.isDefault,
-                isFavorite: false
+                isPinned: false
             )
         }
     }

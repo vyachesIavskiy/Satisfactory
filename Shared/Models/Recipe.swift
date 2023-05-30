@@ -8,7 +8,7 @@ struct Recipe: Identifiable {
     let machines: [Building]
     let duration: Int
     let isDefault: Bool
-    var isFavorite: Bool
+    var isPinned: Bool
     
     var canBeInitial: Bool {
         input.allSatisfy {
@@ -24,7 +24,7 @@ struct Recipe: Identifiable {
         machines: [Building],
         duration: Int,
         isDefault: Bool,
-        isFavorite: Bool
+        isPinned: Bool
     ) {
         self.id = id
         self.name = name
@@ -33,7 +33,7 @@ struct Recipe: Identifiable {
         self.machines = machines
         self.duration = duration
         self.isDefault = isDefault
-        self.isFavorite = isFavorite
+        self.isPinned = isPinned
         
         self.input.enumerated().forEach { (index, _) in
             self.input[index].recipeDuration = duration

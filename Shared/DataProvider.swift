@@ -5,7 +5,6 @@ protocol DataProviderProtocol {
     var parts: [PartNetwork] { get async }
     var equipments: [EquipmentNetwork] { get async }
     var buildings: [BuildingNetwork] { get async }
-    var vehicles: [VehicleNetwork] { get async }
     var recipes: [RecipeNetwork] { get async }
 }
 
@@ -47,12 +46,6 @@ final class NetworkDataProvider: DataProviderProtocol {
         }
     }
     
-    var vehicles: [VehicleNetwork] {
-        get async {
-            []
-        }
-    }
-    
     var recipes: [RecipeNetwork] {
         get async {
             []
@@ -82,12 +75,6 @@ final class BundleDataProvider: DataProviderProtocol {
     var buildings: [BuildingNetwork] {
         get async {
             Bundle.main.buildings
-        }
-    }
-    
-    var vehicles: [VehicleNetwork] {
-        get async {
-            Bundle.main.vehicles
         }
     }
     

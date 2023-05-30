@@ -40,7 +40,7 @@ struct Building: Item, Hashable {
     let id: String
     let name: String
     let buildingType: BuildingType
-    var isFavorite: Bool
+    var isPinned: Bool
     
     var imageName: String { "building-\(id)" }
 }

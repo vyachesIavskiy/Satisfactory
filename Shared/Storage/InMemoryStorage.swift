@@ -4,7 +4,6 @@ protocol InMemoryStorageProtocol {
     var parts: [Part] { get set }
     var equipments: [Equipment] { get set }
     var buildings: [Building] { get set }
-    var vehicles: [Vehicle] { get set }
     var recipes: [Recipe] { get set }
     var productionChains: [ProductionChain] { get set }
     
@@ -12,7 +11,6 @@ protocol InMemoryStorageProtocol {
     subscript(partID id: String) -> Part? { get set }
     subscript(equipmentID id: String) -> Equipment? { get set }
     subscript(buildingID id: String) -> Building? { get set }
-    subscript(vehicleID id: String) -> Vehicle? { get set }
     subscript(recipeID id: String) -> Recipe? { get set }
     subscript(recipesFor id: String) -> [Recipe] { get }
     subscript(productionChainID id: String) -> ProductionChain? { get set }
@@ -25,8 +23,7 @@ extension InMemoryStorageProtocol {
         get {
             let result: Item? = self[partID: id] ??
             self[equipmentID: id] ??
-            self[buildingID: id] ??
-            self[vehicleID: id]
+            self[buildingID: id]
             
             assert(result != nil, "Item '\(id)' is not found")
             
@@ -44,9 +41,6 @@ extension InMemoryStorageProtocol {
             } else if let index = buildings.firstIndex(of: id),
                       let building = newValue as? Building {
                 buildings[index] = building
-            } else if let index = vehicles.firstIndex(of: id),
-                      let vehicle = newValue as? Vehicle {
-                vehicles[index] = vehicle
             } else {
                 fatalError("There is no item with id: \(id)")
             }
@@ -92,20 +86,6 @@ extension InMemoryStorageProtocol {
                 fatalError("There is no building with id: \(id)")
             }
             buildings[index] = newValue
-        }
-    }
-    
-    subscript(vehicleID id: String) -> Vehicle? {
-        get {
-            vehicles.first { $0.id == id }
-        }
-        set {
-            guard let newValue = newValue else { return }
-            
-            guard let index = vehicles.firstIndex(where: { $0.id == id }) else {
-                fatalError("There is no vehicle with id: \(id)")
-            }
-            vehicles[index] = newValue
         }
     }
     
@@ -159,7 +139,6 @@ struct InMemoryStorage: InMemoryStorageProtocol {
     var parts = [Part]()
     var equipments = [Equipment]()
     var buildings = [Building]()
-    var vehicles = [Vehicle]()
     var recipes = [Recipe]()
     var productionChains = [ProductionChain]()
 }

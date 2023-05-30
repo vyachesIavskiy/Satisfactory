@@ -39,13 +39,6 @@ struct SettingsView: View {
                     }
                     .padding(.bottom)
                 }
-                
-                Section {
-                    Toggle("Show items without recipes", isOn: $settings.showItemsWithoutRecipes)
-                        .tint(Color("Factory Primary"))
-                } footer: {
-                    Text("Items without recipes \(settings.showItemsWithoutRecipes ? "will" : "will not") be visible in items list.")
-                }
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
@@ -60,8 +53,19 @@ struct SettingsView: View {
                 }
             }
             .safeAreaInset(edge: .bottom, spacing: 16) {
-                SendFeedbackButton()
-                    .padding([.horizontal, .bottom])
+                VStack {
+                    SendFeedbackButton()
+                    
+                    if !Bundle.main.appVersion.isEmpty,
+                       !Bundle.main.appBuildNumber.isEmpty {
+                        Text("App version: \(Bundle.main.appVersion) (\(Bundle.main.appBuildNumber))")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                    }
+                    
+                }
+                .padding([.horizontal, .bottom])
             }
         }
     }

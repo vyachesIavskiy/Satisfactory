@@ -55,10 +55,10 @@ struct SendFeedbackView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> some UIViewController {
         let vc = MFMailComposeViewController()
         vc.mailComposeDelegate = context.coordinator
-        vc.navigationBar.tintColor = UIColor(named: "AccentColor")
+        vc.navigationBar.tintColor = UIColor(named: "Primary")
         
         vc.setToRecipients(["satisfactory.helper.app@gmail.com"])
-        vc.setSubject("Feedback about Satisfactory Helper app v1.4")
+        vc.setSubject("Feedback about Satisfactory Helper app v1.5")
         return vc
     }
     

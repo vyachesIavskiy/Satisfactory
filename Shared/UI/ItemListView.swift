@@ -6,7 +6,6 @@ struct ItemListView: View {
     
     @State private var searchTerm = ""
     @State private var isShowingStatistics = false
-    @State private var presentedItem: Item?
     
     @Namespace private var namespace
     
@@ -93,6 +92,7 @@ struct ItemListView: View {
             placement: .navigationBarDrawer(displayMode: .always),
             prompt: "Search"
         )
+        .autocorrectionDisabled(true)
         .navigationTitle("Production")
         .safeAreaInset(edge: .bottom) {
             if !productions.isEmpty {
@@ -150,27 +150,16 @@ struct ItemListView: View {
     }
     
     private func itemView(_ item: Item) -> some View {
-        Button {
-            presentedItem = item
-        } label: {
+        HStack {
             ListItemRow(item: item)
-                .padding(.horizontal, 10)
-        }
-        .fullScreenCover(isPresented: Binding(
-            get: { presentedItem != nil },
-            set: { newValue in
-                if !newValue {
-                    presentedItem = nil
-                }
+            
+            NavigationLink("") {
+                RecipeCalculationView(item: item)
             }
-        )) {
-            if let presentedItem {
-                NavigationView {
-                    RecipeCalculationView(item: presentedItem)
-                }
-                .navigationViewStyle(.stack)
-            }
+            .frame(width: 0)
+            .opacity(0)
         }
+        .padding(.horizontal, 10)
         .contextMenu {
             Button {
                 withAnimation {

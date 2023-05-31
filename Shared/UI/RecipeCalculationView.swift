@@ -37,26 +37,6 @@ struct RecipeCalculationView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(
-            leading:
-                Button {
-                    if recipe == nil, productionChain == nil {
-                        dismiss()
-                    } else {
-                        isShowingDismissAlert = true
-                    }
-                } label: {
-                    Image(systemName: "xmark")
-                }
-                .alert(isPresented: $isShowingDismissAlert) {
-                    Alert(
-                        title: Text("Are you sure?"),
-                        message: Text("If you exit now, all previously selected recipes will be dismissed"),
-                        primaryButton: .destructive(Text("Exit")) {
-                            dismiss()
-                        },
-                        secondaryButton: .cancel()
-                    )
-                },
             trailing:
                 HStack {
                     if recipe != nil || productionChain != nil {

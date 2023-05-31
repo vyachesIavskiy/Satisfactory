@@ -1,26 +1,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("disclaimer.shown.v1_4")
-    private var disclaimerForV1_4Shown = false
-    
-    @State private var showDisclaimer = false
+    @State private var latestDisclaimer: Disclaimer?
     
     var body: some View {
-        ItemListView()
-            .onAppear {
-                guard !disclaimerForV1_4Shown else { return }
-                
-                showDisclaimer = true
-            }
-            .fullScreenCover(isPresented: $showDisclaimer) {
-                DisclaimerView()
-            }
-            .onChange(of: showDisclaimer) { newValue in
-                if !showDisclaimer {
-                    disclaimerForV1_4Shown = true
+        TabView {
+            ItemListView()
+                .tabItem {
+                    Label("Production", systemImage: "hammer")
                 }
-            }
+            
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape")
+                }
+        }
+        .onAppear {
+            latestDisclaimer = Disclaimer.latest
+        }
+        .sheet(item: $latestDisclaimer) { disclaimer in
+            DisclaimerViewContainer(disclaimer)
+                .interactiveDismissDisabled(true)
+        }
     }
 }
 

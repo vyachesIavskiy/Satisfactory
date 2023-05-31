@@ -11,7 +11,11 @@ struct RecipeCalculationView: View {
     
     @State private var isShowingAlert = false
     
+    @State private var isShowingDismissAlert = false
+    
     @State private var isShowingStatistics = false
+    
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
@@ -33,6 +37,26 @@ struct RecipeCalculationView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(
+            leading:
+                Button {
+                    if recipe == nil, productionChain == nil {
+                        dismiss()
+                    } else {
+                        isShowingDismissAlert = true
+                    }
+                } label: {
+                    Image(systemName: "xmark")
+                }
+                .alert(isPresented: $isShowingDismissAlert) {
+                    Alert(
+                        title: Text("Are you sure?"),
+                        message: Text("If you exit now, all previously selected recipes will be dismissed"),
+                        primaryButton: .destructive(Text("Exit")) {
+                            dismiss()
+                        },
+                        secondaryButton: .cancel()
+                    )
+                },
             trailing:
                 HStack {
                     if recipe != nil || productionChain != nil {
@@ -68,9 +92,12 @@ struct RecipeCalculationPreviews: PreviewProvider {
     }
     
     static var previews: some View {
-        RecipeCalculationView(item: item)
-            .environmentObject(storage)
-            .environmentObject(Settings())
+        NavigationView {
+            RecipeCalculationView(item: item)
+        }
+        .navigationViewStyle(.stack)
+        .environmentObject(storage)
+        .environmentObject(Settings())
     }
 }
 

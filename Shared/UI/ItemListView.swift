@@ -4,12 +4,9 @@ struct ItemListView: View {
     @EnvironmentObject private var storage: Storage
     @EnvironmentObject private var settings: Settings
     
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    @Environment(\.verticalSizeClass) var verticalSizeClass
-    
     @State private var searchTerm = ""
     @State private var isShowingStatistics = false
-    @State private var isPresentingSettings = false
+    @State private var presentedItem: Item?
     
     @Namespace private var namespace
     
@@ -82,20 +79,6 @@ struct ItemListView: View {
     }
     
     // MARK: - UI
-    private var compactBody: some View {
-        NavigationView {
-            list
-        }
-        .navigationViewStyle(.stack)
-    }
-    
-    private var regularBody: some View {
-        NavigationView {
-            list
-        }
-        .navigationViewStyle(.columns)
-    }
-    
     private var list: some View {
         List {
             section("Pinned parts", items: filteredPinnedParts)
@@ -103,6 +86,7 @@ struct ItemListView: View {
             section("Parts", items: filteredParts)
             section("Equipment", items: filteredEquipments)
         }
+        .frame(maxWidth: 600)
         .listStyle(.plain)
         .searchable(
             text: $searchTerm,
@@ -110,18 +94,6 @@ struct ItemListView: View {
             prompt: "Search"
         )
         .navigationTitle("Production")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    isPresentingSettings = true
-                } label: {
-                    Image(systemName: "gear")
-                }
-                .sheet(isPresented: $isPresentingSettings) {
-                    SettingsView()
-                }
-            }
-        }
         .safeAreaInset(edge: .bottom) {
             if !productions.isEmpty {
                 Button {
@@ -150,11 +122,10 @@ struct ItemListView: View {
     }
     
     var body: some View {
-        if horizontalSizeClass == .regular && verticalSizeClass == .regular {
-            regularBody
-        } else {
-            compactBody
+        NavigationView {
+            list
         }
+        .navigationViewStyle(.stack)
     }
     
     @ViewBuilder private func section(_ title: String, items: [Item]) -> some View {
@@ -179,16 +150,27 @@ struct ItemListView: View {
     }
     
     private func itemView(_ item: Item) -> some View {
-        HStack {
+        Button {
+            presentedItem = item
+        } label: {
             ListItemRow(item: item)
-            
-            NavigationLink("") {
-                RecipeCalculationView(item: item)
-            }
-            .frame(width: 0)
-            .opacity(0)
+                .padding(.horizontal, 10)
         }
-        .padding(.horizontal, 10)
+        .fullScreenCover(isPresented: Binding(
+            get: { presentedItem != nil },
+            set: { newValue in
+                if !newValue {
+                    presentedItem = nil
+                }
+            }
+        )) {
+            if let presentedItem {
+                NavigationView {
+                    RecipeCalculationView(item: presentedItem)
+                }
+                .navigationViewStyle(.stack)
+            }
+        }
         .contextMenu {
             Button {
                 withAnimation {

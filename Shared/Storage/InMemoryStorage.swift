@@ -25,7 +25,7 @@ extension InMemoryStorageProtocol {
             self[equipmentID: id] ??
             self[buildingID: id]
             
-            assert(result != nil, "Item '\(id)' is not found")
+//            assert(result != nil, "Item '\(id)' is not found")
             
             return result
         }

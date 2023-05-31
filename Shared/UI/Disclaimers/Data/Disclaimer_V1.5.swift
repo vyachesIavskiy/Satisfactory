@@ -12,6 +12,10 @@ extension Disclaimer {
             """,
             changes: [
                 Change(
+                    log: "Changed from split view to tab bar. iPad users are affected the most.",
+                    changeType: .addition
+                ),
+                Change(
                     log: "Brand new production screen. Only UI changes, functionality is the same",
                     changeType: .addition
                 ),

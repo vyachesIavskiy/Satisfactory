@@ -54,12 +54,12 @@ extension Sequence where Element == Disclaimer.Change {
 extension Disclaimer {
     static var allDisclaimersAreShown: Bool {
         get {
-            self[shownFor: .v1_4] ||
-            self[shownFor: .v1_5]
+            Version.validVersions.reduce(false) { $0 ? $0 : self[shownFor: $1] }
         }
         set {
-            self[shownFor: .v1_4] = newValue
-            self[shownFor: .v1_5] = newValue
+            Version.validVersions.forEach {
+                self[shownFor: $0] = newValue
+            }
         }
     }
     

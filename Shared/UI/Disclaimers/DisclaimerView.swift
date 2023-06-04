@@ -13,6 +13,7 @@ struct DisclaimerView: View {
                 .padding(.horizontal)
             
             Group {
+                changeSectionView("Fixes:", changes: disclaimer.changes[.fix])
                 changeSectionView("Important:", changes: disclaimer.changes[.important])
                 changeSectionView("Added:", changes: disclaimer.changes[.addition])
                 changeSectionView("Removed:", changes: disclaimer.changes[.removal])
@@ -46,33 +47,26 @@ struct DisclaimerView: View {
     }
     
     @ViewBuilder private func changeView(_ change: Disclaimer.Change) -> some View {
-        HStack(alignment: .firstTextBaseline) {
-            switch change.changeType {
-            case .addition, .removal:
-                Circle()
-                    .frame(width: 15, height: 15)
-                    .foregroundColor(color(for: change.changeType))
-                    .brightness(-0.25)
-                
-            case .important:
-                Image(systemName: "exclamationmark.square.fill")
-                    .frame(width: 15)
-                    .foregroundColor(.red)
-                    .brightness(-0.25)
-            }
-            
-            Text(change.log)
-                .font(.system(.body, design: .rounded))
-        }
+        (Text("\(Image(systemName: imageName(for: change.changeType)))\t")
+            .foregroundColor(color(for: change.changeType)) + Text(change.log))
+        .font(.system(.body, design: .rounded))
+        .brightness(-0.15)
         .frame(maxWidth: .infinity, alignment: .leading)
         .insideBubble()
     }
     
+    private func imageName(for changeType: Disclaimer.Change.ChangeType) -> String {
+        switch changeType {
+        case .fix, .addition, .removal: return "circle.fill"
+        case .important: return "exclamationmark.square.fill"
+        }
+    }
+    
     private func color(for changeType: Disclaimer.Change.ChangeType) -> Color {
         switch changeType {
+        case .fix: return .blue
         case .addition: return .green
-        case .removal: return .red
-        case .important: return .clear
+        case .removal, .important: return .red
         }
     }
 }

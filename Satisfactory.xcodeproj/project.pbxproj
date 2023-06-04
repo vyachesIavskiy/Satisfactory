@@ -81,6 +81,8 @@
 		F998FFF22A1159CC00EB7225 /* SendFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF02A1159CC00EB7225 /* SendFeedbackView.swift */; };
 		F998FFF42A116CED00EB7225 /* SendFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF32A116CED00EB7225 /* SendFeedbackButton.swift */; };
 		F998FFF52A116CED00EB7225 /* SendFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF32A116CED00EB7225 /* SendFeedbackButton.swift */; };
+		F9AB09052A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */; };
+		F9AB09062A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */; };
 		F9B91035273EA4D000274EE3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91034273EA4D000274EE3 /* LoadingView.swift */; };
 		F9B91036273EA4D000274EE3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91034273EA4D000274EE3 /* LoadingView.swift */; };
 		F9B91038273EA53C00274EE3 /* RecipeCalculatorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91037273EA53C00274EE3 /* RecipeCalculatorHeader.swift */; };
@@ -168,6 +170,7 @@
 		F998FFED2A114F5200EB7225 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		F998FFF02A1159CC00EB7225 /* SendFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackView.swift; sourceTree = "<group>"; };
 		F998FFF32A116CED00EB7225 /* SendFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackButton.swift; sourceTree = "<group>"; };
+		F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.5.1.swift; sourceTree = "<group>"; };
 		F9B91034273EA4D000274EE3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F9B91037273EA53C00274EE3 /* RecipeCalculatorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCalculatorHeader.swift; sourceTree = "<group>"; };
 		F9B9103A273EA5E200274EE3 /* RecipeCalculationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCalculationList.swift; sourceTree = "<group>"; };
@@ -424,6 +427,7 @@
 				F9B930012A26A06B00C173BF /* Disclaimer.swift */,
 				F9B930082A26A57C00C173BF /* Disclaimer_V1.4.swift */,
 				F9B92FFB2A2694BF00C173BF /* Disclaimer_V1.5.swift */,
+				F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -542,6 +546,7 @@
 				450BD1FC24A639FE00948B47 /* Storage.swift in Sources */,
 				F9B930092A26A57C00C173BF /* Disclaimer_V1.4.swift in Sources */,
 				F9B92FEC2A266ECC00C173BF /* ListSectionHeader.swift in Sources */,
+				F9AB09052A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */,
 				F9B92FF92A26944B00C173BF /* BubbleModifier.swift in Sources */,
 				F98BB2CD273D356A000556E9 /* EquipmentPersistent.swift in Sources */,
 				F946413926A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
@@ -612,6 +617,7 @@
 				F9E27168273FC9550068B36E /* Tree.swift in Sources */,
 				F946413A26A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
 				F98BB2D5273E6C66000556E9 /* PersistentStorage.swift in Sources */,
+				F9AB09062A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */,
 				F9B9103F273EA6C800274EE3 /* RecipeCalculationView.swift in Sources */,
 				F9B92FFD2A2694BF00C173BF /* Disclaimer_V1.5.swift in Sources */,
 				F9B91039273EA53C00274EE3 /* RecipeCalculatorHeader.swift in Sources */,
@@ -773,7 +779,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Primary;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1P4;
 				DEVELOPMENT_TEAM = 7R7GVTFP58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -797,7 +803,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Primary;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1P4;
 				DEVELOPMENT_TEAM = 7R7GVTFP58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;

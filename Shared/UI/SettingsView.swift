@@ -102,6 +102,7 @@ struct SettingsView: View {
         case .preview: return "Preview (should not be visible in production)"
         case .v1_4: return "Version 1.4"
         case .v1_5: return "Version 1.5"
+        case .v1_5_1: return "Version 1.5.1"
         }
     }
 }

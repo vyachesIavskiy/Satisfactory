@@ -34,7 +34,7 @@ extension Disclaimer {
                 Change(
                     log: "Removed items without recipes from production list.",
                     changeType: .removal
-                ),
+                )
             ]
         )
     }

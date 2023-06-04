@@ -53,5 +53,10 @@
     "id" : "equipment-workshop",
     "name" : "Equipment Workshop",
     "buildingType" : "Workstations"
+  },
+  {
+    "id" : "nuclear-power-plant",
+    "name" : "Nuclear Power Plant",
+    "buildingType" : "Generators"
   }
 ]

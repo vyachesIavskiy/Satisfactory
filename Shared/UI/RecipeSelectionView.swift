@@ -36,29 +36,38 @@ struct RecipeSelectionView: View {
     
     var body: some View {
         List {
-            if !productionChains.isEmpty && showProductionChains {
-                Section("Saved productions") {
-                    productionList()
+            Section {
+                productionList()
+            } header: {
+                if !productionChains.isEmpty && showProductionChains {
+                    ListSectionHeader(title: "Saved productions")
+                        .foregroundStyle(.primary)
                 }
-                .listRowSeparator(.hidden)
             }
+            .listRowSeparator(.hidden)
             
-            if !pinnedRecipes.isEmpty {
-                Section("Pinned Recipes") {
-                    recipesList(pinnedRecipes)
+            Section {
+                recipesList(pinnedRecipes)
+            } header: {
+                if !pinnedRecipes.isEmpty {
+                    ListSectionHeader(title: "Pinned Recipes")
+                        .foregroundStyle(.primary)
                 }
-                .listRowSeparator(.hidden)
             }
+            .listRowSeparator(.hidden)
             
-            if !sortedRecipes.isEmpty {
-                Section("Recipes") {
-                    recipesList(sortedRecipes)
+            Section {
+                recipesList(sortedRecipes)
+            } header: {
+                if !sortedRecipes.isEmpty {
+                    ListSectionHeader(title: "Recipes")
+                        .foregroundStyle(.primary)
                 }
-                .listRowSeparator(.hidden)
             }
+            .listRowSeparator(.hidden)
         }
+        .frame(maxWidth: 600)
         .listStyle(.plain)
-        .frame(maxWidth: 700)
     }
     
     private func recipesList(_ recipes: [Recipe]) -> some View {
@@ -69,19 +78,12 @@ struct RecipeSelectionView: View {
                 
                 RecipeView(recipe: recipe)
                     .contentShape(Rectangle())
-                
-                HStack(spacing: 0) {
-                    Text("Produced in: ")
-                    Text(recipe.machines[0].name)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.orange)
-                }
             }
             .listRowSeparator(.hidden)
             .onTapGesture {
                 selectedRecipe = recipe
             }
-            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+            .contextMenu {
                 Button {
                     withAnimation {
                         storage[recipeID: recipe.id]?.isPinned.toggle()
@@ -92,13 +94,6 @@ struct RecipeSelectionView: View {
                         systemImage: recipe.isPinned ? "pin.slash" : "pin"
                     )
                 }
-                .tint(.orange)
-            }
-            
-            if recipe.id != recipes.last?.id {
-                Spacer()
-                    .frame(height: 10)
-                    .listRowSeparator(.hidden)
             }
         }
     }

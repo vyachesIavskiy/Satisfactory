@@ -65,7 +65,7 @@ struct ItemRowInRecipe: View {
                     .stroke(lineWidth: 1.5)
             )
             .background(
-                .white.opacity(0.9),
+                .background.opacity(0.9),
                 in: AngledRectangle(cornerRadius: 10)
             )
             .fixedSize(horizontal: false, vertical: true)

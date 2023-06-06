@@ -53,22 +53,8 @@ struct SettingsView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .safeAreaInset(edge: .bottom, spacing: 16) {
                     VStack {
-                        #if DEBUG
-                        HStack(spacing: 32) {
-                            SendFeedbackButton()
-                                .frame(maxWidth: 320)
-                            
-                            Button("Clear UserDefaults", role: .destructive) {
-                                guard let bundleIdentifier = Bundle.main.bundleIdentifier else { return }
-                                
-                                UserDefaults.standard.removePersistentDomain(forName: bundleIdentifier)
-                            }
-                            .buttonStyle(.bordered)
-                        }
-                        #else
                         SendFeedbackButton()
                             .frame(maxWidth: 320)
-                        #endif
                         
                         if !Bundle.main.appVersion.isEmpty,
                            !Bundle.main.appBuildNumber.isEmpty {
@@ -103,6 +89,7 @@ struct SettingsView: View {
         case .v1_4: return "Version 1.4"
         case .v1_5: return "Version 1.5"
         case .v1_5_1: return "Version 1.5.1"
+        case .v1_6: return "Version 1.6"
         }
     }
 }

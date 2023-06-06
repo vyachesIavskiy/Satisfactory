@@ -144,9 +144,10 @@ struct RecipeCalculationList: View {
                     ItemCell(
                         item: input.item,
                         amountPerMinute: "\(tree.element.amount(for: input.item).formatted(.fractionFromZeroToFour))",
-                        isSelected: (input.item as? Part)?.rawResource == true || tree.children.contains {
+                        isSelected: tree.children.contains {
                             $0.element.item.id == input.item.id
-                        }
+                        },
+                        isExtractable: (input.item as? Part)?.rawResource == true
                     )
                 }
                 .buttonStyle(.plain)
@@ -167,7 +168,7 @@ struct RecipeCalculationList: View {
                         amountPerMinute: "\(tree.element.amount(for: input.item).formatted(.fractionFromZeroToFour))",
                         isSelected: (input.item as? Part)?.rawResource == true || tree.children.contains { $0.element.item.id == input.item.id }
                     )
-                        .cornerRadius(4)
+                    .cornerRadius(4)
                 }
                 .buttonStyle(.plain)
             }

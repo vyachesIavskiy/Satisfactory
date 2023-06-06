@@ -119,6 +119,8 @@
 		F9CBF0BB27493FD90020871C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CBF0B927493FD90020871C /* SettingsView.swift */; };
 		F9D1CD3B2747B06300125C2A /* ProductionPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1CD3A2747B06300125C2A /* ProductionPersistent.swift */; };
 		F9D1CD3C2747B06300125C2A /* ProductionPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D1CD3A2747B06300125C2A /* ProductionPersistent.swift */; };
+		F9DCF6A92A2F7370007B94DF /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCF6A82A2F7370007B94DF /* Gradients.swift */; };
+		F9DCF6AA2A2F7370007B94DF /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCF6A82A2F7370007B94DF /* Gradients.swift */; };
 		F9E27167273FC9550068B36E /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E27166273FC9550068B36E /* Tree.swift */; };
 		F9E27168273FC9550068B36E /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E27166273FC9550068B36E /* Tree.swift */; };
 		F9EB45CC27454C8800FB8926 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EB45CB27454C8800FB8926 /* Production.swift */; };
@@ -192,6 +194,7 @@
 		F9CBF0B627493F770020871C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F9CBF0B927493FD90020871C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F9D1CD3A2747B06300125C2A /* ProductionPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionPersistent.swift; sourceTree = "<group>"; };
+		F9DCF6A82A2F7370007B94DF /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		F9E27166273FC9550068B36E /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		F9EB45CB27454C8800FB8926 /* Production.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		F9EB45CE27454CCE00FB8926 /* RecipeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeElement.swift; sourceTree = "<group>"; };
@@ -328,6 +331,7 @@
 				F9CBF0B927493FD90020871C /* SettingsView.swift */,
 				F998FFF32A116CED00EB7225 /* SendFeedbackButton.swift */,
 				F998FFF02A1159CC00EB7225 /* SendFeedbackView.swift */,
+				F9DCF6A82A2F7370007B94DF /* Gradients.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -547,6 +551,7 @@
 				F9B930092A26A57C00C173BF /* Disclaimer_V1.4.swift in Sources */,
 				F9B92FEC2A266ECC00C173BF /* ListSectionHeader.swift in Sources */,
 				F9AB09052A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */,
+				F9DCF6A92A2F7370007B94DF /* Gradients.swift in Sources */,
 				F9B92FF92A26944B00C173BF /* BubbleModifier.swift in Sources */,
 				F98BB2CD273D356A000556E9 /* EquipmentPersistent.swift in Sources */,
 				F946413926A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
@@ -652,6 +657,7 @@
 				F98F3B33273ABF0800CE2580 /* RecipeNetwork.swift in Sources */,
 				F9B91042273EA74C00274EE3 /* CalculationStatistics.swift in Sources */,
 				F98BB2CF273D356A000556E9 /* BuildingPersistent.swift in Sources */,
+				F9DCF6AA2A2F7370007B94DF /* Gradients.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,7 +698,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -712,7 +718,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -756,7 +762,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -770,7 +776,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;

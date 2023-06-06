@@ -50,10 +50,12 @@ struct RecipeSelectionView: View {
                 .listRowSeparator(.hidden)
             }
             
-            Section("Recipes") {
-                recipesList(sortedRecipes)
+            if !sortedRecipes.isEmpty {
+                Section("Recipes") {
+                    recipesList(sortedRecipes)
+                }
+                .listRowSeparator(.hidden)
             }
-            .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
         .frame(maxWidth: 700)

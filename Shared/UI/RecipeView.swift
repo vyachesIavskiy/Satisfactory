@@ -10,14 +10,14 @@ struct RecipeView: View {
     
     private var compactBody: some View {
         HStack(spacing: 25) {
-            LazyVGrid(columns: [gridItem]) {
+            LazyVGrid(columns: [gridItem], spacing: 15) {
                 ForEach(recipe.output) { output in
                     ItemInRecipeView(recipePart: output, isOutput: true)
                 }
             }
             .frame(width: 70)
             
-            LazyVGrid(columns: [gridItem]) {
+            LazyVGrid(columns: [gridItem], spacing: 15) {
                 ForEach(recipe.input) { input in
                     ItemInRecipeView(recipePart: input, isOutput: false)
                 }
@@ -27,20 +27,16 @@ struct RecipeView: View {
     }
     
     private var regularBody: some View {
-        HStack {
-            HStack {
-                ForEach(recipe.input) { input in
-                    ItemInRecipeView(recipePart: input, isOutput: false)
+        HStack(spacing: 25) {
+            HStack(spacing: 10) {
+                ForEach(recipe.output) { output in
+                    ItemInRecipeView(recipePart: output, isOutput: true)
                 }
             }
             
-            Image(systemName: "arrowtriangle.right.fill")
-                .font(.title)
-                .foregroundColor(.gray)
-            
-            HStack {
-                ForEach(recipe.output) { output in
-                    ItemInRecipeView(recipePart: output, isOutput: true)
+            HStack(spacing: 10) {
+                ForEach(recipe.input) { input in
+                    ItemInRecipeView(recipePart: input, isOutput: false)
                 }
             }
         }

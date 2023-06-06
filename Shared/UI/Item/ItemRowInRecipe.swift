@@ -29,11 +29,11 @@ struct ItemRowInRecipe: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            HStack(spacing: 7) {
+            HStack(spacing: 8) {
                 Image(item.imageName)
                     .resizable()
-                    .frame(width: 36, height: 36)
-                    .padding(3)
+                    .frame(width: 46, height: 46)
+                    .padding(5)
                     .background(
                         Color("Secondary").opacity(0.3),
                         in: AngledRectangle(cornerRadius: 8)
@@ -53,16 +53,16 @@ struct ItemRowInRecipe: View {
                     )
                 
                 Text(item.name)
+                    .font(.system(size: 18))
                     .multilineTextAlignment(.leading)
-                    .font(.system(size: 14))
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             }
-            .padding([.leading, .vertical], 3)
-            .padding(.trailing, 7)
+            .padding([.leading, .vertical], 4)
+            .padding(.trailing, 8)
             .background(
                 Color("Secondary").opacity(0.3),
                 in: AngledRectangle(cornerRadius: 10)
-                    .stroke(lineWidth: 1.5)
+                    .stroke(lineWidth: 1.25)
             )
             .background(
                 .background.opacity(0.9),
@@ -71,9 +71,9 @@ struct ItemRowInRecipe: View {
             .fixedSize(horizontal: false, vertical: true)
             
             Text(amountPerMinute)
-                .font(.system(size: 13, weight: .medium))
+                .font(.system(size: 18, weight: .medium))
                 .foregroundColor(.white)
-                .padding(.vertical, 2)
+                .padding(.vertical, 4)
                 .padding(.horizontal, 10)
         }
         .background(

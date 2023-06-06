@@ -31,11 +31,11 @@ struct ItemCell: View {
         VStack(spacing: 4) {
             Image(item.imageName)
                 .resizable()
-                .frame(width: 50, height: 50)
-                .padding(5)
+                .frame(width: 54, height: 54)
+                .padding(6)
                 .background(
                     Color("Secondary").opacity(0.3),
-                    in: AngledRectangle(cornerRadius: 8).stroke(lineWidth: 1.5)
+                    in: AngledRectangle(cornerRadius: 8).stroke(lineWidth: 1)
                 )
                 .background(
                     LinearGradient(
@@ -51,12 +51,12 @@ struct ItemCell: View {
                 )
             
             Text(amountPerMinute)
-                .font(.system(size: 13, weight: .medium))
+                .font(.system(size: 18, weight: .medium))
                 .foregroundColor(.white)
-                .frame(maxWidth: .infinity, minHeight: 15)
+                .frame(maxWidth: .infinity)
         }
-        .padding([.horizontal, .top], 3)
-        .padding(.bottom, 4)
+        .padding([.horizontal, .top], 4)
+        .padding(.bottom, 5)
         .fixedSize()
         .background(
             Color("Secondary").opacity(0.3),

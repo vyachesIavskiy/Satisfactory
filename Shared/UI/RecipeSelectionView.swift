@@ -67,10 +67,8 @@ struct RecipeSelectionView: View {
                 Text(recipe.name)
                     .fontWeight(.bold)
                 
-                switch settings.itemViewStyle {
-                case .icon: recipeIconView(recipe: recipe)
-                case .row: recipeRowView(recipe: recipe)
-                }
+                RecipeView(recipe: recipe)
+                    .contentShape(Rectangle())
                 
                 HStack(spacing: 0) {
                     Text("Produced in: ")
@@ -105,32 +103,14 @@ struct RecipeSelectionView: View {
         }
     }
     
-    private func recipeRowView(recipe: Recipe) -> some View {
-        RecipeView(recipe: recipe)
-            .contentShape(Rectangle())
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 6, style: .continuous)
-                    .foregroundStyle(.regularMaterial)
-                    .foregroundColor(.secondary)
-            )
-    }
-    
-    private func recipeIconView(recipe: Recipe) -> some View {
-        RecipeView(recipe: recipe)
-            .contentShape(Rectangle())
-    }
-    
     private func productionList() -> some View {
         ForEach(productionChains) { productionChain in
             VStack(alignment: .leading) {
                 Text(productionChain.recipe.name)
                     .fontWeight(.semibold)
                 
-                switch settings.itemViewStyle {
-                case .icon: recipeIconView(recipe: productionChain.recipe)
-                case .row: recipeRowView(recipe: productionChain.recipe)
-                }
+                RecipeView(recipe: productionChain.recipe)
+                    .contentShape(Rectangle())
                 
                 HStack(spacing: 12) {
                     Text("Amount: ")

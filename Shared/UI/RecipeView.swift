@@ -47,27 +47,18 @@ struct RecipeView: View {
     }
     
     private var rowBody: some View {
-        VStack(spacing: 15) {
-            VStack(spacing: 0) {
-                ForEach(recipe.input) { input in
-                    ItemRowInRecipeView(recipePart: input)
-                }
-            }
-            .cornerRadius(4)
-            
-            HStack {
-                Image(systemName: "arrowtriangle.down.fill")
-                    .font(.title)
-                    .foregroundColor(.secondary)
-            }
-            
-            
-            VStack {
+        HStack(spacing: 25) {
+            VStack(alignment: .leading, spacing: 15) {
                 ForEach(recipe.output) { output in
-                    ItemRowInRecipeView(recipePart: output)
+                    ItemRowInRecipeView(recipePart: output, isOutput: true)
                 }
             }
-            .cornerRadius(4)
+            
+            VStack(alignment: .leading, spacing: 15) {
+                ForEach(recipe.input) { input in
+                    ItemRowInRecipeView(recipePart: input, isOutput: false)
+                }
+            }
         }
     }
     
@@ -79,7 +70,7 @@ struct RecipeView: View {
             } else {
                 regularBody
             }
-            
+
         case .row:
             rowBody
         }
@@ -105,13 +96,18 @@ struct ItemInRecipeView: View {
 
 struct ItemRowInRecipeView: View {
     let recipePart: Recipe.RecipePart
+    let isOutput: Bool
     
     private var amountPerMinuteDisplayString: String {
         recipePart.amountPerMinute.formatted(.fractionFromZeroToFour)
     }
     
     var body: some View {
-        ItemRowInRecipe(item: recipePart.item, amountPerMinute: amountPerMinuteDisplayString)
+        ItemRowInRecipe(
+            item: recipePart.item,
+            amountPerMinute: amountPerMinuteDisplayString,
+            isOutput: isOutput
+        )
     }
 }
 

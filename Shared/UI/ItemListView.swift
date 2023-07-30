@@ -1,146 +1,161 @@
 import SwiftUI
 
+extension ItemListView {
+    final class Model: ObservableObject {
+        @Published var pinnedExpanded = true
+        @Published var partsExpanded = true
+        @Published var equipmentExpanded = true
+        
+        @Published var searchTerm = ""
+        
+        var pinnedItems: [Item] {
+            filteredParts.filter(\.isPinned) +
+            filteredEquipment.filter(\.isPinned)
+        }
+        
+        var parts: [Part] {
+            filteredParts.filter { !$0.isPinned }
+        }
+        
+        var equipment: [Equipment] {
+            filteredEquipment.filter { !$0.isPinned }
+        }
+        
+        var productions: [ProductionChain] {
+            storage.productionChains.sortedByTiers()
+        }
+        
+        var statistics: [CalculationStatisticsModel] {
+            productions
+                .map(\.statistics)
+                .reduce([], +)
+                .reduceDuplicates()
+        }
+        
+        var machineStatistics: [CalculationMachineStatisticsModel] {
+            productions
+                .map(\.machineStatistics)
+                .reduce([], +)
+                .reduceDuplicates()
+                .sorted { lhs, rhs in
+                    (lhs.item as? Part)?.sortingPriority ?? 1 > (rhs.item as? Part)?.sortingPriority ?? 0
+                }
+        }
+        
+        private let storage: Storage
+        
+        private var filteredParts: [Part] {
+            storage.parts.filter {
+                !storage[recipesFor: $0.id].isEmpty &&
+                (
+                    searchTerm.isEmpty ||
+                    (
+                        $0.id.lowercased().contains(searchTerm.lowercased()) ||
+                        $0.name.lowercased().contains(searchTerm.lowercased())
+                    )
+                )
+            }
+            .sortedByTiers()
+        }
+        
+        private var filteredEquipment: [Equipment] {
+            storage.equipments.filter {
+                !storage[recipesFor: $0.id].isEmpty &&
+                (
+                    searchTerm.isEmpty ||
+                    (
+                        $0.id.lowercased().contains(searchTerm.lowercased()) ||
+                        $0.name.lowercased().contains(searchTerm.lowercased())
+                    )
+                )
+            }
+        }
+        
+        init(storage: Storage) {
+            self.storage = storage
+        }
+    }
+}
+
 struct ItemListView: View {
-    @EnvironmentObject private var storage: Storage
-    @EnvironmentObject private var settings: Settings
+    @ObservedObject var model: Model
     
-    @State private var searchTerm = ""
+    @EnvironmentObject private var storage: Storage
+    
     @State private var isShowingStatistics = false
     
-    @Namespace private var namespace
-    
-    private var parts: [Part] {
-        storage.parts
-            .filter { !storage[recipesFor: $0.id].isEmpty }
-            .sortedByTiers()
-    }
-    
-    private var equipments: [Equipment] {
-        storage.equipments
-            .filter { !storage[recipesFor: $0.id].isEmpty }
-    }
-    
-    private var filteredParts: [Part] {
-        let unpinnedParts = parts.filter { !$0.isPinned }
-        
-        guard !searchTerm.isEmpty else { return unpinnedParts }
-        
-        return unpinnedParts.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
-    }
-    
-    private var filteredPinnedParts: [Part] {
-        let pinnedParts = parts.filter(\.isPinned)
-        
-        guard !searchTerm.isEmpty else {
-            return pinnedParts
-        }
-        
-        return pinnedParts.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
-    }
-    
-    private var filteredEquipments: [Equipment] {
-        let unpinnedEquipments = equipments.filter { !$0.isPinned }
-        
-        guard !searchTerm.isEmpty else { return unpinnedEquipments }
-        
-        return unpinnedEquipments.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
-    }
-    
-    private var filteredPinnedEquipments: [Equipment] {
-        let pinnedEquipments = equipments.filter(\.isPinned)
-        
-        guard !searchTerm.isEmpty else {
-            return pinnedEquipments
-        }
-        
-        return pinnedEquipments.filter { $0.name.lowercased().contains(searchTerm.lowercased()) }
-    }
-    
-    private var productions: [ProductionChain] {
-        storage.productionChains.sortedByTiers()
-    }
-    
-    private var statistics: [CalculationStatisticsModel] {
-        productions
-            .map(\.statistics)
-            .reduce([], +)
-            .reduceDuplicates()
-    }
-    
-    private var machineStatistics: [CalculationMachineStatisticsModel] {
-        productions
-            .map(\.machineStatistics)
-            .reduce([], +)
-            .reduceDuplicates()
-            .sorted { lhs, rhs in
-                (lhs.item as? Part)?.sortingPriority ?? 1 > (rhs.item as? Part)?.sortingPriority ?? 0
-            }
-    }
-    
     // MARK: - UI
-    private var list: some View {
-        List {
-            section("Pinned parts", items: filteredPinnedParts)
-            section("Pinned equipment", items: filteredPinnedEquipments)
-            section("Parts", items: filteredParts)
-            section("Equipment", items: filteredEquipments)
-        }
-        .frame(maxWidth: 600)
-        .listStyle(.plain)
-        .searchable(
-            text: $searchTerm,
-            placement: .navigationBarDrawer(displayMode: .always),
-            prompt: "Search"
-        )
-        .autocorrectionDisabled(true)
-        .navigationTitle("Production")
-        .safeAreaInset(edge: .bottom) {
-            if !productions.isEmpty {
-                Button {
-                    isShowingStatistics = true
-                } label: {
-                    Text("Production chains statistics")
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                LazyVStack(spacing: 18) {
+                    ListItemSection(title: "Pinned", items: model.pinnedItems, isSearching: !model.searchTerm.isEmpty, isExpanded: $model.pinnedExpanded)
+                    ListItemSection(title: "Parts", items: model.parts, isSearching: !model.searchTerm.isEmpty, isExpanded: $model.partsExpanded)
+                    ListItemSection(title: "Equipment", items: model.equipment, isSearching: !model.searchTerm.isEmpty, isExpanded: $model.equipmentExpanded)
                 }
-                .buttonStyle(.borderedProminent)
-                .padding(.bottom)
-                .sheet(isPresented: $isShowingStatistics) {
-                    NavigationView {
-                        CalculationStatistics(data: statistics, machines: machineStatistics)
-                            .toolbar {
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                    Button("Done") {
-                                        isShowingStatistics = false
+                .padding(.horizontal, 16)
+            }
+            .searchable(
+                text: $model.searchTerm,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: "Search"
+            )
+            .autocorrectionDisabled(true)
+            .navigationTitle("Production")
+            .safeAreaInset(edge: .bottom) {
+                if !model.productions.isEmpty {
+                    Button {
+                        isShowingStatistics = true
+                    } label: {
+                        Text("Production chains statistics")
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .padding(.bottom)
+                    .sheet(isPresented: $isShowingStatistics) {
+                        NavigationView {
+                            CalculationStatistics(data: model.statistics, machines: model.machineStatistics)
+                                .toolbar {
+                                    ToolbarItem(placement: .navigationBarTrailing) {
+                                        Button("Done") {
+                                            isShowingStatistics = false
+                                        }
                                     }
                                 }
-                            }
-                            .navigationTitle("Production chains statistics")
-                            .navigationBarTitleDisplayMode(.inline)
+                                .navigationTitle("Production chains statistics")
+                                .navigationBarTitleDisplayMode(.inline)
+                        }
                     }
                 }
             }
         }
-    }
-    
-    var body: some View {
-        NavigationView {
-            list
-        }
         .navigationViewStyle(.stack)
     }
     
-    @ViewBuilder private func section(_ title: String, items: [Item]) -> some View {
-        Section {
-            itemsList(items)
-        } header: {
-            if !items.isEmpty {
-                ListSectionHeader(title: title)
-                    .foregroundStyle(.primary)
+    @ViewBuilder private func section(
+        _ title: LocalizedStringKey,
+        items: [Item],
+        isExpanded: Binding<Bool>
+    ) -> some View {
+        if !items.isEmpty {
+            Section {
+                if isExpanded.wrappedValue {
+                    VStack(spacing: 0) {
+                        itemsList(items)
+                        
+                        ListSectionFooterShape(cornerRadius: 10)
+                            .stroke(lineWidth: 0.75)
+                            .foregroundStyle(Color("Secondary").opacity(0.75))
+                            .listRowInsets(.none)
+                            .padding(.bottom, 10)
+                    }
+                    .transition(.move(edge: .top).combined(with: .opacity))
+                }
+            } header: {
+                ListSectionHeaderNew(title: title, numberOfItems: items.count, isExpanded: isExpanded)
+                    .padding(.vertical, 10)
             }
+            
         }
-        .listSectionSeparator(.hidden)
-        .listRowSeparator(.hidden)
-        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-        .listRowBackground(Color.clear)
     }
     
     private func itemsList(_ items: [Item]) -> some View {
@@ -150,16 +165,13 @@ struct ItemListView: View {
     }
     
     private func itemView(_ item: Item) -> some View {
-        HStack {
+        NavigationLink {
+            RecipeCalculationView(item: item)
+        } label: {
             ListItemRow(item: item)
-            
-            NavigationLink("") {
-                RecipeCalculationView(item: item)
-            }
-            .frame(width: 0)
-            .opacity(0)
         }
-        .padding(.horizontal, 10)
+        .buttonStyle(.plain)
+        .padding(10)
         .contextMenu {
             Button {
                 withAnimation {
@@ -179,7 +191,7 @@ struct ItemListPreview: PreviewProvider {
     @StateObject private static var storage: Storage = PreviewStorage()
     
     static var previews: some View {
-        ItemListView()
+        ItemListView(model: ItemListView.Model(storage: storage))
             .environmentObject(storage)
             .environmentObject(Settings())
     }

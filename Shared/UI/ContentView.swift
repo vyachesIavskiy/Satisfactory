@@ -3,9 +3,11 @@ import SwiftUI
 struct ContentView: View {
     @State private var latestDisclaimer: Disclaimer?
     
+    @EnvironmentObject private var storage: Storage
+    
     var body: some View {
         TabView {
-            ItemListView()
+            ItemListView(model: ItemListView.Model(storage: storage))
                 .tabItem {
                     Label("Production", systemImage: "hammer")
                 }

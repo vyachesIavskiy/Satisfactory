@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -55,6 +55,7 @@
 		F96FC00A27834E9600307A78 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96FC00827834E9600307A78 /* ItemCell.swift */; };
 		F96FC00C27834EB900307A78 /* ItemRowInRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96FC00B27834EB900307A78 /* ItemRowInRecipe.swift */; };
 		F96FC00D27834EB900307A78 /* ItemRowInRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96FC00B27834EB900307A78 /* ItemRowInRecipe.swift */; };
+		F981CA182A54829100210E89 /* AngledLinedBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981CA172A54829100210E89 /* AngledLinedBackground.swift */; };
 		F98BB2C9273D356A000556E9 /* BuildingPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C8273D34A1000556E9 /* BuildingPersistent.swift */; };
 		F98BB2CA273D356A000556E9 /* RecipePersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C6273D34A1000556E9 /* RecipePersistent.swift */; };
 		F98BB2CB273D356A000556E9 /* PartPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98BB2C3273D34A1000556E9 /* PartPersistent.swift */; };
@@ -81,6 +82,8 @@
 		F998FFF22A1159CC00EB7225 /* SendFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF02A1159CC00EB7225 /* SendFeedbackView.swift */; };
 		F998FFF42A116CED00EB7225 /* SendFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF32A116CED00EB7225 /* SendFeedbackButton.swift */; };
 		F998FFF52A116CED00EB7225 /* SendFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF32A116CED00EB7225 /* SendFeedbackButton.swift */; };
+		F9A7AC942A5547EC006DA96F /* ListItemSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7AC932A5547EC006DA96F /* ListItemSection.swift */; };
+		F9A7AC952A5547EC006DA96F /* ListItemSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7AC932A5547EC006DA96F /* ListItemSection.swift */; };
 		F9AB09052A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */; };
 		F9AB09062A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */; };
 		F9B91035273EA4D000274EE3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91034273EA4D000274EE3 /* LoadingView.swift */; };
@@ -162,6 +165,7 @@
 		F95FAAB1273D0EE80043D3C4 /* InMemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorage.swift; sourceTree = "<group>"; };
 		F96FC00827834E9600307A78 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		F96FC00B27834EB900307A78 /* ItemRowInRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowInRecipe.swift; sourceTree = "<group>"; };
+		F981CA172A54829100210E89 /* AngledLinedBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngledLinedBackground.swift; sourceTree = "<group>"; };
 		F98BB2C3273D34A1000556E9 /* PartPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartPersistent.swift; sourceTree = "<group>"; };
 		F98BB2C4273D34A1000556E9 /* EquipmentPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentPersistent.swift; sourceTree = "<group>"; };
 		F98BB2C6273D34A1000556E9 /* RecipePersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePersistent.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 		F998FFED2A114F5200EB7225 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		F998FFF02A1159CC00EB7225 /* SendFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackView.swift; sourceTree = "<group>"; };
 		F998FFF32A116CED00EB7225 /* SendFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedbackButton.swift; sourceTree = "<group>"; };
+		F9A7AC932A5547EC006DA96F /* ListItemSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemSection.swift; sourceTree = "<group>"; };
 		F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.5.1.swift; sourceTree = "<group>"; };
 		F9B91034273EA4D000274EE3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F9B91037273EA53C00274EE3 /* RecipeCalculatorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCalculatorHeader.swift; sourceTree = "<group>"; };
@@ -323,6 +328,7 @@
 				F9CBF0B627493F770020871C /* ContentView.swift */,
 				F9B91034273EA4D000274EE3 /* LoadingView.swift */,
 				F946413E26A361E2001F8ACF /* ItemListView.swift */,
+				F9A7AC932A5547EC006DA96F /* ListItemSection.swift */,
 				F9B92FEB2A266ECC00C173BF /* ListSectionHeader.swift */,
 				F9B9103D273EA6C800274EE3 /* RecipeCalculationView.swift */,
 				F946414126A36294001F8ACF /* RecipeSelectionView.swift */,
@@ -396,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				F9B92FE02A265DA800C173BF /* AngledRectangled.swift */,
+				F981CA172A54829100210E89 /* AngledLinedBackground.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -495,7 +502,7 @@
 				};
 			};
 			buildConfigurationList = 450BD18D24A6395700948B47 /* Build configuration list for PBXProject "Satisfactory" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -555,6 +562,7 @@
 				F9B930092A26A57C00C173BF /* Disclaimer_V1.4.swift in Sources */,
 				F9B92FEC2A266ECC00C173BF /* ListSectionHeader.swift in Sources */,
 				F9AB09052A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */,
+				F9A7AC942A5547EC006DA96F /* ListItemSection.swift in Sources */,
 				F9DCF6A92A2F7370007B94DF /* Gradients.swift in Sources */,
 				F9B92FF92A26944B00C173BF /* BubbleModifier.swift in Sources */,
 				F98BB2CD273D356A000556E9 /* EquipmentPersistent.swift in Sources */,
@@ -571,6 +579,7 @@
 				F9B92FFF2A269CC600C173BF /* SizeReader.swift in Sources */,
 				F9B9103E273EA6C800274EE3 /* RecipeCalculationView.swift in Sources */,
 				F9B930052A26A0FE00C173BF /* DisclaimerViewContainer.swift in Sources */,
+				F981CA182A54829100210E89 /* AngledLinedBackground.swift in Sources */,
 				F9B91038273EA53C00274EE3 /* RecipeCalculatorHeader.swift in Sources */,
 				450BD1A224A6395700948B47 /* SatisfactoryApp.swift in Sources */,
 				450BD1DC24A639FE00948B47 /* Part.swift in Sources */,
@@ -629,6 +638,7 @@
 				F98BB2D5273E6C66000556E9 /* PersistentStorage.swift in Sources */,
 				F9AB09062A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */,
 				F9B9103F273EA6C800274EE3 /* RecipeCalculationView.swift in Sources */,
+				F9A7AC952A5547EC006DA96F /* ListItemSection.swift in Sources */,
 				F9B92FFD2A2694BF00C173BF /* Disclaimer_V1.5.swift in Sources */,
 				F9B91039273EA53C00274EE3 /* RecipeCalculatorHeader.swift in Sources */,
 				450BD1D324A639FE00948B47 /* Building.swift in Sources */,
@@ -722,7 +732,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -730,6 +740,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -780,13 +791,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -808,7 +820,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -830,7 +841,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

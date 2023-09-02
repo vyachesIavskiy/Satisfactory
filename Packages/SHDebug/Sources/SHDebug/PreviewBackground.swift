@@ -21,21 +21,21 @@ public struct PreviewBackground<Content: View>: View {
     }
 }
 
-struct PreviewBackground_Previews: PreviewProvider {
-    static var previews: some View {
-        PreviewBackground {
-            Text("Preview")
-        }
-        
-        PreviewBackground(.orange) {
-            Text("Preview")
-        }
-        .previewDisplayName("Preview background (Orange)")
-        
-        PreviewBackground(.linearGradient(colors: [.orange, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)) {
-            Text("Preview")
-        }
-        .previewDisplayName("Preview background (Gradient Orange -> Blue)")
+#Preview("Preview background") {
+    PreviewBackground {
+        Text("Preview")
+    }
+}
+
+#Preview("Preview background (Orange)") {
+    PreviewBackground(.orange) {
+        Text("Preview")
+    }
+}
+
+#Preview("Preview background (Gradient Orange -> Blue)") {
+    PreviewBackground(.linearGradient(colors: [.orange, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)) {
+        Text("Preview")
     }
 }
 #endif

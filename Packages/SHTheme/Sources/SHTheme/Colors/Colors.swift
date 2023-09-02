@@ -85,122 +85,121 @@ private struct ColorPreview: View {
     }
 }
 
-struct Colors_Previews: PreviewProvider {
-    static var previews: some View {
-        PreviewBackground {
+#Preview("General colors") {
+    PreviewBackground {
+        VStack(spacing: 50) {
+            ColorPreview(
+                name: "Primary",
+                hex: "#E59243",
+                darkHex: "#DA9D62",
+                color: .sh.primary
+            )
+            
+            ColorPreview(
+                name: "Secondary",
+                hex: "#1D2243",
+                darkHex: "#BBC0E6",
+                color: .sh.secondary
+            )
+        }
+    }
+}
+
+#Preview("Recipe colors") {
+    PreviewBackground {
+        VStack(spacing: 50) {
+            ColorPreview(
+                name: "Recipe Output",
+                hex: "#8C8C8C",
+                darkHex: "#8C8C8C",
+                color: .sh.recipeOutput
+            )
+            
+            ColorPreview(
+                name: "Fluid",
+                hex: "#5BA6C5",
+                darkHex: "#5BA6C5",
+                color: .sh.fluid
+            )
+        }
+    }
+}
+
+#Preview("Byproduct colors") {
+    PreviewBackground {
+        ScrollView {
             VStack(spacing: 50) {
                 ColorPreview(
-                    name: "Primary",
-                    hex: "#E59243",
-                    darkHex: "#DA9D62",
-                    color: .sh.primary
+                    name: "Byproduct - 1",
+                    hex: "#C74646",
+                    darkHex: "#C74646",
+                    color: .sh.byproduct1
                 )
                 
                 ColorPreview(
-                    name: "Secondary",
-                    hex: "#1D2243",
-                    darkHex: "#BBC0E6",
-                    color: .sh.secondary
-                )
-            }
-        }
-        .previewDisplayName("General colors")
-        
-        PreviewBackground {
-            VStack(spacing: 50) {
-                ColorPreview(
-                    name: "Recipe Output",
-                    hex: "#8C8C8C",
-                    darkHex: "#8C8C8C",
-                    color: .sh.recipeOutput
+                    name: "Byproduct - 2",
+                    hex: "#DDCD29",
+                    darkHex: "#DDCD29",
+                    color: .sh.byproduct2
                 )
                 
                 ColorPreview(
-                    name: "Fluid",
-                    hex: "#5BA6C5",
-                    darkHex: "#5BA6C5",
-                    color: .sh.fluid
+                    name: "Byproduct - 3",
+                    hex: "#BAD70A",
+                    darkHex: "#BAD70A",
+                    color: .sh.byproduct3
+                )
+                
+                ColorPreview(
+                    name: "Byproduct - 4",
+                    hex: "#46AC0E",
+                    darkHex: "#46AC0E",
+                    color: .sh.byproduct4
+                )
+                
+                ColorPreview(
+                    name: "Byproduct - 5",
+                    hex: "#307BBA",
+                    darkHex: "#307BBA",
+                    color: .sh.byproduct5
+                )
+                
+                ColorPreview(
+                    name: "Byproduct - 6",
+                    hex: "#6457C5",
+                    darkHex: "#6457C5",
+                    color: .sh.byproduct6
+                )
+                
+                ColorPreview(
+                    name: "Byproduct - 7",
+                    hex: "#B060BA",
+                    darkHex: "#B060BA",
+                    color: .sh.byproduct7
+                )
+                
+                ColorPreview(
+                    name: "Byproduct - 8",
+                    hex: "#A4722F",
+                    darkHex: "#A4722F",
+                    color: .sh.byproduct8
+                )
+                
+                ColorPreview(
+                    name: "Byproduct - 9",
+                    hex: "#78B1B1",
+                    darkHex: "#78B1B1",
+                    color: .sh.byproduct9
+                )
+                
+                ColorPreview(
+                    name: "Byproduct - 10",
+                    hex: "#FF76AD",
+                    darkHex: "#FF76AD",
+                    color: .sh.byproduct10
                 )
             }
         }
-        .previewDisplayName("Recipe colors")
-        
-        PreviewBackground {
-            ScrollView {
-                VStack(spacing: 50) {
-                    ColorPreview(
-                        name: "Byproduct - 1",
-                        hex: "#C74646",
-                        darkHex: "#C74646",
-                        color: .sh.byproduct1
-                    )
-                    
-                    ColorPreview(
-                        name: "Byproduct - 2",
-                        hex: "#DDCD29",
-                        darkHex: "#DDCD29",
-                        color: .sh.byproduct2
-                    )
-                    
-                    ColorPreview(
-                        name: "Byproduct - 3",
-                        hex: "#BAD70A",
-                        darkHex: "#BAD70A",
-                        color: .sh.byproduct3
-                    )
-                    
-                    ColorPreview(
-                        name: "Byproduct - 4",
-                        hex: "#46AC0E",
-                        darkHex: "#46AC0E",
-                        color: .sh.byproduct4
-                    )
-                    
-                    ColorPreview(
-                        name: "Byproduct - 5",
-                        hex: "#307BBA",
-                        darkHex: "#307BBA",
-                        color: .sh.byproduct5
-                    )
-                    
-                    ColorPreview(
-                        name: "Byproduct - 6",
-                        hex: "#6457C5",
-                        darkHex: "#6457C5",
-                        color: .sh.byproduct6
-                    )
-                    
-                    ColorPreview(
-                        name: "Byproduct - 7",
-                        hex: "#B060BA",
-                        darkHex: "#B060BA",
-                        color: .sh.byproduct7
-                    )
-                    
-                    ColorPreview(
-                        name: "Byproduct - 8",
-                        hex: "#A4722F",
-                        darkHex: "#A4722F",
-                        color: .sh.byproduct8
-                    )
-                    
-                    ColorPreview(
-                        name: "Byproduct - 9",
-                        hex: "#78B1B1",
-                        darkHex: "#78B1B1",
-                        color: .sh.byproduct9
-                    )
-                    
-                    ColorPreview(
-                        name: "Byproduct - 10",
-                        hex: "#FF76AD",
-                        darkHex: "#FF76AD",
-                        color: .sh.byproduct10
-                    )
-                }
-            }
-        }
-        .previewDisplayName("Recipe colors")
     }
 }
 #endif

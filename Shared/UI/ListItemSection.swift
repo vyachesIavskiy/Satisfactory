@@ -36,7 +36,7 @@ struct ListItemSection: View {
                 }
                 .frame(alignment: .bottom)
             }
-            .frame(height: isExpanded ? nil : headerSize.height, alignment: .top)
+            .frame(height: (isSearching || isExpanded) ? nil : headerSize.height, alignment: .top)
             .clipShape(Rectangle().inset(by: -1))
         }
     }
@@ -46,6 +46,7 @@ struct ListItemSection: View {
             RecipeCalculationView(item: item)
         } label: {
             ListItemRow(item: item)
+                .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .padding(10)

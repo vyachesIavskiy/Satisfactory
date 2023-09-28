@@ -75,6 +75,7 @@ struct DisclaimerViewContainer: View {
         case .v1_5: result.append("v1.5")
         case .v1_5_1: result.append("v1.5.1")
         case .v1_6: result.append("v1.6")
+        case .v1_7: result.append("v1.7")
             
         case .preview: result.append("preview value (should not be visible in production)")
         }
@@ -91,6 +92,7 @@ struct DisclaimerViewContainer: View {
         case .v1_5: result.append("v1.5")
         case .v1_5_1: result.append("v1.5.1")
         case .v1_6: result.append("v1.6")
+        case .v1_7: result.append("v1.7")
             
         case .preview: result.append("preview value (should not be visible in production)")
         }

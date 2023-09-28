@@ -90,6 +90,7 @@ struct SettingsView: View {
         case .v1_5: return "Version 1.5"
         case .v1_5_1: return "Version 1.5.1"
         case .v1_6: return "Version 1.6"
+        case .v1_7: return "Version 1.7"
         }
     }
 }

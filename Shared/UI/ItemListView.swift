@@ -102,29 +102,29 @@ struct ItemListView: View {
             )
             .autocorrectionDisabled(true)
             .navigationTitle("Production")
-            .safeAreaInset(edge: .bottom) {
+            .toolbar {
                 if !model.productions.isEmpty {
-                    Button {
-                        isShowingStatistics = true
-                    } label: {
-                        Text("Production chains statistics")
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .padding(.bottom)
-                    .sheet(isPresented: $isShowingStatistics) {
-                        NavigationView {
-                            CalculationStatistics(data: model.statistics, machines: model.machineStatistics)
-                                .toolbar {
-                                    ToolbarItem(placement: .navigationBarTrailing) {
-                                        Button("Done") {
-                                            isShowingStatistics = false
-                                        }
-                                    }
-                                }
-                                .navigationTitle("Production chains statistics")
-                                .navigationBarTitleDisplayMode(.inline)
+                    ToolbarItem(placement: .primaryAction) {
+                        Button {
+                            isShowingStatistics = true
+                        } label: {
+                            Image(systemName: "checklist.unchecked")
                         }
                     }
+                }
+            }
+            .sheet(isPresented: $isShowingStatistics) {
+                NavigationStack {
+                    CalculationStatistics(data: model.statistics, machines: model.machineStatistics)
+                        .toolbar {
+                            ToolbarItem(placement: .confirmationAction) {
+                                Button("Done") {
+                                    isShowingStatistics = false
+                                }
+                            }
+                        }
+                        .navigationTitle("Production chains statistics")
+                        .navigationBarTitleDisplayMode(.inline)
                 }
             }
         }

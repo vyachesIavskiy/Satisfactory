@@ -44,34 +44,34 @@ struct RecipeSelectionForProductionItemView: View {
             selectedProductionChain: .constant(nil),
             showProductionChains: false
         )
-            .onChange(of: selectedRecipe) { newRecipe in
-                guard let newRecipe = newRecipe else { return }
-
-                if model.hasMultipleOfItem {
-                    isShowingConfirmation = true
-                } else {
-                    model.addOne(recipe: newRecipe)
-                    dismiss()
-                }
+        .onChange(of: selectedRecipe) { newRecipe in
+            guard let newRecipe = newRecipe else { return }
+            
+            if model.hasMultipleOfItem {
+                isShowingConfirmation = true
+            } else {
+                model.addOne(recipe: newRecipe)
+                dismiss()
             }
-            .confirmationDialog("Add for all such items or only for this one?", isPresented: $isShowingConfirmation) {
-                Button("For all") {
-                    model.add(recipe: selectedRecipe!)
-                    dismiss()
-                }
-
-                Button("This only") {
-                    model.addOne(recipe: selectedRecipe!)
-                    dismiss()
-                }
-
-                Button("Remaining") {
-                    model.addRemaining(recipe: selectedRecipe!)
-                    dismiss()
-                }
-
-                Button("Cancel", role: .cancel) {}
+        }
+        .confirmationDialog("Add for all such items or only for this one?", isPresented: $isShowingConfirmation) {
+            Button("For all") {
+                model.add(recipe: selectedRecipe!)
+                dismiss()
             }
+            
+            Button("This only") {
+                model.addOne(recipe: selectedRecipe!)
+                dismiss()
+            }
+            
+            Button("Remaining") {
+                model.addRemaining(recipe: selectedRecipe!)
+                dismiss()
+            }
+            
+            Button("Cancel", role: .cancel) {}
+        }
     }
 }
 

@@ -36,15 +36,15 @@ struct RecipeSelectionView: View {
     
     var body: some View {
         List {
-            Section {
-                productionList()
-            } header: {
-                if !productionChains.isEmpty && showProductionChains {
+            if !productionChains.isEmpty && showProductionChains {
+                Section {
+                    productionList()
+                } header: {
                     ListSectionHeader(title: "Saved productions")
                         .foregroundStyle(.primary)
                 }
+                .listRowSeparator(.hidden)
             }
-            .listRowSeparator(.hidden)
             
             Section {
                 recipesList(pinnedRecipes)
@@ -59,7 +59,7 @@ struct RecipeSelectionView: View {
             Section {
                 recipesList(sortedRecipes)
             } header: {
-                if !sortedRecipes.isEmpty {
+                if showProductionChains, !productionChains.isEmpty || !pinnedRecipes.isEmpty {
                     ListSectionHeader(title: "Recipes")
                         .foregroundStyle(.primary)
                 }

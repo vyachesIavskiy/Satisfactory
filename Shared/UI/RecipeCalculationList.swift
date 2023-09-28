@@ -4,14 +4,17 @@ struct RecipeCalculationList: View {
     @EnvironmentObject var storage: Storage
     @EnvironmentObject var settings: Settings
     
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var isShowingSaveAlert = false
     @State private var productionChainSaveName = ""
     @State private var recipeSelectionModel: RecipeSelectionModel?
+    @State private var isShowingStatistics = false
+    @State private var isShowingAlert = false
     
     @StateObject private var production: Production
     
     @Binding private var amount: Double
-    @Binding var isShowingStatistics: Bool
     
     private var isStartingAnew = true
     
@@ -23,53 +26,70 @@ struct RecipeCalculationList: View {
         .padding(.vertical, 15)
     }
     
-    private var saveProductionButton: some View {
-        Button("Save production chain") {
-            production.save()
-            
-            isShowingSaveAlert = true
-        }
-        .buttonStyle(.borderedProminent)
-        .padding(.vertical, 15)
-        .alert("Saved!", isPresented: $isShowingSaveAlert) {
-            Button("OK") {
-                isShowingSaveAlert = false
-            }
-        }
-    }
-    
     var body: some View {
-        VStack {
-            HStack {
-                statisticsButton
-                saveProductionButton
+        List {
+            ForEach(production.productionChainArray) { node in
+                HStack {
+                    Spacer()
+                    recipeTreeEntry(node, showName: node.element.item.id != production.item.id)
+                        .frame(maxWidth: 700)
+                    Spacer()
+                }
+            }
+            .listRowSeparator(.hidden)
+        }
+        .listStyle(.plain)
+        .navigationTitle(production.item.name)
+        .onAppear {
+            production.storage = storage
+            if isStartingAnew {
+                production.checkInput(for: production.recipe)
+            }
+        }
+        .onChange(of: amount) { newAmount in
+            production.amount = newAmount
+        }
+        .sheet(item: $recipeSelectionModel) { recipeSelectionModel in
+            RecipeSelectionForProductionItemView(
+                model: recipeSelectionModel
+            )
+        }
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                Button(role: .destructive) {
+                    isShowingAlert = true
+                } label: {
+                    Image(systemName: "xmark")
+                }
+                .alert(isPresented: $isShowingAlert) {
+                    Alert(
+                        title: Text("Exiting"),
+                        message: Text("Are you sure you would like to exit? All unsaved changes will be lost."),
+                        primaryButton: .destructive(Text("Exit")) {
+                            dismiss()
+                        },
+                        secondaryButton: .cancel()
+                    )
+                }
             }
             
-            List {
-                ForEach(production.productionChainArray) { node in
-                    HStack {
-                        Spacer()
-                        recipeTreeEntry(node)
-                            .frame(maxWidth: 700)
-                        Spacer()
-                    }
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Save") {
+                    production.save()
+                    
+                    isShowingSaveAlert = true
                 }
-                .listRowSeparator(.hidden)
-            }
-            .listStyle(.plain)
-            .onAppear {
-                production.storage = storage
-                if isStartingAnew {
-                    production.checkInput(for: production.recipe)
+                .alert("Saved!", isPresented: $isShowingSaveAlert) {
+                    Button("OK") {}
                 }
             }
-            .onChange(of: amount) { newAmount in
-                production.amount = newAmount
-            }
-            .sheet(item: $recipeSelectionModel) { recipeSelectionModel in
-                RecipeSelectionForProductionItemView(
-                    model: recipeSelectionModel
-                )
+            
+            ToolbarItem(placement: .primaryAction) {
+                Button {
+                    isShowingStatistics = true
+                } label: {
+                    Image(systemName: "checklist.unchecked")
+                }
             }
         }
         .sheet(isPresented: $isShowingStatistics) {
@@ -92,23 +112,23 @@ struct RecipeCalculationList: View {
         }
     }
     
-    init(item: Item, recipe: Recipe, amount: Binding<Double>, isShowingStatistics: Binding<Bool>) {
+    init(item: Item, recipe: Recipe, amount: Binding<Double>) {
         _amount = amount
-        _isShowingStatistics = isShowingStatistics
         _production = .init(wrappedValue: Production(item: item, recipe: recipe, amount: amount.wrappedValue))
     }
     
-    init(productionChain: ProductionChain, amount: Binding<Double>, isShowingStatistics: Binding<Bool>) {
+    init(productionChain: ProductionChain, amount: Binding<Double>) {
         _amount = amount
-        _isShowingStatistics = isShowingStatistics
         _production = .init(wrappedValue: Production(productionChain: productionChain))
         isStartingAnew = false
     }
     
-    private func recipeTreeEntry(_ tree: RecipeTree) -> some View {
+    private func recipeTreeEntry(_ tree: RecipeTree, showName: Bool) -> some View {
         VStack {
-            Text(tree.element.recipe.name)
-                .fontWeight(.semibold)
+            if showName {
+                Text(tree.element.recipe.name)
+                    .fontWeight(.semibold)
+            }
             
             switch settings.itemViewStyle {
             case .icon:
@@ -191,9 +211,15 @@ struct RecipeCalculationListPreviews: PreviewProvider {
     }
     
     static var previews: some View {
-        RecipeCalculationList(item: item, recipe: recipe, amount: .constant(40), isShowingStatistics: .constant(false))
-            .environmentObject(storage)
-            .environmentObject(Settings())
+        NavigationStack {
+            RecipeCalculationList(
+                item: item,
+                recipe: recipe,
+                amount: .constant(40)
+            )
+        }
+        .environmentObject(storage)
+        .environmentObject(Settings())
     }
 }
 

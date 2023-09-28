@@ -885,7 +885,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.endios.Satisfactory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -909,7 +909,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.endios.Satisfactory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;

@@ -110,6 +110,7 @@
 		F95DAFD52AC6ACC60062A5AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 450BD19124A6395700948B47 /* Assets.xcassets */; };
 		F95DAFD62AC6ACC60062A5AD /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 450BD1C624A639FD00948B47 /* recipes.json */; };
 		F95DAFD72AC6ACC60062A5AD /* buildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 450BD1C524A639FD00948B47 /* buildings.json */; };
+		F95DAFDE2AC6AE9F0062A5AD /* Info-AppStoreScreenshots.plist in Resources */ = {isa = PBXBuildFile; fileRef = F95DAFDD2AC6AE9F0062A5AD /* Info-AppStoreScreenshots.plist */; };
 		F95FAAA3273C2F4B0043D3C4 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAA2273C2F4B0043D3C4 /* PersistentStorage.swift */; };
 		F95FAAA5273C3E7E0043D3C4 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FAAA4273C3E7E0043D3C4 /* DataProvider.swift */; };
 		F95FAAA7273C3F210043D3C4 /* version.json in Resources */ = {isa = PBXBuildFile; fileRef = F95FAAA6273C3F210043D3C4 /* version.json */; };
@@ -228,7 +229,7 @@
 		F946413E26A361E2001F8ACF /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		F946414126A36294001F8ACF /* RecipeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSelectionView.swift; sourceTree = "<group>"; };
 		F95DAFDB2AC6ACC60062A5AD /* iOS AppStore Screenshots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS AppStore Screenshots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F95DAFDC2AC6ACC60062A5AD /* Info-AppStoreScreenshots.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-AppStoreScreenshots.plist"; path = "/Users/slava/Developer/Satisfactory/Info-AppStoreScreenshots.plist"; sourceTree = "<absolute>"; };
+		F95DAFDD2AC6AE9F0062A5AD /* Info-AppStoreScreenshots.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-AppStoreScreenshots.plist"; sourceTree = "<group>"; };
 		F95FAAA2273C2F4B0043D3C4 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
 		F95FAAA4273C3E7E0043D3C4 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		F95FAAA6273C3F210043D3C4 /* version.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = version.json; sourceTree = "<group>"; };
@@ -350,7 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				450BD19924A6395700948B47 /* Info.plist */,
-				F95DAFDC2AC6ACC60062A5AD /* Info-AppStoreScreenshots.plist */,
+				F95DAFDD2AC6AE9F0062A5AD /* Info-AppStoreScreenshots.plist */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -640,6 +641,7 @@
 				450BD1F824A639FE00948B47 /* parts.json in Resources */,
 				F95FAAA7273C3F210043D3C4 /* version.json in Resources */,
 				450BD1FA24A639FE00948B47 /* equipment.json in Resources */,
+				F95DAFDE2AC6AE9F0062A5AD /* Info-AppStoreScreenshots.plist in Resources */,
 				450BD1A624A6395700948B47 /* Assets.xcassets in Resources */,
 				450BD1F424A639FE00948B47 /* recipes.json in Resources */,
 				450BD1F224A639FE00948B47 /* buildings.json in Resources */,

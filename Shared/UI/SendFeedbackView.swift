@@ -58,7 +58,7 @@ struct SendFeedbackView: UIViewControllerRepresentable {
         vc.navigationBar.tintColor = UIColor(named: "Primary")
         
         vc.setToRecipients(["satisfactory.helper.app@gmail.com"])
-        vc.setSubject("Feedback about Satisfactory Helper app v1.5")
+        vc.setSubject("Feedback about Satisfactory Helper app v\(Bundle.main.appVersion)")
         return vc
     }
     

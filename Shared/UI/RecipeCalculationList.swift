@@ -39,7 +39,14 @@ struct RecipeCalculationList: View {
             .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
-        .navigationTitle(production.item.name)
+        .safeAreaInset(edge: .top) {
+            RecipeCalculatorHeader(item: production.item, amount: $amount)
+                .frame(maxWidth: 700)
+                .padding(.horizontal)
+                .padding(.vertical, 4)
+                .frame(maxWidth: .infinity)
+                .background(.bar)
+        }
         .onAppear {
             production.storage = storage
             if isStartingAnew {

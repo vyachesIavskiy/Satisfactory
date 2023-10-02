@@ -14,7 +14,7 @@ struct RecipeCalculationList: View {
     
     @StateObject private var production: Production
     
-    @State private var amount: Double
+    @State private var amount = 1.0
     
     private var isStartingAnew = true
     
@@ -119,13 +119,11 @@ struct RecipeCalculationList: View {
         }
     }
     
-    init(item: Item, recipe: Recipe, amount: Double) {
-        _amount = State(initialValue: amount)
-        _production = .init(wrappedValue: Production(item: item, recipe: recipe, amount: amount))
+    init(item: Item, recipe: Recipe) {
+        _production = .init(wrappedValue: Production(item: item, recipe: recipe, amount: 1.0))
     }
     
-    init(productionChain: ProductionChain, amount: Double) {
-        _amount = State(initialValue: amount)
+    init(productionChain: ProductionChain) {
         _production = .init(wrappedValue: Production(productionChain: productionChain))
         isStartingAnew = false
     }
@@ -219,11 +217,7 @@ struct RecipeCalculationListPreviews: PreviewProvider {
     
     static var previews: some View {
         NavigationStack {
-            RecipeCalculationList(
-                item: item,
-                recipe: recipe,
-                amount: 40
-            )
+            RecipeCalculationList(item: item, recipe: recipe)
         }
         .environmentObject(storage)
         .environmentObject(Settings())

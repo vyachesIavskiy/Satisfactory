@@ -3,8 +3,6 @@ import SwiftUI
 struct RecipeCalculationView: View {
     let item: Item
     
-    @State private var amount: Double = 1
-    
     @State private var recipe: Recipe?
     
     @State private var productionChain: ProductionChain?
@@ -18,26 +16,20 @@ struct RecipeCalculationView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        VStack {
-            RecipeCalculatorHeader(item: item, amount: $amount)
-                .padding(.horizontal)
-                .frame(maxWidth: 700)
-            
-            RecipeSelectionView(
-                item: item,
-                selectedRecipe: $recipe,
-                selectedProductionChain: $productionChain
-            )
-        }
-        .navigationBarTitleDisplayMode(.inline)
+        RecipeSelectionView(
+            item: item,
+            selectedRecipe: $recipe,
+            selectedProductionChain: $productionChain
+        )
+        .navigationTitle(item.name)
         .fullScreenCover(item: $recipe) { recipe in
             NavigationStack {
-                RecipeCalculationList(item: item, recipe: recipe, amount: amount)
+                RecipeCalculationList(item: item, recipe: recipe)
             }
         }
         .fullScreenCover(item: $productionChain) { productionChain in
             NavigationStack {
-                RecipeCalculationList(productionChain: productionChain, amount: amount)
+                RecipeCalculationList(productionChain: productionChain)
             }
         }
     }

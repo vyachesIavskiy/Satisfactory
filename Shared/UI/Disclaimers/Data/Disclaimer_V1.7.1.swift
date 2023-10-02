@@ -1,25 +1,15 @@
 
 extension Disclaimer {
-    static var v1_7: Disclaimer {
+    static var v1_7_1: Disclaimer {
         Disclaimer(
-            version: .v1_7,
+            version: .v1_7_1,
             updateMessage: """
-            Ahoj!
-            
-            Another small update that does not break anything 🤞. Although there are some fixes in UI. Hope you enjoy! In any case you can let us know via a feedback in settings!
+            A very big thanks this time goes to **Christopher Notley-Smith** for pointing out that a most recent change in UI removed an ability to change the amount of production while selecting recipes. This update fixes this issue.
             """,
             changes: [
                 Change(
-                    log: "Saved productions are no longer visible in recipe selection screen for production.",
+                    log: "Restored ability to change production amount while selecting recipes.",
                     changeType: .fix
-                ),
-                Change(
-                    log: "Items list has a new UI (again).",
-                    changeType: .addition
-                ),
-                Change(
-                    log: "Production screen is now a separate full screen view. We hope this way it will not so confusing.",
-                    changeType: .addition
                 )
             ]
         )

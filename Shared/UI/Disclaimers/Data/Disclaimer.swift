@@ -8,6 +8,7 @@ struct Disclaimer: Equatable, Identifiable {
         case v1_5_1
         case v1_6
         case v1_7
+        case v1_7_1
         
         static var validVersions: [Version] = Array(allCases.dropFirst())
     }
@@ -85,6 +86,7 @@ extension Disclaimer {
         case .v1_5_1: .v1_5_1
         case .v1_6: .v1_6
         case .v1_7: .v1_7
+        case .v1_7_1: .v1_7_1
         }
     }
     
@@ -107,6 +109,7 @@ extension Disclaimer {
         case .v1_5_1: key.append("v1_5_1")
         case .v1_6: key.append("v1_6")
         case .v1_7: key.append("v1_7")
+        case .v1_7_1: key.append("v1_7_1")
             
         case .preview: break
         }

@@ -37,6 +37,9 @@
 		45115BE024BF559E00D58F6A /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BDE24BF559E00D58F6A /* ItemRow.swift */; };
 		45115BE524BF578F00D58F6A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BE424BF578F00D58F6A /* RecipeView.swift */; };
 		45115BE624BF578F00D58F6A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BE424BF578F00D58F6A /* RecipeView.swift */; };
+		F934317F2ACAA2A30082C404 /* Disclaimer_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */; };
+		F93431802ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */; };
+		F93431812ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */; };
 		F946413926A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */; };
 		F946413A26A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */; };
 		F946413F26A361E2001F8ACF /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413E26A361E2001F8ACF /* ItemListView.swift */; };
@@ -225,6 +228,7 @@
 		450BD1CA24A639FD00948B47 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		45115BDE24BF559E00D58F6A /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		45115BE424BF578F00D58F6A /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.7.1.swift; sourceTree = "<group>"; };
 		F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointFormatStyle.swift; sourceTree = "<group>"; };
 		F946413E26A361E2001F8ACF /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		F946414126A36294001F8ACF /* RecipeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSelectionView.swift; sourceTree = "<group>"; };
@@ -538,6 +542,7 @@
 				F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */,
 				F9DCF6AB2A2F8C37007B94DF /* Disclaimer_V1.6.swift */,
 				F9BAB9D82AC614CF00BE130F /* Disclaimer_V1.7.swift */,
+				F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -714,6 +719,7 @@
 				F9B91044273EA79700274EE3 /* RecipeSelectionForProductionItemView.swift in Sources */,
 				F98BB2CB273D356A000556E9 /* PartPersistent.swift in Sources */,
 				F9CBF0BA27493FD90020871C /* SettingsView.swift in Sources */,
+				F934317F2ACAA2A30082C404 /* Disclaimer_V1.7.1.swift in Sources */,
 				F95FAAB2273D0EE80043D3C4 /* InMemoryStorage.swift in Sources */,
 				F9B930022A26A06B00C173BF /* Disclaimer.swift in Sources */,
 				45115BE524BF578F00D58F6A /* RecipeView.swift in Sources */,
@@ -776,6 +782,7 @@
 				450BD1A324A6395700948B47 /* SatisfactoryApp.swift in Sources */,
 				450BD1DD24A639FE00948B47 /* Part.swift in Sources */,
 				F98BB2D6273E6CCF000556E9 /* DataProvider.swift in Sources */,
+				F93431812ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */,
 				F9CBF0BB27493FD90020871C /* SettingsView.swift in Sources */,
 				F98BB2D1273D356A000556E9 /* PartPersistent.swift in Sources */,
 				F9B92FFA2A26944B00C173BF /* BubbleModifier.swift in Sources */,
@@ -843,6 +850,7 @@
 				F95DAFB12AC6ACC60062A5AD /* RecipeSelectionForProductionItemView.swift in Sources */,
 				F95DAFB22AC6ACC60062A5AD /* PartPersistent.swift in Sources */,
 				F95DAFB32AC6ACC60062A5AD /* SettingsView.swift in Sources */,
+				F93431802ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */,
 				F95DAFB42AC6ACC60062A5AD /* InMemoryStorage.swift in Sources */,
 				F95DAFB52AC6ACC60062A5AD /* Disclaimer.swift in Sources */,
 				F95DAFB62AC6ACC60062A5AD /* RecipeView.swift in Sources */,

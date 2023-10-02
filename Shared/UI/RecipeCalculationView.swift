@@ -32,12 +32,12 @@ struct RecipeCalculationView: View {
         .navigationBarTitleDisplayMode(.inline)
         .fullScreenCover(item: $recipe) { recipe in
             NavigationStack {
-                RecipeCalculationList(item: item, recipe: recipe, amount: $amount)
+                RecipeCalculationList(item: item, recipe: recipe, amount: amount)
             }
         }
         .fullScreenCover(item: $productionChain) { productionChain in
             NavigationStack {
-                RecipeCalculationList(productionChain: productionChain, amount: $amount)
+                RecipeCalculationList(productionChain: productionChain, amount: amount)
             }
         }
     }

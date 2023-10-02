@@ -14,7 +14,7 @@ struct RecipeCalculationList: View {
     
     @StateObject private var production: Production
     
-    @Binding private var amount: Double
+    @State private var amount: Double
     
     private var isStartingAnew = true
     
@@ -119,13 +119,13 @@ struct RecipeCalculationList: View {
         }
     }
     
-    init(item: Item, recipe: Recipe, amount: Binding<Double>) {
-        _amount = amount
-        _production = .init(wrappedValue: Production(item: item, recipe: recipe, amount: amount.wrappedValue))
+    init(item: Item, recipe: Recipe, amount: Double) {
+        _amount = State(initialValue: amount)
+        _production = .init(wrappedValue: Production(item: item, recipe: recipe, amount: amount))
     }
     
-    init(productionChain: ProductionChain, amount: Binding<Double>) {
-        _amount = amount
+    init(productionChain: ProductionChain, amount: Double) {
+        _amount = State(initialValue: amount)
         _production = .init(wrappedValue: Production(productionChain: productionChain))
         isStartingAnew = false
     }
@@ -222,7 +222,7 @@ struct RecipeCalculationListPreviews: PreviewProvider {
             RecipeCalculationList(
                 item: item,
                 recipe: recipe,
-                amount: .constant(40)
+                amount: 40
             )
         }
         .environmentObject(storage)

@@ -55,4 +55,3 @@ struct RecipeCalculationPreviews: PreviewProvider {
         .environmentObject(Settings())
     }
 }
-

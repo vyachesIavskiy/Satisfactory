@@ -24,7 +24,7 @@ struct Equipment: Encodable, Item, CustomStringConvertible {
         ammo: Part? = nil,
         consumes: Part? = nil
     ) {
-        self.id = "equipment-\(name.idFromName)"
+        self.id = name.idFromName
         self.name = name
         self.slot = slot
         self.fuel = fuel

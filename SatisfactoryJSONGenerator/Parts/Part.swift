@@ -17,7 +17,7 @@ struct Part: Encodable, Item, CustomStringConvertible {
         sortingPriority: Int,
         rawResource: Bool = false
     ) {
-        self.id = "part-\(name.idFromName)"
+        self.id = name.idFromName
         self.name = name
         self.partType = partType
         self.tier = tier

@@ -1,0 +1,938 @@
+[
+  {
+    "isNaturalResource" : true,
+    "formID" : "solid",
+    "id" : "part-hog-remains",
+    "categoryID" : "category-aliens"
+  },
+  {
+    "categoryID" : "category-aliens",
+    "formID" : "solid",
+    "isNaturalResource" : true,
+    "id" : "part-plasma-spitter-remains"
+  },
+  {
+    "isNaturalResource" : true,
+    "id" : "part-stinger-remains",
+    "categoryID" : "category-aliens",
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-hatcher-remains",
+    "categoryID" : "category-aliens",
+    "isNaturalResource" : true,
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-alien-protein",
+    "isNaturalResource" : true,
+    "formID" : "solid",
+    "categoryID" : "category-aliens"
+  },
+  {
+    "isNaturalResource" : true,
+    "id" : "part-alien-dna-capsule",
+    "categoryID" : "category-aliens",
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-biomass",
+    "categoryID" : "category-biomass",
+    "isNaturalResource" : false,
+    "formID" : "solid"
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "categoryID" : "category-biomass",
+    "id" : "part-solid-biofuel"
+  },
+  {
+    "categoryID" : "category-biomass",
+    "formID" : "solid",
+    "id" : "part-fabric",
+    "isNaturalResource" : false
+  },
+  {
+    "id" : "part-crystal-oscillator",
+    "formID" : "solid",
+    "categoryID" : "category-communications",
+    "isNaturalResource" : false
+  },
+  {
+    "categoryID" : "category-communications",
+    "id" : "part-computer",
+    "formID" : "solid",
+    "isNaturalResource" : false
+  },
+  {
+    "isNaturalResource" : false,
+    "id" : "part-radio-control-unit",
+    "formID" : "solid",
+    "categoryID" : "category-communications"
+  },
+  {
+    "id" : "part-supercomputer",
+    "categoryID" : "category-communications",
+    "isNaturalResource" : false,
+    "formID" : "solid"
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "categoryID" : "category-consumed",
+    "id" : "part-color-cartridge"
+  },
+  {
+    "categoryID" : "category-consumed",
+    "isNaturalResource" : false,
+    "id" : "part-iron-rebar",
+    "formID" : "solid"
+  },
+  {
+    "categoryID" : "category-consumed",
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "id" : "part-stun-rebar"
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "categoryID" : "category-consumed",
+    "id" : "part-shatter-rebar"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "id" : "part-explosive-rebar",
+    "categoryID" : "category-consumed"
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "id" : "part-black-powder",
+    "categoryID" : "category-consumed"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-consumed",
+    "id" : "part-smokeless-powder"
+  },
+  {
+    "id" : "part-nobelisk",
+    "categoryID" : "category-consumed",
+    "formID" : "solid",
+    "isNaturalResource" : false
+  },
+  {
+    "categoryID" : "category-consumed",
+    "id" : "part-gas-nobelisk",
+    "formID" : "solid",
+    "isNaturalResource" : false
+  },
+  {
+    "id" : "part-pulse-nobelisk",
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-consumed"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-consumed",
+    "id" : "part-cluster-nobelisk"
+  },
+  {
+    "id" : "part-nuke-nobelisk",
+    "formID" : "solid",
+    "categoryID" : "category-consumed",
+    "isNaturalResource" : false
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "categoryID" : "category-consumed",
+    "id" : "part-rifle-ammo"
+  },
+  {
+    "id" : "part-homing-rifle-ammo",
+    "isNaturalResource" : false,
+    "categoryID" : "category-consumed",
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-turbo-rifle-ammo",
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "categoryID" : "category-consumed"
+  },
+  {
+    "categoryID" : "category-consumed",
+    "isNaturalResource" : false,
+    "id" : "part-gas-filter",
+    "formID" : "solid"
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "id" : "part-iodine-infused-filter",
+    "categoryID" : "category-consumed"
+  },
+  {
+    "isNaturalResource" : false,
+    "id" : "part-empty-canister",
+    "formID" : "solid",
+    "categoryID" : "category-containers"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-containers",
+    "id" : "part-empty-fluid-tank"
+  },
+  {
+    "categoryID" : "category-containers",
+    "formID" : "solid",
+    "id" : "part-pressure-conversion-cube",
+    "isNaturalResource" : false
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "id" : "part-packaged-water",
+    "categoryID" : "category-containers"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-packaged-oil",
+    "categoryID" : "category-containers",
+    "isNaturalResource" : false
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "id" : "part-packaged-heavy-oil-residue",
+    "categoryID" : "category-containers"
+  },
+  {
+    "id" : "part-packaged-fuel",
+    "categoryID" : "category-containers",
+    "isNaturalResource" : false,
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-packaged-liquid-biofuel",
+    "formID" : "solid",
+    "categoryID" : "category-containers",
+    "isNaturalResource" : false
+  },
+  {
+    "formID" : "solid",
+    "categoryID" : "category-containers",
+    "isNaturalResource" : false,
+    "id" : "part-packaged-turbofuel"
+  },
+  {
+    "categoryID" : "category-containers",
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "id" : "part-packaged-alumina-solution"
+  },
+  {
+    "isNaturalResource" : false,
+    "categoryID" : "category-containers",
+    "formID" : "solid",
+    "id" : "part-packaged-sulfuric-acid"
+  },
+  {
+    "id" : "part-packaged-nitric-acid",
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-containers"
+  },
+  {
+    "formID" : "solid",
+    "categoryID" : "category-containers",
+    "isNaturalResource" : false,
+    "id" : "part-packaged-nitrogen-gas"
+  },
+  {
+    "id" : "part-wire",
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "categoryID" : "category-electronics"
+  },
+  {
+    "categoryID" : "category-electronics",
+    "formID" : "solid",
+    "id" : "part-cable",
+    "isNaturalResource" : false
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-quickwire",
+    "categoryID" : "category-electronics",
+    "isNaturalResource" : false
+  },
+  {
+    "isNaturalResource" : false,
+    "id" : "part-ai-limiter",
+    "formID" : "solid",
+    "categoryID" : "category-electronics"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-circuit-board",
+    "isNaturalResource" : false,
+    "categoryID" : "category-electronics"
+  },
+  {
+    "id" : "part-high-speed-connector",
+    "formID" : "solid",
+    "categoryID" : "category-electronics",
+    "isNaturalResource" : false
+  },
+  {
+    "id" : "part-ficsmas-gift",
+    "categoryID" : "category-ficsmas",
+    "isNaturalResource" : true,
+    "formID" : "solid"
+  },
+  {
+    "isNaturalResource" : false,
+    "categoryID" : "category-ficsmas",
+    "formID" : "solid",
+    "id" : "part-ficsmas-tree-branch"
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "id" : "part-candy-cane",
+    "categoryID" : "category-ficsmas"
+  },
+  {
+    "id" : "part-ficsmas-bow",
+    "formID" : "solid",
+    "categoryID" : "category-ficsmas",
+    "isNaturalResource" : false
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "id" : "part-red-ficsmas-ornament",
+    "categoryID" : "category-ficsmas"
+  },
+  {
+    "formID" : "solid",
+    "categoryID" : "category-ficsmas",
+    "isNaturalResource" : false,
+    "id" : "part-blue-ficsmas-ornament"
+  },
+  {
+    "id" : "part-actual-snow",
+    "isNaturalResource" : false,
+    "categoryID" : "category-ficsmas",
+    "formID" : "solid"
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "id" : "part-copper-ficsmas-ornament",
+    "categoryID" : "category-ficsmas"
+  },
+  {
+    "isNaturalResource" : false,
+    "id" : "part-iron-ficsmas-ornament",
+    "formID" : "solid",
+    "categoryID" : "category-ficsmas"
+  },
+  {
+    "id" : "part-ficsmas-ornament-bundle",
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "categoryID" : "category-ficsmas"
+  },
+  {
+    "categoryID" : "category-ficsmas",
+    "id" : "part-ficsmas-decoration",
+    "isNaturalResource" : false,
+    "formID" : "solid"
+  },
+  {
+    "isNaturalResource" : false,
+    "id" : "part-ficsmas-wonder-star",
+    "categoryID" : "category-ficsmas",
+    "formID" : "solid"
+  },
+  {
+    "categoryID" : "category-ficsmas",
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "id" : "part-snowball"
+  },
+  {
+    "isNaturalResource" : false,
+    "id" : "part-sweet-fireworks",
+    "categoryID" : "category-ficsmas",
+    "formID" : "solid"
+  },
+  {
+    "isNaturalResource" : false,
+    "categoryID" : "category-ficsmas",
+    "id" : "part-fancy-fireworks",
+    "formID" : "solid"
+  },
+  {
+    "categoryID" : "category-ficsmas",
+    "isNaturalResource" : false,
+    "id" : "part-sparkly-fireworks",
+    "formID" : "solid"
+  },
+  {
+    "categoryID" : "category-fluids",
+    "formID" : "fluid",
+    "id" : "part-water",
+    "isNaturalResource" : true
+  },
+  {
+    "formID" : "fluid",
+    "id" : "part-crude-oil",
+    "categoryID" : "category-fluids",
+    "isNaturalResource" : true
+  },
+  {
+    "id" : "part-heavy-oil-residue",
+    "categoryID" : "category-fluids",
+    "formID" : "fluid",
+    "isNaturalResource" : false
+  },
+  {
+    "categoryID" : "category-fluids",
+    "formID" : "fluid",
+    "id" : "part-fuel",
+    "isNaturalResource" : false
+  },
+  {
+    "id" : "part-liquid-biofuel",
+    "categoryID" : "category-fluids",
+    "formID" : "fluid",
+    "isNaturalResource" : false
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "fluid",
+    "id" : "part-turbofuel",
+    "categoryID" : "category-fluids"
+  },
+  {
+    "id" : "part-alumina-solution",
+    "isNaturalResource" : false,
+    "categoryID" : "category-fluids",
+    "formID" : "fluid"
+  },
+  {
+    "categoryID" : "category-fluids",
+    "formID" : "fluid",
+    "isNaturalResource" : false,
+    "id" : "part-sulfuric-acid"
+  },
+  {
+    "id" : "part-nitric-acid",
+    "formID" : "fluid",
+    "categoryID" : "category-fluids",
+    "isNaturalResource" : false
+  },
+  {
+    "categoryID" : "category-fuels",
+    "id" : "part-leaves",
+    "formID" : "solid",
+    "isNaturalResource" : true
+  },
+  {
+    "isNaturalResource" : true,
+    "categoryID" : "category-fuels",
+    "id" : "part-wood",
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-mycelia",
+    "categoryID" : "category-fuels",
+    "isNaturalResource" : true,
+    "formID" : "solid"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : true,
+    "id" : "part-flower-petals",
+    "categoryID" : "category-fuels"
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "categoryID" : "category-fuels",
+    "id" : "part-compacted-coal"
+  },
+  {
+    "id" : "part-nitrogen-gas",
+    "formID" : "gas",
+    "categoryID" : "category-gases",
+    "isNaturalResource" : true
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-rotor",
+    "categoryID" : "category-industrial-parts",
+    "isNaturalResource" : false
+  },
+  {
+    "id" : "part-stator",
+    "categoryID" : "category-industrial-parts",
+    "isNaturalResource" : false,
+    "formID" : "solid"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-industrial-parts",
+    "id" : "part-motor"
+  },
+  {
+    "categoryID" : "category-industrial-parts",
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "id" : "part-heat-sink"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-cooling-system",
+    "categoryID" : "category-industrial-parts",
+    "isNaturalResource" : false
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-fused-modular-frame",
+    "categoryID" : "category-industrial-parts",
+    "isNaturalResource" : false
+  },
+  {
+    "isNaturalResource" : false,
+    "categoryID" : "category-industrial-parts",
+    "id" : "part-battery",
+    "formID" : "solid"
+  },
+  {
+    "categoryID" : "category-industrial-parts",
+    "formID" : "solid",
+    "id" : "part-turbo-motor",
+    "isNaturalResource" : false
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "categoryID" : "category-ingots",
+    "id" : "part-iron-ingot"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "id" : "part-copper-ingot",
+    "categoryID" : "category-ingots"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-steel-ingot",
+    "isNaturalResource" : false,
+    "categoryID" : "category-ingots"
+  },
+  {
+    "categoryID" : "category-ingots",
+    "isNaturalResource" : false,
+    "id" : "part-caterium-ingot",
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-aluminum-ingot",
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-ingots"
+  },
+  {
+    "id" : "part-concrete",
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-minerals"
+  },
+  {
+    "categoryID" : "category-minerals",
+    "isNaturalResource" : false,
+    "id" : "part-quartz-crystal",
+    "formID" : "solid"
+  },
+  {
+    "categoryID" : "category-minerals",
+    "isNaturalResource" : false,
+    "id" : "part-silica",
+    "formID" : "solid"
+  },
+  {
+    "categoryID" : "category-minerals",
+    "id" : "part-aluminum-scrap",
+    "isNaturalResource" : false,
+    "formID" : "solid"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "id" : "part-copper-powder",
+    "categoryID" : "category-minerals"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-nuclear",
+    "id" : "part-electromagnetic-control-rod"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-encased-uranium-cell",
+    "categoryID" : "category-nuclear",
+    "isNaturalResource" : false
+  },
+  {
+    "id" : "part-uranium-fuel-rod",
+    "categoryID" : "category-nuclear",
+    "formID" : "solid",
+    "isNaturalResource" : false
+  },
+  {
+    "categoryID" : "category-nuclear",
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "id" : "part-uranium-waste"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-nuclear",
+    "id" : "part-non-fissile-uranium"
+  },
+  {
+    "id" : "part-plutonium-pellet",
+    "categoryID" : "category-nuclear",
+    "isNaturalResource" : false,
+    "formID" : "solid"
+  },
+  {
+    "isNaturalResource" : false,
+    "id" : "part-encased-plutonium-cell",
+    "categoryID" : "category-nuclear",
+    "formID" : "solid"
+  },
+  {
+    "formID" : "solid",
+    "categoryID" : "category-nuclear",
+    "isNaturalResource" : false,
+    "id" : "part-plutonium-fuel-rod"
+  },
+  {
+    "id" : "part-plutonium-waste",
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-nuclear"
+  },
+  {
+    "isNaturalResource" : false,
+    "id" : "part-petroleum-coke",
+    "categoryID" : "category-oil-products",
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-polymer-resin",
+    "categoryID" : "category-oil-products",
+    "formID" : "solid",
+    "isNaturalResource" : false
+  },
+  {
+    "id" : "part-rubber",
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-oil-products"
+  },
+  {
+    "categoryID" : "category-oil-products",
+    "isNaturalResource" : false,
+    "id" : "part-plastic",
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-iron-ore",
+    "isNaturalResource" : true,
+    "formID" : "solid",
+    "categoryID" : "category-ores"
+  },
+  {
+    "categoryID" : "category-ores",
+    "formID" : "solid",
+    "id" : "part-copper-ore",
+    "isNaturalResource" : true
+  },
+  {
+    "formID" : "solid",
+    "categoryID" : "category-ores",
+    "isNaturalResource" : true,
+    "id" : "part-limestone"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-coal",
+    "isNaturalResource" : true,
+    "categoryID" : "category-ores"
+  },
+  {
+    "id" : "part-caterium-ore",
+    "categoryID" : "category-ores",
+    "formID" : "solid",
+    "isNaturalResource" : true
+  },
+  {
+    "categoryID" : "category-ores",
+    "isNaturalResource" : true,
+    "id" : "part-bauxite",
+    "formID" : "solid"
+  },
+  {
+    "categoryID" : "category-ores",
+    "formID" : "solid",
+    "isNaturalResource" : true,
+    "id" : "part-raw-quartz"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-sulfur",
+    "isNaturalResource" : true,
+    "categoryID" : "category-ores"
+  },
+  {
+    "categoryID" : "category-ores",
+    "isNaturalResource" : true,
+    "id" : "part-uranium",
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-sam-ore",
+    "categoryID" : "category-ores",
+    "isNaturalResource" : true,
+    "formID" : "solid"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-power-shard",
+    "categoryID" : "category-power-shards",
+    "isNaturalResource" : false
+  },
+  {
+    "id" : "part-blue-power-slug",
+    "isNaturalResource" : true,
+    "categoryID" : "category-power-slugs",
+    "formID" : "solid"
+  },
+  {
+    "categoryID" : "category-power-slugs",
+    "formID" : "solid",
+    "isNaturalResource" : true,
+    "id" : "part-yellow-power-slug"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-purple-power-slug",
+    "isNaturalResource" : true,
+    "categoryID" : "category-power-slugs"
+  },
+  {
+    "id" : "part-quantum-computer",
+    "formID" : "solid",
+    "categoryID" : "category-quantum-technology",
+    "isNaturalResource" : false
+  },
+  {
+    "isNaturalResource" : false,
+    "id" : "part-superposition-oscillator",
+    "formID" : "solid",
+    "categoryID" : "category-quantum-technology"
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "id" : "part-smart-plating",
+    "categoryID" : "category-space-elevator-parts"
+  },
+  {
+    "isNaturalResource" : false,
+    "formID" : "solid",
+    "categoryID" : "category-space-elevator-parts",
+    "id" : "part-versatile-framework"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-automated-wiring",
+    "categoryID" : "category-space-elevator-parts",
+    "isNaturalResource" : false
+  },
+  {
+    "formID" : "solid",
+    "categoryID" : "category-space-elevator-parts",
+    "id" : "part-modular-engine",
+    "isNaturalResource" : false
+  },
+  {
+    "id" : "part-adaptive-control-unit",
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "categoryID" : "category-space-elevator-parts"
+  },
+  {
+    "formID" : "solid",
+    "categoryID" : "category-space-elevator-parts",
+    "isNaturalResource" : false,
+    "id" : "part-assembly-director-system"
+  },
+  {
+    "categoryID" : "category-space-elevator-parts",
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "id" : "part-magnetic-field-generator"
+  },
+  {
+    "id" : "part-thermal-propulsion-rocket",
+    "categoryID" : "category-space-elevator-parts",
+    "isNaturalResource" : false,
+    "formID" : "solid"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "id" : "part-nuclear-pasta",
+    "categoryID" : "category-space-elevator-parts"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-bacon-agaric",
+    "categoryID" : "category-special",
+    "isNaturalResource" : true
+  },
+  {
+    "id" : "part-beryl-nut",
+    "categoryID" : "category-special",
+    "isNaturalResource" : true,
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-paleberry",
+    "formID" : "solid",
+    "categoryID" : "category-special",
+    "isNaturalResource" : true
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : true,
+    "categoryID" : "category-special",
+    "id" : "part-somersloop"
+  },
+  {
+    "id" : "part-mercer-sphere",
+    "isNaturalResource" : true,
+    "formID" : "solid",
+    "categoryID" : "category-special"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-ficsit-coupon",
+    "categoryID" : "category-special",
+    "isNaturalResource" : true
+  },
+  {
+    "id" : "part-hard-drive",
+    "formID" : "solid",
+    "categoryID" : "category-special",
+    "isNaturalResource" : true
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-hub-parts",
+    "categoryID" : "category-special",
+    "isNaturalResource" : true
+  },
+  {
+    "id" : "part-iron-rod",
+    "formID" : "solid",
+    "categoryID" : "category-standard-parts",
+    "isNaturalResource" : false
+  },
+  {
+    "categoryID" : "category-standard-parts",
+    "id" : "part-iron-plate",
+    "isNaturalResource" : false,
+    "formID" : "solid"
+  },
+  {
+    "formID" : "solid",
+    "isNaturalResource" : false,
+    "id" : "part-screw",
+    "categoryID" : "category-standard-parts"
+  },
+  {
+    "formID" : "solid",
+    "id" : "part-reinforced-iron-plate",
+    "categoryID" : "category-standard-parts",
+    "isNaturalResource" : false
+  },
+  {
+    "id" : "part-copper-sheet",
+    "categoryID" : "category-standard-parts",
+    "isNaturalResource" : false,
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-modular-frame",
+    "isNaturalResource" : false,
+    "categoryID" : "category-standard-parts",
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-steel-beam",
+    "categoryID" : "category-standard-parts",
+    "formID" : "solid",
+    "isNaturalResource" : false
+  },
+  {
+    "formID" : "solid",
+    "categoryID" : "category-standard-parts",
+    "isNaturalResource" : false,
+    "id" : "part-steel-pipe"
+  },
+  {
+    "id" : "part-encased-industrial-beam",
+    "categoryID" : "category-standard-parts",
+    "formID" : "solid",
+    "isNaturalResource" : false
+  },
+  {
+    "isNaturalResource" : false,
+    "categoryID" : "category-standard-parts",
+    "formID" : "solid",
+    "id" : "part-heavy-modular-frame"
+  },
+  {
+    "isNaturalResource" : false,
+    "id" : "part-alclad-aluminum-sheet",
+    "categoryID" : "category-standard-parts",
+    "formID" : "solid"
+  },
+  {
+    "id" : "part-aluminum-casing",
+    "formID" : "solid",
+    "categoryID" : "category-standard-parts",
+    "isNaturalResource" : false
+  }
+]

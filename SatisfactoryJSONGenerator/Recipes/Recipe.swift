@@ -27,7 +27,7 @@ struct Recipe: Encodable {
         duration: Int,
         isDefault: Bool = true
     ) {
-        self.id = "recipe-\(name.idFromName)"
+        self.id = name.idFromName
         self.name = name
         self.input = input
         self.output = output

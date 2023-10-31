@@ -186,8 +186,6 @@
 		F98F3B1D273AB41E00CE2580 /* BuildingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingRecipes.swift; sourceTree = "<group>"; };
 		F98F3B21273AB4C000CE2580 /* MAMBuildingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMBuildingRecipes.swift; sourceTree = "<group>"; };
 		F99B673D26503693008E75AE /* PackagerRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagerRecipes.swift; sourceTree = "<group>"; };
-		F9E8F5EC26EE488E00028A3B /* Tier0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tier0.swift; sourceTree = "<group>"; };
-		F9E8F5EE26EE492700028A3B /* Tier1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tier1.swift; sourceTree = "<group>"; };
 		F9E8F5F026EE49A100028A3B /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		F9E8F5F226EE4A0F00028A3B /* Tier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tier.swift; sourceTree = "<group>"; };
 		F9EB2B14264FC4A70079074D /* Gases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gases.swift; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 		4531C4AB2401523200948CFA /* SatisfactoryJSONGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				F9E8F5EB26EE486700028A3B /* Milestones */,
 				4531C4B924016C9300948CFA /* Parts */,
 				4531C4BA24016C9A00948CFA /* Equipment */,
 				4531C4C524016DDF00948CFA /* Buildings */,
@@ -357,15 +354,6 @@
 				F98F3B21273AB4C000CE2580 /* MAMBuildingRecipes.swift */,
 			);
 			path = "Building Recipes";
-			sourceTree = "<group>";
-		};
-		F9E8F5EB26EE486700028A3B /* Milestones */ = {
-			isa = PBXGroup;
-			children = (
-				F9E8F5EC26EE488E00028A3B /* Tier0.swift */,
-				F9E8F5EE26EE492700028A3B /* Tier1.swift */,
-			);
-			path = Milestones;
 			sourceTree = "<group>";
 		};
 		F9EB2B0D264FC0B40079074D /* Production */ = {

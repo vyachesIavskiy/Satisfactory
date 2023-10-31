@@ -1,0 +1,164 @@
+[
+  {
+    "categoryID" : "category-back",
+    "id" : "equipment-parachute",
+    "slotID" : "back",
+    "requireElectricity" : false
+  },
+  {
+    "fuelIDs" : [
+      "part-solid-biofuel",
+      "part-packaged-fuel",
+      "part-packaged-liquid-biofuel",
+      "part-packaged-turbofuel"
+    ],
+    "requireElectricity" : false,
+    "slotID" : "back",
+    "categoryID" : "category-back",
+    "id" : "equipment-jetpack"
+  },
+  {
+    "id" : "equipment-hover-pack",
+    "requireElectricity" : true,
+    "categoryID" : "category-back",
+    "slotID" : "back"
+  },
+  {
+    "slotID" : "body",
+    "consumesIDs" : [
+      "part-iodine-infused-filter"
+    ],
+    "categoryID" : "category-body",
+    "requireElectricity" : false,
+    "id" : "equipment-hazmat-suit"
+  },
+  {
+    "id" : "equipment-xeno-zapper",
+    "categoryID" : "category-hands",
+    "slotID" : "hands",
+    "requireElectricity" : false
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-portable-miner",
+    "requireElectricity" : false,
+    "slotID" : "hands"
+  },
+  {
+    "id" : "equipment-object-scanner",
+    "categoryID" : "category-hands",
+    "requireElectricity" : false,
+    "slotID" : "hands"
+  },
+  {
+    "slotID" : "hands",
+    "categoryID" : "category-hands",
+    "id" : "equipment-beacon",
+    "requireElectricity" : false
+  },
+  {
+    "ammoIDs" : [
+      "part-iron-rebar"
+    ],
+    "requireElectricity" : false,
+    "slotID" : "hands",
+    "categoryID" : "category-hands",
+    "id" : "equipment-rebar-gun"
+  },
+  {
+    "requireElectricity" : false,
+    "id" : "equipment-medicinal-inhaler",
+    "categoryID" : "category-hands",
+    "slotID" : "hands"
+  },
+  {
+    "slotID" : "hands",
+    "id" : "equipment-chainsaw",
+    "categoryID" : "category-hands",
+    "requireElectricity" : false,
+    "fuelIDs" : [
+      "part-solid-biofuel"
+    ]
+  },
+  {
+    "id" : "equipment-xeno-basher",
+    "slotID" : "hands",
+    "requireElectricity" : false,
+    "categoryID" : "category-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "requireElectricity" : false,
+    "id" : "equipment-zipline",
+    "slotID" : "hands"
+  },
+  {
+    "requireElectricity" : false,
+    "slotID" : "hands",
+    "categoryID" : "category-hands",
+    "ammoIDs" : [
+      "part-nobelisk"
+    ],
+    "id" : "equipment-nobelisk-detonator"
+  },
+  {
+    "categoryID" : "category-hands",
+    "slotID" : "hands",
+    "requireElectricity" : false,
+    "ammoIDs" : [
+      "part-rifle-ammo"
+    ],
+    "id" : "equipment-rifle"
+  },
+  {
+    "id" : "equipment-factory-cart",
+    "requireElectricity" : false,
+    "slotID" : "hands",
+    "categoryID" : "category-special"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-ficsit-coffe-cup",
+    "slotID" : "hands",
+    "requireElectricity" : false
+  },
+  {
+    "id" : "equipment-golden-factory-cart",
+    "slotID" : "hands",
+    "requireElectricity" : false,
+    "categoryID" : "category-special"
+  },
+  {
+    "slotID" : "hands",
+    "requireElectricity" : false,
+    "id" : "equipment-ficsit-gold-coffee-cup",
+    "categoryID" : "category-hands"
+  },
+  {
+    "slotID" : "hands",
+    "requireElectricity" : false,
+    "categoryID" : "category-hands",
+    "id" : "equipment-candy-cane-basher"
+  },
+  {
+    "id" : "equipment-boombox",
+    "requireElectricity" : false,
+    "slotID" : "hands",
+    "categoryID" : "category-hands"
+  },
+  {
+    "id" : "equipment-gas-mask",
+    "categoryID" : "category-head",
+    "slotID" : "head",
+    "requireElectricity" : false,
+    "consumesIDs" : [
+      "part-gas-filter"
+    ]
+  },
+  {
+    "categoryID" : "category-legs",
+    "slotID" : "legs",
+    "requireElectricity" : false,
+    "id" : "equipment-blade-runners"
+  }
+]

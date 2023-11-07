@@ -223,6 +223,7 @@
 		F9DCF6AB2A2F8C37007B94DF /* Disclaimer_V1.6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.6.swift; sourceTree = "<group>"; };
 		F9E27166273FC9550068B36E /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 		F9EB45CE27454CCE00FB8926 /* RecipeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeElement.swift; sourceTree = "<group>"; };
+		F9FA6C702AF1201500FAF00F /* TCA */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TCA; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +375,7 @@
 		F94C7F462A93FD7D004E9F35 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				F9FA6C702AF1201500FAF00F /* TCA */,
 				F9AF34252AE19E74001DA97E /* Storage */,
 				F99FBE8C2A9415CF0066339C /* SHDebug */,
 				F99FBE8B2A9404660066339C /* SHTheme */,

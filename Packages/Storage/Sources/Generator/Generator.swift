@@ -5,13 +5,11 @@ final class Generator {
     private init() {}
     
     static func main() {
-        Task {
-            do {
-                let generator = Self()
-                try generator.generateNewData()
-            } catch {
-                print(error)
-            }
+        do {
+            let generator = Self()
+            try generator.generateNewData()
+        } catch {
+            print(error)
         }
     }
 }
@@ -32,7 +30,7 @@ private extension Generator {
     static let fileManager = FileManager.default
     static let encoder = {
         let encoder = JSONEncoder()
-        encoder.outputFormatting = [.prettyPrinted/*, .sortedKeys*/]
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         return encoder
     }()
     
@@ -66,7 +64,9 @@ private extension Generator {
         
         try write(V2.Recipes.all, to: .recipes)
         
-        try write(Migrations.all, to: .legacyToV2Migration)
+        for migration in Migrations.all {
+            try write(migration, to: .migrations.appending("Migration \(migration.version)"))
+        }
     }
     
     func write(_ model: some Encodable, to filename: String) throws {
@@ -82,7 +82,6 @@ private extension String {
     static let equipment = "Equipment"
     static let buildings = "Buildings"
     static let recipes = "Recipes"
-    static let migrations = "Migrations"
-    static let legacyToV2Migration = "\(migrations)/LegacyToV2"
+    static let migrations = "Migrations/"
     static let json = "json"
 }

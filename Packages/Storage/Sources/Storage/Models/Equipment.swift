@@ -7,9 +7,9 @@ extension Models.Equipment {
             id: equipment.id,
             category: Category(fromID: equipment.categoryID),
             slot: Slot(fromID: equipment.slotID),
-            ammo: equipment.ammoIDs.map(partProvider),
-            fuel: equipment.fuelIDs.map(partProvider),
-            consumes: equipment.consumesID.map(partProvider),
+            ammo: equipment.ammoIDs?.map(partProvider) ?? [],
+            fuel: equipment.fuelIDs?.map(partProvider) ?? [],
+            consumes: equipment.consumesIDs?.map(partProvider) ?? [],
             requireElectrecity: equipment.requireElectricity
         )
     }

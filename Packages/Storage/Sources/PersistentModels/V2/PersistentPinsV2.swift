@@ -1,13 +1,18 @@
 import Foundation
 
 public struct PersistentPinsV2: Codable {
-    public var partIDs: [String]
-    public var equipmentIDs: [String]
-    public var recipeIDs: [String]
+    public var partIDs: Set<String>
+    public var equipmentIDs: Set<String>
+    public var recipeIDs: Set<String>
     
-    public init(partIDs: [String] = [], equipmentIDs: [String] = [], recipeIDs: [String] = []) {
+    public var isEmpty: Bool {
+        partIDs.isEmpty && equipmentIDs.isEmpty && recipeIDs.isEmpty
+    }
+    
+    public init(partIDs: Set<String> = [], equipmentIDs: Set<String> = [], recipeIDs: Set<String> = []) {
         self.partIDs = partIDs
         self.equipmentIDs = equipmentIDs
         self.recipeIDs = recipeIDs
     }
 }
+

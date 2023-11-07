@@ -2,7 +2,7 @@
 protocol VersionedPersistentStorage {
     var version: PersistentStorage.Version { get }
     
-    func canBeLoaded() throws -> Bool
-    func load() throws
-    func erase() throws
+    var canBeLoaded: () throws -> Bool { get set }
+    var load: () throws -> Void { get set }
+    var remove: () throws -> Void { get set }
 }

@@ -1,84 +1,62 @@
 import Foundation
 import PersistentModels
+import StorageLogger
+import Dependencies
 
 final class PersistentStorage {
-    enum Version: CaseIterable {
-        case legacy
-        case v2
-        
-        var latest: Self { Self.allCases.last! }
-        
-        var directoryName: String {
-            switch self {
-            case .legacy: ""
-            case .v2: "V2"
-            }
-        }
-    }
+    @Dependency(\.persistentStorageLegacyClient) private var legacy
+    @Dependency(\.persistentStorageV2Client) private var v2
     
-    private let persistence: _Persistence
-    private let currentVersion: PersistentStorageV2
+    private let logger = Logger(category: .persistent)
     
-    var configuration: PersistentConfigurationV2 { currentVersion.configuration }
-    var pins: PersistentPinsV2 { currentVersion.pins }
-    var productions: [PersistentProductionV2] { currentVersion.productions }
-    var factories: [PersistentFactoryV2] { currentVersion.factories }
+    var configuration: PersistentConfigurationV2 { v2.configuration() }
+    var pins: PersistentPinsV2 { v2.pins() }
+    var productions: [PersistentProductionV2] { v2.productions() }
+    var factories: [PersistentFactoryV2] { v2.factories() }
     
-    init() {
-        let persistence = _Persistence(directoryName: "")
-        self.persistence = persistence
-        self.currentVersion = PersistentStorageV2()
-    }
-    
-    func load() throws -> Bool {
+    func load() throws {
+        logger.log("Start loading persistent storage")
         // Step 1: Check if persistent storage is empty
-        guard try !persistence.contents().isEmpty else {
-            // If persistent storage is empty, save initial models
-            try currentVersion.saveInitial()
-            return false
+        logger.debug("Step 1: Check if persistent storage is empty")
+        guard try legacy.canBeLoaded() || v2.canBeLoaded() else {
+            logger.debug("Persistent storage is empty, saving initial persistent storage")
+            try v2.saveInitial()
+            return
         }
         
-        // Step 2: Persistent storage is not empty, we need to figure out which version is currently stored.
-        // We start from legacy and go up to current
-        let versions: [VersionedPersistentStorage] = [
-            PersistentStorageLegacy(),
-            currentVersion
-        ]
+        // Step 2: Persistent storage is not empty, attemp to migrate to the final version if needed
+        logger.debug("Step 2: Migrate storage versions if needed")
+        try migrateIfNeeded()
         
-        for (index, version) in versions.dropLast().enumerated() {
-            guard try version.canBeLoaded() else {
-                continue
-            }
-            
-            try migrate(from: version, remainingVersions: Array(versions[(index + 1)...]))
-            return true
-        }
-        
-        return false
+        logger.log("Finished loading persistent storage")
     }
     
     func save() throws {
-        try currentVersion.save()
+        try v2.save()
     }
 }
 
 private extension PersistentStorage {
-    private enum Error: Swift.Error {
-        case noVersionToMigrate(from: PersistentStorage.Version)
-        case cannotMigrate(from: PersistentStorage.Version, to: PersistentStorage.Version)
-    }
-    
-    func migrate(from oldStorage: VersionedPersistentStorage, remainingVersions: [VersionedPersistentStorage]) throws {
-        guard let newVersion = remainingVersions.first else {
-            throw Error.noVersionToMigrate(from: oldStorage.version)
+    func migrateIfNeeded() throws {
+        logger.log("Start persistent storage migration")
+        // Handle each version separately
+        if try legacy.canBeLoaded() {
+            logger.debug("Legacy persistent storage found, migrate persistent storage from 'legacy'")
+            try v2.migrateFromLegacy()
         }
         
-        // Storage migrations are individual for each storage, so we need to check manually each case
-        if let legacy = oldStorage as? PersistentStorageLegacy, let v2 = newVersion as? PersistentStorageV2 {
-            try v2.migrate(from: legacy)
-        } // ... add v2 to v3 migration when needed
-        else {
-            throw Error.cannotMigrate(from: oldStorage.version, to: newVersion.version)
-        }
+        // Migrate next versions
+        // if try v2.canBeLoaded() {
+        //     ...
+        // }
+        
+        logger.log("Finished persistent storage migration")
+    }
+}
+
+extension PersistentStorage {
+    enum Version: CaseIterable {
+        case legacy
+        case v2
     }
 }

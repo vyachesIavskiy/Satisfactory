@@ -1,43 +1,43 @@
 [
   {
-    "id" : "building-nuclear-power-plant",
-    "categoryID" : "category-generators"
+    "categoryID" : "category-generators",
+    "id" : "building-nuclear-power-plant"
   },
   {
-    "id" : "building-water-extractor",
-    "categoryID" : "category-fluid-extractors"
+    "categoryID" : "category-fluid-extractors",
+    "id" : "building-water-extractor"
   },
   {
     "categoryID" : "category-fluid-extractors",
     "id" : "building-oil-extractor"
   },
   {
-    "id" : "building-resource-well-pressurizer",
-    "categoryID" : "category-fluid-extractors"
+    "categoryID" : "category-fluid-extractors",
+    "id" : "building-resource-well-pressurizer"
   },
   {
-    "id" : "building-resource-well-extractor",
-    "categoryID" : "category-fluid-extractors"
+    "categoryID" : "category-fluid-extractors",
+    "id" : "building-resource-well-extractor"
   },
   {
     "categoryID" : "category-manufacturers",
     "id" : "building-constructor"
   },
   {
-    "id" : "building-assembler",
-    "categoryID" : "category-manufacturers"
+    "categoryID" : "category-manufacturers",
+    "id" : "building-assembler"
   },
   {
-    "id" : "building-manufacturer",
-    "categoryID" : "category-manufacturers"
+    "categoryID" : "category-manufacturers",
+    "id" : "building-manufacturer"
   },
   {
     "categoryID" : "category-manufacturers",
     "id" : "building-packager"
   },
   {
-    "id" : "building-refinery",
-    "categoryID" : "category-manufacturers"
+    "categoryID" : "category-manufacturers",
+    "id" : "building-refinery"
   },
   {
     "categoryID" : "category-manufacturers",
@@ -48,8 +48,8 @@
     "id" : "building-particle-accelerator"
   },
   {
-    "id" : "building-miner-mk-1",
-    "categoryID" : "category-miners"
+    "categoryID" : "category-miners",
+    "id" : "building-miner-mk-1"
   },
   {
     "categoryID" : "category-miners",
@@ -60,19 +60,19 @@
     "id" : "building-miner-mk-3"
   },
   {
-    "id" : "building-smelter",
-    "categoryID" : "category-smelters"
+    "categoryID" : "category-smelters",
+    "id" : "building-smelter"
   },
   {
     "categoryID" : "category-smelters",
     "id" : "building-foundry"
   },
   {
-    "id" : "building-craft-bench",
-    "categoryID" : "category-workstations"
+    "categoryID" : "category-workstations",
+    "id" : "building-craft-bench"
   },
   {
-    "id" : "building-equipment-workshop",
-    "categoryID" : "category-workstations"
+    "categoryID" : "category-workstations",
+    "id" : "building-equipment-workshop"
   }
 ]

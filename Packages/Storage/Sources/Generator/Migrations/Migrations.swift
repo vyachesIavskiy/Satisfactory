@@ -1,6 +1,6 @@
 
 enum Migrations {
     static let all = [
-        legacyToV2
+        migration1
     ]
 }

@@ -2,41 +2,41 @@
   {
     "categoryID" : "category-back",
     "id" : "equipment-parachute",
-    "slotID" : "back",
-    "requireElectricity" : false
+    "requireElectricity" : false,
+    "slotID" : "back"
   },
   {
+    "categoryID" : "category-back",
     "fuelIDs" : [
       "part-solid-biofuel",
       "part-packaged-fuel",
       "part-packaged-liquid-biofuel",
       "part-packaged-turbofuel"
     ],
+    "id" : "equipment-jetpack",
     "requireElectricity" : false,
-    "slotID" : "back",
-    "categoryID" : "category-back",
-    "id" : "equipment-jetpack"
-  },
-  {
-    "id" : "equipment-hover-pack",
-    "requireElectricity" : true,
-    "categoryID" : "category-back",
     "slotID" : "back"
   },
   {
-    "slotID" : "body",
+    "categoryID" : "category-back",
+    "id" : "equipment-hover-pack",
+    "requireElectricity" : true,
+    "slotID" : "back"
+  },
+  {
+    "categoryID" : "category-body",
     "consumesIDs" : [
       "part-iodine-infused-filter"
     ],
-    "categoryID" : "category-body",
+    "id" : "equipment-hazmat-suit",
     "requireElectricity" : false,
-    "id" : "equipment-hazmat-suit"
+    "slotID" : "body"
   },
   {
-    "id" : "equipment-xeno-zapper",
     "categoryID" : "category-hands",
-    "slotID" : "hands",
-    "requireElectricity" : false
+    "id" : "equipment-xeno-zapper",
+    "requireElectricity" : false,
+    "slotID" : "hands"
   },
   {
     "categoryID" : "category-hands",
@@ -45,120 +45,120 @@
     "slotID" : "hands"
   },
   {
-    "id" : "equipment-object-scanner",
     "categoryID" : "category-hands",
+    "id" : "equipment-object-scanner",
     "requireElectricity" : false,
     "slotID" : "hands"
   },
   {
-    "slotID" : "hands",
     "categoryID" : "category-hands",
     "id" : "equipment-beacon",
-    "requireElectricity" : false
+    "requireElectricity" : false,
+    "slotID" : "hands"
   },
   {
     "ammoIDs" : [
       "part-iron-rebar"
     ],
-    "requireElectricity" : false,
-    "slotID" : "hands",
     "categoryID" : "category-hands",
-    "id" : "equipment-rebar-gun"
-  },
-  {
+    "id" : "equipment-rebar-gun",
     "requireElectricity" : false,
-    "id" : "equipment-medicinal-inhaler",
-    "categoryID" : "category-hands",
     "slotID" : "hands"
   },
   {
-    "slotID" : "hands",
-    "id" : "equipment-chainsaw",
     "categoryID" : "category-hands",
+    "id" : "equipment-medicinal-inhaler",
     "requireElectricity" : false,
+    "slotID" : "hands"
+  },
+  {
+    "categoryID" : "category-hands",
     "fuelIDs" : [
       "part-solid-biofuel"
-    ]
-  },
-  {
-    "id" : "equipment-xeno-basher",
-    "slotID" : "hands",
+    ],
+    "id" : "equipment-chainsaw",
     "requireElectricity" : false,
-    "categoryID" : "category-hands"
-  },
-  {
-    "categoryID" : "category-hands",
-    "requireElectricity" : false,
-    "id" : "equipment-zipline",
     "slotID" : "hands"
   },
   {
-    "requireElectricity" : false,
-    "slotID" : "hands",
     "categoryID" : "category-hands",
+    "id" : "equipment-xeno-basher",
+    "requireElectricity" : false,
+    "slotID" : "hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-zipline",
+    "requireElectricity" : false,
+    "slotID" : "hands"
+  },
+  {
     "ammoIDs" : [
       "part-nobelisk"
     ],
-    "id" : "equipment-nobelisk-detonator"
+    "categoryID" : "category-hands",
+    "id" : "equipment-nobelisk-detonator",
+    "requireElectricity" : false,
+    "slotID" : "hands"
   },
   {
-    "categoryID" : "category-hands",
-    "slotID" : "hands",
-    "requireElectricity" : false,
     "ammoIDs" : [
       "part-rifle-ammo"
     ],
-    "id" : "equipment-rifle"
+    "categoryID" : "category-hands",
+    "id" : "equipment-rifle",
+    "requireElectricity" : false,
+    "slotID" : "hands"
   },
   {
+    "categoryID" : "category-special",
     "id" : "equipment-factory-cart",
     "requireElectricity" : false,
-    "slotID" : "hands",
-    "categoryID" : "category-special"
+    "slotID" : "hands"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-ficsit-coffe-cup",
-    "slotID" : "hands",
-    "requireElectricity" : false
+    "requireElectricity" : false,
+    "slotID" : "hands"
   },
   {
+    "categoryID" : "category-special",
     "id" : "equipment-golden-factory-cart",
-    "slotID" : "hands",
     "requireElectricity" : false,
-    "categoryID" : "category-special"
+    "slotID" : "hands"
   },
   {
-    "slotID" : "hands",
-    "requireElectricity" : false,
-    "id" : "equipment-ficsit-gold-coffee-cup",
-    "categoryID" : "category-hands"
-  },
-  {
-    "slotID" : "hands",
-    "requireElectricity" : false,
     "categoryID" : "category-hands",
-    "id" : "equipment-candy-cane-basher"
+    "id" : "equipment-ficsit-gold-coffee-cup",
+    "requireElectricity" : false,
+    "slotID" : "hands"
   },
   {
+    "categoryID" : "category-hands",
+    "id" : "equipment-candy-cane-basher",
+    "requireElectricity" : false,
+    "slotID" : "hands"
+  },
+  {
+    "categoryID" : "category-hands",
     "id" : "equipment-boombox",
     "requireElectricity" : false,
-    "slotID" : "hands",
-    "categoryID" : "category-hands"
+    "slotID" : "hands"
   },
   {
-    "id" : "equipment-gas-mask",
     "categoryID" : "category-head",
-    "slotID" : "head",
-    "requireElectricity" : false,
     "consumesIDs" : [
       "part-gas-filter"
-    ]
+    ],
+    "id" : "equipment-gas-mask",
+    "requireElectricity" : false,
+    "slotID" : "head"
   },
   {
     "categoryID" : "category-legs",
-    "slotID" : "legs",
+    "id" : "equipment-blade-runners",
     "requireElectricity" : false,
-    "id" : "equipment-blade-runners"
+    "slotID" : "legs"
   }
 ]

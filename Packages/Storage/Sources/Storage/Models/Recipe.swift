@@ -9,9 +9,9 @@ extension Models.Recipe {
     ) throws {
         try self.init(
             id: recipe.id,
-            input: recipe.input.map { try Ingredient($0, itemProvider: itemProvider) },
+            input: recipe.inputs.map { try Ingredient($0, itemProvider: itemProvider) },
             output: Ingredient(recipe.output, itemProvider: itemProvider),
-            byproducts: recipe.byproducts.map { try Ingredient($0, itemProvider: itemProvider) },
+            byproducts: recipe.byproducts?.map { try Ingredient($0, itemProvider: itemProvider) } ?? [],
             machines: recipe.machineIDs.map(buildingProvider),
             duration: recipe.duration,
             isDefault: recipe.isDefault

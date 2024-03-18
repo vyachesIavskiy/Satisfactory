@@ -1,7 +1,10 @@
 import SwiftUI
+import Storage
+import Models
+import TCA
 
 struct ItemCell: View {
-    var item: Item
+    var item: any Item
     var amountPerMinute: String
     var isOutput: Bool = false
     var isSelected: Bool = false
@@ -29,7 +32,7 @@ struct ItemCell: View {
     
     var body: some View {
         VStack(spacing: 4) {
-            Image(item.imageName)
+            Image(item.id)
                 .resizable()
                 .frame(width: 54, height: 54)
                 .padding(6)
@@ -71,17 +74,17 @@ struct ItemCell: View {
 }
 
 struct ItemCellPreviews: PreviewProvider {
-    @StateObject private static var storage: Storage = PreviewStorage()
+    @Dependency(\.storageClient) private static var storageClient
     
     static var previews: some View {
         ItemCell(
-            item: storage[partID: "reinforced-iron-plate"]!,
+            item: storageClient.partWithID("reinforced-iron-plate")!,
             amountPerMinute: "10"
         )
         .previewDisplayName("Unselected")
         
         ItemCell(
-            item: storage[partID: "reinforced-iron-plate"]!,
+            item: storageClient.partWithID("reinforced-iron-plate")!,
             amountPerMinute: "10",
             isSelected: true
         )

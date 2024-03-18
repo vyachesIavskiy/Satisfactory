@@ -10,16 +10,23 @@ let package = Package(
     products: [
         .library(
             name: "SHTheme",
-            targets: ["SHTheme"]
+            targets: [
+                "Theme"
+            ]
         )
     ],
     dependencies: [
-        .package(name: "SHDebug", path: "../SHDebug")
+        .package(
+            name: "SHDebug",
+            path: "../SHDebug"
+        )
     ],
     targets: [
         .target(
-            name: "SHTheme",
-            dependencies: ["SHDebug"]
+            name: "Theme",
+            dependencies: [
+                "SHDebug"
+            ]
         )
     ]
 )

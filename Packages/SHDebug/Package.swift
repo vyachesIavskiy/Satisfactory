@@ -10,10 +10,14 @@ let package = Package(
     products: [
         .library(
             name: "SHDebug",
-            targets: ["SHDebug"]
+            targets: [
+                "SHDebug"
+            ]
         ),
     ],
     targets: [
-        .target(name: "SHDebug")
+        .target(
+            name: "SHDebug"
+        )
     ]
 )

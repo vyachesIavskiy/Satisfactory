@@ -1,0 +1,18 @@
+{
+  "configurations" : [
+
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SHLoggerTests",
+        "name" : "SHLoggerTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,39 +1,70 @@
 import SwiftUI
+import TCA
 
-struct ContentView: View {
-    @State private var latestDisclaimer: Disclaimer?
+struct MainTabBarReducer: Reducer {
+    struct State: Equatable {
+        var newProduction: NewProductionFeature.State
+        var settings = SettingsReducer.State()
+    }
     
-    @EnvironmentObject private var storage: Storage
+    enum Action: Equatable {
+        // Scoped
+        case newProduction(NewProductionFeature.Action)
+        case settings(SettingsReducer.Action)
+    }
     
-    var body: some View {
-        TabView {
-            ItemListView(model: ItemListView.Model(storage: storage))
-                .tabItem {
-                    Label("Production", systemImage: "hammer")
-                }
-            
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape")
-                }
+    var body: some ReducerOf<Self> {
+        Scope(state: \.newProduction, action: /Action.newProduction) {
+            NewProductionFeature()
         }
-        .onAppear {
-            latestDisclaimer = Disclaimer.latest
-        }
-        .sheet(item: $latestDisclaimer) { disclaimer in
-            DisclaimerViewContainer(disclaimer)
-                .interactiveDismissDisabled(true)
+        
+        Scope(state: \.settings, action: /Action.settings) {
+            SettingsReducer()
         }
     }
 }
 
-struct ContentPreviews: PreviewProvider {
-    @State private static var storage: Storage = PreviewStorage()
+struct MainTabBarView: View {
+    private let store: StoreOf<MainTabBarReducer>
+    @ObservedObject private var viewStore: ViewStoreOf<MainTabBarReducer>
     
-    static var previews: some View {
-        ContentView()
-            .environmentObject(Settings())
-            .environmentObject(storage)
+//    @State private var latestDisclaimer: Disclaimer?
+    
+    init(store: StoreOf<MainTabBarReducer>) {
+        self.store = store
+        viewStore = ViewStore(store, observe: { $0 })
     }
+    
+    var body: some View {
+        TabView {
+            NewProductionView(store: store.scope(state: \.newProduction, action: MainTabBarReducer.Action.newProduction))
+                .tabItem {
+                    Label("Production", systemImage: "hammer")
+                }
+            
+            Text("< Factories >")
+                .tabItem {
+                    Label("Factories", systemImage: "folder")
+                }
+            
+            SettingsView(store: store.scope(state: \.settings, action: MainTabBarReducer.Action.settings))
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape")
+                }
+        }
+//        .onAppear {
+//            latestDisclaimer = Disclaimer.latest
+//        }
+//        .sheet(item: $latestDisclaimer) { disclaimer in
+//            DisclaimerViewContainer(disclaimer)
+//                .interactiveDismissDisabled(true)
+//        }
+    }
+}
+
+#Preview("Main TabBar View") {
+    MainTabBarView(store: Store(initialState: MainTabBarReducer.State(newProduction: NewProductionFeature.State(appStorage: AppStorage()))) {
+        MainTabBarReducer()
+    })
 }
 

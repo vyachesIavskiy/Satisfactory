@@ -1,28 +1,56 @@
 import SwiftUI
+import Models
+import TCA
+
+private struct DummyItem: Item {
+    let id = "Dummy"
+    let category = Category.special
+}
+
+extension ItemRow {
+    struct ViewState {
+        let item: any Item
+        let productions: [Production]
+        let showAmountOfProductions: Bool
+        
+        var amountOfProductions: Int { productions.count }
+        
+        init(state: Void) {
+            item = DummyItem()
+            productions = []
+            showAmountOfProductions = false
+        }
+    }
+}
+
+extension ItemRow.ViewState: Equatable {
+    static func == (lhs: ItemRow.ViewState, rhs: ItemRow.ViewState) -> Bool {
+        lhs.item.id == rhs.item.id &&
+        lhs.productions == rhs.productions &&
+        lhs.showAmountOfProductions == rhs.showAmountOfProductions
+    }
+}
 
 struct ItemRow: View {
-    @EnvironmentObject private var storage: Storage
+    private var viewStore: ViewStore<ViewState, Void>
     
-    private var productionChains: [ProductionChain] {
-        storage.productionChains.filter { $0.item.id == item.id }
+    init(store: Store<Void, Void>) {
+        viewStore = ViewStore(store, observe: ViewState.init(state:))
     }
-    
-    var item: Item
-    var showAmountOfProductionChains = false
     
     var body: some View {
         HStack(spacing: 10) {
-            Image(item.imageName)
+            Image(viewStore.item.id)
                 .resizable()
                 .frame(width: 30, height: 30)
             
-            Text(item.name)
+            Text(viewStore.item.localizedName)
             
             Spacer()
             
-            if !productionChains.isEmpty && showAmountOfProductionChains {
+            if !viewStore.productions.isEmpty, viewStore.showAmountOfProductions {
                 HStack(spacing: 2) {
-                    Text("\(productionChains.count)")
+                    Text(viewStore.amountOfProductions, format: .number)
                         .fontWeight(.semibold)
                     
                     Image(systemName: "scale.3d")
@@ -36,12 +64,10 @@ struct ItemRow: View {
     }
 }
 
-struct ItemRowPreviews: PreviewProvider {
-    @StateObject private static var storage: Storage = PreviewStorage()
-    
-    static var previews: some View {
-        ItemRow(item: storage[partID: "iron-plate"]!)
-            .previewLayout(.sizeThatFits)
-            .environmentObject(storage)
+#Preview("Dummy item") {
+    let store = Store<Void, Void>(initialState: ()) {
+        EmptyReducer()
     }
+    
+    return ItemRow(store: store)
 }

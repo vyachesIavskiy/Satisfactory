@@ -1,0 +1,530 @@
+{
+  "buildingIDs" : [
+
+  ],
+  "equipmentIDs" : [
+
+  ],
+  "partIDs" : [
+    {
+      "newID" : "part-hog-remains",
+      "oldID" : "hog-remains"
+    },
+    {
+      "newID" : "part-plasma-spitter-remains",
+      "oldID" : "plasma-spitter-remains"
+    },
+    {
+      "newID" : "part-stinger-remains",
+      "oldID" : "stinger-remains"
+    },
+    {
+      "newID" : "part-hatcher-remains",
+      "oldID" : "hatcher-remains"
+    },
+    {
+      "newID" : "part-alien-protein",
+      "oldID" : "alien-protein"
+    },
+    {
+      "newID" : "part-alien-dna-capsule",
+      "oldID" : "alien-dna-capsule"
+    },
+    {
+      "newID" : "part-biomass",
+      "oldID" : "biomass"
+    },
+    {
+      "newID" : "part-solid-biofuel",
+      "oldID" : "solid-biofuel"
+    },
+    {
+      "newID" : "part-fabric",
+      "oldID" : "fabric"
+    },
+    {
+      "newID" : "part-crystal-oscillator",
+      "oldID" : "crystal-oscillator"
+    },
+    {
+      "newID" : "part-computer",
+      "oldID" : "computer"
+    },
+    {
+      "newID" : "part-radio-control-unit",
+      "oldID" : "radio-control-unit"
+    },
+    {
+      "newID" : "part-supercomputer",
+      "oldID" : "supercomputer"
+    },
+    {
+      "newID" : "part-color-cartridge",
+      "oldID" : "color-cartridge"
+    },
+    {
+      "newID" : "part-iron-rebar",
+      "oldID" : "iron-rebar"
+    },
+    {
+      "newID" : "part-stun-rebar",
+      "oldID" : "stun-rebar"
+    },
+    {
+      "newID" : "part-shatter-rebar",
+      "oldID" : "shatter-rebar"
+    },
+    {
+      "newID" : "part-explosive-rebar",
+      "oldID" : "explosive-rebar"
+    },
+    {
+      "newID" : "part-black-powder",
+      "oldID" : "black-powder"
+    },
+    {
+      "newID" : "part-smokeless-powder",
+      "oldID" : "smokeless-powder"
+    },
+    {
+      "newID" : "part-nobelisk",
+      "oldID" : "nobelisk"
+    },
+    {
+      "newID" : "part-gas-nobelisk",
+      "oldID" : "gas-nobelisk"
+    },
+    {
+      "newID" : "part-pulse-nobelisk",
+      "oldID" : "pulse-nobelisk"
+    },
+    {
+      "newID" : "part-cluster-nobelisk",
+      "oldID" : "cluster-nobelisk"
+    },
+    {
+      "newID" : "part-nuke-nobelisk",
+      "oldID" : "nuke-nobelisk"
+    },
+    {
+      "newID" : "part-rifle-ammo",
+      "oldID" : "rifle-ammo"
+    },
+    {
+      "newID" : "part-homing-rifle-ammo",
+      "oldID" : "homing-rifle-ammo"
+    },
+    {
+      "newID" : "part-turbo-rifle-ammo",
+      "oldID" : "turbo-rifle-ammo"
+    },
+    {
+      "newID" : "part-gas-filter",
+      "oldID" : "gas-filter"
+    },
+    {
+      "newID" : "part-iodine-infused-filter",
+      "oldID" : "iodine-infused-filter"
+    },
+    {
+      "newID" : "part-empty-canister",
+      "oldID" : "empty-canister"
+    },
+    {
+      "newID" : "part-empty-fluid-tank",
+      "oldID" : "empty-fluid-tank"
+    },
+    {
+      "newID" : "part-pressure-conversion-cube",
+      "oldID" : "pressure-conversion-cube"
+    },
+    {
+      "newID" : "part-packaged-water",
+      "oldID" : "packaged-water"
+    },
+    {
+      "newID" : "part-packaged-oil",
+      "oldID" : "packaged-oil"
+    },
+    {
+      "newID" : "part-packaged-heavy-oil-residue",
+      "oldID" : "packaged-heavy-oil-residue"
+    },
+    {
+      "newID" : "part-packaged-fuel",
+      "oldID" : "packaged-fuel"
+    },
+    {
+      "newID" : "part-packaged-liquid-biofuel",
+      "oldID" : "packaged-liquid-biofuel"
+    },
+    {
+      "newID" : "part-packaged-turbofuel",
+      "oldID" : "packaged-turbofuel"
+    },
+    {
+      "newID" : "part-packaged-alumina-solution",
+      "oldID" : "packaged-alumina-solution"
+    },
+    {
+      "newID" : "part-packaged-sulfuric-acid",
+      "oldID" : "packaged-sulfuric-acid"
+    },
+    {
+      "newID" : "part-packaged-nitric-acid",
+      "oldID" : "packaged-nitric-acid"
+    },
+    {
+      "newID" : "part-packaged-nitrogen-gas",
+      "oldID" : "packaged-nitrogen-gas"
+    },
+    {
+      "newID" : "part-wire",
+      "oldID" : "wire"
+    },
+    {
+      "newID" : "part-cable",
+      "oldID" : "cable"
+    },
+    {
+      "newID" : "part-quickwire",
+      "oldID" : "quickwire"
+    },
+    {
+      "newID" : "part-ai-limiter",
+      "oldID" : "ai-limiter"
+    },
+    {
+      "newID" : "part-circuit-board",
+      "oldID" : "circuit-board"
+    },
+    {
+      "newID" : "part-high-speed-connector",
+      "oldID" : "high-speed-connector"
+    },
+    {
+      "newID" : "part-water",
+      "oldID" : "water"
+    },
+    {
+      "newID" : "part-crude-oil",
+      "oldID" : "crude-oil"
+    },
+    {
+      "newID" : "part-heavy-oil-residue",
+      "oldID" : "heavy-oil-residue"
+    },
+    {
+      "newID" : "part-fuel",
+      "oldID" : "fuel"
+    },
+    {
+      "newID" : "part-liquid-biofuel",
+      "oldID" : "liquid-biofuel"
+    },
+    {
+      "newID" : "part-turbofuel",
+      "oldID" : "turbofuel"
+    },
+    {
+      "newID" : "part-alumina-solution",
+      "oldID" : "alumina-solution"
+    },
+    {
+      "newID" : "part-sulfuric-acid",
+      "oldID" : "sulfuric-acid"
+    },
+    {
+      "newID" : "part-nitric-acid",
+      "oldID" : "nitric-acid"
+    },
+    {
+      "newID" : "part-leaves",
+      "oldID" : "leaves"
+    },
+    {
+      "newID" : "part-wood",
+      "oldID" : "wood"
+    },
+    {
+      "newID" : "part-mycelia",
+      "oldID" : "mycelia"
+    },
+    {
+      "newID" : "part-flower-petals",
+      "oldID" : "flower-petals"
+    },
+    {
+      "newID" : "part-compacted-coal",
+      "oldID" : "compacted-coal"
+    },
+    {
+      "newID" : "part-nitrogen-gas",
+      "oldID" : "nitrogen-gas"
+    },
+    {
+      "newID" : "part-rotor",
+      "oldID" : "rotor"
+    },
+    {
+      "newID" : "part-stator",
+      "oldID" : "stator"
+    },
+    {
+      "newID" : "part-motor",
+      "oldID" : "motor"
+    },
+    {
+      "newID" : "part-heat-sink",
+      "oldID" : "heat-sink"
+    },
+    {
+      "newID" : "part-cooling-system",
+      "oldID" : "cooling-system"
+    },
+    {
+      "newID" : "part-fused-modular-frame",
+      "oldID" : "fused-modular-frame"
+    },
+    {
+      "newID" : "part-battery",
+      "oldID" : "battery"
+    },
+    {
+      "newID" : "part-turbo-motor",
+      "oldID" : "turbo-motor"
+    },
+    {
+      "newID" : "part-iron-ingot",
+      "oldID" : "iron-ingot"
+    },
+    {
+      "newID" : "part-copper-ingot",
+      "oldID" : "copper-ingot"
+    },
+    {
+      "newID" : "part-steel-ingot",
+      "oldID" : "steel-ingot"
+    },
+    {
+      "newID" : "part-caterium-ingot",
+      "oldID" : "caterium-ingot"
+    },
+    {
+      "newID" : "part-aluminum-ingot",
+      "oldID" : "aluminum-ingot"
+    },
+    {
+      "newID" : "part-concrete",
+      "oldID" : "concrete"
+    },
+    {
+      "newID" : "part-quartz-crystal",
+      "oldID" : "quartz-crystal"
+    },
+    {
+      "newID" : "part-silica",
+      "oldID" : "silica"
+    },
+    {
+      "newID" : "part-aluminum-scrap",
+      "oldID" : "aluminum-scrap"
+    },
+    {
+      "newID" : "part-copper-powder",
+      "oldID" : "copper-powder"
+    },
+    {
+      "newID" : "part-electromagnetic-control-rod",
+      "oldID" : "electromagnetic-control-rod"
+    },
+    {
+      "newID" : "part-encased-uranium-cell",
+      "oldID" : "encased-uranium-cell"
+    },
+    {
+      "newID" : "part-uranium-fuel-rod",
+      "oldID" : "uranium-fuel-rod"
+    },
+    {
+      "newID" : "part-uranium-waste",
+      "oldID" : "uranium-waste"
+    },
+    {
+      "newID" : "part-non-fissile-uranium",
+      "oldID" : "non-fissile-uranium"
+    },
+    {
+      "newID" : "part-plutonium-pellet",
+      "oldID" : "plutonium-pellet"
+    },
+    {
+      "newID" : "part-encased-plutonium-cell",
+      "oldID" : "encased-plutonium-cell"
+    },
+    {
+      "newID" : "part-plutonium-fuel-rod",
+      "oldID" : "plutonium-fuel-rod"
+    },
+    {
+      "newID" : "part-plutonium-waste",
+      "oldID" : "plutonium-waste"
+    },
+    {
+      "newID" : "part-petroleum-coke",
+      "oldID" : "petroleum-coke"
+    },
+    {
+      "newID" : "part-polymer-resin",
+      "oldID" : "polymer-resin"
+    },
+    {
+      "newID" : "part-rubber",
+      "oldID" : "rubber"
+    },
+    {
+      "newID" : "part-plastic",
+      "oldID" : "plastic"
+    },
+    {
+      "newID" : "part-iron-ore",
+      "oldID" : "iron-ore"
+    },
+    {
+      "newID" : "part-copper-ore",
+      "oldID" : "copper-ore"
+    },
+    {
+      "newID" : "part-limestone",
+      "oldID" : "limestone"
+    },
+    {
+      "newID" : "part-coal",
+      "oldID" : "coal"
+    },
+    {
+      "newID" : "part-caterium-ore",
+      "oldID" : "caterium-ore"
+    },
+    {
+      "newID" : "part-bauxite",
+      "oldID" : "bauxite"
+    },
+    {
+      "newID" : "part-raw-quartz",
+      "oldID" : "raw-quartz"
+    },
+    {
+      "newID" : "part-sulfur",
+      "oldID" : "sulfur"
+    },
+    {
+      "newID" : "part-uranium",
+      "oldID" : "uranium"
+    },
+    {
+      "newID" : "part-power-shard",
+      "oldID" : "power-shard"
+    },
+    {
+      "newID" : "part-blue-power-slug",
+      "oldID" : "blue-power-slug"
+    },
+    {
+      "newID" : "part-yellow-power-slug",
+      "oldID" : "yellow-power-slug"
+    },
+    {
+      "newID" : "part-purple-power-slug",
+      "oldID" : "purple-power-slug"
+    },
+    {
+      "newID" : "part-smart-plating",
+      "oldID" : "smart-plating"
+    },
+    {
+      "newID" : "part-versatile-framework",
+      "oldID" : "versatile-framework"
+    },
+    {
+      "newID" : "part-automated-wiring",
+      "oldID" : "automated-wiring"
+    },
+    {
+      "newID" : "part-modular-engine",
+      "oldID" : "modular-engine"
+    },
+    {
+      "newID" : "part-adaptive-control-unit",
+      "oldID" : "adaptive-control-unit"
+    },
+    {
+      "newID" : "part-assembly-director-system",
+      "oldID" : "assembly-director-system"
+    },
+    {
+      "newID" : "part-magnetic-field-generator",
+      "oldID" : "magnetic-field-generator"
+    },
+    {
+      "newID" : "part-thermal-propulsion-rocket",
+      "oldID" : "thermal-propulsion-rocket"
+    },
+    {
+      "newID" : "part-nuclear-pasta",
+      "oldID" : "nuclear-pasta"
+    },
+    {
+      "newID" : "part-iron-rod",
+      "oldID" : "iron-rod"
+    },
+    {
+      "newID" : "part-iron-plate",
+      "oldID" : "iron-plate"
+    },
+    {
+      "newID" : "part-screw",
+      "oldID" : "screw"
+    },
+    {
+      "newID" : "part-reinforced-iron-plate",
+      "oldID" : "reinforced-iron-plate"
+    },
+    {
+      "newID" : "part-copper-sheet",
+      "oldID" : "copper-sheet"
+    },
+    {
+      "newID" : "part-modular-frame",
+      "oldID" : "modular-frame"
+    },
+    {
+      "newID" : "part-steel-beam",
+      "oldID" : "steel-beam"
+    },
+    {
+      "newID" : "part-steel-pipe",
+      "oldID" : "steel-pipe"
+    },
+    {
+      "newID" : "part-encased-industrial-beam",
+      "oldID" : "encased-industrial-beam"
+    },
+    {
+      "newID" : "part-heavy-modular-frame",
+      "oldID" : "heavy-modular-frame"
+    },
+    {
+      "newID" : "part-alclad-aluminum-sheet",
+      "oldID" : "alclad-aluminum-sheet"
+    },
+    {
+      "newID" : "part-aluminum-casing",
+      "oldID" : "aluminum-casing"
+    }
+  ],
+  "recipeIDs" : [
+
+  ],
+  "version" : 1
+}

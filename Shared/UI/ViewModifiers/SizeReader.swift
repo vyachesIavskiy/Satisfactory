@@ -7,7 +7,11 @@ struct SizeReader: ViewModifier {
         static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
     }
     
-    var onChange: (CGSize) -> Void
+    private var onChange: (CGSize) -> Void
+    
+    fileprivate init(_ onChange: @escaping (CGSize) -> Void) {
+        self.onChange = onChange
+    }
     
     func body(content: Content) -> some View {
         content
@@ -22,19 +26,17 @@ struct SizeReader: ViewModifier {
 }
 
 extension View {
-    func readSize(_ onChange: @escaping (CGSize) -> Void) -> some View {
-        modifier(SizeReader(onChange: onChange))
+    @ViewBuilder func readSize(_ onChange: @escaping (CGSize) -> Void) -> some View {
+        modifier(SizeReader(onChange))
     }
     
-    func readSize(_ size: Binding<CGSize>) -> some View {
-        modifier(SizeReader { newSize in
-            size.wrappedValue = newSize
-        })
+    @ViewBuilder func readSize(_ size: Binding<CGSize>) -> some View {
+        readSize { size.wrappedValue = $0 }
     }
 }
 
-struct SizeReader_Previews: PreviewProvider {
-    private struct Preview: View {
+#Preview("Size Reader") {
+    struct Preview: View {
         @State private var size = CGSize.zero
         
         var body: some View {
@@ -43,7 +45,5 @@ struct SizeReader_Previews: PreviewProvider {
         }
     }
     
-    static var previews: some View {
-        Preview()
-    }
+    return Preview()
 }

@@ -11,19 +11,27 @@ let package = Package(
     products: [
         .library(
             name: "TCA",
-            targets: ["TCA"]
+            targets: [
+                "TCA"
+            ]
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", exact: "1.2.0")
+        .package(
+            url: "https://github.com/pointfreeco/swift-composable-architecture", 
+            "1.5.0"..<"1.6.0"
+        )
     ],
     targets: [
         .target(
             name: "TCA",
             dependencies: [
-                .product(name: "ComposableArchitecture", package: "swift-composable-architecture")
+                .product(
+                    name: "ComposableArchitecture",
+                    package: "swift-composable-architecture"
+                )
             ],
-            sources: ["TCA.swift"]
+            path: "Sources"
         )
     ]
 )

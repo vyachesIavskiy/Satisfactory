@@ -1,7 +1,10 @@
 import SwiftUI
+import Storage
+import Models
+import TCA
 
 struct ItemRowInRecipe: View {
-    var item: Item
+    var item: any Item
     var amountPerMinute: String
     var isOutput: Bool = false
     var isSelected: Bool = false
@@ -30,7 +33,7 @@ struct ItemRowInRecipe: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 8) {
-                Image(item.imageName)
+                Image(item.id)
                     .resizable()
                     .frame(width: 46, height: 46)
                     .padding(5)
@@ -52,7 +55,7 @@ struct ItemRowInRecipe: View {
                         in: AngledRectangle(cornerRadius: 8)
                     )
                 
-                Text(item.name)
+                Text(item.localizedName)
                     .font(.system(size: 18))
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
@@ -90,17 +93,17 @@ struct ItemRowInRecipe: View {
 }
 
 struct ItemRowInRecipePreviews: PreviewProvider {
-    @StateObject private static var storage: Storage = PreviewStorage()
+    @Dependency(\.storageClient) private static var storageClient
     
     static var previews: some View {
         ItemRowInRecipe(
-            item: storage[partID: "heavy-modular-frame"]!,
+            item: storageClient.partWithID("heavy-modular-frame")!,
             amountPerMinute: "25"
         )
         .previewLayout(.sizeThatFits)
         
         ItemRowInRecipe(
-            item: storage[partID: "heavy-modular-frame"]!,
+            item: storageClient.partWithID("heavy-modular-frame")!,
             amountPerMinute: "25",
             isSelected: true
         )

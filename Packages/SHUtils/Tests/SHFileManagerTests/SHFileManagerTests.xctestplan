@@ -1,0 +1,19 @@
+{
+  "configurations" : [
+
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SHFileManagerTests",
+        "name" : "SHFileManagerTests"
+      }
+    }
+  ],
+  "version" : 1
+}

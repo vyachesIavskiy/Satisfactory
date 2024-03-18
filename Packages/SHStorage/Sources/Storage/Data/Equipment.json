@@ -1,0 +1,164 @@
+[
+  {
+    "categoryID" : "category-back",
+    "id" : "equipment-parachute",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-back"
+  },
+  {
+    "categoryID" : "category-back",
+    "fuelIDs" : [
+      "part-solid-biofuel",
+      "part-packaged-fuel",
+      "part-packaged-liquid-biofuel",
+      "part-packaged-turbofuel"
+    ],
+    "id" : "equipment-jetpack",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-back"
+  },
+  {
+    "categoryID" : "category-back",
+    "id" : "equipment-hover-pack",
+    "requireElectricity" : true,
+    "slotID" : "equipment-slot-back"
+  },
+  {
+    "categoryID" : "category-body",
+    "consumesIDs" : [
+      "part-iodine-infused-filter"
+    ],
+    "id" : "equipment-hazmat-suit",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-body"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-xeno-zapper",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-portable-miner",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-object-scanner",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-beacon",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "ammoIDs" : [
+      "part-iron-rebar"
+    ],
+    "categoryID" : "category-hands",
+    "id" : "equipment-rebar-gun",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-medicinal-inhaler",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "fuelIDs" : [
+      "part-solid-biofuel"
+    ],
+    "id" : "equipment-chainsaw",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-xeno-basher",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-zipline",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "ammoIDs" : [
+      "part-nobelisk"
+    ],
+    "categoryID" : "category-hands",
+    "id" : "equipment-nobelisk-detonator",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "ammoIDs" : [
+      "part-rifle-ammo"
+    ],
+    "categoryID" : "category-hands",
+    "id" : "equipment-rifle",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-special",
+    "id" : "equipment-factory-cart",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-ficsit-coffe-cup",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-special",
+    "id" : "equipment-golden-factory-cart",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-ficsit-gold-coffee-cup",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-candy-cane-basher",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-boombox",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-head",
+    "consumesIDs" : [
+      "part-gas-filter"
+    ],
+    "id" : "equipment-gas-mask",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-head"
+  },
+  {
+    "categoryID" : "category-legs",
+    "id" : "equipment-blade-runners",
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-legs"
+  }
+]

@@ -4,7 +4,4 @@
    <FileRef
       location = "container:Satisfactory.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:SatisfactoryJSONGenerator.xcodeproj">
-   </FileRef>
 </Workspace>

@@ -1,7 +1,13 @@
 import SwiftUI
+import TCA
+
+@Reducer 
+struct ProductReducer {
+    
+}
 
 struct ProductView: View {
-    static let tag = MainScreen.Tab.product
+    static let tag = MainScreenReducer.Tab.product
     
     var body: some View {
         NavigationStack {

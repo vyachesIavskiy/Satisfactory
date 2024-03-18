@@ -1,38 +1,59 @@
 import SwiftUI
+import TCA
 
-struct ContentView: View {
+struct MainScreenPlatformResolvedView<Product: View, Resources: View, Power: View>: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     private var iPhone: Bool {
         horizontalSizeClass == .compact
     }
     
-    @Binding var selectedTab: MainScreen.Tab
-    private var listSelectedTab: Binding<MainScreen.Tab?> {
+    @Bindable var store: StoreOf<MainScreenReducer>
+    
+    private var listSelectedTab: Binding<MainScreenReducer.Tab?> {
         Binding {
-            selectedTab
+            store.selectedTab
         } set: { newValue in
-            guard let newValue else { return }
-            selectedTab = newValue
+            guard 
+                let newValue,
+                newValue != store.selectedTab
+            else { return }
+            
+            store.selectedTab = newValue
         }
-
+    }
+    
+    private let productView: Product
+    private let resourcesView: Resources
+    private let powerView: Power
+    
+    init(
+        store: StoreOf<MainScreenReducer>,
+        @ViewBuilder prodcut: () -> Product,
+        @ViewBuilder resources: () -> Resources,
+        @ViewBuilder power: () -> Power
+    ) {
+        self.store = store
+        productView = prodcut()
+        resourcesView = resources()
+        powerView = power()
     }
     
     var body: some View {
         if iPhone {
-            TabView(selection: $selectedTab) {
-                ProductView()
+            TabView(selection: $store.selectedTab) {
+                productView
                     .tabItem {
                         ProductView.label
                     }
                     .tag(ProductView.tag)
                 
-                ResourcesView()
+                resourcesView
                     .tabItem {
                         ResourcesView.label
                     }
                     .tag(ResourcesView.tag)
                 
-                PowerView()
+                powerView
                     .tabItem {
                         PowerView.label
                     }
@@ -52,15 +73,15 @@ struct ContentView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 #endif
             } detail: {
-                switch selectedTab {
+                switch store.selectedTab {
                 case .product:
-                    ProductView()
+                    productView
                     
                 case .resources:
-                    ResourcesView()
+                    resourcesView
                     
                 case .power:
-                    PowerView()
+                    powerView
                 }
             }
             .tint(Color("Colours/Orange"))
@@ -69,5 +90,13 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(selectedTab: .constant(.product))
+    MainScreenPlatformResolvedView(store: Store(initialState: MainScreenReducer.State()) {
+        MainScreenReducer()
+    }) {
+        ProductView()
+    } resources: {
+        ResourcesView()
+    } power: {
+        PowerView()
+    }
 }

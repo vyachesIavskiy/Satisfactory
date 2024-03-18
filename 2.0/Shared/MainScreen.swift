@@ -1,19 +1,44 @@
 import SwiftUI
+import TCA
 
-struct MainScreen: View {
+@Reducer
+struct MainScreenReducer {
     enum Tab {
         case product
         case resources
         case power
     }
     
-    @State private var selectedTab = Tab.product
+    @ObservableState
+    struct State {
+        var selectedTab = Tab.product
+    }
+    
+    enum Action: BindableAction {
+        case binding(BindingAction<State>)
+    }
+    
+    var body: some ReducerOf<Self> {
+        BindingReducer()
+    }
+}
+
+struct MainScreen: View {
+    @Bindable var store: StoreOf<MainScreenReducer>
     
     var body: some View {
-        ContentView(selectedTab: $selectedTab)
+        MainScreenPlatformResolvedView(store: store) {
+            ProductView()
+        } resources: {
+            ResourcesView()
+        } power: {
+            PowerView()
+        }
     }
 }
 
 #Preview {
-    MainScreen()
+    MainScreen(store: Store(initialState: MainScreenReducer.State()) {
+        MainScreenReducer()
+    })
 }

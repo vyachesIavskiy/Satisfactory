@@ -1,7 +1,13 @@
 import SwiftUI
+import TCA
+
+@Reducer
+struct PowerReducer {
+    
+}
 
 struct PowerView: View {
-    static let tag = MainScreen.Tab.power
+    static let tag = MainScreenReducer.Tab.power
     
     var body: some View {
         NavigationStack {

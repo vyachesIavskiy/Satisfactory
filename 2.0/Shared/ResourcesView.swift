@@ -1,7 +1,13 @@
 import SwiftUI
+import TCA
+
+@Reducer
+struct ResourcesReducer {
+    
+}
 
 struct ResourcesView: View {
-    static let tag = MainScreen.Tab.resources
+    static let tag = MainScreenReducer.Tab.resources
     
     var body: some View {
         NavigationStack {

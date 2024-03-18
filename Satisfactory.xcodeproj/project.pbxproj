@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D321639C2BA86CEF00FD3FA1 /* TCA in Frameworks */ = {isa = PBXBuildFile; productRef = D321639B2BA86CEF00FD3FA1 /* TCA */; };
 		D348481A2BA089D0008F8F42 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34848192BA089D0008F8F42 /* App.swift */; };
-		D348481C2BA089D0008F8F42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D348481B2BA089D0008F8F42 /* ContentView.swift */; };
+		D348481C2BA089D0008F8F42 /* MainScreenPlatformResolvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D348481B2BA089D0008F8F42 /* MainScreenPlatformResolvedView.swift */; };
 		D348481E2BA089D1008F8F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D348481D2BA089D1008F8F42 /* Assets.xcassets */; };
 		D34848282BA093D0008F8F42 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34848272BA093D0008F8F42 /* MainScreen.swift */; };
 		D348482A2BA0969E008F8F42 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34848292BA0969E008F8F42 /* ProductView.swift */; };
@@ -19,13 +20,14 @@
 /* Begin PBXFileReference section */
 		D34848172BA089D0008F8F42 /* Satisfactory Helper 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Satisfactory Helper 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34848192BA089D0008F8F42 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		D348481B2BA089D0008F8F42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D348481B2BA089D0008F8F42 /* MainScreenPlatformResolvedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenPlatformResolvedView.swift; sourceTree = "<group>"; };
 		D348481D2BA089D1008F8F42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D348481F2BA089D1008F8F42 /* Satisfactory Helper 2.0.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Satisfactory Helper 2.0.entitlements"; sourceTree = "<group>"; };
 		D34848272BA093D0008F8F42 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		D34848292BA0969E008F8F42 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		D348482B2BA09963008F8F42 /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
 		D348482D2BA09A91008F8F42 /* PowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerView.swift; sourceTree = "<group>"; };
+		D36A93E42BA835BB0098113A /* TCA */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TCA; path = ../../../../TCA; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D321639C2BA86CEF00FD3FA1 /* TCA in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,10 +73,11 @@
 		D348480F2BA08984008F8F42 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D36A93E32BA8359D0098113A /* Packages */,
 				D34848262BA08BE4008F8F42 /* Preview Content */,
 				D34848192BA089D0008F8F42 /* App.swift */,
 				D34848272BA093D0008F8F42 /* MainScreen.swift */,
-				D348481B2BA089D0008F8F42 /* ContentView.swift */,
+				D348481B2BA089D0008F8F42 /* MainScreenPlatformResolvedView.swift */,
 				D34848292BA0969E008F8F42 /* ProductView.swift */,
 				D348482B2BA09963008F8F42 /* ResourcesView.swift */,
 				D348482D2BA09A91008F8F42 /* PowerView.swift */,
@@ -111,8 +115,10 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D36A93E32BA8359D0098113A /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				D36A93E42BA835BB0098113A /* TCA */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -141,7 +147,10 @@
 			);
 			name = "Satisfactory Helper 2.0";
 			packageProductDependencies = (
+				D321639B2BA86CEF00FD3FA1 /* TCA */,
 			);
+			productName = "Satisfactory Helper 2.0";
+			productReference = D34848172BA089D0008F8F42 /* Satisfactory Helper 2.0.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -196,7 +205,7 @@
 				D348482E2BA09A91008F8F42 /* PowerView.swift in Sources */,
 				D348482A2BA0969E008F8F42 /* ProductView.swift in Sources */,
 				D34848282BA093D0008F8F42 /* MainScreen.swift in Sources */,
-				D348481C2BA089D0008F8F42 /* ContentView.swift in Sources */,
+				D348481C2BA089D0008F8F42 /* MainScreenPlatformResolvedView.swift in Sources */,
 				D348481A2BA089D0008F8F42 /* App.swift in Sources */,
 				D348482C2BA09963008F8F42 /* ResourcesView.swift in Sources */,
 			);
@@ -443,6 +452,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D321639B2BA86CEF00FD3FA1 /* TCA */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TCA;
 		};

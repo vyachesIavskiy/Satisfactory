@@ -4,4 +4,7 @@
    <FileRef
       location = "container:Satisfactory.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:SHCG/SHCG.xcodeproj">
+   </FileRef>
 </Workspace>

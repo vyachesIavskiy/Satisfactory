@@ -60,6 +60,7 @@ struct RecipeCalculationList: View {
             RecipeSelectionForProductionItemView(
                 model: recipeSelectionModel
             )
+            .presentationDetents([.medium, .large])
         }
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {

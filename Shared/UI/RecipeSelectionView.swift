@@ -6,6 +6,9 @@ struct RecipeSelectionView: View {
     @EnvironmentObject private var settings: Settings
     
     @State private var isShowingConfirmation = false
+    @State private var isProductionExpanded = true
+    @State private var isPinnedRecipesExpanded = true
+    @State private var isRecipesExpanded = true
     
     var item: Item
     
@@ -35,55 +38,77 @@ struct RecipeSelectionView: View {
     }
     
     var body: some View {
-        List {
-            if !productionChains.isEmpty && showProductionChains {
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 18) {
+                if !productionChains.isEmpty, showProductionChains {
+                    Section {
+                        if isProductionExpanded {
+                            productionList()
+                            
+                            ListSectionFooterShape(cornerRadius: 10)
+                                .stroke(lineWidth: 0.75)
+                                .foregroundStyle(Color("Secondary").opacity(0.75))
+                                .shadow(color: Color("Secondary").opacity(0.5), radius: 2)
+                        }
+                    } header: {
+                        ListSectionHeaderNew(title: "Saved productions", isExpanded: $isProductionExpanded)
+                    }
+                    .listRowSeparator(.hidden)
+                }
+                
+                if !pinnedRecipes.isEmpty {
+                    Section {
+                        if isPinnedRecipesExpanded {
+                            recipesList(pinnedRecipes)
+                            
+                            ListSectionFooterShape(cornerRadius: 10)
+                                .stroke(lineWidth: 0.75)
+                                .foregroundStyle(Color("Secondary").opacity(0.75))
+                                .shadow(color: Color("Secondary").opacity(0.5), radius: 2)
+                        }
+                    } header: {
+                        
+                        ListSectionHeaderNew(title: "Pinned Recipes", isExpanded: $isPinnedRecipesExpanded)
+                            .foregroundStyle(.primary)
+                    }
+                    .listRowSeparator(.hidden)
+                }
+                
                 Section {
-                    productionList()
+                    if isRecipesExpanded {
+                        recipesList(sortedRecipes)
+                        
+                        if showProductionChains {
+                            ListSectionFooterShape(cornerRadius: 10)
+                                .stroke(lineWidth: 0.75)
+                                .foregroundStyle(Color("Secondary").opacity(0.75))
+                                .shadow(color: Color("Secondary").opacity(0.5), radius: 2)
+                        }
+                    }
                 } header: {
-                    ListSectionHeader(title: "Saved productions")
-                        .foregroundStyle(.primary)
+                    if showProductionChains || !pinnedRecipes.isEmpty {
+                        ListSectionHeaderNew(title: "Recipes", isExpanded: $isRecipesExpanded)
+                    }
                 }
                 .listRowSeparator(.hidden)
             }
-            
-            Section {
-                recipesList(pinnedRecipes)
-            } header: {
-                if !pinnedRecipes.isEmpty {
-                    ListSectionHeader(title: "Pinned Recipes")
-                        .foregroundStyle(.primary)
-                }
-            }
-            .listRowSeparator(.hidden)
-            
-            Section {
-                recipesList(sortedRecipes)
-            } header: {
-                if showProductionChains, !productionChains.isEmpty || !pinnedRecipes.isEmpty {
-                    ListSectionHeader(title: "Recipes")
-                        .foregroundStyle(.primary)
-                }
-            }
-            .listRowSeparator(.hidden)
+            .padding(.horizontal, 16)
+            .frame(maxWidth: 600)
         }
-        .frame(maxWidth: 600)
-        .listStyle(.plain)
+        .frame(maxWidth: .infinity)
     }
     
     private func recipesList(_ recipes: [Recipe]) -> some View {
         ForEach(recipes) { recipe in
-            VStack(alignment: .leading) {
-                Text(recipe.name)
-                    .fontWeight(.bold)
-                
-                RecipeView(recipe: recipe)
-                    .contentShape(Rectangle())
-            }
-            .listRowSeparator(.hidden)
-            .onTapGesture {
-                selectedRecipe = recipe
-            }
-            .contextMenu {
+            listItem {
+                VStack(alignment: .leading) {
+                    Text(recipe.name)
+                        .fontWeight(.bold)
+                    
+                    RecipeView(recipe: recipe)
+                        .contentShape(Rectangle())
+                }
+            } contextMenu: {
                 Button {
                     withAnimation {
                         storage[recipeID: recipe.id]?.isPinned.toggle()
@@ -94,41 +119,61 @@ struct RecipeSelectionView: View {
                         systemImage: recipe.isPinned ? "pin.slash" : "pin"
                     )
                 }
+            } onTapGesture: {
+                selectedRecipe = recipe
             }
         }
     }
     
     private func productionList() -> some View {
         ForEach(productionChains) { productionChain in
-            VStack(alignment: .leading) {
-                Text(productionChain.recipe.name)
-                    .fontWeight(.semibold)
-                
-                RecipeView(recipe: productionChain.recipe)
-                    .contentShape(Rectangle())
-                
-                HStack(spacing: 12) {
-                    Text("Amount: ")
-                    Text(productionChain.amount.formatted(.fractionFromZeroToFour))
+            listItem {
+                VStack(alignment: .leading) {
+                    Text(productionChain.recipe.name)
                         .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 4)
-                        .background(Color.orange)
-                        .clipShape(RoundedRectangle(cornerRadius: 3))
+                    
+                    RecipeView(recipe: productionChain.recipe)
+                        .contentShape(Rectangle())
+                    
+                    HStack(spacing: 12) {
+                        Text("Amount: ")
+                        Text(productionChain.amount.formatted(.fractionFromZeroToFour))
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 4)
+                            .background(Color.orange)
+                            .clipShape(RoundedRectangle(cornerRadius: 3))
+                    }
                 }
-            }
-            .onTapGesture {
-                selectedProductionChain = productionChain
-            }
-            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                Button {
-                    storage[productionChainID: productionChain.id] = nil
+            } contextMenu: {
+                Button(role: .destructive) {
+                    withAnimation {
+                        storage[productionChainID: productionChain.id] = nil
+                    }
                 } label: {
                     Label("Delete", systemImage: "trash")
                 }
-                .tint(.red)
+            } onTapGesture: {
+                selectedProductionChain = productionChain
             }
         }
+    }
+    
+    @ViewBuilder
+    private func listItem<C: View, M: View>(
+        @ViewBuilder content: () -> C,
+        @ViewBuilder contextMenu: () -> M,
+        onTapGesture: @escaping () -> Void
+    ) -> some View {
+        content()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .contentShape(.interaction, Rectangle())
+            .contentShape(.contextMenuPreview, RoundedRectangle(cornerRadius: 8).inset(by: -10))
+            .padding(.horizontal, 10)
+            .onTapGesture(perform: onTapGesture)
+            .contextMenu {
+                contextMenu()
+            }
     }
 }
 

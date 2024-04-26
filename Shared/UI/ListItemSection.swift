@@ -14,7 +14,7 @@ struct ListItemSection: View {
         if !items.isEmpty {
             VStack {
                 if !isSearching {
-                    ListSectionHeaderNew(title: title, numberOfItems: items.count, isExpanded: $isExpanded)
+                    ListSectionHeaderNew(title: title, isExpanded: $isExpanded)
                         .readSize($headerSize)
                 }
                 

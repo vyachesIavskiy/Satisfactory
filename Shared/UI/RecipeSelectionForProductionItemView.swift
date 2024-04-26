@@ -38,12 +38,21 @@ struct RecipeSelectionForProductionItemView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        RecipeSelectionView(
-            item: model.item,
-            selectedRecipe: $selectedRecipe,
-            selectedProductionChain: .constant(nil),
-            showProductionChains: false
-        )
+        NavigationStack {
+            RecipeSelectionView(
+                item: model.item,
+                selectedRecipe: $selectedRecipe,
+                selectedProductionChain: .constant(nil),
+                showProductionChains: false
+            )
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
+            }
+        }
         .onChange(of: selectedRecipe) { newRecipe in
             guard let newRecipe = newRecipe else { return }
             

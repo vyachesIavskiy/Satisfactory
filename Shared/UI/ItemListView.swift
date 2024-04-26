@@ -151,7 +151,7 @@ struct ItemListView: View {
                     .transition(.move(edge: .top).combined(with: .opacity))
                 }
             } header: {
-                ListSectionHeaderNew(title: title, numberOfItems: items.count, isExpanded: isExpanded)
+                ListSectionHeaderNew(title: title, isExpanded: isExpanded)
                     .padding(.vertical, 10)
             }
             

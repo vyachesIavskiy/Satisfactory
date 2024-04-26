@@ -42,7 +42,6 @@ struct ListSectionHeader_Previews: PreviewProvider {
 
 struct ListSectionHeaderNew: View {
     var title: LocalizedStringKey
-    var numberOfItems: Int
     @Binding var isExpanded: Bool
     
     var body: some View {
@@ -203,6 +202,14 @@ struct ListSectionFooterShape: Shape {
             path.addLine(to: rect.bottomLeft.offsetBy(y: -expandedCornerRadius))
         }
     }
+    
+    func sizeThatFits(_ proposal: ProposedViewSize) -> CGSize {
+        let resolvedProposal = proposal.replacingUnspecifiedDimensions()
+        return CGSize(
+            width: resolvedProposal.width,
+            height: cornerRadius
+        )
+    }
 }
 
 struct ListSectionHeaderNew_Previews: PreviewProvider {
@@ -236,7 +243,7 @@ struct ListSectionHeaderNew_Previews: PreviewProvider {
                 .fixedSize(horizontal: false, vertical: true)
                 .foregroundStyle(Color("Secondary").opacity(0.75))
                 
-                ListSectionHeaderNew(title: "Section", numberOfItems: 10, isExpanded: $isExpanded2)
+                ListSectionHeaderNew(title: "Section", isExpanded: $isExpanded2)
                     .padding(.horizontal)
             }
         }

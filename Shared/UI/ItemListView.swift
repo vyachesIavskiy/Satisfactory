@@ -21,27 +21,6 @@ extension ItemListView {
             filteredEquipment.filter { !$0.isPinned }
         }
         
-        var productions: [ProductionChain] {
-            storage.productionChains.sortedByTiers()
-        }
-        
-        var statistics: [CalculationStatisticsModel] {
-            productions
-                .map(\.statistics)
-                .reduce([], +)
-                .reduceDuplicates()
-        }
-        
-        var machineStatistics: [CalculationMachineStatisticsModel] {
-            productions
-                .map(\.machineStatistics)
-                .reduce([], +)
-                .reduceDuplicates()
-                .sorted { lhs, rhs in
-                    (lhs.item as? Part)?.sortingPriority ?? 1 > (rhs.item as? Part)?.sortingPriority ?? 0
-                }
-        }
-        
         private let storage: Storage
         
         private var filteredParts: [Part] {
@@ -82,8 +61,6 @@ struct ItemListView: View {
     
     @EnvironmentObject private var storage: Storage
     
-    @State private var isShowingStatistics = false
-    
     // MARK: - UI
     var body: some View {
         NavigationView {
@@ -101,32 +78,7 @@ struct ItemListView: View {
                 prompt: "Search"
             )
             .autocorrectionDisabled(true)
-            .navigationTitle("Production")
-            .toolbar {
-                if !model.productions.isEmpty {
-                    ToolbarItem(placement: .primaryAction) {
-                        Button {
-                            isShowingStatistics = true
-                        } label: {
-                            Image(systemName: "checklist.unchecked")
-                        }
-                    }
-                }
-            }
-            .sheet(isPresented: $isShowingStatistics) {
-                NavigationStack {
-                    CalculationStatistics(data: model.statistics, machines: model.machineStatistics)
-                        .toolbar {
-                            ToolbarItem(placement: .confirmationAction) {
-                                Button("Done") {
-                                    isShowingStatistics = false
-                                }
-                            }
-                        }
-                        .navigationTitle("Production chains statistics")
-                        .navigationBarTitleDisplayMode(.inline)
-                }
-            }
+            .navigationTitle("New Production")
         }
         .navigationViewStyle(.stack)
     }

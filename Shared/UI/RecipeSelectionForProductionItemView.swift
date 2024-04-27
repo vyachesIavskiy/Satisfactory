@@ -41,9 +41,7 @@ struct RecipeSelectionForProductionItemView: View {
         NavigationStack {
             RecipeSelectionView(
                 item: model.item,
-                selectedRecipe: $selectedRecipe,
-                selectedProductionChain: .constant(nil),
-                showProductionChains: false
+                selectedRecipe: $selectedRecipe
             )
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

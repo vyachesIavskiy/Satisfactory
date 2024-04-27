@@ -37,6 +37,12 @@
 		45115BE024BF559E00D58F6A /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BDE24BF559E00D58F6A /* ItemRow.swift */; };
 		45115BE524BF578F00D58F6A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BE424BF578F00D58F6A /* RecipeView.swift */; };
 		45115BE624BF578F00D58F6A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BE424BF578F00D58F6A /* RecipeView.swift */; };
+		D389C5C42BDC2FBD003705A1 /* FactoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */; };
+		D389C5C52BDC2FBD003705A1 /* FactoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */; };
+		D389C5C62BDC2FBD003705A1 /* FactoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */; };
+		D389C5C82BDC4980003705A1 /* FactoryPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389C5C72BDC4980003705A1 /* FactoryPersistent.swift */; };
+		D389C5C92BDC4980003705A1 /* FactoryPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389C5C72BDC4980003705A1 /* FactoryPersistent.swift */; };
+		D389C5CA2BDC4980003705A1 /* FactoryPersistent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389C5C72BDC4980003705A1 /* FactoryPersistent.swift */; };
 		F934317F2ACAA2A30082C404 /* Disclaimer_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */; };
 		F93431802ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */; };
 		F93431812ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */; };
@@ -228,6 +234,8 @@
 		450BD1CA24A639FD00948B47 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		45115BDE24BF559E00D58F6A /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		45115BE424BF578F00D58F6A /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriesView.swift; sourceTree = "<group>"; };
+		D389C5C72BDC4980003705A1 /* FactoryPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryPersistent.swift; sourceTree = "<group>"; };
 		F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.7.1.swift; sourceTree = "<group>"; };
 		F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointFormatStyle.swift; sourceTree = "<group>"; };
 		F946413E26A361E2001F8ACF /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
@@ -415,6 +423,7 @@
 				F9B92FDF2A265D8700C173BF /* Shapes */,
 				F96FC00727834E8700307A78 /* Item */,
 				F9CBF0B627493F770020871C /* ContentView.swift */,
+				D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */,
 				F9B91034273EA4D000274EE3 /* LoadingView.swift */,
 				F946413E26A361E2001F8ACF /* ItemListView.swift */,
 				F9A7AC932A5547EC006DA96F /* ListItemSection.swift */,
@@ -470,6 +479,7 @@
 				F98BB2C6273D34A1000556E9 /* RecipePersistent.swift */,
 				F98BB2C7273D34A1000556E9 /* VersionPersistent.swift */,
 				F9D1CD3A2747B06300125C2A /* ProductionPersistent.swift */,
+				D389C5C72BDC4980003705A1 /* FactoryPersistent.swift */,
 			);
 			path = Persistent;
 			sourceTree = "<group>";
@@ -708,6 +718,7 @@
 				F9E27167273FC9550068B36E /* Tree.swift in Sources */,
 				450BD1D224A639FE00948B47 /* Building.swift in Sources */,
 				F98F3B32273ABF0800CE2580 /* RecipeNetwork.swift in Sources */,
+				D389C5C42BDC2FBD003705A1 /* FactoriesView.swift in Sources */,
 				F9B92FFF2A269CC600C173BF /* SizeReader.swift in Sources */,
 				F9B9103E273EA6C800274EE3 /* RecipeCalculationView.swift in Sources */,
 				F9B930052A26A0FE00C173BF /* DisclaimerViewContainer.swift in Sources */,
@@ -744,6 +755,7 @@
 				F95FAAA5273C3E7E0043D3C4 /* DataProvider.swift in Sources */,
 				F9B92FE52A265F3C00C173BF /* CGRect+Points.swift in Sources */,
 				F98F3B29273ABD0800CE2580 /* EquipmentNetwork.swift in Sources */,
+				D389C5C82BDC4980003705A1 /* FactoryPersistent.swift in Sources */,
 				F98F3B26273AB9D000CE2580 /* PartNetwork.swift in Sources */,
 				F9BAB9D92AC614CF00BE130F /* Disclaimer_V1.7.swift in Sources */,
 				F9B91041273EA74C00274EE3 /* CalculationStatistics.swift in Sources */,
@@ -756,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F946414026A361E2001F8ACF /* ItemListView.swift in Sources */,
+				D389C5C62BDC2FBD003705A1 /* FactoriesView.swift in Sources */,
 				F998FFF52A116CED00EB7225 /* SendFeedbackButton.swift in Sources */,
 				F9EB45CD27454C8800FB8926 /* Production.swift in Sources */,
 				F9B930062A26A0FE00C173BF /* DisclaimerViewContainer.swift in Sources */,
@@ -797,6 +810,7 @@
 				450BD1D524A639FE00948B47 /* Recipe.swift in Sources */,
 				F9EB45D027454CCE00FB8926 /* RecipeElement.swift in Sources */,
 				F9D1CD3C2747B06300125C2A /* ProductionPersistent.swift in Sources */,
+				D389C5CA2BDC4980003705A1 /* FactoryPersistent.swift in Sources */,
 				F98F3B27273AB9D000CE2580 /* PartNetwork.swift in Sources */,
 				F96FC00A27834E9600307A78 /* ItemCell.swift in Sources */,
 				F9BAB9DA2AC614CF00BE130F /* Disclaimer_V1.7.swift in Sources */,
@@ -839,6 +853,7 @@
 				F95DAFA62AC6ACC60062A5AD /* Tree.swift in Sources */,
 				F95DAFA72AC6ACC60062A5AD /* Building.swift in Sources */,
 				F95DAFA82AC6ACC60062A5AD /* RecipeNetwork.swift in Sources */,
+				D389C5C52BDC2FBD003705A1 /* FactoriesView.swift in Sources */,
 				F95DAFA92AC6ACC60062A5AD /* SizeReader.swift in Sources */,
 				F95DAFAA2AC6ACC60062A5AD /* RecipeCalculationView.swift in Sources */,
 				F95DAFAB2AC6ACC60062A5AD /* DisclaimerViewContainer.swift in Sources */,
@@ -875,6 +890,7 @@
 				F95DAFC92AC6ACC60062A5AD /* DataProvider.swift in Sources */,
 				F95DAFCA2AC6ACC60062A5AD /* CGRect+Points.swift in Sources */,
 				F95DAFCB2AC6ACC60062A5AD /* EquipmentNetwork.swift in Sources */,
+				D389C5C92BDC4980003705A1 /* FactoryPersistent.swift in Sources */,
 				F95DAFCC2AC6ACC60062A5AD /* PartNetwork.swift in Sources */,
 				F95DAFCD2AC6ACC60062A5AD /* Disclaimer_V1.7.swift in Sources */,
 				F95DAFCE2AC6ACC60062A5AD /* CalculationStatistics.swift in Sources */,

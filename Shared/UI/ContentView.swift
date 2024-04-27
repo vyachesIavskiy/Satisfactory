@@ -9,8 +9,15 @@ struct ContentView: View {
         TabView {
             ItemListView(model: ItemListView.Model(storage: storage))
                 .tabItem {
-                    Label("Production", systemImage: "hammer")
+                    Label("New Production", systemImage: "hammer")
                 }
+            
+            if !storage.productionChains.isEmpty {
+                FactoriesView(viewModel: FactoriesViewModel(storage: storage))
+                    .tabItem {
+                        Label("Factories", systemImage: "building.2")
+                    }
+            }
             
             SettingsView()
                 .tabItem {

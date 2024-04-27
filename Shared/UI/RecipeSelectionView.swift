@@ -13,13 +13,6 @@ struct RecipeSelectionView: View {
     var item: Item
     
     @Binding var selectedRecipe: Recipe?
-    @Binding var selectedProductionChain: ProductionChain?
-    
-    var showProductionChains = true
-    
-    private var productionChains: [ProductionChain] {
-        storage[productionChainsFor: item.id]
-    }
     
     private var pinnedRecipes: [Recipe] {
         storage[recipesFor: item.id].filter {
@@ -40,22 +33,6 @@ struct RecipeSelectionView: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 18) {
-                if !productionChains.isEmpty, showProductionChains {
-                    Section {
-                        if isProductionExpanded {
-                            productionList()
-                            
-                            ListSectionFooterShape(cornerRadius: 10)
-                                .stroke(lineWidth: 0.75)
-                                .foregroundStyle(Color("Secondary").opacity(0.75))
-                                .shadow(color: Color("Secondary").opacity(0.5), radius: 2)
-                        }
-                    } header: {
-                        ListSectionHeaderNew(title: "Saved productions", isExpanded: $isProductionExpanded)
-                    }
-                    .listRowSeparator(.hidden)
-                }
-                
                 if !pinnedRecipes.isEmpty {
                     Section {
                         if isPinnedRecipesExpanded {
@@ -78,7 +55,7 @@ struct RecipeSelectionView: View {
                     if isRecipesExpanded {
                         recipesList(sortedRecipes)
                         
-                        if showProductionChains {
+                        if !pinnedRecipes.isEmpty {
                             ListSectionFooterShape(cornerRadius: 10)
                                 .stroke(lineWidth: 0.75)
                                 .foregroundStyle(Color("Secondary").opacity(0.75))
@@ -86,7 +63,7 @@ struct RecipeSelectionView: View {
                         }
                     }
                 } header: {
-                    if showProductionChains || !pinnedRecipes.isEmpty {
+                    if !pinnedRecipes.isEmpty {
                         ListSectionHeaderNew(title: "Recipes", isExpanded: $isRecipesExpanded)
                     }
                 }
@@ -125,40 +102,6 @@ struct RecipeSelectionView: View {
         }
     }
     
-    private func productionList() -> some View {
-        ForEach(productionChains) { productionChain in
-            listItem {
-                VStack(alignment: .leading) {
-                    Text(productionChain.recipe.name)
-                        .fontWeight(.semibold)
-                    
-                    RecipeView(recipe: productionChain.recipe)
-                        .contentShape(Rectangle())
-                    
-                    HStack(spacing: 12) {
-                        Text("Amount: ")
-                        Text(productionChain.amount.formatted(.fractionFromZeroToFour))
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 4)
-                            .background(Color.orange)
-                            .clipShape(RoundedRectangle(cornerRadius: 3))
-                    }
-                }
-            } contextMenu: {
-                Button(role: .destructive) {
-                    withAnimation {
-                        storage[productionChainID: productionChain.id] = nil
-                    }
-                } label: {
-                    Label("Delete", systemImage: "trash")
-                }
-            } onTapGesture: {
-                selectedProductionChain = productionChain
-            }
-        }
-    }
-    
     @ViewBuilder
     private func listItem<C: View, M: View>(
         @ViewBuilder content: () -> C,
@@ -187,10 +130,9 @@ struct RecipeSelectionPreview: PreviewProvider {
     static var previews: some View {
         RecipeSelectionView(
             item: turboMotor,
-            selectedRecipe: .constant(nil),
-            selectedProductionChain: .constant(nil)
+            selectedRecipe: .constant(nil)
         )
-            .environmentObject(storage)
-            .environmentObject(Settings())
+        .environmentObject(storage)
+        .environmentObject(Settings())
     }
 }

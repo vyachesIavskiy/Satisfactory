@@ -20,3 +20,16 @@ struct RecipeElement: Identifiable {
         return input.amountPerMinute * multiplier
     }
 }
+
+extension RecipeElement: Hashable {
+    static func == (lhs: RecipeElement, rhs: RecipeElement) -> Bool {
+        lhs.id == rhs.id && lhs.item.id == rhs.item.id && lhs.recipe == rhs.recipe && lhs.amount == rhs.amount
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(item.id)
+        hasher.combine(recipe)
+        hasher.combine(amount)
+    }
+}

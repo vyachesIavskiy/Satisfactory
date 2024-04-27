@@ -23,19 +23,8 @@ struct ListItemRow: View {
             
             ZStack {
                 HStack {
-                    VStack(alignment: .leading) {
-                        Text(item.name)
-                            .font(.title3)
-                        
-                        if !productionChains.isEmpty {
-                            Spacer()
-                        
-                            Text("\(productionChains.count) \(productionChains.count > 1 ? "productions" : "production") saved")
-                                .font(.footnote.weight(.semibold))
-                                .foregroundColor(Color("Secondary").opacity(0.5))
-                        }
-                    }
-                    .padding(.vertical, 10)
+                    Text(item.name)
+                        .font(.title3)
                     
                     Spacer()
                     

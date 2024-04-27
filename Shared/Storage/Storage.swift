@@ -43,6 +43,11 @@ class Storage: ObservableObject {
         set { inMemoryStorage.productionChains = newValue }
     }
     
+    var factories: [Factory] {
+        get { inMemoryStorage.factories }
+        set { inMemoryStorage.factories = newValue }
+    }
+    
     init(
         inMemoryStorage: InMemoryStorageProtocol = InMemoryStorage(),
         persistentStorage: PersistentStorageProtocol = PersistentStorage()
@@ -60,6 +65,7 @@ class Storage: ObservableObject {
             try buildings.forEach(save)
             try recipes.forEach(save)
             try productionChains.forEach(save)
+            try factories.forEach(save)
         } catch {
             fatalError("Could not save! Error: \(error)")
         }
@@ -139,12 +145,27 @@ class Storage: ObservableObject {
         guard !nodesToSave.isEmpty else { return }
         
         let productionToSave = ProductionPersistent(
+            name: productionChain.name,
+            factoryID: productionChain.factoryID,
             productionTreeRootID: nodesToSave[0].id,
             amount: productionChain.amount,
             productionChain: nodesToSave
         )
         
         try persistentStorage.save(productionToSave)
+    }
+    
+    private func save(factory: Factory) throws {
+        let factoryToSave = FactoryPersistent(
+            id: factory.id,
+            name: factory.name,
+            image: FactoryPersistent.ImageFormat(factory.image),
+            productionIDs: factory.productions.compactMap {
+                UUID(uuidString: $0.id)
+            }
+        )
+        
+        try persistentStorage.save(factoryToSave)
     }
     
     private func save(item: Item) throws {
@@ -165,6 +186,10 @@ class Storage: ObservableObject {
     
     private func delete(productionChainID: String) throws {
         try persistentStorage.delete(ProductionPersistent.self, filename: productionChainID)
+    }
+    
+    private func delete(factoryID: UUID) throws {
+        try persistentStorage.delete(FactoryPersistent.self, filename: "factory-\(factoryID.uuidString)")
     }
     // MARK: -
     
@@ -270,6 +295,23 @@ class Storage: ObservableObject {
                 }
                 
                 return ProductionChain(productionTree: root)
+            }
+            
+            let loadedFactories = try persistentStorage.load(FactoryPersistent.self)
+            
+            factories = loadedFactories.compactMap { loadedFactory in
+                let productions = productionChains.filter {
+                    guard let uuid = UUID(uuidString: $0.id) else { return false }
+                    
+                    return loadedFactory.productionIDs.contains(uuid)
+                }
+                
+                return Factory(
+                    id: loadedFactory.id,
+                    name: loadedFactory.name,
+                    image: Factory.ImageFormat(loadedFactory.image),
+                    productions: Set(productions)
+                )
             }
         } catch {
             fatalError("Could not load! Error: \(error)")
@@ -384,6 +426,38 @@ class Storage: ObservableObject {
     subscript(productionChainsFor id: String) -> [ProductionChain] {
         inMemoryStorage.productionChains { chain in
             chain.id.hasPrefix(id)
+        }
+    }
+    
+    subscript(factoryID id: UUID) -> Factory? {
+        inMemoryStorage[factoryID: id] 
+    }
+    
+    func saveFactory(_ factory: Factory) {
+        objectWillChange.send()
+        
+        inMemoryStorage[factoryID: factory.id] = factory
+        
+        do {
+            try save(factory: factory)
+        } catch {
+            fatalError("Could not save factory! Error: \(error)")
+        }
+    }
+    
+    func deleteFactory(_ factory: Factory) {
+        objectWillChange.send()
+        
+        for production in factory.productions {
+            self[productionChainID: production.id]?.factoryID = nil
+        }
+        
+        inMemoryStorage[factoryID: factory.id] = nil
+        
+        do {
+            try delete(factoryID: factory.id)
+        } catch {
+            fatalError("Could not save factory! Error: \(error)")
         }
     }
 }

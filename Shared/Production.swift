@@ -34,6 +34,10 @@ struct ProductionChain {
         "\(item.id)-\(recipe.id)-\(amount.formatted(.fractionFromZeroToFour))"
     }
     
+    var name: String
+    
+    var factoryID: UUID?
+    
     var item: Item {
         productionTree.element.item
     }
@@ -53,10 +57,12 @@ struct ProductionChain {
     
     init(item: Item, recipe: Recipe, amount: Double) {
         productionTree = RecipeTree(item: item, recipe: recipe, amount: amount)
+        name = item.name
     }
     
     init(productionTree: RecipeTree) {
         self.productionTree = productionTree
+        name = productionTree.element.item.name
         recalculate()
     }
     
@@ -102,9 +108,10 @@ struct ProductionChain {
 }
 
 extension ProductionChain: Identifiable {}
+extension ProductionChain: Hashable {}
 
-extension Array where Element == ProductionChain {
-    func sortedByTiers() -> Self {
+extension Sequence<ProductionChain> {
+    func sortedByTiers() -> [ProductionChain] {
         sorted { lhs, rhs in
             guard let lhsPart = lhs.item as? Part,
                   let rhsPart = rhs.item as? Part else { return true }

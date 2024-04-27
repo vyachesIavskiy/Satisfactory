@@ -5,8 +5,6 @@ struct RecipeCalculationView: View {
     
     @State private var recipe: Recipe?
     
-    @State private var productionChain: ProductionChain?
-    
     @State private var isShowingAlert = false
     
     @State private var isShowingDismissAlert = false
@@ -18,18 +16,12 @@ struct RecipeCalculationView: View {
     var body: some View {
         RecipeSelectionView(
             item: item,
-            selectedRecipe: $recipe,
-            selectedProductionChain: $productionChain
+            selectedRecipe: $recipe
         )
         .navigationTitle(item.name)
         .fullScreenCover(item: $recipe) { recipe in
             NavigationStack {
                 RecipeCalculationList(item: item, recipe: recipe)
-            }
-        }
-        .fullScreenCover(item: $productionChain) { productionChain in
-            NavigationStack {
-                RecipeCalculationList(productionChain: productionChain)
             }
         }
     }

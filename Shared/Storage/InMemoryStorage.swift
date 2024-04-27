@@ -6,6 +6,7 @@ protocol InMemoryStorageProtocol {
     var buildings: [Building] { get set }
     var recipes: [Recipe] { get set }
     var productionChains: [ProductionChain] { get set }
+    var factories: [Factory] { get set }
     
     subscript(itemID id: String) -> Item? { get set }
     subscript(partID id: String) -> Part? { get set }
@@ -133,6 +134,23 @@ extension InMemoryStorageProtocol {
     func productionChains(where predicate: (ProductionChain) -> Bool) -> [ProductionChain] {
         productionChains.filter(predicate)
     }
+    
+    subscript(factoryID id: UUID) -> Factory? {
+        get {
+            factories.first { $0.id == id }
+        }
+        set {
+            if let newValue {
+                if let index = factories.firstIndex(where: { $0.id == id }) {
+                    factories[index] = newValue
+                } else {
+                    factories.append(newValue)
+                }
+            } else if let index = factories.firstIndex(where: { $0.id == id }) {
+                factories.remove(at: index)
+            }
+        }
+    }
 }
 
 struct InMemoryStorage: InMemoryStorageProtocol {
@@ -141,6 +159,7 @@ struct InMemoryStorage: InMemoryStorageProtocol {
     var buildings = [Building]()
     var recipes = [Recipe]()
     var productionChains = [ProductionChain]()
+    var factories = [Factory]()
 }
 
 private extension Array {

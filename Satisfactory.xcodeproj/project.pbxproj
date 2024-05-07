@@ -37,6 +37,7 @@
 		45115BE024BF559E00D58F6A /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BDE24BF559E00D58F6A /* ItemRow.swift */; };
 		45115BE524BF578F00D58F6A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BE424BF578F00D58F6A /* RecipeView.swift */; };
 		45115BE624BF578F00D58F6A /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45115BE424BF578F00D58F6A /* RecipeView.swift */; };
+		D341A9EE2BDD60E500ED36F6 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D341A9ED2BDD60E500ED36F6 /* SHStorage */; };
 		D389C5C42BDC2FBD003705A1 /* FactoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */; };
 		D389C5C52BDC2FBD003705A1 /* FactoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */; };
 		D389C5C62BDC2FBD003705A1 /* FactoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */; };
@@ -234,6 +235,10 @@
 		450BD1CA24A639FD00948B47 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		45115BDE24BF559E00D58F6A /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		45115BE424BF578F00D58F6A /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		D30C26992BE7F3050009AE29 /* SHLogger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHLogger; sourceTree = "<group>"; };
+		D341A9EA2BDD60C600ED36F6 /* TCA */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TCA; sourceTree = "<group>"; };
+		D341A9EB2BDD60C600ED36F6 /* SHStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHStorage; sourceTree = "<group>"; };
+		D386D5C32BEA03F200B584C9 /* SHFileManager */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHFileManager; sourceTree = "<group>"; };
 		D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriesView.swift; sourceTree = "<group>"; };
 		D389C5C72BDC4980003705A1 /* FactoryPersistent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryPersistent.swift; sourceTree = "<group>"; };
 		F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.7.1.swift; sourceTree = "<group>"; };
@@ -300,6 +305,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D341A9EE2BDD60E500ED36F6 /* SHStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +334,7 @@
 				450BD19F24A6395700948B47 /* macOS */,
 				F94C7F462A93FD7D004E9F35 /* Packages */,
 				450BD19724A6395700948B47 /* Products */,
+				D341A9EC2BDD60E500ED36F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -450,11 +457,22 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		D341A9EC2BDD60E500ED36F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F94C7F462A93FD7D004E9F35 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				D386D5C32BEA03F200B584C9 /* SHFileManager */,
+				D30C26992BE7F3050009AE29 /* SHLogger */,
 				F99FBE8C2A9415CF0066339C /* SHDebug */,
+				D341A9EB2BDD60C600ED36F6 /* SHStorage */,
 				F99FBE8B2A9404660066339C /* SHTheme */,
+				D341A9EA2BDD60C600ED36F6 /* TCA */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -573,6 +591,9 @@
 			dependencies = (
 			);
 			name = iOS;
+			packageProductDependencies = (
+				D341A9ED2BDD60E500ED36F6 /* SHStorage */,
+			);
 			productName = iOS;
 			productReference = 450BD19624A6395700948B47 /* Satisfactory.app */;
 			productType = "com.apple.product-type.application";
@@ -954,7 +975,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1013,7 +1034,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1206,6 +1227,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D341A9ED2BDD60E500ED36F6 /* SHStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 450BD18A24A6395700948B47 /* Project object */;
 }

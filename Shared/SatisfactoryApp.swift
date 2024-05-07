@@ -1,4 +1,7 @@
 import SwiftUI
+import Storage
+import Models
+import Dependencies
 
 @main
 struct SatisfactoryApp: App {
@@ -16,6 +19,277 @@ struct SatisfactoryApp: App {
             }
             .environmentObject(storage)
             .environmentObject(Settings())
+//            if #available(iOS 17.0, *) {
+//                FileManagerCheckView()
+//            }
+        }
+    }
+}
+
+@available(iOS 17.0, *)
+private struct FileManagerCheckView: View {
+    class File: Identifiable {
+        let id = UUID()
+        var name: String
+        var data: Data?
+        var children: [File]?
+        
+        init(name: String, children: [File]? = nil) {
+            self.name = name
+            self.children = children
+        }
+    }
+    
+    struct FilePreview: Identifiable {
+        var name: String
+        var content: String
+        
+        var id: String { name }
+        
+        init(name: String, content: Data) {
+            self.name = name
+            self.content = String(data: content, encoding: .utf8) ?? ""
+        }
+    }
+    
+    struct FactoryListView: Identifiable, Hashable {
+        var id: UUID
+        var name: String
+        var children: [FactoryListView]?
+        
+        init(id: UUID, name: String, children: [FactoryListView]? = nil) {
+            self.id = id
+            self.name = name
+            self.children = children
+        }
+    }
+    
+    // File system
+    @State var legacyFiles = [File]()
+    @State var v2Files = [File]()
+    @State var fileToPreview: FilePreview?
+    
+    // Storage
+    @State var parts = [Models.Part]()
+    @State var equipment = [Models.Equipment]()
+    @State var recipes = [Models.Recipe]()
+    @State var factories = [FactoryListView]()
+    
+    @State var partsExpanded = true
+    @State var equipmentExpanded = true
+    @State var recipesExpanded = true
+    @State var factoriesExpanded = true
+    
+    @Dependency(\.storageClient) var storageClient
+    
+    var body: some View {
+        TabView {
+            NavigationStack {
+                List(legacyFiles, children: \.children) { file in
+                    if let data = file.data {
+                        Button(file.name) {
+                            fileToPreview = FilePreview(name: file.name, content: data)
+                        }
+                    } else {
+                        Text(file.name)
+                    }
+                }
+                .navigationTitle("Legacy File system")
+            }
+            .tabItem {
+                Label("Legacy File system", systemImage: "1.square")
+            }
+            
+            NavigationStack {
+                List(v2Files, children: \.children) { file in
+                    if let data = file.data {
+                        Button(file.name) {
+                            fileToPreview = FilePreview(name: file.name, content: data)
+                        }
+                    } else {
+                        Text(file.name)
+                    }
+                }
+                .navigationTitle("V2 File system")
+            }
+            .tabItem {
+                Label("V2 File system", systemImage: "2.square")
+            }
+            
+            NavigationStack {
+                List {
+                    Section("Parts", isExpanded: $partsExpanded) {
+                        ForEach(parts) { part in
+                            let isPinned = storageClient.isPartPinned(part)
+                            
+                            HStack {
+                                Text(part.id)
+                                
+                                Spacer()
+                                
+                                if isPinned {
+                                    Image(systemName: "pin.square")
+                                }
+                            }
+                            .foregroundStyle(isPinned ? .orange : .primary)
+                        }
+                    }
+                    
+                    Section("Equipment", isExpanded: $equipmentExpanded) {
+                        ForEach(equipment) { equipment in
+                            let isPinned = storageClient.isEquipmentPinned(equipment)
+                            
+                            HStack {
+                                Text(equipment.id)
+                                
+                                Spacer()
+                                
+                                if isPinned {
+                                    Image(systemName: "pin.square")
+                                }
+                            }
+                            .foregroundStyle(isPinned ? .orange : .primary)
+                        }
+                    }
+                    
+                    Section("Recipes", isExpanded: $recipesExpanded) {
+                        ForEach(recipes) { recipe in
+                            let isPinned = storageClient.isRecipePinned(recipe)
+                            
+                            HStack {
+                                Text(recipe.id)
+                                
+                                Spacer()
+                                
+                                if isPinned {
+                                    Image(systemName: "pin.square")
+                                }
+                            }
+                            .foregroundStyle(isPinned ? .orange : .primary)
+                        }
+                    }
+                    
+                    Section("Factories", isExpanded: $factoriesExpanded) {
+                        OutlineGroup(factories, children: \.children) { factory in
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(factory.name)
+                                    
+                                    Text(factory.id.uuidString)
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                        }
+                    }
+                }
+                .listStyle(.sidebar)
+                .navigationTitle("Storage")
+            }
+            .tabItem {
+                Label("Storage", systemImage: "3.square")
+            }
+        }
+        .onAppear {
+            load()
+        }
+        .overlay(alignment: .topTrailing) {
+            Button("Load storage") {
+                loadStorage()
+            }
+            .buttonStyle(.borderedProminent)
+            .padding(.trailing)
+        }
+        .sheet(item: $fileToPreview) { preview in
+            NavigationStack {
+                ScrollView {
+                    Text(preview.content)
+                        .fontDesign(.monospaced)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .padding()
+                }
+                .navigationTitle(preview.name)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") {
+                            fileToPreview = nil
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private func load() {
+        let baseURL = try! FileManager.default.url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true
+        )
+        
+        let names = try! FileManager.default.contentsOfDirectory(atPath: baseURL.path())
+        let files = names.map { File(name: $0) }
+        
+        for file in files {
+            addFiles(to: file, currentURL: baseURL)
+        }
+        
+        legacyFiles = files.sorted(using: KeyPathComparator(\.name))
+        v2Files = legacyFiles
+    }
+    
+    private func addFiles(to file: File, currentURL: URL) {
+        let newURL = currentURL.appending(path: file.name)
+        
+        guard let names = try? FileManager.default.contentsOfDirectory(atPath: newURL.path()) else {
+            file.data = try? Data(contentsOf: newURL)
+            
+            return
+        }
+        
+        let children = names.map { File(name: $0) }
+        
+        for child in children {
+            addFiles(to: child, currentURL: newURL)
+        }
+        
+        file.children = children.sorted(using: KeyPathComparator(\.name))
+    }
+    
+    private func loadV2Files() {
+        let baseURL = try! FileManager.default.url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: true
+        )
+        
+        let names = try! FileManager.default.contentsOfDirectory(atPath: baseURL.path())
+        let files = names.map { File(name: $0) }
+        
+        for file in files {
+            addFiles(to: file, currentURL: baseURL)
+        }
+        
+        v2Files = files.sorted(using: KeyPathComparator(\.name))
+    }
+    
+    private func loadStorage() {
+        Task { @MainActor [storageClient] in
+            try await storageClient.load()
+            
+            parts = storageClient.parts()
+            equipment = storageClient.equipment()
+            recipes = storageClient.recipes()
+            factories = storageClient.factories().map { factory in
+                FactoryListView(id: factory.id, name: factory.name, children: factory.productions.map { production in
+                    FactoryListView(id: production.id, name: production.name)
+                })
+            }
+            
+            loadV2Files()
         }
     }
 }

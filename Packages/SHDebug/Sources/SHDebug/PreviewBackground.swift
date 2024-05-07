@@ -1,16 +1,14 @@
 #if DEBUG
 import SwiftUI
 
-public struct PreviewBackground<Content: View>: View {
+struct PreviewBackgroundViewModifier: ViewModifier {
     let shapeStyle: AnyShapeStyle
-    let content: Content
     
-    public init(_ style: some ShapeStyle = Color(white: 0.961), @ViewBuilder content: () -> Content) {
+    init(_ style: some ShapeStyle = Color(white: 0.961)) {
         shapeStyle = AnyShapeStyle(style)
-        self.content = content()
     }
     
-    public var body: some View {
+    func body(content: Content) -> some View {
         ZStack {
             Rectangle()
                 .foregroundStyle(shapeStyle)
@@ -21,21 +19,53 @@ public struct PreviewBackground<Content: View>: View {
     }
 }
 
-#Preview("Preview background") {
-    PreviewBackground {
-        Text("Preview")
+public extension View {
+    @ViewBuilder
+    func previewBackground(_ style: some ShapeStyle = Color(white: 0.961)) -> some View {
+        modifier(PreviewBackgroundViewModifier(style))
     }
 }
 
-#Preview("Preview background (Orange)") {
-    PreviewBackground(.orange) {
-        Text("Preview")
-    }
+#Preview("Default background") {
+    Text("Preview")
+        .previewBackground()
 }
 
-#Preview("Preview background (Gradient Orange -> Blue)") {
-    PreviewBackground(.linearGradient(colors: [.orange, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)) {
+#Preview("Orange background") {
+    Text("Preview")
+        .previewBackground(.orange)
+}
+
+#Preview("Gradient background") {
+    Text("Preview")
+        .previewBackground(
+            .linearGradient(
+                colors: [.orange, .blue],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        )
+}
+
+#Preview("No/Default background") {
+    ZStack {
         Text("Preview")
+        
+        Text("Preview")
+            .previewBackground()
+            .mask(
+                LinearGradient(
+                    stops: [
+                        .init(color: .clear, location: 0),
+                        .init(color: .clear, location: 0.5),
+                        .init(color: .white, location: 0.5),
+                        .init(color: .white, location: 1)
+                    ],
+                    startPoint: .init(x: 0, y: 0.4),
+                    endPoint: .init(x: 1, y: 0.6)
+                )
+                .ignoresSafeArea()
+            )
     }
 }
 #endif

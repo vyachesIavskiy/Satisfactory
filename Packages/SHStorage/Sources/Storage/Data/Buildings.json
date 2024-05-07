@@ -1,0 +1,78 @@
+[
+  {
+    "categoryID" : "category-generators",
+    "id" : "building-nuclear-power-plant"
+  },
+  {
+    "categoryID" : "category-fluid-extractors",
+    "id" : "building-water-extractor"
+  },
+  {
+    "categoryID" : "category-fluid-extractors",
+    "id" : "building-oil-extractor"
+  },
+  {
+    "categoryID" : "category-fluid-extractors",
+    "id" : "building-resource-well-pressurizer"
+  },
+  {
+    "categoryID" : "category-fluid-extractors",
+    "id" : "building-resource-well-extractor"
+  },
+  {
+    "categoryID" : "category-manufacturers",
+    "id" : "building-constructor"
+  },
+  {
+    "categoryID" : "category-manufacturers",
+    "id" : "building-assembler"
+  },
+  {
+    "categoryID" : "category-manufacturers",
+    "id" : "building-manufacturer"
+  },
+  {
+    "categoryID" : "category-manufacturers",
+    "id" : "building-packager"
+  },
+  {
+    "categoryID" : "category-manufacturers",
+    "id" : "building-refinery"
+  },
+  {
+    "categoryID" : "category-manufacturers",
+    "id" : "building-blender"
+  },
+  {
+    "categoryID" : "category-manufacturers",
+    "id" : "building-particle-accelerator"
+  },
+  {
+    "categoryID" : "category-miners",
+    "id" : "building-miner-mk-1"
+  },
+  {
+    "categoryID" : "category-miners",
+    "id" : "building-miner-mk-2"
+  },
+  {
+    "categoryID" : "category-miners",
+    "id" : "building-miner-mk-3"
+  },
+  {
+    "categoryID" : "category-smelters",
+    "id" : "building-smelter"
+  },
+  {
+    "categoryID" : "category-smelters",
+    "id" : "building-foundry"
+  },
+  {
+    "categoryID" : "category-workstations",
+    "id" : "building-craft-bench"
+  },
+  {
+    "categoryID" : "category-workstations",
+    "id" : "building-equipment-workshop"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "347A3D02-0430-4C51-8017-F920C250BEB2",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SHLoggerTests",
+        "name" : "SHLoggerTests"
+      }
+    }
+  ],
+  "version" : 1
+}

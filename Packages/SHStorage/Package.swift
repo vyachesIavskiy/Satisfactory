@@ -12,7 +12,7 @@ let package = Package(
         .library(
             name: "SHStorage",
             targets: [
-                "Storage",
+                "SHStorage",
             ]
         ),
     ],
@@ -23,11 +23,11 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Storage",
+            name: "SHStorage",
             dependencies: [
-                "PersistentModels",
-                "StaticModels",
-                "Models",
+                "SHPersistentModels",
+                "SHStaticModels",
+                "SHModels",
                 .product(name: "SHLogger", package: "SHLogger"),
                 .product(name: "SHFileManager", package: "SHFileManager"),
                 .product(name: "TCA", package: "TCA")
@@ -37,35 +37,35 @@ let package = Package(
             ]
         ),
         .executableTarget(
-            name: "Generator",
+            name: "SHGenerator",
             dependencies: [
-                "PersistentModels",
-                "StaticModels",
-                "Models",
+                "SHPersistentModels",
+                "SHStaticModels",
+                "SHModels",
                 .product(name: "SHLogger", package: "SHLogger"),
             ]
         ),
         .target(
-            name: "Models"
+            name: "SHModels"
         ),
         .target(
-            name: "StaticModels",
+            name: "SHStaticModels",
             dependencies: [
-                "Models"
+                "SHModels"
             ]
         ),
         .target(
-            name: "PersistentModels",
+            name: "SHPersistentModels",
             dependencies: [
-                "Models"
+                "SHModels"
             ]
         ),
         
         // Test targets
         .testTarget(
-            name: "StorageTests",
+            name: "SHStorageTests",
             dependencies: [
-                "Storage",
+                "SHStorage",
                 .product(name: "SHFileManager", package: "SHFileManager"),
                 .product(name: "TCA", package: "TCA")
             ]

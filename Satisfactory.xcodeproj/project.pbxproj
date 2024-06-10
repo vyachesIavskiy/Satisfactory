@@ -65,6 +65,42 @@
 		D3B32AC62C00B9FF0025B441 /* ChangelogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B32AC52C00B9FF0025B441 /* ChangelogsView.swift */; };
 		D3B32AC72C00B9FF0025B441 /* ChangelogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B32AC52C00B9FF0025B441 /* ChangelogsView.swift */; };
 		D3B32AC82C00B9FF0025B441 /* ChangelogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B32AC52C00B9FF0025B441 /* ChangelogsView.swift */; };
+		D3C6FF602C173D82007542F2 /* BidirectionalTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF512C173D82007542F2 /* BidirectionalTreeNode.swift */; };
+		D3C6FF612C173D82007542F2 /* BidirectionalTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF512C173D82007542F2 /* BidirectionalTreeNode.swift */; };
+		D3C6FF622C173D82007542F2 /* BidirectionalTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF512C173D82007542F2 /* BidirectionalTreeNode.swift */; };
+		D3C6FF632C173D82007542F2 /* ProductionTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF522C173D82007542F2 /* ProductionTree.swift */; };
+		D3C6FF642C173D82007542F2 /* ProductionTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF522C173D82007542F2 /* ProductionTree.swift */; };
+		D3C6FF652C173D82007542F2 /* ProductionTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF522C173D82007542F2 /* ProductionTree.swift */; };
+		D3C6FF662C173D82007542F2 /* Byproducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF542C173D82007542F2 /* Byproducts.swift */; };
+		D3C6FF672C173D82007542F2 /* Byproducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF542C173D82007542F2 /* Byproducts.swift */; };
+		D3C6FF682C173D82007542F2 /* Byproducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF542C173D82007542F2 /* Byproducts.swift */; };
+		D3C6FF692C173D82007542F2 /* ItemEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF552C173D82007542F2 /* ItemEntries.swift */; };
+		D3C6FF6A2C173D82007542F2 /* ItemEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF552C173D82007542F2 /* ItemEntries.swift */; };
+		D3C6FF6B2C173D82007542F2 /* ItemEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF552C173D82007542F2 /* ItemEntries.swift */; };
+		D3C6FF6C2C173D82007542F2 /* ProductionAmounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF562C173D82007542F2 /* ProductionAmounts.swift */; };
+		D3C6FF6D2C173D82007542F2 /* ProductionAmounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF562C173D82007542F2 /* ProductionAmounts.swift */; };
+		D3C6FF6E2C173D82007542F2 /* ProductionAmounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF562C173D82007542F2 /* ProductionAmounts.swift */; };
+		D3C6FF6F2C173D82007542F2 /* ProductionProportions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF572C173D82007542F2 /* ProductionProportions.swift */; };
+		D3C6FF702C173D82007542F2 /* ProductionProportions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF572C173D82007542F2 /* ProductionProportions.swift */; };
+		D3C6FF712C173D82007542F2 /* ProductionProportions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF572C173D82007542F2 /* ProductionProportions.swift */; };
+		D3C6FF722C173D82007542F2 /* SelectedRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF582C173D82007542F2 /* SelectedRecipes.swift */; };
+		D3C6FF732C173D82007542F2 /* SelectedRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF582C173D82007542F2 /* SelectedRecipes.swift */; };
+		D3C6FF742C173D82007542F2 /* SelectedRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF582C173D82007542F2 /* SelectedRecipes.swift */; };
+		D3C6FF752C173D82007542F2 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5A2C173D82007542F2 /* Production.swift */; };
+		D3C6FF762C173D82007542F2 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5A2C173D82007542F2 /* Production.swift */; };
+		D3C6FF772C173D82007542F2 /* Production.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5A2C173D82007542F2 /* Production.swift */; };
+		D3C6FF782C173D82007542F2 /* ProductionByproduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5B2C173D82007542F2 /* ProductionByproduct.swift */; };
+		D3C6FF792C173D82007542F2 /* ProductionByproduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5B2C173D82007542F2 /* ProductionByproduct.swift */; };
+		D3C6FF7A2C173D82007542F2 /* ProductionByproduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5B2C173D82007542F2 /* ProductionByproduct.swift */; };
+		D3C6FF7B2C173D82007542F2 /* ProductionItemEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5C2C173D82007542F2 /* ProductionItemEntry.swift */; };
+		D3C6FF7C2C173D82007542F2 /* ProductionItemEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5C2C173D82007542F2 /* ProductionItemEntry.swift */; };
+		D3C6FF7D2C173D82007542F2 /* ProductionItemEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5C2C173D82007542F2 /* ProductionItemEntry.swift */; };
+		D3C6FF7E2C173D82007542F2 /* ProductionProportion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5D2C173D82007542F2 /* ProductionProportion.swift */; };
+		D3C6FF7F2C173D82007542F2 /* ProductionProportion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5D2C173D82007542F2 /* ProductionProportion.swift */; };
+		D3C6FF802C173D82007542F2 /* ProductionProportion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5D2C173D82007542F2 /* ProductionProportion.swift */; };
+		D3C6FF812C173D82007542F2 /* ProductionRecipeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5E2C173D82007542F2 /* ProductionRecipeEntry.swift */; };
+		D3C6FF822C173D82007542F2 /* ProductionRecipeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5E2C173D82007542F2 /* ProductionRecipeEntry.swift */; };
+		D3C6FF832C173D82007542F2 /* ProductionRecipeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6FF5E2C173D82007542F2 /* ProductionRecipeEntry.swift */; };
 		D3FA3DDA2BF8E270004CD46D /* AngledBottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA3DD92BF8E270004CD46D /* AngledBottomLine.swift */; };
 		D3FA3DDB2BF8E270004CD46D /* AngledBottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA3DD92BF8E270004CD46D /* AngledBottomLine.swift */; };
 		F934317F2ACAA2A30082C404 /* Disclaimer_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */; };
@@ -174,6 +210,18 @@
 		D399267E2C04DBB8000D7308 /* SHSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSection.swift; sourceTree = "<group>"; };
 		D39926892C04FB4B000D7308 /* Color+SHColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+SHColor.swift"; sourceTree = "<group>"; };
 		D3B32AC52C00B9FF0025B441 /* ChangelogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogsView.swift; sourceTree = "<group>"; };
+		D3C6FF512C173D82007542F2 /* BidirectionalTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BidirectionalTreeNode.swift; sourceTree = "<group>"; };
+		D3C6FF522C173D82007542F2 /* ProductionTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionTree.swift; sourceTree = "<group>"; };
+		D3C6FF542C173D82007542F2 /* Byproducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Byproducts.swift; sourceTree = "<group>"; };
+		D3C6FF552C173D82007542F2 /* ItemEntries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemEntries.swift; sourceTree = "<group>"; };
+		D3C6FF562C173D82007542F2 /* ProductionAmounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionAmounts.swift; sourceTree = "<group>"; };
+		D3C6FF572C173D82007542F2 /* ProductionProportions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionProportions.swift; sourceTree = "<group>"; };
+		D3C6FF582C173D82007542F2 /* SelectedRecipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedRecipes.swift; sourceTree = "<group>"; };
+		D3C6FF5A2C173D82007542F2 /* Production.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
+		D3C6FF5B2C173D82007542F2 /* ProductionByproduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionByproduct.swift; sourceTree = "<group>"; };
+		D3C6FF5C2C173D82007542F2 /* ProductionItemEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionItemEntry.swift; sourceTree = "<group>"; };
+		D3C6FF5D2C173D82007542F2 /* ProductionProportion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionProportion.swift; sourceTree = "<group>"; };
+		D3C6FF5E2C173D82007542F2 /* ProductionRecipeEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductionRecipeEntry.swift; sourceTree = "<group>"; };
 		D3FA3DD92BF8E270004CD46D /* AngledBottomLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngledBottomLine.swift; sourceTree = "<group>"; };
 		F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.7.1.swift; sourceTree = "<group>"; };
 		F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointFormatStyle.swift; sourceTree = "<group>"; };
@@ -251,6 +299,7 @@
 			children = (
 				450BD1BB24A639FD00948B47 /* Extensions */,
 				45115BDD24BF559300D58F6A /* UI */,
+				D3C6FF5F2C173D82007542F2 /* Production */,
 				F9EB45CB27454C8800FB8926 /* Production.swift */,
 				450BD18F24A6395700948B47 /* SatisfactoryApp.swift */,
 				450BD19124A6395700948B47 /* Assets.xcassets */,
@@ -408,6 +457,41 @@
 				D399267E2C04DBB8000D7308 /* SHSection.swift */,
 			);
 			path = SHSection;
+			sourceTree = "<group>";
+		};
+		D3C6FF532C173D82007542F2 /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				D3C6FF512C173D82007542F2 /* BidirectionalTreeNode.swift */,
+				D3C6FF522C173D82007542F2 /* ProductionTree.swift */,
+			);
+			path = Tree;
+			sourceTree = "<group>";
+		};
+		D3C6FF592C173D82007542F2 /* Typealiases */ = {
+			isa = PBXGroup;
+			children = (
+				D3C6FF542C173D82007542F2 /* Byproducts.swift */,
+				D3C6FF552C173D82007542F2 /* ItemEntries.swift */,
+				D3C6FF562C173D82007542F2 /* ProductionAmounts.swift */,
+				D3C6FF572C173D82007542F2 /* ProductionProportions.swift */,
+				D3C6FF582C173D82007542F2 /* SelectedRecipes.swift */,
+			);
+			path = Typealiases;
+			sourceTree = "<group>";
+		};
+		D3C6FF5F2C173D82007542F2 /* Production */ = {
+			isa = PBXGroup;
+			children = (
+				D3C6FF532C173D82007542F2 /* Tree */,
+				D3C6FF592C173D82007542F2 /* Typealiases */,
+				D3C6FF5A2C173D82007542F2 /* Production.swift */,
+				D3C6FF5B2C173D82007542F2 /* ProductionByproduct.swift */,
+				D3C6FF5C2C173D82007542F2 /* ProductionItemEntry.swift */,
+				D3C6FF5D2C173D82007542F2 /* ProductionProportion.swift */,
+				D3C6FF5E2C173D82007542F2 /* ProductionRecipeEntry.swift */,
+			);
+			path = Production;
 			sourceTree = "<group>";
 		};
 		F94C7F462A93FD7D004E9F35 /* Packages */ = {
@@ -612,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3C6FF7E2C173D82007542F2 /* ProductionProportion.swift in Sources */,
 				F9B92FEA2A2665BC00C173BF /* NewProductionItemRow.swift in Sources */,
 				F998FFF42A116CED00EB7225 /* SendFeedbackButton.swift in Sources */,
 				F9B930092A26A57C00C173BF /* Disclaimer_V1.4.swift in Sources */,
@@ -624,15 +709,23 @@
 				D32AC7F82C172CFA00BDFBAC /* SHColor.swift in Sources */,
 				F946413926A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
 				D32AC7F02C1702D500BDFBAC /* RecipeProductionGroupView.swift in Sources */,
+				D3C6FF662C173D82007542F2 /* Byproducts.swift in Sources */,
 				F9DCF6AC2A2F8C37007B94DF /* Disclaimer_V1.6.swift in Sources */,
+				D3C6FF7B2C173D82007542F2 /* ProductionItemEntry.swift in Sources */,
+				D3C6FF722C173D82007542F2 /* SelectedRecipes.swift in Sources */,
+				D3C6FF752C173D82007542F2 /* Production.swift in Sources */,
 				D32AC7DA2C16D68F00BDFBAC /* ItemIconShape.swift in Sources */,
+				D3C6FF6F2C173D82007542F2 /* ProductionProportions.swift in Sources */,
 				D32AC7E72C16F33100BDFBAC /* RecipeItemAmountShape.swift in Sources */,
 				F9B92FEF2A26863600C173BF /* Bundle+Version.swift in Sources */,
 				F998FFF12A1159CC00EB7225 /* FeedbackView.swift in Sources */,
 				F9E27167273FC9550068B36E /* Tree.swift in Sources */,
 				D314C3B02C0464EB002825C9 /* TabsView.swift in Sources */,
+				D3C6FF782C173D82007542F2 /* ProductionByproduct.swift in Sources */,
+				D3C6FF6C2C173D82007542F2 /* ProductionAmounts.swift in Sources */,
 				D32AC7FA2C172D3400BDFBAC /* SHShapeStyle.swift in Sources */,
 				D314C3B52C04715D002825C9 /* ItemRecipesViewModel.swift in Sources */,
+				D3C6FF602C173D82007542F2 /* BidirectionalTreeNode.swift in Sources */,
 				F9B92FFF2A269CC600C173BF /* SizeReader.swift in Sources */,
 				F9B930052A26A0FE00C173BF /* DisclaimerViewContainer.swift in Sources */,
 				D314C3B92C0477E5002825C9 /* ItemRecipesView.swift in Sources */,
@@ -640,7 +733,9 @@
 				450BD1A224A6395700948B47 /* SatisfactoryApp.swift in Sources */,
 				F9CBF0BA27493FD90020871C /* SettingsView.swift in Sources */,
 				D32AC7EA2C16F3C700BDFBAC /* RecipeByproductShape.swift in Sources */,
+				D3C6FF812C173D82007542F2 /* ProductionRecipeEntry.swift in Sources */,
 				F934317F2ACAA2A30082C404 /* Disclaimer_V1.7.1.swift in Sources */,
+				D3C6FF692C173D82007542F2 /* ItemEntries.swift in Sources */,
 				D356C51C2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
 				F9B930022A26A06B00C173BF /* Disclaimer.swift in Sources */,
 				D399268A2C04FB4B000D7308 /* Color+SHColor.swift in Sources */,
@@ -655,6 +750,7 @@
 				D3B32AC62C00B9FF0025B441 /* ChangelogsView.swift in Sources */,
 				D3FA3DDA2BF8E270004CD46D /* AngledBottomLine.swift in Sources */,
 				F9B92FE12A265DA800C173BF /* AngledRectangled.swift in Sources */,
+				D3C6FF632C173D82007542F2 /* ProductionTree.swift in Sources */,
 				F9B92FE52A265F3C00C173BF /* CGRect+Points.swift in Sources */,
 				D32AC7DD2C16E96F00BDFBAC /* InverseMaskViewModifier.swift in Sources */,
 				F9BAB9D92AC614CF00BE130F /* Disclaimer_V1.7.swift in Sources */,
@@ -668,12 +764,16 @@
 			files = (
 				D314C3B22C0464EB002825C9 /* TabsView.swift in Sources */,
 				F998FFF52A116CED00EB7225 /* SendFeedbackButton.swift in Sources */,
+				D3C6FF772C173D82007542F2 /* Production.swift in Sources */,
 				F9B930062A26A0FE00C173BF /* DisclaimerViewContainer.swift in Sources */,
+				D3C6FF622C173D82007542F2 /* BidirectionalTreeNode.swift in Sources */,
+				D3C6FF6B2C173D82007542F2 /* ItemEntries.swift in Sources */,
 				D386D5C72BEAC78D00B584C9 /* RootView.swift in Sources */,
 				D30D979F2BF6ACF6007B6850 /* RecipeProductionView.swift in Sources */,
 				F9B930032A26A06B00C173BF /* Disclaimer.swift in Sources */,
 				F998FFF22A1159CC00EB7225 /* FeedbackView.swift in Sources */,
 				D314C3B72C04715D002825C9 /* ItemRecipesViewModel.swift in Sources */,
+				D3C6FF7A2C173D82007542F2 /* ProductionByproduct.swift in Sources */,
 				D356C51E2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
 				F9E27168273FC9550068B36E /* Tree.swift in Sources */,
 				F946413A26A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
@@ -681,17 +781,25 @@
 				D3B32AC82C00B9FF0025B441 /* ChangelogsView.swift in Sources */,
 				F9B92FFD2A2694BF00C173BF /* Disclaimer_V1.5.swift in Sources */,
 				F9B9300A2A26A57C00C173BF /* Disclaimer_V1.4.swift in Sources */,
+				D3C6FF652C173D82007542F2 /* ProductionTree.swift in Sources */,
 				450BD1A324A6395700948B47 /* SatisfactoryApp.swift in Sources */,
 				F93431812ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */,
 				F9CBF0BB27493FD90020871C /* SettingsView.swift in Sources */,
 				D30D97A42BF75412007B6850 /* NewProductionView.swift in Sources */,
+				D3C6FF802C173D82007542F2 /* ProductionProportion.swift in Sources */,
 				F9B92FFA2A26944B00C173BF /* BubbleModifier.swift in Sources */,
 				F9DCF6AD2A2F8C37007B94DF /* Disclaimer_V1.6.swift in Sources */,
+				D3C6FF7D2C173D82007542F2 /* ProductionItemEntry.swift in Sources */,
+				D3C6FF6E2C173D82007542F2 /* ProductionAmounts.swift in Sources */,
 				D356C5162BF7CAA700A4CE6E /* RootViewModel.swift in Sources */,
 				F998FFEF2A114F5200EB7225 /* DisclaimerView.swift in Sources */,
+				D3C6FF712C173D82007542F2 /* ProductionProportions.swift in Sources */,
 				D314C3BB2C0477E5002825C9 /* ItemRecipesView.swift in Sources */,
+				D3C6FF682C173D82007542F2 /* Byproducts.swift in Sources */,
 				F9BAB9DA2AC614CF00BE130F /* Disclaimer_V1.7.swift in Sources */,
+				D3C6FF832C173D82007542F2 /* ProductionRecipeEntry.swift in Sources */,
 				F9B930002A269CC600C173BF /* SizeReader.swift in Sources */,
+				D3C6FF742C173D82007542F2 /* SelectedRecipes.swift in Sources */,
 				D31F7C5E2BF7F0C100AAE5C0 /* NewProductionViewModel.swift in Sources */,
 				F9B91042273EA74C00274EE3 /* CalculationStatistics.swift in Sources */,
 				F9DCF6AA2A2F7370007B94DF /* Gradients.swift in Sources */,
@@ -704,22 +812,29 @@
 			files = (
 				F95DAF932AC6ACC60062A5AD /* NewProductionItemRow.swift in Sources */,
 				D32AC7F12C1702D500BDFBAC /* RecipeProductionGroupView.swift in Sources */,
+				D3C6FF762C173D82007542F2 /* Production.swift in Sources */,
 				F95DAF952AC6ACC60062A5AD /* SendFeedbackButton.swift in Sources */,
 				F95DAF982AC6ACC60062A5AD /* Disclaimer_V1.4.swift in Sources */,
 				F95DAF9A2AC6ACC60062A5AD /* Disclaimer_V1.5.1.swift in Sources */,
 				D32AC7E52C16F17400BDFBAC /* RecipeDisplayView.swift in Sources */,
+				D3C6FF822C173D82007542F2 /* ProductionRecipeEntry.swift in Sources */,
 				D30D97A32BF75412007B6850 /* NewProductionView.swift in Sources */,
+				D3C6FF672C173D82007542F2 /* Byproducts.swift in Sources */,
 				D386D5C62BEAC78D00B584C9 /* RootView.swift in Sources */,
+				D3C6FF642C173D82007542F2 /* ProductionTree.swift in Sources */,
 				D31F7C5D2BF7F0C100AAE5C0 /* NewProductionViewModel.swift in Sources */,
 				F95DAF9C2AC6ACC60062A5AD /* Gradients.swift in Sources */,
 				F95DAF9D2AC6ACC60062A5AD /* BubbleModifier.swift in Sources */,
+				D3C6FF7C2C173D82007542F2 /* ProductionItemEntry.swift in Sources */,
 				F95DAF9F2AC6ACC60062A5AD /* FloatingPointFormatStyle.swift in Sources */,
 				F95DAFA12AC6ACC60062A5AD /* Disclaimer_V1.6.swift in Sources */,
 				F95DAFA22AC6ACC60062A5AD /* Bundle+Version.swift in Sources */,
+				D3C6FF792C173D82007542F2 /* ProductionByproduct.swift in Sources */,
 				D32AC7E82C16F33100BDFBAC /* RecipeItemAmountShape.swift in Sources */,
 				D39926802C04DBB8000D7308 /* SHSection.swift in Sources */,
 				D32AC7EB2C16F3C700BDFBAC /* RecipeByproductShape.swift in Sources */,
 				F95DAFA52AC6ACC60062A5AD /* FeedbackView.swift in Sources */,
+				D3C6FF612C173D82007542F2 /* BidirectionalTreeNode.swift in Sources */,
 				F95DAFA62AC6ACC60062A5AD /* Tree.swift in Sources */,
 				F95DAFA92AC6ACC60062A5AD /* SizeReader.swift in Sources */,
 				D32AC7EE2C16FA9900BDFBAC /* ScrollOffsetReader.swift in Sources */,
@@ -728,17 +843,22 @@
 				F95DAFAE2AC6ACC60062A5AD /* SatisfactoryApp.swift in Sources */,
 				D314C3BA2C0477E5002825C9 /* ItemRecipesView.swift in Sources */,
 				D314C3B62C04715D002825C9 /* ItemRecipesViewModel.swift in Sources */,
+				D3C6FF732C173D82007542F2 /* SelectedRecipes.swift in Sources */,
 				D32AC7DB2C16D68F00BDFBAC /* ItemIconShape.swift in Sources */,
 				F95DAFB32AC6ACC60062A5AD /* SettingsView.swift in Sources */,
 				F93431802ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */,
 				D356C51D2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
 				F95DAFB52AC6ACC60062A5AD /* Disclaimer.swift in Sources */,
 				F95DAFB72AC6ACC60062A5AD /* CGPoint+Offset.swift in Sources */,
+				D3C6FF7F2C173D82007542F2 /* ProductionProportion.swift in Sources */,
 				D30D979E2BF6ACF6007B6850 /* RecipeProductionView.swift in Sources */,
 				F95DAFBC2AC6ACC60062A5AD /* DisclaimerView.swift in Sources */,
+				D3C6FF6A2C173D82007542F2 /* ItemEntries.swift in Sources */,
+				D3C6FF6D2C173D82007542F2 /* ProductionAmounts.swift in Sources */,
 				D314C3B12C0464EB002825C9 /* TabsView.swift in Sources */,
 				D356C5152BF7CAA700A4CE6E /* RootViewModel.swift in Sources */,
 				D32AC7DE2C16E96F00BDFBAC /* InverseMaskViewModifier.swift in Sources */,
+				D3C6FF702C173D82007542F2 /* ProductionProportions.swift in Sources */,
 				F95DAFC02AC6ACC60062A5AD /* Disclaimer_V1.5.swift in Sources */,
 				D3B32AC72C00B9FF0025B441 /* ChangelogsView.swift in Sources */,
 				D3FA3DDB2BF8E270004CD46D /* AngledBottomLine.swift in Sources */,

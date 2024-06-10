@@ -35,10 +35,21 @@ public struct Recipe: BaseItem {
     public func amountPerMinute(for ingredient: Ingredient) -> Double {
         ingredient.amount * (60 / Double(duration))
     }
+    
+    public func multiplier(for item: some Item, amount: Double) -> Double {
+        var multiplier = 1.0
+        if item.id == output.item.id {
+            multiplier = amount / amountPerMinute(for: output)
+        } else if let byproduct = byproducts.first(where: { $0.id == item.id }) {
+            multiplier = amount / amountPerMinute(for: byproduct)
+        }
+        
+        return multiplier
+    }
 }
 
 public extension Recipe {
-    struct Ingredient: Identifiable, Hashable {
+    struct Ingredient: Identifiable, Hashable, Sendable {
         public let role: Role
         public let item: any Item
         public let amount: Double
@@ -64,7 +75,7 @@ public extension Recipe {
 }
 
 public extension Recipe.Ingredient {
-    enum Role: String, Equatable, CustomStringConvertible {
+    enum Role: String, Equatable, CustomStringConvertible, Sendable {
         case input = "Input"
         case output = "Output"
         case byproduct = "Byproduct"

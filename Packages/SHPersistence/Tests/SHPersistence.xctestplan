@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "F36D3062-B9E4-4C1D-8B69-AB73A4ECDF1C",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SHPersistenceTests",
+        "name" : "SHPersistenceTests"
+      }
+    }
+  ],
+  "version" : 1
+}

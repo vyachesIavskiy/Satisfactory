@@ -1,6 +1,6 @@
-import Models
-import StaticModels
-import enum Models.Category
+import SHModels
+import SHStaticModels
+import enum SHModels.Category
 
 private extension Equipment.Static {
     init(

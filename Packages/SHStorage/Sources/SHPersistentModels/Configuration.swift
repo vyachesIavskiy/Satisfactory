@@ -1,4 +1,5 @@
+import SHModels
 
-public enum Configuration {
+extension Configuration {
     public enum Persistent {}
 }

@@ -1,4 +1,4 @@
-import PersistentModels
+import SHPersistentModels
 
 struct Migration: Codable {
     var version: Int

@@ -1,5 +1,7 @@
 import Foundation
 import SHLogger
+import SHModels
+import SHStaticModels
 
 @main
 final class Generator {
@@ -16,14 +18,14 @@ final class Generator {
         get throws {
             let path = #filePath
                 .split(separator: "/")
-                .prefix { $0 != "Generator" }
+                .prefix { $0 != "SHGenerator" }
                 .joined(separator: "/")
 
             guard var url = URL(string: "file:///\(path)") else {
                 throw Error.cannotResolveURL(fromPath: path)
             }
             
-            url.append(path: "Storage/Data")
+            url.append(path: "SHStaticStorage/Data")
             
             guard fileManager.fileExists(atPath: url.path()) else {
                 throw Error.resourcesDirectoryIsNotFound(at: url)
@@ -47,37 +49,45 @@ final class Generator {
 
 private extension Generator {
     func generateNewData() throws {
-        logger.info("Start Storage data generation.")
+        logger.info("Start generation.")
         
-        logger.info("Generating configuration.")
-        try write(V2.configuration, to: .configuration)
-        logger.info("Configuration is generated.")
+        logger.info("Settings progression indicies for parts and equipment.")
         
-        logger.info("Generating parts.")
-        try write(V2.Parts.all, to: .parts)
-        logger.info("Parts are generated.")
-        
-        logger.info("Generating equipment.")
-        try write(V2.Equipment.all, to: .equipment)
-        logger.info("Equipment are generated.")
-        
-        logger.info("Generating buildings.")
-        try write(V2.Buildings.all, to: .buildings)
-        logger.info("Buildings are generated.")
-        
-        logger.info("Generating recipes.")
-        try write(V2.Recipes.all, to: .recipes)
-        logger.info("Recipes are generated.")
-        
-        logger.info("Generating migrations.")
-        for migration in Migrations.all {
-            logger.info("Generating migration \(migration.version).")
-            try write(migration, to: .migrations.appending("Migration \(migration.version)"))
-            logger.info("Migration \(migration.version) is generated.")
+        var sortedAllParts = [Part.Static]()
+        for part in V2.Parts.all {
+            var copy = part
+            copy.progressionIndex = V2.Parts.allSortedByProgression.firstIndex { $0.id == part.id } ?? -1
+            sortedAllParts.append(copy)
         }
-        logger.info("Migrations are generated.")
         
-        logger.info("Storage data generation finished.")
+        var sortedAllEquipment = [Equipment.Static]()
+        for equipment in V2.Equipment.all {
+            var copy = equipment
+            copy.progressionIndex = V2.Equipment.allSortedByProgression.firstIndex { $0.id == equipment.id } ?? -1
+            sortedAllEquipment.append(copy)
+        }
+        
+        logger.info("Writing configuration.")
+        try write(V2.configuration, to: .configuration)
+        
+        logger.info("Writing parts.")
+        try write(sortedAllParts, to: .parts)
+        
+        logger.info("Writing equipment.")
+        try write(sortedAllEquipment, to: .equipment)
+        
+        logger.info("Writing buildings.")
+        try write(V2.Buildings.all, to: .buildings)
+        
+        logger.info("Writing recipes.")
+        try write(V2.Recipes.all, to: .recipes)
+        
+        logger.info("Writing migrations.")
+        for migration in Migrations.all {
+            try write(migration, to: .migrations.appending("Migration \(migration.version)"))
+        }
+        
+        logger.info("Generation finished.")
     }
     
     func write(_ model: some Encodable, to filename: String) throws {
@@ -96,7 +106,7 @@ private extension Generator {
         var errorDescription: String? {
             switch self {
             case .cannotResolveURL: "URL cannot be resolved."
-            case .resourcesDirectoryIsNotFound: "'Storage/Data' directory cannot be found."
+            case .resourcesDirectoryIsNotFound: "'SHStorage/Data' directory cannot be found."
             }
         }
         
@@ -106,7 +116,7 @@ private extension Generator {
                 "A provided path '\(path)' is not a valid URL."
                 
             case let .resourcesDirectoryIsNotFound(at: url):
-                "Provided URL '\(url.path())' does not point to 'Storage/Data' directory. Generator is designed to create files only inside 'Storage' module."
+                "Provided URL '\(url.path())' does not point to 'SHStorage/Data' directory. Generator is designed to create files only inside 'SHStorage' module."
             }
         }
     }

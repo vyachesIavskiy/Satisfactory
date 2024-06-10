@@ -1,4 +1,4 @@
-import StaticModels
+import SHStaticModels
 
 extension Legacy {
     enum Parts {

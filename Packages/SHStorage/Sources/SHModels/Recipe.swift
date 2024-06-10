@@ -7,7 +7,8 @@ public struct Recipe: BaseItem {
     public let input: [Ingredient]
     public let output: Ingredient
     public let byproducts: [Ingredient]
-    public let machines: [Building]
+    public let machine: Building?
+    public let manualCrafting: [Building]
     public let duration: Int
     public let isDefault: Bool
     
@@ -16,7 +17,8 @@ public struct Recipe: BaseItem {
         input: [Ingredient],
         output: Ingredient,
         byproducts: [Ingredient] = [],
-        machines: [Building],
+        machine: Building? = nil,
+        manualCrafting: [Building] = [],
         duration: Int,
         isDefault: Bool = true
     ) {
@@ -24,14 +26,19 @@ public struct Recipe: BaseItem {
         self.input = input
         self.output = output
         self.byproducts = byproducts
-        self.machines = machines
+        self.machine = machine
+        self.manualCrafting = manualCrafting
         self.duration = duration
         self.isDefault = isDefault
+    }
+    
+    public func amountPerMinute(for ingredient: Ingredient) -> Double {
+        ingredient.amount * (60 / Double(duration))
     }
 }
 
 public extension Recipe {
-    struct Ingredient: Identifiable, Equatable {
+    struct Ingredient: Identifiable, Hashable {
         public let role: Role
         public let item: any Item
         public let amount: Double
@@ -46,6 +53,12 @@ public extension Recipe {
         
         public static func == (lhs: Recipe.Ingredient, rhs: Recipe.Ingredient) -> Bool {
             lhs.role == rhs.role && lhs.item.id == rhs.item.id && lhs.amount == rhs.amount
+        }
+        
+        public func hash(into hasher: inout Hasher) {
+            hasher.combine(role)
+            hasher.combine(item.id)
+            hasher.combine(amount)
         }
     }
 }
@@ -74,6 +87,35 @@ public extension Sequence<Recipe> {
         case .input: recipe.input.contains { $0.item.id == itemID }
         case .output: recipe.output.item.id == itemID
         case .byproduct: recipe.byproducts.contains { $0.item.id == itemID }
+        }
+    }
+    
+    func sortedByDefault() -> [Recipe] {
+        sorted(using: [
+            KeyPathComparator(\.isDefault, comparator: DefaultRecipeComparator()),
+            KeyPathComparator(\.localizedName)
+        ])
+    }
+}
+
+// MARK: - Default comparator
+private struct DefaultRecipeComparator: SortComparator {
+    var order: SortOrder = .forward
+    
+    func compare(_ lhs: Bool, _ rhs: Bool) -> ComparisonResult {
+        switch order {
+        case .forward: result(lhs, rhs)
+        case .reverse: result(rhs, lhs)
+        }
+    }
+    
+    private func result(_ lhs: Bool, _ rhs: Bool) -> ComparisonResult {
+        if lhs, !rhs {
+            .orderedAscending
+        } else if rhs, !lhs {
+            .orderedDescending
+        } else {
+            .orderedSame
         }
     }
 }

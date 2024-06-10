@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 private extension Recipe.Static {
     init(
@@ -7,13 +7,15 @@ private extension Recipe.Static {
         inputs: [Ingredient],
         output: Ingredient,
         duration: Int,
-        isDefault: Bool = true
+        isDefault: Bool = true,
+        manuallyCraftable: Bool = true
     ) {
         self.init(
             id: id,
             inputs: inputs,
             output: output,
-            machines: [V2.Buildings.particleAccelerator],
+            machine: V2.Buildings.constructor,
+            manualCrafting: (isDefault && manuallyCraftable) ? [V2.Buildings.craftBench] : [],
             duration: duration,
             isDefault: isDefault
         )
@@ -51,7 +53,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.pressureConversionCube, amount: 1)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.nuclearPasta, amount: 1),
-        duration: 120
+        duration: 120,
+        manuallyCraftable: false
     )
     
     static let particleAcceleratorRecipes = [

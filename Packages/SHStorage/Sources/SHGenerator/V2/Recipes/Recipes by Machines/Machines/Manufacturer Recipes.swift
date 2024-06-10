@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 private extension Recipe.Static {
     init(
@@ -7,13 +7,16 @@ private extension Recipe.Static {
         inputs: [Ingredient],
         output: Ingredient,
         duration: Int,
-        isDefault: Bool = true
+        isDefault: Bool = true,
+        manuallyCraftable: Bool = true,
+        additionalManualCrafting: Building.Static? = nil
     ) {
         self.init(
             id: id,
             inputs: inputs,
             output: output,
-            machines: isDefault ? [V2.Buildings.manufacturer, V2.Buildings.craftBench] : [V2.Buildings.manufacturer],
+            machine: V2.Buildings.manufacturer,
+            manualCrafting: isDefault ? [V2.Buildings.craftBench] : [],
             duration: duration,
             isDefault: isDefault
         )
@@ -233,7 +236,7 @@ extension V2.Recipes {
     )
     
     static let radioControlUnitRecipe1 = Recipe.Static(
-        id: "recipe-alternate-radion-connection-unit",
+        id: "recipe-alternate-radio-connection-unit",
         inputs: [
             Recipe.Static.Ingredient(V2.Parts.heatSink, amount: 4),
             Recipe.Static.Ingredient(V2.Parts.highSpeedConnector, amount: 2),
@@ -316,7 +319,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.fabric, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.gasFilter, amount: 1),
-        duration: 8
+        duration: 8,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let iodineInfusedFilterRecipe = Recipe.Static(
@@ -327,7 +331,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.aluminumCasing, amount: 1)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.iodineInfusedFilter, amount: 1),
-        duration: 16
+        duration: 16,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let rifleCartridgeRecipe = Recipe.Static(
@@ -339,7 +344,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.rubber, amount: 10)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.rifleAmmo, amount: 5),
-        duration: 20
+        duration: 20,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     // MARK: - Space Elevator
@@ -351,7 +357,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.smartPlating, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.modularEngine, amount: 1),
-        duration: 60
+        duration: 60,
+        manuallyCraftable: false
     )
     
     static let adaptiveControlUnitRecipe = Recipe.Static(
@@ -363,7 +370,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.computer, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.adaptiveControlUnit, amount: 2),
-        duration: 120
+        duration: 120,
+        manuallyCraftable: false
     )
     
     static let magneticFieldGeneratorRecipe = Recipe.Static(
@@ -374,7 +382,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.battery, amount: 10)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.magneticFieldGenerator, amount: 2),
-        duration: 120
+        duration: 120,
+        manuallyCraftable: false
     )
     
     static let thermalPropulsionRocketRecipe = Recipe.Static(
@@ -386,7 +395,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.fusedModularFrame, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.thermalPropulsionRocket, amount: 2),
-        duration: 120
+        duration: 120,
+        manuallyCraftable: false
     )
     
     static let smartPlatingRecipe1 = Recipe.Static(
@@ -398,7 +408,8 @@ extension V2.Recipes {
         ],
         output: Recipe.Static.Ingredient(V2.Parts.smartPlating, amount: 2),
         duration: 24,
-        isDefault: false
+        isDefault: false,
+        manuallyCraftable: false
     )
     
     static let versatileFrameworkRecipe1 = Recipe.Static(
@@ -410,7 +421,8 @@ extension V2.Recipes {
         ],
         output: Recipe.Static.Ingredient(V2.Parts.versatileFramework, amount: 2),
         duration: 16,
-        isDefault: false
+        isDefault: false,
+        manuallyCraftable: false
     )
     
     static let automatedWiringRecipe1 = Recipe.Static(
@@ -422,7 +434,8 @@ extension V2.Recipes {
         ],
         output: Recipe.Static.Ingredient(V2.Parts.automatedWiring, amount: 4),
         duration: 32,
-        isDefault: false
+        isDefault: false,
+        manuallyCraftable: false
     )
     
     // MARK: - Hands
@@ -435,7 +448,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.cable, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Equipment.beacon, amount: 1),
-        duration: 8
+        duration: 8,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let beaconRecipe1 = Recipe.Static(
@@ -472,7 +486,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.steelPipe, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.explosiveRebar, amount: 1),
-        duration: 12
+        duration: 12,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let nukeNobeliskRecipe = Recipe.Static(
@@ -484,7 +499,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.aiLimiter, amount: 6)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.nukeNobelisk, amount: 1),
-        duration: 120
+        duration: 120,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let turboRifleAmmoRecipe = Recipe.Static(
@@ -495,7 +511,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.packagedTurbofuel, amount: 3)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.turboRifleAmmo, amount: 50),
-        duration: 12
+        duration: 12,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let manufacturerRecipes = [

@@ -13,8 +13,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -36,8 +36,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -58,8 +59,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -80,8 +82,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -102,8 +105,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -125,8 +128,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -147,8 +151,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -169,8 +174,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -192,8 +197,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -214,8 +220,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -237,8 +243,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 15,
@@ -259,8 +266,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 18,
@@ -281,8 +289,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 15,
@@ -303,8 +312,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -326,8 +335,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -348,8 +358,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -370,8 +381,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -393,8 +404,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -415,8 +427,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -438,8 +450,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -460,8 +473,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -483,8 +496,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -505,8 +519,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -528,8 +542,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -550,8 +565,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 5,
@@ -572,8 +588,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 7,
@@ -594,8 +611,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -617,8 +634,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 30,
@@ -639,8 +657,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 20,
@@ -661,8 +680,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 11,
@@ -683,8 +703,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 12,
@@ -705,8 +726,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -727,8 +749,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -749,8 +772,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 9,
@@ -771,8 +795,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 10,
@@ -793,8 +818,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 5,
@@ -815,8 +841,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 7,
@@ -837,8 +864,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -860,8 +887,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -882,8 +910,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -905,8 +933,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -927,9 +956,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -950,9 +979,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -973,9 +1002,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -996,9 +1025,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -1019,8 +1048,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -1042,8 +1071,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -1065,8 +1094,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-assembler"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -1087,9 +1117,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -1110,9 +1140,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -1133,9 +1163,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -1156,9 +1186,10 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+      "building-craft-bench",
+      "building-equipment-workshop"
     ],
     "output" : {
       "amount" : 2,
@@ -1178,10 +1209,10 @@
         "itemID" : "part-compacted-coal"
       }
     ],
-    "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "isDefault" : false,
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -1202,9 +1233,10 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+      "building-craft-bench",
+      "building-equipment-workshop"
     ],
     "output" : {
       "amount" : 1,
@@ -1225,9 +1257,10 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+      "building-craft-bench",
+      "building-equipment-workshop"
     ],
     "output" : {
       "amount" : 1,
@@ -1248,9 +1281,10 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+      "building-craft-bench",
+      "building-equipment-workshop"
     ],
     "output" : {
       "amount" : 1,
@@ -1271,9 +1305,10 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+      "building-craft-bench",
+      "building-equipment-workshop"
     ],
     "output" : {
       "amount" : 1,
@@ -1294,9 +1329,10 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+      "building-craft-bench",
+      "building-equipment-workshop"
     ],
     "output" : {
       "amount" : 1,
@@ -1317,9 +1353,10 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+      "building-craft-bench",
+      "building-equipment-workshop"
     ],
     "output" : {
       "amount" : 5,
@@ -1340,9 +1377,10 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+      "building-craft-bench",
+      "building-equipment-workshop"
     ],
     "output" : {
       "amount" : 15,
@@ -1363,9 +1401,10 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-assembler",
-      "building-craft-bench"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+      "building-craft-bench",
+      "building-equipment-workshop"
     ],
     "output" : {
       "amount" : 10,
@@ -1397,8 +1436,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -1426,8 +1466,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -1455,8 +1496,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -1488,8 +1530,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -1520,8 +1563,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -1545,8 +1589,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 10,
@@ -1578,8 +1623,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 6,
@@ -1614,8 +1660,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 20,
@@ -1650,8 +1697,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 20,
@@ -1682,8 +1730,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 5,
@@ -1711,8 +1760,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -1747,8 +1797,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-blender"
+    "machineID" : "building-assembler",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 30,
@@ -1765,8 +1816,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -1784,8 +1835,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -1803,8 +1854,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-constructor"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -1821,8 +1873,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -1840,8 +1892,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-constructor"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 20,
@@ -1858,8 +1911,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-constructor"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 52,
@@ -1876,8 +1930,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -1895,8 +1949,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -1914,8 +1968,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -1933,8 +1987,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -1952,8 +2006,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -1971,8 +2025,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-constructor"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 9,
@@ -1989,8 +2044,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-constructor"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 8,
@@ -2007,8 +2063,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2026,8 +2082,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2045,8 +2101,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2064,8 +2120,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2083,8 +2139,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2102,8 +2158,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2121,8 +2177,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2140,8 +2196,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2159,8 +2215,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2178,8 +2234,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2197,8 +2253,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2216,8 +2272,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2235,8 +2291,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-constructor"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 6,
@@ -2253,8 +2310,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-constructor"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 10,
@@ -2271,8 +2329,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2290,8 +2348,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-constructor"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -2308,8 +2367,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2327,8 +2386,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2346,8 +2405,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2365,8 +2424,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2384,8 +2443,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2403,8 +2462,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2422,8 +2481,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2441,8 +2500,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2460,8 +2519,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2479,9 +2538,10 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
-      "building-craft-bench"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+      "building-craft-bench",
+      "building-equipment-workshop"
     ],
     "output" : {
       "amount" : 1,
@@ -2498,9 +2558,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
-      "building-craft-bench"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -2517,9 +2577,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
-      "building-craft-bench"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -2536,9 +2596,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
-      "building-craft-bench"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -2555,9 +2615,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
-      "building-craft-bench"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -2574,9 +2634,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-constructor",
-      "building-craft-bench"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -2597,8 +2657,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-foundry",
+    "machineID" : "building-foundry",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2620,8 +2680,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-foundry"
+    "machineID" : "building-foundry",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -2642,8 +2703,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-foundry"
+    "machineID" : "building-foundry",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 10,
@@ -2664,8 +2726,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-foundry"
+    "machineID" : "building-foundry",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 20,
@@ -2686,8 +2749,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-foundry"
+    "machineID" : "building-foundry",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 5,
@@ -2708,8 +2772,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-foundry"
+    "machineID" : "building-foundry",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 20,
@@ -2730,8 +2795,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-foundry",
+    "machineID" : "building-foundry",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2753,9 +2818,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-foundry",
-      "building-craft-bench"
+    "machineID" : "building-foundry",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -2776,9 +2841,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-foundry",
-      "building-craft-bench"
+    "machineID" : "building-foundry",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -2807,8 +2872,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2838,8 +2903,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -2868,8 +2934,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -2898,8 +2965,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -2929,8 +2996,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -2959,8 +3027,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -2985,8 +3054,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 6,
@@ -3015,8 +3085,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -3041,8 +3112,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3068,8 +3139,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -3098,8 +3170,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3125,8 +3197,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -3151,8 +3224,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3178,8 +3251,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -3208,8 +3282,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3239,8 +3313,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -3265,8 +3340,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3292,8 +3367,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -3322,8 +3398,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -3348,8 +3425,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3379,8 +3456,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -3409,8 +3487,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -3439,8 +3518,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3466,8 +3545,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3493,8 +3572,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3524,8 +3603,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3551,8 +3630,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3582,8 +3661,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3609,8 +3688,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3640,8 +3719,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3667,8 +3746,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -3693,8 +3773,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -3719,8 +3800,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -3749,8 +3831,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3776,8 +3858,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 20,
@@ -3806,8 +3889,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-manufacturer"
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -3832,8 +3916,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3863,8 +3947,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3890,8 +3974,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-manufacturer",
+    "machineID" : "building-manufacturer",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -3909,8 +3993,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-nuclear-power-plant"
+    "machineID" : "building-nuclear-power-plant",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 50,
@@ -3927,8 +4012,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-nuclear-power-plant"
+    "machineID" : "building-nuclear-power-plant",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 10,
@@ -3952,8 +4038,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -3977,8 +4064,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4002,8 +4090,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4027,8 +4116,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4052,8 +4142,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4077,8 +4168,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4102,8 +4194,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4127,8 +4220,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4152,8 +4246,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -4177,8 +4272,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -4201,8 +4297,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-packager",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4225,8 +4322,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-packager",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4249,8 +4347,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-packager",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4273,8 +4372,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-packager",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4297,8 +4397,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-packager",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4321,8 +4422,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-packager",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4345,8 +4447,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-packager",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4369,8 +4472,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-packager",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -4393,8 +4497,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-packager",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -4417,8 +4522,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-packager"
+    "machineID" : "building-packager",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -4439,8 +4545,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-particle-accelerator"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+      "building-craft-bench"
     ],
     "output" : {
       "amount" : 30,
@@ -4461,8 +4568,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-particle-accelerator"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 20,
@@ -4483,8 +4591,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-particle-accelerator"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -4505,8 +4614,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 13,
@@ -4527,8 +4637,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 15,
@@ -4549,8 +4660,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -4571,8 +4683,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -4593,8 +4706,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 7,
@@ -4615,8 +4729,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -4637,8 +4752,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 3,
@@ -4659,8 +4775,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 9,
@@ -4687,8 +4804,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 6,
@@ -4715,8 +4833,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 20,
@@ -4743,8 +4862,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 12,
@@ -4765,8 +4885,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 12,
@@ -4787,8 +4908,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 10,
@@ -4811,8 +4933,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4833,8 +4956,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4855,8 +4979,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 12,
@@ -4879,8 +5004,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4901,8 +5027,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -4923,8 +5050,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 12,
@@ -4941,8 +5069,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 12,
@@ -4965,8 +5094,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 13,
@@ -4989,8 +5119,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -5013,8 +5144,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -5031,8 +5163,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -5053,8 +5186,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -5075,8 +5209,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -5097,8 +5232,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 5,
@@ -5119,8 +5255,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 4,
@@ -5141,8 +5278,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-refinery"
+    "machineID" : "building-constructor",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 2,
@@ -5162,9 +5300,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-smelter",
-      "building-craft-bench"
+    "machineID" : "building-smelter",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -5184,9 +5322,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-smelter",
-      "building-craft-bench"
+    "machineID" : "building-smelter",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -5206,9 +5344,9 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-smelter",
-      "building-craft-bench"
+    "machineID" : "building-smelter",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -5228,9 +5366,9 @@
       }
     ],
     "isDefault" : false,
-    "machineIDs" : [
-      "building-smelter",
-      "building-craft-bench"
+    "machineID" : "building-smelter",
+    "manualCraftingIDs" : [
+
     ],
     "output" : {
       "amount" : 1,
@@ -5250,8 +5388,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-smelter",
+    "machineID" : "building-smelter",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -5272,8 +5410,8 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
-      "building-smelter",
+    "machineID" : "building-smelter",
+    "manualCraftingIDs" : [
       "building-craft-bench"
     ],
     "output" : {
@@ -5298,7 +5436,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5331,7 +5469,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5364,7 +5502,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5397,7 +5535,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5419,7 +5557,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5445,7 +5583,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5475,7 +5613,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5501,7 +5639,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5531,7 +5669,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5557,7 +5695,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5579,7 +5717,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5605,7 +5743,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5627,7 +5765,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5653,7 +5791,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5683,7 +5821,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5709,7 +5847,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5739,7 +5877,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5765,7 +5903,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5795,7 +5933,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5821,7 +5959,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5847,7 +5985,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5873,7 +6011,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
       "building-equipment-workshop"
     ],
     "output" : {
@@ -5907,7 +6045,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -5933,7 +6071,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -5959,7 +6097,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -5989,7 +6127,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6011,7 +6149,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6033,7 +6171,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6059,7 +6197,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6089,7 +6227,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6115,7 +6253,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6145,7 +6283,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6175,7 +6313,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6213,7 +6351,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6239,7 +6377,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6269,7 +6407,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6303,7 +6441,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6325,7 +6463,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6351,7 +6489,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6373,7 +6511,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {
@@ -6395,7 +6533,7 @@
       }
     ],
     "isDefault" : true,
-    "machineIDs" : [
+    "manualCraftingIDs" : [
 
     ],
     "output" : {

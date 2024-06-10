@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 extension Migration.IDs {
     init(old: Building.Static.Legacy, new: Building.Static) {

@@ -2,7 +2,7 @@ import Foundation
 import SHModels
 
 extension Production.Persistent {
-    public struct V2: Codable, Identifiable {
+    public struct V2: Codable, Identifiable, Equatable {
         public var id: UUID
         public var name: String
         public var itemID: String

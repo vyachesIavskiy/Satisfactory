@@ -1,4 +1,5 @@
+import SHModels
 
-public enum Pins {
+extension Pins {
     public enum Persistent {}
 }

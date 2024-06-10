@@ -4,9 +4,10 @@ import PackageDescription
 
 let package = Package(
     name: "SHStorage",
+    defaultLocalization: "en",
     platforms: [
-        .iOS(.v16),
-        .macOS(.v13)
+        .iOS(.v17),
+        .macOS(.v14)
     ],
     products: [
         .library(
@@ -17,37 +18,49 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../TCA"),
+        .package(path: "../SHDependencies"),
         .package(path: "../SHLogger"),
+        .package(path: "../SHPersistence"),
         .package(path: "../SHFileManager")
     ],
     targets: [
         .target(
             name: "SHStorage",
             dependencies: [
+                "SHStaticStorage",
+                "SHPersistentStorage",
                 "SHPersistentModels",
                 "SHStaticModels",
                 "SHModels",
-                .product(name: "SHLogger", package: "SHLogger"),
-                .product(name: "SHFileManager", package: "SHFileManager"),
-                .product(name: "TCA", package: "TCA")
+                .product(name: "SHLogger", package: "SHLogger")
+            ],
+            swiftSettings: [
+                .define("SWIFT_EMIT_LOC_STRINGS=NO")
+            ]
+        ),
+        .target(
+            name: "SHStaticStorage",
+            dependencies: [
+                "SHModels",
+                "SHStaticModels",
+                .product(name: "SHLogger", package: "SHLogger")
             ],
             resources: [
                 .copy("Data")
             ]
         ),
-        .executableTarget(
-            name: "SHGenerator",
+        .target(
+            name: "SHPersistentStorage",
             dependencies: [
+                "SHStaticStorage",
+                "SHModels",
                 "SHPersistentModels",
                 "SHStaticModels",
-                "SHModels",
-                .product(name: "SHLogger", package: "SHLogger"),
+                .product(name: "SHPersistence", package: "SHPersistence"),
+                .product(name: "SHLogger", package: "SHLogger")
             ]
         ),
-        .target(
-            name: "SHModels"
-        ),
+        .target(name: "SHModels"),
         .target(
             name: "SHStaticModels",
             dependencies: [
@@ -61,13 +74,24 @@ let package = Package(
             ]
         ),
         
+        // Executable targets
+        .executableTarget(
+            name: "SHGenerator",
+            dependencies: [
+                "SHPersistentModels",
+                "SHStaticModels",
+                "SHModels",
+                .product(name: "SHLogger", package: "SHLogger"),
+            ]
+        ),
+        
         // Test targets
         .testTarget(
             name: "SHStorageTests",
             dependencies: [
                 "SHStorage",
                 .product(name: "SHFileManager", package: "SHFileManager"),
-                .product(name: "TCA", package: "TCA")
+                .product(name: "SHDependencies", package: "SHDependencies")
             ]
         ),
     ]

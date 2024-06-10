@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 private extension Recipe.Static {
     init(
@@ -7,13 +7,16 @@ private extension Recipe.Static {
         inputs: [Ingredient],
         output: Ingredient,
         duration: Int,
-        isDefault: Bool = true
+        isDefault: Bool = true,
+        manuallyCraftable: Bool = true,
+        additionalManualCrafting: Building.Static? = nil
     ) {
         self.init(
             id: id,
             inputs: inputs,
             output: output,
-            machines: isDefault ? [V2.Buildings.assembler, V2.Buildings.craftBench] : [V2.Buildings.assembler],
+            machine: V2.Buildings.assembler,
+            manualCrafting: (isDefault && manuallyCraftable) ? [V2.Buildings.craftBench] + (additionalManualCrafting.map { [$0] } ?? []) : [],
             duration: duration,
             isDefault: isDefault
         )
@@ -473,7 +476,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.rotor, amount: 1)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.smartPlating, amount: 1),
-        duration: 30
+        duration: 30,
+        manuallyCraftable: false
     )
     
     static let versatileFrameworkRecipe = Recipe.Static(
@@ -483,7 +487,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.steelBeam, amount: 12)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.versatileFramework, amount: 2),
-        duration: 24
+        duration: 24,
+        manuallyCraftable: false
     )
     
     static let automatedWiringRecipe = Recipe.Static(
@@ -493,7 +498,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.cable, amount: 20)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.automatedWiring, amount: 1),
-        duration: 24
+        duration: 24,
+        manuallyCraftable: false
     )
     
     static let assemblyDirectorSystemRecipe = Recipe.Static(
@@ -503,7 +509,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.supercomputer, amount: 1)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.assemblyDirectorSystem, amount: 1),
-        duration: 80
+        duration: 80,
+        manuallyCraftable: false
     )
     
     // MARK: - Biomass
@@ -547,7 +554,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.ironFicsmasOrnament, amount: 1)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.ficsmasOrnamentBundle, amount: 1),
-        duration: 12
+        duration: 12,
+        manuallyCraftable: false
     )
     
     static let ficsmasDecorationRecipe = Recipe.Static(
@@ -557,7 +565,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.ficsmasOrnamentBundle, amount: 6)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.ficsmasDecoration, amount: 2),
-        duration: 60
+        duration: 60,
+        manuallyCraftable: false
     )
     
     static let ficsmasWonderStarRecipe = Recipe.Static(
@@ -567,7 +576,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.candyCanePart, amount: 20)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.ficsmasWonderStar, amount: 1),
-        duration: 60
+        duration: 60,
+        manuallyCraftable: false
     )
     
     // MARK: - Ammunition
@@ -578,7 +588,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.sulfur, amount: 1)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.blackPowder, amount: 2),
-        duration: 4
+        duration: 4,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let blackPowderRecipe1 = Recipe.Static(
@@ -588,7 +599,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.compactedCoal, amount: 1)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.blackPowder, amount: 4),
-        duration: 16
+        duration: 16,
+        isDefault: false
     )
     
     static let stunRebarRecipe = Recipe.Static(
@@ -598,7 +610,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.quickwire, amount: 15)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.stunRebar, amount: 1),
-        duration: 6
+        duration: 6,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let shatterRebarRecipe = Recipe.Static(
@@ -608,7 +621,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.quartzCrystal, amount: 3)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.shatterRebar, amount: 1),
-        duration: 12
+        duration: 12,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let nobeliskRecipe = Recipe.Static(
@@ -618,7 +632,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.steelPipe, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.nobelisk, amount: 1),
-        duration: 6
+        duration: 6,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let gasNobeliskRecipe = Recipe.Static(
@@ -628,7 +643,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.biomass, amount: 10)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.gasNobelisk, amount: 1),
-        duration: 12
+        duration: 12,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let clusterNobeliskRecipe = Recipe.Static(
@@ -638,7 +654,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.smokelessPowder, amount: 4)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.clusterNobelisk, amount: 1),
-        duration: 24
+        duration: 24,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let pulseNobeliskRecipe = Recipe.Static(
@@ -648,7 +665,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.crystalOscillator, amount: 1)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.pulseNobelisk, amount: 5),
-        duration: 60
+        duration: 60,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let rifleAmmoRecipe = Recipe.Static(
@@ -658,7 +676,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.smokelessPowder, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.rifleAmmo, amount: 15),
-        duration: 12
+        duration: 12,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let homingRifleAmmoRecipe = Recipe.Static(
@@ -668,7 +687,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.highSpeedConnector, amount: 1)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.homingRifleAmmo, amount: 10),
-        duration: 24
+        duration: 24,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     static let assemblerRecipes = [

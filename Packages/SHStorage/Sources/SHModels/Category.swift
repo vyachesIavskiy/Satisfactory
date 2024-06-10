@@ -1,5 +1,6 @@
+import Foundation
 
-public enum Category: Equatable {
+public enum Category: Int, Equatable {
     // Parts
     case special
     case ores
@@ -21,8 +22,8 @@ public enum Category: Equatable {
     case oilProducts
     case nuclear
     case spaceElevatorParts
-    case ficsmas
     case quantumTechnology
+    case ficsmas
     
     // Equipment
     case head
@@ -96,8 +97,8 @@ public enum Category: Equatable {
         case .oilProducts: "category-oil-products"
         case .nuclear: "category-nuclear"
         case .spaceElevatorParts: "category-space-elevator-parts"
-        case .ficsmas: "category-ficsmas"
         case .quantumTechnology: "category-quantum-technology"
+        case .ficsmas: "category-ficsmas"
         
         // Equipment
         case .head: "category-head"
@@ -152,6 +153,12 @@ public enum Category: Equatable {
     }
     
     public var localizedName: String {
-        "<LOCALIZE ME>"
+        NSLocalizedString(id, tableName: "Categories", bundle: .module, comment: "")
+    }
+}
+
+extension Category: Comparable {
+    public static func < (lhs: Category, rhs: Category) -> Bool {
+        lhs.rawValue < rhs.rawValue
     }
 }

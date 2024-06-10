@@ -16,6 +16,20 @@ public struct Settings {
     }
 }
 
+public extension Settings {
+    func updating(
+        itemViewStyle: ItemViewStyle? = nil,
+        autoSelectSingleRecipe: Bool? = nil,
+        autoSelectSinglePinnedRecipe: Bool? = nil
+    ) -> Settings {
+        Settings(
+            itemViewStyle: itemViewStyle ?? self.itemViewStyle,
+            autoSelectSingleRecipe: autoSelectSingleRecipe ?? self.autoSelectSingleRecipe,
+            autoSelectSinglePinnedRecipe: autoSelectSinglePinnedRecipe ?? self.autoSelectSinglePinnedRecipe
+        )
+    }
+}
+
 extension Settings {
     public enum ItemViewStyle {
         case icon
@@ -26,6 +40,10 @@ extension Settings {
             case .icon: "item-view-style-icon"
             case .row: "item-view-style-row"
             }
+        }
+        
+        public var localizedName: String {
+            NSLocalizedString(id, tableName: "Settings", bundle: .module, comment: "")
         }
         
         public init(fromID id: String) throws {

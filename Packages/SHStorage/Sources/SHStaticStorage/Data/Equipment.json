@@ -2,6 +2,7 @@
   {
     "categoryID" : "category-back",
     "id" : "equipment-parachute",
+    "progressionIndex" : 4,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-back"
   },
@@ -14,12 +15,14 @@
       "part-packaged-turbofuel"
     ],
     "id" : "equipment-jetpack",
+    "progressionIndex" : 14,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-back"
   },
   {
     "categoryID" : "category-back",
     "id" : "equipment-hover-pack",
+    "progressionIndex" : 16,
     "requireElectricity" : true,
     "slotID" : "equipment-slot-back"
   },
@@ -29,30 +32,35 @@
       "part-iodine-infused-filter"
     ],
     "id" : "equipment-hazmat-suit",
+    "progressionIndex" : 15,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-body"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-xeno-zapper",
+    "progressionIndex" : 0,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-portable-miner",
+    "progressionIndex" : 1,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-object-scanner",
+    "progressionIndex" : 2,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-beacon",
+    "progressionIndex" : 3,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
@@ -62,12 +70,14 @@
     ],
     "categoryID" : "category-hands",
     "id" : "equipment-rebar-gun",
+    "progressionIndex" : 7,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-medicinal-inhaler",
+    "progressionIndex" : 6,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
@@ -77,18 +87,21 @@
       "part-solid-biofuel"
     ],
     "id" : "equipment-chainsaw",
+    "progressionIndex" : 5,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-xeno-basher",
+    "progressionIndex" : 9,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-zipline",
+    "progressionIndex" : 8,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
@@ -98,6 +111,7 @@
     ],
     "categoryID" : "category-hands",
     "id" : "equipment-nobelisk-detonator",
+    "progressionIndex" : 11,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
@@ -107,42 +121,49 @@
     ],
     "categoryID" : "category-hands",
     "id" : "equipment-rifle",
+    "progressionIndex" : 13,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-special",
     "id" : "equipment-factory-cart",
+    "progressionIndex" : 17,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-ficsit-coffe-cup",
+    "progressionIndex" : 18,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-special",
     "id" : "equipment-golden-factory-cart",
+    "progressionIndex" : 19,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-ficsit-gold-coffee-cup",
+    "progressionIndex" : 20,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-candy-cane-basher",
+    "progressionIndex" : 21,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-hands",
     "id" : "equipment-boombox",
+    "progressionIndex" : 22,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
@@ -152,12 +173,14 @@
       "part-gas-filter"
     ],
     "id" : "equipment-gas-mask",
+    "progressionIndex" : 12,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-head"
   },
   {
     "categoryID" : "category-legs",
     "id" : "equipment-blade-runners",
+    "progressionIndex" : 10,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-legs"
   }

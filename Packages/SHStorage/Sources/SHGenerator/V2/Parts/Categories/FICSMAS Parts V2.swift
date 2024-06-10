@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 private extension Part.Static {
     init(id: String, isNaturalResource: Bool = false) {

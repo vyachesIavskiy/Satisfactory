@@ -1,4 +1,5 @@
 import Foundation
+import SHModels
 
 extension Configuration.Persistent {
     public struct V2: Codable {

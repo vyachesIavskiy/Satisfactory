@@ -5,6 +5,7 @@ extension Part {
     public struct Static: Codable {
         public let id: String
         public let categoryID: String
+        public var progressionIndex = 0
         public let formID: String
         public let isNaturalResource: Bool
         
@@ -19,7 +20,8 @@ extension Part {
     public init(_ part: Static) throws {
         try self.init(
             id: part.id,
-            category: Category(fromID: part.categoryID),
+            category: Category(fromID: part.categoryID), 
+            progressionIndex: part.progressionIndex,
             form: SHModels.Part.Form(fromID: part.formID),
             isNaturalResource: part.isNaturalResource
         )

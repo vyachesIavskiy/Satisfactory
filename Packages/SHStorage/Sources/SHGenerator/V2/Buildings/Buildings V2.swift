@@ -1,8 +1,8 @@
-import StaticModels
-import Models
+import SHModels
+import SHStaticModels
 
 extension Building.Static {
-    init(id: String, category: Models.Category) {
+    init(id: String, category: SHModels.Category) {
         self.init(id: id, categoryID: category.id)
     }
 }

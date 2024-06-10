@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 private extension Recipe.Static {
     init(
@@ -7,14 +7,16 @@ private extension Recipe.Static {
         input: Ingredient,
         output: Ingredient,
         duration: Int,
-        isDefault: Bool = true
+        isDefault: Bool = true,
+        manuallyCraftable: Bool = true
     ) {
         self.init(
             id: id,
             inputs: [input],
             output: output,
             byproducts: [],
-            machines: [V2.Buildings.smelter, V2.Buildings.craftBench],
+            machine: V2.Buildings.smelter,
+            manualCrafting: (isDefault && !manuallyCraftable) ? [V2.Buildings.craftBench] : [],
             duration: duration,
             isDefault: isDefault
         )
@@ -57,14 +59,16 @@ extension V2.Recipes {
         id: "recipe-red-ficsmas-ornament",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.redFicsmasOrnament, amount: 1),
-        duration: 12
+        duration: 12,
+        manuallyCraftable: false
     )
     
     static let blueFicsmasOrnamentRecipe = Recipe.Static(
         id: "recipe-blue-ficsmas-ornament",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.blueFicsmasOrnament, amount: 2),
-        duration: 12
+        duration: 12,
+        manuallyCraftable: false
     )
     
     static let smelterRecipes = [

@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 private extension Recipe.Static {
     init(
@@ -7,13 +7,15 @@ private extension Recipe.Static {
         inputs: [Ingredient],
         output: Ingredient,
         duration: Int,
-        isDefault: Bool = true
+        isDefault: Bool = true,
+        manuallyCraftable: Bool = true
     ) {
         self.init(
             id: id,
             inputs: inputs,
             output: output,
-            machines: isDefault ? [V2.Buildings.foundry, V2.Buildings.craftBench] : [V2.Buildings.foundry],
+            machine: V2.Buildings.foundry,
+            manualCrafting: (isDefault && manuallyCraftable) ? [V2.Buildings.craftBench] : [],
             duration: duration,
             isDefault: isDefault
         )
@@ -105,7 +107,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.copperIngot, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.copperFicsmasOrnament, amount: 1),
-        duration: 12
+        duration: 12,
+        manuallyCraftable: false
     )
     
     static let ironFicsmasOrnamentRecipe = Recipe.Static(
@@ -115,7 +118,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 3)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.ironFicsmasOrnament, amount: 1),
-        duration: 12
+        duration: 12,
+        manuallyCraftable: false
     )
     
     static let foundryRecipes = [

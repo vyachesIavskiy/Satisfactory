@@ -1,16 +1,16 @@
 import Foundation
 
-// MARK: Model
-
-public struct Part: Item {
+public struct Part: ProgressiveItem {
     public let id: String
     public let category: Category
+    public let progressionIndex: Int
     public let form: Form
     public let isNaturalResource: Bool
     
-    public init(id: String, category: Category, form: Form, isNaturalResource: Bool = false) {
+    public init(id: String, category: Category, progressionIndex: Int, form: Form, isNaturalResource: Bool = false) {
         self.id = id
         self.category = category
+        self.progressionIndex = progressionIndex
         self.form = form
         self.isNaturalResource = isNaturalResource
     }
@@ -31,7 +31,7 @@ public extension Part {
         }
         
         public var localizedName: String {
-            "<LOCALIZE ME>"
+            NSLocalizedString(id, tableName: "Part Forms", bundle: .module, comment: "")
         }
     }
 }

@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 private extension Recipe.Static {
     init(
@@ -12,7 +12,8 @@ private extension Recipe.Static {
             id: id,
             inputs: [input],
             output: output,
-            machines: [V2.Buildings.nuclearPowerPlant],
+            machine: V2.Buildings.nuclearPowerPlant,
+            manualCrafting: [],
             duration: duration
         )
     }

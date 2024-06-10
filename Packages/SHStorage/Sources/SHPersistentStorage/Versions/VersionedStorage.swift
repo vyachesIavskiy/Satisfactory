@@ -1,6 +1,6 @@
 
-protocol VersionedPersistentStorage {
-    var version: Storage.Persistent.Version { get }
+protocol VersionedStorage {
+    var version: Version { get }
     
     func canBeLoaded() throws -> Bool
     func load() throws

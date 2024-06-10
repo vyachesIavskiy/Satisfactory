@@ -3,71 +3,72 @@ import SHModels
 import SHStaticModels
 import SHLogger
 
-extension Storage {
-    final class Static {
-        private(set) var configuration = Configuration(version: 0)
-        private(set) var parts = [Part]()
-        private(set) var equipment = [Equipment]()
-        private(set) var buildings = [Building]()
-        private(set) var recipes = [Recipe]()
-        private(set) var migrations = [Migration]()
+public final class SHStaticStorage {
+    public private(set) var configuration = Configuration(version: 0)
+    public private(set) var parts = [Part]()
+    public private(set) var equipment = [Equipment]()
+    public private(set) var buildings = [Building]()
+    public private(set) var recipes = [Recipe]()
+    public private(set) var migrations = [Migration]()
+    
+    private let logger = SHLogger(subsystemName: "SHStorage", category: "SHStaticStorage")
+    private let dataDirectoryName = "Data"
+    
+    private var loaded = false
+    
+    public init() {}
+    
+    public func load(onlyData: Bool = false) throws {
+        logger.info("Loading SHStaticStorage.")
         
-        private let logger = SHLogger(category: "Static")
-        private let dataDirectoryName = "Data"
-        
-        private var loaded = false
-        
-        func load(onlyData: Bool = false) throws {
-            logger.info("Loading Static storage.")
-            
-            guard !loaded else {
-                logger.info("Static storage is already loaded, skipping.")
-                return
-            }
-            
-            // Step 1
-            configuration = try load(resourceName: .configuration)
-            
-            // Step 2
-            let staticParts = try load([Part.Static].self, resourceName: .parts)
-            parts = try staticParts.map(Part.init)
-            
-            // Step 3
-            let staticBuildings = try load([Building.Static].self, resourceName: .buildings)
-            buildings = try staticBuildings.map(Building.init)
-            
-            // Step 4
-            let staticEquipment = try load([Equipment.Static].self, resourceName: .equipment)
-            equipment = try staticEquipment.map { equipment in
-                try Equipment(equipment) {
-                    try self[partID: $0]
-                }
-            }
-            
-            // Step 5
-            let staticRecipes = try load([Recipe.Static].self, resourceName: .recipes)
-            recipes = try staticRecipes.map { recipe in
-                try Recipe(recipe) { 
-                    try self[itemID: $0]
-                } buildingProvider: {
-                    try self[buildingID: $0]
-                }
-            }
-            
-            // Step 6
-            if !onlyData {
-                migrations = try load(subdirectory: .migrations)
-            }
-            
-            loaded = true
-            
-            logger.info("Static storage is loaded.")
+        guard !loaded else {
+            logger.info("SHStaticStorage is already loaded, skipping.")
+            return
         }
+        
+        // Step 1
+        let staticConfiguration = try load(Configuration.Static.self, resourceName: .configuration)
+        configuration = Configuration(staticConfiguration)
+        
+        // Step 2
+        let staticParts = try load([Part.Static].self, resourceName: .parts)
+        parts = try staticParts.map(Part.init)
+        
+        // Step 3
+        let staticBuildings = try load([Building.Static].self, resourceName: .buildings)
+        buildings = try staticBuildings.map(Building.init)
+        
+        // Step 4
+        let staticEquipment = try load([Equipment.Static].self, resourceName: .equipment)
+        equipment = try staticEquipment.map { equipment in
+            try Equipment(equipment) {
+                try self[partID: $0]
+            }
+        }
+        
+        // Step 5
+        let staticRecipes = try load([Recipe.Static].self, resourceName: .recipes)
+        recipes = try staticRecipes.map { recipe in
+            try Recipe(recipe) {
+                try self[itemID: $0]
+            } buildingProvider: {
+                try self[buildingID: $0]
+            }
+        }
+        
+        // Step 6
+        if !onlyData {
+            migrations = try load(subdirectory: .migrations)
+        }
+        
+        loaded = true
+        
+        logger.info("SHStaticStorage is loaded.")
     }
 }
 
 // MARK: - Subscripts
-extension Storage.Static {
+extension SHStaticStorage {
     subscript(partID id: String) -> Part? {
         let part = parts.first(id: id)
         
@@ -142,7 +143,7 @@ extension Storage.Static {
 }
 
 // MARK: - Throwing subscripts
-extension Storage.Static {
+extension SHStaticStorage {
     subscript(partID id: String) -> Part {
         get throws {
             guard let part = self[partID: id] else {
@@ -195,7 +196,7 @@ extension Storage.Static {
 }
 
 // MARK: - Errors
-extension Storage.Static {
+extension SHStaticStorage {
     enum Error: LocalizedError {
         case invalidPartID(String)
         case invalidEquipmentID(String)
@@ -248,7 +249,7 @@ extension Storage.Static {
 }
 
 // MARK: - Loading
-private extension Storage.Static {
+private extension SHStaticStorage {
     func load<Model: Decodable>(_ modelType: Model.Type = Model.self, resourceName: String) throws -> Model {
         guard let url = Bundle.module.url(forResource: "\(dataDirectoryName)/\(resourceName)", withExtension: .json) else {
             let error = BundleError.resourceNotFound(.module, resourceName)

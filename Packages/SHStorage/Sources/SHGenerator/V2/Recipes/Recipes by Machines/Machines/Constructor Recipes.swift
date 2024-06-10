@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 private extension Recipe.Static {
     init(
@@ -7,13 +7,16 @@ private extension Recipe.Static {
         input: Ingredient,
         output: Ingredient,
         duration: Int,
-        isDefault: Bool = true
+        isDefault: Bool = true,
+        manuallyCraftable: Bool = true,
+        additionalManualCrafting: Building.Static? = nil
     ) {
         self.init(
             id: id,
             inputs: [input],
             output: output,
-            machines: isDefault ? [V2.Buildings.constructor, V2.Buildings.craftBench] : [V2.Buildings.constructor],
+            machine: V2.Buildings.constructor,
+            manualCrafting: (isDefault && manuallyCraftable) ? [V2.Buildings.craftBench] + (additionalManualCrafting.map { [$0] } ?? []) : [],
             duration: duration,
             isDefault: isDefault
         )
@@ -307,7 +310,8 @@ extension V2.Recipes {
         id: "recipe-iron-rebar",
         input: Recipe.Static.Ingredient(V2.Parts.ironRod, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.ironRebar, amount: 1),
-        duration: 4
+        duration: 4,
+        additionalManualCrafting: V2.Buildings.equipmentWorkshop
     )
     
     // MARK: - FICSMAS
@@ -315,35 +319,40 @@ extension V2.Recipes {
         id: "recipe-ficsmas-tree-branch",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.ficsmasTreeBranch, amount: 1),
-        duration: 6
+        duration: 6,
+        manuallyCraftable: false
     )
     
     static let candyCanePartRecipe = Recipe.Static(
         id: "recipe-candy-cane",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 3),
         output: Recipe.Static.Ingredient(V2.Parts.candyCanePart, amount: 1),
-        duration: 12
+        duration: 12,
+        manuallyCraftable: false
     )
     
     static let ficsmasBowRecipe = Recipe.Static(
         id: "recipe-ficsmas-bow",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 2),
         output: Recipe.Static.Ingredient(V2.Parts.ficsmasBow, amount: 1),
-        duration: 12
+        duration: 12,
+        manuallyCraftable: false
     )
     
     static let actualSnowRecipe = Recipe.Static(
         id: "recipe-actual-snow",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 5),
         output: Recipe.Static.Ingredient(V2.Parts.actualSnow, amount: 2),
-        duration: 12
+        duration: 12,
+        manuallyCraftable: false
     )
     
     static let snowballRecipe = Recipe.Static(
         id: "recipe-snowball",
         input: Recipe.Static.Ingredient(V2.Parts.actualSnow, amount: 3),
         output: Recipe.Static.Ingredient(V2.Parts.snowball, amount: 1),
-        duration: 12
+        duration: 12,
+        manuallyCraftable: false
     )
     
     static let constructorRecipes = [

@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 extension Recipe.Static.Legacy.Ingredient {
     init(_ part: Part.Static.Legacy, amount: Double) {

@@ -1,10 +1,10 @@
-import StaticModels
-import Models
+import SHModels
+import SHStaticModels
 
 extension Equipment.Static {
     init(
         id: String,
-        category: Models.Category,
+        category: SHModels.Category,
         slot: Equipment.Slot,
         ammo: [Part.Static]? = nil,
         fuel: [Part.Static]? = nil,
@@ -31,5 +31,31 @@ extension V2 {
         handEquipment +
         headEquipment +
         legEquipment
+        
+        static let allSortedByProgression = [
+            xenoZapper,
+            portableMiner,
+            objectScanner,
+            beacon,
+            parachute,
+            chainsaw,
+            medicinalInhaler,
+            rebarGun,
+            zipline,
+            xenoBasher,
+            bladeRunners,
+            nobeliskDetonator,
+            gasMask,
+            rifle,
+            jetpack,
+            hazmatSuit,
+            hoverPack,
+            factoryCart,
+            coffeCup,
+            goldenFactoryCart,
+            goldCoffeCup,
+            candyCaneBasher,
+            boombox
+        ]
     }
 }

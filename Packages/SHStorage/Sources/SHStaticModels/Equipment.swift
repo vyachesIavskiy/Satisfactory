@@ -5,6 +5,7 @@ extension Equipment {
     public struct Static: Codable {
         public let id: String
         public let categoryID: String
+        public var progressionIndex = 0
         public let slotID: String
         public let ammoIDs: [String]?
         public let fuelIDs: [String]?
@@ -34,6 +35,7 @@ extension Equipment {
         try self.init(
             id: equipment.id,
             category: Category(fromID: equipment.categoryID),
+            progressionIndex: equipment.progressionIndex,
             slot: Slot(fromID: equipment.slotID),
             ammo: equipment.ammoIDs?.map(partProvider) ?? [],
             fuel: equipment.fuelIDs?.map(partProvider) ?? [],

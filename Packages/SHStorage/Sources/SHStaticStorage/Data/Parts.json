@@ -3,936 +3,1092 @@
     "categoryID" : "category-aliens",
     "formID" : "part-form-solid",
     "id" : "part-hog-remains",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 11
   },
   {
     "categoryID" : "category-aliens",
     "formID" : "part-form-solid",
     "id" : "part-plasma-spitter-remains",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 12
   },
   {
     "categoryID" : "category-aliens",
     "formID" : "part-form-solid",
     "id" : "part-stinger-remains",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 13
   },
   {
     "categoryID" : "category-aliens",
     "formID" : "part-form-solid",
     "id" : "part-hatcher-remains",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 14
   },
   {
     "categoryID" : "category-aliens",
     "formID" : "part-form-solid",
     "id" : "part-alien-protein",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 31
   },
   {
     "categoryID" : "category-aliens",
     "formID" : "part-form-solid",
     "id" : "part-alien-dna-capsule",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 32
   },
   {
     "categoryID" : "category-biomass",
     "formID" : "part-form-solid",
     "id" : "part-biomass",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 30
   },
   {
     "categoryID" : "category-biomass",
     "formID" : "part-form-solid",
     "id" : "part-solid-biofuel",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 40
   },
   {
     "categoryID" : "category-biomass",
     "formID" : "part-form-solid",
     "id" : "part-fabric",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 33
   },
   {
     "categoryID" : "category-communications",
     "formID" : "part-form-solid",
     "id" : "part-crystal-oscillator",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 91
   },
   {
     "categoryID" : "category-communications",
     "formID" : "part-form-solid",
     "id" : "part-computer",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 61
   },
   {
     "categoryID" : "category-communications",
     "formID" : "part-form-solid",
     "id" : "part-radio-control-unit",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 86
   },
   {
     "categoryID" : "category-communications",
     "formID" : "part-form-solid",
     "id" : "part-supercomputer",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 78
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-color-cartridge",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 41
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-iron-rebar",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 39
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-stun-rebar",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 75
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-shatter-rebar",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 90
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-explosive-rebar",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 106
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-black-powder",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 97
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-smokeless-powder",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 104
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-nobelisk",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 101
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-gas-nobelisk",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 102
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-pulse-nobelisk",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 103
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-cluster-nobelisk",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 105
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-nuke-nobelisk",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 117
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-rifle-ammo",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 107
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-homing-rifle-ammo",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 108
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-turbo-rifle-ammo",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 109
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-gas-filter",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 71
   },
   {
     "categoryID" : "category-consumed",
     "formID" : "part-form-solid",
     "id" : "part-iodine-infused-filter",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 110
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-empty-canister",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 65
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-empty-fluid-tank",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 119
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-pressure-conversion-cube",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 134
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-packaged-water",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 66
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-packaged-oil",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 67
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-packaged-heavy-oil-residue",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 68
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-packaged-fuel",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 69
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-packaged-liquid-biofuel",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 70
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-packaged-turbofuel",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 100
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-packaged-alumina-solution",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 81
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-packaged-sulfuric-acid",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 94
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-packaged-nitric-acid",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 127
   },
   {
     "categoryID" : "category-containers",
     "formID" : "part-form-solid",
     "id" : "part-packaged-nitrogen-gas",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 120
   },
   {
     "categoryID" : "category-electronics",
     "formID" : "part-form-solid",
     "id" : "part-wire",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 24
   },
   {
     "categoryID" : "category-electronics",
     "formID" : "part-form-solid",
     "id" : "part-cable",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 25
   },
   {
     "categoryID" : "category-electronics",
     "formID" : "part-form-solid",
     "id" : "part-quickwire",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 74
   },
   {
     "categoryID" : "category-electronics",
     "formID" : "part-form-solid",
     "id" : "part-ai-limiter",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 76
   },
   {
     "categoryID" : "category-electronics",
     "formID" : "part-form-solid",
     "id" : "part-circuit-board",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 60
   },
   {
     "categoryID" : "category-electronics",
     "formID" : "part-form-solid",
     "id" : "part-high-speed-connector",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 77
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-gift",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 140
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-tree-branch",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 141
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-candy-cane",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 142
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-bow",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 143
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-red-ficsmas-ornament",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 144
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-blue-ficsmas-ornament",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 145
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-actual-snow",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 146
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-copper-ficsmas-ornament",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 147
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-iron-ficsmas-ornament",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 148
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-ornament-bundle",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 149
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-decoration",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 150
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-wonder-star",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 151
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-snowball",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 152
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-sweet-fireworks",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 153
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-fancy-fireworks",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 154
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-sparkly-fireworks",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 155
   },
   {
     "categoryID" : "category-fluids",
     "formID" : "part-form-fluid",
     "id" : "part-water",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 42
   },
   {
     "categoryID" : "category-fluids",
     "formID" : "part-form-fluid",
     "id" : "part-crude-oil",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 53
   },
   {
     "categoryID" : "category-fluids",
     "formID" : "part-form-fluid",
     "id" : "part-heavy-oil-residue",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 54
   },
   {
     "categoryID" : "category-fluids",
     "formID" : "part-form-fluid",
     "id" : "part-fuel",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 58
   },
   {
     "categoryID" : "category-fluids",
     "formID" : "part-form-fluid",
     "id" : "part-liquid-biofuel",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 64
   },
   {
     "categoryID" : "category-fluids",
     "formID" : "part-form-fluid",
     "id" : "part-turbofuel",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 99
   },
   {
     "categoryID" : "category-fluids",
     "formID" : "part-form-fluid",
     "id" : "part-alumina-solution",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 80
   },
   {
     "categoryID" : "category-fluids",
     "formID" : "part-form-fluid",
     "id" : "part-sulfuric-acid",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 93
   },
   {
     "categoryID" : "category-fluids",
     "formID" : "part-form-fluid",
     "id" : "part-nitric-acid",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 126
   },
   {
     "categoryID" : "category-fuels",
     "formID" : "part-form-solid",
     "id" : "part-leaves",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 7
   },
   {
     "categoryID" : "category-fuels",
     "formID" : "part-form-solid",
     "id" : "part-wood",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 8
   },
   {
     "categoryID" : "category-fuels",
     "formID" : "part-form-solid",
     "id" : "part-mycelia",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 9
   },
   {
     "categoryID" : "category-fuels",
     "formID" : "part-form-solid",
     "id" : "part-flower-petals",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 10
   },
   {
     "categoryID" : "category-fuels",
     "formID" : "part-form-solid",
     "id" : "part-compacted-coal",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 98
   },
   {
     "categoryID" : "category-gases",
     "formID" : "part-form-gas",
     "id" : "part-nitrogen-gas",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 118
   },
   {
     "categoryID" : "category-industrial-parts",
     "formID" : "part-form-solid",
     "id" : "part-rotor",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 36
   },
   {
     "categoryID" : "category-industrial-parts",
     "formID" : "part-form-solid",
     "id" : "part-stator",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 49
   },
   {
     "categoryID" : "category-industrial-parts",
     "formID" : "part-form-solid",
     "id" : "part-motor",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 50
   },
   {
     "categoryID" : "category-industrial-parts",
     "formID" : "part-form-solid",
     "id" : "part-heat-sink",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 121
   },
   {
     "categoryID" : "category-industrial-parts",
     "formID" : "part-form-solid",
     "id" : "part-cooling-system",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 122
   },
   {
     "categoryID" : "category-industrial-parts",
     "formID" : "part-form-solid",
     "id" : "part-fused-modular-frame",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 123
   },
   {
     "categoryID" : "category-industrial-parts",
     "formID" : "part-form-solid",
     "id" : "part-battery",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 95
   },
   {
     "categoryID" : "category-industrial-parts",
     "formID" : "part-form-solid",
     "id" : "part-turbo-motor",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 124
   },
   {
     "categoryID" : "category-ingots",
     "formID" : "part-form-solid",
     "id" : "part-iron-ingot",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 19
   },
   {
     "categoryID" : "category-ingots",
     "formID" : "part-form-solid",
     "id" : "part-copper-ingot",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 23
   },
   {
     "categoryID" : "category-ingots",
     "formID" : "part-form-solid",
     "id" : "part-steel-ingot",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 44
   },
   {
     "categoryID" : "category-ingots",
     "formID" : "part-form-solid",
     "id" : "part-caterium-ingot",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 73
   },
   {
     "categoryID" : "category-ingots",
     "formID" : "part-form-solid",
     "id" : "part-aluminum-ingot",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 83
   },
   {
     "categoryID" : "category-minerals",
     "formID" : "part-form-solid",
     "id" : "part-concrete",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 27
   },
   {
     "categoryID" : "category-minerals",
     "formID" : "part-form-solid",
     "id" : "part-quartz-crystal",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 88
   },
   {
     "categoryID" : "category-minerals",
     "formID" : "part-form-solid",
     "id" : "part-silica",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 89
   },
   {
     "categoryID" : "category-minerals",
     "formID" : "part-form-solid",
     "id" : "part-aluminum-scrap",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 82
   },
   {
     "categoryID" : "category-minerals",
     "formID" : "part-form-solid",
     "id" : "part-copper-powder",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 133
   },
   {
     "categoryID" : "category-nuclear",
     "formID" : "part-form-solid",
     "id" : "part-electromagnetic-control-rod",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 113
   },
   {
     "categoryID" : "category-nuclear",
     "formID" : "part-form-solid",
     "id" : "part-encased-uranium-cell",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 112
   },
   {
     "categoryID" : "category-nuclear",
     "formID" : "part-form-solid",
     "id" : "part-uranium-fuel-rod",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 114
   },
   {
     "categoryID" : "category-nuclear",
     "formID" : "part-form-solid",
     "id" : "part-uranium-waste",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 115
   },
   {
     "categoryID" : "category-nuclear",
     "formID" : "part-form-solid",
     "id" : "part-non-fissile-uranium",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 128
   },
   {
     "categoryID" : "category-nuclear",
     "formID" : "part-form-solid",
     "id" : "part-plutonium-pellet",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 129
   },
   {
     "categoryID" : "category-nuclear",
     "formID" : "part-form-solid",
     "id" : "part-encased-plutonium-cell",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 130
   },
   {
     "categoryID" : "category-nuclear",
     "formID" : "part-form-solid",
     "id" : "part-plutonium-fuel-rod",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 131
   },
   {
     "categoryID" : "category-nuclear",
     "formID" : "part-form-solid",
     "id" : "part-plutonium-waste",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 132
   },
   {
     "categoryID" : "category-oil-products",
     "formID" : "part-form-solid",
     "id" : "part-petroleum-coke",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 59
   },
   {
     "categoryID" : "category-oil-products",
     "formID" : "part-form-solid",
     "id" : "part-polymer-resin",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 57
   },
   {
     "categoryID" : "category-oil-products",
     "formID" : "part-form-solid",
     "id" : "part-rubber",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 56
   },
   {
     "categoryID" : "category-oil-products",
     "formID" : "part-form-solid",
     "id" : "part-plastic",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 55
   },
   {
     "categoryID" : "category-ores",
     "formID" : "part-form-solid",
     "id" : "part-iron-ore",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 18
   },
   {
     "categoryID" : "category-ores",
     "formID" : "part-form-solid",
     "id" : "part-copper-ore",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 22
   },
   {
     "categoryID" : "category-ores",
     "formID" : "part-form-solid",
     "id" : "part-limestone",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 26
   },
   {
     "categoryID" : "category-ores",
     "formID" : "part-form-solid",
     "id" : "part-coal",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 43
   },
   {
     "categoryID" : "category-ores",
     "formID" : "part-form-solid",
     "id" : "part-caterium-ore",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 72
   },
   {
     "categoryID" : "category-ores",
     "formID" : "part-form-solid",
     "id" : "part-bauxite",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 79
   },
   {
     "categoryID" : "category-ores",
     "formID" : "part-form-solid",
     "id" : "part-raw-quartz",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 87
   },
   {
     "categoryID" : "category-ores",
     "formID" : "part-form-solid",
     "id" : "part-sulfur",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 92
   },
   {
     "categoryID" : "category-ores",
     "formID" : "part-form-solid",
     "id" : "part-uranium",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 111
   },
   {
     "categoryID" : "category-ores",
     "formID" : "part-form-solid",
     "id" : "part-sam-ore",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 137
   },
   {
     "categoryID" : "category-power-shards",
     "formID" : "part-form-solid",
     "id" : "part-power-shard",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 34
   },
   {
     "categoryID" : "category-power-slugs",
     "formID" : "part-form-solid",
     "id" : "part-blue-power-slug",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 15
   },
   {
     "categoryID" : "category-power-slugs",
     "formID" : "part-form-solid",
     "id" : "part-yellow-power-slug",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 16
   },
   {
     "categoryID" : "category-power-slugs",
     "formID" : "part-form-solid",
     "id" : "part-purple-power-slug",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 17
   },
   {
     "categoryID" : "category-quantum-technology",
     "formID" : "part-form-solid",
     "id" : "part-quantum-computer",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 138
   },
   {
     "categoryID" : "category-quantum-technology",
     "formID" : "part-form-solid",
     "id" : "part-superposition-oscillator",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 139
   },
   {
     "categoryID" : "category-space-elevator-parts",
     "formID" : "part-form-solid",
     "id" : "part-smart-plating",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 38
   },
   {
     "categoryID" : "category-space-elevator-parts",
     "formID" : "part-form-solid",
     "id" : "part-versatile-framework",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 47
   },
   {
     "categoryID" : "category-space-elevator-parts",
     "formID" : "part-form-solid",
     "id" : "part-automated-wiring",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 51
   },
   {
     "categoryID" : "category-space-elevator-parts",
     "formID" : "part-form-solid",
     "id" : "part-modular-engine",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 62
   },
   {
     "categoryID" : "category-space-elevator-parts",
     "formID" : "part-form-solid",
     "id" : "part-adaptive-control-unit",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 63
   },
   {
     "categoryID" : "category-space-elevator-parts",
     "formID" : "part-form-solid",
     "id" : "part-assembly-director-system",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 96
   },
   {
     "categoryID" : "category-space-elevator-parts",
     "formID" : "part-form-solid",
     "id" : "part-magnetic-field-generator",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 116
   },
   {
     "categoryID" : "category-space-elevator-parts",
     "formID" : "part-form-solid",
     "id" : "part-thermal-propulsion-rocket",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 125
   },
   {
     "categoryID" : "category-space-elevator-parts",
     "formID" : "part-form-solid",
     "id" : "part-nuclear-pasta",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 135
   },
   {
     "categoryID" : "category-special",
     "formID" : "part-form-solid",
     "id" : "part-bacon-agaric",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 1
   },
   {
     "categoryID" : "category-special",
     "formID" : "part-form-solid",
     "id" : "part-beryl-nut",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 2
   },
   {
     "categoryID" : "category-special",
     "formID" : "part-form-solid",
     "id" : "part-paleberry",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 3
   },
   {
     "categoryID" : "category-special",
     "formID" : "part-form-solid",
     "id" : "part-somersloop",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 4
   },
   {
     "categoryID" : "category-special",
     "formID" : "part-form-solid",
     "id" : "part-mercer-sphere",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 5
   },
   {
     "categoryID" : "category-special",
     "formID" : "part-form-solid",
     "id" : "part-ficsit-coupon",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 136
   },
   {
     "categoryID" : "category-special",
     "formID" : "part-form-solid",
     "id" : "part-hard-drive",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 6
   },
   {
     "categoryID" : "category-special",
     "formID" : "part-form-solid",
     "id" : "part-hub-parts",
-    "isNaturalResource" : true
+    "isNaturalResource" : true,
+    "progressionIndex" : 0
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-iron-rod",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 21
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-iron-plate",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 20
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-screw",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 28
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-reinforced-iron-plate",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 29
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-copper-sheet",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 35
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-modular-frame",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 37
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-steel-beam",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 45
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-steel-pipe",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 46
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-encased-industrial-beam",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 48
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-heavy-modular-frame",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 52
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-alclad-aluminum-sheet",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 84
   },
   {
     "categoryID" : "category-standard-parts",
     "formID" : "part-form-solid",
     "id" : "part-aluminum-casing",
-    "isNaturalResource" : false
+    "isNaturalResource" : false,
+    "progressionIndex" : 85
   }
 ]

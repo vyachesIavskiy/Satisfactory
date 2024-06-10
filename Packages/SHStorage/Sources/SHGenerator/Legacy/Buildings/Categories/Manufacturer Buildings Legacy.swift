@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 private extension Building.Static.Legacy {
     init(id: String, name: String) {

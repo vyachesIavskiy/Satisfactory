@@ -1,8 +1,9 @@
-// MARK: Model
+import Foundation
 
-public struct Equipment: Item {
+public struct Equipment: ProgressiveItem {
     public let id: String
     public let category: Category
+    public var progressionIndex: Int
     public let slot: Slot
     public let ammo: [Part]
     public let fuel: [Part]
@@ -12,6 +13,7 @@ public struct Equipment: Item {
     public init(
         id: String,
         category: Category,
+        progressionIndex: Int,
         slot: Slot,
         ammo: [Part] = [],
         fuel: [Part] = [],
@@ -20,6 +22,7 @@ public struct Equipment: Item {
     ) {
         self.id = id
         self.category = category
+        self.progressionIndex = progressionIndex
         self.slot = slot
         self.ammo = ammo
         self.fuel = fuel
@@ -47,7 +50,7 @@ public extension Equipment {
         }
         
         public var localizedName: String {
-            "<LOCALIZE ME>"
+            NSLocalizedString(id, tableName: "Equipment Slots", bundle: .module, comment: "")
         }
     }
 }

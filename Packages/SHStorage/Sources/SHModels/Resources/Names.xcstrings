@@ -1,0 +1,4893 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "equipment-beacon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beacon"
+          }
+        }
+      }
+    },
+    "equipment-blade-runners" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blade Runners"
+          }
+        }
+      }
+    },
+    "equipment-boombox" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boombox"
+          }
+        }
+      }
+    },
+    "equipment-candy-cane-basher" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candy Cane Basher"
+          }
+        }
+      }
+    },
+    "equipment-chainsaw" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chainsaw"
+          }
+        }
+      }
+    },
+    "equipment-factory-cart" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Factory Cart"
+          }
+        }
+      }
+    },
+    "equipment-ficsit-coffe-cup" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSIT Coffee Cup"
+          }
+        }
+      }
+    },
+    "equipment-ficsit-gold-coffee-cup" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSIT Gold Coffee Cup"
+          }
+        }
+      }
+    },
+    "equipment-gas-mask" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gas Mask"
+          }
+        }
+      }
+    },
+    "equipment-golden-factory-cart" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Golden Factory Cart"
+          }
+        }
+      }
+    },
+    "equipment-hazmat-suit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hazmat Suit"
+          }
+        }
+      }
+    },
+    "equipment-hover-pack" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hover Pack"
+          }
+        }
+      }
+    },
+    "equipment-jetpack" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jetpack"
+          }
+        }
+      }
+    },
+    "equipment-medicinal-inhaler" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medicinal Inhaler"
+          }
+        }
+      }
+    },
+    "equipment-nobelisk-detonator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nobelisk Detonator"
+          }
+        }
+      }
+    },
+    "equipment-object-scanner" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Object Scanner"
+          }
+        }
+      }
+    },
+    "equipment-parachute" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parachute"
+          }
+        }
+      }
+    },
+    "equipment-portable-miner" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Portable Miner"
+          }
+        }
+      }
+    },
+    "equipment-rebar-gun" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebar Gun"
+          }
+        }
+      }
+    },
+    "equipment-rifle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rifle"
+          }
+        }
+      }
+    },
+    "equipment-xeno-basher" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xeno Basher"
+          }
+        }
+      }
+    },
+    "equipment-xeno-zapper" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xeno Zapper"
+          }
+        }
+      }
+    },
+    "equipment-zipline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zipline"
+          }
+        }
+      }
+    },
+    "part-actual-snow" : {
+      "extractionState" : "manual"
+    },
+    "part-adaptive-control-unit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adaptive Control Unit"
+          }
+        }
+      }
+    },
+    "part-ai-limiter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AI Limiter"
+          }
+        }
+      }
+    },
+    "part-alclad-aluminum-sheet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alclad Aluminum Sheet"
+          }
+        }
+      }
+    },
+    "part-alien-dna-capsule" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alien DNA Capsule"
+          }
+        }
+      }
+    },
+    "part-alien-protein" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alien Protein"
+          }
+        }
+      }
+    },
+    "part-alumina-solution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alumina Solution"
+          }
+        }
+      }
+    },
+    "part-aluminum-casing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aluminum Casing"
+          }
+        }
+      }
+    },
+    "part-aluminum-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aluminum Ingot"
+          }
+        }
+      }
+    },
+    "part-aluminum-scrap" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aluminum Scrap"
+          }
+        }
+      }
+    },
+    "part-assembly-director-system" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assembly Director System"
+          }
+        }
+      }
+    },
+    "part-automated-wiring" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automated Wiring"
+          }
+        }
+      }
+    },
+    "part-bacon-agaric" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bacon Agaric"
+          }
+        }
+      }
+    },
+    "part-battery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Battery"
+          }
+        }
+      }
+    },
+    "part-bauxite" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bauxite"
+          }
+        }
+      }
+    },
+    "part-beryl-nut" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beryl Nut"
+          }
+        }
+      }
+    },
+    "part-biomass" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biomass"
+          }
+        }
+      }
+    },
+    "part-black-powder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Black Powder"
+          }
+        }
+      }
+    },
+    "part-blue-ficsmas-ornament" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Ornament"
+          }
+        }
+      }
+    },
+    "part-blue-power-slug" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blue Power Slug"
+          }
+        }
+      }
+    },
+    "part-cable" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cable"
+          }
+        }
+      }
+    },
+    "part-candy-cane" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candy Cane"
+          }
+        }
+      }
+    },
+    "part-caterium-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caterium Ingot"
+          }
+        }
+      }
+    },
+    "part-caterium-ore" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caterium Ore"
+          }
+        }
+      }
+    },
+    "part-circuit-board" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circuit Board"
+          }
+        }
+      }
+    },
+    "part-cluster-nobelisk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cluster Nobelisk"
+          }
+        }
+      }
+    },
+    "part-coal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coal"
+          }
+        }
+      }
+    },
+    "part-color-cartridge" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color Cartridge"
+          }
+        }
+      }
+    },
+    "part-compacted-coal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compacted Coal"
+          }
+        }
+      }
+    },
+    "part-computer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Computer"
+          }
+        }
+      }
+    },
+    "part-concrete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concrete"
+          }
+        }
+      }
+    },
+    "part-cooling-system" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cooling System"
+          }
+        }
+      }
+    },
+    "part-copper-ficsmas-ornament" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copper FICSMAS Ornament"
+          }
+        }
+      }
+    },
+    "part-copper-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copper Ingot"
+          }
+        }
+      }
+    },
+    "part-copper-ore" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copper Ore"
+          }
+        }
+      }
+    },
+    "part-copper-powder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copper Powder"
+          }
+        }
+      }
+    },
+    "part-copper-sheet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copper Sheet"
+          }
+        }
+      }
+    },
+    "part-crude-oil" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crude Oil"
+          }
+        }
+      }
+    },
+    "part-crystal-oscillator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crystal Oscillator"
+          }
+        }
+      }
+    },
+    "part-electromagnetic-control-rod" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electromagnetic Control Rod"
+          }
+        }
+      }
+    },
+    "part-empty-canister" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empty Canister"
+          }
+        }
+      }
+    },
+    "part-empty-fluid-tank" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empty Fluid Tank"
+          }
+        }
+      }
+    },
+    "part-encased-industrial-beam" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encased Industrial Beam"
+          }
+        }
+      }
+    },
+    "part-encased-plutonium-cell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encased Plutonium Cell"
+          }
+        }
+      }
+    },
+    "part-encased-uranium-cell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encased Uranium Cell"
+          }
+        }
+      }
+    },
+    "part-explosive-rebar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explosive Rebar"
+          }
+        }
+      }
+    },
+    "part-fabric" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fabric"
+          }
+        }
+      }
+    },
+    "part-fancy-fireworks" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fancy Fireworks"
+          }
+        }
+      }
+    },
+    "part-ficsit-coupon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSIT Coupon"
+          }
+        }
+      }
+    },
+    "part-ficsmas-bow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Bow"
+          }
+        }
+      }
+    },
+    "part-ficsmas-decoration" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Decoration"
+          }
+        }
+      }
+    },
+    "part-ficsmas-gift" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Gift"
+          }
+        }
+      }
+    },
+    "part-ficsmas-ornament-bundle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Ornament Bundle"
+          }
+        }
+      }
+    },
+    "part-ficsmas-tree-branch" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Tree Branch"
+          }
+        }
+      }
+    },
+    "part-ficsmas-wonder-star" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Wonder Star"
+          }
+        }
+      }
+    },
+    "part-flower-petals" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flower Petals"
+          }
+        }
+      }
+    },
+    "part-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuel"
+          }
+        }
+      }
+    },
+    "part-fused-modular-frame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fused Modular Frame"
+          }
+        }
+      }
+    },
+    "part-gas-filter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gas Filter"
+          }
+        }
+      }
+    },
+    "part-gas-nobelisk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gas Nobelisk"
+          }
+        }
+      }
+    },
+    "part-hard-drive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hard Drive"
+          }
+        }
+      }
+    },
+    "part-hatcher-remains" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hatcher Remains"
+          }
+        }
+      }
+    },
+    "part-heat-sink" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heat Sink"
+          }
+        }
+      }
+    },
+    "part-heavy-modular-frame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heavy Modular Frame"
+          }
+        }
+      }
+    },
+    "part-heavy-oil-residue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heavy Oil Residue"
+          }
+        }
+      }
+    },
+    "part-high-speed-connector" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "High-Speed Connector"
+          }
+        }
+      }
+    },
+    "part-hog-remains" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hog Remains"
+          }
+        }
+      }
+    },
+    "part-homing-rifle-ammo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Homing Rifle Ammo"
+          }
+        }
+      }
+    },
+    "part-hub-parts" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HUB Parts"
+          }
+        }
+      }
+    },
+    "part-iodine-infused-filter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iodine Infused Filter"
+          }
+        }
+      }
+    },
+    "part-iron-ficsmas-ornament" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron FICSMAS Ornament"
+          }
+        }
+      }
+    },
+    "part-iron-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron Ingot"
+          }
+        }
+      }
+    },
+    "part-iron-ore" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron Ore"
+          }
+        }
+      }
+    },
+    "part-iron-plate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron Plate"
+          }
+        }
+      }
+    },
+    "part-iron-rebar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron Rebar"
+          }
+        }
+      }
+    },
+    "part-iron-rod" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron Rod"
+          }
+        }
+      }
+    },
+    "part-leaves" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leaves"
+          }
+        }
+      }
+    },
+    "part-limestone" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limestone"
+          }
+        }
+      }
+    },
+    "part-liquid-biofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liquid Biofuel"
+          }
+        }
+      }
+    },
+    "part-magnetic-field-generator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Magnetic Field Generator"
+          }
+        }
+      }
+    },
+    "part-mercer-sphere" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mercer Shpere"
+          }
+        }
+      }
+    },
+    "part-modular-engine" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modular Engine"
+          }
+        }
+      }
+    },
+    "part-modular-frame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modular Frame"
+          }
+        }
+      }
+    },
+    "part-motor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motor"
+          }
+        }
+      }
+    },
+    "part-mycelia" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mycelia"
+          }
+        }
+      }
+    },
+    "part-nitric-acid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nitric Acid"
+          }
+        }
+      }
+    },
+    "part-nitrogen-gas" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nitrogen Gas"
+          }
+        }
+      }
+    },
+    "part-nobelisk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nobelisk"
+          }
+        }
+      }
+    },
+    "part-non-fissile-uranium" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non-Fissile Uranium"
+          }
+        }
+      }
+    },
+    "part-nuclear-pasta" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuclear Pasta"
+          }
+        }
+      }
+    },
+    "part-nuke-nobelisk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuke Nobelisk"
+          }
+        }
+      }
+    },
+    "part-packaged-alumina-solution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Alumina Solution"
+          }
+        }
+      }
+    },
+    "part-packaged-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Fuel"
+          }
+        }
+      }
+    },
+    "part-packaged-heavy-oil-residue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Heavy Oil Residue"
+          }
+        }
+      }
+    },
+    "part-packaged-liquid-biofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Liquid Biofuel"
+          }
+        }
+      }
+    },
+    "part-packaged-nitric-acid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Nitric Acid"
+          }
+        }
+      }
+    },
+    "part-packaged-nitrogen-gas" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Nitrogen Gas"
+          }
+        }
+      }
+    },
+    "part-packaged-oil" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Oil"
+          }
+        }
+      }
+    },
+    "part-packaged-sulfuric-acid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Sulfuric Acid"
+          }
+        }
+      }
+    },
+    "part-packaged-turbofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Turbofuel"
+          }
+        }
+      }
+    },
+    "part-packaged-water" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Water"
+          }
+        }
+      }
+    },
+    "part-paleberry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paleberry"
+          }
+        }
+      }
+    },
+    "part-petroleum-coke" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Petroleum Coke"
+          }
+        }
+      }
+    },
+    "part-plasma-spitter-remains" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plasma Spitter Remains"
+          }
+        }
+      }
+    },
+    "part-plastic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plastic"
+          }
+        }
+      }
+    },
+    "part-plutonium-fuel-rod" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plutonium Fuel Rod"
+          }
+        }
+      }
+    },
+    "part-plutonium-pellet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plutonium Pellet"
+          }
+        }
+      }
+    },
+    "part-plutonium-waste" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plutonium Waste"
+          }
+        }
+      }
+    },
+    "part-polymer-resin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Polymer Resin"
+          }
+        }
+      }
+    },
+    "part-power-shard" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Shard"
+          }
+        }
+      }
+    },
+    "part-pressure-conversion-cube" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pressure Conversion Cube"
+          }
+        }
+      }
+    },
+    "part-pulse-nobelisk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulse Nobelisk"
+          }
+        }
+      }
+    },
+    "part-purple-power-slug" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purple Power Slug"
+          }
+        }
+      }
+    },
+    "part-quantum-computer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quantum Computer"
+          }
+        }
+      }
+    },
+    "part-quartz-crystal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quartz Crystal"
+          }
+        }
+      }
+    },
+    "part-quickwire" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quickwire"
+          }
+        }
+      }
+    },
+    "part-radio-control-unit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio Control Unit"
+          }
+        }
+      }
+    },
+    "part-raw-quartz" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raw Quartz"
+          }
+        }
+      }
+    },
+    "part-red-ficsmas-ornament" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red FICSMAS Ornament"
+          }
+        }
+      }
+    },
+    "part-reinforced-iron-plate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reinforced Iron Plate"
+          }
+        }
+      }
+    },
+    "part-rifle-ammo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rifle Ammo"
+          }
+        }
+      }
+    },
+    "part-rotor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rotor"
+          }
+        }
+      }
+    },
+    "part-rubber" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rubber"
+          }
+        }
+      }
+    },
+    "part-sam-ore" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAM Ore"
+          }
+        }
+      }
+    },
+    "part-screw" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Screw"
+          }
+        }
+      }
+    },
+    "part-shatter-rebar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shatter Rebar"
+          }
+        }
+      }
+    },
+    "part-silica" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silica"
+          }
+        }
+      }
+    },
+    "part-smart-plating" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smart Plating"
+          }
+        }
+      }
+    },
+    "part-smokeless-powder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smokeless Powder"
+          }
+        }
+      }
+    },
+    "part-snowball" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snowball"
+          }
+        }
+      }
+    },
+    "part-solid-biofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solid Biofuel"
+          }
+        }
+      }
+    },
+    "part-somersloop" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Somersloop"
+          }
+        }
+      }
+    },
+    "part-sparkly-fireworks" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sparkly Fireworks"
+          }
+        }
+      }
+    },
+    "part-stator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stator"
+          }
+        }
+      }
+    },
+    "part-steel-beam" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel Beam"
+          }
+        }
+      }
+    },
+    "part-steel-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel Ingot"
+          }
+        }
+      }
+    },
+    "part-steel-pipe" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel Pipe"
+          }
+        }
+      }
+    },
+    "part-stinger-remains" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stinger Remains"
+          }
+        }
+      }
+    },
+    "part-stun-rebar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stun Rebar"
+          }
+        }
+      }
+    },
+    "part-sulfur" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sulfur"
+          }
+        }
+      }
+    },
+    "part-sulfuric-acid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sulfuric Acid"
+          }
+        }
+      }
+    },
+    "part-supercomputer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supercomputer"
+          }
+        }
+      }
+    },
+    "part-superposition-oscillator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Superposition Oscillator"
+          }
+        }
+      }
+    },
+    "part-sweet-fireworks" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sweet Fireworks"
+          }
+        }
+      }
+    },
+    "part-thermal-propulsion-rocket" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thermal Propulsion Rocket"
+          }
+        }
+      }
+    },
+    "part-turbo-motor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turbo Motor"
+          }
+        }
+      }
+    },
+    "part-turbo-rifle-ammo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turbo Rifle Ammo"
+          }
+        }
+      }
+    },
+    "part-turbofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turbofuel"
+          }
+        }
+      }
+    },
+    "part-uranium" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uranium"
+          }
+        }
+      }
+    },
+    "part-uranium-fuel-rod" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uranium Fuel Rod"
+          }
+        }
+      }
+    },
+    "part-uranium-waste" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uranium Waste"
+          }
+        }
+      }
+    },
+    "part-versatile-framework" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versatile Framework"
+          }
+        }
+      }
+    },
+    "part-water" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Water"
+          }
+        }
+      }
+    },
+    "part-wire" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wire"
+          }
+        }
+      }
+    },
+    "part-wood" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wood"
+          }
+        }
+      }
+    },
+    "part-yellow-power-slug" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yellow Power Slug"
+          }
+        }
+      }
+    },
+    "recipe-actual-snow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actual Snow"
+          }
+        }
+      }
+    },
+    "recipe-adaptive-control-unit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adaptive Control Unit"
+          }
+        }
+      }
+    },
+    "recipe-ai-limiter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AI Limiter"
+          }
+        }
+      }
+    },
+    "recipe-alclad-aluminum-sheet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alclad Aluminum Sheet"
+          }
+        }
+      }
+    },
+    "recipe-alien-dna-capsule" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alien DNA Capsule"
+          }
+        }
+      }
+    },
+    "recipe-altername-pure-aluminum-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pure Aluminum Ingot"
+          }
+        }
+      }
+    },
+    "recipe-alternate-adhered-iron-plate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adhered Iron Plate"
+          }
+        }
+      }
+    },
+    "recipe-alternate-alclad-casing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alclad Casing"
+          }
+        }
+      }
+    },
+    "recipe-alternate-automated-miner" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automated Miner"
+          }
+        }
+      }
+    },
+    "recipe-alternate-automated-speed-wiring" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automated Speed Wiring"
+          }
+        }
+      }
+    },
+    "recipe-alternate-biocoal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biocoal"
+          }
+        }
+      }
+    },
+    "recipe-alternate-bolted-frame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bolted Frame"
+          }
+        }
+      }
+    },
+    "recipe-alternate-bolted-iron-plate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bolted Iron Plate"
+          }
+        }
+      }
+    },
+    "recipe-alternate-cast-screw" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cast Screw"
+          }
+        }
+      }
+    },
+    "recipe-alternate-caterium-circuit-board" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caterium Circuit Board"
+          }
+        }
+      }
+    },
+    "recipe-alternate-caterium-computer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caterium Computer"
+          }
+        }
+      }
+    },
+    "recipe-alternate-caterium-wire" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caterium Wire"
+          }
+        }
+      }
+    },
+    "recipe-alternate-charcoal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Charcoal"
+          }
+        }
+      }
+    },
+    "recipe-alternate-cheap-silica" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cheap Silica"
+          }
+        }
+      }
+    },
+    "recipe-alternate-classic-battery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Classic Battery"
+          }
+        }
+      }
+    },
+    "recipe-alternate-coated-cable" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coated Cable"
+          }
+        }
+      }
+    },
+    "recipe-alternate-coated-iron-canister" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coated Iron Canister"
+          }
+        }
+      }
+    },
+    "recipe-alternate-coated-iron-plate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coated Iron Plate"
+          }
+        }
+      }
+    },
+    "recipe-alternate-coke-steel-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coke Steel Ingot"
+          }
+        }
+      }
+    },
+    "recipe-alternate-compacted-coal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compacted Coal"
+          }
+        }
+      }
+    },
+    "recipe-alternate-compacted-steel-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compacted Steel Ingot"
+          }
+        }
+      }
+    },
+    "recipe-alternate-cooling-device" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cooling Device"
+          }
+        }
+      }
+    },
+    "recipe-alternate-copper-alloy-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copper Alloy Ingot"
+          }
+        }
+      }
+    },
+    "recipe-alternate-copper-rotor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copper Rotor"
+          }
+        }
+      }
+    },
+    "recipe-alternate-crystal-beacon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crystal Beacon"
+          }
+        }
+      }
+    },
+    "recipe-alternate-crystal-computer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crystal Computer"
+          }
+        }
+      }
+    },
+    "recipe-alternate-diluted-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diluted Fuel"
+          }
+        }
+      }
+    },
+    "recipe-alternate-diluted-packaged-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diluted Packaged Fuel"
+          }
+        }
+      }
+    },
+    "recipe-alternate-electric-motor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electric Motor"
+          }
+        }
+      }
+    },
+    "recipe-alternate-electrode-aluminum-scrap" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electrode Aluminum Scrap"
+          }
+        }
+      }
+    },
+    "recipe-alternate-electrode-circuit-board" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electrode Circuit Board"
+          }
+        }
+      }
+    },
+    "recipe-alternate-electromagnetic-connection-rod" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electromagnetic Connection Rod"
+          }
+        }
+      }
+    },
+    "recipe-alternate-encased-industrial-pipe" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encased Industrial Pipe"
+          }
+        }
+      }
+    },
+    "recipe-alternate-fertile-uranium" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertile Uranium"
+          }
+        }
+      }
+    },
+    "recipe-alternate-fine-black-powder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fine Black Powder"
+          }
+        }
+      }
+    },
+    "recipe-alternate-fine-concrete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fine Concrete"
+          }
+        }
+      }
+    },
+    "recipe-alternate-flexible-framework" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flexible Framework"
+          }
+        }
+      }
+    },
+    "recipe-alternate-fused-quickwire" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fused Quickwire"
+          }
+        }
+      }
+    },
+    "recipe-alternate-fused-wire" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fused Wire"
+          }
+        }
+      }
+    },
+    "recipe-alternate-heat-exchanger" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heat Exchanger"
+          }
+        }
+      }
+    },
+    "recipe-alternate-heat-fused-frame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heat Fused Frame"
+          }
+        }
+      }
+    },
+    "recipe-alternate-heavy-encased-frame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heavy Encased Frame"
+          }
+        }
+      }
+    },
+    "recipe-alternate-heavy-flexible-frame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heavy Flexible Frame"
+          }
+        }
+      }
+    },
+    "recipe-alternate-heavy-oil-residue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heavy Oil Residue"
+          }
+        }
+      }
+    },
+    "recipe-alternate-infused-uranium-cell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Infused Uranium Cell"
+          }
+        }
+      }
+    },
+    "recipe-alternate-instant-plutonium-cell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instant Plutonium Cell"
+          }
+        }
+      }
+    },
+    "recipe-alternate-instant-scrap" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instant Scrap"
+          }
+        }
+      }
+    },
+    "recipe-alternate-insulated-cable" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insulated cable"
+          }
+        }
+      }
+    },
+    "recipe-alternate-insulated-crystal-oscillator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insulated Crystal Oscillator"
+          }
+        }
+      }
+    },
+    "recipe-alternate-iron-alloy-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron Alloy Ingot"
+          }
+        }
+      }
+    },
+    "recipe-alternate-iron-wire" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron Wire"
+          }
+        }
+      }
+    },
+    "recipe-alternate-oc-supercomputer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OC Supercomputer"
+          }
+        }
+      }
+    },
+    "recipe-alternate-plastic-smart-plating" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plastic Smart Plating"
+          }
+        }
+      }
+    },
+    "recipe-alternate-plutonium-fuel-unit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plutonium Fuel Unit"
+          }
+        }
+      }
+    },
+    "recipe-alternate-polyester-fabric" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Polyester Fabric"
+          }
+        }
+      }
+    },
+    "recipe-alternate-polymer-resin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Polymer Resin"
+          }
+        }
+      }
+    },
+    "recipe-alternate-pure-caterium-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pure Caterium Ingot"
+          }
+        }
+      }
+    },
+    "recipe-alternate-pure-copper-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pure Copper Ingot"
+          }
+        }
+      }
+    },
+    "recipe-alternate-pure-iron-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pure Iron Ingot"
+          }
+        }
+      }
+    },
+    "recipe-alternate-pure-quartz-crystal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pure Quartz Crystal"
+          }
+        }
+      }
+    },
+    "recipe-alternate-quickwire-cable" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quickwire Cable"
+          }
+        }
+      }
+    },
+    "recipe-alternate-quickwire-stator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quickwire Stator"
+          }
+        }
+      }
+    },
+    "recipe-alternate-radio-connection-unit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio Connection Unit"
+          }
+        }
+      }
+    },
+    "recipe-alternate-radio-control-system" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio Control System"
+          }
+        }
+      }
+    },
+    "recipe-alternate-recycled-plastic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recycled Plastic"
+          }
+        }
+      }
+    },
+    "recipe-alternate-recycled-rubber" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recycled Rubber"
+          }
+        }
+      }
+    },
+    "recipe-alternate-rigour-motor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rigour Motor"
+          }
+        }
+      }
+    },
+    "recipe-alternate-rubber-concrete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rubber Concrete"
+          }
+        }
+      }
+    },
+    "recipe-alternate-silicon-circuit-board" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silicon Circuit Board"
+          }
+        }
+      }
+    },
+    "recipe-alternate-silicon-high-speed-connector" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silicon High-Speed Connector"
+          }
+        }
+      }
+    },
+    "recipe-alternate-sloppy-alumina" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sloppy Alumina"
+          }
+        }
+      }
+    },
+    "recipe-alternate-solid-steel-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solid Steel Ingot"
+          }
+        }
+      }
+    },
+    "recipe-alternate-steamed-copper-sheet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steamed Copper Sheet"
+          }
+        }
+      }
+    },
+    "recipe-alternate-steel-canister" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel Canister"
+          }
+        }
+      }
+    },
+    "recipe-alternate-steel-coated-plate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel Coated Plate"
+          }
+        }
+      }
+    },
+    "recipe-alternate-steel-rod" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel Rod"
+          }
+        }
+      }
+    },
+    "recipe-alternate-steel-rotor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel Rotor"
+          }
+        }
+      }
+    },
+    "recipe-alternate-steel-screw" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel Screw"
+          }
+        }
+      }
+    },
+    "recipe-alternate-steeled-frame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steeled Frame"
+          }
+        }
+      }
+    },
+    "recipe-alternate-stitched-iron-plate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stitched Iron Plate"
+          }
+        }
+      }
+    },
+    "recipe-alternate-super-state-computer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Super-State Computer"
+          }
+        }
+      }
+    },
+    "recipe-alternate-turbo-blend-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turbo Blend Fuel"
+          }
+        }
+      }
+    },
+    "recipe-alternate-turbo-electric-motor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turbo Electric Motor"
+          }
+        }
+      }
+    },
+    "recipe-alternate-turbo-heavy-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turbo Heavy Fuel"
+          }
+        }
+      }
+    },
+    "recipe-alternate-turbo-pressure-motor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turbo Pressure Motor"
+          }
+        }
+      }
+    },
+    "recipe-alternate-uranium-fuel-unit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uranium Fuel Unit"
+          }
+        }
+      }
+    },
+    "recipe-alternate-wet-concrete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wet Concrete"
+          }
+        }
+      }
+    },
+    "recipe-alumina-solution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alumina Solution"
+          }
+        }
+      }
+    },
+    "recipe-aluminum-casing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aluminum Casing"
+          }
+        }
+      }
+    },
+    "recipe-aluminum-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aluminum Ingot"
+          }
+        }
+      }
+    },
+    "recipe-aluminum-scrap" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aluminum Scrap"
+          }
+        }
+      }
+    },
+    "recipe-assembler" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assembler"
+          }
+        }
+      }
+    },
+    "recipe-assembly-director-system" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assembly Director System"
+          }
+        }
+      }
+    },
+    "recipe-automated-wiring" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automated Wiring"
+          }
+        }
+      }
+    },
+    "recipe-battery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Battery"
+          }
+        }
+      }
+    },
+    "recipe-beacon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beacon"
+          }
+        }
+      }
+    },
+    "recipe-biomass-alien-protein" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biomass (Alien Protein)"
+          }
+        }
+      }
+    },
+    "recipe-biomass-leaves" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biomass (Leaves)"
+          }
+        }
+      }
+    },
+    "recipe-biomass-mycelia" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biomass  (Mycelia)"
+          }
+        }
+      }
+    },
+    "recipe-biomass-wood" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biomass (Wood)"
+          }
+        }
+      }
+    },
+    "recipe-black-powder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Black Powder"
+          }
+        }
+      }
+    },
+    "recipe-blade-runners" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blade Runners"
+          }
+        }
+      }
+    },
+    "recipe-blender" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blender"
+          }
+        }
+      }
+    },
+    "recipe-blue-ficsmas-ornament" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blue FICSMAS Ornament"
+          }
+        }
+      }
+    },
+    "recipe-cable" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cable"
+          }
+        }
+      }
+    },
+    "recipe-candy-cane" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candy Cane"
+          }
+        }
+      }
+    },
+    "recipe-candy-cane-basher" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Candy Cane Basher"
+          }
+        }
+      }
+    },
+    "recipe-caterium-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caterium Ingot"
+          }
+        }
+      }
+    },
+    "recipe-chainsaw" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chainsaw"
+          }
+        }
+      }
+    },
+    "recipe-circuit-board" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circuit Board"
+          }
+        }
+      }
+    },
+    "recipe-cluster-nobelisk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cluster Nobelisk"
+          }
+        }
+      }
+    },
+    "recipe-color-cartridge" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color Cartridge"
+          }
+        }
+      }
+    },
+    "recipe-computer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Computer"
+          }
+        }
+      }
+    },
+    "recipe-concrete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concrete"
+          }
+        }
+      }
+    },
+    "recipe-constructor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Constructor"
+          }
+        }
+      }
+    },
+    "recipe-cooling-system" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cooling System"
+          }
+        }
+      }
+    },
+    "recipe-copper-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copper Ingot"
+          }
+        }
+      }
+    },
+    "recipe-copper-powder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copper Powder"
+          }
+        }
+      }
+    },
+    "recipe-copper-sheet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copper Sheet"
+          }
+        }
+      }
+    },
+    "recipe-copprt-ficsmas-ornament" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copper FICSMAS Ornament"
+          }
+        }
+      }
+    },
+    "recipe-craft-bench" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Craft Bench"
+          }
+        }
+      }
+    },
+    "recipe-crystal-oscillator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crystal Oscillator"
+          }
+        }
+      }
+    },
+    "recipe-electromagnetic-control-rod" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electromagnetic Control Rod"
+          }
+        }
+      }
+    },
+    "recipe-empty-canister" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canister"
+          }
+        }
+      }
+    },
+    "recipe-empty-fluid-tank" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fluid Tank"
+          }
+        }
+      }
+    },
+    "recipe-encased-industrial-beam" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encased Industrial Beam"
+          }
+        }
+      }
+    },
+    "recipe-encased-plutonium-cell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encased Plutonium Cell"
+          }
+        }
+      }
+    },
+    "recipe-encased-uranium-cell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encased Uranium Cell"
+          }
+        }
+      }
+    },
+    "recipe-equipment-workshop" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Equipment Workshop"
+          }
+        }
+      }
+    },
+    "recipe-explosive-rebar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explosive Rebar"
+          }
+        }
+      }
+    },
+    "recipe-fabric" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fabric"
+          }
+        }
+      }
+    },
+    "recipe-factory-cart" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Factory Cart™"
+          }
+        }
+      }
+    },
+    "recipe-ficsmas-bow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Bow"
+          }
+        }
+      }
+    },
+    "recipe-ficsmas-decoration" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Decoration"
+          }
+        }
+      }
+    },
+    "recipe-ficsmas-ornament-bundle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Ornament Bundle"
+          }
+        }
+      }
+    },
+    "recipe-ficsmas-tree-branch" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Tree Branch"
+          }
+        }
+      }
+    },
+    "recipe-ficsmas-wonder-star" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS Wonder Star"
+          }
+        }
+      }
+    },
+    "recipe-foundry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foundry"
+          }
+        }
+      }
+    },
+    "recipe-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuel"
+          }
+        }
+      }
+    },
+    "recipe-fused-modular-frame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fused Modular Frame"
+          }
+        }
+      }
+    },
+    "recipe-gas-filter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gas Filter"
+          }
+        }
+      }
+    },
+    "recipe-gas-mask" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gas Mask"
+          }
+        }
+      }
+    },
+    "recipe-gas-nobelisk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gas Nobelisk"
+          }
+        }
+      }
+    },
+    "recipe-golden-factory-cart" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Golden Factory Cart™"
+          }
+        }
+      }
+    },
+    "recipe-hatcher-protein" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hatcher Protein"
+          }
+        }
+      }
+    },
+    "recipe-hazmat-suit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hazmat Suit"
+          }
+        }
+      }
+    },
+    "recipe-heat-sink" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heat Sink"
+          }
+        }
+      }
+    },
+    "recipe-heavy-modular-frame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heavy Modular Frame"
+          }
+        }
+      }
+    },
+    "recipe-high-speed-connector" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "High-Speed Connector"
+          }
+        }
+      }
+    },
+    "recipe-hog-protein" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hog Protein"
+          }
+        }
+      }
+    },
+    "recipe-homing-rifle-ammo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Homing Rifle Ammo"
+          }
+        }
+      }
+    },
+    "recipe-hoverpack" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoverpack"
+          }
+        }
+      }
+    },
+    "recipe-iodine-infused-filter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iodine Infused Filter"
+          }
+        }
+      }
+    },
+    "recipe-iron-ficsmas-ornament" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron FICSMAS Ornament"
+          }
+        }
+      }
+    },
+    "recipe-iron-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron Ingot"
+          }
+        }
+      }
+    },
+    "recipe-iron-plate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron Plate"
+          }
+        }
+      }
+    },
+    "recipe-iron-rebar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron Rebar"
+          }
+        }
+      }
+    },
+    "recipe-iron-rod" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iron Rod"
+          }
+        }
+      }
+    },
+    "recipe-jetpack" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jetpack"
+          }
+        }
+      }
+    },
+    "recipe-liquid-biofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liquid Biofuel"
+          }
+        }
+      }
+    },
+    "recipe-magnetic-field-generator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Magnetic Field Generator"
+          }
+        }
+      }
+    },
+    "recipe-manufacturer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manufacturer"
+          }
+        }
+      }
+    },
+    "recipe-miner-mk-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miner MK.1"
+          }
+        }
+      }
+    },
+    "recipe-miner-mk-2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miner MK.2"
+          }
+        }
+      }
+    },
+    "recipe-miner-mk-3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miner MK.3"
+          }
+        }
+      }
+    },
+    "recipe-modular-engine" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modular Engine"
+          }
+        }
+      }
+    },
+    "recipe-modular-frame" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modular Frame"
+          }
+        }
+      }
+    },
+    "recipe-motor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motor"
+          }
+        }
+      }
+    },
+    "recipe-nitric-acid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nitric Acid"
+          }
+        }
+      }
+    },
+    "recipe-nobelisk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nobelisk"
+          }
+        }
+      }
+    },
+    "recipe-nobelisk-detonator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nobelisk Detonator"
+          }
+        }
+      }
+    },
+    "recipe-non-fissile-uranium" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non-fissile Uranium"
+          }
+        }
+      }
+    },
+    "recipe-nuclear-pasta" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuclear Pasta"
+          }
+        }
+      }
+    },
+    "recipe-nuclear-power-plant" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuclear Power Plant"
+          }
+        }
+      }
+    },
+    "recipe-nuke-nobelisk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuke Nobelisk"
+          }
+        }
+      }
+    },
+    "recipe-nutritional-inhaler" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nutritional Inhaler"
+          }
+        }
+      }
+    },
+    "recipe-object-scanner" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Object Scanner"
+          }
+        }
+      }
+    },
+    "recipe-oil-extractor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oil Extractor"
+          }
+        }
+      }
+    },
+    "recipe-packaged-alumina-solution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Alumina Solution"
+          }
+        }
+      }
+    },
+    "recipe-packaged-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Fuel"
+          }
+        }
+      }
+    },
+    "recipe-packaged-heavy-oil-residue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Heavy Oil Residue"
+          }
+        }
+      }
+    },
+    "recipe-packaged-liquid-biofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Liquid Biofuel"
+          }
+        }
+      }
+    },
+    "recipe-packaged-nitric-acid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Nitric Acid"
+          }
+        }
+      }
+    },
+    "recipe-packaged-nitrogen-gas" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Nitrogen Gas"
+          }
+        }
+      }
+    },
+    "recipe-packaged-oil" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Oil"
+          }
+        }
+      }
+    },
+    "recipe-packaged-sulfuric-acid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Sulfuric Acid"
+          }
+        }
+      }
+    },
+    "recipe-packaged-turbofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Turbofuel"
+          }
+        }
+      }
+    },
+    "recipe-packaged-water" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Water"
+          }
+        }
+      }
+    },
+    "recipe-packager" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packager"
+          }
+        }
+      }
+    },
+    "recipe-parachute" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parachute"
+          }
+        }
+      }
+    },
+    "recipe-particle-accelerator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Particle Accelerator"
+          }
+        }
+      }
+    },
+    "recipe-petroleum-coke" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Petroleum Coke"
+          }
+        }
+      }
+    },
+    "recipe-plasma-spitter-protein" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spitter Protein"
+          }
+        }
+      }
+    },
+    "recipe-plastic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plastic"
+          }
+        }
+      }
+    },
+    "recipe-plutonium-fuel-rod" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plutonium Fuel Rod"
+          }
+        }
+      }
+    },
+    "recipe-plutonium-pellet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plutonium Pellet"
+          }
+        }
+      }
+    },
+    "recipe-plutonium-waste" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plutonium Waste"
+          }
+        }
+      }
+    },
+    "recipe-portable-miner" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Portable Miner"
+          }
+        }
+      }
+    },
+    "recipe-power-shard-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Shard (1)"
+          }
+        }
+      }
+    },
+    "recipe-power-shard-2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Shard (2)"
+          }
+        }
+      }
+    },
+    "recipe-power-shard-5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Shard (5)"
+          }
+        }
+      }
+    },
+    "recipe-pressure-conversion-cube" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pressure Conversion Cube"
+          }
+        }
+      }
+    },
+    "recipe-protein-inhaler" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protein Inhaler"
+          }
+        }
+      }
+    },
+    "recipe-pulse-nobelisk" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulse Nobelisk"
+          }
+        }
+      }
+    },
+    "recipe-quartz-crystal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quartz Crystal"
+          }
+        }
+      }
+    },
+    "recipe-quickwire" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quickwire"
+          }
+        }
+      }
+    },
+    "recipe-radio-control-unit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio Control Unit"
+          }
+        }
+      }
+    },
+    "recipe-rebar-gun" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rebar Gun"
+          }
+        }
+      }
+    },
+    "recipe-red-ficsmas-ornament" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red FICSMAS Ornament"
+          }
+        }
+      }
+    },
+    "recipe-refinery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refinery"
+          }
+        }
+      }
+    },
+    "recipe-reinforced-iron-plate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reinforced Iron Plate"
+          }
+        }
+      }
+    },
+    "recipe-residual-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Residual Fuel"
+          }
+        }
+      }
+    },
+    "recipe-residual-plastic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Residual Plastic"
+          }
+        }
+      }
+    },
+    "recipe-residual-rubber" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Residual Rubber"
+          }
+        }
+      }
+    },
+    "recipe-resource-well-extractor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resource Well Extractor"
+          }
+        }
+      }
+    },
+    "recipe-resource-well-pressurizer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resource Well Pressurizer"
+          }
+        }
+      }
+    },
+    "recipe-rifle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rifle"
+          }
+        }
+      }
+    },
+    "recipe-rifle-ammo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rifle Ammo"
+          }
+        }
+      }
+    },
+    "recipe-rifle-cartridge" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rifle Cartridge"
+          }
+        }
+      }
+    },
+    "recipe-rotor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rotor"
+          }
+        }
+      }
+    },
+    "recipe-rubber" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rubber"
+          }
+        }
+      }
+    },
+    "recipe-screw" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Screw"
+          }
+        }
+      }
+    },
+    "recipe-shatter-rebar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shatter Rebar"
+          }
+        }
+      }
+    },
+    "recipe-silica" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silica"
+          }
+        }
+      }
+    },
+    "recipe-smart-plating" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smart Plating"
+          }
+        }
+      }
+    },
+    "recipe-smelter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smelter"
+          }
+        }
+      }
+    },
+    "recipe-smokeless-powder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smokeless Powder"
+          }
+        }
+      }
+    },
+    "recipe-snowball" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snowball"
+          }
+        }
+      }
+    },
+    "recipe-solid-biofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solid Biofuel"
+          }
+        }
+      }
+    },
+    "recipe-stator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stator"
+          }
+        }
+      }
+    },
+    "recipe-steel-beam" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel Beam"
+          }
+        }
+      }
+    },
+    "recipe-steel-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel Ingot"
+          }
+        }
+      }
+    },
+    "recipe-steel-pipe" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel Pipe"
+          }
+        }
+      }
+    },
+    "recipe-stinger-protein" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stinger Protein"
+          }
+        }
+      }
+    },
+    "recipe-stun-rebar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stun Rebar"
+          }
+        }
+      }
+    },
+    "recipe-sulfuric-acid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sulfuric Acid"
+          }
+        }
+      }
+    },
+    "recipe-supercomputer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supercomputer"
+          }
+        }
+      }
+    },
+    "recipe-therapeutic-inhaler" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Therapeutic Ingaler"
+          }
+        }
+      }
+    },
+    "recipe-thermal-propulsion-rocket" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thermal Propulsion Rocket"
+          }
+        }
+      }
+    },
+    "recipe-turbo-motor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turbo Motor"
+          }
+        }
+      }
+    },
+    "recipe-turbo-rifle-ammo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turbo Rifle Ammo"
+          }
+        }
+      }
+    },
+    "recipe-turbofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turbofuel"
+          }
+        }
+      }
+    },
+    "recipe-unpackaged-alumina-solution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unpackaged Alumina Solution"
+          }
+        }
+      }
+    },
+    "recipe-unpackaged-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unpackaged Fuel"
+          }
+        }
+      }
+    },
+    "recipe-unpackaged-heavy-oil-residue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unpackaged Heavy Oil Residue"
+          }
+        }
+      }
+    },
+    "recipe-unpackaged-liquid-biofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unpackaged Liquid Biofuel"
+          }
+        }
+      }
+    },
+    "recipe-unpackaged-nitric-acid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unpackaged Nitric Acid"
+          }
+        }
+      }
+    },
+    "recipe-unpackaged-nitrogen-gas" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unpackaged Nitrogen Gas"
+          }
+        }
+      }
+    },
+    "recipe-unpackaged-oil" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unpackaged Oil"
+          }
+        }
+      }
+    },
+    "recipe-unpackaged-sulfuric-acid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unpackaged Sulfuric Acid"
+          }
+        }
+      }
+    },
+    "recipe-unpackaged-turbofuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unpackaged Turbofuel"
+          }
+        }
+      }
+    },
+    "recipe-unpackaged-water" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unpackaged Water"
+          }
+        }
+      }
+    },
+    "recipe-uranium-fuel-rod" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uranium Fuel Rod"
+          }
+        }
+      }
+    },
+    "recipe-uranium-waste" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uranium Waste"
+          }
+        }
+      }
+    },
+    "recipe-versatile-framework" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versatile Framework"
+          }
+        }
+      }
+    },
+    "recipe-vitamin-inhaler" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vitamin Inhaler"
+          }
+        }
+      }
+    },
+    "recipe-water-extractor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Water Extractor"
+          }
+        }
+      }
+    },
+    "recipe-wire" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wire"
+          }
+        }
+      }
+    },
+    "recipe-xeno-basher" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xeno-Basher"
+          }
+        }
+      }
+    },
+    "recipe-xeno-zapper" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xeno-Zapper"
+          }
+        }
+      }
+    },
+    "recipe-zipline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zipline"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

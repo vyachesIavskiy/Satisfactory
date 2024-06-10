@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 private extension Recipe.Static {
     init(id: String, inputs: [Ingredient], building: Building.Static) {
@@ -7,7 +7,8 @@ private extension Recipe.Static {
             id: id,
             inputs: inputs,
             output: Ingredient(building, amount: 1),
-            machines: [],
+            machine: nil,
+            manualCrafting: [],
             duration: 0
         )
     }

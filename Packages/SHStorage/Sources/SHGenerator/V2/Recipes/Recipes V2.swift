@@ -1,5 +1,5 @@
-import StaticModels
-import Models
+import SHModels
+import SHStaticModels
 
 extension Recipe.Static {
     init(
@@ -7,7 +7,8 @@ extension Recipe.Static {
         inputs: [Ingredient],
         output: Ingredient,
         byproducts: [Ingredient]? = nil,
-        machines: [Building.Static],
+        machine: Building.Static?,
+        manualCrafting: [Building.Static],
         duration: Int,
         isDefault: Bool = true
     ) {
@@ -16,7 +17,8 @@ extension Recipe.Static {
             inputs: inputs,
             output: output,
             byproducts: byproducts,
-            machineIDs: machines.map(\.id),
+            machineID: machine?.id,
+            manualCraftingIDs: manualCrafting.map(\.id),
             duration: duration,
             isDefault: isDefault
         )

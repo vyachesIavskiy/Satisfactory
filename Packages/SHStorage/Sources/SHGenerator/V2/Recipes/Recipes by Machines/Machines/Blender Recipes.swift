@@ -1,5 +1,5 @@
-import Models
-import StaticModels
+import SHModels
+import SHStaticModels
 
 private extension Recipe.Static {
     init(
@@ -15,7 +15,8 @@ private extension Recipe.Static {
             inputs: inputs,
             output: output,
             byproducts: [byproduct],
-            machines: [V2.Buildings.blender],
+            machine: V2.Buildings.assembler,
+            manualCrafting: [],
             duration: duration,
             isDefault: isDefault
         )
@@ -33,7 +34,8 @@ private extension Recipe.Static {
             inputs: inputs,
             output: output,
             byproducts: [],
-            machines: [V2.Buildings.blender],
+            machine: V2.Buildings.assembler,
+            manualCrafting: [],
             duration: duration,
             isDefault: isDefault
         )

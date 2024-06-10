@@ -7,7 +7,8 @@ extension Recipe {
         public let inputs: [Ingredient]
         public let output: Ingredient
         public let byproducts: [Ingredient]?
-        public let machineIDs: [String]
+        public let machineID: String?
+        public let manualCraftingIDs: [String]
         public let duration: Int
         public let isDefault: Bool
         
@@ -16,7 +17,8 @@ extension Recipe {
             inputs: [Ingredient],
             output: Ingredient,
             byproducts: [Ingredient]?,
-            machineIDs: [String],
+            machineID: String?,
+            manualCraftingIDs: [String],
             duration: Int,
             isDefault: Bool
         ) {
@@ -24,7 +26,8 @@ extension Recipe {
             self.inputs = inputs
             self.output = output
             self.byproducts = byproducts
-            self.machineIDs = machineIDs
+            self.machineID = machineID
+            self.manualCraftingIDs = manualCraftingIDs
             self.duration = duration
             self.isDefault = isDefault
         }
@@ -40,7 +43,8 @@ extension Recipe {
             input: recipe.inputs.map { try Ingredient(.input, ingredient: $0, itemProvider: itemProvider) },
             output: Ingredient(.output, ingredient: recipe.output, itemProvider: itemProvider),
             byproducts: recipe.byproducts?.map { try Ingredient(.byproduct, ingredient: $0, itemProvider: itemProvider) } ?? [],
-            machines: recipe.machineIDs.map(buildingProvider),
+            machine: recipe.machineID.map(buildingProvider),
+            manualCrafting: recipe.manualCraftingIDs.map(buildingProvider),
             duration: recipe.duration,
             isDefault: recipe.isDefault
         )

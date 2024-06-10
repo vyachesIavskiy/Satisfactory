@@ -1,9 +1,16 @@
 import Foundation
+import SHModels
 
-public struct Configuration: Codable {
-    public let version: Int
+extension Configuration {
+    public struct Static: Codable {
+        public let version: Int
+        
+        public init(version: Int) {
+            self.version = version
+        }
+    }
     
-    public init(version: Int) {
-        self.version = version
+    public init(_ configuration: Static) {
+        self.init(version: configuration.version)
     }
 }

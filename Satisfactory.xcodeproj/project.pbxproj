@@ -296,7 +296,6 @@
 		D32AC7EC2C16FA9900BDFBAC /* ScrollOffsetReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetReader.swift; sourceTree = "<group>"; };
 		D32AC7EF2C1702D500BDFBAC /* RecipeProductionGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeProductionGroupView.swift; sourceTree = "<group>"; };
 		D32AC7F22C170D8800BDFBAC /* SHDependencies */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHDependencies; sourceTree = "<group>"; };
-		D32AC7F52C17266D00BDFBAC /* SatisfactoryHelper */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SatisfactoryHelper; sourceTree = "<group>"; };
 		D32AC7F72C172CFA00BDFBAC /* SHColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHColor.swift; sourceTree = "<group>"; };
 		D32AC7F92C172D3400BDFBAC /* SHShapeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHShapeStyle.swift; sourceTree = "<group>"; };
 		D341A9EB2BDD60C600ED36F6 /* SHStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHStorage; sourceTree = "<group>"; };
@@ -614,7 +613,6 @@
 		F94C7F462A93FD7D004E9F35 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				D32AC7F52C17266D00BDFBAC /* SatisfactoryHelper */,
 				D32AC7F22C170D8800BDFBAC /* SHDependencies */,
 				D39597A22BFE99190046C23F /* SHPersistence */,
 				D386D5C32BEA03F200B584C9 /* SHFileManager */,

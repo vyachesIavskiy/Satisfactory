@@ -1,5 +1,4 @@
 import SwiftUI
-import SHComposableArchitecture
 import SHStorage
 import SHModels
 
@@ -57,9 +56,9 @@ private struct FileManagerCheckView: View {
     @State var fileToPreview: FilePreview?
     
     // Storage
-    @State var parts = [SHModels.Part]()
-    @State var equipment = [SHModels.Equipment]()
-    @State var recipes = [SHModels.Recipe]()
+    @State var parts = [Part]()
+    @State var equipment = [Equipment]()
+    @State var recipes = [Recipe]()
     @State var factories = [FactoryListView]()
     
     @State var pinnedPartIDs = Set<String>()

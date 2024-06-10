@@ -2,15 +2,15 @@ import SwiftUI
 import SHModels
 
 struct RecipeItemAmountShape: Shape {
-    let item: any SHModels.Item
+    let item: any Item
     let cornerRadius: Double
     private var inset: CGFloat = 0
     
-    private var partForm: SHModels.Part.Form? {
-        (item as? SHModels.Part)?.form
+    private var partForm: Part.Form? {
+        (item as? Part)?.form
     }
     
-    init(item: any SHModels.Item, cornerRadius: Double) {
+    init(item: any Item, cornerRadius: Double) {
         self.item = item
         self.cornerRadius = cornerRadius
     }

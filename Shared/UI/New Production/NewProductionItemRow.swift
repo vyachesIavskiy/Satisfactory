@@ -4,7 +4,7 @@ import SHStorage
 
 extension NewProductionView {
     struct ItemRow: View {
-        var item: any SHModels.Item
+        var item: any Item
         
         @Environment(\.displayScale) private var displayScale
         @ScaledMetric(relativeTo: .body) private var imageSize = 40
@@ -24,7 +24,7 @@ extension NewProductionView {
         }
         
         private var overlayShape: AnyShape {
-            switch (item as? SHModels.Part)?.form {
+            switch (item as? Part)?.form {
             case .solid, nil:
                 AnyShape(AngledRectangle(cornerRadius: cornerRadius).inset(by: 1 / displayScale))
                 
@@ -36,7 +36,7 @@ extension NewProductionView {
             }
         }
         
-        init(_ item: any SHModels.Item) {
+        init(_ item: any Item) {
             self.item = item
         }
         
@@ -85,7 +85,7 @@ private struct _ItemRowPreview: View {
     @Dependency(\.storageService)
     private var storageService
     
-    var parts: [SHModels.Part] {
+    var parts: [Part] {
         let parts = storageService.parts()
         return [
             parts.first(id: "part-iron-ore"),

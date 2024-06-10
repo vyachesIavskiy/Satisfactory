@@ -10,9 +10,9 @@ final class SettingsViewModel {
         case sent
     }
     
-    let recipe: SHModels.Recipe
+    let recipe: Recipe
     
-    var settings: SHSettings.Settings {
+    var settings: Settings {
         didSet {
             settingsService.setSettings(settings)
         }

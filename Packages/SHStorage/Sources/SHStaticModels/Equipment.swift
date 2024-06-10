@@ -31,7 +31,7 @@ extension Equipment {
         }
     }
     
-    public init(_ equipment: Static, partProvider: (_ partID: String) throws -> SHModels.Part) throws {
+    public init(_ equipment: Static, partProvider: (_ partID: String) throws -> Part) throws {
         try self.init(
             id: equipment.id,
             category: Category(fromID: equipment.categoryID),

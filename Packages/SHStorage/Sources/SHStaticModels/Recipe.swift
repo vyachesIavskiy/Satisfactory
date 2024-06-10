@@ -36,7 +36,7 @@ extension Recipe {
     public init(
         _ recipe: Recipe.Static,
         itemProvider: (_ itemID: String) throws -> any Item,
-        buildingProvider: (_ buildingID: String) throws -> SHModels.Building
+        buildingProvider: (_ buildingID: String) throws -> Building
     ) throws {
         try self.init(
             id: recipe.id,

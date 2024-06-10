@@ -1,4 +1,5 @@
 import SwiftUI
+import SHStorage
 
 struct Factory: Identifiable {
     var id = UUID()
@@ -30,52 +31,55 @@ final class FactoriesViewModel: ObservableObject {
         }
     }
     var factories: [Factory] {
-        storage
-            .factories
-            .sorted(using: KeyPathComparator(\Factory.name))
+//        storage
+//            .factories
+//            .sorted(using: KeyPathComparator(\Factory.name))
+        
+        []
     }
     
     var statistics: [CalculationStatisticsModel] {
-        factories
-            .flatMap { $0.productions.map(\.statistics) }
-            .reduce([], +)
-            .reduceDuplicates()
+//        factories
+//            .flatMap { $0.productions.map(\.statistics) }
+//            .reduce([], +)
+//            .reduceDuplicates()
+        
+        []
     }
     
     var machineStatistics: [CalculationMachineStatisticsModel] {
-        factories
-            .flatMap { $0.productions.map(\.machineStatistics) }
-            .reduce([], +)
-            .reduceDuplicates()
-            .sorted { lhs, rhs in
-                (lhs.item as? Part)?.sortingPriority ?? 1 > (rhs.item as? Part)?.sortingPriority ?? 0
-            }
+//        factories
+//            .flatMap { $0.productions.map(\.machineStatistics) }
+//            .reduce([], +)
+//            .reduceDuplicates()
+//            .sorted { lhs, rhs in
+//                (lhs.item as? Part)?.sortingPriority ?? 1 > (rhs.item as? Part)?.sortingPriority ?? 0
+//            }
+        
+        []
     }
     
     var statisticsHidden: Bool {
         statistics.isEmpty || machineStatistics.isEmpty
     }
     
-    private let storage: Storage
+    @Dependency(\.storageService)
+    private var storageService
     
     @Published var isShowingStatistics = false
     @Published var isShowingNewFactory = false
     
-    init(storage: Storage) {
-        self.storage = storage
-    }
+//    func factoryViewModel(for factory: Factory) -> FactoryViewModel {
+//        FactoryViewModel(storage: storage, factory: factory)
+//    }
     
-    func factoryViewModel(for factory: Factory) -> FactoryViewModel {
-        FactoryViewModel(storage: storage, factory: factory)
-    }
+//    func newFactoryViewModel() -> NewFactoryViewModel {
+//        NewFactoryViewModel(storage: storage)
+//    }
     
-    func newFactoryViewModel() -> NewFactoryViewModel {
-        NewFactoryViewModel(storage: storage)
-    }
-    
-    func deleteFactory(_ factory: Factory) {
-        storage.deleteFactory(factory)
-    }
+//    func deleteFactory(_ factory: Factory) {
+//        storage.deleteFactory(factory)
+//    }
 }
 
 struct FactoriesView: View {
@@ -242,7 +246,8 @@ final class NewFactoryViewModel: ObservableObject {
     @Published var name = ""
     @Published var imageName = ""
     
-    private var storage: Storage
+    @Dependency(\.storageService)
+    private var storageService
     
     struct ImageSection: Identifiable {
         var name: LocalizedStringKey
@@ -256,16 +261,15 @@ final class NewFactoryViewModel: ObservableObject {
     
     var isEmpty: Bool { name.isEmpty }
     
-    init(storage: Storage) {
-        self.storage = storage
+    init() {
         let parts = storage.parts.map(\.imageName)
         let equipment = storage.equipments.map(\.imageName)
         let buildings = storage.buildings.map(\.imageName)
         
         itemImageNames = [
-            ImageSection(name: "Parts", imageNames: parts),
-            ImageSection(name: "Equipment", imageNames: equipment),
-            ImageSection(name: "Buildings", imageNames: buildings)
+//            ImageSection(name: "Parts", imageNames: parts),
+//            ImageSection(name: "Equipment", imageNames: equipment),
+//            ImageSection(name: "Buildings", imageNames: buildings)
         ]
         
         imageName = itemImageNames.first?.imageNames.first ?? ""
@@ -745,98 +749,96 @@ struct MoveProductionView: View {
 
 #if DEBUG
 #Preview("Factories view") {
-    FactoriesView(viewModel: FactoriesViewModel(storage: PreviewStorage()))
+    FactoriesView(viewModel: FactoriesViewModel())
 }
 
 #Preview("Factory view") {
-    let storage: Storage = PreviewStorage()
-    
-    return NavigationStack {
-        FactoryView(
-            viewModel: FactoryViewModel(
-                storage: storage,
-                factory: Factory(
-                    name: "Preview factory",
-                    image: .text("PF"),
-                    productions: [
-                        ProductionChain(
-                            productionTree: RecipeTree(
-                                element: RecipeElement(
-                                    item: storage[partID: "iron-plate"]!,
-                                    recipe: storage[recipesFor: "iron-plate"][0],
-                                    amount: 100
-                                ),
-                                children: [
-                                    RecipeTree(
-                                        element: RecipeElement(
-                                            item: storage[partID: "iron-ingot"]!,
-                                            recipe: storage[recipesFor: "iron-ingot"][0],
-                                            amount: 150
-                                        )
-                                    )
-                                ]
-                            )
-                        ),
-                        ProductionChain(
-                            productionTree: RecipeTree(
-                                element: RecipeElement(
-                                    item: storage[partID: "iron-rod"]!,
-                                    recipe: storage[recipesFor: "iron-rod"][0],
-                                    amount: 100
-                                ),
-                                children: [
-                                    RecipeTree(
-                                        element: RecipeElement(
-                                            item: storage[partID: "iron-ingot"]!,
-                                            recipe: storage[recipesFor: "iron-ingot"][0],
-                                            amount: 100
-                                        )
-                                    )
-                                ]
-                            )
-                        )
-                    ]
-                )
-            )
-        )
-    }
-    .environmentObject(storage)
-    .environmentObject(Settings())
+    VStack {}
+//    NavigationStack {
+//        FactoryView(
+//            viewModel: FactoryViewModel(
+//                storage: storage,
+//                factory: Factory(
+//                    name: "Preview factory",
+//                    image: .text("PF"),
+//                    productions: [
+//                        ProductionChain(
+//                            productionTree: RecipeTree(
+//                                element: RecipeElement(
+//                                    item: storage[partID: "iron-plate"]!,
+//                                    recipe: storage[recipesFor: "iron-plate"][0],
+//                                    amount: 100
+//                                ),
+//                                children: [
+//                                    RecipeTree(
+//                                        element: RecipeElement(
+//                                            item: storage[partID: "iron-ingot"]!,
+//                                            recipe: storage[recipesFor: "iron-ingot"][0],
+//                                            amount: 150
+//                                        )
+//                                    )
+//                                ]
+//                            )
+//                        ),
+//                        ProductionChain(
+//                            productionTree: RecipeTree(
+//                                element: RecipeElement(
+//                                    item: storage[partID: "iron-rod"]!,
+//                                    recipe: storage[recipesFor: "iron-rod"][0],
+//                                    amount: 100
+//                                ),
+//                                children: [
+//                                    RecipeTree(
+//                                        element: RecipeElement(
+//                                            item: storage[partID: "iron-ingot"]!,
+//                                            recipe: storage[recipesFor: "iron-ingot"][0],
+//                                            amount: 100
+//                                        )
+//                                    )
+//                                ]
+//                            )
+//                        )
+//                    ]
+//                )
+//            )
+//        )
+//    }
+//    .environmentObject(storage)
+//    .environmentObject(Settings())
 }
 
 #Preview("New Factory") {
     NavigationStack {
-        NewFactoryView(viewModel: NewFactoryViewModel(storage: PreviewStorage()))
+        NewFactoryView(viewModel: NewFactoryViewModel())
     }
 }
 
 #Preview("Production view") {
-    let storage: Storage = PreviewStorage()
-    
-    return ProductionView(
-        viewModel: ProductionViewModel(
-            storage: storage,
-            production: ProductionChain(
-                productionTree: RecipeTree(
-                    element: RecipeElement(
-                        item: storage[partID: "iron-plate"]!,
-                        recipe: storage[recipesFor: "iron-plate"][0],
-                        amount: 100
-                    ),
-                    children: [
-                        RecipeTree(
-                            element: RecipeElement(
-                                item: storage[partID: "iron-ingot"]!,
-                                recipe: storage[recipesFor: "iron-ingot"][0],
-                                amount: 150
-                            )
-                        )
-                    ]
-                )
-            )
-        )
-    )
-    .environmentObject(storage)
-    .environmentObject(Settings())
+    VStack {}
+//    ProductionView(
+//        viewModel: ProductionViewModel(
+//            storage: storage,
+//            production: ProductionChain(
+//                productionTree: RecipeTree(
+//                    element: RecipeElement(
+//                        item: storage[partID: "iron-plate"]!,
+//                        recipe: storage[recipesFor: "iron-plate"][0],
+//                        amount: 100
+//                    ),
+//                    children: [
+//                        RecipeTree(
+//                            element: RecipeElement(
+//                                item: storage[partID: "iron-ingot"]!,
+//                                recipe: storage[recipesFor: "iron-ingot"][0],
+//                                amount: 150
+//                            )
+//                        )
+//                    ]
+//                )
+//            )
+//        )
+//    )
+//    .environmentObject(storage)
+//    .environmentObject(Settings())
 }
 #endif

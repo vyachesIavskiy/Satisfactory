@@ -84,7 +84,7 @@ struct ItemRecipesView: View {
     }
     
     @ViewBuilder
-    private func recipeView(_ recipe: SHModels.Recipe) -> some View {
+    private func recipeView(_ recipe: Recipe) -> some View {
         RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
             .matchedGeometryEffect(id: recipe.id, in: namespace)
             .contextMenu {
@@ -135,7 +135,7 @@ private enum ItemPreview {
         }
     }
     
-    var item: (any SHModels.Item)? {
+    var item: (any Item)? {
         @Dependency(\.storageService)
         var storageService
         

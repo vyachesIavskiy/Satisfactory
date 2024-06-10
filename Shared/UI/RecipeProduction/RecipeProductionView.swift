@@ -6,14 +6,14 @@ import SHModels
 
 @Observable
 final class RecipeProductionViewModel {
-    let recipe: SHModels.Recipe
+    let recipe: Recipe
     private(set) var viewMode: ViewMode
     
     @ObservationIgnored
     @Dependency(\.settingsService)
     var settingsService
     
-    init(recipe: SHModels.Recipe) {
+    init(recipe: Recipe) {
         @Dependency(\.settingsService.currentSettings)
         var settings
         
@@ -116,7 +116,7 @@ struct RecipeProductionView: View {
     }
     
     @ViewBuilder 
-    private func recipeCell(for ingredient: SHModels.Recipe.Ingredient) -> some View {
+    private func recipeCell(for ingredient: Recipe.Ingredient) -> some View {
         let ingredientValues = IngredientValues(from: ingredient)
         
         ZStack {
@@ -168,7 +168,7 @@ struct RecipeProductionView: View {
     }
     
     @ViewBuilder 
-    private func recipeRow(for ingredient: SHModels.Recipe.Ingredient) -> some View {
+    private func recipeRow(for ingredient: Recipe.Ingredient) -> some View {
         let ingredientValues = IngredientValues(from: ingredient)
         
         ZStack {
@@ -217,13 +217,13 @@ struct RecipeProductionView: View {
         .clipShape(ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius))
     }
     
-    private func resolvedShapeStyle(for ingredient: SHModels.Recipe.Ingredient) -> AnyShapeStyle {
+    private func resolvedShapeStyle(for ingredient: Recipe.Ingredient) -> AnyShapeStyle {
         switch ingredient.role {
         case .output:
             return AnyShapeStyle(Color("Colors/Output"))
             
         case .byproduct, .input:
-            let part = (ingredient.item as? SHModels.Part)
+            let part = (ingredient.item as? Part)
             return if part?.isNaturalResource == true {
                 AnyShapeStyle(.sh(.midnight))
             } else {
@@ -237,24 +237,24 @@ struct RecipeProductionView: View {
         }
     }
     
-    private func resolvedAmountBackgroundColor(for ingredient: SHModels.Recipe.Ingredient) -> Color {
+    private func resolvedAmountBackgroundColor(for ingredient: Recipe.Ingredient) -> Color {
         switch ingredient.role {
         case .output: .sh(.gray)
             
         case .input, .byproduct:
-            switch (ingredient.item as? SHModels.Part)?.form {
+            switch (ingredient.item as? Part)?.form {
             case .solid, nil: .sh(.orange)
             case .fluid, .gas: .sh(.cyan)
             }
         }
     }
     
-    private func resolvedAmountByproductBackgroundColor(for ingredient: SHModels.Recipe.Ingredient) -> Color {
+    private func resolvedAmountByproductBackgroundColor(for ingredient: Recipe.Ingredient) -> Color {
         switch ingredient.role {
         case .output, .input: .clear
         
         case .byproduct:
-            switch (ingredient.item as? SHModels.Part)?.form {
+            switch (ingredient.item as? Part)?.form {
             case .solid, nil: .sh(.orange80)
             case .fluid, .gas: .sh(.cyan80)
             }
@@ -268,8 +268,8 @@ private extension RecipeProductionView {
         var byproductColor: Color
         var cornerRadius: Double
         
-        init(from ingredient: SHModels.Recipe.Ingredient) {
-            let form = (ingredient.item as? SHModels.Part)?.form
+        init(from ingredient: Recipe.Ingredient) {
+            let form = (ingredient.item as? Part)?.form
             
             switch ingredient.role {
             case .output:
@@ -279,7 +279,7 @@ private extension RecipeProductionView {
             case .input:
                 byproductColor = .clear
                 
-                if (ingredient.item as? SHModels.Part)?.isNaturalResource == true {
+                if (ingredient.item as? Part)?.isNaturalResource == true {
                     switch form {
                     case .solid, nil:
                         color = .sh(.orange90)
@@ -327,7 +327,7 @@ struct _RecipeProductionPreview: View {
     @Dependency(\.storageService.recipes)
     private var storedRecipes
     
-    var recipes: [SHModels.Recipe] {
+    var recipes: [Recipe] {
         [
             storedRecipes().first(id: "recipe-iron-ingot"),
             storedRecipes().first(id: "recipe-reinforced-iron-plate"),
@@ -350,13 +350,13 @@ struct _RecipeProductionPreview: View {
         }
     }
     
-    func viewModel(for recipe: SHModels.Recipe) -> RecipeProductionViewModel {
+    func viewModel(for recipe: Recipe) -> RecipeProductionViewModel {
         withDependencies {
             $0.settingsService.currentSettings = {
-                SHSettings.Settings(viewMode: viewMode)
+                Settings(viewMode: viewMode)
             }
             $0.settingsService.settings = {
-                AsyncStream { SHSettings.Settings(viewMode: viewMode) }
+                AsyncStream { Settings(viewMode: viewMode) }
             }
         } operation: {
             RecipeProductionViewModel(recipe: recipe)

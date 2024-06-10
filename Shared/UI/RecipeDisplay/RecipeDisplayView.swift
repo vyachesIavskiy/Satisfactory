@@ -4,14 +4,14 @@ import SHModels
 
 @Observable
 final class RecipeDisplayViewModel {
-    let recipe: SHModels.Recipe
+    let recipe: Recipe
     private(set) var viewMode: ViewMode
     
     @ObservationIgnored
     @Dependency(\.settingsService)
     var settingsService
     
-    init(recipe: SHModels.Recipe) {
+    init(recipe: Recipe) {
         @Dependency(\.settingsService.currentSettings)
         var settings
         
@@ -146,7 +146,7 @@ struct RecipeDisplayView: View {
     }
     
     @ViewBuilder
-    private func ingredientIconView(for ingredient: SHModels.Recipe.Ingredient) -> some View {
+    private func ingredientIconView(for ingredient: Recipe.Ingredient) -> some View {
         let ingredientValues = IngredientValues(from: ingredient)
         
         ZStack {
@@ -198,7 +198,7 @@ struct RecipeDisplayView: View {
     }
     
     @ViewBuilder
-    private func ingredientRowView(for ingredient: SHModels.Recipe.Ingredient) -> some View {
+    private func ingredientRowView(for ingredient: Recipe.Ingredient) -> some View {
         let ingredientValues = IngredientValues(from: ingredient)
         
         ZStack {
@@ -255,8 +255,8 @@ private extension RecipeDisplayView {
         var byproductColor: Color
         var cornerRadius: Double
         
-        init(from ingredient: SHModels.Recipe.Ingredient) {
-            let form = (ingredient.item as? SHModels.Part)?.form
+        init(from ingredient: Recipe.Ingredient) {
+            let form = (ingredient.item as? Part)?.form
             
             switch ingredient.role {
             case .output:
@@ -306,7 +306,7 @@ private struct _RecipeDisplayViewPreview: View {
     @Dependency(\.storageService.recipes)
     private var storedRecipes
     
-    var recipes: [SHModels.Recipe] {
+    var recipes: [Recipe] {
         [
             storedRecipes().first(id: "recipe-iron-ingot"),
             storedRecipes().first(id: "recipe-reinforced-iron-plate"),
@@ -329,13 +329,13 @@ private struct _RecipeDisplayViewPreview: View {
         }
     }
     
-    func viewModel(for recipe: SHModels.Recipe) -> RecipeDisplayViewModel {
+    func viewModel(for recipe: Recipe) -> RecipeDisplayViewModel {
         withDependencies {
             $0.settingsService.currentSettings = {
-                SHSettings.Settings(viewMode: viewMode)
+                Settings(viewMode: viewMode)
             }
             $0.settingsService.settings = {
-                AsyncStream { SHSettings.Settings(viewMode: viewMode) }
+                AsyncStream { Settings(viewMode: viewMode) }
             }
         } operation: {
             RecipeDisplayViewModel(recipe: recipe)

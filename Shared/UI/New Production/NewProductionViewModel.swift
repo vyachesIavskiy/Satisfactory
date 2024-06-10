@@ -14,8 +14,8 @@ final class NewProductionViewModel {
     @Dependency(\.settingsService)
     private var settingsService
     
-    private let parts: [SHModels.Part]
-    private let equipment: [SHModels.Equipment]
+    private let parts: [Part]
+    private let equipment: [Equipment]
     private var pinnedPartIDs = Set<String>() {
         didSet {
             buildSections()
@@ -82,7 +82,7 @@ final class NewProductionViewModel {
         }
     }
     
-    var selectedItem: (any SHModels.Item)?
+    var selectedItem: (any Item)?
     var sections = [Section]()
     
     init() {
@@ -132,11 +132,11 @@ final class NewProductionViewModel {
         }
     }
     
-    func isPinned(_ item: some SHModels.Item) -> Bool {
+    func isPinned(_ item: some Item) -> Bool {
         storageService.isPinned(item: item)
     }
     
-    func changePinStatus(for item: some SHModels.Item) {
+    func changePinStatus(for item: some Item) {
         storageService.changeItemPinStatus(item)
     }
     
@@ -159,7 +159,7 @@ final class NewProductionViewModel {
         let (pinnedParts, unpinnedParts) = splitParts()
         let (pinnedEquipment, unpinnedEquipment) = splitEquipment()
         
-        let pinnedItems: [any SHModels.Item] = pinnedParts + pinnedEquipment
+        let pinnedItems: [any Item] = pinnedParts + pinnedEquipment
         
         return [
             .pinned(pinnedItems),
@@ -172,9 +172,9 @@ final class NewProductionViewModel {
         let (pinnedParts, unpinnedParts) = splitParts()
         let (pinnedEquipment, unpinnedEquipment) = splitEquipment()
         
-        let pinnedItems: [any SHModels.Item] = pinnedParts + pinnedEquipment
+        let pinnedItems: [any Item] = pinnedParts + pinnedEquipment
         
-        let partsByCategories = unpinnedParts.reduce(into: [(SHModels.Category, [SHModels.Part])]()) { partialResult, part in
+        let partsByCategories = unpinnedParts.reduce(into: [(SHModels.Category, [Part])]()) { partialResult, part in
             if let index = partialResult.firstIndex(where: { $0.0 == part.category }) {
                 partialResult[index].1.append(part)
             } else {
@@ -182,7 +182,7 @@ final class NewProductionViewModel {
             }
         }
         
-        let equipmentByCategories = unpinnedEquipment.reduce(into: [(SHModels.Category, [SHModels.Equipment])]()) { partialResult, equipment in
+        let equipmentByCategories = unpinnedEquipment.reduce(into: [(SHModels.Category, [Equipment])]()) { partialResult, equipment in
             if let index = partialResult.firstIndex(where: { $0.0 == equipment.category }) {
                 partialResult[index].1.append(equipment)
             } else {
@@ -196,15 +196,15 @@ final class NewProductionViewModel {
         + equipmentByCategories.sorted { $0.0 < $1.0 }.map { .equipment($0.0.localizedName, $0.1) }
     }
     
-    private func splitParts() -> (pinned: [SHModels.Part], unpinned: [SHModels.Part]) {
+    private func splitParts() -> (pinned: [Part], unpinned: [Part]) {
         split(parts, pins: pinnedPartIDs)
     }
     
-    private func splitEquipment() -> (pinned: [SHModels.Equipment], unpinned: [SHModels.Equipment]) {
+    private func splitEquipment() -> (pinned: [Equipment], unpinned: [Equipment]) {
         split(equipment, pins: pinnedEquipmentIDs)
     }
     
-    private func split<T: SHModels.ProgressiveItem>(_ items: [T], pins: Set<String>) -> (pinned: [T], unpinned: [T]) {
+    private func split<T: ProgressiveItem>(_ items: [T], pins: Set<String>) -> (pinned: [T], unpinned: [T]) {
         var (pinned, unpinned) = items.reduce(into: ([T](), [T]())) { partialResult, item in
             if item.category == .ficsmas, !showFICSMAS {
                 return
@@ -223,7 +223,7 @@ final class NewProductionViewModel {
         return (pinned, unpinned)
     }
     
-    private func sort<T: SHModels.ProgressiveItem>(_ items: inout [T]) {
+    private func sort<T: ProgressiveItem>(_ items: inout [T]) {
         switch sorting {
         case .name: items.sortByName()
         case .progression: items.sortByProgression()
@@ -250,9 +250,9 @@ extension NewProductionViewModel {
 // MARK: - Section
 extension NewProductionViewModel {
     enum Section: Identifiable, Equatable {
-        case pinned(_ items: [any SHModels.Item], expanded: Bool = true)
-        case parts(_ title: String, _ parts: [SHModels.Part], expanded: Bool = true)
-        case equipment(_ title: String, _ equipment: [SHModels.Equipment], expanded: Bool = true)
+        case pinned(_ items: [any Item], expanded: Bool = true)
+        case parts(_ title: String, _ parts: [Part], expanded: Bool = true)
+        case equipment(_ title: String, _ equipment: [Equipment], expanded: Bool = true)
         
         var id: String {
             switch self {
@@ -307,7 +307,7 @@ extension NewProductionViewModel {
             }
         }
         
-        var items: [any SHModels.Item] {
+        var items: [any Item] {
             switch self {
             case let .pinned(items, _): items
             case let .parts(_, parts, _): parts

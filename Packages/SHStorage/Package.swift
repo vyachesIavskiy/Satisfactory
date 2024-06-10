@@ -27,6 +27,7 @@ let package = Package(
         .target(
             name: "SHStorage",
             dependencies: [
+                "SHDependencies",
                 "SHStaticStorage",
                 "SHPersistentStorage",
                 "SHPersistentModels",

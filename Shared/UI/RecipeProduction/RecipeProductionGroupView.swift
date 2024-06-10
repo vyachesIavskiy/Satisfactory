@@ -2,8 +2,8 @@ import SwiftUI
 import SHModels
 
 struct RecipeProductionGroupView: View {
-    let item: any SHModels.Item
-    let recipes: [SHModels.Recipe]
+    let item: any Item
+    let recipes: [Recipe]
     
     private var amount: Double {
         1.0
@@ -92,14 +92,14 @@ private struct _RecipeProductionGroupPreview: View {
     let itemID: String
     let recipeIDs: [String]
     
-    var item: (any SHModels.Item)? {
+    var item: (any Item)? {
         @Dependency(\.storageService)
         var storageService
         
         return storageService.item(for: itemID)
     }
     
-    var recipes: [SHModels.Recipe] {
+    var recipes: [Recipe] {
         @Dependency(\.storageService)
         var storageService
         

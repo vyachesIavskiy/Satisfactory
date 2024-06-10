@@ -12,7 +12,6 @@ final class Legacy: VersionedStorage {
     var equipment = [Equipment.Persistent.Legacy]()
     var recipes = [Recipe.Persistent.Legacy]()
     var productions = [Production.Persistent.Legacy]()
-    var settings = Settings.Persistent.Legacy(itemViewStyle: .icon)
     
     private let persistence = SHPersistence()
     private let fileManager = SHFileManager()
@@ -39,12 +38,6 @@ final class Legacy: VersionedStorage {
         equipment = try persistence.loadMany(Equipment.Persistent.Legacy.self, fromDirectory: .equipment)
         recipes = try persistence.loadMany(Recipe.Persistent.Legacy.self, fromDirectory: .recipes)
         productions = try persistence.loadMany(Production.Persistent.Legacy.self, fromDirectory: .productions)
-        
-        // Settings are stored in UserDefaults
-        let itemViewStyleOldID = userDefaults.string(forKey: "itemViewStyle")
-        settings = Settings.Persistent.Legacy(
-            itemViewStyle: itemViewStyleOldID == "row" ? .row : .icon
-        )
         
         logger.info("Legacy storage is loaded.")
     }

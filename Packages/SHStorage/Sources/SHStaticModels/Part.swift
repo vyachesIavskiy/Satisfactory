@@ -22,7 +22,7 @@ extension Part {
             id: part.id,
             category: Category(fromID: part.categoryID), 
             progressionIndex: part.progressionIndex,
-            form: SHModels.Part.Form(fromID: part.formID),
+            form: Part.Form(fromID: part.formID),
             isNaturalResource: part.isNaturalResource
         )
     }

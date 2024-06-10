@@ -2,19 +2,6 @@ import SwiftUI
 import SHModels
 import SHSettings
 
-class Settings: ObservableObject {
-    enum ItemViewStyle: String {
-        case icon
-        case row
-    }
-    
-    @AppStorage("itemViewStyle")
-    var itemViewStyle: ItemViewStyle = .icon
-    
-    @AppStorage("showWithoutRecipes")
-    var showItemsWithoutRecipes = true
-}
-
 struct SettingsView: View {
     @Bindable var viewModel: SettingsViewModel
     

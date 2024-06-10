@@ -2,7 +2,7 @@ import SHModels
 import SHStaticModels
 
 extension Part.Static {
-    init(id: String, category: SHModels.Category, form: Part.Form, isNaturalResource: Bool = false) {
+    init(id: String, category: Category, form: Part.Form, isNaturalResource: Bool = false) {
         self.init(id: id, categoryID: category.id, formID: form.id, isNaturalResource: isNaturalResource)
     }
 }

@@ -2,7 +2,7 @@ import SHModels
 import SHStaticModels
 
 extension Building.Static {
-    init(id: String, category: SHModels.Category) {
+    init(id: String, category: Category) {
         self.init(id: id, categoryID: category.id)
     }
 }

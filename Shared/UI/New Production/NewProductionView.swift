@@ -47,10 +47,10 @@ struct NewProductionView: View {
                     }
                 }
             }
-            .navigationDestination(for: SHModels.Part.self) { part in
+            .navigationDestination(for: Part.self) { part in
                 ItemRecipesView(viewModel: ItemRecipesViewModel(item: part))
             }
-            .navigationDestination(for: SHModels.Equipment.self) { equipment in
+            .navigationDestination(for: Equipment.self) { equipment in
                 ItemRecipesView(viewModel: ItemRecipesViewModel(item: equipment))
             }
         }
@@ -67,11 +67,11 @@ struct NewProductionView: View {
                 VStack(spacing: itemSpacing) {
                     ForEach(section.items, id: \.id) { item in
                         Group {
-                            if let part = item as? SHModels.Part {
+                            if let part = item as? Part {
                                 partRow(part)
                                     .tag(part.id)
                                     .id(part.id)
-                            } else if let equipment = item as? SHModels.Equipment {
+                            } else if let equipment = item as? Equipment {
                                 equipmentRow(equipment)
                                     .tag(equipment.id)
                                     .id(equipment.id)
@@ -90,7 +90,7 @@ struct NewProductionView: View {
     }
     
     @ViewBuilder
-    func partRow(_ part: SHModels.Part) -> some View {
+    func partRow(_ part: Part) -> some View {
         NavigationLink(value: part) {
             itemRow(part)
         }
@@ -98,7 +98,7 @@ struct NewProductionView: View {
     }
     
     @ViewBuilder
-    func equipmentRow(_ equipment: SHModels.Equipment) -> some View {
+    func equipmentRow(_ equipment: Equipment) -> some View {
         NavigationLink(value: equipment) {
             itemRow(equipment)
         }
@@ -106,7 +106,7 @@ struct NewProductionView: View {
     }
     
     @ViewBuilder
-    private func itemRow(_ item: any SHModels.Item) -> some View {
+    private func itemRow(_ item: any Item) -> some View {
         ItemRow(item)
             .contextMenu {
                 Button {

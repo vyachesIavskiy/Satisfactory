@@ -7,10 +7,8 @@ final class ItemRecipesViewModel {
     @ObservationIgnored
     @Dependency(\.storageService)
     private var storageService
-    
-    typealias Recipe = SHModels.Recipe
-    
-    let item: any SHModels.Item
+        
+    let item: any Item
     private let outputRecipes: [Recipe]
     private let byproductRecipes: [Recipe]
     private var pinnedRecipeIDs = Set<String>() {
@@ -21,7 +19,7 @@ final class ItemRecipesViewModel {
     
     var sections = [Section]()
     
-    init(item: any SHModels.Item) {
+    init(item: any Item) {
         @Dependency(\.storageService)
         var storageService
         
@@ -113,9 +111,9 @@ extension ItemRecipesViewModel {
             case byproduct
         }
         
-        case pinned(_ recipes: [SHModels.Recipe], expanded: Bool = true)
-        case output(_ recipes: [SHModels.Recipe], expanded: Bool = true)
-        case byproduct(_ recipes: [SHModels.Recipe], expanded: Bool = true)
+        case pinned(_ recipes: [Recipe], expanded: Bool = true)
+        case output(_ recipes: [Recipe], expanded: Bool = true)
+        case byproduct(_ recipes: [Recipe], expanded: Bool = true)
         
         var id: ID {
             switch self {
@@ -171,7 +169,7 @@ extension ItemRecipesViewModel {
             }
         }
         
-        var recipes: [SHModels.Recipe] {
+        var recipes: [Recipe] {
             get {
                 switch self {
                 case let .pinned(recipes, _): recipes

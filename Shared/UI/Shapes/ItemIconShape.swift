@@ -2,12 +2,12 @@ import SwiftUI
 import SHModels
 
 struct ItemIconShape: Shape {
-    let item: any SHModels.Item
+    let item: any Item
     let cornerRadius: Double
     let corners: AngledRectangle.Corner.Set
     private var inset = 0.0
     
-    init(item: any SHModels.Item, cornerRadius: Double, corners: AngledRectangle.Corner.Set = .diagonal) {
+    init(item: any Item, cornerRadius: Double, corners: AngledRectangle.Corner.Set = .diagonal) {
         self.item = item
         self.cornerRadius = cornerRadius
         self.corners = corners
@@ -18,7 +18,7 @@ struct ItemIconShape: Shape {
     }
     
     func path(in rect: CGRect) -> Path {
-        switch (item as? SHModels.Part)?.form {
+        switch (item as? Part)?.form {
         case .solid, nil: solidPath(in: rect)
         case .fluid, .gas: fluidPath(in: rect)
         }
@@ -57,9 +57,9 @@ private struct _ItemIconShapePreview: View {
     let itemID: String
     let cornerRadius: Double
     
-    var item: (any SHModels.Item)? {
+    var item: (any Item)? {
         @Dependency(\.storageService) var storageService
-        let items: [any SHModels.Item] = storageService.parts() + storageService.equipment()
+        let items: [any Item] = storageService.parts() + storageService.equipment()
         return items.first { $0.id == itemID }
     }
     

@@ -1,7 +1,8 @@
 import SwiftUI
+import SHModels
 
 struct CalculationStatisticsModel: Identifiable {
-    let item: Item
+    let item: any Item
     var amount: Double
     
     var id: String { item.id }
@@ -12,7 +13,7 @@ extension Array where Element == CalculationStatisticsModel {
         sorted {
             guard let left = $0.item as? Part, let right = $1.item as? Part else { return true }
             
-            return left.sortingPriority > right.sortingPriority
+            return left.progressionIndex > right.progressionIndex
         }
     }
     
@@ -32,11 +33,11 @@ extension Array where Element == CalculationStatisticsModel {
 
 struct CalculationMachineStatisticsModel: Identifiable {
     let recipe: Recipe
-    let item: Item
+    let item: any Item
     var amount: Double
     var amountOfMachines: Double
-    var machine: Building {
-        recipe.machines[0]
+    var machine: Building? {
+        recipe.machine
     }
     
     var id: String { recipe.id }
@@ -65,13 +66,11 @@ struct CalculationStatistics: View {
     @State private var itemsExpanded = true
     @State private var machinesExpanded = true
     
-    @EnvironmentObject private var settings: Settings
-    
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 8) {
                 SHSection("Items", data: data.sorted(), expanded: $itemsExpanded) { entry in
-                    ItemRow(item: entry.item, amount: entry.amount)
+//                    ItemRow(item: entry.item, amount: entry.amount)
                 }
                 
                 Spacer()
@@ -85,71 +84,72 @@ struct CalculationStatistics: View {
         }
     }
     
+    @ViewBuilder
     private func machineView(_ machine: CalculationMachineStatisticsModel) -> some View {
-        HStack {
-            HStack(alignment: .top, spacing: 12) {
-                Image(machine.machine.imageName)
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                    .padding(4)
-                    .overlay(
-                        Color("Secondary").opacity(0.3),
-                        in: AngledRectangle(cornerRadius: 6).stroke(style: StrokeStyle(lineWidth: 1))
-                    )
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(machine.machine.name)
+        if let building = machine.machine {
+            HStack {
+                HStack(alignment: .top, spacing: 12) {
+                    Image(building.id)
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .padding(4)
+                        .overlay(
+                            Color("Secondary").opacity(0.3),
+                            in: AngledRectangle(cornerRadius: 6).stroke(style: StrokeStyle(lineWidth: 1))
+                        )
                     
-                    HStack(spacing: 10) {
-                        Image(machine.item.imageName)
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                            .padding(2)
-                            .overlay(
-                                Color("Secondary").opacity(0.3),
-                                in: AngledRectangle(cornerRadius: 4).stroke(style: StrokeStyle(lineWidth: 1))
-                            )
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(building.localizedName)
                         
-                        Text(machine.item.name)
-                            .font(.footnote)
+                        HStack(spacing: 10) {
+                            Image(machine.item.id)
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                                .padding(2)
+                                .overlay(
+                                    Color("Secondary").opacity(0.3),
+                                    in: AngledRectangle(cornerRadius: 4).stroke(style: StrokeStyle(lineWidth: 1))
+                                )
+                            
+                            Text(machine.item.localizedName)
+                                .font(.footnote)
+                        }
                     }
                 }
+                
+                Spacer()
+                
+                Text(machine.amountOfMachines, format: .fractionFromZeroToFour)
+                    .font(.headline)
             }
-            
-            Spacer()
-            
-            Text(machine.amountOfMachines, format: .fractionFromZeroToFour)
-                .font(.headline)
         }
     }
 }
 
 #if DEBUG
 #Preview("Calculation statistics (icon)") {
-    let storage: Storage = PreviewStorage()
-    
-    return CalculationStatistics(
-        data: [
-            CalculationStatisticsModel(item: storage[partID: "iron-plate"]!, amount: 100),
-            CalculationStatisticsModel(item: storage[partID: "iron-ingot"]!, amount: 150),
-            CalculationStatisticsModel(item: storage[partID: "iron-ore"]!, amount: 150)
-        ],
-        machines: [
-            CalculationMachineStatisticsModel(
-                recipe: storage[recipesFor: "iron-plate"][0],
-                item: storage[partID: "iron-plate"]!,
-                amount: 100,
-                amountOfMachines: 5
-            ),
-            CalculationMachineStatisticsModel(
-                recipe: storage[recipesFor: "iron-ingot"][0],
-                item: storage[partID: "iron-ingot"]!,
-                amount: 150,
-                amountOfMachines: 5
-            )
-        ]
-    )
-    .environmentObject(Settings())
-    .environmentObject(storage)
+    VStack {}
+//    CalculationStatistics(
+//        data: [
+//            CalculationStatisticsModel(item: storage[partID: "iron-plate"]!, amount: 100),
+//            CalculationStatisticsModel(item: storage[partID: "iron-ingot"]!, amount: 150),
+//            CalculationStatisticsModel(item: storage[partID: "iron-ore"]!, amount: 150)
+//        ],
+//        machines: [
+//            CalculationMachineStatisticsModel(
+//                recipe: storage[recipesFor: "iron-plate"][0],
+//                item: storage[partID: "iron-plate"]!,
+//                amount: 100,
+//                amountOfMachines: 5
+//            ),
+//            CalculationMachineStatisticsModel(
+//                recipe: storage[recipesFor: "iron-ingot"][0],
+//                item: storage[partID: "iron-ingot"]!,
+//                amount: 150,
+//                amountOfMachines: 5
+//            )
+//        ]
+//    )
+//    .environmentObject(Settings())
 }
 #endif

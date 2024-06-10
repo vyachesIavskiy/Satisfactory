@@ -4,7 +4,7 @@ import SHStaticModels
 extension Equipment.Static {
     init(
         id: String,
-        category: SHModels.Category,
+        category: Category,
         slot: Equipment.Slot,
         ammo: [Part.Static]? = nil,
         fuel: [Part.Static]? = nil,

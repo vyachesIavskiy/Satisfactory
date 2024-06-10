@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "DFEB28D3-5307-4FCE-9C98-373E772E1045",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "SHSettingsTests",
+        "name" : "SHSettingsTests"
+      }
+    }
+  ],
+  "version" : 1
+}

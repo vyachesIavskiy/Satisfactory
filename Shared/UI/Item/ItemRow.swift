@@ -2,37 +2,43 @@ import SwiftUI
 
 struct ItemRow: View {
     @EnvironmentObject private var storage: Storage
-    
-    private var productionChains: [ProductionChain] {
-        storage.productionChains.filter { $0.item.id == item.id }
-    }
+    @Environment(\.displayScale) private var displayScale
     
     var item: Item
-    var showAmountOfProductionChains = false
+    var amount: Double
     
     var body: some View {
         HStack(spacing: 10) {
             Image(item.imageName)
                 .resizable()
-                .frame(width: 30, height: 30)
+                .frame(width: 40, height: 40)
+                .padding(4)
+                .overlay(
+                    Color("Secondary").opacity(0.3),
+                    in: AngledRectangle(cornerRadius: 6).stroke(style: StrokeStyle(lineWidth: 1))
+                )
             
-            Text(item.name)
-            
-            Spacer()
-            
-            if !productionChains.isEmpty && showAmountOfProductionChains {
-                HStack(spacing: 2) {
-                    Text("\(productionChains.count)")
-                        .fontWeight(.semibold)
+            ZStack {
+                HStack {
+                    Text(item.name)
                     
-                    Image(systemName: "scale.3d")
+                    Spacer()
+                    
+                    Text("\(amount.formatted(.fractionFromZeroToFour)) / min")
+                        .font(.callout)
+                        .fontWeight(.medium)
                 }
-                .foregroundColor(.white)
-                .padding(3)
-                .background(Color.orange)
-                .cornerRadius(6)
+                
+                LinearGradient(
+                    colors: [Color("Secondary").opacity(0.6), .clear],
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+                .frame(height: 2 / displayScale)
+                .frame(maxHeight: .infinity, alignment: .bottom)
             }
         }
+        .fixedSize(horizontal: false, vertical: true)
     }
 }
 
@@ -40,8 +46,9 @@ struct ItemRowPreviews: PreviewProvider {
     @StateObject private static var storage: Storage = PreviewStorage()
     
     static var previews: some View {
-        ItemRow(item: storage[partID: "iron-plate"]!)
+        ItemRow(item: storage[partID: "iron-plate"]!, amount: 25)
             .previewLayout(.sizeThatFits)
             .environmentObject(storage)
+            .padding()
     }
 }

@@ -62,85 +62,94 @@ struct CalculationStatistics: View {
     var data: [CalculationStatisticsModel]
     var machines: [CalculationMachineStatisticsModel]
     
+    @State private var itemsExpanded = true
+    @State private var machinesExpanded = true
+    
     @EnvironmentObject private var settings: Settings
     
     var body: some View {
-        List {
-            Section(header: Text("Items")) {
-                ForEach(data.sorted()) { entry in
-                    HStack {
-                        ItemRow(item: entry.item)
-                        Spacer()
-                        Text("\(entry.amount.formatted(.fractionFromZeroToFour)) / min")
-                            .fontWeight(.semibold)
-                    }
+        ScrollView {
+            LazyVStack(spacing: 8) {
+                SHSection("Items", data: data.sorted(), expanded: $itemsExpanded) { entry in
+                    ItemRow(item: entry.item, amount: entry.amount)
                 }
-            }
-            
-            Section(header: Text("Machines")) {
-                ForEach(machines) { machine in
+                
+                Spacer()
+                    .frame(height: 4)
+                
+                SHSection("Machines", data: machines, expanded: $machinesExpanded) { machine in
                     machineView(machine)
                 }
             }
+            .padding(.horizontal, 16)
         }
     }
     
     private func machineView(_ machine: CalculationMachineStatisticsModel) -> some View {
-        Group {
-            switch settings.itemViewStyle {
-            case .icon: machineViewIcon(machine)
-            case .row: machineViewRow(machine)
-            }
-        }
-    }
-    
-    private func machineViewIcon(_ machine: CalculationMachineStatisticsModel) -> some View {
         HStack {
-            Image(machine.item.imageName)
-                .resizable()
-                .frame(width: 30, height: 30)
-                .padding(3)
-                .background(Color.orange)
-                .cornerRadius(6)
-            
-            machineStatisticsView(machine)
-        }
-    }
-    
-    private func machineViewRow(_ machine: CalculationMachineStatisticsModel) -> some View {
-        VStack(alignment: .leading) {
-            ItemRow(item: machine.item)
-                .foregroundColor(.white)
-                .padding(3)
-                .background(Color.orange)
-                .cornerRadius(6)
-            
-            machineStatisticsView(machine)
-        }
-    }
-    
-    private func machineStatisticsView(_ machine: CalculationMachineStatisticsModel) -> some View {
-        HStack {
-            HStack(spacing: 10) {
+            HStack(alignment: .top, spacing: 12) {
                 Image(machine.machine.imageName)
                     .resizable()
-                    .frame(width: 30, height: 30)
+                    .frame(width: 40, height: 40)
+                    .padding(4)
+                    .overlay(
+                        Color("Secondary").opacity(0.3),
+                        in: AngledRectangle(cornerRadius: 6).stroke(style: StrokeStyle(lineWidth: 1))
+                    )
                 
-                Text(machine.machine.name)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(machine.machine.name)
+                    
+                    HStack(spacing: 10) {
+                        Image(machine.item.imageName)
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .padding(2)
+                            .overlay(
+                                Color("Secondary").opacity(0.3),
+                                in: AngledRectangle(cornerRadius: 4).stroke(style: StrokeStyle(lineWidth: 1))
+                            )
+                        
+                        Text(machine.item.name)
+                            .font(.footnote)
+                    }
+                }
             }
             
             Spacer()
             
-            Text("\(Int(ceil(machine.amountOfMachines)))")
-                .fontWeight(.bold)
+            Text(machine.amountOfMachines, format: .fractionFromZeroToFour)
+                .font(.headline)
         }
     }
 }
 
-struct CalculationStatisticsPreviews: PreviewProvider {
-    static var previews: some View {
-        CalculationStatistics(data: [], machines: [])
-            .environmentObject(Settings())
-    }
+#if DEBUG
+#Preview("Calculation statistics (icon)") {
+    let storage: Storage = PreviewStorage()
+    
+    return CalculationStatistics(
+        data: [
+            CalculationStatisticsModel(item: storage[partID: "iron-plate"]!, amount: 100),
+            CalculationStatisticsModel(item: storage[partID: "iron-ingot"]!, amount: 150),
+            CalculationStatisticsModel(item: storage[partID: "iron-ore"]!, amount: 150)
+        ],
+        machines: [
+            CalculationMachineStatisticsModel(
+                recipe: storage[recipesFor: "iron-plate"][0],
+                item: storage[partID: "iron-plate"]!,
+                amount: 100,
+                amountOfMachines: 5
+            ),
+            CalculationMachineStatisticsModel(
+                recipe: storage[recipesFor: "iron-ingot"][0],
+                item: storage[partID: "iron-ingot"]!,
+                amount: 150,
+                amountOfMachines: 5
+            )
+        ]
+    )
+    .environmentObject(Settings())
+    .environmentObject(storage)
 }
-
+#endif

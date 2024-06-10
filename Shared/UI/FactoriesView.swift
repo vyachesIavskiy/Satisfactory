@@ -287,146 +287,147 @@ struct NewFactoryView: View {
     @FocusState private var isFocused
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack(spacing: 2) {
-                VStack(spacing: 25) {
-                    ZStack {
-                        if !viewModel.imageName.isEmpty {
-                            Image(viewModel.imageName)
-                                .resizable()
-                        }
-                    }
-                    .frame(width: 70, height: 70)
-                    .padding(10)
-                    .overlay(
-                        Color("Secondary").opacity(0.3),
-                        in: AngledRectangle(cornerRadius: 8).stroke(
-                            style: StrokeStyle(lineWidth: 1.5, dash: viewModel.imageName.isEmpty ? [12, 8] : [])
-                        )
-                    )
-                    
-                    VStack {
-                        TextField("Factory name", text: $viewModel.name)
-                            .font(.title)
-                            .multilineTextAlignment(.center)
-                            .focused($isFocused)
-                            .submitLabel(.done)
-                            .onSubmit {
-                                isFocused = false
-                            }
-                        
-                        HStack(spacing: 0) {
-                            LinearGradient(
-                                colors: [Color("Secondary").opacity(0.6), .clear],
-                                startPoint: .trailing,
-                                endPoint: .leading
-                            )
-                            
-                            LinearGradient(
-                                colors: [Color("Secondary").opacity(0.6), .clear],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        }
-                        .frame(height: 2 / displayScale)
-                    }
-                }
-                
-                ScrollView {
-                    LazyVGrid(
-                        columns: [GridItem](
-                            repeating: GridItem(.adaptive(minimum: 50, maximum: 100), spacing: 0),
-                            count: 5
-                        ),
-                        alignment: .leading
-                    ) {
-                        ForEach($viewModel.itemImageNames) { $section in
-                            Section {
-                                if section.expanded {
-                                    ForEach(section.imageNames, id: \.self) { imageName in
-                                        Button {
-                                            withAnimation(.default.speed(2)) {
-                                                viewModel.imageName = imageName
-                                            }
-                                        } label: {
-                                            Image(imageName)
-                                                .resizable()
-                                                .frame(width: 45, height: 45)
-                                                .padding(5)
-                                                .background {
-                                                    if imageName == viewModel.imageName {
-                                                        AngledRectangle(cornerRadius: 8)
-                                                            .stroke(style: StrokeStyle(lineWidth: 1.5))
-                                                            .foregroundStyle(Color("Secondary").opacity(0.45))
-                                                    }
-                                                }
-                                        }
-                                        .buttonStyle(.plain)
-                                    }
-                                }
-                            } header: {
-                                ListSectionHeaderNew(title: section.name, isExpanded: $section.expanded)
-                                    .padding(.horizontal, -10)
-                            } footer: {
-                                if section.expanded {
-                                    ListSectionFooterShape(cornerRadius: 10)
-                                        .stroke(lineWidth: 0.75)
-                                        .foregroundStyle(Color("Secondary").opacity(0.75))
-                                        .shadow(color: Color("Secondary").opacity(0.5), radius: 2)
-                                        .padding(.horizontal, -10)
-                                }
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 26)
-                    .padding(.top, 25)
-                }
-                .safeAreaInset(edge: .bottom, spacing: 0) {
-                    Color.clear
-                        .frame(height: geometry.safeAreaInsets.bottom)
-                }
-                .mask {
-                    VStack(spacing: 0) {
-                        LinearGradient(
-                            colors: [
-                                .clear,
-                                .white.opacity(0.4),
-                                .white.opacity(0.8),
-                                .white
-                            ],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                        .frame(height: 20)
-                        
-                        Color.white
-                    }
-                }
-            }
-            .contentShape(Rectangle())
-            .onTapGesture {
-                isFocused = false
-            }
-            .ignoresSafeArea(edges: .bottom)
-        }
-        .navigationTitle("New Factory")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
-                    dismiss()
-                }
-            }
-            
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Save") {
-                    viewModel.save()
-                    dismiss()
-                }
-                .disabled(viewModel.isEmpty)
-            }
-        }
-        .interactiveDismissDisabled(!viewModel.isEmpty)
+        Text("Factories view")
+//        GeometryReader { geometry in
+//            VStack(spacing: 2) {
+//                VStack(spacing: 25) {
+//                    ZStack {
+//                        if !viewModel.imageName.isEmpty {
+//                            Image(viewModel.imageName)
+//                                .resizable()
+//                        }
+//                    }
+//                    .frame(width: 70, height: 70)
+//                    .padding(10)
+//                    .overlay(
+//                        Color("Secondary").opacity(0.3),
+//                        in: AngledRectangle(cornerRadius: 8).stroke(
+//                            style: StrokeStyle(lineWidth: 1.5, dash: viewModel.imageName.isEmpty ? [12, 8] : [])
+//                        )
+//                    )
+//                    
+//                    VStack {
+//                        TextField("Factory name", text: $viewModel.name)
+//                            .font(.title)
+//                            .multilineTextAlignment(.center)
+//                            .focused($isFocused)
+//                            .submitLabel(.done)
+//                            .onSubmit {
+//                                isFocused = false
+//                            }
+//                        
+//                        HStack(spacing: 0) {
+//                            LinearGradient(
+//                                colors: [Color("Secondary").opacity(0.6), .clear],
+//                                startPoint: .trailing,
+//                                endPoint: .leading
+//                            )
+//                            
+//                            LinearGradient(
+//                                colors: [Color("Secondary").opacity(0.6), .clear],
+//                                startPoint: .leading,
+//                                endPoint: .trailing
+//                            )
+//                        }
+//                        .frame(height: 2 / displayScale)
+//                    }
+//                }
+//                
+//                ScrollView {
+//                    LazyVGrid(
+//                        columns: [GridItem](
+//                            repeating: GridItem(.adaptive(minimum: 50, maximum: 100), spacing: 0),
+//                            count: 5
+//                        ),
+//                        alignment: .leading
+//                    ) {
+//                        ForEach($viewModel.itemImageNames) { $section in
+//                            Section {
+//                                if section.expanded {
+//                                    ForEach(section.imageNames, id: \.self) { imageName in
+//                                        Button {
+//                                            withAnimation(.default.speed(2)) {
+//                                                viewModel.imageName = imageName
+//                                            }
+//                                        } label: {
+//                                            Image(imageName)
+//                                                .resizable()
+//                                                .frame(width: 45, height: 45)
+//                                                .padding(5)
+//                                                .background {
+//                                                    if imageName == viewModel.imageName {
+//                                                        AngledRectangle(cornerRadius: 8)
+//                                                            .stroke(style: StrokeStyle(lineWidth: 1.5))
+//                                                            .foregroundStyle(Color("Secondary").opacity(0.45))
+//                                                    }
+//                                                }
+//                                        }
+//                                        .buttonStyle(.plain)
+//                                    }
+//                                }
+//                            } header: {
+//                                ListSectionHeaderNew(title: section.name, isExpanded: $section.expanded)
+//                                    .padding(.horizontal, -10)
+//                            } footer: {
+//                                if section.expanded {
+//                                    ListSectionFooterShape(cornerRadius: 10)
+//                                        .stroke(lineWidth: 0.75)
+//                                        .foregroundStyle(Color("Secondary").opacity(0.75))
+//                                        .shadow(color: Color("Secondary").opacity(0.5), radius: 2)
+//                                        .padding(.horizontal, -10)
+//                                }
+//                            }
+//                        }
+//                    }
+//                    .padding(.horizontal, 26)
+//                    .padding(.top, 25)
+//                }
+//                .safeAreaInset(edge: .bottom, spacing: 0) {
+//                    Color.clear
+//                        .frame(height: geometry.safeAreaInsets.bottom)
+//                }
+//                .mask {
+//                    VStack(spacing: 0) {
+//                        LinearGradient(
+//                            colors: [
+//                                .clear,
+//                                .white.opacity(0.4),
+//                                .white.opacity(0.8),
+//                                .white
+//                            ],
+//                            startPoint: .top,
+//                            endPoint: .bottom
+//                        )
+//                        .frame(height: 20)
+//                        
+//                        Color.white
+//                    }
+//                }
+//            }
+//            .contentShape(Rectangle())
+//            .onTapGesture {
+//                isFocused = false
+//            }
+//            .ignoresSafeArea(edges: .bottom)
+//        }
+//        .navigationTitle("New Factory")
+//        .navigationBarTitleDisplayMode(.inline)
+//        .toolbar {
+//            ToolbarItem(placement: .cancellationAction) {
+//                Button("Cancel") {
+//                    dismiss()
+//                }
+//            }
+//            
+//            ToolbarItem(placement: .confirmationAction) {
+//                Button("Save") {
+//                    viewModel.save()
+//                    dismiss()
+//                }
+//                .disabled(viewModel.isEmpty)
+//            }
+//        }
+//        .interactiveDismissDisabled(!viewModel.isEmpty)
     }
 }
 
@@ -743,13 +744,99 @@ struct MoveProductionView: View {
 }
 
 #if DEBUG
-#Preview {
+#Preview("Factories view") {
     FactoriesView(viewModel: FactoriesViewModel(storage: PreviewStorage()))
+}
+
+#Preview("Factory view") {
+    let storage: Storage = PreviewStorage()
+    
+    return NavigationStack {
+        FactoryView(
+            viewModel: FactoryViewModel(
+                storage: storage,
+                factory: Factory(
+                    name: "Preview factory",
+                    image: .text("PF"),
+                    productions: [
+                        ProductionChain(
+                            productionTree: RecipeTree(
+                                element: RecipeElement(
+                                    item: storage[partID: "iron-plate"]!,
+                                    recipe: storage[recipesFor: "iron-plate"][0],
+                                    amount: 100
+                                ),
+                                children: [
+                                    RecipeTree(
+                                        element: RecipeElement(
+                                            item: storage[partID: "iron-ingot"]!,
+                                            recipe: storage[recipesFor: "iron-ingot"][0],
+                                            amount: 150
+                                        )
+                                    )
+                                ]
+                            )
+                        ),
+                        ProductionChain(
+                            productionTree: RecipeTree(
+                                element: RecipeElement(
+                                    item: storage[partID: "iron-rod"]!,
+                                    recipe: storage[recipesFor: "iron-rod"][0],
+                                    amount: 100
+                                ),
+                                children: [
+                                    RecipeTree(
+                                        element: RecipeElement(
+                                            item: storage[partID: "iron-ingot"]!,
+                                            recipe: storage[recipesFor: "iron-ingot"][0],
+                                            amount: 100
+                                        )
+                                    )
+                                ]
+                            )
+                        )
+                    ]
+                )
+            )
+        )
+    }
+    .environmentObject(storage)
+    .environmentObject(Settings())
 }
 
 #Preview("New Factory") {
     NavigationStack {
         NewFactoryView(viewModel: NewFactoryViewModel(storage: PreviewStorage()))
     }
+}
+
+#Preview("Production view") {
+    let storage: Storage = PreviewStorage()
+    
+    return ProductionView(
+        viewModel: ProductionViewModel(
+            storage: storage,
+            production: ProductionChain(
+                productionTree: RecipeTree(
+                    element: RecipeElement(
+                        item: storage[partID: "iron-plate"]!,
+                        recipe: storage[recipesFor: "iron-plate"][0],
+                        amount: 100
+                    ),
+                    children: [
+                        RecipeTree(
+                            element: RecipeElement(
+                                item: storage[partID: "iron-ingot"]!,
+                                recipe: storage[recipesFor: "iron-ingot"][0],
+                                amount: 150
+                            )
+                        )
+                    ]
+                )
+            )
+        )
+    )
+    .environmentObject(storage)
+    .environmentObject(Settings())
 }
 #endif

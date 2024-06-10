@@ -1,32 +1,19 @@
 import SwiftUI
-import Storage
-import Models
-import Dependencies
+import SHComposableArchitecture
+import SHStorage
+import SHModels
 
 @main
 struct SatisfactoryApp: App {
-    @State private var isLoaded = false
-    @StateObject private var storage: Storage = Storage()
-    
     var body: some Scene {
         WindowGroup {
-            Group {
-                if isLoaded {
-                    ContentView()
-                } else {
-                    LoadingView(isLoaded: $isLoaded)
-                }
-            }
-            .environmentObject(storage)
-            .environmentObject(Settings())
-//            if #available(iOS 17.0, *) {
-//                FileManagerCheckView()
-//            }
+            RootView()
+            
+//            FileManagerCheckView()
         }
     }
 }
 
-@available(iOS 17.0, *)
 private struct FileManagerCheckView: View {
     class File: Identifiable {
         let id = UUID()
@@ -70,17 +57,21 @@ private struct FileManagerCheckView: View {
     @State var fileToPreview: FilePreview?
     
     // Storage
-    @State var parts = [Models.Part]()
-    @State var equipment = [Models.Equipment]()
-    @State var recipes = [Models.Recipe]()
+    @State var parts = [SHModels.Part]()
+    @State var equipment = [SHModels.Equipment]()
+    @State var recipes = [SHModels.Recipe]()
     @State var factories = [FactoryListView]()
+    
+    @State var pinnedPartIDs = Set<String>()
+    @State var pinnedEquipmentIDs = Set<String>()
+    @State var pinnedRecipeIDs = Set<String>()
     
     @State var partsExpanded = true
     @State var equipmentExpanded = true
     @State var recipesExpanded = true
     @State var factoriesExpanded = true
     
-    @Dependency(\.storageClient) var storageClient
+//    @Dependency(\.storageClient) var storageClient
     
     var body: some View {
         TabView {
@@ -120,7 +111,7 @@ private struct FileManagerCheckView: View {
                 List {
                     Section("Parts", isExpanded: $partsExpanded) {
                         ForEach(parts) { part in
-                            let isPinned = storageClient.isPartPinned(part)
+                            let isPinned = pinnedPartIDs.contains(part.id)
                             
                             HStack {
                                 Text(part.id)
@@ -137,7 +128,7 @@ private struct FileManagerCheckView: View {
                     
                     Section("Equipment", isExpanded: $equipmentExpanded) {
                         ForEach(equipment) { equipment in
-                            let isPinned = storageClient.isEquipmentPinned(equipment)
+                            let isPinned = pinnedEquipmentIDs.contains(equipment.id)
                             
                             HStack {
                                 Text(equipment.id)
@@ -154,7 +145,7 @@ private struct FileManagerCheckView: View {
                     
                     Section("Recipes", isExpanded: $recipesExpanded) {
                         ForEach(recipes) { recipe in
-                            let isPinned = storageClient.isRecipePinned(recipe)
+                            let isPinned = pinnedRecipeIDs.contains(recipe.id)
                             
                             HStack {
                                 Text(recipe.id)
@@ -190,6 +181,30 @@ private struct FileManagerCheckView: View {
                 Label("Storage", systemImage: "3.square")
             }
         }
+//        .task {
+//            for await pinnedPartIDs in storageClient.pinnedPartIDs() {
+//                self.pinnedPartIDs = pinnedPartIDs
+//            }
+//        }
+//        .task {
+//            for await pinnedEquipmentIDs in storageClient.pinnedEquipmentIDs() {
+//                self.pinnedEquipmentIDs = pinnedEquipmentIDs
+//            }
+//        }
+//        .task {
+//            for await pinnedRecipeIDs in storageClient.pinnedRecipeIDs() {
+//                self.pinnedRecipeIDs = pinnedRecipeIDs
+//            }
+//        }
+//        .task {
+//            for await factories in storageClient.factories() {
+//                self.factories = factories.map { factory in
+//                    FactoryListView(id: factory.id, name: factory.name, children: factory.productions.map { production in
+//                        FactoryListView(id: production.id, name: production.name)
+//                    })
+//                }
+//            }
+//        }
         .onAppear {
             load()
         }
@@ -277,19 +292,14 @@ private struct FileManagerCheckView: View {
     }
     
     private func loadStorage() {
-        Task { @MainActor [storageClient] in
-            try await storageClient.load()
-            
-            parts = storageClient.parts()
-            equipment = storageClient.equipment()
-            recipes = storageClient.recipes()
-            factories = storageClient.factories().map { factory in
-                FactoryListView(id: factory.id, name: factory.name, children: factory.productions.map { production in
-                    FactoryListView(id: production.id, name: production.name)
-                })
-            }
-            
-            loadV2Files()
-        }
+//        Task { @MainActor [storageClient] in
+//            try await storageClient.load()
+//            
+//            parts = storageClient.parts()
+//            equipment = storageClient.equipment()
+//            recipes = storageClient.recipes()
+//
+//            loadV2Files()
+//        }
     }
 }

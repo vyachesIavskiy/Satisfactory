@@ -7,7 +7,11 @@ struct RecipeCalculatorHeader: View {
     
     var body: some View {
         HStack {
-            ItemRow(item: item)
+            Image(item.imageName)
+                .resizable()
+                .frame(width: 30, height: 30)
+            
+            Text(item.name)
             
             Spacer()
             

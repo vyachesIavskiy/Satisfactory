@@ -1,141 +1,250 @@
 import SwiftUI
+import Dependencies
+import SHModels
+import SHStorage
 
-extension ItemListView {
-    final class Model: ObservableObject {
-        @Published var pinnedExpanded = true
-        @Published var partsExpanded = true
-        @Published var equipmentExpanded = true
+final class ItemListViewModel: ObservableObject {
+    struct PinnedSection: Identifiable {
+        var items: [any SHModels.Item]
+        var isExpanded = true
         
-        @Published var searchTerm = ""
+        var id: String { "Pinned" }
+    }
+    
+    struct Section<SectionItem: SHModels.Item>: Identifiable, Comparable {
+        var category: SHModels.Category
+        var items: [SectionItem]
+        var isExpanded = true
         
-        var pinnedItems: [Item] {
-            filteredParts.filter(\.isPinned) +
-            filteredEquipment.filter(\.isPinned)
+        var id: String { category.id }
+        
+        static func < (lhs: ItemListViewModel.Section<SectionItem>, rhs: ItemListViewModel.Section<SectionItem>) -> Bool {
+            lhs.category < rhs.category
+        }
+    }
+    
+    private var _parts = [SHModels.Part]()
+    private var _equipment = [SHModels.Equipment]()
+    
+    @Published var pinnedSection = PinnedSection(items: [])
+    @Published var partSections = [Section<SHModels.Part>]()
+    @Published var equipmentSections = [Section<SHModels.Equipment>]()
+    
+//    @Dependency(\.storageClient)
+//    private var storageClient
+    
+    @Published var pinnedExpanded = true
+    @Published var partsExpanded = true
+    @Published var equipmentExpanded = true
+    
+    @Published var searchTerm = ""
+    
+    let storage = Storage()
+    
+    private func satisfySearchTerm(_ item: some SHModels.Item) -> Bool {
+        guard !searchTerm.isEmpty else { return true }
+        
+        let searchTerm = searchTerm.lowercased()
+        
+        return item.id.lowercased().contains(searchTerm) ||
+        item.localizedName.lowercased().contains(searchTerm) ||
+        item.localizedDescription.lowercased().contains(searchTerm)
+    }
+    
+    @MainActor
+    func pinItem(_ item: some SHModels.Item) {
+        // TODO: Pin item
+    }
+    
+    @MainActor
+    func viewAppear() {
+        func automaticallyCraftable(_ item: some SHModels.Item) -> Bool {
+//            let recipes = storageClient.recipesForItem(item, .output) + storageClient.recipesForItem(item, .byproduct)
+//            
+//            return !recipes.filter { $0.machine != nil }.isEmpty
+            true
         }
         
-        var parts: [Part] {
-            filteredParts.filter { !$0.isPinned }
-        }
+        // Fetch and store all parts and equipment since their data is static
+//        _parts = storageClient.parts().filter(automaticallyCraftable)
+//        _equipment = storageClient.equipment().filter(automaticallyCraftable)
         
-        var equipment: [Equipment] {
-            filteredEquipment.filter { !$0.isPinned }
-        }
+        _parts = []
+        _equipment = []
         
-        private let storage: Storage
+        // Collect pinned items
+        pinnedSection.items = _parts + _equipment
         
-        private var filteredParts: [Part] {
-            storage.parts.filter {
-                !storage[recipesFor: $0.id].isEmpty &&
-                (
-                    searchTerm.isEmpty ||
-                    (
-                        $0.id.lowercased().contains(searchTerm.lowercased()) ||
-                        $0.name.lowercased().contains(searchTerm.lowercased())
-                    )
-                )
+        // Devide pinned/not pinned items
+        partSections = _parts.reduce(into: []) { partialResult, part in
+            if let index = partialResult.firstIndex(where: { $0.category == part.category }) {
+                partialResult[index].items.append(part)
+            } else {
+                partialResult.append(Section(category: part.category, items: [part]))
             }
-            .sortedByTiers()
-        }
+        }.sorted()
         
-        private var filteredEquipment: [Equipment] {
-            storage.equipments.filter {
-                !storage[recipesFor: $0.id].isEmpty &&
-                (
-                    searchTerm.isEmpty ||
-                    (
-                        $0.id.lowercased().contains(searchTerm.lowercased()) ||
-                        $0.name.lowercased().contains(searchTerm.lowercased())
-                    )
-                )
+        equipmentSections = _equipment.reduce(into: []) { partialResult, equipment in
+            if let index = partialResult.firstIndex(where: { $0.category == equipment.category }) {
+                partialResult[index].items.append(equipment)
+            } else {
+                partialResult.append(Section(category: equipment.category, items: [equipment]))
             }
+        }.sorted()
+        
+        for index in partSections.indices {
+            partSections[index].items.sortByName()
         }
         
-        init(storage: Storage) {
-            self.storage = storage
+        for index in equipmentSections.indices {
+            equipmentSections[index].items.sortByName()
         }
+    }
+    
+    @MainActor
+    func pinsTask() async {
+//        for await pins in storageClient.pinsStream() {
+//            objectWillChange.send()
+//        }
     }
 }
 
 struct ItemListView: View {
-    @ObservedObject var model: Model
-    
-    @EnvironmentObject private var storage: Storage
+    @ObservedObject var viewModel: ItemListViewModel
     
     // MARK: - UI
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
-                LazyVStack(spacing: 18) {
-                    ListItemSection(title: "Pinned", items: model.pinnedItems, isSearching: !model.searchTerm.isEmpty, isExpanded: $model.pinnedExpanded)
-                    ListItemSection(title: "Parts", items: model.parts, isSearching: !model.searchTerm.isEmpty, isExpanded: $model.partsExpanded)
-                    ListItemSection(title: "Equipment", items: model.equipment, isSearching: !model.searchTerm.isEmpty, isExpanded: $model.equipmentExpanded)
+                LazyVStack {
+//                    ListItemSection(
+//                        title: "Pinned",
+//                        items: viewModel.pinnedSection.items,
+//                        isSearching: !viewModel.searchTerm.isEmpty,
+//                        isExpanded: $viewModel.pinnedSection.isExpanded
+//                    ) { viewModel.pinItem($0) }
+                    
+                    pinnedSection($viewModel.pinnedSection)
+                    
+                    ForEach($viewModel.partSections) { $section in
+                        sectionView($section)
+                        
+//                        ListItemSection(
+//                            title: section.category.localizedName,
+//                            items: section.items,
+//                            isSearching: !viewModel.searchTerm.isEmpty,
+//                            isExpanded: $section.isExpanded
+//                        ) { viewModel.pinItem($0) }
+                    }
+                    
+                    ForEach($viewModel.equipmentSections) { $section in
+                        sectionView($section)
+//                        ListItemSection(
+//                            title: section.category.localizedName,
+//                            items: section.items,
+//                            isSearching: !viewModel.searchTerm.isEmpty,
+//                            isExpanded: $section.isExpanded
+//                        ) { viewModel.pinItem($0) }
+                    }
                 }
                 .padding(.horizontal, 16)
             }
             .searchable(
-                text: $model.searchTerm,
-                placement: .navigationBarDrawer(displayMode: .always),
+                text: $viewModel.searchTerm,
+                placement: .navigationBarDrawer,
                 prompt: "Search"
             )
             .autocorrectionDisabled(true)
             .navigationTitle("New Production")
         }
-        .navigationViewStyle(.stack)
+        .onAppear(perform: viewModel.viewAppear)
+        .task {
+            await viewModel.pinsTask()
+        }
     }
     
-    @ViewBuilder private func section(
-        _ title: LocalizedStringKey,
-        items: [Item],
-        isExpanded: Binding<Bool>
-    ) -> some View {
-        if !items.isEmpty {
+    @ViewBuilder
+    private func pinnedSection(_ section: Binding<ItemListViewModel.PinnedSection>) -> some View {
+        if !section.wrappedValue.items.isEmpty {
             Section {
-                if isExpanded.wrappedValue {
-                    VStack(spacing: 0) {
-                        itemsList(items)
-                        
-                        ListSectionFooterShape(cornerRadius: 10)
-                            .stroke(lineWidth: 0.75)
-                            .foregroundStyle(Color("Secondary").opacity(0.75))
-                            .listRowInsets(.none)
-                            .padding(.bottom, 10)
+                if section.wrappedValue.isExpanded {
+                    ForEach(section.wrappedValue.items, id: \.id) { item in
+                        itemView(item)
+                            .tag(item.id)
+                            .id(item.id)
+                            .transition(.move(edge: .top).combined(with: .opacity))
                     }
-                    .transition(.move(edge: .top).combined(with: .opacity))
+                    
+//                    if viewModel.searchTerm.isEmpty {
+//                        sectionFooter
+//                    }
                 }
             } header: {
-                ListSectionHeaderNew(title: title, isExpanded: isExpanded)
-                    .padding(.vertical, 10)
+                if viewModel.searchTerm.isEmpty {
+                    sectionHeader(
+                        title: "Pinned",
+                        isExpanded: section.isExpanded
+                    )
+                }
             }
-            
         }
     }
     
-    private func itemsList(_ items: [Item]) -> some View {
-        ForEach(items, id: \.id) { item in
-            itemView(item)
+    @ViewBuilder
+    private func sectionView<I: SHModels.Item>(_ section: Binding<ItemListViewModel.Section<I>>) -> some View {
+        if !section.wrappedValue.items.isEmpty {
+            Section {
+                if section.wrappedValue.isExpanded {
+                    ForEach(section.wrappedValue.items, id: \.id) { item in
+                        itemView(item)
+                            .tag(item.id)
+                            .id(item.id)
+                            .transition(.move(edge: .top).combined(with: .opacity))
+                    }
+                    
+//                    if viewModel.searchTerm.isEmpty {
+//                        sectionFooter
+//                    }
+                }
+            } header: {
+                if viewModel.searchTerm.isEmpty {
+                    sectionHeader(
+                        title: section.wrappedValue.category.localizedName,
+                        isExpanded: section.isExpanded
+                    )
+                }
+            }
         }
     }
     
-    private func itemView(_ item: Item) -> some View {
+    @ViewBuilder
+    private func sectionHeader(title: String, isExpanded: Binding<Bool>) -> some View {
+//        ListSectionHeaderNew(title: title, isExpanded: isExpanded)
+        Text(title)
+    }
+    
+    @ViewBuilder
+    private func itemView(_ item: any SHModels.Item) -> some View {
         NavigationLink {
-            RecipeCalculationView(item: item)
+//            RecipeCalculationView(item: item)
         } label: {
-            ListItemRow(item: item)
+            NewProductionView.ItemRow(item)
+                .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .padding(10)
-        .contextMenu {
-            Button {
-                withAnimation {
-                    storage[itemID: item.id]?.isPinned.toggle()
-                }
-            } label: {
-                Label(
-                    storage[itemID: item.id]?.isPinned == true ? "Unpin" : "Pin",
-                    systemImage: storage[itemID: item.id]?.isPinned == true ? "pin.fill" : "pin"
-                )
-            }
-        }
+        .padding(.horizontal, 10)
+//        .contextMenu {
+//            Button {
+//                withAnimation {
+//                    storage[itemID: item.id]?.isPinned.toggle()
+//                }
+//            } label: {
+//                Label(
+//                    storage[itemID: item.id]?.isPinned == true ? "Unpin" : "Pin",
+//                    systemImage: storage[itemID: item.id]?.isPinned == true ? "pin.fill" : "pin"
+//                )
+//            }
+//        }
     }
 }
 
@@ -143,7 +252,7 @@ struct ItemListPreview: PreviewProvider {
     @StateObject private static var storage: Storage = PreviewStorage()
     
     static var previews: some View {
-        ItemListView(model: ItemListView.Model(storage: storage))
+        ItemListView(viewModel: ItemListViewModel())
             .environmentObject(storage)
             .environmentObject(Settings())
     }

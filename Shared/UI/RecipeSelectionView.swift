@@ -37,16 +37,11 @@ struct RecipeSelectionView: View {
                     Section {
                         if isPinnedRecipesExpanded {
                             recipesList(pinnedRecipes)
-                            
-                            ListSectionFooterShape(cornerRadius: 10)
-                                .stroke(lineWidth: 0.75)
-                                .foregroundStyle(Color("Secondary").opacity(0.75))
-                                .shadow(color: Color("Secondary").opacity(0.5), radius: 2)
                         }
                     } header: {
                         
-                        ListSectionHeaderNew(title: "Pinned Recipes", isExpanded: $isPinnedRecipesExpanded)
-                            .foregroundStyle(.primary)
+//                        ListSectionHeaderNew(title: "Pinned Recipes", isExpanded: $isPinnedRecipesExpanded)
+//                            .foregroundStyle(.primary)
                     }
                     .listRowSeparator(.hidden)
                 }
@@ -54,17 +49,10 @@ struct RecipeSelectionView: View {
                 Section {
                     if isRecipesExpanded {
                         recipesList(sortedRecipes)
-                        
-                        if !pinnedRecipes.isEmpty {
-                            ListSectionFooterShape(cornerRadius: 10)
-                                .stroke(lineWidth: 0.75)
-                                .foregroundStyle(Color("Secondary").opacity(0.75))
-                                .shadow(color: Color("Secondary").opacity(0.5), radius: 2)
-                        }
                     }
                 } header: {
                     if !pinnedRecipes.isEmpty {
-                        ListSectionHeaderNew(title: "Recipes", isExpanded: $isRecipesExpanded)
+//                        ListSectionHeaderNew(title: "Recipes", isExpanded: $isRecipesExpanded)
                     }
                 }
                 .listRowSeparator(.hidden)

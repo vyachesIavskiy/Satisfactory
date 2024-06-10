@@ -7,16 +7,15 @@ struct ItemCell: View {
     var isSelected: Bool = false
     var isExtractable: Bool = false
     
-    private var selectionGradient: Gradient {
-        if isSelected {
-            return .itemSelection
+    @Environment(\.colorScheme) private var colorScheme
+    
+    private var itemBackgroundStyle: AnyShapeStyle {
+        switch colorScheme {
+        case .light: AnyShapeStyle(.background)
+        case .dark: AnyShapeStyle(.background.quinary)
+            
+        @unknown default: AnyShapeStyle(.background)
         }
-        
-        if isExtractable {
-            return .itemExtractable
-        }
-        
-        return .empty
     }
     
     private var backgroundColor: Color {
@@ -31,41 +30,36 @@ struct ItemCell: View {
         VStack(spacing: 4) {
             Image(item.imageName)
                 .resizable()
-                .frame(width: 54, height: 54)
-                .padding(6)
+                .frame(width: 50, height: 50)
+                .padding(8)
                 .background(
-                    Color("Secondary").opacity(0.3),
-                    in: AngledRectangle(cornerRadius: 8).stroke(lineWidth: 1)
-                )
-                .background(
-                    LinearGradient(
-                        gradient: selectionGradient,
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ),
-                    in: AngledRectangle(cornerRadius: 8)
+                    Color("Primary").opacity(isSelected ? 0.2 : 0.0),
+                    in: AngledRectangle(cornerRadius: 10)
                 )
                 .background(
                     .background,
-                    in: AngledRectangle(cornerRadius: 8)
+                    in: AngledRectangle(cornerRadius: 10)
+                )
+                .overlay(
+                    Color("Secondary").opacity(0.3),
+                    in: AngledBottomLine(cornerRadius: 10)
+                        .stroke(lineWidth: 1)
                 )
             
             Text(amountPerMinute)
-                .font(.system(size: 18, weight: .medium))
                 .foregroundColor(.white)
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: 50)
         }
-        .padding([.horizontal, .top], 4)
         .padding(.bottom, 5)
         .fixedSize()
         .background(
+            backgroundColor,
+            in: AngledRectangle(cornerRadius: 10)
+        )
+        .overlay(
             Color("Secondary").opacity(0.3),
             in: AngledRectangle(cornerRadius: 10)
                 .stroke(lineWidth: 1.5)
-        )
-        .background(
-            backgroundColor,
-            in: AngledRectangle(cornerRadius: 10)
         )
     }
 }

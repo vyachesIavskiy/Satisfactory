@@ -44,6 +44,7 @@ private struct MaxSizeProvider: ViewModifier {
 }
 
 extension View {
+    // MARK: Size
     @ViewBuilder
     func readSize(_ onChange: @escaping (CGSize) -> Void) -> some View {
         modifier(SizeReader(onChange: onChange))
@@ -54,6 +55,7 @@ extension View {
         readSize { size.wrappedValue = $0 }
     }
     
+    // MARK: Max Size
     @ViewBuilder
     func provideMaxSize() -> some View {
         modifier(MaxSizeProvider())
@@ -75,8 +77,15 @@ private struct _SizeReaderPreview: View {
     @State private var size = CGSize.zero
     
     var body: some View {
-        Text("(\(size.width), \(size.height))")
-            .readSize($size)
+        VStack(spacing: 24) {
+            Text("The size of this text will be read and prompted below")
+                .multilineTextAlignment(.center)
+                .border(.orange, width: 1)
+                .readSize($size)
+            
+            Text("[w: \(size.width.formatted(.fractionFromZeroToFour)), h: \(size.height.formatted(.fractionFromZeroToFour))]")
+                .foregroundStyle(.orange)
+        }
     }
 }
 
@@ -86,16 +95,30 @@ private struct _MaxSizeReaderPreview: View {
     @State private var maxSize = CGSize.zero
     
     var body: some View {
-        VStack {
-            Text("Text 1 size is (\(size1.width), \(size1.height))")
+        VStack(spacing: 24) {
+            Text("Small text in orange border")
+                .multilineTextAlignment(.center)
+                .border(.orange, width: 1)
                 .provideMaxSize()
                 .readSize($size1)
             
-            Text("Text 2 should be bigger with it's size is (\(size2.width), \(size2.height))")
+            Text("Bigger test in red border that will hold a couple of additional words to represent bigger UI control")
+                .multilineTextAlignment(.center)
+                .border(.red, width: 2)
                 .provideMaxSize()
                 .readSize($size2)
             
-            Text("Max size is (\(maxSize.width), \(maxSize.height))")
+            HStack {
+                Text("[w: \(size1.width.formatted(.fractionFromZeroToFour)), h: \(size1.height.formatted(.fractionFromZeroToFour))]")
+                    .foregroundStyle(.orange)
+                
+                Text("[w: \(size2.width.formatted(.fractionFromZeroToFour)), h: \(size2.height.formatted(.fractionFromZeroToFour))]")
+                    .foregroundStyle(.red)
+            }
+            
+            Text("Max: [w: \(maxSize.width.formatted(.fractionFromZeroToFour)), h: \(maxSize.height.formatted(.fractionFromZeroToFour))]")
+                .foregroundStyle(size1 == maxSize ? .orange : .red)
+                .bold()
         }
         .readMaxSize($maxSize)
     }

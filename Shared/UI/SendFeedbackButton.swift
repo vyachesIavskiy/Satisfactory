@@ -10,7 +10,7 @@ struct SendFeedbackButton: View {
     
     @State private var state = ButtonState.initial
     @State private var showSendFeedback = false
-    @State private var feedbackResult: SendFeedbackView.Result?
+//    @State private var feedbackResult: SendFeedbackView.Result?
     
     private var canSendMail: Bool {
         MFMailComposeViewController.canSendMail()
@@ -51,7 +51,7 @@ struct SendFeedbackButton: View {
         .sheet(isPresented: $showSendFeedback) {
             // Only real device can send email
             if canSendMail {
-                SendFeedbackView(result: $feedbackResult)
+//                SendFeedbackView(result: $feedbackResult)
             } else {
                 // On simulators or previews we will fake it
                 HStack(spacing: 24) {
@@ -75,15 +75,15 @@ struct SendFeedbackButton: View {
                 }
             }
         }
-        .onChange(of: feedbackResult) { newValue in
-            switch newValue {
-            case .sent:
-                state = .result
-                
-            default:
-                state = .initial
-            }
-        }
+//        .onChange(of: feedbackResult) { newValue in
+//            switch newValue {
+//            case .sent:
+//                state = .result
+//                
+//            default:
+//                state = .initial
+//            }
+//        }
     }
 }
 
@@ -123,11 +123,11 @@ private struct SendFeedbackButtonStyle<ResultView: View>: PrimitiveButtonStyle {
         .scaleEffect(isPressing ? 0.95 : 1)
         .animation(.default, value: isPressing)
         .animation(.default, value: state)
-        .gesture(
-            _ButtonGesture(action: configuration.trigger) { newPressing in
-                isPressing = newPressing
-            }
-        )
+        ._onButtonGesture { isPressing in
+            self.isPressing = isPressing
+        } perform: {
+            configuration.trigger()
+        }
     }
 }
 

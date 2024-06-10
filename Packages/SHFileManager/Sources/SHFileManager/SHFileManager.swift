@@ -9,8 +9,8 @@ public final class SHFileManager {
     
     // MARK: - URLs
     
-    public func url(for searchPathDirectory: FileManager.SearchPathDirectory = .documentDirectory) throws -> URL {
-        try _fileManager.url(for: searchPathDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+    public var url: URL {
+        URL.documentsDirectory
     }
     
     public func contentsOfDirectory(at url: URL) throws -> [URL] {

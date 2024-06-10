@@ -52,7 +52,7 @@ struct RecipeProductionGroupView: View {
                     .fontWeight(.medium)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    RecipeProductionView(viewModel: RecipeProductionViewModel(recipe: recipe))
+                    RecipeProductionView(viewModel: RecipeProductionViewModel(entry: ProductionRecipeEntry(item: recipe.output.item, recipe: recipe, amounts: (10.0, 20.0))))
                         .matchedGeometryEffect(id: recipe.id, in: namespace)
                 }
                 .padding(.horizontal, recipes.count > 1 ? 16 : 0)
@@ -109,6 +109,7 @@ private struct _RecipeProductionGroupPreview: View {
     var body: some View {
         if let item {
             RecipeProductionGroupView(item: item, recipes: recipes)
+                .padding()
         } else {
             Text("'\(itemID)' not found")
                 .multilineTextAlignment(.center)

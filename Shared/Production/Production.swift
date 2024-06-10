@@ -701,7 +701,7 @@ struct ProductionViewTest: View {
     }
     
     @ViewBuilder private func recipeRow(recipeEntry: ProductionRecipeEntry) -> some View {
-        RecipeProductionView(viewModel: RecipeProductionViewModel(recipe: recipeEntry.recipe))
+        RecipeProductionView(viewModel: RecipeProductionViewModel(entry: recipeEntry))
     }
 }
 

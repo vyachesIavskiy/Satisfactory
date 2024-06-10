@@ -6,18 +6,18 @@ import SHModels
 
 @Observable
 final class RecipeProductionViewModel {
-    let recipe: Recipe
+    let entry: ProductionRecipeEntry
     private(set) var viewMode: ViewMode
     
     @ObservationIgnored
     @Dependency(\.settingsService)
     var settingsService
     
-    init(recipe: Recipe) {
+    init(entry: ProductionRecipeEntry) {
         @Dependency(\.settingsService.currentSettings)
         var settings
         
-        self.recipe = recipe
+        self.entry = entry
         self.viewMode = settings().viewMode
     }
     
@@ -39,7 +39,7 @@ struct RecipeProductionView: View {
     @Environment(\.displayScale)
     private var displayScale
     
-    private let gridItem = GridItem(.fixed(62), spacing: 8)
+    private let gridItem = GridItem(.adaptive(minimum: 80), spacing: 8, alignment: .top)
     
     var body: some View {
         ZStack {
@@ -60,33 +60,33 @@ struct RecipeProductionView: View {
     private var iconBody: some View {
         ViewThatFits(in: .horizontal) {
             HStack(alignment: .top, spacing: 24) {
-                HStack(alignment: .top, spacing: 8) {
-                    recipeCell(for: viewModel.recipe.output)
+                HStack(alignment: .top, spacing: 12) {
+                    ingredientIconView(for: viewModel.entry.recipe.output)
                     
-                    ForEach(viewModel.recipe.byproducts) { byproduct in
-                        recipeCell(for: byproduct)
+                    ForEach(viewModel.entry.recipe.byproducts) { byproduct in
+                        ingredientIconView(for: byproduct)
                     }
                 }
                 
-                HStack(alignment: .top, spacing: 8) {
-                    ForEach(viewModel.recipe.input) { input in
-                        recipeCell(for: input)
+                HStack(alignment: .top, spacing: 12) {
+                    ForEach(viewModel.entry.recipe.input) { input in
+                        ingredientIconView(for: input)
                     }
                 }
             }
             
             HStack(alignment: .top, spacing: 24) {
-                VStack(spacing: 8) {
-                    recipeCell(for: viewModel.recipe.output)
+                VStack(spacing: 12) {
+                    ingredientIconView(for: viewModel.entry.recipe.output)
                     
-                    ForEach(viewModel.recipe.byproducts) { byproduct in
-                        recipeCell(for: byproduct)
+                    ForEach(viewModel.entry.recipe.byproducts) { byproduct in
+                        ingredientIconView(for: byproduct)
                     }
                 }
                 
-                LazyVGrid(columns: [gridItem, gridItem], spacing: 8) {
-                    ForEach(viewModel.recipe.input) { input in
-                        recipeCell(for: input)
+                LazyVGrid(columns: [gridItem, gridItem], spacing: 12) {
+                    ForEach(viewModel.entry.recipe.input) { input in
+                        ingredientIconView(for: input)
                     }
                 }
                 .fixedSize()
@@ -98,167 +98,120 @@ struct RecipeProductionView: View {
     private var rowBody: some View {
         VStack(spacing: 12) {
             VStack(spacing: 6) {
-                recipeRow(for: viewModel.recipe.output)
+                ingredientRowView(for: viewModel.entry.recipe.output)
                 
-                ForEach(viewModel.recipe.byproducts) { byproduct in
-                    recipeRow(for: byproduct)
+                ForEach(viewModel.entry.recipe.byproducts) { byproduct in
+                    ingredientRowView(for: byproduct)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.trailing, 24)
             
             VStack(spacing: 6) {
-                ForEach(viewModel.recipe.input) { input in
-                    recipeRow(for: input)
+                ForEach(viewModel.entry.recipe.input) { input in
+                    ingredientRowView(for: input)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(.leading, 24)
         }
     }
     
     @ViewBuilder 
-    private func recipeCell(for ingredient: Recipe.Ingredient) -> some View {
+    private func ingredientIconView(for ingredient: Recipe.Ingredient) -> some View {
         let ingredientValues = IngredientValues(from: ingredient)
-        
-        ZStack {
-            ZStack {
-                ingredientValues.color
-                
-                RecipeByproductShape()
-                    .foregroundStyle(ingredientValues.byproductColor)
-            }
-            .inverseMask {
-                ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius - 2 / displayScale)
-                    .padding(4 / displayScale)
-                    .inverseMask {
-                        Text(viewModel.recipe.amountPerMinute(for: ingredient), format: .fractionFromZeroToFour)
-                            .frame(maxWidth: 50)
-                            .padding(.vertical, 2)
-                            .frame(maxWidth: .infinity)
-                            .overlay {
-                                Rectangle()
-                            }
-                            .frame(maxHeight: .infinity, alignment: .bottom)
-                    }
-            }
+
+        VStack(spacing: 0) {
+            Image(ingredient.item.id)
+                .resizable()
+                .frame(width: 50, height: 50)
+                .padding(5)
             
-            VStack(spacing: 0) {
-                ZStack {
-                    // Selection style goes here
-                    
-                    Image(ingredient.item.id)
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .padding(6)
-                        .background(
-                            .background,
-                            in: ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
-                        )
+            Text(viewModel.entry.actualAmount(for: ingredient.item), format: .fractionFromZeroToFour)
+                .multilineTextAlignment(.center)
+                .font(.callout)
+                .fontWeight(.medium)
+                .minimumScaleFactor(0.8)
+                .lineLimit(2)
+                .frame(width: 80)
+                .padding(.vertical, 4)
+                .padding(.horizontal, 8)
+                .background {
+                    ZStack {
+                        ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                            .fill(ingredientValues.color)
+                            .padding(-4 / displayScale)
+                            .blur(radius: 3)
+                            .inverseMask {
+                                ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                            }
+                        
+                        ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                            .fill(.background)
+                        
+                        RecipeByproductShape()
+                            .foregroundStyle(ingredientValues.byproductColor)
+                            .clipShape(ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius))
+                    }
                 }
-                
-                Text(viewModel.recipe.amountPerMinute(for: ingredient), format: .fractionFromZeroToFour)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: 50)
-                    .padding(.vertical, 2)
-                    .frame(maxWidth: .infinity)
-            }
-            .padding(4 / displayScale)
         }
-        .fixedSize()
-        .clipShape(ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius))
     }
     
     @ViewBuilder 
-    private func recipeRow(for ingredient: Recipe.Ingredient) -> some View {
+    private func ingredientRowView(for ingredient: Recipe.Ingredient) -> some View {
         let ingredientValues = IngredientValues(from: ingredient)
         
-        ZStack {
-            ZStack {
-                ingredientValues.color
-                
-                RecipeByproductShape()
-                    .foregroundStyle(ingredientValues.byproductColor)
-            }
-            .inverseMask {
-                ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius - (2 / displayScale))
-                    .inset(by: 4 / displayScale)
-                    .inverseMask {
-                        Rectangle()
-                            .frame(height: 8)
-                            .padding(4 / displayScale)
-                            .frame(maxHeight: .infinity, alignment: .bottom)
-                    }
-            }
-            
-            ZStack {
-                // Selection styles here
-                
-                HStack(alignment: .firstTextBaseline, spacing: 8) {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                HStack {
                     Image(ingredient.item.id)
                         .resizable()
-                        .frame(width: 35, height: 35)
-                        .alignmentGuide(.firstTextBaseline) { d in
-                            d[VerticalAlignment.center] + 8
-                        }
-                        .padding(.vertical, 6)
-                        .padding(.leading, 10)
+                        .frame(width: 30, height: 30)
+                        .padding(5)
                     
                     Text(ingredient.item.localizedName)
+                        .font(.callout)
                     
                     Spacer()
-                    
-                    Text(viewModel.recipe.amountPerMinute(for: ingredient), format: .fractionFromZeroToFour)
-                        .font(.headline)
-                        .multilineTextAlignment(.trailing)
-                        .padding(.trailing, 16)
                 }
-            }
-            .padding(.bottom, 8)
-        }
-        .clipShape(ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius))
-    }
-    
-    private func resolvedShapeStyle(for ingredient: Recipe.Ingredient) -> AnyShapeStyle {
-        switch ingredient.role {
-        case .output:
-            return AnyShapeStyle(Color("Colors/Output"))
-            
-        case .byproduct, .input:
-            let part = (ingredient.item as? Part)
-            return if part?.isNaturalResource == true {
-                AnyShapeStyle(.sh(.midnight))
-            } else {
-                switch part?.form {
-                case .solid, nil:
-                    AnyShapeStyle(.sh(.orange))
-                case .fluid, .gas:
-                    AnyShapeStyle(.sh(.cyan))
+                .overlay {
+                    Rectangle()
+                        .fill(ingredientValues.color)
+                        .frame(height: 2 / displayScale)
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                        .padding(.trailing, 12)
                 }
+                
+                Text(viewModel.entry.actualAmount(for: ingredient.item), format: .fractionFromZeroToFour)
+                    .multilineTextAlignment(.center)
+                    .font(.callout)
+                    .fontWeight(.medium)
+                    .minimumScaleFactor(0.8)
+                    .lineLimit(2)
+                    .frame(width: 80)
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 8)
+                    .background {
+                        ZStack {
+                            ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                                .fill(ingredientValues.color)
+                                .padding(-4 / displayScale)
+                                .blur(radius: 3)
+                                .inverseMask {
+                                    ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                                }
+                            
+                            ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                                .fill(.background)
+                            
+                            RecipeByproductShape()
+                                .foregroundStyle(ingredientValues.byproductColor)
+                                .clipShape(ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius))
+                        }
+                    }
             }
         }
-    }
-    
-    private func resolvedAmountBackgroundColor(for ingredient: Recipe.Ingredient) -> Color {
-        switch ingredient.role {
-        case .output: .sh(.gray)
-            
-        case .input, .byproduct:
-            switch (ingredient.item as? Part)?.form {
-            case .solid, nil: .sh(.orange)
-            case .fluid, .gas: .sh(.cyan)
-            }
-        }
-    }
-    
-    private func resolvedAmountByproductBackgroundColor(for ingredient: Recipe.Ingredient) -> Color {
-        switch ingredient.role {
-        case .output, .input: .clear
-        
-        case .byproduct:
-            switch (ingredient.item as? Part)?.form {
-            case .solid, nil: .sh(.orange80)
-            case .fluid, .gas: .sh(.cyan80)
-            }
-        }
+        .frame(maxWidth: 350)
     }
 }
 
@@ -273,39 +226,29 @@ private extension RecipeProductionView {
             
             switch ingredient.role {
             case .output:
-                color = .gray
+                color = .sh(.gray50)
                 byproductColor = .clear
                 
             case .input:
                 byproductColor = .clear
                 
-                if (ingredient.item as? Part)?.isNaturalResource == true {
-                    switch form {
-                    case .solid, nil:
-                        color = .sh(.orange90)
-                        
-                    case .fluid, .gas:
-                        color = .sh(.cyan90)
-                    }
-                } else {
-                    switch form {
-                    case .solid, nil:
-                        color = .sh(.orange)
-                        
-                    case .fluid, .gas:
-                        color = .sh(.cyan)
-                    }
+                switch form {
+                case .solid, nil:
+                    color = .sh(.orange50)
+                    
+                case .fluid, .gas:
+                    color = .sh(.cyan50)
                 }
                 
             case .byproduct:
                 switch form {
                 case .solid, nil:
-                    color = .sh(.orange)
-                    byproductColor = .sh(.orange80)
+                    color = .sh(.orange50)
+                    byproductColor = .sh(.orange20)
                     
                 case .fluid, .gas:
-                    color = .sh(.cyan)
-                    byproductColor = .sh(.cyan80)
+                    color = .sh(.cyan50)
+                    byproductColor = .sh(.cyan20)
                 }
             }
             
@@ -347,6 +290,7 @@ struct _RecipeProductionPreview: View {
                 }
             }
             .padding(.horizontal)
+            .frame(maxWidth: .infinity)
         }
     }
     
@@ -359,7 +303,11 @@ struct _RecipeProductionPreview: View {
                 AsyncStream { Settings(viewMode: viewMode) }
             }
         } operation: {
-            RecipeProductionViewModel(recipe: recipe)
+            RecipeProductionViewModel(entry: ProductionRecipeEntry(
+                item: recipe.output.item,
+                recipe: recipe,
+                amounts: (20.0, 125.8125)
+            ))
         }
     }
 }

@@ -32,16 +32,15 @@ struct ProductionRecipeEntry {
 // MARK: - Private
 private extension ProductionRecipeEntry {
     func amount(for item: some Item, with multiplier: Double) -> Double {
-//        if item.id == recipe.output.item.id {
-//            recipe.output.amountPerMinute * multiplier
-//        } else if let byproduct = recipe.byproducts.first(where: { $0.id == item.id }) {
-//            byproduct.amountPerMinute * multiplier
-//        } else if let input = recipe.input.first(where: { $0.id == item.id }) {
-//            input.amountPerMinute * multiplier
-//        } else {
-//            0.0
-//        }
-        1.0
+        if item.id == recipe.output.item.id {
+            recipe.amountPerMinute(for: recipe.output) * multiplier
+        } else if let byproduct = recipe.byproducts.first(where: { $0.item.id == item.id }) {
+            recipe.amountPerMinute(for: byproduct) * multiplier
+        } else if let input = recipe.input.first(where: { $0.item.id == item.id }) {
+            recipe.amountPerMinute(for: input) * multiplier
+        } else {
+            0.0
+        }
     }
 }
 

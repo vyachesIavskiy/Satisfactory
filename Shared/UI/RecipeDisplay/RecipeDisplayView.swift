@@ -43,11 +43,11 @@ struct RecipeDisplayView: View {
     @ScaledMetric(relativeTo: .body)
     private var titleSpacing = 8.0
     
-    private let gridItem = GridItem(.adaptive(minimum: 60, maximum: 80), spacing: 8)
+    private let gridItem = GridItem(.adaptive(minimum: 80), spacing: 12)
     
     var body: some View {
         VStack(alignment: .leading, spacing: titleSpacing) {
-            HStack {
+            HStack(alignment: .firstTextBaseline) {
                 Text(viewModel.recipe.localizedName)
                     .fontWeight(.medium)
                 
@@ -76,7 +76,7 @@ struct RecipeDisplayView: View {
     private var iconBody: some View {
         ViewThatFits(in: .horizontal) {
             HStack(alignment: .top, spacing: 24) {
-                HStack(alignment: .top, spacing: 8) {
+                HStack(alignment: .top, spacing: 12) {
                     ingredientIconView(for: viewModel.recipe.output)
                     
                     ForEach(viewModel.recipe.byproducts) { byproduct in
@@ -84,7 +84,7 @@ struct RecipeDisplayView: View {
                     }
                 }
                 
-                HStack(alignment: .top, spacing: 8) {
+                HStack(alignment: .top, spacing: 12) {
                     ForEach(viewModel.recipe.input) { input in
                         ingredientIconView(for: input)
                     }
@@ -92,7 +92,7 @@ struct RecipeDisplayView: View {
             }
             
             HStack(alignment: .top, spacing: 24) {
-                VStack(spacing: 8) {
+                VStack(spacing: 12) {
                     ingredientIconView(for: viewModel.recipe.output)
                     
                     ForEach(viewModel.recipe.byproducts) { byproduct in
@@ -100,7 +100,7 @@ struct RecipeDisplayView: View {
                     }
                 }
                 
-                LazyVGrid(columns: [gridItem, gridItem], spacing: 8) {
+                LazyVGrid(columns: [gridItem, gridItem], spacing: 12) {
                     ForEach(viewModel.recipe.input) { input in
                         ingredientIconView(for: input)
                     }
@@ -120,6 +120,7 @@ struct RecipeDisplayView: View {
                     ingredientRowView(for: byproduct)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.trailing, 24)
             
             VStack(spacing: 6) {
@@ -127,6 +128,7 @@ struct RecipeDisplayView: View {
                     ingredientRowView(for: input)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(.leading, 24)
         }
     }
@@ -134,7 +136,7 @@ struct RecipeDisplayView: View {
     @ViewBuilder
     private var alternateIndicatorView: some View {
         Text("Alternate")
-            .font(.footnote)
+            .font(.callout)
             .fontWeight(.light)
             .padding(.vertical, 2)
             .padding(.horizontal, 6)
@@ -142,110 +144,104 @@ struct RecipeDisplayView: View {
                 AngledRectangle(cornerRadius: 4)
                     .stroke(lineWidth: 2 / displayScale)
             }
-            .foregroundStyle(.sh(.midnight))
+            .foregroundStyle(.sh(.midnight80))
     }
     
     @ViewBuilder
     private func ingredientIconView(for ingredient: Recipe.Ingredient) -> some View {
         let ingredientValues = IngredientValues(from: ingredient)
         
-        ZStack {
-            ZStack {
-                ingredientValues.color
-                
-                RecipeByproductShape()
-                    .foregroundStyle(ingredientValues.byproductColor)
-            }
-            .inverseMask {
-                ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius - 2 / displayScale)
-                    .padding(4 / displayScale)
-                    .inverseMask {
-                        Text(viewModel.recipe.amountPerMinute(for: ingredient), format: .fractionFromZeroToFour)
-                            .frame(maxWidth: 50)
-                            .padding(.vertical, 2)
-                            .frame(maxWidth: .infinity)
-                            .overlay {
-                                Rectangle()
-                            }
-                            .frame(maxHeight: .infinity, alignment: .bottom)
-                    }
-            }
+        VStack(spacing: 0) {
+            Image(ingredient.item.id)
+                .resizable()
+                .frame(width: 50, height: 50)
+                .padding(5)
             
-            VStack(spacing: 0) {
-                ZStack {
-                    // Selection style goes here
-                    
-                    Image(ingredient.item.id)
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .padding(6)
-                        .background(
-                            .background,
-                            in: ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
-                        )
+            Text(viewModel.recipe.amountPerMinute(for: ingredient), format: .fractionFromZeroToFour)
+                .multilineTextAlignment(.center)
+                .font(.callout)
+                .fontWeight(.medium)
+                .minimumScaleFactor(0.8)
+                .lineLimit(2)
+                .frame(width: 80)
+                .padding(.vertical, 4)
+                .padding(.horizontal, 8)
+                .background {
+                    ZStack {
+                        ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                            .fill(ingredientValues.color)
+                            .padding(-4 / displayScale)
+                            .blur(radius: 3)
+                            .inverseMask {
+                                ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                            }
+                        
+                        ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                            .fill(.background)
+                        
+                        RecipeByproductShape()
+                            .foregroundStyle(ingredientValues.byproductColor)
+                            .clipShape(ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius))
+                    }
                 }
-                
-                Text(viewModel.recipe.amountPerMinute(for: ingredient), format: .fractionFromZeroToFour)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: 50)
-                    .padding(.vertical, 2)
-                    .frame(maxWidth: .infinity)
-            }
-            .padding(4 / displayScale)
         }
-        .fixedSize()
-        .clipShape(ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius))
     }
     
     @ViewBuilder
     private func ingredientRowView(for ingredient: Recipe.Ingredient) -> some View {
         let ingredientValues = IngredientValues(from: ingredient)
         
-        ZStack {
-            ZStack {
-                ingredientValues.color
-                
-                RecipeByproductShape()
-                    .foregroundStyle(ingredientValues.byproductColor)
-            }
-            .inverseMask {
-                ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius - (2 / displayScale))
-                    .inset(by: 4 / displayScale)
-                    .inverseMask {
-                        Rectangle()
-                            .frame(height: 8)
-                            .padding(4 / displayScale)
-                            .frame(maxHeight: .infinity, alignment: .bottom)
-                    }
-            }
-            
-            ZStack {
-                // Selection styles here
-                
-                HStack(alignment: .firstTextBaseline, spacing: 8) {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                HStack {
                     Image(ingredient.item.id)
                         .resizable()
-                        .frame(width: 35, height: 35)
-                        .alignmentGuide(.firstTextBaseline) { d in
-                            d[VerticalAlignment.center] + 8
-                        }
-                        .padding(.vertical, 6)
-                        .padding(.leading, 10)
+                        .frame(width: 30, height: 30)
+                        .padding(5)
                     
                     Text(ingredient.item.localizedName)
+                        .font(.callout)
                     
                     Spacer()
-                    
-                    Text(viewModel.recipe.amountPerMinute(for: ingredient), format: .fractionFromZeroToFour)
-                        .font(.headline)
-                        .multilineTextAlignment(.trailing)
-                        .padding(.trailing, 16)
                 }
+                .overlay {
+                    Rectangle()
+                        .fill(ingredientValues.color)
+                        .frame(height: 2 / displayScale)
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                        .padding(.trailing, 12)
+                }
+                
+                Text(viewModel.recipe.amountPerMinute(for: ingredient), format: .fractionFromZeroToFour)
+                    .multilineTextAlignment(.center)
+                    .font(.callout)
+                    .fontWeight(.medium)
+                    .minimumScaleFactor(0.8)
+                    .lineLimit(2)
+                    .frame(width: 80)
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 8)
+                    .background {
+                        ZStack {
+                            ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                                .fill(ingredientValues.color)
+                                .padding(-4 / displayScale)
+                                .blur(radius: 3)
+                                .inverseMask {
+                                    ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                                }
+                            
+                            ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius)
+                                .fill(.background)
+                            
+                            RecipeByproductShape()
+                                .foregroundStyle(ingredientValues.byproductColor)
+                                .clipShape(ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius))
+                        }
+                    }
             }
-            .padding(.bottom, 8)
         }
-        .fixedSize(horizontal: false, vertical: true)
-        .clipShape(ItemIconShape(item: ingredient.item, cornerRadius: ingredientValues.cornerRadius))
+        .frame(maxWidth: 350)
     }
 }
 
@@ -260,7 +256,7 @@ private extension RecipeDisplayView {
             
             switch ingredient.role {
             case .output:
-                color = .gray
+                color = .sh(.gray50)
                 byproductColor = .clear
                 
             case .input:
@@ -268,21 +264,21 @@ private extension RecipeDisplayView {
                 
                 switch form {
                 case .solid, nil:
-                    color = .sh(.orange)
+                    color = .sh(.orange50)
                     
                 case .fluid, .gas:
-                    color = .sh(.cyan)
+                    color = .sh(.cyan50)
                 }
                 
             case .byproduct:
                 switch form {
                 case .solid, nil:
-                    color = .sh(.orange)
-                    byproductColor = .sh(.orange80)
+                    color = .sh(.orange50)
+                    byproductColor = .sh(.orange20)
                     
                 case .fluid, .gas:
-                    color = .sh(.cyan)
-                    byproductColor = .sh(.cyan80)
+                    color = .sh(.cyan50)
+                    byproductColor = .sh(.cyan20)
                 }
             }
             

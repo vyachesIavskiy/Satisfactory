@@ -10,7 +10,8 @@ struct FeedbackView: View {
         case failed
     }
     
-    @Binding var result: Result?
+    @Binding 
+    var result: Result?
     
     var body: some View {
         if EmailFeedbackView.canShow {
@@ -23,9 +24,11 @@ struct FeedbackView: View {
 }
 
 private struct EmailFeedbackView: UIViewControllerRepresentable {
-    @Binding var result: FeedbackView.Result?
+    @Binding 
+    var result: FeedbackView.Result?
     
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) 
+    private var dismiss
     
     static var canShow: Bool {
         MFMailComposeViewController.canSendMail()
@@ -70,7 +73,7 @@ private struct EmailFeedbackView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> some UIViewController {
         let vc = MFMailComposeViewController()
         vc.mailComposeDelegate = context.coordinator
-        vc.navigationBar.tintColor = UIColor(named: "Primary")
+        vc.navigationBar.tintColor = UIColor(named: "Colors/Orange/Orange - 60")
         
         vc.setToRecipients(["satisfactory.helper.app@gmail.com"])
         vc.setSubject("Feedback about Satisfactory Helper app v\(Bundle.main.appVersion)")
@@ -82,9 +85,11 @@ private struct EmailFeedbackView: UIViewControllerRepresentable {
 }
 
 private struct DebugFeedbackView: View {
-    @Binding var result: FeedbackView.Result?
+    @Binding 
+    var result: FeedbackView.Result?
     
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss)
+    private var dismiss
     
     var body: some View {
         NavigationStack {
@@ -112,7 +117,8 @@ private struct DebugFeedbackView: View {
 
 #if DEBUG
 private struct _DebugFeedbackPreview: View {
-    @State private var result: FeedbackView.Result?
+    @State 
+    private var result: FeedbackView.Result?
     
     var body: some View {
         DebugFeedbackView(result: $result)

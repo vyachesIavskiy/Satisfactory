@@ -8,20 +8,6 @@ struct SatisfactoryApp: App {
         WindowGroup {
             RootView()
             
-//            withDependencies { try? $0.storageService.load() } operation: {
-//                ProductionViewTest()
-//            }
-            
-//            withDependencies {
-//                try? $0.storageService.load()
-//            } operation: {
-//                @Dependency(\.storageService)
-//                var storageService
-//                
-//                let item = storageService.item(for: "part-plastic")!
-//                return ProductionView(viewModel: ProductionViewModel(item: item))
-//            }
-            
 //            FileManagerCheckView()
         }
     }

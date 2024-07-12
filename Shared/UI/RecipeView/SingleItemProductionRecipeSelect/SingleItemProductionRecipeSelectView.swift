@@ -8,7 +8,7 @@ struct SingleItemProductionRecipeSelectView: View {
     @Environment(\.displayScale)
     private var displayScale
     
-    @Environment(\.settings.viewMode)
+    @Environment(\.viewMode)
     private var viewMode
     
     @ScaledMetric(relativeTo: .body)

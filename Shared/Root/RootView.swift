@@ -16,12 +16,16 @@ struct RootView: View {
                 loadingFailedView(error)
             }
         }
+        .viewMode(viewModel.viewMode)
         .task {
             await viewModel.load()
         }
+        .task {
+            await viewModel.observeViewMode()
+        }
     }
     
-    @ViewBuilder
+    @MainActor @ViewBuilder
     private func loadingFailedView(_ error: Error) -> some View {
         VStack {
             Text("Failed to load application. Please try again later.")
@@ -34,9 +38,11 @@ struct RootView: View {
             
             if viewModel.showErrorDetails {
                 Text(error.localizedDescription)
+                    .transition(.move(edge: .top).combined(with: .opacity))
             }
         }
         .padding()
+        .animation(.default, value: viewModel.showErrorDetails)
     }
 }
 

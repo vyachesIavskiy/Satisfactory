@@ -10,6 +10,9 @@ struct RecipeDisplayView: View {
     @Environment(\.displayScale)
     private var displayScale
     
+    @Environment(\.viewMode)
+    private var viewMode
+    
     @ScaledMetric(relativeTo: .body)
     private var titleIconSpacing = 8.0
     
@@ -17,56 +20,8 @@ struct RecipeDisplayView: View {
     private var titleRowSpacing = 16.0
     
     var body: some View {
-//        VStack(alignment: .leading, spacing: titleSpacing) {
         ZStack {
-//            switch viewModel.mode {
-//            case let .display(recipe):
-//                HStack(alignment: .firstTextBaseline) {
-//                    Text(viewModel.recipe.localizedName)
-//                        .fontWeight(.medium)
-//                    
-//                    Spacer()
-//                    
-//                    if !viewModel.recipe.isDefault {
-//                        alternateIndicatorView
-//                    }
-//                }
-//                .padding(.bottom, viewModel.viewMode == .row ? 8 : 0)
-//                .background(alignment: .bottom) {
-//                    if viewModel.viewMode == .row {
-//                        Capsule()
-//                            .fill(.sh(.midnight))
-//                            .frame(height: 1)
-//                    }
-//                }
-                
-//            case let .production(recipe, _, _, _, _, _):
-//                HStack(alignment: .firstTextBaseline) {
-//                    Text(viewModel.recipe.localizedName)
-//                        .fontWeight(.medium)
-//                    
-//                    Spacer()
-//                    
-//                    switch recipe.proportion {
-//                    case let .fraction(fraction):
-//                        HStack(spacing: 4) {
-//                            Text(fraction * 100, format: .fractionFromZeroToFour)
-//                            
-//                            Image(systemName: "percent")
-//                        }
-//                        .font(.footnote)
-//                        
-//                    case .fixed:
-//                        Image(systemName: "123.rectangle")
-//                        
-//                    case .auto:
-//                        Text("AUTO")
-//                            .font(.footnote)
-//                    }
-//                }
-//            }
-            
-            switch viewModel.viewMode {
+            switch viewMode {
             case .icon: iconBody
             case .row: rowBody
             }
@@ -75,9 +30,6 @@ struct RecipeDisplayView: View {
         .background(.background, in: AngledRectangle(cornerRadius: 8).inset(by: -4))
         .contentShape(.interaction, Rectangle())
         .contentShape(.contextMenuPreview, AngledRectangle(cornerRadius: 8).inset(by: -4))
-        .task {
-            await viewModel.observeViewMode()
-        }
     }
     
     @MainActor @ViewBuilder

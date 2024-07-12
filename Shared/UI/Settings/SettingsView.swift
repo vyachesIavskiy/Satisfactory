@@ -3,7 +3,8 @@ import SHModels
 import SHSettings
 
 struct SettingsView: View {
-    @Bindable var viewModel: SettingsViewModel
+    @Bindable 
+    var viewModel: SettingsViewModel
     
     @Namespace
     private var namespace
@@ -51,7 +52,8 @@ struct SettingsView: View {
         .animation(.default, value: viewModel.feedbackResult)
     }
     
-    @ViewBuilder private var recipeSection: some View {
+    @MainActor @ViewBuilder
+    private var recipeSection: some View {
         Section("Items and recipes") {
             NavigationLink("View mode") {
                 viewModePicker
@@ -64,7 +66,7 @@ struct SettingsView: View {
         }
     }
     
-    @ViewBuilder
+    @MainActor @ViewBuilder
     private var viewModePicker: some View {
         VStack(spacing: 25) {
             Picker(selection: $viewModel.settings.viewMode) {
@@ -87,14 +89,15 @@ struct SettingsView: View {
         }
     }
     
-    @ViewBuilder
+    @MainActor @ViewBuilder
     private var seasonalEventsSection: some View {
         Section("Seasonal events") {
             Toggle("FICSMAS", isOn: $viewModel.settings.showFICSMAS)
         }
     }
     
-    @ViewBuilder private var changeLogSection: some View {
+    @MainActor @ViewBuilder
+    private var changeLogSection: some View {
         Section {
             NavigationLink("Changes") {
                 ChangelogsView()
@@ -102,21 +105,25 @@ struct SettingsView: View {
         }
     }
     
-    @ViewBuilder
+    @MainActor @ViewBuilder
     private var feedbackSection: some View {
         Section {
-            Button("Send feedback") {
+            Button {
                 viewModel.showFeedback = true
+            } label: {
+                Text("Send feedback")
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity)
+                    .foregroundStyle(.background)
             }
-            .foregroundStyle(.background)
-            .listRowBackground(Color("Primary"))
+            .listRowBackground(Color.sh(.orange))
         }
         .sheet(isPresented: $viewModel.showFeedback) {
             FeedbackView(result: $viewModel.feedbackResult)
         }
     }
     
-    @ViewBuilder
+    @MainActor @ViewBuilder
     private var feedbackSentView: some View {
         Text(
             """

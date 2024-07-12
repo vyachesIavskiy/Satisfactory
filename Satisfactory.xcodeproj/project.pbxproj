@@ -84,7 +84,6 @@
 		D386D5C62BEAC78D00B584C9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386D5C42BEAC78D00B584C9 /* RootView.swift */; };
 		D386D5C72BEAC78D00B584C9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386D5C42BEAC78D00B584C9 /* RootView.swift */; };
 		D393A3772C3DB06E00A783CC /* ProductionAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393A3762C3DB06E00A783CC /* ProductionAmountView.swift */; };
-		D393A3792C3DCCAD00A783CC /* SheetsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393A3782C3DCCAD00A783CC /* SheetsDemo.swift */; };
 		D399267F2C04DBB8000D7308 /* SHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399267E2C04DBB8000D7308 /* SHSection.swift */; };
 		D39926802C04DBB8000D7308 /* SHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399267E2C04DBB8000D7308 /* SHSection.swift */; };
 		D39926882C04F537000D7308 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D39926872C04F537000D7308 /* SHDebug */; };
@@ -135,7 +134,6 @@
 		F95DAFA12AC6ACC60062A5AD /* Disclaimer_V1.6.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCF6AB2A2F8C37007B94DF /* Disclaimer_V1.6.swift */; };
 		F95DAFA22AC6ACC60062A5AD /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FEE2A26863600C173BF /* Bundle+Version.swift */; };
 		F95DAFA52AC6ACC60062A5AD /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF02A1159CC00EB7225 /* FeedbackView.swift */; };
-		F95DAFA62AC6ACC60062A5AD /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E27166273FC9550068B36E /* Tree.swift */; };
 		F95DAFA92AC6ACC60062A5AD /* SizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FFE2A269CC600C173BF /* SizeReader.swift */; };
 		F95DAFAB2AC6ACC60062A5AD /* DisclaimerViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B930042A26A0FE00C173BF /* DisclaimerViewContainer.swift */; };
 		F95DAFAC2AC6ACC60062A5AD /* AngledLinedBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981CA172A54829100210E89 /* AngledLinedBackground.swift */; };
@@ -187,8 +185,6 @@
 		F9DCF6AA2A2F7370007B94DF /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCF6A82A2F7370007B94DF /* Gradients.swift */; };
 		F9DCF6AC2A2F8C37007B94DF /* Disclaimer_V1.6.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCF6AB2A2F8C37007B94DF /* Disclaimer_V1.6.swift */; };
 		F9DCF6AD2A2F8C37007B94DF /* Disclaimer_V1.6.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCF6AB2A2F8C37007B94DF /* Disclaimer_V1.6.swift */; };
-		F9E27167273FC9550068B36E /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E27166273FC9550068B36E /* Tree.swift */; };
-		F9E27168273FC9550068B36E /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E27166273FC9550068B36E /* Tree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -241,7 +237,6 @@
 		D386D5C42BEAC78D00B584C9 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriesView.swift; sourceTree = "<group>"; };
 		D393A3762C3DB06E00A783CC /* ProductionAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionAmountView.swift; sourceTree = "<group>"; };
-		D393A3782C3DCCAD00A783CC /* SheetsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetsDemo.swift; sourceTree = "<group>"; };
 		D39597A22BFE99190046C23F /* SHPersistence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHPersistence; sourceTree = "<group>"; };
 		D399267E2C04DBB8000D7308 /* SHSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSection.swift; sourceTree = "<group>"; };
 		D39926892C04FB4B000D7308 /* Color+SHColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+SHColor.swift"; sourceTree = "<group>"; };
@@ -286,7 +281,6 @@
 		F9CBF0B927493FD90020871C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F9DCF6A82A2F7370007B94DF /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		F9DCF6AB2A2F8C37007B94DF /* Disclaimer_V1.6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.6.swift; sourceTree = "<group>"; };
-		F9E27166273FC9550068B36E /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,8 +333,6 @@
 				450BD1BB24A639FD00948B47 /* Extensions */,
 				D3C6FF5F2C173D82007542F2 /* Production */,
 				450BD19124A6395700948B47 /* Assets.xcassets */,
-				F9E27166273FC9550068B36E /* Tree.swift */,
-				D393A3782C3DCCAD00A783CC /* SheetsDemo.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -851,10 +843,8 @@
 				F998FFF12A1159CC00EB7225 /* FeedbackView.swift in Sources */,
 				D31E83AB2C3EECC20054C504 /* RecipeAdjustmentViewModel.swift in Sources */,
 				D3A676DE2C2B7113000A1078 /* SingleItemProduction.swift in Sources */,
-				F9E27167273FC9550068B36E /* Tree.swift in Sources */,
 				D31E839F2C3EEC380054C504 /* ProductView.swift in Sources */,
 				D300D5502C3FE4A000D1C391 /* RecipeIngredientAmountViewModel.swift in Sources */,
-				D393A3792C3DCCAD00A783CC /* SheetsDemo.swift in Sources */,
 				D300D55D2C3FFA6800D1C391 /* RecipeDisplayViewModel.swift in Sources */,
 				D314C3B02C0464EB002825C9 /* TabsView.swift in Sources */,
 				D32AC7FA2C172D3400BDFBAC /* SHShapeStyle.swift in Sources */,
@@ -916,7 +906,6 @@
 				F998FFF22A1159CC00EB7225 /* FeedbackView.swift in Sources */,
 				D314C3B72C04715D002825C9 /* ItemRecipesViewModel.swift in Sources */,
 				D356C51E2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
-				F9E27168273FC9550068B36E /* Tree.swift in Sources */,
 				F946413A26A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
 				F9AB09062A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */,
 				D3B32AC82C00B9FF0025B441 /* ChangelogsView.swift in Sources */,
@@ -973,7 +962,6 @@
 				D32AC7EB2C16F3C700BDFBAC /* RecipeByproductShape.swift in Sources */,
 				D3A676E52C2B7113000A1078 /* SingleItemProductionByproduct.swift in Sources */,
 				F95DAFA52AC6ACC60062A5AD /* FeedbackView.swift in Sources */,
-				F95DAFA62AC6ACC60062A5AD /* Tree.swift in Sources */,
 				D300D5602C3FFAAD00D1C391 /* RecipeAdjustmentView.swift in Sources */,
 				F95DAFA92AC6ACC60062A5AD /* SizeReader.swift in Sources */,
 				D32AC7EE2C16FA9900BDFBAC /* ScrollOffsetReader.swift in Sources */,

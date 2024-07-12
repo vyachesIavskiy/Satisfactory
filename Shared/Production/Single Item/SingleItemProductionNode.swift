@@ -106,40 +106,10 @@ extension SingleItemProduction {
             inputNodes { $0.recipe == recipe }
         }
         
-//        func first(where predicate: (Node) -> Bool) -> Node? {
-//            inputRecipeNodes.first(where: predicate)
-//        }
-//        
-//        func first(where predicate: (Node) -> Bool) -> Int? {
-//            inputRecipeNodes.firstIndex(where: predicate)
-//        }
-//        
         func add(_ node: Node) {
             node.parentRecipeNode = self
             inputNodes.append(node)
         }
-//        
-//        func updateInput(for item: any Item, amount: Double) {
-//            guard let index = inputRecipeNodes.firstIndex(where: { $0.output.item.id == item.id }) else { return }
-//            
-//            inputRecipeNodes[index].amount = amount
-//        }
-//        
-//        func removeAll(where predicate: (Node) -> Bool) {
-//            inputRecipeNodes.removeAll(where: predicate)
-//        }
-//        
-//        typealias NextPartialResult<Value> = (_ partialResult: Value, _ recipe: Node) -> Value
-//        func reduce<Value>(_ initialValue: Value, nextPartialResult: NextPartialResult<Value>) -> Value {
-//            reduce(recipeNode: self, currentResult: initialValue, nextPartialResult: nextPartialResult)
-//        }
-//        
-//        typealias UpdatingAccumulatingResult<Value> = (_ accumulatingResult: inout Value, _ recipe: Node) -> Void
-//        func reduce<Value>(into value: Value, updatingAccumulatingResult: UpdatingAccumulatingResult<Value>) -> Value {
-//            var result = value
-//            reduce(recipeNode: self, into: &result, updatingAccumulatingResult: updatingAccumulatingResult)
-//            return result
-//        }
     }
 }
 
@@ -201,32 +171,6 @@ extension SingleItemProduction.Node {
         }
     }
 }
-
-//private extension SingleItemProduction.Node {
-//    func reduce<Value>(
-//        recipeNode: SingleItemProduction.Node,
-//        currentResult: Value,
-//        nextPartialResult: NextPartialResult<Value>
-//    ) -> Value {
-//        var result = nextPartialResult(currentResult, recipeNode)
-//        for inputRecipeNode in recipeNode.inputRecipeNodes {
-//            result = reduce(recipeNode: inputRecipeNode, currentResult: result, nextPartialResult: nextPartialResult)
-//        }
-//        
-//        return result
-//    }
-//    
-//    func reduce<Value>(
-//        recipeNode: SingleItemProduction.Node,
-//        into currentResult: inout Value,
-//        updatingAccumulatingResult: UpdatingAccumulatingResult<Value>
-//    ) {
-//        updatingAccumulatingResult(&currentResult, recipeNode)
-//        for inputRecipe in recipeNode.inputRecipeNodes {
-//            reduce(recipeNode: inputRecipe, into: &currentResult, updatingAccumulatingResult: updatingAccumulatingResult)
-//        }
-//    }
-//}
 
 // MARK: Description for print
 extension SingleItemProduction.Node {

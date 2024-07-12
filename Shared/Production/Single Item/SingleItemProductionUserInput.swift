@@ -169,12 +169,6 @@ extension SingleItemProduction.UserInput {
         /// This is used when more than one recipe produce a single intermediate product.
         /// This can be also used to calculate final product.
         var proportion: ProductionProportion
-        
-//        enum Proportion: Equatable {
-//            case auto
-//            case fraction(Double)
-//            case fixed(Double)
-//        }
     }
 }
 

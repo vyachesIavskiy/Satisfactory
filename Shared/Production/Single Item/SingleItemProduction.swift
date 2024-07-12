@@ -448,8 +448,6 @@ private extension SingleItemProduction {
     }
     
     func buildOutput() -> Output {
-        print(self)
-        
         var nodes = rootNodes
         var unselectedItems = [any Item]()
         var products = [Output.Product]()

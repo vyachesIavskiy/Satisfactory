@@ -6,10 +6,20 @@ extension NewProductionView {
     struct ItemRow: View {
         var item: any Item
         
-        @Environment(\.displayScale) private var displayScale
-        @ScaledMetric(relativeTo: .body) private var imageSize = 40
-        @ScaledMetric(relativeTo: .body) private var paddingSize = 5
-        @ScaledMetric(relativeTo: .body) private var cornerRadius = 6
+        @Environment(\.displayScale) 
+        private var displayScale
+        
+        @ScaledMetric(relativeTo: .body)
+        private var imageSize = 40.0
+        
+        @ScaledMetric(relativeTo: .body)
+        private var paddingSize = 6.0
+        
+        @ScaledMetric(relativeTo: .body)
+        private var cornerRadius = 5.0
+        
+        @ScaledMetric(relativeTo: .body)
+        private var titleSpacing = 12.0
         
         private var resolvedImageSize: Double {
             min(imageSize, 90)
@@ -23,15 +33,19 @@ extension NewProductionView {
             min(cornerRadius, 10)
         }
         
-        private var overlayShape: AnyShape {
+        private var resolvedTitleSpacing: Double {
+            min(titleSpacing, 32)
+        }
+        
+        private var backgroundShape: AnyShape {
             switch (item as? Part)?.form {
             case .solid, nil:
-                AnyShape(AngledRectangle(cornerRadius: cornerRadius).inset(by: 1 / displayScale))
+                AnyShape(AngledRectangle(cornerRadius: resolvedCornerRadius).inset(by: 1 / displayScale))
                 
             case .fluid, .gas:
                 AnyShape(UnevenRoundedRectangle(
-                    bottomLeadingRadius: cornerRadius,
-                    topTrailingRadius: cornerRadius
+                    bottomLeadingRadius: resolvedCornerRadius * 2,
+                    topTrailingRadius: resolvedCornerRadius * 2
                 ).inset(by: 1 / displayScale))
             }
         }
@@ -41,15 +55,16 @@ extension NewProductionView {
         }
         
         var body: some View {
-            HStack(spacing: 10) {
+            HStack(spacing: resolvedTitleSpacing) {
                 Image(item.id)
                     .resizable()
                     .frame(width: resolvedImageSize, height: resolvedImageSize)
                     .padding(resolvedPaddingSize)
-                    .overlay(
-                        .sh(.midnight20),
-                        in: overlayShape.stroke(style: StrokeStyle(lineWidth: 3 / displayScale))
-                    )
+                    .background {
+                        backgroundShape
+                            .fill(.sh(.midnight10))
+                            .stroke(.sh(.midnight30), lineWidth: 2 / displayScale)
+                    }
                 
                 ZStack {
                     HStack {
@@ -62,7 +77,7 @@ extension NewProductionView {
                     }
                     
                     LinearGradient(
-                        colors: [.sh(.midnight20), .clear],
+                        colors: [.sh(.midnight30), .sh(.midnight10)],
                         startPoint: .leading,
                         endPoint: UnitPoint(x: 0.85, y: 0.5)
                     )
@@ -71,9 +86,15 @@ extension NewProductionView {
                 }
             }
             .fixedSize(horizontal: false, vertical: true)
-            .background(.background, in: AngledRectangle(cornerRadius: resolvedCornerRadius + 4).inset(by: -8))
+            .background(
+                .background,
+                in: AngledRectangle(cornerRadius: resolvedCornerRadius + 4).inset(by: -4)
+            )
             .contentShape(.interaction, Rectangle())
-            .contentShape(.contextMenuPreview, AngledRectangle(cornerRadius: resolvedCornerRadius + 4).inset(by: -8))
+            .contentShape(
+                .contextMenuPreview,
+                AngledRectangle(cornerRadius: resolvedCornerRadius + 4).inset(by: -4)
+            )
         }
     }
 }

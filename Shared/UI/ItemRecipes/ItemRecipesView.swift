@@ -32,35 +32,13 @@ struct ItemRecipesView: View {
                 }
             }
         }
-        .safeAreaInset(edge: .top, spacing: 12) {
-            HStack(alignment: .firstTextBaseline) {
-                Image(viewModel.item.id)
-                    .resizable()
-                    .frame(width: iconSize, height: iconSize)
-                    .alignmentGuide(.firstTextBaseline) { d in
-                        d[VerticalAlignment.center] + 7.5
-                    }
-                
-                Text(viewModel.item.localizedName)
-                    .font(.title)
-                    .fontWeight(.bold)
-            }
-            .padding(.horizontal)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.bottom, 8)
-            .background(alignment: .bottom) {
-                Color.sh(.midnight)
-                    .frame(height: 1 / displayScale)
-            }
-            .background(.background, ignoresSafeAreaEdges: .top)
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar(.hidden, for: .tabBar)
+        .scrollBounceBehavior(.basedOnSize, axes: .vertical)
         .task {
             try? await viewModel.task()
         }
     }
     
+    @MainActor
     @ViewBuilder
     private func recipesSection(_ _section: Binding<ItemRecipesViewModel.Section>) -> some View {
         let section = _section.wrappedValue
@@ -69,7 +47,6 @@ struct ItemRecipesView: View {
                 VStack(spacing: recipeSpacing) {
                     ForEach(section.recipes) { recipe in
                         recipeView(recipe)
-                            .padding(.leading, viewModel.sectionHeaderVisible(section) ? 8 : 0)
                             .disabled(!section.expanded)
                     }
                 }
@@ -83,25 +60,32 @@ struct ItemRecipesView: View {
         }
     }
     
+    @MainActor
     @ViewBuilder
     private func recipeView(_ recipe: Recipe) -> some View {
-        RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
-            .matchedGeometryEffect(id: recipe.id, in: namespace)
-            .contextMenu {
-                if viewModel.pinsAllowed() {
-                    Button {
-                        viewModel.changePinStatus(for: recipe)
-                    } label: {
-                        if viewModel.isPinned(recipe) {
-                            Text("Unpin")
-                        } else {
-                            Text("Pin")
-                        }
+        Button {
+            viewModel.onRecipeSelected(recipe)
+        } label: {
+            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
+        }
+        .buttonStyle(.plain)
+        .matchedGeometryEffect(id: recipe.id, in: namespace)
+        .contextMenu {
+            if viewModel.pinsAllowed() {
+                Button {
+                    viewModel.changePinStatus(for: recipe)
+                } label: {
+                    if viewModel.isPinned(recipe) {
+                        Text("Unpin")
+                    } else {
+                        Text("Pin")
                     }
                 }
             }
+        }
     }
     
+    @MainActor
     @ViewBuilder
     private var alternateIndicatorView: some View {
         Text("Alternate")
@@ -156,7 +140,7 @@ private struct _ItemRecipesPreview: View {
     
     var body: some View {
         if let item = itemPreview.item {
-            ItemRecipesView(viewModel: ItemRecipesViewModel(item: item))
+            ItemRecipesView(viewModel: ItemRecipesViewModel(item: item, onRecipeSelected: { _ in }))
         } else {
             Text("There is no item with ID '\(itemPreview.itemID)'")
                 .font(.largeTitle)

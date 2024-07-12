@@ -9,6 +9,7 @@ final class ItemRecipesViewModel {
     private var storageService
         
     let item: any Item
+    let onRecipeSelected: @MainActor (Recipe) -> Void
     private let outputRecipes: [Recipe]
     private let byproductRecipes: [Recipe]
     private var pinnedRecipeIDs = Set<String>() {
@@ -19,11 +20,12 @@ final class ItemRecipesViewModel {
     
     var sections = [Section]()
     
-    init(item: any Item) {
+    init(item: any Item, onRecipeSelected: @MainActor @escaping (Recipe) -> Void) {
         @Dependency(\.storageService)
         var storageService
         
         self.item = item
+        self.onRecipeSelected = onRecipeSelected
         
         outputRecipes = storageService.recipes(for: item, as: .output).filter { $0.machine != nil }
         byproductRecipes = storageService.recipes(for: item, as: .byproduct).filter { $0.machine != nil }

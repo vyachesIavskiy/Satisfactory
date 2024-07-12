@@ -47,11 +47,8 @@ struct NewProductionView: View {
                     }
                 }
             }
-            .navigationDestination(for: Part.self) { part in
-                ItemRecipesView(viewModel: ItemRecipesViewModel(item: part))
-            }
-            .navigationDestination(for: Equipment.self) { equipment in
-                ItemRecipesView(viewModel: ItemRecipesViewModel(item: equipment))
+            .fullScreenCover(item: $viewModel.selectedAnyItem) { anyItem in
+                ProductionView(viewModel: ProductionViewModel(item: anyItem.item))
             }
         }
         .task {
@@ -66,17 +63,21 @@ struct NewProductionView: View {
             Section(isExpanded: _section.expanded) {
                 VStack(spacing: itemSpacing) {
                     ForEach(section.items, id: \.id) { item in
-                        Group {
-                            if let part = item as? Part {
-                                partRow(part)
-                                    .tag(part.id)
-                                    .id(part.id)
-                            } else if let equipment = item as? Equipment {
-                                equipmentRow(equipment)
-                                    .tag(equipment.id)
-                                    .id(equipment.id)
-                            }
-                        }
+                        itemRow(item)
+                            .tag(item.id)
+                            .id(item.id)
+                        
+//                        Group {
+//                            if let part = item as? Part {
+//                                partRow(part)
+//                                    .tag(part.id)
+//                                    .id(part.id)
+//                            } else if let equipment = item as? Equipment {
+//                                equipmentRow(equipment)
+//                                    .tag(equipment.id)
+//                                    .id(equipment.id)
+//                            }
+//                        }
                         .padding(.leading, viewModel.groupingCategories ? 8 : 0)
                         .disabled(!section.expanded)
                     }
@@ -107,16 +108,19 @@ struct NewProductionView: View {
     
     @ViewBuilder
     private func itemRow(_ item: any Item) -> some View {
-        ItemRow(item)
-            .contextMenu {
-                Button {
-                    viewModel.changePinStatus(for: item)
-                } label: {
-                    Text(viewModel.isPinned(item) ? "Unpin" : "Pin")
-                }
+        Menu {
+            Button {
+                viewModel.changePinStatus(for: item)
+            } label: {
+                Text(viewModel.isPinned(item) ? "Unpin" : "Pin")
             }
-            .transition(.opacity.animation(.default))
-            .matchedGeometryEffect(id: item.id, in: namespace)
+        } label: {
+            ItemRow(item)
+        } primaryAction: {
+            viewModel.selectedItem = item
+        }
+        .buttonStyle(.plain)
+        .matchedGeometryEffect(id: item.id, in: namespace)
     }
 }
 

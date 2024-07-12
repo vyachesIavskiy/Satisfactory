@@ -18,3 +18,8 @@ extension ShapeStyle where Self == SHShapeStyle {
     }
 }
 
+extension SHShapeStyle {
+    var gradient: AnyGradient {
+        shColor.color.gradient
+    }
+}

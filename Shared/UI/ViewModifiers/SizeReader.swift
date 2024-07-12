@@ -55,6 +55,11 @@ extension View {
         readSize { size.wrappedValue = $0 }
     }
     
+    @ViewBuilder
+    func readSize(_ size: Binding<CGSize?>) -> some View {
+        readSize { size.wrappedValue = $0 }
+    }
+    
     // MARK: Max Size
     @ViewBuilder
     func provideMaxSize() -> some View {

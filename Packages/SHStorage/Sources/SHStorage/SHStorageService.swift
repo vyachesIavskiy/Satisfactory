@@ -45,6 +45,10 @@ public extension SHStorageService {
         }
     }
     
+    func recipes(for itemID: String, as roles: Recipe.Ingredient.Role...) -> [Recipe] {
+        roles.flatMap { recipes(for: itemID, as: $0) }
+    }
+    
     func recipes(for item: any Item, as role: Recipe.Ingredient.Role) -> [Recipe] {
         recipes(for: item.id, as: role)
     }

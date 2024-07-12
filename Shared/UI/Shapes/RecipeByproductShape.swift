@@ -4,7 +4,7 @@ struct RecipeByproductShape: Shape {
     let lineWidth: CGFloat
     let spacing: CGFloat
     
-    init(lineWidth: CGFloat = 25, spacing: CGFloat = 15) {
+    init(lineWidth: CGFloat = 6, spacing: CGFloat = 9) {
         self.lineWidth = lineWidth
         self.spacing = spacing
     }

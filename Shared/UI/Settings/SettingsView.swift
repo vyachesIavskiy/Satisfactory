@@ -5,6 +5,9 @@ import SHSettings
 struct SettingsView: View {
     @Bindable var viewModel: SettingsViewModel
     
+    @Namespace
+    private var namespace
+    
     var body: some View {
         ZStack {
             NavigationStack {
@@ -76,7 +79,7 @@ struct SettingsView: View {
             .pickerStyle(.segmented)
             .padding(.horizontal)
             
-            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: viewModel.recipe))
+            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: viewModel.recipe)/*, namespace: namespace*/)
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 24)
             

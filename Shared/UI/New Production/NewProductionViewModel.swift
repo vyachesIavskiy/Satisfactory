@@ -4,6 +4,35 @@ import SHStorage
 import SHSettings
 import SHModels
 
+@dynamicMemberLookup
+struct AnyItem {
+    let item: any Item
+    
+    init(_ item: any Item) {
+        self.item = item
+    }
+    
+    subscript<T>(dynamicMember keyPath: KeyPath<any Item, T>) -> T {
+        item[keyPath: keyPath]
+    }
+}
+
+extension AnyItem: Identifiable {
+    var id: String { item.id }
+}
+
+extension AnyItem: Equatable {
+    static func == (lhs: AnyItem, rhs: AnyItem) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension AnyItem: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
+
 @Observable
 final class NewProductionViewModel {
     @ObservationIgnored
@@ -83,6 +112,14 @@ final class NewProductionViewModel {
     }
     
     var selectedItem: (any Item)?
+    var selectedAnyItem: AnyItem? {
+        get {
+            selectedItem.map(AnyItem.init)
+        }
+        set {
+            selectedItem = newValue?.item
+        }
+    }
     var sections = [Section]()
     
     init() {

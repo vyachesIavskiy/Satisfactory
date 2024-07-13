@@ -83,6 +83,14 @@
 		D386D5C52BEAC78D00B584C9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386D5C42BEAC78D00B584C9 /* RootView.swift */; };
 		D386D5C62BEAC78D00B584C9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386D5C42BEAC78D00B584C9 /* RootView.swift */; };
 		D386D5C72BEAC78D00B584C9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D386D5C42BEAC78D00B584C9 /* RootView.swift */; };
+		D38F69C72C426A87000F4CEE /* ChangeLog_V1.6.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C02C426A87000F4CEE /* ChangeLog_V1.6.swift */; };
+		D38F69C82C426A87000F4CEE /* ChangeLog_V1.4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C12C426A87000F4CEE /* ChangeLog_V1.4.swift */; };
+		D38F69C92C426A87000F4CEE /* ChangeLog_V1.5.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C22C426A87000F4CEE /* ChangeLog_V1.5.1.swift */; };
+		D38F69CA2C426A87000F4CEE /* ChangeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C32C426A87000F4CEE /* ChangeLog.swift */; };
+		D38F69CB2C426A87000F4CEE /* ChangeLog_V1.5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C42C426A87000F4CEE /* ChangeLog_V1.5.swift */; };
+		D38F69CC2C426A87000F4CEE /* ChangeLog_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C52C426A87000F4CEE /* ChangeLog_V1.7.1.swift */; };
+		D38F69CD2C426A87000F4CEE /* ChangeLog_V1.7.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C62C426A87000F4CEE /* ChangeLog_V1.7.swift */; };
+		D38F69D02C426B0F000F4CEE /* ChangeLogNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69CF2C426B0F000F4CEE /* ChangeLogNewView.swift */; };
 		D393A3772C3DB06E00A783CC /* ProductionAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393A3762C3DB06E00A783CC /* ProductionAmountView.swift */; };
 		D399267F2C04DBB8000D7308 /* SHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399267E2C04DBB8000D7308 /* SHSection.swift */; };
 		D39926802C04DBB8000D7308 /* SHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399267E2C04DBB8000D7308 /* SHSection.swift */; };
@@ -105,9 +113,9 @@
 		D3A676E92C2B7113000A1078 /* SingleItemProductionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A676DD2C2B7113000A1078 /* SingleItemProductionNode.swift */; };
 		D3ACE5D92C387CA40081D2C5 /* RecipeIngredientIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ACE5D82C387CA40081D2C5 /* RecipeIngredientIconView.swift */; };
 		D3ACE5DA2C387CA40081D2C5 /* RecipeIngredientIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ACE5D82C387CA40081D2C5 /* RecipeIngredientIconView.swift */; };
-		D3B32AC62C00B9FF0025B441 /* ChangelogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B32AC52C00B9FF0025B441 /* ChangelogsView.swift */; };
-		D3B32AC72C00B9FF0025B441 /* ChangelogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B32AC52C00B9FF0025B441 /* ChangelogsView.swift */; };
-		D3B32AC82C00B9FF0025B441 /* ChangelogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B32AC52C00B9FF0025B441 /* ChangelogsView.swift */; };
+		D3B32AC62C00B9FF0025B441 /* ChangeLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B32AC52C00B9FF0025B441 /* ChangeLogsView.swift */; };
+		D3B32AC72C00B9FF0025B441 /* ChangeLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B32AC52C00B9FF0025B441 /* ChangeLogsView.swift */; };
+		D3B32AC82C00B9FF0025B441 /* ChangeLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B32AC52C00B9FF0025B441 /* ChangeLogsView.swift */; };
 		D3BB55562C3FD6D80052DF56 /* RecipeIngredientRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB55552C3FD6D80052DF56 /* RecipeIngredientRowView.swift */; };
 		D3BB55572C3FD6D80052DF56 /* RecipeIngredientRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB55552C3FD6D80052DF56 /* RecipeIngredientRowView.swift */; };
 		D3BB555A2C3FD7350052DF56 /* RecipeIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB55592C3FD7350052DF56 /* RecipeIngredientViewModel.swift */; };
@@ -119,41 +127,26 @@
 		D3E7B8812C2C6E0200DB7177 /* SingleItemProductionOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7B8802C2C6E0200DB7177 /* SingleItemProductionOutput.swift */; };
 		D3FA3DDA2BF8E270004CD46D /* AngledBottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA3DD92BF8E270004CD46D /* AngledBottomLine.swift */; };
 		D3FA3DDB2BF8E270004CD46D /* AngledBottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA3DD92BF8E270004CD46D /* AngledBottomLine.swift */; };
-		F934317F2ACAA2A30082C404 /* Disclaimer_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */; };
-		F93431802ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */; };
-		F93431812ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */; };
 		F946413926A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */; };
 		F946413A26A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */; };
 		F95DAF932AC6ACC60062A5AD /* NewProductionItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FE92A2665BC00C173BF /* NewProductionItemRow.swift */; };
-		F95DAF982AC6ACC60062A5AD /* Disclaimer_V1.4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B930082A26A57C00C173BF /* Disclaimer_V1.4.swift */; };
-		F95DAF9A2AC6ACC60062A5AD /* Disclaimer_V1.5.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */; };
 		F95DAF9D2AC6ACC60062A5AD /* BubbleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FF82A26944B00C173BF /* BubbleModifier.swift */; };
 		F95DAF9F2AC6ACC60062A5AD /* FloatingPointFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */; };
-		F95DAFA12AC6ACC60062A5AD /* Disclaimer_V1.6.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCF6AB2A2F8C37007B94DF /* Disclaimer_V1.6.swift */; };
 		F95DAFA22AC6ACC60062A5AD /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FEE2A26863600C173BF /* Bundle+Version.swift */; };
 		F95DAFA52AC6ACC60062A5AD /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF02A1159CC00EB7225 /* FeedbackView.swift */; };
 		F95DAFA92AC6ACC60062A5AD /* SizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FFE2A269CC600C173BF /* SizeReader.swift */; };
-		F95DAFAB2AC6ACC60062A5AD /* DisclaimerViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B930042A26A0FE00C173BF /* DisclaimerViewContainer.swift */; };
 		F95DAFAC2AC6ACC60062A5AD /* AngledLinedBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981CA172A54829100210E89 /* AngledLinedBackground.swift */; };
 		F95DAFAE2AC6ACC60062A5AD /* SatisfactoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450BD18F24A6395700948B47 /* SatisfactoryApp.swift */; };
 		F95DAFB32AC6ACC60062A5AD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CBF0B927493FD90020871C /* SettingsView.swift */; };
-		F95DAFB52AC6ACC60062A5AD /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B930012A26A06B00C173BF /* Disclaimer.swift */; };
 		F95DAFB72AC6ACC60062A5AD /* CGPoint+Offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FE72A26603A00C173BF /* CGPoint+Offset.swift */; };
-		F95DAFBC2AC6ACC60062A5AD /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFED2A114F5200EB7225 /* DisclaimerView.swift */; };
-		F95DAFC02AC6ACC60062A5AD /* Disclaimer_V1.5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FFB2A2694BF00C173BF /* Disclaimer_V1.5.swift */; };
 		F95DAFC32AC6ACC60062A5AD /* AngledRectangled.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FE02A265DA800C173BF /* AngledRectangled.swift */; };
 		F95DAFCA2AC6ACC60062A5AD /* CGRect+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FE42A265F3C00C173BF /* CGRect+Points.swift */; };
-		F95DAFCD2AC6ACC60062A5AD /* Disclaimer_V1.7.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAB9D82AC614CF00BE130F /* Disclaimer_V1.7.swift */; };
 		F95DAFCE2AC6ACC60062A5AD /* CalculationStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91040273EA74C00274EE3 /* CalculationStatistics.swift */; };
 		F95DAFD52AC6ACC60062A5AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 450BD19124A6395700948B47 /* Assets.xcassets */; };
 		F95DAFDE2AC6AE9F0062A5AD /* Info-AppStoreScreenshots.plist in Resources */ = {isa = PBXBuildFile; fileRef = F95DAFDD2AC6AE9F0062A5AD /* Info-AppStoreScreenshots.plist */; };
 		F981CA182A54829100210E89 /* AngledLinedBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F981CA172A54829100210E89 /* AngledLinedBackground.swift */; };
-		F998FFEE2A114F5200EB7225 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFED2A114F5200EB7225 /* DisclaimerView.swift */; };
-		F998FFEF2A114F5200EB7225 /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFED2A114F5200EB7225 /* DisclaimerView.swift */; };
 		F998FFF12A1159CC00EB7225 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF02A1159CC00EB7225 /* FeedbackView.swift */; };
 		F998FFF22A1159CC00EB7225 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF02A1159CC00EB7225 /* FeedbackView.swift */; };
-		F9AB09052A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */; };
-		F9AB09062A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */; };
 		F9B91041273EA74C00274EE3 /* CalculationStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91040273EA74C00274EE3 /* CalculationStatistics.swift */; };
 		F9B91042273EA74C00274EE3 /* CalculationStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B91040273EA74C00274EE3 /* CalculationStatistics.swift */; };
 		F9B92FE12A265DA800C173BF /* AngledRectangled.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FE02A265DA800C173BF /* AngledRectangled.swift */; };
@@ -163,22 +156,10 @@
 		F9B92FEF2A26863600C173BF /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FEE2A26863600C173BF /* Bundle+Version.swift */; };
 		F9B92FF92A26944B00C173BF /* BubbleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FF82A26944B00C173BF /* BubbleModifier.swift */; };
 		F9B92FFA2A26944B00C173BF /* BubbleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FF82A26944B00C173BF /* BubbleModifier.swift */; };
-		F9B92FFC2A2694BF00C173BF /* Disclaimer_V1.5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FFB2A2694BF00C173BF /* Disclaimer_V1.5.swift */; };
-		F9B92FFD2A2694BF00C173BF /* Disclaimer_V1.5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FFB2A2694BF00C173BF /* Disclaimer_V1.5.swift */; };
 		F9B92FFF2A269CC600C173BF /* SizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FFE2A269CC600C173BF /* SizeReader.swift */; };
 		F9B930002A269CC600C173BF /* SizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FFE2A269CC600C173BF /* SizeReader.swift */; };
-		F9B930022A26A06B00C173BF /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B930012A26A06B00C173BF /* Disclaimer.swift */; };
-		F9B930032A26A06B00C173BF /* Disclaimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B930012A26A06B00C173BF /* Disclaimer.swift */; };
-		F9B930052A26A0FE00C173BF /* DisclaimerViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B930042A26A0FE00C173BF /* DisclaimerViewContainer.swift */; };
-		F9B930062A26A0FE00C173BF /* DisclaimerViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B930042A26A0FE00C173BF /* DisclaimerViewContainer.swift */; };
-		F9B930092A26A57C00C173BF /* Disclaimer_V1.4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B930082A26A57C00C173BF /* Disclaimer_V1.4.swift */; };
-		F9B9300A2A26A57C00C173BF /* Disclaimer_V1.4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B930082A26A57C00C173BF /* Disclaimer_V1.4.swift */; };
-		F9BAB9D92AC614CF00BE130F /* Disclaimer_V1.7.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAB9D82AC614CF00BE130F /* Disclaimer_V1.7.swift */; };
-		F9BAB9DA2AC614CF00BE130F /* Disclaimer_V1.7.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BAB9D82AC614CF00BE130F /* Disclaimer_V1.7.swift */; };
 		F9CBF0BA27493FD90020871C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CBF0B927493FD90020871C /* SettingsView.swift */; };
 		F9CBF0BB27493FD90020871C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CBF0B927493FD90020871C /* SettingsView.swift */; };
-		F9DCF6AC2A2F8C37007B94DF /* Disclaimer_V1.6.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCF6AB2A2F8C37007B94DF /* Disclaimer_V1.6.swift */; };
-		F9DCF6AD2A2F8C37007B94DF /* Disclaimer_V1.6.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DCF6AB2A2F8C37007B94DF /* Disclaimer_V1.6.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -230,6 +211,14 @@
 		D386D5C32BEA03F200B584C9 /* SHFileManager */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHFileManager; sourceTree = "<group>"; };
 		D386D5C42BEAC78D00B584C9 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriesView.swift; sourceTree = "<group>"; };
+		D38F69C02C426A87000F4CEE /* ChangeLog_V1.6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog_V1.6.swift; sourceTree = "<group>"; };
+		D38F69C12C426A87000F4CEE /* ChangeLog_V1.4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog_V1.4.swift; sourceTree = "<group>"; };
+		D38F69C22C426A87000F4CEE /* ChangeLog_V1.5.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog_V1.5.1.swift; sourceTree = "<group>"; };
+		D38F69C32C426A87000F4CEE /* ChangeLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog.swift; sourceTree = "<group>"; };
+		D38F69C42C426A87000F4CEE /* ChangeLog_V1.5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog_V1.5.swift; sourceTree = "<group>"; };
+		D38F69C52C426A87000F4CEE /* ChangeLog_V1.7.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog_V1.7.1.swift; sourceTree = "<group>"; };
+		D38F69C62C426A87000F4CEE /* ChangeLog_V1.7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog_V1.7.swift; sourceTree = "<group>"; };
+		D38F69CF2C426B0F000F4CEE /* ChangeLogNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogNewView.swift; sourceTree = "<group>"; };
 		D393A3762C3DB06E00A783CC /* ProductionAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionAmountView.swift; sourceTree = "<group>"; };
 		D39597A22BFE99190046C23F /* SHPersistence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHPersistence; sourceTree = "<group>"; };
 		D399267E2C04DBB8000D7308 /* SHSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSection.swift; sourceTree = "<group>"; };
@@ -240,7 +229,7 @@
 		D3A676DC2C2B7113000A1078 /* SingleItemProductionByproduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleItemProductionByproduct.swift; sourceTree = "<group>"; };
 		D3A676DD2C2B7113000A1078 /* SingleItemProductionNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleItemProductionNode.swift; sourceTree = "<group>"; };
 		D3ACE5D82C387CA40081D2C5 /* RecipeIngredientIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientIconView.swift; sourceTree = "<group>"; };
-		D3B32AC52C00B9FF0025B441 /* ChangelogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogsView.swift; sourceTree = "<group>"; };
+		D3B32AC52C00B9FF0025B441 /* ChangeLogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogsView.swift; sourceTree = "<group>"; };
 		D3BB55552C3FD6D80052DF56 /* RecipeIngredientRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientRowView.swift; sourceTree = "<group>"; };
 		D3BB55592C3FD7350052DF56 /* RecipeIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientViewModel.swift; sourceTree = "<group>"; };
 		D3C56E362C3D98F9002EE561 /* ProductionInitialRecipeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionInitialRecipeSelectionView.swift; sourceTree = "<group>"; };
@@ -248,16 +237,13 @@
 		D3E7B87E2C2C5F5E00DB7177 /* ProductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionView.swift; sourceTree = "<group>"; };
 		D3E7B8802C2C6E0200DB7177 /* SingleItemProductionOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemProductionOutput.swift; sourceTree = "<group>"; };
 		D3FA3DD92BF8E270004CD46D /* AngledBottomLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngledBottomLine.swift; sourceTree = "<group>"; };
-		F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.7.1.swift; sourceTree = "<group>"; };
 		F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPointFormatStyle.swift; sourceTree = "<group>"; };
 		F95DAFDB2AC6ACC60062A5AD /* iOS AppStore Screenshots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS AppStore Screenshots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95DAFDD2AC6AE9F0062A5AD /* Info-AppStoreScreenshots.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-AppStoreScreenshots.plist"; sourceTree = "<group>"; };
 		F981CA172A54829100210E89 /* AngledLinedBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngledLinedBackground.swift; sourceTree = "<group>"; };
-		F998FFED2A114F5200EB7225 /* DisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
 		F998FFF02A1159CC00EB7225 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		F99FBE8B2A9404660066339C /* SHTheme */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHTheme; sourceTree = "<group>"; };
 		F99FBE8C2A9415CF0066339C /* SHDebug */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHDebug; sourceTree = "<group>"; };
-		F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.5.1.swift; sourceTree = "<group>"; };
 		F9B91040273EA74C00274EE3 /* CalculationStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationStatistics.swift; sourceTree = "<group>"; };
 		F9B92FE02A265DA800C173BF /* AngledRectangled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngledRectangled.swift; sourceTree = "<group>"; };
 		F9B92FE42A265F3C00C173BF /* CGRect+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Points.swift"; sourceTree = "<group>"; };
@@ -265,14 +251,8 @@
 		F9B92FE92A2665BC00C173BF /* NewProductionItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductionItemRow.swift; sourceTree = "<group>"; };
 		F9B92FEE2A26863600C173BF /* Bundle+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Version.swift"; sourceTree = "<group>"; };
 		F9B92FF82A26944B00C173BF /* BubbleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleModifier.swift; sourceTree = "<group>"; };
-		F9B92FFB2A2694BF00C173BF /* Disclaimer_V1.5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.5.swift; sourceTree = "<group>"; };
 		F9B92FFE2A269CC600C173BF /* SizeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeReader.swift; sourceTree = "<group>"; };
-		F9B930012A26A06B00C173BF /* Disclaimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer.swift; sourceTree = "<group>"; };
-		F9B930042A26A0FE00C173BF /* DisclaimerViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclaimerViewContainer.swift; sourceTree = "<group>"; };
-		F9B930082A26A57C00C173BF /* Disclaimer_V1.4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.4.swift; sourceTree = "<group>"; };
-		F9BAB9D82AC614CF00BE130F /* Disclaimer_V1.7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.7.swift; sourceTree = "<group>"; };
 		F9CBF0B927493FD90020871C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		F9DCF6AB2A2F8C37007B94DF /* Disclaimer_V1.6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disclaimer_V1.6.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,7 +362,6 @@
 				D37E6BC32C03D36A001F3683 /* ItemRecipes */,
 				D32AC7E22C16F16400BDFBAC /* RecipeView */,
 				F9B92FF72A26944000C173BF /* ViewModifiers */,
-				F9B92FF02A2692D800C173BF /* Disclaimers */,
 				F9B92FDF2A265D8700C173BF /* Shapes */,
 				D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */,
 				F9B91040273EA74C00274EE3 /* CalculationStatistics.swift */,
@@ -451,6 +430,25 @@
 			path = Environment;
 			sourceTree = "<group>";
 		};
+		D30BDE192C419841005757BB /* ChangeLogs */ = {
+			isa = PBXGroup;
+			children = (
+				D3B32AC52C00B9FF0025B441 /* ChangeLogsView.swift */,
+				D30BDE1A2C419A98005757BB /* ChangeLog */,
+			);
+			path = ChangeLogs;
+			sourceTree = "<group>";
+		};
+		D30BDE1A2C419A98005757BB /* ChangeLog */ = {
+			isa = PBXGroup;
+			children = (
+				D38F69CE2C426AA5000F4CEE /* Versions */,
+				D38F69C32C426A87000F4CEE /* ChangeLog.swift */,
+				D38F69CF2C426B0F000F4CEE /* ChangeLogNewView.swift */,
+			);
+			path = ChangeLog;
+			sourceTree = "<group>";
+		};
 		D30D978D2BF69C85007B6850 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,9 +462,9 @@
 		D30D97922BF6A9F4007B6850 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				D30BDE192C419841005757BB /* ChangeLogs */,
 				D356C51B2BF7CCCC00A4CE6E /* SettingsViewModel.swift */,
 				F9CBF0B927493FD90020871C /* SettingsView.swift */,
-				D3B32AC52C00B9FF0025B441 /* ChangelogsView.swift */,
 				F998FFF02A1159CC00EB7225 /* FeedbackView.swift */,
 			);
 			path = Settings;
@@ -545,6 +543,19 @@
 				D314C3B82C0477E5002825C9 /* ItemRecipesView.swift */,
 			);
 			path = ItemRecipes;
+			sourceTree = "<group>";
+		};
+		D38F69CE2C426AA5000F4CEE /* Versions */ = {
+			isa = PBXGroup;
+			children = (
+				D38F69C12C426A87000F4CEE /* ChangeLog_V1.4.swift */,
+				D38F69C42C426A87000F4CEE /* ChangeLog_V1.5.swift */,
+				D38F69C22C426A87000F4CEE /* ChangeLog_V1.5.1.swift */,
+				D38F69C02C426A87000F4CEE /* ChangeLog_V1.6.swift */,
+				D38F69C62C426A87000F4CEE /* ChangeLog_V1.7.swift */,
+				D38F69C52C426A87000F4CEE /* ChangeLog_V1.7.1.swift */,
+			);
+			path = Versions;
 			sourceTree = "<group>";
 		};
 		D399267D2C04DBAC000D7308 /* SHSection */ = {
@@ -636,16 +647,6 @@
 			path = Bundle;
 			sourceTree = "<group>";
 		};
-		F9B92FF02A2692D800C173BF /* Disclaimers */ = {
-			isa = PBXGroup;
-			children = (
-				F9B930072A26A56D00C173BF /* Data */,
-				F9B930042A26A0FE00C173BF /* DisclaimerViewContainer.swift */,
-				F998FFED2A114F5200EB7225 /* DisclaimerView.swift */,
-			);
-			path = Disclaimers;
-			sourceTree = "<group>";
-		};
 		F9B92FF72A26944000C173BF /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,20 +657,6 @@
 				D300D5552C3FF11E00D1C391 /* SafeAreaReader.swift */,
 			);
 			path = ViewModifiers;
-			sourceTree = "<group>";
-		};
-		F9B930072A26A56D00C173BF /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				F9B930012A26A06B00C173BF /* Disclaimer.swift */,
-				F9B930082A26A57C00C173BF /* Disclaimer_V1.4.swift */,
-				F9B92FFB2A2694BF00C173BF /* Disclaimer_V1.5.swift */,
-				F9AB09042A2C6B7600233E53 /* Disclaimer_V1.5.1.swift */,
-				F9DCF6AB2A2F8C37007B94DF /* Disclaimer_V1.6.swift */,
-				F9BAB9D82AC614CF00BE130F /* Disclaimer_V1.7.swift */,
-				F934317E2AC9A9D00082C404 /* Disclaimer_V1.7.1.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -805,12 +792,11 @@
 			files = (
 				F9B92FEA2A2665BC00C173BF /* NewProductionItemRow.swift in Sources */,
 				D3BB55562C3FD6D80052DF56 /* RecipeIngredientRowView.swift in Sources */,
-				F9B930092A26A57C00C173BF /* Disclaimer_V1.4.swift in Sources */,
-				F9AB09052A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */,
 				D30D97A22BF75412007B6850 /* NewProductionView.swift in Sources */,
 				D300D5662C3FFFD600D1C391 /* ViewModeEnvironment.swift in Sources */,
 				D386D5C52BEAC78D00B584C9 /* RootView.swift in Sources */,
 				D31F7C5C2BF7F0C100AAE5C0 /* NewProductionViewModel.swift in Sources */,
+				D38F69C82C426A87000F4CEE /* ChangeLog_V1.4.swift in Sources */,
 				F9B92FF92A26944B00C173BF /* BubbleModifier.swift in Sources */,
 				D31E83AE2C3F03BD0054C504 /* ToolbarButtonStyle.swift in Sources */,
 				D32AC7F82C172CFA00BDFBAC /* SHColor.swift in Sources */,
@@ -819,10 +805,11 @@
 				D31E839C2C3EEBDC0054C504 /* ProductionViewModel.swift in Sources */,
 				D3C56E372C3D98F9002EE561 /* ProductionInitialRecipeSelectionView.swift in Sources */,
 				D31E83A62C3EEC9F0054C504 /* ProductAdjustmentViewModel.swift in Sources */,
-				F9DCF6AC2A2F8C37007B94DF /* Disclaimer_V1.6.swift in Sources */,
+				D38F69C92C426A87000F4CEE /* ChangeLog_V1.5.1.swift in Sources */,
 				D3A676B22C2B535E000A1078 /* Array+Merge.swift in Sources */,
 				D32AC7DA2C16D68F00BDFBAC /* ItemIconShape.swift in Sources */,
 				D393A3772C3DB06E00A783CC /* ProductionAmountView.swift in Sources */,
+				D38F69CC2C426A87000F4CEE /* ChangeLog_V1.7.1.swift in Sources */,
 				D3ACE5D92C387CA40081D2C5 /* RecipeIngredientIconView.swift in Sources */,
 				D32AC7E72C16F33100BDFBAC /* RecipeItemAmountShape.swift in Sources */,
 				D3E7B8812C2C6E0200DB7177 /* SingleItemProductionOutput.swift in Sources */,
@@ -839,7 +826,6 @@
 				D31E83A92C3EECBE0054C504 /* RecipeAdjustmentView.swift in Sources */,
 				D314C3B52C04715D002825C9 /* ItemRecipesViewModel.swift in Sources */,
 				F9B92FFF2A269CC600C173BF /* SizeReader.swift in Sources */,
-				F9B930052A26A0FE00C173BF /* DisclaimerViewContainer.swift in Sources */,
 				D3D976ED2C37F2B50069C421 /* RecipeIngredientAmountView.swift in Sources */,
 				D314C3B92C0477E5002825C9 /* ItemRecipesView.swift in Sources */,
 				F981CA182A54829100210E89 /* AngledLinedBackground.swift in Sources */,
@@ -847,13 +833,14 @@
 				D300D5562C3FF11E00D1C391 /* SafeAreaReader.swift in Sources */,
 				F9CBF0BA27493FD90020871C /* SettingsView.swift in Sources */,
 				D32AC7EA2C16F3C700BDFBAC /* RecipeByproductShape.swift in Sources */,
+				D38F69CD2C426A87000F4CEE /* ChangeLog_V1.7.swift in Sources */,
 				D3A676E42C2B7113000A1078 /* SingleItemProductionByproduct.swift in Sources */,
-				F934317F2ACAA2A30082C404 /* Disclaimer_V1.7.1.swift in Sources */,
 				D31E83A12C3EEC570054C504 /* ProductViewModel.swift in Sources */,
+				D38F69D02C426B0F000F4CEE /* ChangeLogNewView.swift in Sources */,
 				D300D56E2C401E9400D1C391 /* SingleItemProductionRecipeDisplayViewModel.swift in Sources */,
 				D356C51C2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
 				D3A676E12C2B7113000A1078 /* SingleItemProductionUserInput.swift in Sources */,
-				F9B930022A26A06B00C173BF /* Disclaimer.swift in Sources */,
+				D38F69CB2C426A87000F4CEE /* ChangeLog_V1.5.swift in Sources */,
 				D30BDE162C41427F005757BB /* SingleItemProductionRecipeSelectViewModel.swift in Sources */,
 				D30BDE172C41427F005757BB /* SingleItemProductionRecipeSelectView.swift in Sources */,
 				D399268A2C04FB4B000D7308 /* Color+SHColor.swift in Sources */,
@@ -861,20 +848,19 @@
 				D399267F2C04DBB8000D7308 /* SHSection.swift in Sources */,
 				D32AC7ED2C16FA9900BDFBAC /* ScrollOffsetReader.swift in Sources */,
 				D3BB555A2C3FD7350052DF56 /* RecipeIngredientViewModel.swift in Sources */,
+				D38F69C72C426A87000F4CEE /* ChangeLog_V1.6.swift in Sources */,
 				D300D5532C3FE96F00D1C391 /* NavigationBar.swift in Sources */,
-				F998FFEE2A114F5200EB7225 /* DisclaimerView.swift in Sources */,
 				D356C5142BF7CAA700A4CE6E /* RootViewModel.swift in Sources */,
 				D3A676E72C2B7113000A1078 /* SingleItemProductionNode.swift in Sources */,
 				D3E7B87F2C2C5F5E00DB7177 /* ProductionView.swift in Sources */,
-				F9B92FFC2A2694BF00C173BF /* Disclaimer_V1.5.swift in Sources */,
 				D32AC7E42C16F17400BDFBAC /* RecipeDisplayView.swift in Sources */,
-				D3B32AC62C00B9FF0025B441 /* ChangelogsView.swift in Sources */,
+				D3B32AC62C00B9FF0025B441 /* ChangeLogsView.swift in Sources */,
 				D3FA3DDA2BF8E270004CD46D /* AngledBottomLine.swift in Sources */,
 				F9B92FE12A265DA800C173BF /* AngledRectangled.swift in Sources */,
 				F9B92FE52A265F3C00C173BF /* CGRect+Points.swift in Sources */,
 				D32AC7DD2C16E96F00BDFBAC /* InverseMaskViewModifier.swift in Sources */,
+				D38F69CA2C426A87000F4CEE /* ChangeLog.swift in Sources */,
 				D31E838F2C3ED5290054C504 /* ProductionProportionView.swift in Sources */,
-				F9BAB9D92AC614CF00BE130F /* Disclaimer_V1.7.swift in Sources */,
 				F9B91041273EA74C00274EE3 /* CalculationStatistics.swift in Sources */,
 				D300D56A2C401DBE00D1C391 /* SingleItemProductionRecipeDisplayView.swift in Sources */,
 			);
@@ -885,32 +871,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				D314C3B22C0464EB002825C9 /* TabsView.swift in Sources */,
-				F9B930062A26A0FE00C173BF /* DisclaimerViewContainer.swift in Sources */,
 				D3A676E32C2B7113000A1078 /* SingleItemProductionUserInput.swift in Sources */,
 				D3A676B42C2B535E000A1078 /* Array+Merge.swift in Sources */,
 				D386D5C72BEAC78D00B584C9 /* RootView.swift in Sources */,
-				F9B930032A26A06B00C173BF /* Disclaimer.swift in Sources */,
 				F998FFF22A1159CC00EB7225 /* FeedbackView.swift in Sources */,
 				D314C3B72C04715D002825C9 /* ItemRecipesViewModel.swift in Sources */,
 				D356C51E2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
 				F946413A26A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
-				F9AB09062A2C6CA000233E53 /* Disclaimer_V1.5.1.swift in Sources */,
-				D3B32AC82C00B9FF0025B441 /* ChangelogsView.swift in Sources */,
-				F9B92FFD2A2694BF00C173BF /* Disclaimer_V1.5.swift in Sources */,
-				F9B9300A2A26A57C00C173BF /* Disclaimer_V1.4.swift in Sources */,
+				D3B32AC82C00B9FF0025B441 /* ChangeLogsView.swift in Sources */,
 				450BD1A324A6395700948B47 /* SatisfactoryApp.swift in Sources */,
-				F93431812ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */,
 				F9CBF0BB27493FD90020871C /* SettingsView.swift in Sources */,
 				D3A676E92C2B7113000A1078 /* SingleItemProductionNode.swift in Sources */,
 				D3A676E62C2B7113000A1078 /* SingleItemProductionByproduct.swift in Sources */,
 				D30D97A42BF75412007B6850 /* NewProductionView.swift in Sources */,
 				F9B92FFA2A26944B00C173BF /* BubbleModifier.swift in Sources */,
-				F9DCF6AD2A2F8C37007B94DF /* Disclaimer_V1.6.swift in Sources */,
 				D3A676E02C2B7113000A1078 /* SingleItemProduction.swift in Sources */,
 				D356C5162BF7CAA700A4CE6E /* RootViewModel.swift in Sources */,
-				F998FFEF2A114F5200EB7225 /* DisclaimerView.swift in Sources */,
 				D314C3BB2C0477E5002825C9 /* ItemRecipesView.swift in Sources */,
-				F9BAB9DA2AC614CF00BE130F /* Disclaimer_V1.7.swift in Sources */,
 				F9B930002A269CC600C173BF /* SizeReader.swift in Sources */,
 				D31F7C5E2BF7F0C100AAE5C0 /* NewProductionViewModel.swift in Sources */,
 				F9B91042273EA74C00274EE3 /* CalculationStatistics.swift in Sources */,
@@ -925,8 +902,6 @@
 				D300D5612C3FFAAD00D1C391 /* RecipeAdjustmentViewModel.swift in Sources */,
 				D3A676E22C2B7113000A1078 /* SingleItemProductionUserInput.swift in Sources */,
 				D3BB555B2C3FD7350052DF56 /* RecipeIngredientViewModel.swift in Sources */,
-				F95DAF982AC6ACC60062A5AD /* Disclaimer_V1.4.swift in Sources */,
-				F95DAF9A2AC6ACC60062A5AD /* Disclaimer_V1.5.1.swift in Sources */,
 				D32AC7E52C16F17400BDFBAC /* RecipeDisplayView.swift in Sources */,
 				D30D97A32BF75412007B6850 /* NewProductionView.swift in Sources */,
 				D386D5C62BEAC78D00B584C9 /* RootView.swift in Sources */,
@@ -937,7 +912,6 @@
 				D300D5542C3FE96F00D1C391 /* NavigationBar.swift in Sources */,
 				D3A676DF2C2B7113000A1078 /* SingleItemProduction.swift in Sources */,
 				F95DAF9F2AC6ACC60062A5AD /* FloatingPointFormatStyle.swift in Sources */,
-				F95DAFA12AC6ACC60062A5AD /* Disclaimer_V1.6.swift in Sources */,
 				D300D55E2C3FFA6800D1C391 /* RecipeDisplayViewModel.swift in Sources */,
 				F95DAFA22AC6ACC60062A5AD /* Bundle+Version.swift in Sources */,
 				D32AC7E82C16F33100BDFBAC /* RecipeItemAmountShape.swift in Sources */,
@@ -949,7 +923,6 @@
 				D300D5602C3FFAAD00D1C391 /* RecipeAdjustmentView.swift in Sources */,
 				F95DAFA92AC6ACC60062A5AD /* SizeReader.swift in Sources */,
 				D32AC7EE2C16FA9900BDFBAC /* ScrollOffsetReader.swift in Sources */,
-				F95DAFAB2AC6ACC60062A5AD /* DisclaimerViewContainer.swift in Sources */,
 				D300D5512C3FE4A000D1C391 /* RecipeIngredientAmountViewModel.swift in Sources */,
 				F95DAFAC2AC6ACC60062A5AD /* AngledLinedBackground.swift in Sources */,
 				F95DAFAE2AC6ACC60062A5AD /* SatisfactoryApp.swift in Sources */,
@@ -959,23 +932,18 @@
 				D32AC7DB2C16D68F00BDFBAC /* ItemIconShape.swift in Sources */,
 				F95DAFB32AC6ACC60062A5AD /* SettingsView.swift in Sources */,
 				D3A676E82C2B7113000A1078 /* SingleItemProductionNode.swift in Sources */,
-				F93431802ACAA2A40082C404 /* Disclaimer_V1.7.1.swift in Sources */,
 				D356C51D2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
-				F95DAFB52AC6ACC60062A5AD /* Disclaimer.swift in Sources */,
 				F95DAFB72AC6ACC60062A5AD /* CGPoint+Offset.swift in Sources */,
-				F95DAFBC2AC6ACC60062A5AD /* DisclaimerView.swift in Sources */,
 				D3ACE5DA2C387CA40081D2C5 /* RecipeIngredientIconView.swift in Sources */,
 				D314C3B12C0464EB002825C9 /* TabsView.swift in Sources */,
 				D356C5152BF7CAA700A4CE6E /* RootViewModel.swift in Sources */,
 				D32AC7DE2C16E96F00BDFBAC /* InverseMaskViewModifier.swift in Sources */,
-				F95DAFC02AC6ACC60062A5AD /* Disclaimer_V1.5.swift in Sources */,
 				D300D56D2C401E9400D1C391 /* SingleItemProductionRecipeDisplayViewModel.swift in Sources */,
-				D3B32AC72C00B9FF0025B441 /* ChangelogsView.swift in Sources */,
+				D3B32AC72C00B9FF0025B441 /* ChangeLogsView.swift in Sources */,
 				D3FA3DDB2BF8E270004CD46D /* AngledBottomLine.swift in Sources */,
 				F95DAFC32AC6ACC60062A5AD /* AngledRectangled.swift in Sources */,
 				F95DAFCA2AC6ACC60062A5AD /* CGRect+Points.swift in Sources */,
 				D3BB55572C3FD6D80052DF56 /* RecipeIngredientRowView.swift in Sources */,
-				F95DAFCD2AC6ACC60062A5AD /* Disclaimer_V1.7.swift in Sources */,
 				D300D56B2C401DBE00D1C391 /* SingleItemProductionRecipeDisplayView.swift in Sources */,
 				D3A676B32C2B535E000A1078 /* Array+Merge.swift in Sources */,
 				F95DAFCE2AC6ACC60062A5AD /* CalculationStatistics.swift in Sources */,

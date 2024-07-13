@@ -23,7 +23,6 @@ struct SettingsView: View {
                 }
                 .frame(maxWidth: 600)
                 .navigationTitle("Settings")
-                .navigationBarTitleDisplayMode(.inline)
                 .safeAreaInset(edge: .bottom, spacing: 16) {
                     VStack {
                         if !Bundle.main.appVersion.isEmpty,
@@ -100,7 +99,7 @@ struct SettingsView: View {
     private var changeLogSection: some View {
         Section {
             NavigationLink("Changes") {
-                ChangelogsView()
+                ChangeLogsView()
             }
         }
     }

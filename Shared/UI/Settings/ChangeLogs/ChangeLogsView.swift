@@ -1,18 +1,18 @@
 import SwiftUI
 
-struct ChangelogsView: View {
+struct ChangeLogsView: View {
     var body: some View {
         List {
-            ForEach(Disclaimer.Version.validVersions, id: \.self) { version in
+            ForEach(ChangeLog.Version.validVersions, id: \.self) { version in
                 NavigationLink(versionTitle(for: version)) {
-                    DisclaimerViewContainer(Disclaimer[version], showOkButton: false)
+                    ChangeLogViewNew(ChangeLog[version], mode: .normal)
                 }
             }
         }
         .navigationTitle("Changes")
     }
     
-    private func versionTitle(for version: Disclaimer.Version) -> String {
+    private func versionTitle(for version: ChangeLog.Version) -> String {
         switch version {
         case .preview: return "Preview (should not be visible in production)"
         case .v1_4: return "Version 1.4"
@@ -28,7 +28,7 @@ struct ChangelogsView: View {
 #if DEBUG
 #Preview {
     NavigationStack {
-        ChangelogsView()
+        ChangeLogsView()
     }
 }
 #endif

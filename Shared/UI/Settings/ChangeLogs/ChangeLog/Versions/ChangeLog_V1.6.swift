@@ -1,7 +1,7 @@
 
-extension Disclaimer {
-    static var v1_6: Disclaimer {
-        Disclaimer(
+extension ChangeLog {
+    static var v1_6: ChangeLog {
+        ChangeLog(
             version: .v1_6,
             updateMessage: """
             Good day, folks!

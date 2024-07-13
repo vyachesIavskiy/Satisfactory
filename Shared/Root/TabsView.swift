@@ -2,7 +2,7 @@ import SwiftUI
 
 @Observable
 final class TabsViewModel {
-    var disclaimerToShow = Disclaimer.latest
+    var changeLogToShow = ChangeLog.latest
     
     let newProductionViewModel = NewProductionViewModel()
     let settingsViewModel = SettingsViewModel()
@@ -25,8 +25,8 @@ struct TabsView: View {
                     Label("Settings", systemImage: "gear")
                 }
         }
-        .sheet(item: $viewModel.disclaimerToShow) { disclaimer in
-            DisclaimerViewContainer(disclaimer)
+        .sheet(item: $viewModel.changeLogToShow) { changeLog in
+            ChangeLogViewNew(changeLog, mode: .showOnLaunch)
                 .interactiveDismissDisabled(true)
         }
     }

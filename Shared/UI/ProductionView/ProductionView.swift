@@ -62,6 +62,7 @@ struct ProductionView: View {
         NavigationBar {
             if viewModel.step == .selectingInitialRecipe {
                 Text("To start a production calculation, select an initial recipe for an item")
+                    .font(.title3)
                     .frame(maxWidth: .infinity, alignment: .leading)
             } else {
                 HStack {
@@ -121,6 +122,7 @@ struct ProductionView: View {
                 }
             }
         }
+        .padding(.top, -16)
     }
     
     @MainActor @ViewBuilder

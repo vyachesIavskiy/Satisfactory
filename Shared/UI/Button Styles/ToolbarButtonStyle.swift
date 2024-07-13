@@ -41,14 +41,14 @@ struct ToolbarButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.footnote)
+            .font(.callout)
             .fontWeight(fontWeigth)
             .foregroundStyle(foregroundColor)
             .padding(.horizontal, 6)
             .padding(.vertical, 4)
             .frame(minWidth: 40, minHeight: 25)
             .background {
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                AngledRectangle(cornerRadius: 4)
                     .foregroundStyle(backgroundColor.opacity(configuration.isPressed ? 0.85 : 1.0))
                     .shadow(color: shadowColor, radius: 1, y: 1)
             }

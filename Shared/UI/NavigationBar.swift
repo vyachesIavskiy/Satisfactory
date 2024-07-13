@@ -4,19 +4,6 @@ struct NavigationBar<Content: View, Buttons: View>: View {
     private let content: Content
     private let buttons: Buttons
     
-    @State
-    private var safeAreaInsets = EdgeInsets()
-    
-    private var topPadding: Double {
-        if Buttons.self == EmptyView.self {
-            8.0
-        } else if safeAreaInsets.top > 0 {
-            -8.0
-        } else {
-            8.0
-        }
-    }
-    
     @MainActor
     init(
         @ViewBuilder content: @MainActor () -> Content,
@@ -42,11 +29,9 @@ struct NavigationBar<Content: View, Buttons: View>: View {
             
             content
         }
-        .readSafeArea($safeAreaInsets)
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 16)
-        .padding(.bottom, 8)
-        .padding(.top, topPadding)
+        .padding(.vertical, 8)
         .frame(maxWidth: .infinity)
         .background {
             Rectangle()
@@ -65,10 +50,12 @@ struct NavigationBar<Content: View, Buttons: View>: View {
         } buttons: {
             HStack {
                 Button("Cancel") {}
+                    .buttonStyle(.toolbar(role: .cancel))
                 
                 Spacer()
                 
                 Button("Done") {}
+                    .buttonStyle(.toolbar(role: .confirm))
             }
         }
     }

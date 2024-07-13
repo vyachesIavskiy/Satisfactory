@@ -13,29 +13,18 @@ struct SettingsView: View {
         ZStack {
             NavigationStack {
                 List {
+                    viewModeSection
+                    
                     recipeSection
                     
                     seasonalEventsSection
                     
-                    changeLogSection
+                    otherSection
                     
                     feedbackSection
                 }
                 .frame(maxWidth: 600)
                 .navigationTitle("Settings")
-                .safeAreaInset(edge: .bottom, spacing: 16) {
-                    VStack {
-                        if !Bundle.main.appVersion.isEmpty,
-                           !Bundle.main.appBuildNumber.isEmpty {
-                            Text("App version: \(Bundle.main.appVersion) (\(Bundle.main.appBuildNumber))")
-                                .font(.caption2)
-                                .foregroundStyle(.secondary)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
-                        }
-                        
-                    }
-                    .padding()
-                }
             }
             
             if viewModel.feedbackResult == .sent {
@@ -52,22 +41,10 @@ struct SettingsView: View {
     }
     
     @MainActor @ViewBuilder
-    private var recipeSection: some View {
-        Section("Items and recipes") {
-            NavigationLink("View mode") {
-                viewModePicker
-                    .navigationTitle("View mode")
-            }
-            
-            Toggle("Auto-select single recipe", isOn: $viewModel.settings.autoSelectSingleRecipe)
-            
-            Toggle("Auto-select single pinned recipe", isOn: $viewModel.settings.autoSelectSinglePinnedRecipe)
-        }
-    }
-    
-    @MainActor @ViewBuilder
-    private var viewModePicker: some View {
-        VStack(spacing: 25) {
+    private var viewModeSection: some View {
+        Section {
+            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: viewModel.recipe))
+        } header: {
             Picker(selection: $viewModel.settings.viewMode) {
                 Text("Icon")
                     .tag(ViewMode.icon)
@@ -79,12 +56,17 @@ struct SettingsView: View {
             }
             .pickerStyle(.segmented)
             .padding(.horizontal)
+            .padding(.bottom, 8)
+            .textCase(nil)
+        }
+    }
+    
+    @MainActor @ViewBuilder
+    private var recipeSection: some View {
+        Section("Recipes") {
+            Toggle("Auto-select single recipe", isOn: $viewModel.settings.autoSelectSingleRecipe)
             
-            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: viewModel.recipe)/*, namespace: namespace*/)
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal, 24)
-            
-            Spacer()
+            Toggle("Auto-select single pinned recipe", isOn: $viewModel.settings.autoSelectSinglePinnedRecipe)
         }
     }
     
@@ -96,10 +78,14 @@ struct SettingsView: View {
     }
     
     @MainActor @ViewBuilder
-    private var changeLogSection: some View {
+    private var otherSection: some View {
         Section {
             NavigationLink("Changes") {
                 ChangeLogsView()
+            }
+            
+            NavigationLink("App Info") {
+                AppInfoView()
             }
         }
     }
@@ -136,7 +122,16 @@ struct SettingsView: View {
 }
 
 #if DEBUG
+private struct _SettingsPreview: View {
+    @Bindable var viewModel = SettingsViewModel()
+
+    var body: some View {
+        SettingsView(viewModel: viewModel)
+            .viewMode(viewModel.settings.viewMode)
+    }
+}
+
 #Preview {
-    SettingsView(viewModel: SettingsViewModel())
+    _SettingsPreview()
 }
 #endif

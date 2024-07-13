@@ -3,6 +3,9 @@ import SHModels
 public struct SHStorageService: Sendable {
     public var load: @Sendable () throws -> Void
     
+    public var staticConfiguration: @Sendable () -> Configuration
+    public var persistentConfiguration: @Sendable () -> Configuration
+    
     public var parts: @Sendable () -> [Part]
     public var equipment: @Sendable () -> [Equipment]
     public var buildings: @Sendable () -> [Building]

@@ -10,6 +10,14 @@ extension SHStorageService {
         private let staticStorage = SHStaticStorage()
         private let persistentStorage: SHPersistentStorage
         
+        var staticConfiguration: Configuration {
+            staticStorage.configuration
+        }
+        
+        var persistentConfiguration: Configuration {
+            persistentStorage.configuration
+        }
+        
         var pinnedPartIDs: AsyncStream<Set<String>> {
             persistentStorage.pins
                 .removeDuplicates()

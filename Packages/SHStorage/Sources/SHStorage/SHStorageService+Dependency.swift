@@ -17,6 +17,8 @@ extension SHStorageService: DependencyKey {
 extension SHStorageService {
     static let noop = SHStorageService(
         load: { },
+        staticConfiguration: { Configuration(version: 1) },
+        persistentConfiguration: { Configuration(version: 1) },
         parts: { [] },
         equipment: { [] },
         buildings: { [] },
@@ -34,6 +36,8 @@ extension SHStorageService {
     
     static let failing = SHStorageService(
         load: unimplemented("SHStorageService.load"),
+        staticConfiguration: unimplemented("SHStorageService.staticConfiguration"),
+        persistentConfiguration: unimplemented("SHStorageService.persistentConfiguration"),
         parts: unimplemented("SHStorageService.parts"),
         equipment: unimplemented("SHStorageService.equipment"),
         buildings: unimplemented("SHStorageService.buildings"),
@@ -54,6 +58,8 @@ extension SHStorageService {
         
         return SHStorageService(
             load: { try live.load() },
+            staticConfiguration: { live.staticConfiguration },
+            persistentConfiguration: { live.persistentConfiguration },
             parts: { live.parts },
             equipment: { live.equipment },
             buildings: { live.buildings },
@@ -75,6 +81,8 @@ extension SHStorageService {
         
         return SHStorageService(
             load: { },
+            staticConfiguration: { Configuration(version: 1) },
+            persistentConfiguration: { Configuration(version: 1) },
             parts: { preview.parts },
             equipment: { preview.equipment },
             buildings: { preview.buildings },

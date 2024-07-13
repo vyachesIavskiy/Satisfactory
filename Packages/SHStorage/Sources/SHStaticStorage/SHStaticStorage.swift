@@ -4,7 +4,7 @@ import SHStaticModels
 import SHLogger
 
 public final class SHStaticStorage {
-    public private(set) var configuration = Configuration(version: 0)
+    public private(set) var configuration = Configuration(version: 1)
     public private(set) var parts = [Part]()
     public private(set) var equipment = [Equipment]()
     public private(set) var buildings = [Building]()

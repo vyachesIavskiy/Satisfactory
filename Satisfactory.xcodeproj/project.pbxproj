@@ -91,6 +91,7 @@
 		D38F69CC2C426A87000F4CEE /* ChangeLog_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C52C426A87000F4CEE /* ChangeLog_V1.7.1.swift */; };
 		D38F69CD2C426A87000F4CEE /* ChangeLog_V1.7.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C62C426A87000F4CEE /* ChangeLog_V1.7.swift */; };
 		D38F69D02C426B0F000F4CEE /* ChangeLogNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69CF2C426B0F000F4CEE /* ChangeLogNewView.swift */; };
+		D38F69D22C427CE9000F4CEE /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69D12C427CE9000F4CEE /* AppInfoView.swift */; };
 		D393A3772C3DB06E00A783CC /* ProductionAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393A3762C3DB06E00A783CC /* ProductionAmountView.swift */; };
 		D399267F2C04DBB8000D7308 /* SHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399267E2C04DBB8000D7308 /* SHSection.swift */; };
 		D39926802C04DBB8000D7308 /* SHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399267E2C04DBB8000D7308 /* SHSection.swift */; };
@@ -219,6 +220,7 @@
 		D38F69C52C426A87000F4CEE /* ChangeLog_V1.7.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog_V1.7.1.swift; sourceTree = "<group>"; };
 		D38F69C62C426A87000F4CEE /* ChangeLog_V1.7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog_V1.7.swift; sourceTree = "<group>"; };
 		D38F69CF2C426B0F000F4CEE /* ChangeLogNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogNewView.swift; sourceTree = "<group>"; };
+		D38F69D12C427CE9000F4CEE /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
 		D393A3762C3DB06E00A783CC /* ProductionAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionAmountView.swift; sourceTree = "<group>"; };
 		D39597A22BFE99190046C23F /* SHPersistence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHPersistence; sourceTree = "<group>"; };
 		D399267E2C04DBB8000D7308 /* SHSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSection.swift; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 				D30BDE192C419841005757BB /* ChangeLogs */,
 				D356C51B2BF7CCCC00A4CE6E /* SettingsViewModel.swift */,
 				F9CBF0B927493FD90020871C /* SettingsView.swift */,
+				D38F69D12C427CE9000F4CEE /* AppInfoView.swift */,
 				F998FFF02A1159CC00EB7225 /* FeedbackView.swift */,
 			);
 			path = Settings;
@@ -802,6 +805,7 @@
 				D32AC7F82C172CFA00BDFBAC /* SHColor.swift in Sources */,
 				F946413926A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
 				D31E83A42C3EEC810054C504 /* ProductAdjustmentView.swift in Sources */,
+				D38F69D22C427CE9000F4CEE /* AppInfoView.swift in Sources */,
 				D31E839C2C3EEBDC0054C504 /* ProductionViewModel.swift in Sources */,
 				D3C56E372C3D98F9002EE561 /* ProductionInitialRecipeSelectionView.swift in Sources */,
 				D31E83A62C3EEC9F0054C504 /* ProductAdjustmentViewModel.swift in Sources */,

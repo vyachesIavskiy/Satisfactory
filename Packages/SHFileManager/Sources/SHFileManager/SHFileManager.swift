@@ -3,7 +3,7 @@ import SHLogger
 
 public final class SHFileManager {
     private let _fileManager = FileManager.default
-    private var logger = SHLogger(subsystemName: "SHFileManager", category: "SHFileManager")
+    private var logger = SHLogger(subsystemName: "SHFileManager", category: "SHFileManager", enabled: false)
     
     public init() {}
     

@@ -3,14 +3,15 @@ import XCTestDynamicOverlay
 
 public final class SHLogger {
     private let _logger: os.Logger
-    public var isEnabled = true
+    public var isEnabled: Bool
     
     #if DEBUG
     private(set) var logs = [String]()
     #endif
     
-    public init(subsystemName: String, category: String) {
+    public init(subsystemName: String, category: String, enabled: Bool = true) {
         _logger = os.Logger(subsystem: "com.breath.Satisfactory.\(subsystemName)", category: category)
+        isEnabled = enabled
     }
     
     public func log<S: StringProtocol>(level: OSLogType = .default, _ message: @autoclosure () -> S) {

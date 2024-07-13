@@ -17,36 +17,42 @@ final class NewProductionViewModel {
     private let parts: [Part]
     private let equipment: [Equipment]
     
+    @MainActor
     private var pinnedPartIDs: Set<String> {
         didSet {
             buildSections()
         }
     }
     
+    @MainActor
     private var pinnedEquipmentIDs: Set<String> {
         didSet {
             buildSections()
         }
     }
     
+    @MainActor
     private var showFICSMAS: Bool {
         didSet {
             buildSections()
         }
     }
     
+    @MainActor
     private var grouping = Grouping.categories {
         didSet {
             buildSections()
         }
     }
     
+    @MainActor
     private var sorting = Sorting.progression {
         didSet {
             buildSections()
         }
     }
     
+    @MainActor
     var groupingNone: Bool {
         get { grouping == .none }
         set {
@@ -56,6 +62,7 @@ final class NewProductionViewModel {
         }
     }
     
+    @MainActor
     var groupingCategories: Bool {
         get { grouping == .categories }
         set {
@@ -65,6 +72,7 @@ final class NewProductionViewModel {
         }
     }
     
+    @MainActor
     var sortingName: Bool {
         get { sorting == .name }
         set {
@@ -74,6 +82,7 @@ final class NewProductionViewModel {
         }
     }
     
+    @MainActor
     var sortingProgression: Bool {
         get { sorting == .progression }
         set {
@@ -83,6 +92,7 @@ final class NewProductionViewModel {
         }
     }
     
+    @MainActor
     var searchText = "" {
         didSet {
             buildSections()
@@ -92,6 +102,7 @@ final class NewProductionViewModel {
     var selectedItemID: String?
     var sections = [Section]()
     
+    @MainActor
     init() {
         @Dependency(\.storageService)
         var storageService
@@ -104,6 +115,8 @@ final class NewProductionViewModel {
         pinnedPartIDs = storageService.pinnedPartIDs()
         pinnedEquipmentIDs = storageService.pinnedEquipmentIDs()
         showFICSMAS = settings().showFICSMAS
+        
+        buildSections()
     }
     
     @MainActor
@@ -114,6 +127,8 @@ final class NewProductionViewModel {
                 
                 for await pinnedPartIDs in storageService.streamPinnedPartIDs() {
                     try Task.checkCancellation()
+                    
+                    print("got new pin parts \(pinnedPartIDs)")
                     
                     self.pinnedPartIDs = pinnedPartIDs
                 }
@@ -158,24 +173,29 @@ final class NewProductionViewModel {
 
 // MARK: Private
 private extension NewProductionViewModel {
+    @MainActor
     func buildSections() {
-        let newSections = switch grouping {
-        case .none: buildUngroupedSections()
-        case .categories: buildCategoriesSections()
-        }
-        
-        if sections.isEmpty {
-            sections = newSections
-        } else if sections != newSections {
-            withAnimation {
+        Task(priority: .userInitiated) { @MainActor [weak self] in
+            guard let self else { return }
+            
+            let newSections = switch grouping {
+            case .none: await buildUngroupedSections()
+            case .categories: await buildCategoriesSections()
+            }
+            
+            if sections.isEmpty {
                 sections = newSections
+            } else if sections != newSections {
+                withAnimation {
+                    self.sections = newSections
+                }
             }
         }
     }
     
-    func buildUngroupedSections() -> [Section] {
-        let (pinnedParts, unpinnedParts) = splitParts()
-        let (pinnedEquipment, unpinnedEquipment) = splitEquipment()
+    func buildUngroupedSections() async -> [Section] {
+        let (pinnedParts, unpinnedParts) = await splitParts()
+        let (pinnedEquipment, unpinnedEquipment) = await splitEquipment()
         
         let pinnedItems: [any Item] = pinnedParts + pinnedEquipment
         
@@ -186,9 +206,9 @@ private extension NewProductionViewModel {
         ]
     }
     
-    func buildCategoriesSections() -> [Section] {
-        let (pinnedParts, unpinnedParts) = splitParts()
-        let (pinnedEquipment, unpinnedEquipment) = splitEquipment()
+    func buildCategoriesSections() async -> [Section] {
+        let (pinnedParts, unpinnedParts) = await splitParts()
+        let (pinnedEquipment, unpinnedEquipment) = await splitEquipment()
         
         let pinnedItems: [any Item] = pinnedParts + pinnedEquipment
         
@@ -214,15 +234,18 @@ private extension NewProductionViewModel {
         + equipmentByCategories.sorted { $0.0 < $1.0 }.map { .equipment($0.0.localizedName, $0.1) }
     }
     
-    func splitParts() -> (pinned: [Part], unpinned: [Part]) {
-        split(parts, pins: pinnedPartIDs)
+    func splitParts() async -> (pinned: [Part], unpinned: [Part]) {
+        await split(parts, pins: pinnedPartIDs)
     }
     
-    func splitEquipment() -> (pinned: [Equipment], unpinned: [Equipment]) {
-        split(equipment, pins: pinnedEquipmentIDs)
+    func splitEquipment() async -> (pinned: [Equipment], unpinned: [Equipment]) {
+        await split(equipment, pins: pinnedEquipmentIDs)
     }
     
-    func split<T: ProgressiveItem>(_ items: [T], pins: Set<String>) -> (pinned: [T], unpinned: [T]) {
+    func split<T: ProgressiveItem>(_ items: [T], pins: Set<String>) async -> (pinned: [T], unpinned: [T]) {
+        let showFICSMAS = await showFICSMAS
+        let searchText = await searchText
+        
         var (pinned, unpinned) = items.reduce(into: ([T](), [T]())) { partialResult, item in
             if item.category == .ficsmas, !showFICSMAS {
                 return
@@ -237,14 +260,14 @@ private extension NewProductionViewModel {
             }
         }
         
-        sort(&pinned)
-        sort(&unpinned)
+        await sort(&pinned)
+        await sort(&unpinned)
         
         return (pinned, unpinned)
     }
     
-    func sort<T: ProgressiveItem>(_ items: inout [T]) {
-        switch sorting {
+    func sort<T: ProgressiveItem>(_ items: inout [T]) async {
+        switch await sorting {
         case .name: items.sortByName()
         case .progression: items.sortByProgression()
         }

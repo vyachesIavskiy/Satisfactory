@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import ConcurrencyExtras
 import SHModels
 import SHPersistentModels
 import struct SHStaticModels.Migration
@@ -16,8 +17,16 @@ public final class SHPersistentStorage {
         set { v2.configuration = Configuration.Persistent.V2(newValue) }
     }
     
-    public var pins: CurrentValueSubject<Pins, Never> {
-        CurrentValueSubject(Pins(v2.pins.value))
+    public var streamPins: AsyncStream<Pins> {
+        v2.pins
+            .removeDuplicates()
+            .map(Pins.init)
+            .values
+            .eraseToStream()
+    }
+    
+    public var pins: Pins {
+        Pins(v2.pins.value)
     }
     
     public var factories = [Factory]()

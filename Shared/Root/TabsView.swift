@@ -2,10 +2,16 @@ import SwiftUI
 
 @Observable
 final class TabsViewModel {
-    var changeLogToShow = ChangeLog.latest
+    var changeLogToShow: ChangeLog?
+    let newProductionViewModel: NewProductionViewModel
+    let settingsViewModel: SettingsViewModel
     
-    let newProductionViewModel = NewProductionViewModel()
-    let settingsViewModel = SettingsViewModel()
+    @MainActor
+    init() {
+        changeLogToShow = ChangeLog.latest
+        newProductionViewModel = NewProductionViewModel()
+        settingsViewModel = SettingsViewModel()
+    }
 }
 
 struct TabsView: View {

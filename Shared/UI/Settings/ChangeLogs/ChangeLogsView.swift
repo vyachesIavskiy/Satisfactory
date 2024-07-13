@@ -5,7 +5,7 @@ struct ChangeLogsView: View {
         List {
             ForEach(ChangeLog.Version.validVersions, id: \.self) { version in
                 NavigationLink(versionTitle(for: version)) {
-                    ChangeLogViewNew(ChangeLog[version], mode: .normal)
+                    ChangeLogView(ChangeLog[version], mode: .normal)
                 }
             }
         }

@@ -1,10 +1,3 @@
-//
-//  FloatingPointFormatStyle.swift
-//  FloatingPointFormatStyle
-//
-//  Created by Slava Nagornyak on 17.07.2021.
-//
-
 import Foundation
 
 extension FormatStyle where Self == FloatingPointFormatStyle<Float64> {

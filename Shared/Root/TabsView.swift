@@ -26,7 +26,7 @@ struct TabsView: View {
                 }
         }
         .sheet(item: $viewModel.changeLogToShow) { changeLog in
-            ChangeLogViewNew(changeLog, mode: .showOnLaunch)
+            ChangeLogView(changeLog, mode: .showOnLaunch)
                 .interactiveDismissDisabled(true)
         }
     }

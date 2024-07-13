@@ -73,6 +73,29 @@
 		D32AC7F42C170D8800BDFBAC /* SHDependencies in Resources */ = {isa = PBXBuildFile; fileRef = D32AC7F22C170D8800BDFBAC /* SHDependencies */; };
 		D32AC7F82C172CFA00BDFBAC /* SHColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32AC7F72C172CFA00BDFBAC /* SHColor.swift */; };
 		D32AC7FA2C172D3400BDFBAC /* SHShapeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32AC7F92C172D3400BDFBAC /* SHShapeStyle.swift */; };
+		D333C8B92C42886C0021E225 /* ToolbarButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E83AD2C3F03BD0054C504 /* ToolbarButtonStyle.swift */; };
+		D333C8BA2C4288720021E225 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E839E2C3EEC380054C504 /* ProductView.swift */; };
+		D333C8BB2C4288750021E225 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E83A02C3EEC570054C504 /* ProductViewModel.swift */; };
+		D333C8BC2C4288790021E225 /* ProductAdjustmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E83A32C3EEC810054C504 /* ProductAdjustmentView.swift */; };
+		D333C8BD2C42887B0021E225 /* ProductAdjustmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E83A52C3EEC9F0054C504 /* ProductAdjustmentViewModel.swift */; };
+		D333C8BE2C4288810021E225 /* ProductionProportionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E838E2C3ED5290054C504 /* ProductionProportionView.swift */; };
+		D333C8BF2C4288810021E225 /* ProductionAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393A3762C3DB06E00A783CC /* ProductionAmountView.swift */; };
+		D333C8C02C4288810021E225 /* ProductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7B87E2C2C5F5E00DB7177 /* ProductionView.swift */; };
+		D333C8C12C4288810021E225 /* ProductionInitialRecipeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C56E362C3D98F9002EE561 /* ProductionInitialRecipeSelectionView.swift */; };
+		D333C8C22C4288810021E225 /* ProductionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E839B2C3EEBDC0054C504 /* ProductionViewModel.swift */; };
+		D333C8C32C42888D0021E225 /* ChangeLog_V1.4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C12C426A87000F4CEE /* ChangeLog_V1.4.swift */; };
+		D333C8C42C42888D0021E225 /* ChangeLog_V1.6.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C02C426A87000F4CEE /* ChangeLog_V1.6.swift */; };
+		D333C8C52C42888D0021E225 /* ChangeLog_V1.5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C42C426A87000F4CEE /* ChangeLog_V1.5.swift */; };
+		D333C8C62C42888D0021E225 /* ChangeLog_V1.5.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C22C426A87000F4CEE /* ChangeLog_V1.5.1.swift */; };
+		D333C8C72C42888D0021E225 /* ChangeLog_V1.7.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C62C426A87000F4CEE /* ChangeLog_V1.7.swift */; };
+		D333C8C82C42888D0021E225 /* ChangeLog_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C52C426A87000F4CEE /* ChangeLog_V1.7.1.swift */; };
+		D333C8C92C4288910021E225 /* ChangeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C32C426A87000F4CEE /* ChangeLog.swift */; };
+		D333C8CA2C4288910021E225 /* ChangeLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69CF2C426B0F000F4CEE /* ChangeLogView.swift */; };
+		D333C8CB2C4288AF0021E225 /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69D12C427CE9000F4CEE /* AppInfoView.swift */; };
+		D333C8CC2C4289130021E225 /* SingleItemProductionOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7B8802C2C6E0200DB7177 /* SingleItemProductionOutput.swift */; };
+		D333C8CD2C4289130021E225 /* SingleItemProductionOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7B8802C2C6E0200DB7177 /* SingleItemProductionOutput.swift */; };
+		D333C8CE2C4289190021E225 /* ProductionProportion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E83902C3ED7AF0054C504 /* ProductionProportion.swift */; };
+		D333C8CF2C4289190021E225 /* ProductionProportion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E83902C3ED7AF0054C504 /* ProductionProportion.swift */; };
 		D341A9EE2BDD60E500ED36F6 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D341A9ED2BDD60E500ED36F6 /* SHStorage */; };
 		D356C5142BF7CAA700A4CE6E /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356C5132BF7CAA700A4CE6E /* RootViewModel.swift */; };
 		D356C5152BF7CAA700A4CE6E /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356C5132BF7CAA700A4CE6E /* RootViewModel.swift */; };
@@ -90,7 +113,7 @@
 		D38F69CB2C426A87000F4CEE /* ChangeLog_V1.5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C42C426A87000F4CEE /* ChangeLog_V1.5.swift */; };
 		D38F69CC2C426A87000F4CEE /* ChangeLog_V1.7.1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C52C426A87000F4CEE /* ChangeLog_V1.7.1.swift */; };
 		D38F69CD2C426A87000F4CEE /* ChangeLog_V1.7.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69C62C426A87000F4CEE /* ChangeLog_V1.7.swift */; };
-		D38F69D02C426B0F000F4CEE /* ChangeLogNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69CF2C426B0F000F4CEE /* ChangeLogNewView.swift */; };
+		D38F69D02C426B0F000F4CEE /* ChangeLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69CF2C426B0F000F4CEE /* ChangeLogView.swift */; };
 		D38F69D22C427CE9000F4CEE /* AppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F69D12C427CE9000F4CEE /* AppInfoView.swift */; };
 		D393A3772C3DB06E00A783CC /* ProductionAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393A3762C3DB06E00A783CC /* ProductionAmountView.swift */; };
 		D399267F2C04DBB8000D7308 /* SHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399267E2C04DBB8000D7308 /* SHSection.swift */; };
@@ -131,7 +154,6 @@
 		F946413926A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */; };
 		F946413A26A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */; };
 		F95DAF932AC6ACC60062A5AD /* NewProductionItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FE92A2665BC00C173BF /* NewProductionItemRow.swift */; };
-		F95DAF9D2AC6ACC60062A5AD /* BubbleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FF82A26944B00C173BF /* BubbleModifier.swift */; };
 		F95DAF9F2AC6ACC60062A5AD /* FloatingPointFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946413826A2D6AE001F8ACF /* FloatingPointFormatStyle.swift */; };
 		F95DAFA22AC6ACC60062A5AD /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FEE2A26863600C173BF /* Bundle+Version.swift */; };
 		F95DAFA52AC6ACC60062A5AD /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998FFF02A1159CC00EB7225 /* FeedbackView.swift */; };
@@ -155,8 +177,6 @@
 		F9B92FE82A26603A00C173BF /* CGPoint+Offset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FE72A26603A00C173BF /* CGPoint+Offset.swift */; };
 		F9B92FEA2A2665BC00C173BF /* NewProductionItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FE92A2665BC00C173BF /* NewProductionItemRow.swift */; };
 		F9B92FEF2A26863600C173BF /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FEE2A26863600C173BF /* Bundle+Version.swift */; };
-		F9B92FF92A26944B00C173BF /* BubbleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FF82A26944B00C173BF /* BubbleModifier.swift */; };
-		F9B92FFA2A26944B00C173BF /* BubbleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FF82A26944B00C173BF /* BubbleModifier.swift */; };
 		F9B92FFF2A269CC600C173BF /* SizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FFE2A269CC600C173BF /* SizeReader.swift */; };
 		F9B930002A269CC600C173BF /* SizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B92FFE2A269CC600C173BF /* SizeReader.swift */; };
 		F9CBF0BA27493FD90020871C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CBF0B927493FD90020871C /* SettingsView.swift */; };
@@ -219,7 +239,7 @@
 		D38F69C42C426A87000F4CEE /* ChangeLog_V1.5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog_V1.5.swift; sourceTree = "<group>"; };
 		D38F69C52C426A87000F4CEE /* ChangeLog_V1.7.1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog_V1.7.1.swift; sourceTree = "<group>"; };
 		D38F69C62C426A87000F4CEE /* ChangeLog_V1.7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeLog_V1.7.swift; sourceTree = "<group>"; };
-		D38F69CF2C426B0F000F4CEE /* ChangeLogNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogNewView.swift; sourceTree = "<group>"; };
+		D38F69CF2C426B0F000F4CEE /* ChangeLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogView.swift; sourceTree = "<group>"; };
 		D38F69D12C427CE9000F4CEE /* AppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoView.swift; sourceTree = "<group>"; };
 		D393A3762C3DB06E00A783CC /* ProductionAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionAmountView.swift; sourceTree = "<group>"; };
 		D39597A22BFE99190046C23F /* SHPersistence */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHPersistence; sourceTree = "<group>"; };
@@ -252,7 +272,6 @@
 		F9B92FE72A26603A00C173BF /* CGPoint+Offset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Offset.swift"; sourceTree = "<group>"; };
 		F9B92FE92A2665BC00C173BF /* NewProductionItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductionItemRow.swift; sourceTree = "<group>"; };
 		F9B92FEE2A26863600C173BF /* Bundle+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Version.swift"; sourceTree = "<group>"; };
-		F9B92FF82A26944B00C173BF /* BubbleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleModifier.swift; sourceTree = "<group>"; };
 		F9B92FFE2A269CC600C173BF /* SizeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeReader.swift; sourceTree = "<group>"; };
 		F9CBF0B927493FD90020871C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -333,7 +352,6 @@
 		450BD19F24A6395700948B47 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				459A945824CD6A4D00C260BB /* UI */,
 				450BD1A024A6395700948B47 /* Info.plist */,
 				450BD1A124A6395700948B47 /* macOS.entitlements */,
 			);
@@ -368,13 +386,6 @@
 				D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */,
 				F9B91040273EA74C00274EE3 /* CalculationStatistics.swift */,
 				D32AC7F62C172CF300BDFBAC /* Styles */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		459A945824CD6A4D00C260BB /* UI */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -446,7 +457,7 @@
 			children = (
 				D38F69CE2C426AA5000F4CEE /* Versions */,
 				D38F69C32C426A87000F4CEE /* ChangeLog.swift */,
-				D38F69CF2C426B0F000F4CEE /* ChangeLogNewView.swift */,
+				D38F69CF2C426B0F000F4CEE /* ChangeLogView.swift */,
 			);
 			path = ChangeLog;
 			sourceTree = "<group>";
@@ -653,7 +664,6 @@
 		F9B92FF72A26944000C173BF /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
-				F9B92FF82A26944B00C173BF /* BubbleModifier.swift */,
 				F9B92FFE2A269CC600C173BF /* SizeReader.swift */,
 				D32AC7DC2C16E96F00BDFBAC /* InverseMaskViewModifier.swift */,
 				D32AC7EC2C16FA9900BDFBAC /* ScrollOffsetReader.swift */,
@@ -800,7 +810,6 @@
 				D386D5C52BEAC78D00B584C9 /* RootView.swift in Sources */,
 				D31F7C5C2BF7F0C100AAE5C0 /* NewProductionViewModel.swift in Sources */,
 				D38F69C82C426A87000F4CEE /* ChangeLog_V1.4.swift in Sources */,
-				F9B92FF92A26944B00C173BF /* BubbleModifier.swift in Sources */,
 				D31E83AE2C3F03BD0054C504 /* ToolbarButtonStyle.swift in Sources */,
 				D32AC7F82C172CFA00BDFBAC /* SHColor.swift in Sources */,
 				F946413926A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
@@ -840,7 +849,7 @@
 				D38F69CD2C426A87000F4CEE /* ChangeLog_V1.7.swift in Sources */,
 				D3A676E42C2B7113000A1078 /* SingleItemProductionByproduct.swift in Sources */,
 				D31E83A12C3EEC570054C504 /* ProductViewModel.swift in Sources */,
-				D38F69D02C426B0F000F4CEE /* ChangeLogNewView.swift in Sources */,
+				D38F69D02C426B0F000F4CEE /* ChangeLogView.swift in Sources */,
 				D300D56E2C401E9400D1C391 /* SingleItemProductionRecipeDisplayViewModel.swift in Sources */,
 				D356C51C2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
 				D3A676E12C2B7113000A1078 /* SingleItemProductionUserInput.swift in Sources */,
@@ -880,6 +889,7 @@
 				D386D5C72BEAC78D00B584C9 /* RootView.swift in Sources */,
 				F998FFF22A1159CC00EB7225 /* FeedbackView.swift in Sources */,
 				D314C3B72C04715D002825C9 /* ItemRecipesViewModel.swift in Sources */,
+				D333C8CE2C4289190021E225 /* ProductionProportion.swift in Sources */,
 				D356C51E2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
 				F946413A26A2D6AE001F8ACF /* FloatingPointFormatStyle.swift in Sources */,
 				D3B32AC82C00B9FF0025B441 /* ChangeLogsView.swift in Sources */,
@@ -888,13 +898,13 @@
 				D3A676E92C2B7113000A1078 /* SingleItemProductionNode.swift in Sources */,
 				D3A676E62C2B7113000A1078 /* SingleItemProductionByproduct.swift in Sources */,
 				D30D97A42BF75412007B6850 /* NewProductionView.swift in Sources */,
-				F9B92FFA2A26944B00C173BF /* BubbleModifier.swift in Sources */,
 				D3A676E02C2B7113000A1078 /* SingleItemProduction.swift in Sources */,
 				D356C5162BF7CAA700A4CE6E /* RootViewModel.swift in Sources */,
 				D314C3BB2C0477E5002825C9 /* ItemRecipesView.swift in Sources */,
 				F9B930002A269CC600C173BF /* SizeReader.swift in Sources */,
 				D31F7C5E2BF7F0C100AAE5C0 /* NewProductionViewModel.swift in Sources */,
 				F9B91042273EA74C00274EE3 /* CalculationStatistics.swift in Sources */,
+				D333C8CD2C4289130021E225 /* SingleItemProductionOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -904,6 +914,7 @@
 			files = (
 				F95DAF932AC6ACC60062A5AD /* NewProductionItemRow.swift in Sources */,
 				D300D5612C3FFAAD00D1C391 /* RecipeAdjustmentViewModel.swift in Sources */,
+				D333C8CC2C4289130021E225 /* SingleItemProductionOutput.swift in Sources */,
 				D3A676E22C2B7113000A1078 /* SingleItemProductionUserInput.swift in Sources */,
 				D3BB555B2C3FD7350052DF56 /* RecipeIngredientViewModel.swift in Sources */,
 				D32AC7E52C16F17400BDFBAC /* RecipeDisplayView.swift in Sources */,
@@ -911,8 +922,13 @@
 				D386D5C62BEAC78D00B584C9 /* RootView.swift in Sources */,
 				D31F7C5D2BF7F0C100AAE5C0 /* NewProductionViewModel.swift in Sources */,
 				D30BDE142C41427F005757BB /* SingleItemProductionRecipeSelectViewModel.swift in Sources */,
+				D333C8C32C42888D0021E225 /* ChangeLog_V1.4.swift in Sources */,
+				D333C8C42C42888D0021E225 /* ChangeLog_V1.6.swift in Sources */,
+				D333C8C52C42888D0021E225 /* ChangeLog_V1.5.swift in Sources */,
+				D333C8C62C42888D0021E225 /* ChangeLog_V1.5.1.swift in Sources */,
+				D333C8C72C42888D0021E225 /* ChangeLog_V1.7.swift in Sources */,
+				D333C8C82C42888D0021E225 /* ChangeLog_V1.7.1.swift in Sources */,
 				D30BDE152C41427F005757BB /* SingleItemProductionRecipeSelectView.swift in Sources */,
-				F95DAF9D2AC6ACC60062A5AD /* BubbleModifier.swift in Sources */,
 				D300D5542C3FE96F00D1C391 /* NavigationBar.swift in Sources */,
 				D3A676DF2C2B7113000A1078 /* SingleItemProduction.swift in Sources */,
 				F95DAF9F2AC6ACC60062A5AD /* FloatingPointFormatStyle.swift in Sources */,
@@ -920,16 +936,20 @@
 				F95DAFA22AC6ACC60062A5AD /* Bundle+Version.swift in Sources */,
 				D32AC7E82C16F33100BDFBAC /* RecipeItemAmountShape.swift in Sources */,
 				D300D5572C3FF11E00D1C391 /* SafeAreaReader.swift in Sources */,
+				D333C8CF2C4289190021E225 /* ProductionProportion.swift in Sources */,
 				D39926802C04DBB8000D7308 /* SHSection.swift in Sources */,
 				D32AC7EB2C16F3C700BDFBAC /* RecipeByproductShape.swift in Sources */,
 				D3A676E52C2B7113000A1078 /* SingleItemProductionByproduct.swift in Sources */,
+				D333C8B92C42886C0021E225 /* ToolbarButtonStyle.swift in Sources */,
 				F95DAFA52AC6ACC60062A5AD /* FeedbackView.swift in Sources */,
 				D300D5602C3FFAAD00D1C391 /* RecipeAdjustmentView.swift in Sources */,
 				F95DAFA92AC6ACC60062A5AD /* SizeReader.swift in Sources */,
 				D32AC7EE2C16FA9900BDFBAC /* ScrollOffsetReader.swift in Sources */,
 				D300D5512C3FE4A000D1C391 /* RecipeIngredientAmountViewModel.swift in Sources */,
+				D333C8BD2C42887B0021E225 /* ProductAdjustmentViewModel.swift in Sources */,
 				F95DAFAC2AC6ACC60062A5AD /* AngledLinedBackground.swift in Sources */,
 				F95DAFAE2AC6ACC60062A5AD /* SatisfactoryApp.swift in Sources */,
+				D333C8BC2C4288790021E225 /* ProductAdjustmentView.swift in Sources */,
 				D3D976EE2C37F2B50069C421 /* RecipeIngredientAmountView.swift in Sources */,
 				D314C3BA2C0477E5002825C9 /* ItemRecipesView.swift in Sources */,
 				D314C3B62C04715D002825C9 /* ItemRecipesViewModel.swift in Sources */,
@@ -938,14 +958,24 @@
 				D3A676E82C2B7113000A1078 /* SingleItemProductionNode.swift in Sources */,
 				D356C51D2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
 				F95DAFB72AC6ACC60062A5AD /* CGPoint+Offset.swift in Sources */,
+				D333C8BB2C4288750021E225 /* ProductViewModel.swift in Sources */,
 				D3ACE5DA2C387CA40081D2C5 /* RecipeIngredientIconView.swift in Sources */,
 				D314C3B12C0464EB002825C9 /* TabsView.swift in Sources */,
+				D333C8CB2C4288AF0021E225 /* AppInfoView.swift in Sources */,
 				D356C5152BF7CAA700A4CE6E /* RootViewModel.swift in Sources */,
 				D32AC7DE2C16E96F00BDFBAC /* InverseMaskViewModifier.swift in Sources */,
 				D300D56D2C401E9400D1C391 /* SingleItemProductionRecipeDisplayViewModel.swift in Sources */,
 				D3B32AC72C00B9FF0025B441 /* ChangeLogsView.swift in Sources */,
 				D3FA3DDB2BF8E270004CD46D /* AngledBottomLine.swift in Sources */,
+				D333C8BA2C4288720021E225 /* ProductView.swift in Sources */,
 				F95DAFC32AC6ACC60062A5AD /* AngledRectangled.swift in Sources */,
+				D333C8BE2C4288810021E225 /* ProductionProportionView.swift in Sources */,
+				D333C8BF2C4288810021E225 /* ProductionAmountView.swift in Sources */,
+				D333C8C02C4288810021E225 /* ProductionView.swift in Sources */,
+				D333C8C92C4288910021E225 /* ChangeLog.swift in Sources */,
+				D333C8CA2C4288910021E225 /* ChangeLogView.swift in Sources */,
+				D333C8C12C4288810021E225 /* ProductionInitialRecipeSelectionView.swift in Sources */,
+				D333C8C22C4288810021E225 /* ProductionViewModel.swift in Sources */,
 				F95DAFCA2AC6ACC60062A5AD /* CGRect+Points.swift in Sources */,
 				D3BB55572C3FD6D80052DF56 /* RecipeIngredientRowView.swift in Sources */,
 				D300D56B2C401DBE00D1C391 /* SingleItemProductionRecipeDisplayView.swift in Sources */,

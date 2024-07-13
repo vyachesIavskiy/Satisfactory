@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ChangeLogViewNew: View {
+struct ChangeLogView: View {
     enum Mode {
         case showOnLaunch
         case normal
@@ -124,13 +124,13 @@ struct ChangeLogViewNew: View {
 
 #if DEBUG
 #Preview("Change log") {
-    ChangeLogViewNew(.previewValue, mode: .normal)
+    ChangeLogView(.previewValue, mode: .normal)
 }
 
 #Preview("Change log (show on launch)") {
     Color.clear
         .sheet(isPresented: .constant(true)) {
-            ChangeLogViewNew(.previewValue, mode: .showOnLaunch)
+            ChangeLogView(.previewValue, mode: .showOnLaunch)
         }
 }
 #endif

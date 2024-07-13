@@ -78,7 +78,7 @@ struct ProductAdjustmentView: View {
                 Button("Cancel", role: .cancel) {
                     dismiss()
                 }
-                .buttonStyle(.toolbar(role: .cancel))
+                .buttonStyle(.shToolbar(role: .cancel))
                 
                 Spacer()
                 
@@ -86,7 +86,7 @@ struct ProductAdjustmentView: View {
                     viewModel.apply()
                     dismiss()
                 }
-                .buttonStyle(.toolbar(role: .confirm))
+                .buttonStyle(.shToolbar(role: .confirm))
             }
         }
     }

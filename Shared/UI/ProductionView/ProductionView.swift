@@ -111,14 +111,14 @@ struct ProductionView: View {
                 Button("Cancel", role: .cancel) {
                     dismiss()
                 }
-                .buttonStyle(.toolbar(role: .cancel))
+                .buttonStyle(.shToolbar(role: .cancel))
                 
                 Spacer()
                 
                 if viewModel.step != .selectingInitialRecipe {
                     Button("Save") {
                     }
-                    .buttonStyle(.toolbar(role: .confirm))
+                    .buttonStyle(.shToolbar(role: .confirm))
                 }
             }
         }
@@ -202,27 +202,6 @@ struct ProductionView: View {
     private var initialRecipeSelection: some View {
         ItemRecipesView(viewModel: ItemRecipesViewModel(item: viewModel.item, onRecipeSelected: viewModel.addInitialRecipe))
     }
-}
-
-struct SHTintedButtonStyle: ButtonStyle {
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .foregroundStyle(.tint)
-            .padding(.horizontal, 8)
-            .padding(.vertical, 4)
-            .background {
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .foregroundStyle(.tint)
-                    .blur(radius: 2)
-                
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .foregroundStyle(.background)
-            }
-    }
-}
-
-extension ButtonStyle where Self == SHTintedButtonStyle {
-    static var shTinted: Self { SHTintedButtonStyle() }
 }
 
 #if DEBUG

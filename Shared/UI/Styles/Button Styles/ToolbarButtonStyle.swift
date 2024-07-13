@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ToolbarButtonStyle: ButtonStyle {
+struct SHToolbarButtonStyle: ButtonStyle {
     enum Role {
         case normal
         case cancel
@@ -56,18 +56,18 @@ struct ToolbarButtonStyle: ButtonStyle {
     }
 }
 
-extension ButtonStyle where Self == ToolbarButtonStyle {
-    static func toolbar(role: ToolbarButtonStyle.Role = .normal) -> Self {
-        ToolbarButtonStyle(role: role)
+extension ButtonStyle where Self == SHToolbarButtonStyle {
+    static func shToolbar(role: SHToolbarButtonStyle.Role = .normal) -> Self {
+        SHToolbarButtonStyle(role: role)
     }
 }
 
 #if DEBUG
 private struct _ButtonPreview: View {
     let title: String
-    let role: ToolbarButtonStyle.Role
+    let role: SHToolbarButtonStyle.Role
     
-    init(_ title: String, role: ToolbarButtonStyle.Role) {
+    init(_ title: String, role: SHToolbarButtonStyle.Role) {
         self.title = title
         self.role = role
     }
@@ -82,7 +82,7 @@ private struct _ButtonPreview: View {
             } label: {
                 Label("Press Me", systemImage: "star")
             }
-            .buttonStyle(.toolbar(role: role))
+            .buttonStyle(.shToolbar(role: role))
         }
     }
 }

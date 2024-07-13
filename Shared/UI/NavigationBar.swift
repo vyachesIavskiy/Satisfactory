@@ -50,12 +50,12 @@ struct NavigationBar<Content: View, Buttons: View>: View {
         } buttons: {
             HStack {
                 Button("Cancel") {}
-                    .buttonStyle(.toolbar(role: .cancel))
+                    .buttonStyle(.shToolbar(role: .cancel))
                 
                 Spacer()
                 
                 Button("Done") {}
-                    .buttonStyle(.toolbar(role: .confirm))
+                    .buttonStyle(.shToolbar(role: .confirm))
             }
         }
     }

@@ -96,6 +96,8 @@
 		D333C8CD2C4289130021E225 /* SingleItemProductionOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7B8802C2C6E0200DB7177 /* SingleItemProductionOutput.swift */; };
 		D333C8CE2C4289190021E225 /* ProductionProportion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E83902C3ED7AF0054C504 /* ProductionProportion.swift */; };
 		D333C8CF2C4289190021E225 /* ProductionProportion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E83902C3ED7AF0054C504 /* ProductionProportion.swift */; };
+		D333C8D22C4289EC0021E225 /* TintedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333C8D12C4289EC0021E225 /* TintedButtonStyle.swift */; };
+		D333C8D32C4289EC0021E225 /* TintedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D333C8D12C4289EC0021E225 /* TintedButtonStyle.swift */; };
 		D341A9EE2BDD60E500ED36F6 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D341A9ED2BDD60E500ED36F6 /* SHStorage */; };
 		D356C5142BF7CAA700A4CE6E /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356C5132BF7CAA700A4CE6E /* RootViewModel.swift */; };
 		D356C5152BF7CAA700A4CE6E /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356C5132BF7CAA700A4CE6E /* RootViewModel.swift */; };
@@ -225,6 +227,7 @@
 		D32AC7F22C170D8800BDFBAC /* SHDependencies */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHDependencies; sourceTree = "<group>"; };
 		D32AC7F72C172CFA00BDFBAC /* SHColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHColor.swift; sourceTree = "<group>"; };
 		D32AC7F92C172D3400BDFBAC /* SHShapeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHShapeStyle.swift; sourceTree = "<group>"; };
+		D333C8D12C4289EC0021E225 /* TintedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintedButtonStyle.swift; sourceTree = "<group>"; };
 		D341A9EB2BDD60C600ED36F6 /* SHStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHStorage; sourceTree = "<group>"; };
 		D356C5132BF7CAA700A4CE6E /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		D356C51B2BF7CCCC00A4CE6E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -374,7 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				D300D5522C3FE96F00D1C391 /* NavigationBar.swift */,
-				D31E83AC2C3F03B10054C504 /* Button Styles */,
+				D32AC7F62C172CF300BDFBAC /* Styles */,
 				D3E7B87D2C2C5F5400DB7177 /* ProductionView */,
 				D399267D2C04DBAC000D7308 /* SHSection */,
 				D30D97922BF6A9F4007B6850 /* Settings */,
@@ -385,7 +388,6 @@
 				F9B92FDF2A265D8700C173BF /* Shapes */,
 				D389C5C32BDC2FBD003705A1 /* FactoriesView.swift */,
 				F9B91040273EA74C00274EE3 /* CalculationStatistics.swift */,
-				D32AC7F62C172CF300BDFBAC /* Styles */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -516,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				D31E83AD2C3F03BD0054C504 /* ToolbarButtonStyle.swift */,
+				D333C8D12C4289EC0021E225 /* TintedButtonStyle.swift */,
 			);
 			path = "Button Styles";
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				D32AC7F72C172CFA00BDFBAC /* SHColor.swift */,
 				D32AC7F92C172D3400BDFBAC /* SHShapeStyle.swift */,
 				D39926892C04FB4B000D7308 /* Color+SHColor.swift */,
+				D31E83AC2C3F03B10054C504 /* Button Styles */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -852,6 +856,7 @@
 				D38F69D02C426B0F000F4CEE /* ChangeLogView.swift in Sources */,
 				D300D56E2C401E9400D1C391 /* SingleItemProductionRecipeDisplayViewModel.swift in Sources */,
 				D356C51C2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
+				D333C8D22C4289EC0021E225 /* TintedButtonStyle.swift in Sources */,
 				D3A676E12C2B7113000A1078 /* SingleItemProductionUserInput.swift in Sources */,
 				D38F69CB2C426A87000F4CEE /* ChangeLog_V1.5.swift in Sources */,
 				D30BDE162C41427F005757BB /* SingleItemProductionRecipeSelectViewModel.swift in Sources */,
@@ -957,6 +962,7 @@
 				F95DAFB32AC6ACC60062A5AD /* SettingsView.swift in Sources */,
 				D3A676E82C2B7113000A1078 /* SingleItemProductionNode.swift in Sources */,
 				D356C51D2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */,
+				D333C8D32C4289EC0021E225 /* TintedButtonStyle.swift in Sources */,
 				F95DAFB72AC6ACC60062A5AD /* CGPoint+Offset.swift in Sources */,
 				D333C8BB2C4288750021E225 /* ProductViewModel.swift in Sources */,
 				D3ACE5DA2C387CA40081D2C5 /* RecipeIngredientIconView.swift in Sources */,

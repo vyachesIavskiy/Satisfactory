@@ -49,7 +49,7 @@ struct ChangeLogView: View {
                         Button("OK") {
                             dismiss()
                         }
-                        .buttonStyle(.toolbar(role: .confirm))
+                        .buttonStyle(.shToolbar(role: .confirm))
                     }
                 }
             }

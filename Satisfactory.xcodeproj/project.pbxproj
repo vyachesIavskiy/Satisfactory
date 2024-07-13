@@ -448,8 +448,8 @@
 		D30BDE192C419841005757BB /* ChangeLogs */ = {
 			isa = PBXGroup;
 			children = (
-				D3B32AC52C00B9FF0025B441 /* ChangeLogsView.swift */,
 				D30BDE1A2C419A98005757BB /* ChangeLog */,
+				D3B32AC52C00B9FF0025B441 /* ChangeLogsView.swift */,
 			);
 			path = ChangeLogs;
 			sourceTree = "<group>";

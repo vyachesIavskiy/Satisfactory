@@ -26,16 +26,13 @@ final class SettingsViewModel {
     private var settingsService
     
     init() {
-        @Dependency(\.storageService)
-        var storageService
-        
         @Dependency(\.settingsService)
         var settingsService
         
-        recipe = storageService.recipes().filter {
-            $0.input.count > 3 && !$0.byproducts.isEmpty
-        }.randomElement()!
+        @Dependency(\.storageService)
+        var storageService
         
+        recipe = storageService.recipe(for: "recipe-alternate-instant-scrap")
         settings = settingsService.currentSettings()
     }
 }

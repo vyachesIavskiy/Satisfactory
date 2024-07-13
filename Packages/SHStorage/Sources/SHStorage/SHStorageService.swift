@@ -24,6 +24,7 @@ public struct SHStorageService: Sendable {
 }
 
 public extension SHStorageService {
+    // MARK: Items
     func item(for id: String) -> (any Item)? {
         let items: [any Item] = parts() + equipment()
         return items.first { $0.id == id }
@@ -35,6 +36,12 @@ public extension SHStorageService {
     
     func automatableEquipment() -> [Equipment] {
         equipment().filter { !recipes(for: $0, as: .output).filter { $0.machine != nil }.isEmpty }
+    }
+    
+    // MARK: Recipes
+    
+    func recipe(for id: String) -> Recipe {
+        recipes().first(id: id)!
     }
     
     func recipes(for itemID: String, as role: Recipe.Ingredient.Role) -> [Recipe] {
@@ -58,6 +65,8 @@ public extension SHStorageService {
     func recipes(for item: any Item, as roles: Recipe.Ingredient.Role...) -> [Recipe] {
         roles.flatMap { recipes(for: item, as: $0) }
     }
+    
+    // MARK: Pins
     
     func isPartPinned(part: Part) -> Bool {
         isPartPinned(part.id)

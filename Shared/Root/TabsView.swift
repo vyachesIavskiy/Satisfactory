@@ -2,16 +2,7 @@ import SwiftUI
 
 @Observable
 final class TabsViewModel {
-    var changeLogToShow: ChangeLog?
-    let newProductionViewModel: NewProductionViewModel
-    let settingsViewModel: SettingsViewModel
-    
-    @MainActor
-    init() {
-        changeLogToShow = ChangeLog.latest
-        newProductionViewModel = NewProductionViewModel()
-        settingsViewModel = SettingsViewModel()
-    }
+    var changeLogToShow = ChangeLog.latest
 }
 
 struct TabsView: View {
@@ -19,14 +10,14 @@ struct TabsView: View {
     
     var body: some View {
         TabView {
-            NewProductionView(viewModel: viewModel.newProductionViewModel)
+            NewProductionView(viewModel: NewProductionViewModel())
                 .tabItem {
                     Label("New Production", systemImage: "hammer")
                 }
             
             // TODO: Factories tab
 
-            SettingsView(viewModel: viewModel.settingsViewModel)
+            SettingsView(viewModel: SettingsViewModel())
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }

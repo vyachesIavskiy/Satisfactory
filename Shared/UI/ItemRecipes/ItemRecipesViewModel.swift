@@ -29,12 +29,12 @@ final class ItemRecipesViewModel {
         
         outputRecipes = storageService.recipes(for: item, as: .output).filter { $0.machine != nil }
         byproductRecipes = storageService.recipes(for: item, as: .byproduct).filter { $0.machine != nil }
-        pinnedRecipeIDs = storageService.pinnedRecipeIDs()
+        pinnedRecipeIDs = storageService.pins().recipeIDs
     }
     
     @MainActor
     func task() async throws {
-        for await pinnedRecipeIDs in storageService.streamPinnedRecipeIDs() {
+        for await pinnedRecipeIDs in storageService.streamPins().map(\.recipeIDs) {
             try Task.checkCancellation()
             
             self.pinnedRecipeIDs = pinnedRecipeIDs

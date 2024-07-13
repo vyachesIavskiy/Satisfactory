@@ -18,91 +18,29 @@ final class NewProductionViewModel {
     private let equipment: [Equipment]
     
     @MainActor
-    private var pinnedPartIDs: Set<String> {
+    var sorting = Sorting.progression {
         didSet {
             buildSections()
         }
     }
     
-    @MainActor
-    private var pinnedEquipmentIDs: Set<String> {
-        didSet {
-            buildSections()
-        }
-    }
-    
-    @MainActor
-    private var showFICSMAS: Bool {
-        didSet {
-            buildSections()
-        }
-    }
-    
-    @MainActor
-    private var grouping = Grouping.categories {
-        didSet {
-            buildSections()
-        }
-    }
-    
-    @MainActor
-    private var sorting = Sorting.progression {
-        didSet {
-            buildSections()
-        }
-    }
-    
-    @MainActor
-    var groupingNone: Bool {
-        get { grouping == .none }
-        set {
-            guard newValue else { return }
-            
-            grouping = .none
-        }
-    }
-    
-    @MainActor
-    var groupingCategories: Bool {
-        get { grouping == .categories }
-        set {
-            guard newValue else { return }
-            
-            grouping = .categories
-        }
-    }
-    
-    @MainActor
-    var sortingName: Bool {
-        get { sorting == .name }
-        set {
-            guard newValue else { return }
-            
-            sorting = .name
-        }
-    }
-    
-    @MainActor
-    var sortingProgression: Bool {
-        get { sorting == .progression }
-        set {
-            guard newValue else { return }
-            
-            sorting = .progression
-        }
-    }
+    private(set) var pins: Pins
+    private(set) var showFICSMAS: Bool
     
     @MainActor
     var searchText = "" {
         didSet {
+            guard searchText != oldValue else { return }
+            
             buildSections()
         }
     }
     
     var selectedItemID: String?
-    var sections = [Section]()
     
     @MainActor
+    var sections = [Section]()
+    
     init() {
         @Dependency(\.storageService)
         var storageService
@@ -112,53 +50,45 @@ final class NewProductionViewModel {
         
         parts = storageService.automatableParts()
         equipment = storageService.automatableEquipment()
-        pinnedPartIDs = storageService.pinnedPartIDs()
-        pinnedEquipmentIDs = storageService.pinnedEquipmentIDs()
+        pins = storageService.pins()
         showFICSMAS = settings().showFICSMAS
-        
+    }
+    
+    @MainActor
+    func observe() async {
         buildSections()
-    }
-    
-    @MainActor
-    func observeStorage() async {
-        await withThrowingTaskGroup(of: Void.self) { group in
+        
+        await withTaskGroup(of: Void.self) { group in
             group.addTask { @MainActor [weak self] in
                 guard let self else { return }
                 
-                for await pinnedPartIDs in storageService.streamPinnedPartIDs() {
-                    try Task.checkCancellation()
+                for await pins in storageService.streamPins() {
+                    guard !Task.isCancelled else { break }
                     
-                    print("got new pin parts \(pinnedPartIDs)")
-                    
-                    self.pinnedPartIDs = pinnedPartIDs
+                    self.pins = pins
+                    buildSections()
                 }
             }
             
             group.addTask { @MainActor [weak self] in
                 guard let self else { return }
                 
-                for await pinnedEquipmentIDs in storageService.streamPinnedEquipmentIDs() {
-                    try Task.checkCancellation()
+                for await showFICSMAS in settingsService.settings().map(\.showFICSMAS) {
+                    guard !Task.isCancelled else { break }
                     
-                    self.pinnedEquipmentIDs = pinnedEquipmentIDs
+                    self.showFICSMAS = showFICSMAS
+                    buildSections()
                 }
             }
         }
     }
     
     @MainActor
-    func observeSettings() async {
-        for await showFICSMAS in settingsService.settings().map(\.showFICSMAS) {
-            guard !Task.isCancelled else { break }
-            
-            self.showFICSMAS = showFICSMAS
-        }
-    }
-    
     func isPinned(_ item: some Item) -> Bool {
         storageService.isPinned(item: item)
     }
     
+    @MainActor
     func changePinStatus(for item: some Item) {
         storageService.changeItemPinStatus(item)
     }
@@ -175,40 +105,21 @@ final class NewProductionViewModel {
 private extension NewProductionViewModel {
     @MainActor
     func buildSections() {
-        Task(priority: .userInitiated) { @MainActor [weak self] in
-            guard let self else { return }
-            
-            let newSections = switch grouping {
-            case .none: await buildUngroupedSections()
-            case .categories: await buildCategoriesSections()
-            }
-            
-            if sections.isEmpty {
-                sections = newSections
-            } else if sections != newSections {
-                withAnimation {
-                    self.sections = newSections
-                }
+        let newSections = buildCategoriesSections()
+        
+        if sections.isEmpty {
+            sections = newSections
+        } else {
+            withAnimation {
+                self.sections = newSections
             }
         }
     }
     
-    func buildUngroupedSections() async -> [Section] {
-        let (pinnedParts, unpinnedParts) = await splitParts()
-        let (pinnedEquipment, unpinnedEquipment) = await splitEquipment()
-        
-        let pinnedItems: [any Item] = pinnedParts + pinnedEquipment
-        
-        return [
-            .pinned(pinnedItems),
-            .parts("Parts", unpinnedParts),
-            .equipment("Equipment", unpinnedEquipment)
-        ]
-    }
-    
-    func buildCategoriesSections() async -> [Section] {
-        let (pinnedParts, unpinnedParts) = await splitParts()
-        let (pinnedEquipment, unpinnedEquipment) = await splitEquipment()
+    @MainActor
+    func buildCategoriesSections() -> [Section] {
+        let (pinnedParts, unpinnedParts) = split(parts, pins: pins.partIDs)
+        let (pinnedEquipment, unpinnedEquipment) = split(equipment, pins: pins.equipmentIDs)
         
         let pinnedItems: [any Item] = pinnedParts + pinnedEquipment
         
@@ -234,18 +145,8 @@ private extension NewProductionViewModel {
         + equipmentByCategories.sorted { $0.0 < $1.0 }.map { .equipment($0.0.localizedName, $0.1) }
     }
     
-    func splitParts() async -> (pinned: [Part], unpinned: [Part]) {
-        await split(parts, pins: pinnedPartIDs)
-    }
-    
-    func splitEquipment() async -> (pinned: [Equipment], unpinned: [Equipment]) {
-        await split(equipment, pins: pinnedEquipmentIDs)
-    }
-    
-    func split<T: ProgressiveItem>(_ items: [T], pins: Set<String>) async -> (pinned: [T], unpinned: [T]) {
-        let showFICSMAS = await showFICSMAS
-        let searchText = await searchText
-        
+    @MainActor
+    func split<T: ProgressiveItem>(_ items: [T], pins: Set<String>) -> (pinned: [T], unpinned: [T]) {
         var (pinned, unpinned) = items.reduce(into: ([T](), [T]())) { partialResult, item in
             if item.category == .ficsmas, !showFICSMAS {
                 return
@@ -260,17 +161,17 @@ private extension NewProductionViewModel {
             }
         }
         
-        await sort(&pinned)
-        await sort(&unpinned)
+        switch sorting {
+        case .name:
+            pinned.sortByName()
+            unpinned.sortByName()
+            
+        case .progression: 
+            pinned.sortByProgression()
+            unpinned.sortByProgression()
+        }
         
         return (pinned, unpinned)
-    }
-    
-    func sort<T: ProgressiveItem>(_ items: inout [T]) async {
-        switch await sorting {
-        case .name: items.sortByName()
-        case .progression: items.sortByProgression()
-        }
     }
 }
 
@@ -279,14 +180,6 @@ extension NewProductionViewModel {
     enum Sorting {
         case name
         case progression
-    }
-}
-
-// MARK: - Grouping
-extension NewProductionViewModel {
-    enum Grouping {
-        case none
-        case categories
     }
 }
 

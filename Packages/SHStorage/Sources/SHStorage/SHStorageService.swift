@@ -11,13 +11,8 @@ public struct SHStorageService: Sendable {
     public var buildings: @Sendable () -> [Building]
     public var recipes: @Sendable () -> [Recipe]
     
-    public var streamPinnedPartIDs: @Sendable () -> AsyncStream<Set<String>>
-    public var streamPinnedEquipmentIDs: @Sendable () -> AsyncStream<Set<String>>
-    public var streamPinnedRecipeIDs: @Sendable () -> AsyncStream<Set<String>>
-    
-    public var pinnedPartIDs: @Sendable () -> Set<String>
-    public var pinnedEquipmentIDs: @Sendable () -> Set<String>
-    public var pinnedRecipeIDs: @Sendable () -> Set<String>
+    public var streamPins: @Sendable () -> AsyncStream<Pins>
+    public var pins: @Sendable () -> Pins
     
     public var isPartPinned: @Sendable (_ partID: String) -> Bool
     public var isEquipmentPinned: @Sendable (_ equipmentID: String) -> Bool

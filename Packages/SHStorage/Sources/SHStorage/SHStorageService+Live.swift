@@ -18,28 +18,12 @@ extension SHStorageService {
             persistentStorage.configuration
         }
         
-        var streamPinnedPartIDs: AsyncStream<Set<String>> {
-            persistentStorage.streamPins.map(\.partIDs).eraseToStream()
+        var streamPins: AsyncStream<Pins> {
+            persistentStorage.streamPins
         }
         
-        var streamPinnedEquipmentIDs: AsyncStream<Set<String>> {
-            persistentStorage.streamPins.map(\.equipmentIDs).eraseToStream()
-        }
-        
-        var streamPinnedRecipeIDs: AsyncStream<Set<String>> {
-            persistentStorage.streamPins.map(\.recipeIDs).eraseToStream()
-        }
-        
-        var pinnedPartIDs: Set<String> {
-            persistentStorage.pins.partIDs
-        }
-        
-        var pinnedEquipmentIDs: Set<String> {
-            persistentStorage.pins.equipmentIDs
-        }
-        
-        var pinnedRecipeIDs: Set<String> {
-            persistentStorage.pins.recipeIDs
+        var pins: Pins {
+            persistentStorage.pins
         }
         
         init() {

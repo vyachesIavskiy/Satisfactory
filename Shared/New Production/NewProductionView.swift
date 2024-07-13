@@ -2,7 +2,7 @@ import SwiftUI
 import SHModels
 
 struct NewProductionView: View {
-    @Bindable 
+    @Bindable
     var viewModel: NewProductionViewModel
     
     @Namespace
@@ -23,29 +23,20 @@ struct NewProductionView: View {
             .navigationTitle("New Production")
             .searchable(text: $viewModel.searchText, prompt: "Search")
             .autocorrectionDisabled()
+            .animation(.default, value: viewModel.pins)
+            .animation(.default, value: viewModel.showFICSMAS)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
-                        Section {
-                            Toggle("None", isOn: $viewModel.groupingNone)
+                        Picker("Sorting", selection: $viewModel.sorting) {
+                            Text("Name")
+                                .tag(NewProductionViewModel.Sorting.name)
                             
-                            Toggle("Categories", isOn: $viewModel.groupingCategories)
-                        } header: {
-                            if viewModel.groupingCategories {
-                                Text("Group by")
-                            }
-                        }
-
-                        if viewModel.groupingCategories {
-                            Section("Sort") {
-                                Toggle("Name", isOn: $viewModel.sortingName)
-                                
-                                Toggle("Progression", isOn: $viewModel.sortingProgression)
-                            }
+                            Text("Progression")
+                                .tag(NewProductionViewModel.Sorting.progression)
                         }
                     } label: {
-                        Image(systemName: "ellipsis")
-                            .symbolVariant(.circle)
+                        Image(systemName: "arrow.up.arrow.down")
                     }
                 }
             }
@@ -54,23 +45,18 @@ struct NewProductionView: View {
             }
         }
         .task {
-            await viewModel.observeStorage()
-        }
-        .task {
-            await viewModel.observeSettings()
+            await viewModel.observe()
         }
     }
     
-    @ViewBuilder
+    @MainActor @ViewBuilder
     private func itemsSection(_ _section: Binding<NewProductionViewModel.Section>) -> some View {
         let section = _section.wrappedValue
         if !section.items.isEmpty {
             Section(isExpanded: _section.expanded) {
-                VStack(spacing: itemSpacing) {
+                LazyVStack(spacing: itemSpacing) {
                     ForEach(section.items, id: \.id) { item in
                         itemRow(item)
-                            .tag(item.id)
-                            .id(item.id)
                             .disabled(!section.expanded)
                     }
                 }
@@ -79,27 +65,10 @@ struct NewProductionView: View {
                 SHSectionHeader(section.title, expanded: _section.expanded)
             }
             .padding(.horizontal, 16)
-            .id(section.id)
         }
     }
     
-    @ViewBuilder
-    func partRow(_ part: Part) -> some View {
-        NavigationLink(value: part) {
-            itemRow(part)
-        }
-        .buttonStyle(.plain)
-    }
-    
-    @ViewBuilder
-    func equipmentRow(_ equipment: Equipment) -> some View {
-        NavigationLink(value: equipment) {
-            itemRow(equipment)
-        }
-        .buttonStyle(.plain)
-    }
-    
-    @ViewBuilder
+    @MainActor @ViewBuilder
     private func itemRow(_ item: any Item) -> some View {
         Menu {
             Button {
@@ -113,7 +82,6 @@ struct NewProductionView: View {
             viewModel.selectedItemID = item.id
         }
         .buttonStyle(.plain)
-        .matchedGeometryEffect(id: item.id, in: namespace)
     }
 }
 

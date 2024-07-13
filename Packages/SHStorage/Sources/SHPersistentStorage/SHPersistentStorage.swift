@@ -19,7 +19,6 @@ public final class SHPersistentStorage {
     
     public var streamPins: AsyncStream<Pins> {
         v2.pins
-            .removeDuplicates()
             .map(Pins.init)
             .values
             .eraseToStream()

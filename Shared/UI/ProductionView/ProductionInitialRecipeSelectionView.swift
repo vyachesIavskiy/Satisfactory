@@ -51,12 +51,6 @@ final class ProductionInitialRecipeSelectionViewModel {
     func changePinStatus(for recipe: Recipe) {
         storageService.changeRecipePinStatus(recipe)
     }
-    
-    func observePins() async {
-        for await pinnedRecipeIDs in storageService.pinnedRecipeIDs() {
-            guard !Task.isCancelled else { break }
-        }
-    }
 }
 
 struct ProductionInitialRecipeSelectionView: View {

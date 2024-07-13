@@ -16,8 +16,8 @@ public final class SHPersistentStorage {
         set { v2.configuration = Configuration.Persistent.V2(newValue) }
     }
     
-    public var pins: AnyPublisher<Pins, Never> {
-        v2.pins.map(Pins.init).eraseToAnyPublisher()
+    public var pins: CurrentValueSubject<Pins, Never> {
+        CurrentValueSubject(Pins(v2.pins.value))
     }
     
     public var factories = [Factory]()

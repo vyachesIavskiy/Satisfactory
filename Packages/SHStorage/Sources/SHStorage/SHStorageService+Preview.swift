@@ -8,16 +8,28 @@ extension SHStorageService {
         private let staticStorage = SHStaticStorage()
         private let pins = CurrentValueSubject<Pins, Never>(Pins())
         
-        var pinnedPartIDs: AsyncStream<Set<String>> {
+        var streamPinnedPartIDs: AsyncStream<Set<String>> {
             pins.map(\.partIDs).values.eraseToStream()
         }
         
-        var pinnedEquipmentIDs: AsyncStream<Set<String>> {
+        var streamPinnedEquipmentIDs: AsyncStream<Set<String>> {
             pins.map(\.equipmentIDs).values.eraseToStream()
         }
         
-        var pinnedRecipeIDs: AsyncStream<Set<String>> {
+        var streamPinnedRecipeIDs: AsyncStream<Set<String>> {
             pins.map(\.recipeIDs).values.eraseToStream()
+        }
+        
+        var pinnedPartIDs: Set<String> {
+            pins.value.partIDs
+        }
+        
+        var pinnedEquipmentIDs: Set<String> {
+            pins.value.equipmentIDs
+        }
+        
+        var pinnedRecipeIDs: Set<String> {
+            pins.value.recipeIDs
         }
         
         init() {

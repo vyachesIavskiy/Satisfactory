@@ -12,7 +12,7 @@ final class ItemRecipesViewModel {
     let onRecipeSelected: @MainActor (Recipe) -> Void
     private let outputRecipes: [Recipe]
     private let byproductRecipes: [Recipe]
-    private var pinnedRecipeIDs = Set<String>() {
+    private var pinnedRecipeIDs: Set<String> {
         didSet {
             buildSections()
         }
@@ -29,11 +29,12 @@ final class ItemRecipesViewModel {
         
         outputRecipes = storageService.recipes(for: item, as: .output).filter { $0.machine != nil }
         byproductRecipes = storageService.recipes(for: item, as: .byproduct).filter { $0.machine != nil }
+        pinnedRecipeIDs = storageService.pinnedRecipeIDs()
     }
     
     @MainActor
     func task() async throws {
-        for await pinnedRecipeIDs in storageService.pinnedRecipeIDs() {
+        for await pinnedRecipeIDs in storageService.streamPinnedRecipeIDs() {
             try Task.checkCancellation()
             
             self.pinnedRecipeIDs = pinnedRecipeIDs

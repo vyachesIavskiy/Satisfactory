@@ -18,7 +18,7 @@ extension SHStorageService {
             persistentStorage.configuration
         }
         
-        var pinnedPartIDs: AsyncStream<Set<String>> {
+        var streamPinnedPartIDs: AsyncStream<Set<String>> {
             persistentStorage.pins
                 .removeDuplicates()
                 .map(\.partIDs)
@@ -26,7 +26,7 @@ extension SHStorageService {
                 .eraseToStream()
         }
         
-        var pinnedEquipmentIDs: AsyncStream<Set<String>> {
+        var streamPinnedEquipmentIDs: AsyncStream<Set<String>> {
             persistentStorage.pins
                 .removeDuplicates()
                 .map(\.equipmentIDs)
@@ -34,12 +34,24 @@ extension SHStorageService {
                 .eraseToStream()
         }
         
-        var pinnedRecipeIDs: AsyncStream<Set<String>> {
+        var streamPinnedRecipeIDs: AsyncStream<Set<String>> {
             persistentStorage.pins
                 .removeDuplicates()
                 .map(\.recipeIDs)
                 .values
                 .eraseToStream()
+        }
+        
+        var pinnedPartIDs: Set<String> {
+            persistentStorage.pins.value.partIDs
+        }
+        
+        var pinnedEquipmentIDs: Set<String> {
+            persistentStorage.pins.value.equipmentIDs
+        }
+        
+        var pinnedRecipeIDs: Set<String> {
+            persistentStorage.pins.value.recipeIDs
         }
         
         init() {

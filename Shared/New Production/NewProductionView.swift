@@ -14,13 +14,15 @@ struct NewProductionView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: itemSpacing) {
+                LazyVStack(spacing: itemSpacing) {
                     ForEach($viewModel.sections) { $section in
                         itemsSection($section)
                     }
                 }
             }
             .navigationTitle("New Production")
+            .searchable(text: $viewModel.searchText, prompt: "Search")
+            .autocorrectionDisabled()
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
@@ -47,12 +49,15 @@ struct NewProductionView: View {
                     }
                 }
             }
-            .fullScreenCover(item: $viewModel.selectedAnyItem) { anyItem in
-                ProductionView(viewModel: ProductionViewModel(item: anyItem.item))
+            .fullScreenCover(item: $viewModel.selectedItemID) { itemID in
+                ProductionView(viewModel: viewModel.productionViewModel(for: itemID))
             }
         }
         .task {
-            await viewModel.task()
+            await viewModel.observeStorage()
+        }
+        .task {
+            await viewModel.observeSettings()
         }
     }
     
@@ -66,20 +71,7 @@ struct NewProductionView: View {
                         itemRow(item)
                             .tag(item.id)
                             .id(item.id)
-                        
-//                        Group {
-//                            if let part = item as? Part {
-//                                partRow(part)
-//                                    .tag(part.id)
-//                                    .id(part.id)
-//                            } else if let equipment = item as? Equipment {
-//                                equipmentRow(equipment)
-//                                    .tag(equipment.id)
-//                                    .id(equipment.id)
-//                            }
-//                        }
-                        .padding(.leading, viewModel.groupingCategories ? 8 : 0)
-                        .disabled(!section.expanded)
+                            .disabled(!section.expanded)
                     }
                 }
                 .padding(.bottom, section.expanded ? 16 : 0)
@@ -87,6 +79,7 @@ struct NewProductionView: View {
                 SHSectionHeader(section.title, expanded: _section.expanded)
             }
             .padding(.horizontal, 16)
+            .id(section.id)
         }
     }
     
@@ -117,7 +110,7 @@ struct NewProductionView: View {
         } label: {
             ItemRow(item)
         } primaryAction: {
-            viewModel.selectedItem = item
+            viewModel.selectedItemID = item.id
         }
         .buttonStyle(.plain)
         .matchedGeometryEffect(id: item.id, in: namespace)

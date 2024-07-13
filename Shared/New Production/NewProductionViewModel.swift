@@ -4,35 +4,6 @@ import SHStorage
 import SHSettings
 import SHModels
 
-@dynamicMemberLookup
-struct AnyItem {
-    let item: any Item
-    
-    init(_ item: any Item) {
-        self.item = item
-    }
-    
-    subscript<T>(dynamicMember keyPath: KeyPath<any Item, T>) -> T {
-        item[keyPath: keyPath]
-    }
-}
-
-extension AnyItem: Identifiable {
-    var id: String { item.id }
-}
-
-extension AnyItem: Equatable {
-    static func == (lhs: AnyItem, rhs: AnyItem) -> Bool {
-        lhs.id == rhs.id
-    }
-}
-
-extension AnyItem: Hashable {
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
 @Observable
 final class NewProductionViewModel {
     @ObservationIgnored
@@ -45,13 +16,14 @@ final class NewProductionViewModel {
     
     private let parts: [Part]
     private let equipment: [Equipment]
-    private var pinnedPartIDs = Set<String>() {
+    
+    private var pinnedPartIDs: Set<String> {
         didSet {
             buildSections()
         }
     }
     
-    private var pinnedEquipmentIDs = Set<String>() {
+    private var pinnedEquipmentIDs: Set<String> {
         didSet {
             buildSections()
         }
@@ -111,15 +83,13 @@ final class NewProductionViewModel {
         }
     }
     
-    var selectedItem: (any Item)?
-    var selectedAnyItem: AnyItem? {
-        get {
-            selectedItem.map(AnyItem.init)
-        }
-        set {
-            selectedItem = newValue?.item
+    var searchText = "" {
+        didSet {
+            buildSections()
         }
     }
+    
+    var selectedItemID: String?
     var sections = [Section]()
     
     init() {
@@ -131,16 +101,18 @@ final class NewProductionViewModel {
         
         parts = storageService.automatableParts()
         equipment = storageService.automatableEquipment()
+        pinnedPartIDs = storageService.pinnedPartIDs()
+        pinnedEquipmentIDs = storageService.pinnedEquipmentIDs()
         showFICSMAS = settings().showFICSMAS
     }
     
     @MainActor
-    func task() async {
+    func observeStorage() async {
         await withThrowingTaskGroup(of: Void.self) { group in
             group.addTask { @MainActor [weak self] in
                 guard let self else { return }
                 
-                for await pinnedPartIDs in storageService.pinnedPartIDs() {
+                for await pinnedPartIDs in storageService.streamPinnedPartIDs() {
                     try Task.checkCancellation()
                     
                     self.pinnedPartIDs = pinnedPartIDs
@@ -150,22 +122,21 @@ final class NewProductionViewModel {
             group.addTask { @MainActor [weak self] in
                 guard let self else { return }
                 
-                for await pinnedEquipmentIDs in storageService.pinnedEquipmentIDs() {
+                for await pinnedEquipmentIDs in storageService.streamPinnedEquipmentIDs() {
                     try Task.checkCancellation()
                     
                     self.pinnedEquipmentIDs = pinnedEquipmentIDs
                 }
             }
+        }
+    }
+    
+    @MainActor
+    func observeSettings() async {
+        for await showFICSMAS in settingsService.settings().map(\.showFICSMAS) {
+            guard !Task.isCancelled else { break }
             
-            group.addTask { @MainActor [weak self] in
-                guard let self else { return }
-                
-                for await showFICSMAS in settingsService.settings().map(\.showFICSMAS) {
-                    try Task.checkCancellation()
-                    
-                    self.showFICSMAS = showFICSMAS
-                }
-            }
+            self.showFICSMAS = showFICSMAS
         }
     }
     
@@ -177,7 +148,17 @@ final class NewProductionViewModel {
         storageService.changeItemPinStatus(item)
     }
     
-    private func buildSections() {
+    @MainActor
+    func productionViewModel(for itemID: String) -> ProductionViewModel {
+        let item = storageService.item(for: itemID)!
+        
+        return ProductionViewModel(item: item)
+    }
+}
+
+// MARK: Private
+private extension NewProductionViewModel {
+    func buildSections() {
         let newSections = switch grouping {
         case .none: buildUngroupedSections()
         case .categories: buildCategoriesSections()
@@ -192,7 +173,7 @@ final class NewProductionViewModel {
         }
     }
     
-    private func buildUngroupedSections() -> [Section] {
+    func buildUngroupedSections() -> [Section] {
         let (pinnedParts, unpinnedParts) = splitParts()
         let (pinnedEquipment, unpinnedEquipment) = splitEquipment()
         
@@ -205,7 +186,7 @@ final class NewProductionViewModel {
         ]
     }
     
-    private func buildCategoriesSections() -> [Section] {
+    func buildCategoriesSections() -> [Section] {
         let (pinnedParts, unpinnedParts) = splitParts()
         let (pinnedEquipment, unpinnedEquipment) = splitEquipment()
         
@@ -233,24 +214,26 @@ final class NewProductionViewModel {
         + equipmentByCategories.sorted { $0.0 < $1.0 }.map { .equipment($0.0.localizedName, $0.1) }
     }
     
-    private func splitParts() -> (pinned: [Part], unpinned: [Part]) {
+    func splitParts() -> (pinned: [Part], unpinned: [Part]) {
         split(parts, pins: pinnedPartIDs)
     }
     
-    private func splitEquipment() -> (pinned: [Equipment], unpinned: [Equipment]) {
+    func splitEquipment() -> (pinned: [Equipment], unpinned: [Equipment]) {
         split(equipment, pins: pinnedEquipmentIDs)
     }
     
-    private func split<T: ProgressiveItem>(_ items: [T], pins: Set<String>) -> (pinned: [T], unpinned: [T]) {
+    func split<T: ProgressiveItem>(_ items: [T], pins: Set<String>) -> (pinned: [T], unpinned: [T]) {
         var (pinned, unpinned) = items.reduce(into: ([T](), [T]())) { partialResult, item in
             if item.category == .ficsmas, !showFICSMAS {
                 return
             }
             
-            if pins.contains(item.id) {
-                partialResult.0.append(item)
-            } else {
-                partialResult.1.append(item)
+            if searchText.isEmpty || item.category.localizedName.localizedCaseInsensitiveContains(searchText) || item.localizedName.localizedCaseInsensitiveContains(searchText) {
+                if pins.contains(item.id) {
+                    partialResult.0.append(item)
+                } else {
+                    partialResult.1.append(item)
+                }
             }
         }
         
@@ -260,7 +243,7 @@ final class NewProductionViewModel {
         return (pinned, unpinned)
     }
     
-    private func sort<T: ProgressiveItem>(_ items: inout [T]) {
+    func sort<T: ProgressiveItem>(_ items: inout [T]) {
         switch sorting {
         case .name: items.sortByName()
         case .progression: items.sortByProgression()

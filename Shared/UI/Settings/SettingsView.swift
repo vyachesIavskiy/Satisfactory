@@ -26,15 +26,12 @@ struct SettingsView: View {
                 .frame(maxWidth: 600)
                 .navigationTitle("Settings")
             }
+            .disabled(viewModel.feedbackResult != nil)
             
             if viewModel.feedbackResult == .sent {
+                feedbackShaderView
+                
                 feedbackSentView
-                    .zIndex(1)
-                    .onTapGesture {
-                        viewModel.feedbackResult = nil
-                    }
-                    .frame(maxHeight: .infinity, alignment: .bottom)
-                    .transition(.move(edge: .bottom))
             }
         }
         .animation(.default, value: viewModel.feedbackResult)
@@ -43,7 +40,7 @@ struct SettingsView: View {
     @MainActor @ViewBuilder
     private var viewModeSection: some View {
         Section {
-            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: viewModel.recipe))
+            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: viewModel.recipe, pinned: false))
         } header: {
             Picker(selection: $viewModel.settings.viewMode) {
                 Text("Icon")
@@ -109,6 +106,23 @@ struct SettingsView: View {
     }
     
     @MainActor @ViewBuilder
+    private var feedbackShaderView: some View {
+        LinearGradient(
+            colors: [.black.opacity(0.6), .black.opacity(0.4), .clear],
+            startPoint: .bottom,
+            endPoint: .top
+        )
+        .opacity(0.5)
+        .ignoresSafeArea()
+        .transition(.opacity.animation(.default.speed(0.75)))
+        .contentShape(Rectangle())
+        .zIndex(1)
+        .onTapGesture {
+            viewModel.feedbackResult = nil
+        }
+    }
+    
+    @MainActor @ViewBuilder
     private var feedbackSentView: some View {
         Text(
             """
@@ -118,6 +132,13 @@ struct SettingsView: View {
         )
         .padding()
         .background(.background, in: RoundedRectangle(cornerRadius: 12))
+        .frame(maxHeight: .infinity, alignment: .bottom)
+        .padding(.bottom)
+        .onTapGesture {
+            viewModel.feedbackResult = nil
+        }
+        .zIndex(2)
+        .transition(.move(edge: .bottom))
     }
 }
 

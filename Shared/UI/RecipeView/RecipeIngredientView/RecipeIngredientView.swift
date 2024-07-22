@@ -1,28 +1,55 @@
 import SHModels
 import SwiftUI
 
-struct RecipeIngredientRowView: View {
+struct RecipeIngredientView: View {
     let viewModel: RecipeIngredientViewModel
+    
+    @Environment(\.viewMode)
+    private var viewMode
+    
+    @Namespace
+    private var namespace
+    
+    private var iconSpacing: Double {
+        switch viewMode {
+        case .icon: 0.0
+        case .row: 12.0
+        }
+    }
+    
+    private var iconSize: Double {
+        switch viewMode {
+        case .icon: 48
+        case .row: 40
+        }
+    }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
+        VStack(spacing: iconSpacing) {
+            VStack(spacing: 0) {
                 Image(viewModel.item.id)
                     .resizable()
-                    .frame(width: 32, height: 32)
-                    .padding(.horizontal, 4)
+                    .frame(width: iconSize, height: iconSize)
+                    .padding(4)
+                    .matchedGeometryEffect(id: "recipe-ingredient-icon", in: namespace)
                 
-                Text(viewModel.item.localizedName)
-                    .font(.callout)
-                    .minimumScaleFactor(0.7)
-                    .lineLimit(2)
-            }
-
-            HStack(spacing: 4) {
-                ForEach(Array(viewModel.amountViewModels().enumerated()), id: \.offset) { _, viewModel in
-                    RecipeIngredientAmountView(viewModel: viewModel)
+                if viewMode == .row {
+                    Text(viewModel.item.localizedName)
+                        .font(.callout)
+                        .multilineTextAlignment(.center)
+                        .minimumScaleFactor(0.7)
+                        .frame(maxWidth: 100)
+                        .matchedGeometryEffect(id: "recipe-ingredient-name", in: namespace)
                 }
             }
+
+            VStack(spacing: -2) {
+                ForEach(Array(viewModel.amountViewModels().enumerated()), id: \.offset) { index, viewModel in
+                    RecipeIngredientAmountView(viewModel: viewModel)
+                        .offset(x: 4 * Double(index))
+                }
+            }
+            .matchedGeometryEffect(id: "recipe-ingredient-amounts", in: namespace)
         }
     }
 }
@@ -89,9 +116,9 @@ private struct _DisplayIngredientPreview: View {
         }
     }
     
-    @ViewBuilder
+    @MainActor @ViewBuilder
     private func ingredient(form: Part.Form) -> some View {
-        HStack(spacing: 48) {
+        HStack(spacing: 40) {
             switch form {
             case .solid:
                 Text("Solid")
@@ -103,15 +130,22 @@ private struct _DisplayIngredientPreview: View {
                 Text("Gas")
             }
             
-            RecipeIngredientRowView(
+            RecipeIngredientView(
                 viewModel: RecipeIngredientViewModel(
                     displayIngredient: displayIngredient(role: role, form: form),
                     amount: 10
                 )
             )
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .viewMode(.icon)
+            
+            RecipeIngredientView(
+                viewModel: RecipeIngredientViewModel(
+                    displayIngredient: displayIngredient(role: role, form: form),
+                    amount: 10
+                )
+            )
+            .viewMode(.row)
         }
-        .padding(.horizontal, 16)
     }
 }
 
@@ -131,45 +165,63 @@ private struct _ProductionIngredientPreview: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Unselected")
-                .padding(.vertical)
-            
-            VStack {
-                ingredient(form: .solid, selected: false)
+        ScrollView {
+            Grid(alignment: .leading, horizontalSpacing: 40, verticalSpacing: 24) {
+                titleRow("Unselected")
                 
-                ingredient(form: .fluid, selected: false)
+                row(form: .solid, selected: false)
                 
-                ingredient(form: .gas, selected: false)
+                row(form: .fluid, selected: false)
+                
+                row(form: .gas, selected: false)
+                
+                Divider()
+                    .gridCellUnsizedAxes(.horizontal)
+                
+                titleRow("Selected")
+                
+                row(form: .solid, selected: true)
+                
+                row(form: .fluid, selected: true)
+                
+                row(form: .gas, selected: true)
             }
-            
-            Text("Selected")
-                .padding(.vertical)
-            
-            VStack {
-                ingredient(form: .solid, selected: true)
-                
-                ingredient(form: .fluid, selected: true)
-                
-                ingredient(form: .gas, selected: true)
-            }
+            .frame(maxWidth: .infinity)
         }
-        .padding(.horizontal, 16)
     }
     
-    @ViewBuilder
-    private func ingredient(form: Part.Form, selected: Bool) -> some View {
-        HStack(spacing: 48) {
-            switch form {
-            case .solid:
-                Text("Solid")
-                
-            case .fluid:
-                Text("Fluid")
-                
-            case .gas:
-                Text("Gas")
+    @MainActor @ViewBuilder
+    private func titleRow(_ title: String) -> some View {
+        GridRow {
+            Text(title)
+            
+            Text("Icon")
+                .font(.headline)
+                .gridColumnAlignment(.center)
+
+            
+            Text("Row")
+                .font(.headline)
+                .gridColumnAlignment(.center)
+        }
+    }
+    
+    @MainActor @ViewBuilder
+    private func row(form: Part.Form, selected: Bool) -> some View {
+        GridRow(alignment: .top) {
+            Group {
+                switch form {
+                case .solid:
+                    Text("Solid")
+                    
+                case .fluid:
+                    Text("Fluid")
+                    
+                case .gas:
+                    Text("Gas")
+                }
             }
+            .frame(maxHeight: .infinity)
             
             let viewModel = switch role {
             case .output:
@@ -200,8 +252,11 @@ private struct _ProductionIngredientPreview: View {
                 )
             }
             
-            RecipeIngredientRowView(viewModel: viewModel)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            RecipeIngredientView(viewModel: viewModel)
+                .viewMode(.icon)
+            
+            RecipeIngredientView(viewModel: viewModel)
+                .viewMode(.row)
         }
     }
 }

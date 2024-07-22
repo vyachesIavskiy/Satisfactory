@@ -10,78 +10,99 @@ final class ItemRecipesViewModel {
         
     let item: any Item
     let onRecipeSelected: @MainActor (Recipe) -> Void
+    
     private let outputRecipes: [Recipe]
     private let byproductRecipes: [Recipe]
+    
+    @MainActor
     private var pinnedRecipeIDs: Set<String> {
         didSet {
             buildSections()
         }
     }
     
+    @MainActor
     var sections = [Section]()
     
-    init(item: any Item, onRecipeSelected: @MainActor @escaping (Recipe) -> Void) {
+    @MainActor
+    init(
+        item: any Item,
+        filterOutRecipeIDs: [String] = [],
+        onRecipeSelected: @MainActor @escaping (Recipe) -> Void
+    ) {
         @Dependency(\.storageService)
         var storageService
         
         self.item = item
         self.onRecipeSelected = onRecipeSelected
         
-        outputRecipes = storageService.recipes(for: item, as: .output).filter { $0.machine != nil }
-        byproductRecipes = storageService.recipes(for: item, as: .byproduct).filter { $0.machine != nil }
+        outputRecipes = storageService
+            .recipes(for: item, as: .output)
+            .filter { $0.machine != nil && !filterOutRecipeIDs.contains($0.id) }
+        
+        byproductRecipes = storageService
+            .recipes(for: item, as: .byproduct)
+            .filter { $0.machine != nil && !filterOutRecipeIDs.contains($0.id) }
+        
         pinnedRecipeIDs = storageService.pins().recipeIDs
+        buildSections()
     }
     
     @MainActor
-    func task() async throws {
+    func observeStorage() async {
         for await pinnedRecipeIDs in storageService.streamPins().map(\.recipeIDs) {
-            try Task.checkCancellation()
+            guard !Task.isCancelled else { break }
             
             self.pinnedRecipeIDs = pinnedRecipeIDs
         }
     }
     
+    @MainActor
     func sectionHeaderVisible(_ section: Section) -> Bool {
-        if case .output = section {
-            sections.contains { $0.id != .output && !$0.recipes.isEmpty }
+        if case .product = section {
+            sections.contains { $0.id != .product && !$0.recipes.isEmpty }
         } else {
             true
         }
     }
     
+    @MainActor
     func pinsAllowed() -> Bool {
         sections.flatMap(\.recipes).count > 1
     }
     
+    @MainActor
     func isPinned(_ recipe: Recipe) -> Bool {
         storageService.isRecipePinned(recipe)
     }
     
+    @MainActor
     func changePinStatus(for recipe: Recipe) {
         storageService.changeRecipePinStatus(recipe)
     }
     
+    @MainActor
     private func buildSections() {
-        let (pinned, output, byproduct) = splitRecipes()
+        let (product, byproduct) = splitRecipes()
         
         if sections.isEmpty {
             sections = [
-                .pinned(pinned),
-                .output(output),
+                .product(product),
                 .byproduct(byproduct)
             ]
         } else {
             withAnimation {
-                sections[0].recipes = pinned
-                sections[1].recipes = output
-                sections[2].recipes = byproduct
+                sections[0].recipes = product
+                sections[1].recipes = byproduct
             }
         }
     }
     
-    private typealias RecipesSplit = (pinned: [Recipe], output: [Recipe], byproduct: [Recipe])
+    private typealias RecipesSplit = (product: [Recipe], byproduct: [Recipe])
+    
+    @MainActor
     private func splitRecipes() -> RecipesSplit {
-        let (pinnedOutput, output) = outputRecipes.reduce(into: ([Recipe](), [Recipe]())) { partialResult, recipe in
+        let (pinnedProduct, product) = outputRecipes.reduce(into: ([Recipe](), [Recipe]())) { partialResult, recipe in
             if pinnedRecipeIDs.contains(recipe.id) {
                 partialResult.0.append(recipe)
             } else {
@@ -98,9 +119,8 @@ final class ItemRecipesViewModel {
         }
         
         return (
-            (pinnedOutput + pinnedByproduct).sortedByDefault(),
-            output.sortedByDefault(),
-            byproduct.sortedByDefault()
+            pinnedProduct.sortedByDefault() + product.sortedByDefault(),
+            pinnedByproduct.sortedByDefault() + byproduct.sortedByDefault()
         )
     }
 }
@@ -109,36 +129,31 @@ final class ItemRecipesViewModel {
 extension ItemRecipesViewModel {
     enum Section: Identifiable, Equatable {
         enum ID {
-            case pinned
-            case output
+            case product
             case byproduct
         }
         
-        case pinned(_ recipes: [Recipe], expanded: Bool = true)
-        case output(_ recipes: [Recipe], expanded: Bool = true)
+        case product(_ recipes: [Recipe], expanded: Bool = true)
         case byproduct(_ recipes: [Recipe], expanded: Bool = true)
         
         var id: ID {
             switch self {
-            case .pinned: .pinned
-            case .output: .output
+            case .product: .product
             case .byproduct: .byproduct
             }
         }
         
         var isEmpty: Bool {
             switch self {
-            case let .pinned(recipes, _): recipes.isEmpty
-            case let .output(recipes, _): recipes.isEmpty
+            case let .product(recipes, _): recipes.isEmpty
             case let .byproduct(recipes, _): recipes.isEmpty
             }
         }
         
         var title: String {
             switch self {
-            case .pinned: "Pinned"
-            case .output: "As primary output"
-            case .byproduct: "As byproduct"
+            case .product: "Product"
+            case .byproduct: "Byproduct"
             }
         }
         
@@ -146,23 +161,17 @@ extension ItemRecipesViewModel {
             get {
                 switch self {
                 case
-                    let .pinned(_, expanded),
-                    let .output(_, expanded),
+                    let .product(_, expanded),
                     let .byproduct(_, expanded):
                     expanded
                 }
             }
             set {
                 switch self {
-                case let .pinned(recipes, expanded):
+                case let .product(recipes, expanded):
                     guard expanded != newValue else { return }
                     
-                    self = .pinned(recipes, expanded: newValue)
-                    
-                case let .output(recipes, expanded):
-                    guard expanded != newValue else { return }
-                    
-                    self = .output(recipes, expanded: newValue)
+                    self = .product(recipes, expanded: newValue)
                     
                 case let .byproduct(recipes, expanded):
                     guard expanded != newValue else { return }
@@ -175,22 +184,16 @@ extension ItemRecipesViewModel {
         var recipes: [Recipe] {
             get {
                 switch self {
-                case let .pinned(recipes, _): recipes
-                case let .output(recipes, _): recipes
+                case let .product(recipes, _): recipes
                 case let .byproduct(recipes, _): recipes
                 }
             }
             set {
                 switch self {
-                case let .pinned(recipes, expanded: expanded):
+                case let .product(recipes, expanded: expanded):
                     guard recipes != newValue else { return }
                     
-                    self = .pinned(newValue, expanded: expanded)
-                    
-                case let .output(recipes, expanded: expanded):
-                    guard recipes != newValue else { return }
-                    
-                    self = .output(newValue, expanded: expanded)
+                    self = .product(newValue, expanded: expanded)
                     
                 case let .byproduct(recipes, expanded: expanded):
                     guard recipes != newValue else { return }
@@ -202,10 +205,7 @@ extension ItemRecipesViewModel {
         
         static func == (lhs: Self, rhs: Self) -> Bool {
             switch (lhs, rhs) {
-            case let (.pinned(lhsRecipes, _), .pinned(rhsRecipes, _)):
-                lhsRecipes == rhsRecipes
-                
-            case let (.output(lhsRecipes, _), .output(rhsRecipes, _)):
+            case let (.product(lhsRecipes, _), .product(rhsRecipes, _)):
                 lhsRecipes == rhsRecipes
                 
             case let (.byproduct(lhsRecipes, _), .byproduct(rhsRecipes, _)):

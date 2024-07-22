@@ -19,15 +19,11 @@ final class ProductAdjustmentViewModel: Identifiable {
         production.userInput.amount
     }
     
-    var unselectedRecipes: [Recipe] {
+    var hasUnselectedRecipes: Bool {
         @Dependency(\.storageService)
         var storageService
         
-        return storageService
-            .recipes(for: production.userInput.products[0].item, as: .output, .byproduct)
-            .filter { recipe in
-                !production.userInput.products[0].recipes.contains { $0.recipe.id == recipe.id }
-            }
+        return storageService.recipes(for: product.item, as: .output, .byproduct).count != output.products.first?.recipes.count
     }
     
     var selectedRecipes: [SingleItemProduction.Output.Recipe] {
@@ -96,6 +92,15 @@ final class ProductAdjustmentViewModel: Identifiable {
     @MainActor
     func apply() {
         onApply(production.userInput.products[0])
+    }
+    
+    @MainActor
+    var unselectedItemRecipesViewModel: ItemRecipesViewModel {
+        ItemRecipesViewModel(
+            item: product.item,
+            filterOutRecipeIDs: output.products.first?.recipes.map(\.model.id) ?? [],
+            onRecipeSelected: addRecipe
+        )
     }
     
     @MainActor

@@ -18,39 +18,34 @@ struct SingleItemProductionRecipeDisplayView: View {
     private var titleRowSpacing = 16.0
     
     var body: some View {
-        ZStack {
-            switch viewMode {
-            case .icon: iconBody
-            case .row: rowBody
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        recipeBody
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     @MainActor @ViewBuilder
-    private var iconBody: some View {
+    private var recipeBody: some View {
         ViewThatFits(in: .horizontal) {
             HStack(alignment: .top, spacing: 24) {
                 HStack(alignment: .top, spacing: 12) {
-                    outputIconView
+                    outputView
                     
-                    byproductsIconView
+                    byproductsView
                 }
                 
                 HStack(alignment: .top, spacing: 12) {
-                    inputsIconView
+                    inputsView
                 }
             }
             
             HStack(alignment: .top, spacing: 24) {
                 VStack(spacing: 12) {
-                    outputIconView
+                    outputView
                     
-                    byproductsIconView
+                    byproductsView
                 }
                 
                 LazyVGrid(columns: [gridItem, gridItem], spacing: 12) {
-                    inputsIconView
+                    inputsView
                 }
                 .fixedSize()
             }
@@ -58,74 +53,22 @@ struct SingleItemProductionRecipeDisplayView: View {
     }
     
     @MainActor @ViewBuilder
-    private var rowBody: some View {
-        HStack(alignment: .top, spacing: 16) {
-            VStack(alignment: .leading, spacing: 12) {
-                let outputViewModel = viewModel.outputIngredientViewModel()
-                RecipeIngredientRowView(viewModel: outputViewModel)
-                
-                ForEach(viewModel.byproductIngredientViewModels()) { viewModel in
-                    RecipeIngredientRowView(viewModel: viewModel)
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            VStack(alignment: .leading, spacing: 12) {
-                ForEach(viewModel.inputIngredientViewModels()) { viewModel in
-                    RecipeIngredientRowView(viewModel: viewModel)
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }
-    }
-    
-    @MainActor @ViewBuilder
-    private var titleView: some View {
-        HStack(alignment: .firstTextBaseline) {
-            Text(viewModel.recipe.model.localizedName)
-                .fontWeight(.medium)
-            
-            Spacer()
-            
-            if !viewModel.recipe.model.isDefault {
-                alternateIndicatorView
-            }
-        }
-    }
-    
-    @MainActor @ViewBuilder
-    private var alternateIndicatorView: some View {
-        Text("Alternate")
-            .font(.caption)
-            .fontWeight(.light)
-            .foregroundStyle(.sh(.midnight))
-            .padding(.vertical, 2)
-            .padding(.horizontal, 6)
-            .background {
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .fill(.sh(.midnight10))
-                    .stroke(.sh(.midnight40), lineWidth: 1)
-            }
-            .foregroundStyle(.sh(.midnight100))
-    }
-    
-    @MainActor @ViewBuilder
-    private var outputIconView: some View {
+    private var outputView: some View {
         let outputViewModel = viewModel.outputIngredientViewModel()
-        RecipeIngredientIconView(viewModel: outputViewModel)
+        RecipeIngredientView(viewModel: outputViewModel)
     }
     
     @MainActor @ViewBuilder
-    private var byproductsIconView: some View {
+    private var byproductsView: some View {
         ForEach(Array(viewModel.byproductIngredientViewModels().enumerated()), id: \.element.item.id) { index, viewModel in
-            RecipeIngredientIconView(viewModel: viewModel)
+            RecipeIngredientView(viewModel: viewModel)
         }
     }
     
     @MainActor @ViewBuilder
-    private var inputsIconView: some View {
+    private var inputsView: some View {
         ForEach(Array(viewModel.inputIngredientViewModels().enumerated()), id: \.element.item.id) { index, viewModel in
-            RecipeIngredientIconView(viewModel: viewModel)
+            RecipeIngredientView(viewModel: viewModel)
         }
     }
 }

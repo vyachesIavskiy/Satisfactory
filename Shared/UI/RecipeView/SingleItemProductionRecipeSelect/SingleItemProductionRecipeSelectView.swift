@@ -3,7 +3,7 @@ import SwiftUI
 struct SingleItemProductionRecipeSelectView: View {
     let viewModel: SingleItemProductionRecipeSelectViewModel
     
-    private let gridItem = GridItem(.adaptive(minimum: 80), spacing: 12)
+    private let gridItem = GridItem(.adaptive(minimum: 80), spacing: 12, alignment: .top)
     
     @Environment(\.displayScale)
     private var displayScale
@@ -18,39 +18,34 @@ struct SingleItemProductionRecipeSelectView: View {
     private var titleRowSpacing = 16.0
     
     var body: some View {
-        ZStack {
-            switch viewMode {
-            case .icon: iconBody
-            case .row: rowBody
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        recipeBody
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     @MainActor @ViewBuilder
-    private var iconBody: some View {
+    private var recipeBody: some View {
         ViewThatFits(in: .horizontal) {
             HStack(alignment: .top, spacing: 24) {
                 HStack(alignment: .top, spacing: 12) {
-                    outputIconView
+                    outputView
                     
-                    byproductsIconView
+                    byproductsView
                 }
                 
                 HStack(alignment: .top, spacing: 12) {
-                    inputsIconView
+                    inputsView
                 }
             }
             
             HStack(alignment: .top, spacing: 24) {
                 VStack(spacing: 12) {
-                    outputIconView
+                    outputView
                     
-                    byproductsIconView
+                    byproductsView
                 }
                 
                 LazyVGrid(columns: [gridItem, gridItem], spacing: 12) {
-                    inputsIconView
+                    inputsView
                 }
                 .fixedSize()
             }
@@ -58,89 +53,32 @@ struct SingleItemProductionRecipeSelectView: View {
     }
     
     @MainActor @ViewBuilder
-    private var rowBody: some View {
-        HStack(alignment: .top, spacing: 16) {
-            VStack(alignment: .leading, spacing: 12) {
-                outputView(output: viewModel.recipe.output) { outputViewModel in
-                    RecipeIngredientRowView(viewModel: outputViewModel)
-                }
-                
-                ForEach(viewModel.recipe.byproducts) { byproduct in
-                    byproductView(byproduct: byproduct) { byproductViewModel in
-                        RecipeIngredientRowView(viewModel: byproductViewModel)
-                    }
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            VStack(alignment: .leading, spacing: 12) {
-                ForEach(viewModel.recipe.inputs) { input in
-                    inputView(input: input) { inputViewModel in
-                        RecipeIngredientRowView(viewModel: inputViewModel)
-                    }
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
+    private var outputView: some View {
+        outputViewBuilder(output: viewModel.recipe.output) { outputViewModel in
+            RecipeIngredientView(viewModel: outputViewModel)
         }
     }
     
     @MainActor @ViewBuilder
-    private var titleView: some View {
-        HStack(alignment: .firstTextBaseline) {
-            Text(viewModel.recipe.model.localizedName)
-                .fontWeight(.medium)
-            
-            Spacer()
-            
-            if !viewModel.recipe.model.isDefault {
-                alternateIndicatorView
-            }
-        }
-    }
-    
-    @MainActor @ViewBuilder
-    private var alternateIndicatorView: some View {
-        Text("Alternate")
-            .font(.caption)
-            .fontWeight(.light)
-            .foregroundStyle(.sh(.midnight))
-            .padding(.vertical, 2)
-            .padding(.horizontal, 6)
-            .background {
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .fill(.sh(.midnight10))
-                    .stroke(.sh(.midnight40), lineWidth: 1)
-            }
-            .foregroundStyle(.sh(.midnight100))
-    }
-    
-    @MainActor @ViewBuilder
-    private var outputIconView: some View {
-        outputView(output: viewModel.recipe.output) { outputViewModel in
-            RecipeIngredientIconView(viewModel: outputViewModel)
-        }
-    }
-    
-    @MainActor @ViewBuilder
-    private var byproductsIconView: some View {
+    private var byproductsView: some View {
         ForEach(viewModel.recipe.byproducts) { byproduct in
-            byproductView(byproduct: byproduct) { byproductViewModel in
-                RecipeIngredientIconView(viewModel: byproductViewModel)
+            byproductViewBuilder(byproduct: byproduct) { byproductViewModel in
+                RecipeIngredientView(viewModel: byproductViewModel)
             }
         }
     }
     
     @MainActor @ViewBuilder
-    private var inputsIconView: some View {
+    private var inputsView: some View {
         ForEach(viewModel.recipe.inputs) { input in
-            inputView(input: input) { inputViewModel in
-                RecipeIngredientIconView(viewModel: inputViewModel)
+            inputViewBuilder(input: input) { inputViewModel in
+                RecipeIngredientView(viewModel: inputViewModel)
             }
         }
     }
     
     @MainActor @ViewBuilder
-    private func outputView<Output: View>(
+    private func outputViewBuilder<Output: View>(
         output: SingleItemProduction.Output.Recipe.OutputIngredient,
         @ViewBuilder _ outputViewBuilder: (RecipeIngredientViewModel) -> Output
     ) -> some View {
@@ -162,7 +100,6 @@ struct SingleItemProductionRecipeSelectView: View {
                     Button {
                         viewModel.selectByproductProducer(for: output)
                     } label: {
-                        // TODO: Check byproduct selection step
                         Text("Select as byproduct producer")
                     }
                 } label: {
@@ -177,7 +114,7 @@ struct SingleItemProductionRecipeSelectView: View {
     }
     
     @MainActor @ViewBuilder
-    private func byproductView<Byproduct: View>(
+    private func byproductViewBuilder<Byproduct: View>(
         byproduct: SingleItemProduction.Output.Recipe.OutputIngredient,
         @ViewBuilder _ byproductViewBuilder: (RecipeIngredientViewModel) -> Byproduct
     ) -> some View {
@@ -199,7 +136,6 @@ struct SingleItemProductionRecipeSelectView: View {
                     Button {
                         viewModel.selectByproductProducer(for: byproduct)
                     } label: {
-                        // TODO: Check byproduct selection step
                         Text("Select as byproduct producer")
                     }
                 } label: {
@@ -214,7 +150,7 @@ struct SingleItemProductionRecipeSelectView: View {
     }
     
     @MainActor @ViewBuilder
-    private func inputView<Input: View>(
+    private func inputViewBuilder<Input: View>(
         input: SingleItemProduction.Output.Recipe.InputIngredient,
         @ViewBuilder _ inputViewBuilder: (RecipeIngredientViewModel) -> Input
     ) -> some View {

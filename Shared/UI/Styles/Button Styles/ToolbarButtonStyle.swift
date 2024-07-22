@@ -9,6 +9,9 @@ struct SHToolbarButtonStyle: ButtonStyle {
     
     var role: Role = .normal
     
+    @Environment(\.isEnabled)
+    private var isEnabled
+    
     private var fontWeigth: Font.Weight {
         switch role {
         case .normal, .cancel: .regular
@@ -24,18 +27,26 @@ struct SHToolbarButtonStyle: ButtonStyle {
     }
     
     private var backgroundColor: Color {
-        switch role {
-        case .normal: .sh(.midnight)
-        case .cancel: .sh(.midnight20)
-        case .confirm: .sh(.orange)
+        if !isEnabled {
+            .sh(.gray40)
+        } else {
+            switch role {
+            case .normal: .sh(.midnight)
+            case .cancel: .sh(.midnight20)
+            case .confirm: .sh(.orange)
+            }
         }
     }
     
     private var shadowColor: Color {
-        switch role {
-        case .normal: .sh(.midnight30)
-        case .cancel: .sh(.midnight10)
-        case .confirm: .sh(.orange30)
+        if isEnabled {
+            .sh(.gray20)
+        } else {
+            switch role {
+            case .normal: .sh(.midnight30)
+            case .cancel: .sh(.midnight10)
+            case .confirm: .sh(.orange30)
+            }
         }
     }
     

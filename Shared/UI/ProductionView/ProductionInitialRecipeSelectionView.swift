@@ -102,7 +102,7 @@ struct ProductionInitialRecipeSelectionView: View {
         Button {
             viewModel.onRecipeSelected(recipe)
         } label: {
-            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
+            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe, pinned: viewModel.isPinned(recipe)))
         }
         .buttonStyle(.plain)
         .contextMenu {

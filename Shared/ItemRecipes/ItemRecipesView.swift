@@ -21,20 +21,14 @@ struct ItemRecipesView: View {
     @ScaledMetric(relativeTo: .body)
     private var recipeSpacing = 16.0
     
-    @State
-    private var scrollOffset = CGPoint.zero
-    
     var body: some View {
-        ScrollView {
-            VStack {
-                ForEach($viewModel.sections) { $section in
-                    recipesSection($section)
-                }
+        VStack {
+            ForEach($viewModel.sections) { $section in
+                recipesSection($section)
             }
         }
-        .scrollBounceBehavior(.basedOnSize, axes: .vertical)
         .task {
-            try? await viewModel.task()
+            await viewModel.observeStorage()
         }
     }
     
@@ -66,7 +60,7 @@ struct ItemRecipesView: View {
         Button {
             viewModel.onRecipeSelected(recipe)
         } label: {
-            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
+            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe, pinned: viewModel.isPinned(recipe)))
         }
         .buttonStyle(.plain)
         .matchedGeometryEffect(id: recipe.id, in: namespace)

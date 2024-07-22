@@ -9,6 +9,9 @@ struct ProductionView: View {
     @Environment(\.dismiss)
     private var dismiss
     
+    @Environment(\.displayScale)
+    private var displayScale
+    
     @FocusState
     private var focused
     
@@ -29,22 +32,7 @@ struct ProductionView: View {
                 } else {
                     productionList
                         .sheet(item: $viewModel.selectedNewItemID) { itemID in
-                            NavigationStack {
-                                ItemRecipesView(viewModel: viewModel.addInitialRecipeViewModel(for: itemID))
-                                    .navigationTitle(itemID)
-                                    .toolbar {
-                                        ToolbarItem(placement: .cancellationAction) {
-                                            Button {
-                                                viewModel.selectedNewItemID = nil
-                                            } label: {
-                                                Image(systemName: "xmark")
-                                                    .bold()
-                                            }
-                                            .buttonStyle(.bordered)
-                                            .buttonBorderShape(.circle)
-                                        }
-                                    }
-                            }
+                            ProductionNewProductRecipeSelectionView(viewModel: viewModel.addInitialRecipeViewModel(for: itemID))
                         }
                         .sheet(item: $viewModel.selectedProduct) { selectedProduct in
                             ProductAdjustmentView(viewModel: viewModel.productAdjustmentViewModel(for: selectedProduct))
@@ -52,32 +40,24 @@ struct ProductionView: View {
                 }
             }
             .safeAreaInset(edge: .top) {
-                navigationBar
+                Rectangle()
+                    .foregroundStyle(.sh(.midnight))
+                    .frame(height: 1 / displayScale)
+                    .background(.background, ignoresSafeAreaEdges: .top)
             }
-        }
-    }
-    
-    @MainActor @ViewBuilder
-    private var navigationBar: some View {
-        NavigationBar {
-            if viewModel.step == .selectingInitialRecipe {
-                Text("To start a production calculation, select an initial recipe for an item")
-                    .font(.title3)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            } else {
-                HStack {
-                    Text(viewModel.item.localizedName)
-                        .font(.title3)
-                    
-                    Spacer()
-                    
-                    if viewModel.step != .selectingInitialRecipe {
+            .safeAreaInset(edge: .bottom) {
+                if viewModel.step != .selectingInitialRecipe {
+                    HStack {
+                        Text("Amount")
+                        
+                        Spacer()
+                        
                         TextField("Amount", value: $viewModel.amount, format: .fractionFromZeroToFour)
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 8)
                             .padding(.vertical, 2)
                             .focused($focused)
-                            .frame(maxWidth: 100)
+                            .frame(maxWidth: 150)
                             .background(.background, in: RoundedRectangle(cornerRadius: 4, style: .continuous))
                             .overlay(
                                 .sh(focused ? .orange30 : .midnight30),
@@ -94,84 +74,108 @@ struct ProductionView: View {
                                         .fontWeight(.semibold)
                                 }
                                 .buttonStyle(.shTinted)
-                                .transition(.scale.combined(with: .opacity))
                             } else {
                                 Text("/ min")
                                     .font(.headline)
-                                    .transition(.move(edge: .trailing).combined(with: .opacity))
                             }
                         }
                         .frame(minWidth: 40, alignment: .leading)
-                        .animation(.bouncy, value: focused)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding([focused ? .vertical : .top], 8)
+                    .overlay(alignment: .top) {
+                        Rectangle()
+                            .foregroundStyle(.sh(.midnight))
+                            .frame(height: 1 / displayScale)
                     }
                 }
             }
-        } buttons: {
-            HStack {
-                Button("Cancel", role: .cancel) {
-                    dismiss()
-                }
-                .buttonStyle(.shToolbar(role: .cancel))
-                
-                Spacer()
-                
-                if viewModel.step != .selectingInitialRecipe {
-                    Button("Save") {
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Close", systemImage: "xmark.circle.fill") {
+                        dismiss()
                     }
-                    .buttonStyle(.shToolbar(role: .confirm))
+                }
+                
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Save", systemImage: "square.and.arrow.down") {
+                    }
+                    .disabled(true)
                 }
             }
-        }
-        .padding(.top, -16)
-    }
-    
-    @MainActor @ViewBuilder
-    private var topSection: some View {
-        switch viewModel.step {
-        case .selectingInitialRecipe:
-            headerMessage("To start a production calculation, select an initial recipe for an item")
-            
-        case .idle, .selectingRecipe, .adjustingProduct:
-            productionList
+            .toolbarBackground(.hidden, for: .navigationBar)
+            .navigationTitle(viewModel.item.localizedName)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     
-    @MainActor @ViewBuilder
-    private var bottomSection: some View {
-        VStack(spacing: 0) {
-            Capsule()
-                .fill(
-                    LinearGradient(
-                        colors: [.sh(.midnight10), .sh(.midnight), .sh(.midnight10)],
-                        startPoint: .leading,
-                        endPoint: .trailing
-                    )
-                )
-                .frame(height: 1.5)
-                .padding(.horizontal, 24)
-            
-            switch viewModel.step {
-            case .selectingInitialRecipe:
-                ItemRecipesView(
-                    viewModel: ItemRecipesViewModel(
-                        item: viewModel.item,
-                        onRecipeSelected: viewModel.addInitialRecipe
-                    )
-                )
-                
-            case .idle:
-                ProductionAmountView(item: viewModel.item, amount: $viewModel.amount)
-                
-            case let .selectingRecipe(item):
-//                ItemRecipesView(viewModel: viewModel.addInitialRecipeViewModel(for: item))
-//                    .safeAreaPadding(.top, 12)
-                EmptyView()
-                
-            case let .adjustingProduct(product):
-                ProductAdjustmentView(viewModel: viewModel.productAdjustmentViewModel(for: product))
-            }
-        }
-    }
+//    @MainActor @ViewBuilder
+//    private var navigationBar: some View {
+//        NavigationBar {
+//            if viewModel.step == .selectingInitialRecipe {
+//                Text("To start a production calculation, select an initial recipe for an item")
+//                    .font(.title3)
+//                    .frame(maxWidth: .infinity, alignment: .leading)
+//            } else {
+//                HStack {
+//                    Text(viewModel.item.localizedName)
+//                        .font(.title3)
+//                    
+//                    Spacer()
+//                    
+//                    if viewModel.step != .selectingInitialRecipe {
+//                        TextField("Amount", value: $viewModel.amount, format: .fractionFromZeroToFour)
+//                            .multilineTextAlignment(.center)
+//                            .padding(.horizontal, 8)
+//                            .padding(.vertical, 2)
+//                            .focused($focused)
+//                            .frame(maxWidth: 100)
+//                            .background(.background, in: RoundedRectangle(cornerRadius: 4, style: .continuous))
+//                            .overlay(
+//                                .sh(focused ? .orange30 : .midnight30),
+//                                in: RoundedRectangle(cornerRadius: 4, style: .continuous)
+//                                    .stroke(lineWidth: 1.5)
+//                            )
+//                        
+//                        ZStack {
+//                            if focused {
+//                                Button {
+//                                    focused = false
+//                                } label: {
+//                                    Image(systemName: "checkmark")
+//                                        .fontWeight(.semibold)
+//                                }
+//                                .buttonStyle(.shTinted)
+//                                .transition(.scale.combined(with: .opacity))
+//                            } else {
+//                                Text("/ min")
+//                                    .font(.headline)
+//                                    .transition(.move(edge: .trailing).combined(with: .opacity))
+//                            }
+//                        }
+//                        .frame(minWidth: 40, alignment: .leading)
+//                        .animation(.bouncy, value: focused)
+//                    }
+//                }
+//            }
+//        } buttons: {
+//            HStack {
+//                Button("Cancel", role: .cancel) {
+//                    dismiss()
+//                }
+//                .buttonStyle(.shToolbar(role: .cancel))
+//                
+//                Spacer()
+//                
+//                if viewModel.step != .selectingInitialRecipe {
+//                    Button("Save") {
+//                    }
+//                    .buttonStyle(.shToolbar(role: .confirm))
+//                }
+//            }
+//        }
+//        .padding(.top, -16)
+//    }
     
     @MainActor
     @ViewBuilder

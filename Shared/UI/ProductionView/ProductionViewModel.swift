@@ -220,10 +220,10 @@ final class ProductionViewModel {
     }
     
     @MainActor
-    func addInitialRecipeViewModel(for itemID: String) -> ItemRecipesViewModel {
+    func addInitialRecipeViewModel(for itemID: String) -> ProductionNewProductRecipeSelectionViewModel {
         let item = storageService.item(for: itemID)!
         
-        return ItemRecipesViewModel(item: item) { [weak self] recipe in
+        return ProductionNewProductRecipeSelectionViewModel(item: item, selectedRecipeIDs: []) { [weak self] recipe in
             self?.addRecipe(recipe, to: item)
             self?.selectedNewItemID = nil
         }

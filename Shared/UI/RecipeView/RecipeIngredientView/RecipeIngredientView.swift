@@ -4,24 +4,18 @@ import SwiftUI
 struct RecipeIngredientView: View {
     let viewModel: RecipeIngredientViewModel
     
-    @Environment(\.viewMode)
-    private var viewMode
+    @Environment(\.showIngredientNames)
+    private var showIngredientNames
     
     @Namespace
     private var namespace
     
     private var iconSpacing: Double {
-        switch viewMode {
-        case .icon: 0.0
-        case .row: 12.0
-        }
+        showIngredientNames ? 12.0 : 0.0
     }
     
     private var iconSize: Double {
-        switch viewMode {
-        case .icon: 48
-        case .row: 40
-        }
+        showIngredientNames ? 40 : 48
     }
 
     var body: some View {
@@ -33,7 +27,7 @@ struct RecipeIngredientView: View {
                     .padding(4)
                     .matchedGeometryEffect(id: "recipe-ingredient-icon", in: namespace)
                 
-                if viewMode == .row {
+                if showIngredientNames {
                     Text(viewModel.item.localizedName)
                         .font(.callout)
                         .multilineTextAlignment(.center)
@@ -136,7 +130,7 @@ private struct _DisplayIngredientPreview: View {
                     amount: 10
                 )
             )
-            .viewMode(.icon)
+            .showIngredientNames(false)
             
             RecipeIngredientView(
                 viewModel: RecipeIngredientViewModel(
@@ -144,7 +138,7 @@ private struct _DisplayIngredientPreview: View {
                     amount: 10
                 )
             )
-            .viewMode(.row)
+            .showIngredientNames(true)
         }
     }
 }
@@ -253,10 +247,10 @@ private struct _ProductionIngredientPreview: View {
             }
             
             RecipeIngredientView(viewModel: viewModel)
-                .viewMode(.icon)
+                .showIngredientNames(false)
             
             RecipeIngredientView(viewModel: viewModel)
-                .viewMode(.row)
+                .showIngredientNames(true)
         }
     }
 }

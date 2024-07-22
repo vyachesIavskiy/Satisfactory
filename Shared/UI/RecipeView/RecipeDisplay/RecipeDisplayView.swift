@@ -10,9 +10,6 @@ struct RecipeDisplayView: View {
     @Environment(\.displayScale)
     private var displayScale
     
-    @Environment(\.viewMode)
-    private var viewMode
-    
     @ScaledMetric(relativeTo: .body)
     private var titleIconSpacing = 8.0
     
@@ -178,10 +175,11 @@ private struct _RecipeDisplayViewPreview: View {
 
 #Preview("Recipe Display View (Icon)") {
     _RecipeDisplayViewPreview()
+        .showIngredientNames(false)
 }
 
 #Preview("Recipe Display View (Row)") {
     _RecipeDisplayViewPreview()
-        .viewMode(.row)
+        .showIngredientNames(true)
 }
 #endif

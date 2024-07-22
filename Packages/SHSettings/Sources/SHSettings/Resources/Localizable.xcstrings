@@ -1,28 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "item-view-style-icon" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon"
-          }
-        }
-      }
-    },
-    "item-view-style-row" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Row"
-          }
-        }
-      }
-    }
+
   },
   "version" : "1.0"
 }

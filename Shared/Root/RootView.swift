@@ -16,7 +16,7 @@ struct RootView: View {
                 loadingFailedView(error)
             }
         }
-        .viewMode(viewModel.viewMode)
+        .showIngredientNames(viewModel.showIngredientNames)
         .task {
             await viewModel.load()
         }

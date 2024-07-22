@@ -12,7 +12,7 @@ final class RootViewModel {
         case failed(Error)
     }
     
-    var viewMode = ViewMode.icon
+    var showIngredientNames = false
     var loadingState = LoadingState.loading
     var showErrorDetails = false
     private let logger = SHLogger(subsystemName: "Satisfactory", category: "Root")
@@ -29,7 +29,7 @@ final class RootViewModel {
     @MainActor
     func load() async {
         do {
-            viewMode = settingsService.currentSettings().viewMode
+            showIngredientNames = settingsService.currentSettings().showIngredientNames
             try storageService.load()
             loadingState = .loaded
         } catch {
@@ -40,8 +40,8 @@ final class RootViewModel {
     
     @MainActor
     func observeViewMode() async {
-        for await viewMode in settingsService.settings().map(\.viewMode) {
-            self.viewMode = viewMode
+        for await showIngredientNames in settingsService.settings().map(\.showIngredientNames) {
+            self.showIngredientNames = showIngredientNames
         }
     }
 }

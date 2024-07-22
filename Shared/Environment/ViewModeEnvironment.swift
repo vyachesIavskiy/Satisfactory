@@ -1,25 +1,25 @@
 import SwiftUI
 import SHSettings
 
-private struct ViewModeEnvironmentKey: EnvironmentKey {
+private struct ShowIngredientNamesEnvironmentKey: EnvironmentKey {
     static let defaultValue = {
         @Dependency(\.settingsService)
         var settingsService
         
-        return settingsService.currentSettings().viewMode
+        return settingsService.currentSettings().showIngredientNames
     }()
 }
 
 extension EnvironmentValues {
-    var viewMode: ViewMode {
-        get { self[ViewModeEnvironmentKey.self] }
-        set { self[ViewModeEnvironmentKey.self] = newValue }
+    var showIngredientNames: Bool {
+        get { self[ShowIngredientNamesEnvironmentKey.self] }
+        set { self[ShowIngredientNamesEnvironmentKey.self] = newValue }
     }
 }
 
 extension View {
     @MainActor @ViewBuilder
-    func viewMode(_ viewMode: ViewMode) -> some View {
-        environment(\.viewMode, viewMode)
+    func showIngredientNames(_ showIngredientNames: Bool) -> some View {
+        environment(\.showIngredientNames, showIngredientNames)
     }
 }

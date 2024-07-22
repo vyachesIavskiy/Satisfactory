@@ -8,9 +8,6 @@ struct SingleItemProductionRecipeSelectView: View {
     @Environment(\.displayScale)
     private var displayScale
     
-    @Environment(\.viewMode)
-    private var viewMode
-    
     @ScaledMetric(relativeTo: .body)
     private var titleIconSpacing = 8.0
     
@@ -204,7 +201,7 @@ import SHStorage
 import SHSettings
 
 private struct _SingleItemProductionRecipeSelectPreview: View {
-    let viewMode: ViewMode
+    let showIngredientNames: Bool
     
     @Dependency(\.storageService.recipes)
     private var storedRecipes
@@ -233,7 +230,7 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
             }
             .padding(.horizontal)
         }
-        .viewMode(viewMode)
+        .showIngredientNames(showIngredientNames)
     }
     
     func viewModel(for recipe: Recipe) -> SingleItemProductionRecipeSelectViewModel {
@@ -276,10 +273,10 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
 }
 
 #Preview("Recipe Display View (Icon)") {
-    _SingleItemProductionRecipeSelectPreview(viewMode: .icon)
+    _SingleItemProductionRecipeSelectPreview(showIngredientNames: false)
 }
 
 #Preview("Recipe Display View (Row)") {
-    _SingleItemProductionRecipeSelectPreview(viewMode: .row)
+    _SingleItemProductionRecipeSelectPreview(showIngredientNames: true)
 }
 #endif

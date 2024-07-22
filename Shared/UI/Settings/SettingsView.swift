@@ -13,8 +13,6 @@ struct SettingsView: View {
         ZStack {
             NavigationStack {
                 List {
-                    viewModeSection
-                    
                     recipeSection
                     
                     seasonalEventsSection
@@ -38,29 +36,12 @@ struct SettingsView: View {
     }
     
     @MainActor @ViewBuilder
-    private var viewModeSection: some View {
-        Section {
-            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: viewModel.recipe, pinned: false))
-        } header: {
-            Picker(selection: $viewModel.settings.viewMode) {
-                Text("Icon")
-                    .tag(ViewMode.icon)
-                
-                Text("Row")
-                    .tag(ViewMode.row)
-            } label: {
-                Text("View mode")
-            }
-            .pickerStyle(.segmented)
-            .padding(.horizontal)
-            .padding(.bottom, 8)
-            .textCase(nil)
-        }
-    }
-    
-    @MainActor @ViewBuilder
     private var recipeSection: some View {
         Section("Recipes") {
+            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: viewModel.recipe, pinned: false))
+            
+            Toggle("Show recipe ingredient names", isOn: $viewModel.settings.showIngredientNames)
+            
             Toggle("Auto-select single recipe", isOn: $viewModel.settings.autoSelectSingleRecipe)
             
             Toggle("Auto-select single pinned recipe", isOn: $viewModel.settings.autoSelectSinglePinnedRecipe)
@@ -148,7 +129,7 @@ private struct _SettingsPreview: View {
 
     var body: some View {
         SettingsView(viewModel: viewModel)
-            .viewMode(viewModel.settings.viewMode)
+            .showIngredientNames(viewModel.settings.showIngredientNames)
     }
 }
 

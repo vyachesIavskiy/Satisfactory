@@ -14,6 +14,9 @@ struct SHTintedButtonStyle: ButtonStyle {
                 
                 RoundedRectangle(cornerRadius: 4, style: .continuous)
                     .foregroundStyle(.background)
+                    .transaction { transaction in
+                        transaction.disablesAnimations = true
+                    }
             }
             .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
     }

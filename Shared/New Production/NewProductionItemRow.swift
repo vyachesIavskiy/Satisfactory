@@ -72,8 +72,9 @@ extension NewProductionView {
                         
                         Spacer()
                         
-//                        Image(systemName: "chevron.right")
-//                            .foregroundColor(.gray)
+                        Image(systemName: "chevron.right")
+                            .fontWeight(.light)
+                            .foregroundColor(.sh(.gray40))
                     }
                     
                     LinearGradient(
@@ -86,15 +87,6 @@ extension NewProductionView {
                 }
             }
             .fixedSize(horizontal: false, vertical: true)
-            .background(
-                .background,
-                in: AngledRectangle(cornerRadius: resolvedCornerRadius + 4).inset(by: -4)
-            )
-            .contentShape(.interaction, Rectangle())
-            .contentShape(
-                .contextMenuPreview,
-                AngledRectangle(cornerRadius: resolvedCornerRadius + 4).inset(by: -4)
-            )
         }
     }
 }

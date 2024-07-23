@@ -47,7 +47,6 @@ struct SHSection<Data, ID, Content: View>: View {
         Section(isExpanded: $expanded) {
             ForEach(data.indices, id: \.self) { index in
                 content(data[index])
-                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         } header: {
             SHSectionHeader(title, expanded: $expanded)
@@ -110,7 +109,6 @@ private extension SHSectionHeader {
                     .frame(width: expanded ? nil : 0, height: 2 / displayScale)
                     .foregroundStyle(.sh(.midnight30))
             }
-//            .background(.background)
             .contentShape(Rectangle())
         }
     }
@@ -150,20 +148,14 @@ private struct _SHSectionPreview: View {
     @State private var expanded2 = true
     
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 24, pinnedViews: .sectionHeaders) {
-                SHSection("SHSection preview\n(Second line for preview of long section name)", range: 0..<10, expanded: $expanded1) { index in
-                    Text("Row \(index)")
-                        .padding(.leading, 8)
-                }
+        List {
+            SHSection("SHSection preview\n(Second line for preview of long section name)", range: 0..<10, expanded: $expanded1) { index in
+                Text("Row \(index)")
             }
-            .padding(.horizontal)
             
             SHSection("SHSection preview", range: 0..<10, expanded: $expanded2) { index in
                 Text("Row \(index)")
-                    .padding(.leading, 8)
             }
-            .padding(.horizontal)
         }
     }
 }

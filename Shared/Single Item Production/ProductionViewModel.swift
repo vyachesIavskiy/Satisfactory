@@ -16,17 +16,6 @@ enum SingleProductionAction {
 @Observable
 final class ProductionViewModel {
     struct ByproductSelection {
-        struct RecipeWithRole {
-            var recipe: Recipe
-            var role: Recipe.Ingredient.Role
-        }
-        
-        let item: any Item
-        var fromRecipe: RecipeWithRole?
-        var toRecipe: RecipeWithRole?
-    }
-    
-    struct ByproductSelection2 {
         let item: any Item
         var producingRecipe: Recipe?
         var consumingRecipe: Recipe?
@@ -36,25 +25,8 @@ final class ProductionViewModel {
         // An initial step for a production.
         case selectingInitialRecipe
         
-        // An idle state. An initial recipe is selected and a system is waiting for a user input.
-        case idle
-        
-        // Selecting a recipe for a new item
-        case selectingRecipe(forItem: any Item)
-        
-        // Adjusting recipes for an item in production
-        case adjustingProduct(SingleItemProduction.Output.Product)
-        
-        static func == (lhs: ProductionViewModel.Step, rhs: ProductionViewModel.Step) -> Bool {
-            switch (lhs, rhs) {
-            case (.selectingInitialRecipe, .selectingInitialRecipe): true
-            case (.idle, .idle): true
-            case let (.selectingRecipe(lhsItem), .selectingRecipe(rhsItem)): lhsItem.id == rhsItem.id
-            case let (.adjustingProduct(lhsProduct), .adjustingProduct(rhsProduct)): lhsProduct == rhsProduct
-                
-            default: false
-            }
-        }
+        // A production state. An initial recipe is selected and a system is waiting for a user input.
+        case production
     }
     
     @ObservationIgnored
@@ -68,8 +40,7 @@ final class ProductionViewModel {
     var selectedProduct: SingleItemProduction.Output.Product?
     var selectedNewItemID: String?
     var selectedByproduct: ByproductSelection?
-    
-    var selectedByproduct2: ByproductSelection2?
+    var showUnsavedAlert = false
     
     var item: any Item {
         production.item
@@ -87,13 +58,9 @@ final class ProductionViewModel {
     
     var step = Step.selectingInitialRecipe
     
-    var showingBottomSheet: Bool {
-        get {
-            step != .selectingInitialRecipe
-        }
-        set {
-            // Do nothing
-        }
+    var hasUnsavedChanges: Bool {
+        // TODO: Check for unsaved changes
+        true
     }
     
     @MainActor
@@ -133,14 +100,13 @@ final class ProductionViewModel {
         production.userInput.amount = recipe.amountPerMinute(for: recipe.output)
         production.addRecipe(recipe, with: .auto, to: item)
         update()
-        step = .idle
+        step = .production
     }
     
     @MainActor
     func addRecipe(_ recipe: Recipe, to item: some Item) {
         production.addRecipe(recipe, with: .auto, to: item)
         update()
-        step = .idle
     }
     
     @MainActor
@@ -152,7 +118,7 @@ final class ProductionViewModel {
     func productViewModel(for product: SingleItemProduction.Output.Product) -> ProductViewModel {
         ProductViewModel(
             product: product,
-            selectedByproduct: selectedByproduct2,
+            selectedByproduct: selectedByproduct,
             canPerformAction: { [weak self] action in
                 guard let self else { return false }
                 
@@ -164,7 +130,7 @@ final class ProductionViewModel {
                     !production.userInput.products.contains { $0.item.id == input.item.id }
                     
                 case let .selectByproductProducer(product, ingredient, _):
-                    selectedByproduct2?.producingRecipe == nil &&
+                    selectedByproduct?.producingRecipe == nil &&
                     !output.products.contains {
                         $0.recipes.contains {
                             $0.inputs.contains { $0.producingProductID == product.id }
@@ -177,7 +143,7 @@ final class ProductionViewModel {
                     }
                     
                 case let .selectByproductConsumer(input, _):
-                    selectedByproduct2?.consumingRecipe == nil &&
+                    selectedByproduct?.consumingRecipe == nil &&
                     !output.products.contains { $0.id == input.producingProductID } &&
                     production.userInput.products.contains {
                         $0.recipes.contains {
@@ -198,19 +164,19 @@ final class ProductionViewModel {
                     selectedNewItemID = input.item.id
                     
                 case let .selectByproductProducer(_, ingredient, recipe):
-                    if selectedByproduct2 == nil {
-                        selectedByproduct2 = ByproductSelection2(item: ingredient.item, producingRecipe: recipe)
+                    if selectedByproduct == nil {
+                        selectedByproduct = ByproductSelection(item: ingredient.item, producingRecipe: recipe)
                     } else {
-                        selectedByproduct2?.producingRecipe = recipe
+                        selectedByproduct?.producingRecipe = recipe
                     }
                     
                     checkByproductState()
                     
                 case let .selectByproductConsumer(input, recipe):
-                    if selectedByproduct2 == nil {
-                        selectedByproduct2 = ByproductSelection2(item: input.item, consumingRecipe: recipe)
+                    if selectedByproduct == nil {
+                        selectedByproduct = ByproductSelection(item: input.item, consumingRecipe: recipe)
                     } else {
-                        selectedByproduct2?.consumingRecipe = recipe
+                        selectedByproduct?.consumingRecipe = recipe
                     }
                     
                     checkByproductState()
@@ -251,13 +217,13 @@ final class ProductionViewModel {
     
     @MainActor
     func productViewModels() -> [ProductViewModel] {
-        if let selectedByproduct2 {
+        if let selectedByproduct {
             output.products.compactMap { product in
                 let visibleRecipes = product.recipes.filter { recipe in
-                    if let producingRecipeID = selectedByproduct2.producingRecipe?.id {
-                        recipe.model.id == producingRecipeID || recipe.model.input.contains { $0.item.id == selectedByproduct2.item.id }
-                    } else if let consumingRecipeID = selectedByproduct2.consumingRecipe?.id {
-                        recipe.model.id == consumingRecipeID || recipe.model.output.item.id == selectedByproduct2.item.id || recipe.model.byproducts.contains { $0.item.id == selectedByproduct2.item.id }
+                    if let producingRecipeID = selectedByproduct.producingRecipe?.id {
+                        recipe.model.id == producingRecipeID || recipe.model.input.contains { $0.item.id == selectedByproduct.item.id }
+                    } else if let consumingRecipeID = selectedByproduct.consumingRecipe?.id {
+                        recipe.model.id == consumingRecipeID || recipe.model.output.item.id == selectedByproduct.item.id || recipe.model.byproducts.contains { $0.item.id == selectedByproduct.item.id }
                     } else {
                         false
                     }
@@ -275,14 +241,19 @@ final class ProductionViewModel {
     @MainActor
     func checkByproductState() {
         guard
-            let item = selectedByproduct2?.item,
-            let producingRecipe = selectedByproduct2?.producingRecipe,
-            let consumingRecipe = selectedByproduct2?.consumingRecipe
+            let item = selectedByproduct?.item,
+            let producingRecipe = selectedByproduct?.producingRecipe,
+            let consumingRecipe = selectedByproduct?.consumingRecipe
         else { return }
         
-        selectedByproduct2 = nil
+        selectedByproduct = nil
         
         production.addByproduct(item, producer: producingRecipe, consumer: consumingRecipe)
         update()
+    }
+    
+    @MainActor
+    func saveProduction() {
+        // TODO: Save production
     }
 }

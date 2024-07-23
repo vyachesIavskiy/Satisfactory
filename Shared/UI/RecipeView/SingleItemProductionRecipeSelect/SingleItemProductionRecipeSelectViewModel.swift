@@ -6,14 +6,14 @@ import SHSettings
 final class SingleItemProductionRecipeSelectViewModel {
     private let product: SingleItemProduction.Output.Product
     let recipe: SingleItemProduction.Output.Recipe
-    private let selectedByproduct: ProductionViewModel.ByproductSelection2?
+    private let selectedByproduct: ProductionViewModel.ByproductSelection?
     private let canPerformAction: (SingleProductionAction) -> Bool
     private let performAction: (SingleProductionAction) -> Void
     
     init(
         product: SingleItemProduction.Output.Product,
         recipe: SingleItemProduction.Output.Recipe,
-        selectedByproduct: ProductionViewModel.ByproductSelection2?,
+        selectedByproduct: ProductionViewModel.ByproductSelection?,
         canPerformAction: @escaping (SingleProductionAction) -> Bool,
         performAction: @escaping (SingleProductionAction) -> Void
     ) {

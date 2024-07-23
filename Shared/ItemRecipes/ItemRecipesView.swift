@@ -134,7 +134,9 @@ private struct _ItemRecipesPreview: View {
     
     var body: some View {
         if let item = itemPreview.item {
-            ItemRecipesView(viewModel: ItemRecipesViewModel(item: item, onRecipeSelected: { _ in }))
+            List {
+                ItemRecipesView(viewModel: ItemRecipesViewModel(item: item, onRecipeSelected: { _ in }))
+            }
         } else {
             Text("There is no item with ID '\(itemPreview.itemID)'")
                 .font(.largeTitle)

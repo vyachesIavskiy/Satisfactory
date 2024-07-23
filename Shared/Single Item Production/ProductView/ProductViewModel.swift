@@ -5,7 +5,7 @@ import SHModels
 @Observable
 final class ProductViewModel: Identifiable {
     let product: SingleItemProduction.Output.Product
-    let selectedByproduct: ProductionViewModel.ByproductSelection2?
+    let selectedByproduct: ProductionViewModel.ByproductSelection?
     let canPerformAction: (SingleProductionAction) -> Bool
     let performAction: (SingleProductionAction) -> Void
     
@@ -19,7 +19,7 @@ final class ProductViewModel: Identifiable {
     
     init(
         product: SingleItemProduction.Output.Product,
-        selectedByproduct: ProductionViewModel.ByproductSelection2?,
+        selectedByproduct: ProductionViewModel.ByproductSelection?,
         canPerformAction: @escaping (SingleProductionAction) -> Bool,
         performAction: @escaping (SingleProductionAction) -> Void
     ) {

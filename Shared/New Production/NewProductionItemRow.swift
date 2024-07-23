@@ -87,6 +87,7 @@ extension NewProductionView {
                 }
             }
             .fixedSize(horizontal: false, vertical: true)
+            .contentShape(.interaction, Rectangle())
         }
     }
 }

@@ -43,9 +43,6 @@ struct NewProductionView: View {
             .navigationDestination(item: $viewModel.selectedItemID) { id in
                 ProductionView(viewModel: viewModel.productionViewModel(for: id))
             }
-//            .fullScreenCover(item: $viewModel.selectedItemID) { itemID in
-//                ProductionView(viewModel: viewModel.productionViewModel(for: itemID))
-//            }
         }
         .task {
             await viewModel.observePins()

@@ -32,29 +32,16 @@ struct ChangeLogView: View {
             .padding(.horizontal, 16)
         }
         .background(.sh(.midnight10))
-        .safeAreaInset(edge: .top) {
-            switch mode {
-            case .normal:
-                EmptyView()
-                
-            case .showOnLaunch:
-                NavigationBar {
-                    HStack {
-                        Text("What's new in version \(changeLog.version.title)")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                        
-                        Spacer()
-                        
-                        Button("OK") {
-                            dismiss()
-                        }
-                        .buttonStyle(.shToolbar(role: .confirm))
+        .navigationTitle(changeLog.version.title)
+        .toolbar {
+            if mode == .showOnLaunch {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("OK") {
+                        dismiss()
                     }
                 }
             }
         }
-        .navigationTitle("Version \(changeLog.version.title)")
         .interactiveDismissDisabled(mode == .showOnLaunch)
     }
     
@@ -124,13 +111,17 @@ struct ChangeLogView: View {
 
 #if DEBUG
 #Preview("Change log") {
-    ChangeLogView(.previewValue, mode: .normal)
+    NavigationStack {
+        ChangeLogView(.previewValue, mode: .normal)
+    }
 }
 
 #Preview("Change log (show on launch)") {
     Color.clear
         .sheet(isPresented: .constant(true)) {
-            ChangeLogView(.previewValue, mode: .showOnLaunch)
+            NavigationStack {
+                ChangeLogView(.previewValue, mode: .showOnLaunch)
+            }
         }
 }
 #endif

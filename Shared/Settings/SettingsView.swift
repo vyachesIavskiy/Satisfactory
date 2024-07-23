@@ -3,8 +3,8 @@ import SHModels
 import SHSettings
 
 struct SettingsView: View {
-    @Bindable 
-    var viewModel: SettingsViewModel
+    @State
+    var viewModel = SettingsViewModel()
     
     @Namespace
     private var namespace
@@ -38,8 +38,6 @@ struct SettingsView: View {
     @MainActor @ViewBuilder
     private var recipeSection: some View {
         Section("Recipes") {
-            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: viewModel.recipe, pinned: false))
-            
             Toggle("Show recipe ingredient names", isOn: $viewModel.settings.showIngredientNames)
             
             Toggle("Auto-select single recipe", isOn: $viewModel.settings.autoSelectSingleRecipe)
@@ -125,7 +123,7 @@ struct SettingsView: View {
 
 #if DEBUG
 private struct _SettingsPreview: View {
-    @Bindable var viewModel = SettingsViewModel()
+    @State var viewModel = SettingsViewModel()
 
     var body: some View {
         SettingsView(viewModel: viewModel)

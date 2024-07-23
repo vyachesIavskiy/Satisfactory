@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct RootView: View {
-    let viewModel = RootViewModel()
+    @State
+    private var viewModel = RootViewModel()
     
     var body: some View {
         ZStack {
@@ -10,7 +11,7 @@ struct RootView: View {
                 ProgressView()
                 
             case .loaded:
-                TabsView(viewModel: TabsViewModel())
+                TabsView()
                 
             case let .failed(error):
                 loadingFailedView(error)
@@ -21,7 +22,7 @@ struct RootView: View {
             await viewModel.load()
         }
         .task {
-            await viewModel.observeViewMode()
+            await viewModel.observeSettings()
         }
     }
     

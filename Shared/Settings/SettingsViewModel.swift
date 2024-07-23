@@ -11,6 +11,8 @@ final class SettingsViewModel {
     }
     
     let recipe: Recipe
+    var showFeedback = false
+    var feedbackResult: FeedbackView.Result?
     
     var settings: Settings {
         didSet {
@@ -18,9 +20,7 @@ final class SettingsViewModel {
         }
     }
     
-    var showFeedback = false
-    var feedbackResult: FeedbackView.Result?
-    
+    // Dependencies
     @ObservationIgnored
     @Dependency(\.settingsService)
     private var settingsService

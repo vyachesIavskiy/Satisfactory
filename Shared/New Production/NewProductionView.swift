@@ -1,9 +1,10 @@
 import SwiftUI
 import SHModels
 
+@MainActor
 struct NewProductionView: View {
-    @Bindable
-    var viewModel: NewProductionViewModel
+    @State
+    var viewModel = NewProductionViewModel()
     
     @Namespace
     private var namespace
@@ -13,13 +14,12 @@ struct NewProductionView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVStack(spacing: itemSpacing) {
-                    ForEach($viewModel.sections) { $section in
-                        itemsSection($section)
-                    }
+            List {
+                ForEach($viewModel.sections) { $section in
+                    itemsSection($section)
                 }
             }
+            .listStyle(.plain)
             .navigationTitle("New Production")
             .searchable(text: $viewModel.searchText, prompt: "Search")
             .autocorrectionDisabled()
@@ -36,52 +36,56 @@ struct NewProductionView: View {
                                 .tag(NewProductionViewModel.Sorting.progression)
                         }
                     } label: {
-                        Image(systemName: "arrow.up.arrow.down")
+                        Label("Sorting", systemImage: "arrow.up.arrow.down.square")
                     }
                 }
             }
-            .fullScreenCover(item: $viewModel.selectedItemID) { itemID in
-                ProductionView(viewModel: viewModel.productionViewModel(for: itemID))
+            .navigationDestination(item: $viewModel.selectedItemID) { id in
+                ProductionView(viewModel: viewModel.productionViewModel(for: id))
             }
+//            .fullScreenCover(item: $viewModel.selectedItemID) { itemID in
+//                ProductionView(viewModel: viewModel.productionViewModel(for: itemID))
+//            }
         }
         .task {
-            await viewModel.observe()
+            await viewModel.observePins()
+        }
+        .task {
+            await viewModel.observeSettings()
         }
     }
     
-    @MainActor @ViewBuilder
+    @ViewBuilder
     private func itemsSection(_ _section: Binding<NewProductionViewModel.Section>) -> some View {
         let section = _section.wrappedValue
         if !section.items.isEmpty {
             Section(isExpanded: _section.expanded) {
-                LazyVStack(spacing: itemSpacing) {
-                    ForEach(section.items, id: \.id) { item in
-                        itemRow(item)
-                            .disabled(!section.expanded)
-                    }
+                ForEach(section.items, id: \.id) { item in
+                    itemRow(item)
+                        .disabled(!section.expanded)
+                        .listRowSeparator(.hidden)
                 }
-                .padding(.bottom, section.expanded ? 16 : 0)
             } header: {
                 SHSectionHeader(section.title, expanded: _section.expanded)
             }
-            .padding(.horizontal, 16)
         }
     }
     
-    @MainActor @ViewBuilder
+    @ViewBuilder
     private func itemRow(_ item: any Item) -> some View {
-        Menu {
+        Button {
+            viewModel.selectedItemID = item.id
+        } label: {
+            ItemRow(item)
+        }
+        .buttonStyle(.plain)
+        .contextMenu {
             Button {
                 viewModel.changePinStatus(for: item)
             } label: {
                 Text(viewModel.isPinned(item) ? "Unpin" : "Pin")
             }
-        } label: {
-            ItemRow(item)
-        } primaryAction: {
-            viewModel.selectedItemID = item.id
         }
-        .buttonStyle(.plain)
     }
 }
 

@@ -6,16 +6,10 @@ import SHModels
 
 @Observable
 final class NewProductionViewModel {
-    @ObservationIgnored
-    @Dependency(\.storageService)
-    private var storageService
-    
-    @ObservationIgnored
-    @Dependency(\.settingsService)
-    private var settingsService
-    
     private let parts: [Part]
     private let equipment: [Equipment]
+    private(set) var pins: Pins
+    private(set) var showFICSMAS: Bool
     
     @MainActor
     var sorting = Sorting.progression {
@@ -24,23 +18,29 @@ final class NewProductionViewModel {
         }
     }
     
-    private(set) var pins: Pins
-    private(set) var showFICSMAS: Bool
-    
     @MainActor
     var searchText = "" {
         didSet {
-            guard searchText != oldValue else { return }
-            
             buildSections()
         }
     }
     
+    @MainActor
     var selectedItemID: String?
     
     @MainActor
     var sections = [Section]()
     
+    // Dependencies
+    @ObservationIgnored
+    @Dependency(\.storageService)
+    private var storageService
+    
+    @ObservationIgnored
+    @Dependency(\.settingsService)
+    private var settingsService
+    
+    @MainActor
     init() {
         @Dependency(\.storageService)
         var storageService
@@ -52,34 +52,27 @@ final class NewProductionViewModel {
         equipment = storageService.automatableEquipment()
         pins = storageService.pins()
         showFICSMAS = settings().showFICSMAS
+        
+        buildSections()
     }
     
     @MainActor
-    func observe() async {
-        buildSections()
-        
-        await withTaskGroup(of: Void.self) { group in
-            group.addTask { @MainActor [weak self] in
-                guard let self else { return }
-                
-                for await pins in storageService.streamPins() {
-                    guard !Task.isCancelled else { break }
-                    
-                    self.pins = pins
-                    buildSections()
-                }
-            }
+    func observePins() async {
+        for await pins in storageService.streamPins() {
+            guard !Task.isCancelled else { break }
             
-            group.addTask { @MainActor [weak self] in
-                guard let self else { return }
-                
-                for await showFICSMAS in settingsService.settings().map(\.showFICSMAS) {
-                    guard !Task.isCancelled else { break }
-                    
-                    self.showFICSMAS = showFICSMAS
-                    buildSections()
-                }
-            }
+            self.pins = pins
+            buildSections()
+        }
+    }
+    
+    @MainActor
+    func observeSettings() async {
+        for await showFICSMAS in settingsService.settings().map(\.showFICSMAS) {
+            guard !Task.isCancelled else { break }
+            
+            self.showFICSMAS = showFICSMAS
+            buildSections()
         }
     }
     

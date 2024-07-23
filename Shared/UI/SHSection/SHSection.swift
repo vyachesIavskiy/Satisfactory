@@ -110,7 +110,7 @@ private extension SHSectionHeader {
                     .frame(width: expanded ? nil : 0, height: 2 / displayScale)
                     .foregroundStyle(.sh(.midnight30))
             }
-            .background(.background)
+//            .background(.background)
             .contentShape(Rectangle())
         }
     }

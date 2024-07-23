@@ -72,8 +72,8 @@ extension NewProductionView {
                         
                         Spacer()
                         
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(.gray)
+//                        Image(systemName: "chevron.right")
+//                            .foregroundColor(.gray)
                     }
                     
                     LinearGradient(

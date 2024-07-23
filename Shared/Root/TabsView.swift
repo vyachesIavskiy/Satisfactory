@@ -6,18 +6,19 @@ final class TabsViewModel {
 }
 
 struct TabsView: View {
-    @Bindable var viewModel: TabsViewModel
+    @State
+    var viewModel = TabsViewModel()
     
     var body: some View {
         TabView {
-            NewProductionView(viewModel: NewProductionViewModel())
+            NewProductionView()
                 .tabItem {
                     Label("New Production", systemImage: "hammer")
                 }
             
             // TODO: Factories tab
 
-            SettingsView(viewModel: SettingsViewModel())
+            SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
@@ -31,6 +32,6 @@ struct TabsView: View {
 
 #if DEBUG
 #Preview("Tabs view") {
-    TabsView(viewModel: TabsViewModel())
+    TabsView()
 }
 #endif

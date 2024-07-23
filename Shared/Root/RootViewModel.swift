@@ -15,6 +15,7 @@ final class RootViewModel {
     var showIngredientNames = false
     var loadingState = LoadingState.loading
     var showErrorDetails = false
+    
     private let logger = SHLogger(subsystemName: "Satisfactory", category: "Root")
     
     // Dependencies
@@ -39,7 +40,7 @@ final class RootViewModel {
     }
     
     @MainActor
-    func observeViewMode() async {
+    func observeSettings() async {
         for await showIngredientNames in settingsService.settings().map(\.showIngredientNames) {
             self.showIngredientNames = showIngredientNames
         }

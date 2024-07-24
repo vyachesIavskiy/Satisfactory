@@ -35,6 +35,9 @@ final class ProductionViewModel {
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
     
+    @ObservationIgnored @Dependency(\.settingsService)
+    private var settingsService
+    
     var output: SingleItemProduction.Output
     
     var selectedProduct: SingleItemProduction.Output.Product?
@@ -71,11 +74,7 @@ final class ProductionViewModel {
         production = SingleItemProduction(item: item)
         output = SingleItemProduction.Output(products: [], unselectedItems: [item], hasByproducts: false)
         
-        let recipes = storageService.recipes(for: item, as: [.output, .byproduct])
-        if recipes.count == 1 {
-            // If there is only one recipe for a selected item, select it automatically
-            addInitialRecipe(recipes[0])
-        }
+        addAutomaticInitialRecipeIfNeeded()
     }
     
     @MainActor
@@ -99,6 +98,7 @@ final class ProductionViewModel {
     func addInitialRecipe(_ recipe: Recipe) {
         production.userInput.amount = recipe.amountPerMinute(for: recipe.output)
         production.addRecipe(recipe, with: .auto, to: item)
+        addAutomaticallySelectedRecipesIfNeeded()
         update()
         step = .production
     }
@@ -106,12 +106,79 @@ final class ProductionViewModel {
     @MainActor
     func addRecipe(_ recipe: Recipe, to item: some Item) {
         production.addRecipe(recipe, with: .auto, to: item)
+        addAutomaticallySelectedRecipesIfNeeded()
         update()
     }
     
     @MainActor
     func adjustProduct(_ product: SingleItemProduction.Output.Product) {
         selectedProduct = product
+    }
+    
+    private func addAutomaticallySelectedRecipesIfNeeded() {
+        let shouldAddSingleRecipe = settingsService.autoSelectSingleRecipe
+        let shouldAddSinglePinnedRecipe = settingsService.autoSelectSinglePinnedRecipe
+        
+        guard shouldAddSingleRecipe || shouldAddSinglePinnedRecipe else { return }
+        
+        var productIndex = 0
+        var recipeIndex = 0
+        while production.userInput.products.indices.contains(productIndex) {
+            let product = production.userInput.products[productIndex]
+            while product.recipes.indices.contains(recipeIndex) {
+                let recipe = product.recipes[recipeIndex]
+                
+                let inputItems = recipe.recipe.input.map(\.item)
+                for inputItem in inputItems {
+                    guard !production.userInput.products.contains(where: { $0.item.id == inputItem.id }) else { continue }
+                    
+                    let inputItemRecipes = storageService.recipes(for: inputItem, as: [.output, .byproduct])
+                    if shouldAddSingleRecipe, inputItemRecipes.count == 1, let recipeToAdd = inputItemRecipes.first {
+                        production.userInput.addRecipe(recipeToAdd, with: .auto, to: inputItem)
+                    }
+                    
+                    let inputItemPinnedRecipeIDs = storageService.pinnedRecipeIDs(for: inputItem, as: [.output, .byproduct])
+                    if
+                        shouldAddSinglePinnedRecipe,
+                        inputItemPinnedRecipeIDs.count == 1,
+                        let recipeID = inputItemPinnedRecipeIDs.first,
+                        let recipeToAdd = storageService.recipe(for: recipeID)
+                    {
+                        production.userInput.addRecipe(recipeToAdd, with: .auto, to: inputItem)
+                    }
+                }
+                
+                recipeIndex += 1
+            }
+            productIndex += 1
+            recipeIndex = 0
+        }
+    }
+    
+    @MainActor
+    private func addAutomaticInitialRecipeIfNeeded() {
+        let shouldAddSingleRecipe = settingsService.autoSelectSingleRecipe
+        let shouldAddSinglePinnedRecipe = settingsService.autoSelectSinglePinnedRecipe
+        
+        let inputItemRecipes = storageService.recipes(for: item, as: [.output, .byproduct])
+        if shouldAddSingleRecipe, inputItemRecipes.count == 1, let recipeToAdd = inputItemRecipes.first {
+            addInitialRecipe(recipeToAdd)
+        }
+        
+        let inputItemPinnedRecipeIDs = storageService.pinnedRecipeIDs(for: item, as: [.output, .byproduct])
+        if
+            shouldAddSinglePinnedRecipe,
+            inputItemPinnedRecipeIDs.count == 1,
+            let recipeID = inputItemPinnedRecipeIDs.first,
+            let recipeToAdd = storageService.recipe(for: recipeID)
+        {
+            addInitialRecipe(recipeToAdd)
+        }
+    }
+    
+    @MainActor
+    func initialRecipeSelectionViewModel() -> SingleItemProductionInitialRecipeSelectionViewModel {
+        SingleItemProductionInitialRecipeSelectionViewModel(item: item, onRecipeSelected: addInitialRecipe)
     }
     
     @MainActor

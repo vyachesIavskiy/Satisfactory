@@ -94,7 +94,7 @@ struct ProductAdjustmentView: View {
     private var unselectedSection: some View {
         if viewModel.hasUnselectedRecipes {
             Section(isExpanded: $unselectedRecipesExpanded) {
-                ItemRecipesView(viewModel: viewModel.unselectedItemRecipesViewModel)
+                SingleItemProductionInitialRecipeSelectionView(viewModel: viewModel.unselectedItemRecipesViewModel)
             } header: {
                 SHSectionHeader("Unselected recipes", expanded: $unselectedRecipesExpanded)
                     .padding(.horizontal, 16)

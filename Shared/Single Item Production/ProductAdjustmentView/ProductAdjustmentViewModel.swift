@@ -95,8 +95,8 @@ final class ProductAdjustmentViewModel: Identifiable {
     }
     
     @MainActor
-    var unselectedItemRecipesViewModel: ItemRecipesViewModel {
-        ItemRecipesViewModel(
+    var unselectedItemRecipesViewModel: SingleItemProductionInitialRecipeSelectionViewModel {
+        SingleItemProductionInitialRecipeSelectionViewModel(
             item: product.item,
             filterOutRecipeIDs: output.products.first?.recipes.map(\.model.id) ?? [],
             onRecipeSelected: addRecipe

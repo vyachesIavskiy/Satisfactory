@@ -2,9 +2,9 @@ import SwiftUI
 import SHStorage
 import SHModels
 
-struct ItemRecipesView: View {
-    @Bindable 
-    var viewModel: ItemRecipesViewModel
+struct SingleItemProductionInitialRecipeSelectionView: View {
+    @State
+    var viewModel: SingleItemProductionInitialRecipeSelectionViewModel
     
     @Environment(\.displayScale)
     private var displayScale
@@ -22,35 +22,27 @@ struct ItemRecipesView: View {
     private var recipeSpacing = 16.0
     
     var body: some View {
-        VStack {
-            ForEach($viewModel.sections) { $section in
-                recipesSection($section)
-            }
-        }
-        .task {
-            await viewModel.observeStorage()
+        ForEach($viewModel.sections) { $section in
+            recipesSection($section)
         }
     }
     
     @MainActor
     @ViewBuilder
-    private func recipesSection(_ _section: Binding<ItemRecipesViewModel.Section>) -> some View {
+    private func recipesSection(_ _section: Binding<SingleItemProductionInitialRecipeSelectionViewModel.Section>) -> some View {
         let section = _section.wrappedValue
         if !section.recipes.isEmpty {
             Section(isExpanded: _section.expanded) {
-                VStack(spacing: recipeSpacing) {
-                    ForEach(section.recipes) { recipe in
-                        recipeView(recipe)
-                            .disabled(!section.expanded)
-                    }
+                ForEach(section.recipes) { recipe in
+                    recipeView(recipe)
+                        .disabled(!section.expanded)
                 }
-                .padding(.bottom, section.expanded ? 16 : 0)
             } header: {
                 if viewModel.sectionHeaderVisible(section) {
                     SHSectionHeader(section.title, expanded: _section.expanded)
                 }
             }
-            .padding(.horizontal, 16)
+            .listSectionSeparator(.hidden)
         }
     }
     
@@ -133,45 +125,38 @@ private struct _ItemRecipesPreview: View {
     var itemPreview: ItemPreview
     
     var body: some View {
-        if let item = itemPreview.item {
-            List {
-                ItemRecipesView(viewModel: ItemRecipesViewModel(item: item, onRecipeSelected: { _ in }))
+        NavigationStack {
+            if let item = itemPreview.item {
+                List {
+                    SingleItemProductionInitialRecipeSelectionView(viewModel: SingleItemProductionInitialRecipeSelectionViewModel(item: item, onRecipeSelected: { _ in }))
+                }
+                .listStyle(.plain)
+            } else {
+                Text("There is no item with ID '\(itemPreview.itemID)'")
+                    .font(.largeTitle)
+                    .padding()
             }
-        } else {
-            Text("There is no item with ID '\(itemPreview.itemID)'")
-                .font(.largeTitle)
-                .padding()
         }
     }
 }
 
 #Preview("Iron Ingot") {
-    NavigationStack {
-        _ItemRecipesPreview(itemPreview: .ironIngot)
-    }
+    _ItemRecipesPreview(itemPreview: .ironIngot)
 }
 
 #Preview("Reinforced Iron Plate") {
-    NavigationStack {
-        _ItemRecipesPreview(itemPreview: .reinforcedIronPlate)
-    }
+    _ItemRecipesPreview(itemPreview: .reinforcedIronPlate)
 }
 
 #Preview("Water") {
-    NavigationStack {
-        _ItemRecipesPreview(itemPreview: .water)
-    }
+    _ItemRecipesPreview(itemPreview: .water)
 }
 
 #Preview("Steel Pipe") {
-    NavigationStack {
-        _ItemRecipesPreview(itemPreview: .steelPipe)
-    }
+    _ItemRecipesPreview(itemPreview: .steelPipe)
 }
 
 #Preview("Portable Miner") {
-    NavigationStack {
-        _ItemRecipesPreview(itemPreview: .portableMiner)
-    }
+    _ItemRecipesPreview(itemPreview: .portableMiner)
 }
 #endif

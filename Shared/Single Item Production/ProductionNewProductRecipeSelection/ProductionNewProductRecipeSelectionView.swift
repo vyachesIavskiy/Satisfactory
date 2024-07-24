@@ -12,7 +12,7 @@ struct ProductionNewProductRecipeSelectionView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                ItemRecipesView(viewModel: viewModel.itemRecipesViewModel)
+                SingleItemProductionInitialRecipeSelectionView(viewModel: viewModel.itemRecipesViewModel)
             }
             .safeAreaInset(edge: .top) {
                 Rectangle()

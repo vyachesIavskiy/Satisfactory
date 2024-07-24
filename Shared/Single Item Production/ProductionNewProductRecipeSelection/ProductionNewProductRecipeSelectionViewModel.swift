@@ -18,8 +18,8 @@ final class ProductionNewProductRecipeSelectionViewModel {
     }
     
     @MainActor
-    var itemRecipesViewModel: ItemRecipesViewModel {
-        ItemRecipesViewModel(
+    var itemRecipesViewModel: SingleItemProductionInitialRecipeSelectionViewModel {
+        SingleItemProductionInitialRecipeSelectionViewModel(
             item: item,
             filterOutRecipeIDs: selectedRecipeIDs,
             onRecipeSelected: onSelectRecipe

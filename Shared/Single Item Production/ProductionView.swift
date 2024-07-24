@@ -3,7 +3,7 @@ import SHModels
 import SHStorage
 
 struct ProductionView: View {
-    @Bindable
+    @State
     var viewModel: ProductionViewModel
     
     @Environment(\.dismiss)
@@ -20,10 +20,12 @@ struct ProductionView: View {
     
     var body: some View {
         ZStack {
-            ScrollView {
-                if viewModel.step == .selectingInitialRecipe {
-                    initialRecipeSelection
-                } else {
+            List {
+                switch viewModel.step {
+                case .selectingInitialRecipe:
+                    SingleItemProductionInitialRecipeSelectionView(viewModel: SingleItemProductionInitialRecipeSelectionViewModel(item: viewModel.item, onRecipeSelected: viewModel.addInitialRecipe))
+                    
+                case .production:
                     productionList
                         .sheet(item: $viewModel.selectedNewItemID) { itemID in
                             ProductionNewProductRecipeSelectionView(viewModel: viewModel.addInitialRecipeViewModel(for: itemID))
@@ -33,6 +35,7 @@ struct ProductionView: View {
                         }
                 }
             }
+            .listStyle(.plain)
             .safeAreaInset(edge: .top) {
                 Rectangle()
                     .foregroundStyle(.sh(.midnight))
@@ -206,11 +209,6 @@ struct ProductionView: View {
         .padding(.horizontal, 16)
         .padding(.top, 12)
         .padding(.bottom, 36)
-    }
-    
-    @MainActor @ViewBuilder
-    private var initialRecipeSelection: some View {
-        ItemRecipesView(viewModel: ItemRecipesViewModel(item: viewModel.item, onRecipeSelected: viewModel.addInitialRecipe))
     }
 }
 

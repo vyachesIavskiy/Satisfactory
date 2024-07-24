@@ -135,22 +135,22 @@ struct RecipeDisplayView: View {
 import SHStorage
 
 private struct _RecipeDisplayViewPreview: View {
-    @Dependency(\.storageService.recipes)
-    private var storedRecipes
+    @Dependency(\.storageService)
+    private var storageService
     
     @Namespace
     private var namespace
     
     private var recipes: [(Recipe, Bool)] {
         [
-            (storedRecipes().first(id: "recipe-iron-ingot"), false),
-            (storedRecipes().first(id: "recipe-reinforced-iron-plate"), false),
-            (storedRecipes().first(id: "recipe-crystal-oscillator"), false),
-            (storedRecipes().first(id: "recipe-plastic"), false),
-            (storedRecipes().first(id: "recipe-diluted-fuel"), false),
-            (storedRecipes().first(id: "recipe-non-fissile-uranium"), false),
-            (storedRecipes().first(id: "recipe-alternate-heavy-oil-residue"), false),
-            (storedRecipes().first(id: "recipe-smart-plating"), true)
+            (storageService.recipe(for: "recipe-iron-ingot"), false),
+            (storageService.recipe(for: "recipe-reinforced-iron-plate"), false),
+            (storageService.recipe(for: "recipe-crystal-oscillator"), false),
+            (storageService.recipe(for: "recipe-plastic"), false),
+            (storageService.recipe(for: "recipe-diluted-fuel"), false),
+            (storageService.recipe(for: "recipe-non-fissile-uranium"), false),
+            (storageService.recipe(for: "recipe-alternate-heavy-oil-residue"), false),
+            (storageService.recipe(for: "recipe-smart-plating"), true)
         ].compactMap {
             guard let recipe = $0.0 else { return nil }
             

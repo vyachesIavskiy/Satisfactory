@@ -44,13 +44,13 @@ final class ItemRecipesViewModel {
             .recipes(for: item, as: .byproduct)
             .filter { $0.machine != nil && !filterOutRecipeIDs.contains($0.id) }
         
-        pinnedRecipeIDs = storageService.pins().recipeIDs
+        pinnedRecipeIDs = storageService.pinnedRecipeIDs(for: item, as: [.output, .byproduct])
         buildSections()
     }
     
     @MainActor
     func observeStorage() async {
-        for await pinnedRecipeIDs in storageService.streamPins().map(\.recipeIDs) {
+        for await pinnedRecipeIDs in storageService.streamPinnedRecipeIDs(for: item, as: [.output, .byproduct]) {
             guard !Task.isCancelled else { break }
             
             self.pinnedRecipeIDs = pinnedRecipeIDs
@@ -73,12 +73,12 @@ final class ItemRecipesViewModel {
     
     @MainActor
     func isPinned(_ recipe: Recipe) -> Bool {
-        storageService.isRecipePinned(recipe)
+        storageService.isPinned(recipe)
     }
     
     @MainActor
     func changePinStatus(for recipe: Recipe) {
-        storageService.changeRecipePinStatus(recipe)
+        storageService.changePinStatus(for: recipe)
     }
     
     @MainActor

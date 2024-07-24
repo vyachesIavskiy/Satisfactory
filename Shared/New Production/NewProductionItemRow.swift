@@ -99,24 +99,23 @@ private struct _ItemRowPreview: View {
     @Dependency(\.storageService)
     private var storageService
     
-    var parts: [Part] {
-        let parts = storageService.parts()
-        return [
-            parts.first(id: "part-iron-ore"),
-            parts.first(id: "part-iron-ingot"),
-            parts.first(id: "part-iron-plate"),
-            parts.first(id: "part-heavy-modular-frame"),
-            parts.first(id: "part-water"),
-            parts.first(id: "part-nitrogen-gas"),
-            parts.first(id: "part-packaged-oil")
+    var items: [any Item] {
+        [
+            storageService.item(withID: "part-iron-ore"),
+            storageService.item(withID: "part-iron-ingot"),
+            storageService.item(withID: "part-iron-plate"),
+            storageService.item(withID: "part-heavy-modular-frame"),
+            storageService.item(withID: "part-water"),
+            storageService.item(withID: "part-nitrogen-gas"),
+            storageService.item(withID: "part-packaged-oil")
         ].compactMap { $0 }
     }
     
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(parts) { part in
-                    NewProductionView.ItemRow(part)
+                ForEach(items, id: \.id) { item in
+                    NewProductionView.ItemRow(item)
                         .contextMenu {
                             Button("Preview") {
                                 

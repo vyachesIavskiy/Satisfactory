@@ -203,21 +203,21 @@ import SHSettings
 private struct _SingleItemProductionRecipeSelectPreview: View {
     let showIngredientNames: Bool
     
-    @Dependency(\.storageService.recipes)
-    private var storedRecipes
+    @Dependency(\.storageService)
+    private var storageService
     
     @Namespace
     private var namespace
     
     var recipes: [Recipe] {
         [
-            storedRecipes().first(id: "recipe-iron-ingot"),
-            storedRecipes().first(id: "recipe-reinforced-iron-plate"),
-            storedRecipes().first(id: "recipe-crystal-oscillator"),
-            storedRecipes().first(id: "recipe-plastic"),
-            storedRecipes().first(id: "recipe-diluted-fuel"),
-            storedRecipes().first(id: "recipe-non-fissile-uranium"),
-            storedRecipes().first(id: "recipe-alternate-heavy-oil-residue")
+            storageService.recipe(for: "recipe-iron-ingot"),
+            storageService.recipe(for: "recipe-reinforced-iron-plate"),
+            storageService.recipe(for: "recipe-crystal-oscillator"),
+            storageService.recipe(for: "recipe-plastic"),
+            storageService.recipe(for: "recipe-diluted-fuel"),
+            storageService.recipe(for: "recipe-non-fissile-uranium"),
+            storageService.recipe(for: "recipe-alternate-heavy-oil-residue")
         ].compactMap { $0 }
     }
     

@@ -24,20 +24,8 @@ extension SHStorageService {
             staticStorage[keyPath: keyPath]
         }
         
-        func isPartPinned(_ partID: String) -> Bool {
-            _pins.value.partIDs.contains(partID)
-        }
-        
-        func isEquipmentPinned(_ equipmentID: String) -> Bool {
-            _pins.value.equipmentIDs.contains(equipmentID)
-        }
-        
-        func isRecipePinned(_ recipeID: String) -> Bool {
-            _pins.value.recipeIDs.contains(recipeID)
-        }
-        
         func changePartPinStatus(_ partID: String) {
-            if isPartPinned(partID) {
+            if _pins.value.partIDs.contains(partID) {
                 _pins.value.partIDs.remove(partID)
             } else {
                 _pins.value.partIDs.insert(partID)
@@ -45,7 +33,7 @@ extension SHStorageService {
         }
         
         func changeEquipmentPinStatus(_ equipmentID: String) {
-            if isEquipmentPinned(equipmentID) {
+            if _pins.value.equipmentIDs.contains(equipmentID) {
                 _pins.value.equipmentIDs.remove(equipmentID)
             } else {
                 _pins.value.equipmentIDs.insert(equipmentID)
@@ -53,7 +41,7 @@ extension SHStorageService {
         }
         
         func changeRecipePinStatus(_ recipeID: String) {
-            if isRecipePinned(recipeID) {
+            if _pins.value.recipeIDs.contains(recipeID) {
                 _pins.value.recipeIDs.remove(recipeID)
             } else {
                 _pins.value.recipeIDs.insert(recipeID)

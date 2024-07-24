@@ -23,7 +23,7 @@ struct NewProductionView: View {
             .navigationTitle("New Production")
             .searchable(text: $viewModel.searchText, prompt: "Search")
             .autocorrectionDisabled()
-            .animation(.default, value: viewModel.pins)
+            .animation(.default, value: viewModel.pinnedItemIDs)
             .animation(.default, value: viewModel.showFICSMAS)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
@@ -45,7 +45,7 @@ struct NewProductionView: View {
             }
         }
         .task {
-            await viewModel.observePins()
+            await viewModel.observeStorage()
         }
         .task {
             await viewModel.observeSettings()

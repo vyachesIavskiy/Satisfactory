@@ -58,9 +58,10 @@ private struct _ItemIconShapePreview: View {
     let cornerRadius: Double
     
     var item: (any Item)? {
-        @Dependency(\.storageService) var storageService
-        let items: [any Item] = storageService.parts() + storageService.equipment()
-        return items.first { $0.id == itemID }
+        @Dependency(\.storageService) 
+        var storageService
+        
+        return storageService.item(withID: itemID)
     }
     
     var body: some View {

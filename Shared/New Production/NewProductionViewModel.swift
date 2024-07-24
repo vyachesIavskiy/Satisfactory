@@ -8,7 +8,8 @@ import SHModels
 final class NewProductionViewModel {
     private let parts: [Part]
     private let equipment: [Equipment]
-    private(set) var pins: Pins
+    
+    private(set) var pinnedItemIDs: Set<String>
     private(set) var showFICSMAS: Bool
     
     @MainActor
@@ -50,18 +51,18 @@ final class NewProductionViewModel {
         
         parts = storageService.automatableParts()
         equipment = storageService.automatableEquipment()
-        pins = storageService.pins()
+        pinnedItemIDs = storageService.pinnedItemIDs
         showFICSMAS = settings().showFICSMAS
         
         buildSections()
     }
     
     @MainActor
-    func observePins() async {
-        for await pins in storageService.streamPins() {
+    func observeStorage() async {
+        for await pinnedItemIDs in storageService.streamPinnedItemIDs {
             guard !Task.isCancelled else { break }
             
-            self.pins = pins
+            self.pinnedItemIDs = pinnedItemIDs
             buildSections()
         }
     }
@@ -78,17 +79,19 @@ final class NewProductionViewModel {
     
     @MainActor
     func isPinned(_ item: some Item) -> Bool {
-        storageService.isPinned(item: item)
+        storageService.isPinned(item)
     }
     
     @MainActor
     func changePinStatus(for item: some Item) {
-        storageService.changeItemPinStatus(item)
+        storageService.changePinStatus(for: item)
     }
     
     @MainActor
     func productionViewModel(for itemID: String) -> ProductionViewModel {
-        let item = storageService.item(for: itemID)!
+        guard let item = storageService.item(withID: itemID) else {
+            fatalError("Item with provided itemID '\(itemID)' not found!")
+        }
         
         return ProductionViewModel(item: item)
     }
@@ -111,8 +114,8 @@ private extension NewProductionViewModel {
     
     @MainActor
     func buildCategoriesSections() -> [Section] {
-        let (pinnedParts, unpinnedParts) = split(parts, pins: pins.partIDs)
-        let (pinnedEquipment, unpinnedEquipment) = split(equipment, pins: pins.equipmentIDs)
+        let (pinnedParts, unpinnedParts) = split(parts)
+        let (pinnedEquipment, unpinnedEquipment) = split(equipment)
         
         let pinnedItems: [any Item] = pinnedParts + pinnedEquipment
         
@@ -132,21 +135,20 @@ private extension NewProductionViewModel {
             }
         }
         
-        return [
-            .pinned(pinnedItems),
-        ] + partsByCategories.sorted { $0.0 < $1.0 }.map { .parts($0.0.localizedName, $0.1) }
-        + equipmentByCategories.sorted { $0.0 < $1.0 }.map { .equipment($0.0.localizedName, $0.1) }
+        return [.pinned(pinnedItems)] +
+        partsByCategories.sorted { $0.0 < $1.0 }.map { .parts($0.0.localizedName, $0.1) } +
+        equipmentByCategories.sorted { $0.0 < $1.0 }.map { .equipment($0.0.localizedName, $0.1) }
     }
     
     @MainActor
-    func split<T: ProgressiveItem>(_ items: [T], pins: Set<String>) -> (pinned: [T], unpinned: [T]) {
+    func split<T: ProgressiveItem>(_ items: [T]) -> (pinned: [T], unpinned: [T]) {
         var (pinned, unpinned) = items.reduce(into: ([T](), [T]())) { partialResult, item in
             if item.category == .ficsmas, !showFICSMAS {
                 return
             }
             
             if searchText.isEmpty || item.category.localizedName.localizedCaseInsensitiveContains(searchText) || item.localizedName.localizedCaseInsensitiveContains(searchText) {
-                if pins.contains(item.id) {
+                if pinnedItemIDs.contains(item.id) {
                     partialResult.0.append(item)
                 } else {
                     partialResult.1.append(item)

@@ -32,7 +32,7 @@ final class SettingsViewModel {
         @Dependency(\.storageService)
         var storageService
         
-        recipe = storageService.recipe(for: "recipe-alternate-instant-scrap")
+        recipe = storageService.recipe(for: "recipe-alternate-instant-scrap")!
         settings = settingsService.currentSettings()
     }
 }

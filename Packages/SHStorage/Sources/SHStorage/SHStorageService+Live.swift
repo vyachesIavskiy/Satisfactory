@@ -41,19 +41,6 @@ extension SHStorageService {
             try persistentStorage.load()
         }
         
-        // MARK: IsPinned
-        func isPartPinned(_ partID: String) -> Bool {
-            persistentStorage.isPartPinned(partID)
-        }
-        
-        func isEquipmentPinned(_ equipmentID: String) -> Bool {
-            persistentStorage.isEquipmentPinned(equipmentID)
-        }
-        
-        func isRecipePinned(_ recipeID: String) -> Bool {
-            persistentStorage.isRecipePinned(recipeID)
-        }
-        
         // MARK: Change pin status
         func changePartPinStatus(_ partID: String) {
             try? persistentStorage.changePartPinStatus(partID)

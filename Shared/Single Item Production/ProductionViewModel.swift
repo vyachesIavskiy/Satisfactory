@@ -71,7 +71,7 @@ final class ProductionViewModel {
         production = SingleItemProduction(item: item)
         output = SingleItemProduction.Output(products: [], unselectedItems: [item], hasByproducts: false)
         
-        let recipes = storageService.recipes(for: item, as: .output, .byproduct)
+        let recipes = storageService.recipes(for: item, as: [.output, .byproduct])
         if recipes.count == 1 {
             // If there is only one recipe for a selected item, select it automatically
             addInitialRecipe(recipes[0])
@@ -87,7 +87,7 @@ final class ProductionViewModel {
         @Dependency(\.storageService)
         var storageService
         
-        var recipes = storageService.recipes(for: item, as: .output, .byproduct)
+        var recipes = storageService.recipes(for: item, as: [.output, .byproduct])
         if let product = output.products.first(where: { $0.item.id == item.id }) {
             recipes = recipes.filter { !product.recipes.map(\.id).contains($0.id) }
         }
@@ -187,7 +187,7 @@ final class ProductionViewModel {
     
     @MainActor
     func addInitialRecipeViewModel(for itemID: String) -> ProductionNewProductRecipeSelectionViewModel {
-        let item = storageService.item(for: itemID)!
+        let item = storageService.item(withID: itemID)!
         
         return ProductionNewProductRecipeSelectionViewModel(item: item, selectedRecipeIDs: []) { [weak self] recipe in
             self?.addRecipe(recipe, to: item)
@@ -212,7 +212,7 @@ final class ProductionViewModel {
     }
     
     func canAdjustProduct(_ product: SingleItemProduction.Output.Product) -> Bool {
-        storageService.recipes(for: product.item, as: .output, .byproduct).count > 1
+        storageService.recipes(for: product.item, as: [.output, .byproduct]).count > 1
     }
     
     @MainActor

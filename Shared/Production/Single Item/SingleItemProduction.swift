@@ -559,7 +559,7 @@ private extension SingleItemProduction {
                         }
                     } else if 
                         !unselectedItems.contains(where: { $0.id == input.item.id }),
-                        !storageService.recipes(for: input.item, as: .output, .byproduct).isEmpty
+                        !storageService.recipes(for: input.item, as: [.output, .byproduct]).isEmpty
                     {
                         unselectedItems.append(input.item)
                     }

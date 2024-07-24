@@ -23,7 +23,7 @@ final class ProductAdjustmentViewModel: Identifiable {
         @Dependency(\.storageService)
         var storageService
         
-        return storageService.recipes(for: product.item, as: .output, .byproduct).count != output.products.first?.recipes.count
+        return storageService.recipes(for: product.item, as: [.output, .byproduct]).count != output.products.first?.recipes.count
     }
     
     var selectedRecipes: [SingleItemProduction.Output.Recipe] {

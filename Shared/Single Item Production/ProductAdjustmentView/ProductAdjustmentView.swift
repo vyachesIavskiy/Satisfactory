@@ -101,36 +101,6 @@ struct ProductAdjustmentView: View {
             }
         }
     }
-    
-//    @MainActor @ViewBuilder
-//    private var navigationBar: some View {
-//        NavigationBar {
-//            HStack(alignment: .firstTextBaseline) {
-//                Text(viewModel.product.item.localizedName)
-//                    .font(.title3)
-//                
-//                Spacer()
-//                
-//                Text("\(viewModel.product.amount.formatted(.fractionFromZeroToFour)) / min")
-//                    .font(.headline)
-//            }
-//        } buttons: {
-//            HStack {
-//                Button("Cancel", role: .cancel) {
-//                    dismiss()
-//                }
-//                .buttonStyle(.shToolbar(role: .cancel))
-//                
-//                Spacer()
-//                
-//                Button("Apply") {
-//                    viewModel.apply()
-//                    dismiss()
-//                }
-//                .buttonStyle(.shToolbar(role: .confirm))
-//            }
-//        }
-//    }
 }
 
 #if DEBUG
@@ -145,11 +115,11 @@ private struct _ProductAdjustmentPreview: View {
     var storageService
     
     private var item: any Item {
-        storageService.item(for: itemID)!
+        storageService.item(withID: itemID)!
     }
     
     private var recipes: [Recipe] {
-        recipeIDs.map(storageService.recipe)
+        recipeIDs.compactMap(storageService.recipe)
     }
     
     var body: some View {

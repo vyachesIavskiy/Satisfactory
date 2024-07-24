@@ -120,11 +120,11 @@ private enum ItemPreview {
         return switch self {
         // Parts
         case .ironIngot, .reinforcedIronPlate, .water, .steelPipe:
-            storageService.parts().first(id: itemID)
+            storageService.item(withID: itemID)
             
         // Equipment
         case .portableMiner:
-            storageService.equipment().first(id: itemID)
+            storageService.item(withID: itemID)
         }
     }
 }

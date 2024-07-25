@@ -14,9 +14,9 @@ extension Recipe.Static {
     ) {
         self.init(
             id: id,
-            inputs: inputs,
             output: output,
             byproducts: byproducts,
+            inputs: inputs,
             machineID: machine?.id,
             manualCraftingIDs: manualCrafting.map(\.id),
             duration: duration,

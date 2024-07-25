@@ -34,7 +34,7 @@ final class RecipeDisplayViewModel {
     
     @MainActor
     func inputIngredientViewModels() -> [RecipeIngredientViewModel] {
-        recipe.input.map {
+        recipe.inputs.map {
             RecipeIngredientViewModel(
                 displayIngredient: $0,
                 amount: recipe.amountPerMinute(for: $0)

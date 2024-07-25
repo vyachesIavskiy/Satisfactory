@@ -128,9 +128,9 @@ extension SHStaticStorage {
     subscript(recipesFor itemID: String, role role: Recipe.Ingredient.Role) -> [Recipe] {
         let recipes = recipes.filter { recipe in
             switch role {
-            case .input: recipe.input.reduce(false) { $0 || $1.item.id == itemID }
             case .output: recipe.output.item.id == itemID
             case .byproduct: recipe.byproducts.reduce(false) { $0 || $1.item.id == itemID }
+            case .input: recipe.inputs.reduce(false) { $0 || $1.item.id == itemID }
             }
         }
         

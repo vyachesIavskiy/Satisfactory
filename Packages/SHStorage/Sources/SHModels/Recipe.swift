@@ -4,9 +4,9 @@ import Foundation
 
 public struct Recipe: BaseItem {
     public let id: String
-    public let input: [Ingredient]
     public let output: Ingredient
     public let byproducts: [Ingredient]
+    public let inputs: [Ingredient]
     public let machine: Building?
     public let manualCrafting: [Building]
     public let duration: Int
@@ -14,18 +14,18 @@ public struct Recipe: BaseItem {
     
     public init(
         id: String,
-        input: [Ingredient],
         output: Ingredient,
         byproducts: [Ingredient] = [],
+        inputs: [Ingredient],
         machine: Building? = nil,
         manualCrafting: [Building] = [],
         duration: Int,
         isDefault: Bool = true
     ) {
         self.id = id
-        self.input = input
         self.output = output
         self.byproducts = byproducts
+        self.inputs = inputs
         self.machine = machine
         self.manualCrafting = manualCrafting
         self.duration = duration
@@ -76,9 +76,9 @@ public extension Recipe {
 
 public extension Recipe.Ingredient {
     enum Role: String, Equatable, CustomStringConvertible, Sendable {
-        case input = "Input"
         case output = "Output"
         case byproduct = "Byproduct"
+        case input = "Input"
         
         public var description: String { rawValue }
     }
@@ -95,7 +95,7 @@ public extension Sequence<Recipe> {
     
     private func match(_ recipe: Recipe, itemID: String, role: Recipe.Ingredient.Role) -> Bool {
         switch role {
-        case .input: recipe.input.contains { $0.item.id == itemID }
+        case .input: recipe.inputs.contains { $0.item.id == itemID }
         case .output: recipe.output.item.id == itemID
         case .byproduct: recipe.byproducts.contains { $0.item.id == itemID }
         }

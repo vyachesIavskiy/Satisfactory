@@ -144,7 +144,7 @@ private struct _ProductAdjustmentPreview: View {
                                     isSelected: true
                                 )
                             },
-                            inputs: recipe.input.map {
+                            inputs: recipe.inputs.map {
                                 SingleItemProduction.Output.Recipe.InputIngredient(
                                     item: $0.item,
                                     amount: recipe.amountPerMinute(for: $0),

@@ -81,7 +81,7 @@ extension SingleItemProduction {
                 return Byproduct(item: ingredient.item, amount: amountPerRecipe * multiplier)
             }
             
-            inputs = recipe.input.map { ingredient in
+            inputs = recipe.inputs.map { ingredient in
                 let amountPerRecipe = recipe.amountPerMinute(for: ingredient)
                 return Input(item: ingredient.item, amount: amountPerRecipe * multiplier)
             }

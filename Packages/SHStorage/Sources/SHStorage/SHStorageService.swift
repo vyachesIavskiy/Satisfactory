@@ -83,7 +83,7 @@ public extension SHStorageService {
             switch role {
             case .output: recipe.output.item.id == itemID
             case .byproduct: recipe.byproducts.contains { $0.item.id == itemID }
-            case .input: recipe.input.contains { $0.item.id == itemID }
+            case .input: recipe.inputs.contains { $0.item.id == itemID }
             }
         }
     }

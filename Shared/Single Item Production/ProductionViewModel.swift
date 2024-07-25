@@ -128,7 +128,7 @@ final class ProductionViewModel {
             while product.recipes.indices.contains(recipeIndex) {
                 let recipe = product.recipes[recipeIndex]
                 
-                let inputItems = recipe.recipe.input.map(\.item)
+                let inputItems = recipe.recipe.inputs.map(\.item)
                 for inputItem in inputItems {
                     guard !production.userInput.products.contains(where: { $0.item.id == inputItem.id }) else { continue }
                     
@@ -205,7 +205,7 @@ final class ProductionViewModel {
                     } &&
                     production.userInput.products.contains {
                         $0.recipes.contains {
-                            $0.recipe.input.contains { $0.item.id == ingredient.item.id }
+                            $0.recipe.inputs.contains { $0.item.id == ingredient.item.id }
                         }
                     }
                     
@@ -288,7 +288,7 @@ final class ProductionViewModel {
             output.products.compactMap { product in
                 let visibleRecipes = product.recipes.filter { recipe in
                     if let producingRecipeID = selectedByproduct.producingRecipe?.id {
-                        recipe.model.id == producingRecipeID || recipe.model.input.contains { $0.item.id == selectedByproduct.item.id }
+                        recipe.model.id == producingRecipeID || recipe.model.inputs.contains { $0.item.id == selectedByproduct.item.id }
                     } else if let consumingRecipeID = selectedByproduct.consumingRecipe?.id {
                         recipe.model.id == consumingRecipeID || recipe.model.output.item.id == selectedByproduct.item.id || recipe.model.byproducts.contains { $0.item.id == selectedByproduct.item.id }
                     } else {

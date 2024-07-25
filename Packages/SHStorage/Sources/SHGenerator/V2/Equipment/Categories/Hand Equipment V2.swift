@@ -1,6 +1,5 @@
 import SHModels
 import SHStaticModels
-import enum Category
 
 private extension Equipment.Static {
     init(

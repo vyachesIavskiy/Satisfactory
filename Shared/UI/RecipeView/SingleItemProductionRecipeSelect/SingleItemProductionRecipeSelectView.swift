@@ -250,7 +250,7 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
                     isSelected: false
                 )
             },
-            inputs: recipe.input.map {
+            inputs: recipe.inputs.map {
                 SingleItemProduction.Output.Recipe.InputIngredient(
                     producingProductID: nil,
                     item: $0.item,

@@ -5,9 +5,9 @@ import SHSingleItemProduction
 
 @Observable
 final class SingleItemProductionRecipeDisplayViewModel {
-    let recipe: SingleItemProduction.Output.Recipe
+    let recipe: SHSingleItemProduction.OutputRecipe
     
-    init(recipe: SingleItemProduction.Output.Recipe) {
+    init(recipe: SHSingleItemProduction.OutputRecipe) {
         self.recipe = recipe
     }
 

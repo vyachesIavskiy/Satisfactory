@@ -7,7 +7,7 @@ struct RecipeAdjustmentView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
-                Text(viewModel.recipe.model.localizedName)
+                Text(viewModel.recipe.recipe.localizedName)
                     .fontWeight(.semibold)
                 
                 Spacer()

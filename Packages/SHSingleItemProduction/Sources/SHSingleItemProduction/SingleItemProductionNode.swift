@@ -1,7 +1,7 @@
 import SHModels
 import SHUtils
 
-extension SingleItemProduction {
+extension SHSingleItemProduction {
     final class Node {
         /// A Recipe used to populate and recalculate this node.
         var recipe: Recipe
@@ -88,23 +88,16 @@ extension SingleItemProduction {
             }
         }
         
-        /// Updates byproduct and input based on output, then updates input nodes with input values crecursively.
-        private func updateAll() {
-            update()
-            
-            updateInputs()
-        }
-        
         func removeInputNodes() {
             inputNodes.removeAll()
         }
         
-        func inputNodes(contain predicate: (Node) -> Bool) -> Bool {
+        func inputContains(_ predicate: (Node) -> Bool) -> Bool {
             inputNodes.contains(where: predicate)
         }
         
-        func inputNodes(contain recipe: Recipe) -> Bool {
-            inputNodes { $0.recipe == recipe }
+        func inputContains(_ recipe: Recipe) -> Bool {
+            inputContains { $0.recipe == recipe }
         }
         
         func add(_ node: Node) {
@@ -114,8 +107,17 @@ extension SingleItemProduction {
     }
 }
 
+private extension SHSingleItemProduction.Node {
+    /// Updates byproduct and input based on output, then updates input nodes with input values crecursively.
+    func updateAll() {
+        update()
+        
+        updateInputs()
+    }
+}
+
 // MARK: Output
-extension SingleItemProduction.Node {
+extension SHSingleItemProduction.Node {
     struct Output {
         let item: any Item
         var amount: Double
@@ -138,7 +140,7 @@ extension SingleItemProduction.Node {
 }
 
 // MARK: Byproduct
-extension SingleItemProduction.Node {
+extension SHSingleItemProduction.Node {
     struct Byproduct {
         let item: any Item
         var amount: Double
@@ -156,7 +158,7 @@ extension SingleItemProduction.Node {
 }
 
 // MARK: Input
-extension SingleItemProduction.Node {
+extension SHSingleItemProduction.Node {
     struct Input {
         let item: any Item
         var amount: Double
@@ -174,7 +176,7 @@ extension SingleItemProduction.Node {
 }
 
 // MARK: Description for print
-extension SingleItemProduction.Node {
+extension SHSingleItemProduction.Node {
     func description(with spacing: String) -> String {
         let name = output.item.localizedName
         let recipe = "[R: \(recipe.localizedName)]"

@@ -6,10 +6,10 @@ import SHSingleItemProduction
 
 @Observable
 final class ProductAdjustmentViewModel: Identifiable {
-    let product: SingleItemProduction.Output.Product
+    let product: SHSingleItemProduction.OutputItem
     let allowDeletion: Bool
-    private(set) var production: SingleItemProduction
-    private let onApply: @MainActor (SingleItemProduction.UserInput.Product) -> Void
+    private(set) var production: SHSingleItemProduction
+    private let onApply: @MainActor (SHSingleItemProduction.InputItem) -> Void
     
     var id: UUID {
         product.id
@@ -26,21 +26,21 @@ final class ProductAdjustmentViewModel: Identifiable {
         return storageService.recipes(for: product.item, as: [.output, .byproduct]).count != production.output.products.first?.recipes.count
     }
     
-    var selectedRecipes: [SingleItemProduction.Output.Recipe] {
+    var selectedRecipes: [SHSingleItemProduction.OutputRecipe] {
         production.output.products.first?.recipes ?? []
     }
     
     init(
-        product: SingleItemProduction.Output.Product,
+        product: SHSingleItemProduction.OutputItem,
         allowDeletion: Bool,
-        onApply: @escaping @MainActor (SingleItemProduction.UserInput.Product) -> Void
+        onApply: @escaping @MainActor (SHSingleItemProduction.InputItem) -> Void
     ) {
         self.product = product
         self.allowDeletion = allowDeletion
-        let production = SingleItemProduction(item: product.item)
+        let production = SHSingleItemProduction(item: product.item)
         production.amount = product.amount
         for recipe in product.recipes {
-            production.addRecipe(recipe.model, to: product.item, with: recipe.proportion)
+            production.addRecipe(recipe.recipe, to: product.item, with: recipe.proportion)
         }
         self.production = production
         self.onApply = onApply
@@ -48,9 +48,9 @@ final class ProductAdjustmentViewModel: Identifiable {
     }
     
     @MainActor
-    func removeRecipe(_ recipe: SingleItemProduction.Output.Recipe) {
+    func removeRecipe(_ recipe: SHSingleItemProduction.OutputRecipe) {
         production[inputItemIndex: 0].recipes.removeAll {
-            $0.recipe.id == recipe.model.id
+            $0.id == recipe.recipe.id
         }
         
         defer {
@@ -63,7 +63,7 @@ final class ProductAdjustmentViewModel: Identifiable {
             switch recipe.proportion {
             case let .fraction(recipeFraction):
                 production.changeProportion(
-                    of: recipe.recipe,
+                    of: recipe,
                     for: product.item,
                     to: .fraction(recipeFraction / (1 - fraction))
                 )
@@ -83,10 +83,10 @@ final class ProductAdjustmentViewModel: Identifiable {
     
     @MainActor
     func updateRecipe(
-        _ recipe: SingleItemProduction.Output.Recipe,
+        _ recipe: SHSingleItemProduction.OutputRecipe,
         with proportion: SHProductionProportion
     ) {
-        production.changeProportion(of: recipe.model, for: product.item, to: proportion)
+        production.changeProportion(of: recipe.recipe, for: product.item, to: proportion)
         update()
     }
     
@@ -99,7 +99,7 @@ final class ProductAdjustmentViewModel: Identifiable {
     var unselectedItemRecipesViewModel: SingleItemProductionInitialRecipeSelectionViewModel {
         SingleItemProductionInitialRecipeSelectionViewModel(
             item: product.item,
-            filterOutRecipeIDs: production.output.products.first?.recipes.map(\.model.id) ?? [],
+            filterOutRecipeIDs: production.output.products.first?.recipes.map(\.recipe.id) ?? [],
             onRecipeSelected: addRecipe
         )
     }

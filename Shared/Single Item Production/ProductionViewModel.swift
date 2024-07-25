@@ -4,14 +4,14 @@ import SHStorage
 import SHSingleItemProduction
 
 enum SingleProductionAction {
-    case adjust(SingleItemProduction.Output.Product)
-    case selectRecipeForInput(SingleItemProduction.Output.Recipe.InputIngredient)
+    case adjust(SHSingleItemProduction.OutputItem)
+    case selectRecipeForInput(SHSingleItemProduction.OutputRecipe.InputIngredient)
     case selectByproductProducer(
-        product: SingleItemProduction.Output.Product,
-        ingredient: SingleItemProduction.Output.Recipe.OutputIngredient,
+        product: SHSingleItemProduction.OutputItem,
+        ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient,
         recipe: Recipe
     )
-    case selectByproductConsumer(input: SingleItemProduction.Output.Recipe.InputIngredient, recipe: Recipe)
+    case selectByproductConsumer(input: SHSingleItemProduction.OutputRecipe.InputIngredient, recipe: Recipe)
 }
 
 @Observable
@@ -31,7 +31,7 @@ final class ProductionViewModel {
     }
     
     @ObservationIgnored
-    private var production: SingleItemProduction
+    private var production: SHSingleItemProduction
     
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
@@ -39,7 +39,7 @@ final class ProductionViewModel {
     @ObservationIgnored @Dependency(\.settingsService)
     private var settingsService
     
-    var selectedProduct: SingleItemProduction.Output.Product?
+    var selectedProduct: SHSingleItemProduction.OutputItem?
     var selectedNewItemID: String?
     var selectedByproduct: ByproductSelection?
     var showUnsavedAlert = false
@@ -70,7 +70,7 @@ final class ProductionViewModel {
         @Dependency(\.storageService)
         var storageService
         
-        production = SingleItemProduction(item: item)
+        production = SHSingleItemProduction(item: item)
         
         addAutomaticInitialRecipeIfNeeded()
     }
@@ -86,7 +86,7 @@ final class ProductionViewModel {
         
         var recipes = storageService.recipes(for: item, as: [.output, .byproduct])
         if let product = production.output.products.first(where: { $0.item.id == item.id }) {
-            recipes = recipes.filter { !product.recipes.map(\.id).contains($0.id) }
+            recipes = recipes.filter { !product.recipes.map(\.recipe.id).contains($0.id) }
         }
         
         return recipes
@@ -109,7 +109,7 @@ final class ProductionViewModel {
     }
     
     @MainActor
-    func adjustProduct(_ product: SingleItemProduction.Output.Product) {
+    func adjustProduct(_ product: SHSingleItemProduction.OutputItem) {
         selectedProduct = product
     }
     
@@ -121,7 +121,7 @@ final class ProductionViewModel {
         
         production.iterateInputItems { productIndex, item in
             production.iterateInputRecipes(for: item) { recipeIndex, recipe in
-                let inputItems = recipe.recipe.inputs.map(\.item)
+                let inputItems = recipe.inputs.map(\.item)
                 
                 for inputItem in inputItems {
                     guard !production.inputContains(inputItem) else { continue }
@@ -172,7 +172,7 @@ final class ProductionViewModel {
     }
     
     @MainActor
-    func productViewModel(for product: SingleItemProduction.Output.Product) -> ProductViewModel {
+    func productViewModel(for product: SHSingleItemProduction.OutputItem) -> ProductViewModel {
         ProductViewModel(
             product: product,
             selectedByproduct: selectedByproduct,
@@ -195,7 +195,7 @@ final class ProductionViewModel {
                     } &&
                     production.inputContains {
                         $0.recipes.contains {
-                            $0.recipe.inputs.contains { $0.item.id == ingredient.item.id }
+                            $0.inputs.contains { $0.item.id == ingredient.item.id }
                         }
                     }
                     
@@ -204,8 +204,8 @@ final class ProductionViewModel {
                     !production.output.products.contains { $0.id == input.producingProductID } &&
                     production.inputContains {
                         $0.recipes.contains {
-                            $0.recipe.output.item.id == input.item.id ||
-                            $0.recipe.byproducts.contains { $0.item.id == input.item.id }
+                            $0.output.item.id == input.item.id ||
+                            $0.byproducts.contains { $0.item.id == input.item.id }
                         }
                     }
                 }
@@ -253,14 +253,14 @@ final class ProductionViewModel {
     }
     
     @MainActor
-    func productAdjustmentViewModel(for product: SingleItemProduction.Output.Product) -> ProductAdjustmentViewModel {
+    func productAdjustmentViewModel(for product: SHSingleItemProduction.OutputItem) -> ProductAdjustmentViewModel {
         ProductAdjustmentViewModel(product: product, allowDeletion: product.item.id != item.id) { [weak self] product in
             guard let self else { return }
             
             if product.recipes.isEmpty {
-                production.removeItem(product.item)
+                production.removeInputItem(product.item)
             } else {
-                production.updateProduct(product)
+                production.updateInputItem(product)
             }
             
             selectedProduct = nil
@@ -268,7 +268,7 @@ final class ProductionViewModel {
         }
     }
     
-    func canAdjustProduct(_ product: SingleItemProduction.Output.Product) -> Bool {
+    func canAdjustProduct(_ product: SHSingleItemProduction.OutputItem) -> Bool {
         storageService.recipes(for: product.item, as: [.output, .byproduct]).count > 1
     }
     
@@ -278,9 +278,9 @@ final class ProductionViewModel {
             production.output.products.compactMap { product in
                 let visibleRecipes = product.recipes.filter { recipe in
                     if let producingRecipeID = selectedByproduct.producingRecipe?.id {
-                        recipe.model.id == producingRecipeID || recipe.model.inputs.contains { $0.item.id == selectedByproduct.item.id }
+                        recipe.recipe.id == producingRecipeID || recipe.recipe.inputs.contains { $0.item.id == selectedByproduct.item.id }
                     } else if let consumingRecipeID = selectedByproduct.consumingRecipe?.id {
-                        recipe.model.id == consumingRecipeID || recipe.model.output.item.id == selectedByproduct.item.id || recipe.model.byproducts.contains { $0.item.id == selectedByproduct.item.id }
+                        recipe.recipe.id == consumingRecipeID || recipe.recipe.output.item.id == selectedByproduct.item.id || recipe.recipe.byproducts.contains { $0.item.id == selectedByproduct.item.id }
                     } else {
                         false
                     }
@@ -288,7 +288,7 @@ final class ProductionViewModel {
                 
                 guard !visibleRecipes.isEmpty else { return nil }
                 
-                return productViewModel(for: SingleItemProduction.Output.Product(item: product.item, recipes: visibleRecipes))
+                return productViewModel(for: SHSingleItemProduction.OutputItem(item: product.item, recipes: visibleRecipes))
             }
         } else {
             production.output.products.map(productViewModel(for:))

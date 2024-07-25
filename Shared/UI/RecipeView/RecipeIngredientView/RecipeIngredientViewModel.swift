@@ -10,9 +10,9 @@ final class RecipeIngredientViewModel: Identifiable {
     }
     
     enum ProductionRole {
-        case output(SingleItemProduction.Output.Recipe.OutputIngredient)
-        case byproduct(SingleItemProduction.Output.Recipe.OutputIngredient)
-        case input(SingleItemProduction.Output.Recipe.InputIngredient)
+        case output(SHSingleItemProduction.OutputRecipe.OutputIngredient)
+        case byproduct(SHSingleItemProduction.OutputRecipe.OutputIngredient)
+        case input(SHSingleItemProduction.OutputRecipe.InputIngredient)
     }
     
     private let mode: Mode
@@ -45,15 +45,15 @@ final class RecipeIngredientViewModel: Identifiable {
         self.init(mode: .display(ingredient: ingredient, amount: amount))
     }
     
-    convenience init(productionOutput ingredient: SingleItemProduction.Output.Recipe.OutputIngredient) {
+    convenience init(productionOutput ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient) {
         self.init(mode: .production(.output(ingredient)))
     }
     
-    convenience init(productionByproduct ingredient: SingleItemProduction.Output.Recipe.OutputIngredient) {
+    convenience init(productionByproduct ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient) {
         self.init(mode: .production(.byproduct(ingredient)))
     }
     
-    convenience init(productionInput ingredient: SingleItemProduction.Output.Recipe.InputIngredient) {
+    convenience init(productionInput ingredient: SHSingleItemProduction.OutputRecipe.InputIngredient) {
         self.init(mode: .production(.input(ingredient)))
     }
 
@@ -63,13 +63,13 @@ final class RecipeIngredientViewModel: Identifiable {
     
     @MainActor
     func amountViewModels() -> [RecipeIngredientAmountViewModel] {
-        func showMainAmount(for ingredient: SingleItemProduction.Output.Recipe.OutputIngredient) -> Bool {
+        func showMainAmount(for ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient) -> Bool {
             ingredient.isSelected ||
             ingredient.byproducts.isEmpty ||
             ingredient.byproducts.first?.amount != ingredient.amount
         }
         
-        func showMainAmount(for ingredient: SingleItemProduction.Output.Recipe.InputIngredient) -> Bool {
+        func showMainAmount(for ingredient: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
             ingredient.isSelected ||
             ingredient.byproducts.isEmpty ||
             ingredient.byproducts.first?.amount != ingredient.amount

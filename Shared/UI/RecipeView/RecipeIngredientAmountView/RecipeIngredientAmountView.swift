@@ -195,8 +195,8 @@ private func ingredient(role: Recipe.Ingredient.Role, form: Part.Form) -> Recipe
     )
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool) -> SingleItemProduction.Output.Recipe.OutputIngredient {
-    SingleItemProduction.Output.Recipe.OutputIngredient(
+private func productionIngredient(form: Part.Form, selected: Bool) -> SHSingleItemProduction.OutputRecipe.OutputIngredient {
+    SHSingleItemProduction.OutputRecipe.OutputIngredient(
         item: Part(id: "preview-part", category: .special, progressionIndex: 0, form: form),
         amount: 10,
         byproducts: [],
@@ -204,9 +204,9 @@ private func productionIngredient(form: Part.Form, selected: Bool) -> SingleItem
     )
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool) -> SingleItemProduction.Output.Recipe.InputIngredient {
-    SingleItemProduction.Output.Recipe.InputIngredient(
-        producingProductID: nil, 
+private func productionIngredient(form: Part.Form, selected: Bool) -> SHSingleItemProduction.OutputRecipe.InputIngredient {
+    SHSingleItemProduction.OutputRecipe.InputIngredient(
+        producingProductID: nil,
         item: Part(id: "preview-part", category: .special, progressionIndex: 0, form: form),
         amount: 10,
         byproducts: [],
@@ -214,7 +214,7 @@ private func productionIngredient(form: Part.Form, selected: Bool) -> SingleItem
     )
 }
 
-private func productionSecondaryByproduct(index: Int) -> SingleItemProduction.Output.Recipe.Byproduct {
-    SingleItemProduction.Output.Recipe.Byproduct(index: index, amount: 10)
+private func productionSecondaryByproduct(index: Int) -> SHSingleItemProduction.OutputRecipe.Byproduct {
+    SHSingleItemProduction.OutputRecipe.Byproduct(index: index, amount: 10)
 }
 #endif

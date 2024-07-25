@@ -3,133 +3,120 @@ import SHStorage
 import SHModels
 import SHUtils
 
-public final class SingleItemProduction {
-    public let item: any Item
-    
-    private var userInput: UserInput
+public final class SHSingleItemProduction {
+    private var input: Input
     public private(set) var output: Output
     
-    public var amount = 0.0 {
-        didSet {
-            userInput.amount = amount
-        }
+    public var item: any Item {
+        input.finalItem
     }
+    
+    public var amount: Double {
+        get { input.amount }
+        set { input.amount = newValue }
+    }
+    
     private var rootNodes = [Node]()
     private var internalState = InternalState()
     private var balancingState = BalancingState.unchecked
     
     public init(item: any Item) {
-        self.item = item
-        userInput = UserInput(item: item, amount: 1.0)
+        input = Input(finalItem: item, amount: 1.0)
         output = Output(products: [], unselectedItems: [item], hasByproducts: false)
     }
     
-    // MARK: - User input
+    // MARK: - Input
     public func addRecipe(
         _ recipe: Recipe,
         to item: some Item,
         with proportion: SHProductionProportion = .auto
     ) {
-        userInput.addRecipe(recipe, with: proportion, to: item)
+        input.addRecipe(recipe, to: item, with: proportion)
     }
     
-    public func removeItem(_ item: some Item) {
-        userInput.removeProduct(with: item)
+    public func updateInputItem(_ inputItem: InputItem) {
+        input.updateInputItem(inputItem)
     }
-    
-    public func inputContains(_ item: some Item) -> Bool {
-        userInput.products.contains { $0.item.id == item.id }
-    }
-    
-    public func inputContains(where predicate: (_ item: UserInput.Product) throws -> Bool) rethrows -> Bool {
-        try userInput.products.contains(where: predicate)
-    }
-    
-    public func iterateInputItems(_ handler: (_ offset: Int, _ item: UserInput.Product) -> Void) {
-        var index = 0
-        while userInput.products.indices.contains(index) {
-            let product = userInput.products[index]
-            handler(index, product)
-            index += 1
-        }
-    }
-    
-    public func iterateInputRecipes(
-        for inputItem: UserInput.Product,
-        handler: (_ offset: Int, _ recipe: UserInput.ProductRecipe) -> Void
-    ) {
-        var index = 0
-        while inputItem.recipes.indices.contains(index) {
-            let recipe = inputItem.recipes[index]
-            handler(index, recipe)
-            index += 1
-        }
-    }
-    
-    public subscript(inputItemIndex index: Int) -> UserInput.Product {
-        get { userInput.products[index] }
-        set { userInput.products[index] = newValue }
-    }
-    
-    
-    // Unrevised
-//    public func addProduct(_ product: UserInput.Product) {
-//        userInput.addProduct(product)
-//    }
-    
-    public func updateProduct(_ product: UserInput.Product) {
-        userInput.updateProduct(product)
-    }
-    
-//    public func addProductRecipe(_ recipe: UserInput.ProductRecipe, to item: any Item) {
-//        userInput.addProductRecipe(recipe, to: item)
-//    }
-    
-//    public func addRecipe(_ recipe: Recipe, with proportion: ProductionProportion, to item: any Item) {
-//        userInput.addRecipe(recipe, with: proportion, to: item)
-//    }
-    
-//    public func removeProduct(with item: any Item) {
-//        userInput.removeProduct(with: item)
-//    }
-    
-//    public func removeRecipe(_ recipe: Recipe, from item: any Item) {
-//        userInput.removeRecipe(recipe, from: item)
-//    }
     
     public func changeProportion(
         of recipe: Recipe,
         for item: any Item,
         to newProportion: SHProductionProportion
     ) {
-        userInput.changeProportion(of: recipe, for: item, to: newProportion)
+        input.changeProportion(of: recipe, for: item, to: newProportion)
     }
     
-    public func moveProducts(from offsets: IndexSet, to offset: Int) {
-        userInput.moveProducts(from: offsets, to: offset)
+    public func changeProportion(
+        of recipe: InputRecipe,
+        for item: any Item,
+        to newProportion: SHProductionProportion
+    ) {
+        changeProportion(of: recipe.recipe, for: item, to: newProportion)
     }
     
-    public func addByproduct(_ item: any Item, producer: Recipe, consumer: Recipe) {
-        userInput.addByproduct(item, producer: producer, consumer: consumer)
+    public func moveInputItems(from offsets: IndexSet, to offset: Int) {
+        input.moveInputItem(from: offsets, to: offset)
+    }
+    
+    public func removeInputItem(_ item: some Item) {
+        input.removeInputItem(with: item)
+    }
+    
+    public subscript(inputItemIndex index: Int) -> InputItem {
+        get { input.inputItems[index] }
+        set { input.inputItems[index] = newValue }
+    }
+    
+    public func inputContains(_ item: some Item) -> Bool {
+        input.inputItems.contains(item)
+    }
+    
+    public func inputContains(where predicate: (_ item: InputItem) throws -> Bool) rethrows -> Bool {
+        try input.inputItems.contains(where: predicate)
+    }
+    
+    public func iterateInputItems(_ handler: (_ offset: Int, _ inputItem: InputItem) -> Void) {
+        var index = 0
+        while input.inputItems.indices.contains(index) {
+            let inputItem = input.inputItems[index]
+            handler(index, inputItem)
+            index += 1
+        }
+    }
+    
+    public func iterateInputRecipes(
+        for inputItem: InputItem,
+        handler: (_ offset: Int, _ recipe: InputRecipe) -> Void
+    ) {
+        var index = 0
+        while inputItem.recipes.indices.contains(index) {
+            let inputRecipe = inputItem.recipes[index]
+            handler(index, inputRecipe)
+            index += 1
+        }
+    }
+    
+    // Byproducts
+    public func addByproduct(_ item: any Item, producer: SHModels.Recipe, consumer: SHModels.Recipe) {
+        input.addByproduct(item, producer: producer, consumer: consumer)
     }
     
     public func removeByrpoduct(_ item: any Item) {
-        userInput.removeByrpoduct(item)
+        input.removeByrpoduct(item)
     }
     
     public func removeProducer(_ recipe: Recipe, for item: any Item) {
-        userInput.removeProducer(recipe, for: item)
+        input.removeProducer(recipe, for: item)
     }
     
     public func removeConsumer(_ recipe: Recipe, for byproduct: any Item) {
-        userInput.removeConsumer(recipe, for: byproduct)
+        input.removeConsumer(recipe, for: byproduct)
     }
     
-    // MARK: Internal
-    
+    /// Triggers production recalculation. Output will be populated after calling this function.
     public func update() {
         // Reseting internal state
-        internalState.reset(userInput: userInput)
+        internalState.reset(input: input)
         
         // Create nodes for final product recipes
         buildRootNodes()
@@ -143,11 +130,11 @@ public final class SingleItemProduction {
 }
 
 // MARK: Private
-private extension SingleItemProduction {
+private extension SHSingleItemProduction {
     /// Creates root recipes nodes for production product.
     /// - Parameter userInput: A user selected data used to populate a production tree.
     func buildRootNodes() {
-        guard let productionProduct = internalState.selectedItem(with: item.id) else { return }
+        guard let productionProduct = internalState.selectedInputItem(with: item.id) else { return }
         
         // Get amounts without auto
         var amounts = productionProduct.recipes.map { productionRecipe in
@@ -184,7 +171,7 @@ private extension SingleItemProduction {
             switch balancingState {
             case .restart:
                 // If we restart, reset internal state
-                internalState.reset(userInput: userInput)
+                internalState.reset(input: input)
                 
                 fallthrough
             case .unchecked:
@@ -330,7 +317,7 @@ private extension SingleItemProduction {
             var inputNodeAmount = input.availableAmount
             
             // Convenience product.
-            let product = internalState.selectedProducts[productIndex]
+            let product = internalState.selectedInputItems[productIndex]
             
             /// Calculate input amount without fixed recipe proportions.
             /// This amount will be used as base amount for fraction proportions.
@@ -390,11 +377,11 @@ private extension SingleItemProduction {
                         
                         // Also update production recipe proportion to acomodate deduction for tree node.
                         // From previous example available 420 items/min is deducted to 110 items/min.
-                        internalState.selectedProducts[productIndex].recipes[productionRecipeIndex].proportion = .fixed(inputNodeAmount - amount)
+                        internalState.selectedInputItems[productIndex].recipes[productionRecipeIndex].proportion = .fixed(inputNodeAmount - amount)
                     } else {
                         // This node requires less items/min than current production recipe can provide.
                         // Do not modify tree node amount, but update production recipe proportion value
-                        internalState.selectedProducts[productIndex].recipes[productionRecipeIndex].proportion = .fixed(amount - inputNodeAmount)
+                        internalState.selectedInputItems[productIndex].recipes[productionRecipeIndex].proportion = .fixed(amount - inputNodeAmount)
                     }
                     
                 case let .fraction(fraction):
@@ -411,7 +398,7 @@ private extension SingleItemProduction {
                 guard inputNodeAmount > 0 else { continue }
                 
                 // Check if there is an input node with current recipe. If this happens, this is logical error.
-                if !node.inputNodes(contain: productionRecipe.recipe) {
+                if !node.inputContains(productionRecipe.recipe) {
                     guard productionRecipe.recipe.id != node.parentRecipeNode?.recipe.id else {
                         // Trying to add recipe which is a parent recipe for current recipe node.
                         // This might happen when upackaged/packaged recipes can infinitely point to each other.
@@ -501,7 +488,7 @@ private extension SingleItemProduction {
     func buildOutput() {
         var nodes = rootNodes
         var unselectedItems = [any Item]()
-        var products = [Output.Product]()
+        var products = [OutputItem]()
         var ingredientConverter = IngredientConverter()
         
         func isSelected(_ input: Node.Input, node: Node) -> Bool {
@@ -520,7 +507,7 @@ private extension SingleItemProduction {
                 // If there is already an product in output.
                 if let productIndex = products.firstIndex(where: { $0.item.id == node.output.item.id }) {
                     // And if there is already a recipe for a product in output.
-                    if let recipeIndex = products[productIndex].recipes.firstIndex(where: { $0.id == node.recipe.id }) {
+                    if let recipeIndex = products[productIndex].recipes.firstIndex(where: { $0.recipe.id == node.recipe.id }) {
                         // Accumulate saved values with new values.
                         var recipe = products[productIndex].recipes[recipeIndex]
                         recipe.output.amount += node.output.amount
@@ -528,7 +515,7 @@ private extension SingleItemProduction {
                             ingredientConverter.byproductConverter.convert(producingRecipeID: node.recipe.id, outputConsumer: $0)
                         })
                         recipe.byproducts.merge(with: node.byproducts.map {
-                            ingredientConverter.convert(producingRecipeID: recipe.id, byproduct: $0)
+                            ingredientConverter.convert(producingRecipeID: recipe.recipe.id, byproduct: $0)
                         })
                         recipe.inputs.merge(with: node.inputs.map { input in
                             ingredientConverter.convert(
@@ -539,16 +526,16 @@ private extension SingleItemProduction {
                         products[productIndex].recipes[recipeIndex] = recipe
                     } else {
                         // If a recipe is new, add this to output product.
-                        let proportion = userInput
-                            .products
-                            .first(where: { $0.item.id == products[productIndex].item.id })?
+                        let proportion = input
+                            .inputItems
+                            .first(item: products[productIndex].item)?
                             .recipes
                             .first(where: { $0.recipe == node.recipe })?
                             .proportion ?? .auto
                         
                         products[productIndex].recipes.append(
-                            Output.Recipe(
-                                model: node.recipe,
+                            OutputRecipe(
+                                recipe: node.recipe,
                                 output: ingredientConverter.convert(producingRecipeID: node.recipe.id, output: node.output),
                                 byproducts: node.byproducts.map { ingredientConverter.convert(producingRecipeID: node.recipe.id, byproduct: $0) },
                                 inputs: node.inputs.map { input in
@@ -563,17 +550,17 @@ private extension SingleItemProduction {
                     }
                 } else {
                     // If a product is new, add it.
-                    let proportion = userInput
-                        .products
-                        .first(where: { $0.item.id == node.output.item.id })?
+                    let proportion = input
+                        .inputItems
+                        .first(item: node.output.item)?
                         .recipes
                         .first(where: { $0.recipe == node.recipe })?
                         .proportion ?? .auto
                     
-                    let product = Output.Product(
+                    let product = OutputItem(
                         item: node.output.item,
-                        recipes: [Output.Recipe(
-                            model: node.recipe,
+                        recipes: [OutputRecipe(
+                            recipe: node.recipe,
                             output: ingredientConverter.convert(producingRecipeID: node.recipe.id, output: node.output),
                             byproducts: node.byproducts.map { ingredientConverter.convert(producingRecipeID: node.recipe.id, byproduct: $0) },
                             inputs: node.inputs.map { input in
@@ -625,7 +612,7 @@ private extension SingleItemProduction {
 }
 
 // MARK: PrimaryByproductBalancingState
-extension SingleItemProduction {
+extension SHSingleItemProduction {
     enum BalancingState {
         case unchecked
         case notNeeded
@@ -646,35 +633,35 @@ extension SingleItemProduction {
 }
 
 // MARK: InternalState
-extension SingleItemProduction {
+extension SHSingleItemProduction {
     private struct InternalState {
-        var selectedProducts = [SingleItemProduction.UserInput.Product]()
-        var selectedByproducts = [SingleItemProduction.UserInput.Byproduct]()
+        var selectedInputItems = [SHSingleItemProduction.InputItem]()
+        var selectedByproducts = [SHSingleItemProduction.InputByproduct]()
         var byproducts = [Byproduct]()
         
-        mutating func reset(userInput: SingleItemProduction.UserInput) {
-            selectedProducts = userInput.products
-            selectedByproducts = userInput.byproducts
+        mutating func reset(input: SHSingleItemProduction.Input) {
+            selectedInputItems = input.inputItems
+            selectedByproducts = input.byproducts
             byproducts = []
         }
         
         // MARK: Convenience helpers
-        func selectedItem(with id: String) -> SingleItemProduction.UserInput.Product? {
-            selectedProducts.first { $0.item.id == id }
+        func selectedInputItem(with id: String) -> SHSingleItemProduction.InputItem? {
+            selectedInputItems.first { $0.item.id == id }
         }
         
         func index(of item: some Item) -> Int? {
-            selectedProducts.firstIndex { $0.item.id == item.id }
+            selectedInputItems.firstIndex { $0.item.id == item.id }
         }
         
-        func selectedByproduct(with id: String) -> SingleItemProduction.UserInput.Byproduct? {
+        func selectedByproduct(with id: String) -> SHSingleItemProduction.InputByproduct? {
             selectedByproducts.first { $0.item.id == id }
         }
     }
 }
 
 // MARK: Print format
-extension SingleItemProduction: CustomStringConvertible {
+extension SHSingleItemProduction: CustomStringConvertible {
     public var description: String {
         var nodeDescription = ""
         var nodes = rootNodes
@@ -693,12 +680,12 @@ extension SingleItemProduction: CustomStringConvertible {
     }
 }
 
-private extension SingleItemProduction {
+private extension SHSingleItemProduction {
     struct IngredientConverter {
         var byproductConverter = ByproductConverter()
         
-        mutating func convert(producingRecipeID: String, output: SingleItemProduction.Node.Output) -> SingleItemProduction.Output.Recipe.OutputIngredient {
-            SingleItemProduction.Output.Recipe.OutputIngredient(
+        mutating func convert(producingRecipeID: String, output: SHSingleItemProduction.Node.Output) -> SHSingleItemProduction.OutputRecipe.OutputIngredient {
+            SHSingleItemProduction.OutputRecipe.OutputIngredient(
                 item: output.item,
                 amount: output.amount,
                 byproducts: output.asByproduct.consumers.map {
@@ -708,8 +695,8 @@ private extension SingleItemProduction {
             )
         }
         
-        mutating func convert(producingRecipeID: String, byproduct: SingleItemProduction.Node.Byproduct) -> SingleItemProduction.Output.Recipe.OutputIngredient {
-            SingleItemProduction.Output.Recipe.OutputIngredient(
+        mutating func convert(producingRecipeID: String, byproduct: SHSingleItemProduction.Node.Byproduct) -> SHSingleItemProduction.OutputRecipe.OutputIngredient {
+            SHSingleItemProduction.OutputRecipe.OutputIngredient(
                 item: byproduct.item,
                 amount: byproduct.amount,
                 byproducts: byproduct.consumers.map {
@@ -720,10 +707,10 @@ private extension SingleItemProduction {
         }
         
         mutating func convert(
-            input: SingleItemProduction.Node.Input,
+            input: SHSingleItemProduction.Node.Input,
             isSelected: Bool
-        ) -> SingleItemProduction.Output.Recipe.InputIngredient {
-            SingleItemProduction.Output.Recipe.InputIngredient(
+        ) -> SHSingleItemProduction.OutputRecipe.InputIngredient {
+            SHSingleItemProduction.OutputRecipe.InputIngredient(
                 item: input.item,
                 amount: input.amount,
                 byproducts: input.byproductProducers.map {
@@ -739,22 +726,22 @@ private extension SingleItemProduction {
         
         mutating func convert(
             producingRecipeID: String,
-            outputConsumer: SingleItemProduction.Node.Output.Consumer
-        ) -> SingleItemProduction.Output.Recipe.Byproduct {
-            Output.Recipe.Byproduct(index: index(for: producingRecipeID), amount: outputConsumer.amount)
+            outputConsumer: SHSingleItemProduction.Node.Output.Consumer
+        ) -> SHSingleItemProduction.OutputRecipe.Byproduct {
+            OutputRecipe.Byproduct(index: index(for: producingRecipeID), amount: outputConsumer.amount)
         }
         
         mutating func convert(
             producerRecipeID: String,
-            byproductConsumer: SingleItemProduction.Node.Byproduct.Consumer
-        ) -> SingleItemProduction.Output.Recipe.Byproduct {
-            Output.Recipe.Byproduct(index: index(for: producerRecipeID), amount: byproductConsumer.amount)
+            byproductConsumer: SHSingleItemProduction.Node.Byproduct.Consumer
+        ) -> SHSingleItemProduction.OutputRecipe.Byproduct {
+            OutputRecipe.Byproduct(index: index(for: producerRecipeID), amount: byproductConsumer.amount)
         }
         
         mutating func convert(
-            inputProducer: SingleItemProduction.Node.Input.ByproductProducer
-        ) -> SingleItemProduction.Output.Recipe.Byproduct {
-            Output.Recipe.Byproduct(index: index(for: inputProducer.recipeID), amount: inputProducer.amount)
+            inputProducer: SHSingleItemProduction.Node.Input.ByproductProducer
+        ) -> SHSingleItemProduction.OutputRecipe.Byproduct {
+            OutputRecipe.Byproduct(index: index(for: inputProducer.recipeID), amount: inputProducer.amount)
         }
 
         mutating func index(for recipeID: String) -> Int {
@@ -768,7 +755,7 @@ private extension SingleItemProduction {
     }
 }
 
-private extension [SingleItemProduction.Output.Recipe.OutputIngredient] {
+private extension [SHSingleItemProduction.OutputRecipe.OutputIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.item.id == $1.item.id
@@ -780,7 +767,7 @@ private extension [SingleItemProduction.Output.Recipe.OutputIngredient] {
     }
 }
 
-private extension [SingleItemProduction.Output.Recipe.InputIngredient] {
+private extension [SHSingleItemProduction.OutputRecipe.InputIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.item.id == $1.item.id
@@ -792,7 +779,7 @@ private extension [SingleItemProduction.Output.Recipe.InputIngredient] {
     }
 }
 
-private extension [SingleItemProduction.Output.Recipe.Byproduct] {
+private extension [SHSingleItemProduction.OutputRecipe.Byproduct] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.index == $1.index

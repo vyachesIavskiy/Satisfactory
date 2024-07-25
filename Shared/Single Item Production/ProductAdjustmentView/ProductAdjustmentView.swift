@@ -126,19 +126,19 @@ private struct _ProductAdjustmentPreview: View {
     var body: some View {
         ProductAdjustmentView(
             viewModel: ProductAdjustmentViewModel(
-                product: SingleItemProduction.Output.Product(
+                product: SHSingleItemProduction.OutputItem(
                     item: item,
                     recipes: recipes.map { recipe in
-                        SingleItemProduction.Output.Recipe(
-                            model: recipe,
-                            output: SingleItemProduction.Output.Recipe.OutputIngredient(
+                        SHSingleItemProduction.OutputRecipe(
+                            recipe: recipe,
+                            output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
                                 item: recipe.output.item,
                                 amount: recipe.amountPerMinute(for: recipe.output),
                                 byproducts: [],
                                 isSelected: true
                             ),
                             byproducts: recipe.byproducts.map {
-                                SingleItemProduction.Output.Recipe.OutputIngredient(
+                                SHSingleItemProduction.OutputRecipe.OutputIngredient(
                                     item: $0.item,
                                     amount: recipe.amountPerMinute(for: $0),
                                     byproducts: [],
@@ -146,7 +146,7 @@ private struct _ProductAdjustmentPreview: View {
                                 )
                             },
                             inputs: recipe.inputs.map {
-                                SingleItemProduction.Output.Recipe.InputIngredient(
+                                SHSingleItemProduction.OutputRecipe.InputIngredient(
                                     item: $0.item,
                                     amount: recipe.amountPerMinute(for: $0),
                                     byproducts: [],

@@ -5,7 +5,7 @@ import SHSingleItemProduction
 
 @Observable
 final class ProductViewModel: Identifiable {
-    let product: SingleItemProduction.Output.Product
+    let product: SHSingleItemProduction.OutputItem
     let selectedByproduct: ProductionViewModel.ByproductSelection?
     let canPerformAction: (SingleProductionAction) -> Bool
     let performAction: (SingleProductionAction) -> Void
@@ -19,7 +19,7 @@ final class ProductViewModel: Identifiable {
     }
     
     init(
-        product: SingleItemProduction.Output.Product,
+        product: SHSingleItemProduction.OutputItem,
         selectedByproduct: ProductionViewModel.ByproductSelection?,
         canPerformAction: @escaping (SingleProductionAction) -> Bool,
         performAction: @escaping (SingleProductionAction) -> Void
@@ -31,7 +31,7 @@ final class ProductViewModel: Identifiable {
     }
     
     @MainActor
-    func viewModel(for recipe: SingleItemProduction.Output.Recipe) -> SingleItemProductionRecipeSelectViewModel {
+    func viewModel(for recipe: SHSingleItemProduction.OutputRecipe) -> SingleItemProductionRecipeSelectViewModel {
         SingleItemProductionRecipeSelectViewModel(
             product: product,
             recipe: recipe,

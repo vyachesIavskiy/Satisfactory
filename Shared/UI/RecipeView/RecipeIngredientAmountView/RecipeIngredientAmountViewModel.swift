@@ -63,7 +63,7 @@ final class RecipeIngredientAmountViewModel {
         )
     }
     
-    convenience init(productionOutput output: SingleItemProduction.Output.Recipe.OutputIngredient) {
+    convenience init(productionOutput output: SHSingleItemProduction.OutputRecipe.OutputIngredient) {
         self.init(
             item: output.item,
             amount: output.amount,
@@ -72,7 +72,7 @@ final class RecipeIngredientAmountViewModel {
         )
     }
     
-    convenience init(productionByproduct byproduct: SingleItemProduction.Output.Recipe.OutputIngredient) {
+    convenience init(productionByproduct byproduct: SHSingleItemProduction.OutputRecipe.OutputIngredient) {
         var foregroundStyle = AnyShapeStyle(.background)
         let secondaryStyle: AnyShapeStyle
         let primaryColor: Color
@@ -112,7 +112,7 @@ final class RecipeIngredientAmountViewModel {
         )
     }
     
-    convenience init(productionInput input: SingleItemProduction.Output.Recipe.InputIngredient) {
+    convenience init(productionInput input: SHSingleItemProduction.OutputRecipe.InputIngredient) {
         let foregroundStyle: AnyShapeStyle
         let primaryColor: Color
         let shadowColor: Color
@@ -148,7 +148,7 @@ final class RecipeIngredientAmountViewModel {
         )
     }
     
-    convenience init(productionSecondaryByproduct byproduct: SingleItemProduction.Output.Recipe.Byproduct, item: any Item) {
+    convenience init(productionSecondaryByproduct byproduct: SHSingleItemProduction.OutputRecipe.Byproduct, item: any Item) {
         let foregroundColors = [
             Color.sh(.blue30),
             .sh(.magenta30),

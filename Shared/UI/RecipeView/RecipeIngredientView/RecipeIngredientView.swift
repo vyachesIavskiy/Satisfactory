@@ -270,42 +270,42 @@ private func displayIngredient(role: Recipe.Ingredient.Role, form: Part.Form) ->
     Recipe.Ingredient(role: role, item: part(form: form), amount: 10)
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool, byproductCount: Int = 0) -> SingleItemProduction.Output.Recipe.OutputIngredient {
+private func productionIngredient(form: Part.Form, selected: Bool, byproductCount: Int = 0) -> SHSingleItemProduction.OutputRecipe.OutputIngredient {
     let id = switch form {
     case .solid: "part-iron-ingot"
     case .fluid: "part-water"
     case .gas: "part-nitrogen-gas"
     }
     
-    return SingleItemProduction.Output.Recipe.OutputIngredient(
+    return SHSingleItemProduction.OutputRecipe.OutputIngredient(
         item: Part(id: id, category: .special, progressionIndex: 0, form: form),
         amount: 10,
         byproducts: (0..<byproductCount).map {
-            SingleItemProduction.Output.Recipe.Byproduct(index: $0, amount: 10)
+            SHSingleItemProduction.OutputRecipe.Byproduct(index: $0, amount: 10)
         },
         isSelected: selected
     )
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool, byproductCount: Int = 0) -> SingleItemProduction.Output.Recipe.InputIngredient {
+private func productionIngredient(form: Part.Form, selected: Bool, byproductCount: Int = 0) -> SHSingleItemProduction.OutputRecipe.InputIngredient {
     let id = switch form {
     case .solid: "part-iron-ingot"
     case .fluid: "part-water"
     case .gas: "part-nitrogen-gas"
     }
     
-    return SingleItemProduction.Output.Recipe.InputIngredient(
+    return SHSingleItemProduction.OutputRecipe.InputIngredient(
         producingProductID: nil,
         item: Part(id: id, category: .special, progressionIndex: 0, form: form),
         amount: 10,
         byproducts: (0..<byproductCount).map {
-            SingleItemProduction.Output.Recipe.Byproduct(index: $0, amount: 10)
+            SHSingleItemProduction.OutputRecipe.Byproduct(index: $0, amount: 10)
         },
         isSelected: selected
     )
 }
 
-private func productionSecondaryByproduct(index: Int) -> SingleItemProduction.Output.Recipe.Byproduct {
-    SingleItemProduction.Output.Recipe.Byproduct(index: index, amount: 10)
+private func productionSecondaryByproduct(index: Int) -> SHSingleItemProduction.OutputRecipe.Byproduct {
+    SHSingleItemProduction.OutputRecipe.Byproduct(index: index, amount: 10)
 }
 #endif

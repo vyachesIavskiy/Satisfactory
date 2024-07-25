@@ -3,7 +3,7 @@ import SHSingleItemProduction
 
 @Observable
 final class RecipeAdjustmentViewModel {
-    let recipe: SingleItemProduction.Output.Recipe
+    let recipe: SHSingleItemProduction.OutputRecipe
     let allowAdjustment: Bool
     let allowDeletion: Bool
     let onChange: (SHProductionProportion) -> Void
@@ -17,7 +17,7 @@ final class RecipeAdjustmentViewModel {
     
     @MainActor
     init(
-        recipe: SingleItemProduction.Output.Recipe,
+        recipe: SHSingleItemProduction.OutputRecipe,
         allowAdjustment: Bool,
         allowDeletion: Bool,
         onChange: @escaping (SHProductionProportion) -> Void,

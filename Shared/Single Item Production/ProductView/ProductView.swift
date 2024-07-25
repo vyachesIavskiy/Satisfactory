@@ -19,7 +19,7 @@ struct ProductView: View {
                     Text(viewModel.product.item.localizedName)
                         .font(.title3)
                 } else {
-                    Text(viewModel.product.recipes[0].model.localizedName)
+                    Text(viewModel.product.recipes[0].recipe.localizedName)
                         .font(.headline)
                 }
                 
@@ -40,7 +40,7 @@ struct ProductView: View {
                 VStack(alignment: .leading) {
                     if viewModel.product.recipes.count > 1 {
                         HStack {
-                            Text(recipe.model.localizedName)
+                            Text(recipe.recipe.localizedName)
                             
                             Spacer()
                             

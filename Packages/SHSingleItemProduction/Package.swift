@@ -17,7 +17,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "../SHStorage")
+        .package(path: "../SHStorage"),
+        .package(path: "../SHUtils")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -25,7 +26,8 @@ let package = Package(
         .target(
             name: "SHSingleItemProduction",
             dependencies: [
-                .product(name: "SHStorage", package: "SHStorage")
+                .product(name: "SHStorage", package: "SHStorage"),
+                .product(name: "SHUtils", package: "SHUtils")
             ]
         ),
         

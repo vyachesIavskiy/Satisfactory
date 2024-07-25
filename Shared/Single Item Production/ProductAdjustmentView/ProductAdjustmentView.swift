@@ -1,4 +1,6 @@
 import SwiftUI
+import SHSingleItemProduction
+import SHUtils
 
 struct ProductAdjustmentView: View {
     @Bindable
@@ -35,7 +37,7 @@ struct ProductAdjustmentView: View {
                     
                     Spacer()
                     
-                    Text("\(viewModel.product.amount.formatted(.fractionFromZeroToFour)) / min")
+                    Text("\(viewModel.product.amount.formatted(.shNumber)) / min")
                         .font(.headline)
                 }
                 .padding(.horizontal, 16)
@@ -75,8 +77,7 @@ struct ProductAdjustmentView: View {
                             recipe: recipe,
                             allowAdjustment: viewModel.selectedRecipes.count > 1,
                             allowDeletion: viewModel.allowDeletion || viewModel.selectedRecipes.count > 1
-                        ) {
-                            [weak viewModel] proportion in
+                        ) { [weak viewModel] proportion in
                             viewModel?.updateRecipe(recipe, with: proportion)
                         } onDelete: { [weak viewModel] in
                             viewModel?.removeRecipe(recipe)

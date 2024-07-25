@@ -1,4 +1,5 @@
 import SwiftUI
+import SHSingleItemProduction
 
 struct SingleItemProductionRecipeSelectView: View {
     let viewModel: SingleItemProductionRecipeSelectViewModel

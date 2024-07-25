@@ -1,6 +1,7 @@
 import Observation
 import SHModels
 import SHSettings
+import SHSingleItemProduction
 
 @Observable
 final class SingleItemProductionRecipeSelectViewModel {

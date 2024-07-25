@@ -1,5 +1,6 @@
-import SHModels
 import SwiftUI
+import SHModels
+import SHSingleItemProduction
 
 struct RecipeIngredientView: View {
     let viewModel: RecipeIngredientViewModel

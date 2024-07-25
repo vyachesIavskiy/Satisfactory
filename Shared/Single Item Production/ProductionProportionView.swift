@@ -1,4 +1,6 @@
 import SwiftUI
+import SHSingleItemProduction
+import SHUtils
 
 struct ProductionProportionView: View {
     private enum ProductionProportionDisplay {
@@ -210,7 +212,7 @@ private struct ProductionProportionTextfield: View {
     }
     
     var body: some View {
-        TextField("", value: $amount, format: .fractionFromZeroToFour)
+        TextField("", value: $amount, format: .shNumber)
             .multilineTextAlignment(.center)
             .keyboardType(.decimalPad)
             .submitLabel(.done)

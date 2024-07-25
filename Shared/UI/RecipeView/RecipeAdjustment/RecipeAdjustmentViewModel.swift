@@ -1,4 +1,5 @@
 import Observation
+import SHSingleItemProduction
 
 @Observable
 final class RecipeAdjustmentViewModel {

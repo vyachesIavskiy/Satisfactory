@@ -1,6 +1,7 @@
 import SwiftUI
 import SHModels
 import SHStorage
+import SHUtils
 
 struct ProductionView: View {
     @State
@@ -49,7 +50,7 @@ struct ProductionView: View {
                         
                         Spacer()
                         
-                        TextField("Amount", value: $viewModel.amount, format: .fractionFromZeroToFour)
+                        TextField("Amount", value: $viewModel.amount, format: .shNumber)
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 8)
                             .padding(.vertical, 2)

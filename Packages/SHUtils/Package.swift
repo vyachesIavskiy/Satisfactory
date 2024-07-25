@@ -6,20 +6,20 @@ import PackageDescription
 let package = Package(
     name: "SHUtils",
     platforms: [
-        .iOS(.v16),
-        .macOS(.v13)
+        .iOS(.v17),
+        .macOS(.v14)
     ],
     products: [
         .library(
-            name: "SHCombine",
+            name: "SHUtils",
             targets: [
-                "SHCombine"
+                "SHUtils"
             ]
         )
     ],
     targets: [
         .target(
-            name: "SHCombine"
+            name: "SHUtils"
         )
     ]
 )

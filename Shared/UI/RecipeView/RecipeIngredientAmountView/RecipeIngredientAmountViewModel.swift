@@ -1,5 +1,6 @@
 import SwiftUI
 import SHModels
+import SHSingleItemProduction
 
 @Observable
 final class RecipeIngredientAmountViewModel {

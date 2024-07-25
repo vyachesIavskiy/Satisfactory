@@ -1,4 +1,5 @@
 import SwiftUI
+import SHUtils
 
 private struct SizeReader: ViewModifier {
     private struct PreferenceKey: SwiftUI.PreferenceKey {
@@ -88,7 +89,7 @@ private struct _SizeReaderPreview: View {
                 .border(.orange, width: 1)
                 .readSize($size)
             
-            Text("[w: \(size.width.formatted(.fractionFromZeroToFour)), h: \(size.height.formatted(.fractionFromZeroToFour))]")
+            Text("[w: \(size.width.formatted(.shNumber)), h: \(size.height.formatted(.shNumber))]")
                 .foregroundStyle(.orange)
         }
     }
@@ -114,14 +115,14 @@ private struct _MaxSizeReaderPreview: View {
                 .readSize($size2)
             
             HStack {
-                Text("[w: \(size1.width.formatted(.fractionFromZeroToFour)), h: \(size1.height.formatted(.fractionFromZeroToFour))]")
+                Text("[w: \(size1.width.formatted(.shNumber)), h: \(size1.height.formatted(.shNumber))]")
                     .foregroundStyle(.orange)
                 
-                Text("[w: \(size2.width.formatted(.fractionFromZeroToFour)), h: \(size2.height.formatted(.fractionFromZeroToFour))]")
+                Text("[w: \(size2.width.formatted(.shNumber)), h: \(size2.height.formatted(.shNumber))]")
                     .foregroundStyle(.red)
             }
             
-            Text("Max: [w: \(maxSize.width.formatted(.fractionFromZeroToFour)), h: \(maxSize.height.formatted(.fractionFromZeroToFour))]")
+            Text("Max: [w: \(maxSize.width.formatted(.shNumber)), h: \(maxSize.height.formatted(.shNumber))]")
                 .foregroundStyle(size1 == maxSize ? .orange : .red)
                 .bold()
         }

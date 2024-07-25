@@ -1,4 +1,5 @@
 import SHModels
+import SHUtils
 
 extension SingleItemProduction {
     struct Byproduct {

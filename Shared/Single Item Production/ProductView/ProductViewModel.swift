@@ -1,6 +1,7 @@
 import Foundation
 import Observation
 import SHModels
+import SHSingleItemProduction
 
 @Observable
 final class ProductViewModel: Identifiable {

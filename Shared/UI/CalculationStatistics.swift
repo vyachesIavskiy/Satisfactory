@@ -1,5 +1,6 @@
 import SwiftUI
 import SHModels
+import SHUtils
 
 struct CalculationStatisticsModel: Identifiable {
     let item: any Item
@@ -119,7 +120,7 @@ struct CalculationStatistics: View {
                 
                 Spacer()
                 
-                Text(machine.amountOfMachines, format: .fractionFromZeroToFour)
+                Text(machine.amountOfMachines, format: .shNumber)
                     .font(.headline)
             }
         }

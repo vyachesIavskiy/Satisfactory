@@ -1,4 +1,5 @@
 import SHModels
+import SHUtils
 
 extension SingleItemProduction {
     final class Node {
@@ -177,8 +178,8 @@ extension SingleItemProduction.Node {
     func description(with spacing: String) -> String {
         let name = output.item.localizedName
         let recipe = "[R: \(recipe.localizedName)]"
-        let amount = "\(amount.formatted(.fractionFromZeroToFour))"
-        let byproductAmount = "\(output.asByproduct.amount.formatted(.fractionFromZeroToFour))"
+        let amount = "\(amount.formatted(.shNumber))"
+        let byproductAmount = "\(output.asByproduct.amount.formatted(.shNumber))"
         
         let joinedAmount = if byproductAmount.isEmpty {
             "(\(amount))"
@@ -188,9 +189,9 @@ extension SingleItemProduction.Node {
         
         let byproducts = byproducts.map { byproduct in
             let name = byproduct.item.localizedName
-            let amount = "\(byproduct.amount.formatted(.fractionFromZeroToFour))"
+            let amount = "\(byproduct.amount.formatted(.shNumber))"
             let consumedAmount = byproduct.consumers.map {
-                "\($0.amount.formatted(.fractionFromZeroToFour))"
+                "\($0.amount.formatted(.shNumber))"
             }.joined(separator: ", ")
             
             let joinedAmount = if consumedAmount.isEmpty {
@@ -212,9 +213,9 @@ extension SingleItemProduction.Node {
         
         let inputs = inputs.map { input in
             let name = input.item.localizedName
-            let amount = "\(input.amount.formatted(.fractionFromZeroToFour))"
+            let amount = "\(input.amount.formatted(.shNumber))"
             let providedByByproductsAmount = input.byproductProducers.map {
-                "\($0.amount.formatted(.fractionFromZeroToFour))"
+                "\($0.amount.formatted(.shNumber))"
             }.joined(separator: ", ")
             
             let joinedAmount = if providedByByproductsAmount.isEmpty {

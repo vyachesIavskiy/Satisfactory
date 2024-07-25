@@ -2,6 +2,7 @@ import Foundation
 import Observation
 import SHModels
 import SHStorage
+import SHSingleItemProduction
 
 @Observable
 final class ProductAdjustmentViewModel: Identifiable {
@@ -15,7 +16,7 @@ final class ProductAdjustmentViewModel: Identifiable {
     }
     
     var amount: Double {
-        production.userInput.amount
+        production.amount
     }
     
     var hasUnselectedRecipes: Bool {
@@ -37,18 +38,18 @@ final class ProductAdjustmentViewModel: Identifiable {
         self.product = product
         self.allowDeletion = allowDeletion
         let production = SingleItemProduction(item: product.item)
-        production.userInput.amount = product.amount
+        production.amount = product.amount
         for recipe in product.recipes {
-            production.addRecipe(recipe.model, with: recipe.proportion, to: product.item)
+            production.addRecipe(recipe.model, to: product.item, with: recipe.proportion)
         }
         self.production = production
-        production.update()
         self.onApply = onApply
+        production.update()
     }
     
     @MainActor
     func removeRecipe(_ recipe: SingleItemProduction.Output.Recipe) {
-        production.userInput.products[0].recipes.removeAll {
+        production[inputItemIndex: 0].recipes.removeAll {
             $0.recipe.id == recipe.model.id
         }
         
@@ -58,10 +59,14 @@ final class ProductAdjustmentViewModel: Identifiable {
         
         guard case let .fraction(fraction) = recipe.proportion else { return }
         
-        for (index, recipe) in production.userInput.products[0].recipes.enumerated() {
+        for recipe in production[inputItemIndex: 0].recipes {
             switch recipe.proportion {
             case let .fraction(recipeFraction):
-                production.userInput.products[0].recipes[index].proportion = .fraction(recipeFraction / (1 - fraction))
+                production.changeProportion(
+                    of: recipe.recipe,
+                    for: product.item,
+                    to: .fraction(recipeFraction / (1 - fraction))
+                )
             case .fixed:
                 break
             case .auto:
@@ -72,7 +77,7 @@ final class ProductAdjustmentViewModel: Identifiable {
     
     @MainActor
     func addRecipe(_ recipe: Recipe) {
-        production.addRecipe(recipe, with: .auto, to: production.userInput.products[0].item)
+        production.addRecipe(recipe, to: product.item)
         update()
     }
     
@@ -81,16 +86,13 @@ final class ProductAdjustmentViewModel: Identifiable {
         _ recipe: SingleItemProduction.Output.Recipe,
         with proportion: ProductionProportion
     ) {
-        if let index = production.userInput.products[0].recipes.firstIndex(where: { $0.recipe.id == recipe.model.id }) {
-            production.userInput.products[0].recipes[index].proportion = proportion
-        }
-        
+        production.changeProportion(of: recipe.model, for: product.item, to: proportion)
         update()
     }
     
     @MainActor
     func apply() {
-        onApply(production.userInput.products[0])
+        onApply(production[inputItemIndex: 0])
     }
     
     @MainActor

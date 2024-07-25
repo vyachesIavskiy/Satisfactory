@@ -1,50 +1,103 @@
-import SHModels
-import SHStorage
 import Foundation
+import SHStorage
+import SHModels
+import SHUtils
 
-final class SingleItemProduction {
-    let item: any Item
+public final class SingleItemProduction {
+    public let item: any Item
     
-    var userInput: UserInput
-    private(set) var output: Output
+    private var userInput: UserInput
+    public private(set) var output: Output
     
-    private var amount = 0.0
+    public var amount = 0.0 {
+        didSet {
+            userInput.amount = amount
+        }
+    }
     private var rootNodes = [Node]()
     private var internalState = InternalState()
     private var balancingState = BalancingState.unchecked
     
-    init(item: any Item) {
+    public init(item: any Item) {
         self.item = item
         userInput = UserInput(item: item, amount: 1.0)
         output = Output(products: [], unselectedItems: [item], hasByproducts: false)
     }
     
     // MARK: - User input
-    func addProduct(_ product: UserInput.Product) {
-        userInput.addProduct(product)
-    }
-    
-    func updateProduct(_ product: UserInput.Product) {
-        userInput.updateProduct(product)
-    }
-    
-    func addProductRecipe(_ recipe: UserInput.ProductRecipe, to item: any Item) {
-        userInput.addProductRecipe(recipe, to: item)
-    }
-    
-    func addRecipe(_ recipe: Recipe, with proportion: ProductionProportion, to item: any Item) {
+    public func addRecipe(
+        _ recipe: Recipe,
+        to item: some Item,
+        with proportion: ProductionProportion = .auto
+    ) {
         userInput.addRecipe(recipe, with: proportion, to: item)
     }
     
-    func removeProduct(with item: any Item) {
+    public func removeItem(_ item: some Item) {
         userInput.removeProduct(with: item)
     }
     
-    func removeRecipe(_ recipe: Recipe, from item: any Item) {
-        userInput.removeRecipe(recipe, from: item)
+    public func inputContains(_ item: some Item) -> Bool {
+        userInput.products.contains { $0.item.id == item.id }
     }
     
-    func changeProportion(
+    public func inputContains(where predicate: (_ item: UserInput.Product) throws -> Bool) rethrows -> Bool {
+        try userInput.products.contains(where: predicate)
+    }
+    
+    public func iterateInputItems(_ handler: (_ offset: Int, _ item: UserInput.Product) -> Void) {
+        var index = 0
+        while userInput.products.indices.contains(index) {
+            let product = userInput.products[index]
+            handler(index, product)
+            index += 1
+        }
+    }
+    
+    public func iterateInputRecipes(
+        for inputItem: UserInput.Product,
+        handler: (_ offset: Int, _ recipe: UserInput.ProductRecipe) -> Void
+    ) {
+        var index = 0
+        while inputItem.recipes.indices.contains(index) {
+            let recipe = inputItem.recipes[index]
+            handler(index, recipe)
+            index += 1
+        }
+    }
+    
+    public subscript(inputItemIndex index: Int) -> UserInput.Product {
+        get { userInput.products[index] }
+        set { userInput.products[index] = newValue }
+    }
+    
+    
+    // Unrevised
+//    public func addProduct(_ product: UserInput.Product) {
+//        userInput.addProduct(product)
+//    }
+    
+    public func updateProduct(_ product: UserInput.Product) {
+        userInput.updateProduct(product)
+    }
+    
+//    public func addProductRecipe(_ recipe: UserInput.ProductRecipe, to item: any Item) {
+//        userInput.addProductRecipe(recipe, to: item)
+//    }
+    
+//    public func addRecipe(_ recipe: Recipe, with proportion: ProductionProportion, to item: any Item) {
+//        userInput.addRecipe(recipe, with: proportion, to: item)
+//    }
+    
+//    public func removeProduct(with item: any Item) {
+//        userInput.removeProduct(with: item)
+//    }
+    
+//    public func removeRecipe(_ recipe: Recipe, from item: any Item) {
+//        userInput.removeRecipe(recipe, from: item)
+//    }
+    
+    public func changeProportion(
         of recipe: Recipe,
         for item: any Item,
         to newProportion: ProductionProportion
@@ -52,31 +105,29 @@ final class SingleItemProduction {
         userInput.changeProportion(of: recipe, for: item, to: newProportion)
     }
     
-    func moveProducts(from offsets: IndexSet, to offset: Int) {
+    public func moveProducts(from offsets: IndexSet, to offset: Int) {
         userInput.moveProducts(from: offsets, to: offset)
     }
     
-    func addByproduct(_ item: any Item, producer: Recipe, consumer: Recipe) {
+    public func addByproduct(_ item: any Item, producer: Recipe, consumer: Recipe) {
         userInput.addByproduct(item, producer: producer, consumer: consumer)
     }
     
-    func removeByrpoduct(_ item: any Item) {
+    public func removeByrpoduct(_ item: any Item) {
         userInput.removeByrpoduct(item)
     }
     
-    func removeProducer(_ recipe: Recipe, for item: any Item) {
+    public func removeProducer(_ recipe: Recipe, for item: any Item) {
         userInput.removeProducer(recipe, for: item)
     }
     
-    func removeConsumer(_ recipe: Recipe, for byproduct: any Item) {
+    public func removeConsumer(_ recipe: Recipe, for byproduct: any Item) {
         userInput.removeConsumer(recipe, for: byproduct)
     }
     
     // MARK: Internal
     
-    func update() {
-        amount = userInput.amount
-        
+    public func update() {
         // Reseting internal state
         internalState.reset(userInput: userInput)
         
@@ -624,7 +675,7 @@ extension SingleItemProduction {
 
 // MARK: Print format
 extension SingleItemProduction: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         var nodeDescription = ""
         var nodes = rootNodes
         var spacing = ""
@@ -635,7 +686,7 @@ extension SingleItemProduction: CustomStringConvertible {
         }
         
         return """
-        \(item.localizedName) (\(amount.formatted(.fractionFromZeroToFour)))
+        \(item.localizedName) (\(amount.formatted(.shNumber)))
         
         \(nodeDescription)
         """

@@ -6,7 +6,7 @@ final class SingleItemProduction {
     let item: any Item
     
     var userInput: UserInput
-    private var output: Output
+    private(set) var output: Output
     
     private var amount = 0.0
     private var rootNodes = [Node]()
@@ -74,7 +74,7 @@ final class SingleItemProduction {
     
     // MARK: Internal
     
-    func update() -> Output {
+    func update() {
         amount = userInput.amount
         
         // Reseting internal state
@@ -87,7 +87,7 @@ final class SingleItemProduction {
         buildTree()
         
         // Build and return an output
-        return buildOutput()
+        buildOutput()
     }
 }
 
@@ -447,7 +447,7 @@ private extension SingleItemProduction {
         }
     }
     
-    func buildOutput() -> Output {
+    func buildOutput() {
         var nodes = rootNodes
         var unselectedItems = [any Item]()
         var products = [Output.Product]()
@@ -569,7 +569,7 @@ private extension SingleItemProduction {
             nodes = nodes.flatMap(\.inputNodes)
         }
         
-        return Output(products: products, unselectedItems: unselectedItems, hasByproducts: !internalState.byproducts.isEmpty)
+        output = Output(products: products, unselectedItems: unselectedItems, hasByproducts: !internalState.byproducts.isEmpty)
     }
 }
 

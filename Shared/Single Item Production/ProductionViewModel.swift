@@ -38,8 +38,6 @@ final class ProductionViewModel {
     @ObservationIgnored @Dependency(\.settingsService)
     private var settingsService
     
-    var output: SingleItemProduction.Output
-    
     var selectedProduct: SingleItemProduction.Output.Product?
     var selectedNewItemID: String?
     var selectedByproduct: ByproductSelection?
@@ -72,14 +70,13 @@ final class ProductionViewModel {
         var storageService
         
         production = SingleItemProduction(item: item)
-        output = SingleItemProduction.Output(products: [], unselectedItems: [item], hasByproducts: false)
         
         addAutomaticInitialRecipeIfNeeded()
     }
     
     @MainActor
     func update() {
-        output = production.update()
+        production.update()
     }
 
     func unselectedRecipes(for item: some Item) -> [Recipe] {
@@ -87,7 +84,7 @@ final class ProductionViewModel {
         var storageService
         
         var recipes = storageService.recipes(for: item, as: [.output, .byproduct])
-        if let product = output.products.first(where: { $0.item.id == item.id }) {
+        if let product = production.output.products.first(where: { $0.item.id == item.id }) {
             recipes = recipes.filter { !product.recipes.map(\.id).contains($0.id) }
         }
         
@@ -198,7 +195,7 @@ final class ProductionViewModel {
                     
                 case let .selectByproductProducer(product, ingredient, _):
                     selectedByproduct?.producingRecipe == nil &&
-                    !output.products.contains {
+                    !production.output.products.contains {
                         $0.recipes.contains {
                             $0.inputs.contains { $0.producingProductID == product.id }
                         }
@@ -211,7 +208,7 @@ final class ProductionViewModel {
                     
                 case let .selectByproductConsumer(input, _):
                     selectedByproduct?.consumingRecipe == nil &&
-                    !output.products.contains { $0.id == input.producingProductID } &&
+                    !production.output.products.contains { $0.id == input.producingProductID } &&
                     production.userInput.products.contains {
                         $0.recipes.contains {
                             $0.recipe.output.item.id == input.item.id ||
@@ -285,7 +282,7 @@ final class ProductionViewModel {
     @MainActor
     func productViewModels() -> [ProductViewModel] {
         if let selectedByproduct {
-            output.products.compactMap { product in
+            production.output.products.compactMap { product in
                 let visibleRecipes = product.recipes.filter { recipe in
                     if let producingRecipeID = selectedByproduct.producingRecipe?.id {
                         recipe.model.id == producingRecipeID || recipe.model.inputs.contains { $0.item.id == selectedByproduct.item.id }
@@ -301,7 +298,7 @@ final class ProductionViewModel {
                 return productViewModel(for: SingleItemProduction.Output.Product(item: product.item, recipes: visibleRecipes))
             }
         } else {
-            output.products.map(productViewModel(for:))
+            production.output.products.map(productViewModel(for:))
         }
     }
     

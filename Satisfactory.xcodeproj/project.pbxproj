@@ -579,7 +579,7 @@
 			path = SHSection;
 			sourceTree = "<group>";
 		};
-		D3A676B92C2B6F74000A1078 /* Single Item */ = {
+		D3A676B92C2B6F74000A1078 /* Production */ = {
 			isa = PBXGroup;
 			children = (
 				D3A676DA2C2B7113000A1078 /* SingleItemProduction.swift */,
@@ -588,7 +588,7 @@
 				D3A676DB2C2B7113000A1078 /* SingleItemProductionUserInput.swift */,
 				D3E7B8802C2C6E0200DB7177 /* SingleItemProductionOutput.swift */,
 			);
-			path = "Single Item";
+			path = Production;
 			sourceTree = "<group>";
 		};
 		D3BB55582C3FD7240052DF56 /* RecipeIngredientView */ = {
@@ -603,7 +603,6 @@
 		D3C6FF5F2C173D82007542F2 /* Production */ = {
 			isa = PBXGroup;
 			children = (
-				D3A676B92C2B6F74000A1078 /* Single Item */,
 				D31E83902C3ED7AF0054C504 /* ProductionProportion.swift */,
 			);
 			path = Production;
@@ -612,6 +611,7 @@
 		D3E7B87D2C2C5F5400DB7177 /* Single Item Production */ = {
 			isa = PBXGroup;
 			children = (
+				D3A676B92C2B6F74000A1078 /* Production */,
 				D37E6BC32C03D36A001F3683 /* Initial Item Recipe Selection */,
 				D3EDED7B2C42CEA400AF72AA /* ProductionNewProductRecipeSelection */,
 				D31E839D2C3EEC310054C504 /* ProductView */,

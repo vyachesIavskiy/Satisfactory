@@ -21,9 +21,6 @@ struct RootView: View {
         .task {
             await viewModel.load()
         }
-        .task {
-            await viewModel.observeSettings()
-        }
     }
     
     @MainActor @ViewBuilder

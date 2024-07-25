@@ -8,11 +8,11 @@ extension SHSettingsService {
         private let persistence = SHPersistence(homeDirectoryName: "Settings/V2")
         private let _settings: CurrentValueSubject<Settings, Never>
         
-        var settings: AsyncStream<Settings> {
+        var streamSettings: AsyncStream<Settings> {
             _settings.values.eraseToStream()
         }
         
-        var currentSettings: Settings {
+        func getSettings() -> Settings {
             _settings.value
         }
         

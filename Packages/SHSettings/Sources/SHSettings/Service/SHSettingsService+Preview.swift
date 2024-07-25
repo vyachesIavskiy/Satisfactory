@@ -4,11 +4,11 @@ extension SHSettingsService {
     final class Preview {
         private let _settings = CurrentValueSubject<Settings, Never>(Settings())
         
-        var settings: AsyncStream<Settings> {
+        var streamSettings: AsyncStream<Settings> {
             _settings.values.eraseToStream()
         }
         
-        var currentSettings: Settings {
+        func getSettings() -> Settings {
             _settings.value
         }
         

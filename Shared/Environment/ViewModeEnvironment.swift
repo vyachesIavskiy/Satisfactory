@@ -6,7 +6,7 @@ private struct ShowIngredientNamesEnvironmentKey: EnvironmentKey {
         @Dependency(\.settingsService)
         var settingsService
         
-        return settingsService.currentSettings().showIngredientNames
+        return settingsService.showIngredientNames
     }()
 }
 

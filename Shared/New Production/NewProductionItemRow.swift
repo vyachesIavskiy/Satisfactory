@@ -112,20 +112,18 @@ private struct _ItemRowPreview: View {
     }
     
     var body: some View {
-        ScrollView {
-            VStack {
-                ForEach(items, id: \.id) { item in
-                    NewProductionView.ItemRow(item)
-                        .contextMenu {
-                            Button("Preview") {
-                                
-                            }
+        List {
+            ForEach(items, id: \.id) { item in
+                NewProductionView.ItemRow(item)
+                    .listRowSeparator(.hidden)
+                    .contextMenu {
+                        Button("Preview") {
+                            
                         }
-                }
+                    }
             }
-            .padding()
         }
-        .scrollBounceBehavior(.basedOnSize)
+        .listStyle(.plain)
     }
 }
 

@@ -18,14 +18,14 @@ extension SHSettingsService: DependencyKey {
 // MARK: Instances
 extension SHSettingsService {
     static let noop = SHSettingsService(
-        settings: { .never },
-        currentSettings: { Settings() },
+        streamSettings: { .never },
+        getSettings: { Settings() },
         setSettings: { _ in }
     )
     
     static let failing = SHSettingsService(
-        settings: unimplemented("SHSettingsService.settings"),
-        currentSettings: unimplemented("SHSettingsService.currentSettings"),
+        streamSettings: unimplemented("SHSettingsService.streamSettings"),
+        getSettings: unimplemented("SHSettingsService.getSettings"),
         setSettings: unimplemented("SHSettingsService.setSettings")
     )
     
@@ -33,8 +33,8 @@ extension SHSettingsService {
         let live = Live()
         
         return SHSettingsService(
-            settings: { live.settings },
-            currentSettings: { live.currentSettings },
+            streamSettings: { live.streamSettings },
+            getSettings: { live.getSettings() },
             setSettings: { live.setSettings($0) }
         )
     }()
@@ -43,8 +43,8 @@ extension SHSettingsService {
         let preview = Preview()
         
         return SHSettingsService(
-            settings: { preview.settings },
-            currentSettings: { preview.currentSettings },
+            streamSettings: { preview.streamSettings },
+            getSettings: { preview.getSettings() },
             setSettings: { preview.setSettings($0) }
         )
     }()

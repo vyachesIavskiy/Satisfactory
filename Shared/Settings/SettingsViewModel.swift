@@ -16,7 +16,7 @@ final class SettingsViewModel {
     
     var settings: Settings {
         didSet {
-            settingsService.setSettings(settings)
+            settingsService.settings = settings
         }
     }
     
@@ -33,6 +33,6 @@ final class SettingsViewModel {
         var storageService
         
         recipe = storageService.recipe(for: "recipe-alternate-instant-scrap")!
-        settings = settingsService.currentSettings()
+        settings = settingsService.settings
     }
 }

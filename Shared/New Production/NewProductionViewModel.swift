@@ -46,34 +46,42 @@ final class NewProductionViewModel {
         @Dependency(\.storageService)
         var storageService
         
-        @Dependency(\.settingsService.currentSettings)
-        var settings
+        @Dependency(\.settingsService)
+        var settingsService
         
         parts = storageService.automatableParts()
         equipment = storageService.automatableEquipment()
         pinnedItemIDs = storageService.pinnedItemIDs
-        showFICSMAS = settings().showFICSMAS
+        showFICSMAS = settingsService.showFICSMAS
         
         buildSections()
-    }
-    
-    @MainActor
-    func observeStorage() async {
-        for await pinnedItemIDs in storageService.streamPinnedItemIDs {
-            guard !Task.isCancelled else { break }
-            
-            self.pinnedItemIDs = pinnedItemIDs
-            buildSections()
-        }
-    }
-    
-    @MainActor
-    func observeSettings() async {
-        for await showFICSMAS in settingsService.settings().map(\.showFICSMAS) {
-            guard !Task.isCancelled else { break }
-            
-            self.showFICSMAS = showFICSMAS
-            buildSections()
+        
+        Task {
+            await withTaskGroup(of: Void.self) { group in
+                group.addTask { @MainActor [weak self] in
+                    guard let self else { return }
+                    
+                    for await pinnedItemIDs in storageService.streamPinnedItemIDs {
+                        guard !Task.isCancelled else { break }
+                        guard self.pinnedItemIDs != pinnedItemIDs else { continue }
+                        
+                        self.pinnedItemIDs = pinnedItemIDs
+                        buildSections()
+                    }
+                }
+                
+                group.addTask { @MainActor [weak self] in
+                    guard let self else { return }
+                    
+                    for await showFICSMAS in settingsService.streamSettings().map(\.showFICSMAS) {
+                        guard !Task.isCancelled else { break }
+                        guard self.showFICSMAS != showFICSMAS else { continue }
+                        
+                        self.showFICSMAS = showFICSMAS
+                        buildSections()
+                    }
+                }
+            }
         }
     }
     
@@ -136,8 +144,8 @@ private extension NewProductionViewModel {
         }
         
         return [.pinned(pinnedItems)] +
-        partsByCategories.sorted { $0.0 < $1.0 }.map { .parts($0.0.localizedName, $0.1) } +
-        equipmentByCategories.sorted { $0.0 < $1.0 }.map { .equipment($0.0.localizedName, $0.1) }
+        partsByCategories.sorted { $0.0 < $1.0 }.map { .parts(title: $0.0.localizedName, parts: $0.1) } +
+        equipmentByCategories.sorted { $0.0 < $1.0 }.map { .equipment(title: $0.0.localizedName, equipment: $0.1) }
     }
     
     @MainActor
@@ -180,86 +188,46 @@ extension NewProductionViewModel {
 
 // MARK: - Section
 extension NewProductionViewModel {
-    enum Section: Identifiable, Equatable {
-        case pinned(_ items: [any Item], expanded: Bool = true)
-        case parts(_ title: String, _ parts: [Part], expanded: Bool = true)
-        case equipment(_ title: String, _ equipment: [Equipment], expanded: Bool = true)
-        
-        var id: String {
-            switch self {
-            case .pinned: "Pinned"
-            case let .parts(title, _, _): "Parts_\(title)"
-            case let .equipment(title, _, _): "Equipment_\(title)"
-            }
+    struct Section: Identifiable, Equatable {
+        enum ID: Hashable {
+            case pinned
+            case parts(title: String)
+            case equipment(title: String)
         }
         
-        var isEmpty: Bool {
-            switch self {
-            case let .pinned(items, _): items.isEmpty
-            case let .parts(_, parts, _): parts.isEmpty
-            case let .equipment(_, equipment, _): equipment.isEmpty
-            }
-        }
+        let id: ID
+        var items: [any Item]
+        var expanded: Bool
         
         var title: String {
-            switch self {
+            switch id {
             case .pinned: "Pinned"
-            case let .parts(title, _, _), let .equipment(title, _, _): title
+            case let .parts(title), let .equipment(title): title
             }
         }
         
-        var expanded: Bool {
-            get {
-                switch self {
-                case
-                    let .pinned(_, expanded),
-                    let .parts(_, _, expanded),
-                    let .equipment(_, _, expanded):
-                    expanded
-                }
-            }
-            set {
-                switch self {
-                case let .pinned(items, expanded):
-                    guard expanded != newValue else { return }
-                    
-                    self = .pinned(items, expanded: newValue)
-                    
-                case let .parts(title, parts, expanded):
-                    guard expanded != newValue else { return }
-                    
-                    self = .parts(title, parts, expanded: newValue)
-                    
-                case let .equipment(title, equipment, expanded):
-                    guard expanded != newValue else { return }
-                    
-                    self = .equipment(title, equipment, expanded: newValue)
-                }
-            }
+        private init(id: ID, items: [any Item]) {
+            self.id = id
+            self.items = items
+            self.expanded = true
         }
         
-        var items: [any Item] {
-            switch self {
-            case let .pinned(items, _): items
-            case let .parts(_, parts, _): parts
-            case let .equipment(_, equipment, _): equipment
-            }
+        static func pinned(_ items: [any Item]) -> Self {
+            Section(id: .pinned, items: items)
+        }
+        
+        static func parts(title: String, parts: [Part]) -> Self {
+            Section(id: .parts(title: title), items: parts)
+        }
+        
+        static func equipment(title: String, equipment: [Equipment]) -> Self {
+            Section(id: .equipment(title: title), items: equipment)
         }
         
         static func == (lhs: NewProductionViewModel.Section, rhs: NewProductionViewModel.Section) -> Bool {
-            switch (lhs, rhs) {
-            case let (.pinned(lhsItems, _), .pinned(rhsItems, _)):
-                lhsItems.map(\.id) == rhsItems.map(\.id)
-                
-            case let (.parts(_, lhsParts, _), .parts(_, rhsParts, _)):
-                lhsParts == rhsParts
-                
-            case let (.equipment(_, lhsEquipment, _), .equipment(_, rhsEquipment, _)):
-                lhsEquipment == rhsEquipment
-                
-            default:
-                false
-            }
+            lhs.id == rhs.id &&
+            lhs.items.map(\.id) == rhs.items.map(\.id) &&
+            lhs.expanded == rhs.expanded
         }
     }
 }

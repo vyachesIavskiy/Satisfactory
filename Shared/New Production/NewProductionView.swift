@@ -44,12 +44,6 @@ struct NewProductionView: View {
                 ProductionView(viewModel: viewModel.productionViewModel(for: id))
             }
         }
-        .task {
-            await viewModel.observeStorage()
-        }
-        .task {
-            await viewModel.observeSettings()
-        }
     }
     
     @ViewBuilder

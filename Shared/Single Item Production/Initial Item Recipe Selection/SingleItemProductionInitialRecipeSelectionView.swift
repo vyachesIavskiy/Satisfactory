@@ -52,7 +52,7 @@ struct SingleItemProductionInitialRecipeSelectionView: View {
         Button {
             viewModel.onRecipeSelected(recipe)
         } label: {
-            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe, pinned: viewModel.isPinned(recipe)))
+            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
         }
         .buttonStyle(.plain)
         .matchedGeometryEffect(id: recipe.id, in: namespace)

@@ -5,15 +5,13 @@ import SHSettings
 @Observable
 final class RecipeDisplayViewModel {
     let recipe: Recipe
-    let pinned: Bool
     
     @ObservationIgnored
     @Dependency(\.settingsService)
     var settingsService
     
-    init(recipe: Recipe, pinned: Bool) {
+    init(recipe: Recipe) {
         self.recipe = recipe
-        self.pinned = pinned
     }
         
     @MainActor

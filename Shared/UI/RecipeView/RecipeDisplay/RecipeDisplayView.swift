@@ -5,7 +5,7 @@ import SHModels
 struct RecipeDisplayView: View {
     let viewModel: RecipeDisplayViewModel
     
-    private let gridItem = GridItem(.adaptive(minimum: 80), spacing: 12, alignment: .top)
+    private let gridItem = GridItem(.adaptive(minimum: 80, maximum: 100), spacing: 12, alignment: .top)
     
     @Environment(\.displayScale)
     private var displayScale
@@ -71,8 +71,6 @@ struct RecipeDisplayView: View {
             Spacer()
             
             alternateIndicatorView
-            
-            pinnedIndicatorView
         }
     }
     
@@ -91,24 +89,6 @@ struct RecipeDisplayView: View {
             }
             .foregroundStyle(.sh(.midnight100))
             .opacity(viewModel.recipe.isDefault ? 0.0 : 1.0)
-    }
-    
-    @MainActor @ViewBuilder
-    private var pinnedIndicatorView: some View {
-        if viewModel.pinned {
-            Image(systemName: "pin.fill")
-                .font(.caption)
-                .fontWeight(.light)
-                .foregroundStyle(.sh(.midnight))
-                .padding(.vertical, 2)
-                .padding(.horizontal, 6)
-                .background {
-                    RoundedRectangle(cornerRadius: 4, style: .continuous)
-                        .fill(.sh(.midnight10))
-                        .stroke(.sh(.midnight40), lineWidth: 1)
-                }
-                .foregroundStyle(.sh(.midnight100))
-        }
     }
     
     @MainActor @ViewBuilder
@@ -141,28 +121,24 @@ private struct _RecipeDisplayViewPreview: View {
     @Namespace
     private var namespace
     
-    private var recipes: [(Recipe, Bool)] {
+    private var recipes: [Recipe] {
         [
-            (storageService.recipe(for: "recipe-iron-ingot"), false),
-            (storageService.recipe(for: "recipe-reinforced-iron-plate"), false),
-            (storageService.recipe(for: "recipe-crystal-oscillator"), false),
-            (storageService.recipe(for: "recipe-plastic"), false),
-            (storageService.recipe(for: "recipe-diluted-fuel"), false),
-            (storageService.recipe(for: "recipe-non-fissile-uranium"), false),
-            (storageService.recipe(for: "recipe-alternate-heavy-oil-residue"), false),
-            (storageService.recipe(for: "recipe-smart-plating"), true)
-        ].compactMap {
-            guard let recipe = $0.0 else { return nil }
-            
-            return (recipe, $0.1)
-        }
+            storageService.recipe(for: "recipe-iron-ingot"),
+            storageService.recipe(for: "recipe-reinforced-iron-plate"),
+            storageService.recipe(for: "recipe-crystal-oscillator"),
+            storageService.recipe(for: "recipe-plastic"),
+            storageService.recipe(for: "recipe-diluted-fuel"),
+            storageService.recipe(for: "recipe-non-fissile-uranium"),
+            storageService.recipe(for: "recipe-alternate-heavy-oil-residue"),
+            storageService.recipe(for: "recipe-smart-plating")
+        ].compactMap { $0 }
     }
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                ForEach(recipes, id: \.0.id) { recipe, pinned in
-                    RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe, pinned: pinned))
+                ForEach(recipes) { recipe in
+                    RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
                         .contextMenu {
                             Button("Preview") {}
                         }

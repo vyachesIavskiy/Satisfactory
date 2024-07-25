@@ -3,7 +3,7 @@ import SwiftUI
 struct SingleItemProductionRecipeDisplayView: View {
     let viewModel: SingleItemProductionRecipeDisplayViewModel
     
-    private let gridItem = GridItem(.adaptive(minimum: 80), spacing: 12)
+    private let gridItem = GridItem(.adaptive(minimum: 80, maximum: 100), spacing: 12)
     
     @Environment(\.displayScale)
     private var displayScale

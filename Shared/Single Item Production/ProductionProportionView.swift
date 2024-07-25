@@ -10,7 +10,7 @@ struct ProductionProportionView: View {
     }
     
     @Binding
-    var proportion: ProductionProportion
+    var proportion: SHProductionProportion
     
     @MainActor @State
     private var proportionDisplay: ProductionProportionDisplay
@@ -34,7 +34,7 @@ struct ProductionProportionView: View {
     private var namespace
     
     @MainActor
-    init(_ proportion: Binding<ProductionProportion>, totalAmount: Double) {
+    init(_ proportion: Binding<SHProductionProportion>, totalAmount: Double) {
         self._proportion = proportion
         
         switch proportion.wrappedValue {
@@ -238,9 +238,9 @@ private struct ProductionProportionTextfield: View {
 #if DEBUG
 private struct _ProductionProportionPreview: View {
     @State
-    private var proportion: ProductionProportion
+    private var proportion: SHProductionProportion
     
-    init(_ proportion: ProductionProportion) {
+    init(_ proportion: SHProductionProportion) {
         self.proportion = proportion
     }
     

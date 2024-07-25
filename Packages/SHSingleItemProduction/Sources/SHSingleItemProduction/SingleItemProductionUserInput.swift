@@ -45,7 +45,7 @@ extension SingleItemProduction {
             products[index].addProductRecipe(productRecipe)
         }
         
-        public mutating func addRecipe(_ recipe: Recipe, with proportion: ProductionProportion, to item: any Item) {
+        public mutating func addRecipe(_ recipe: Recipe, with proportion: SHProductionProportion, to item: any Item) {
             addProductRecipe(ProductRecipe(recipe: recipe, proportion: proportion), to: item)
         }
         
@@ -74,7 +74,7 @@ extension SingleItemProduction {
         public mutating func changeProportion(
             of recipe: Recipe,
             for item: any Item,
-            to newProportion: ProductionProportion
+            to newProportion: SHProductionProportion
         ) {
             guard
                 let productIndex = products.firstIndex(where: { $0.item.id == item.id }),
@@ -168,7 +168,7 @@ extension SingleItemProduction.UserInput {
         ///
         /// This is used when more than one recipe produce a single intermediate product.
         /// This can be also used to calculate final product.
-        public var proportion: ProductionProportion
+        public var proportion: SHProductionProportion
     }
 }
 

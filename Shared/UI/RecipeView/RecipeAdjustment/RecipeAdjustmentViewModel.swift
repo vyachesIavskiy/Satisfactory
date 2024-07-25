@@ -6,10 +6,10 @@ final class RecipeAdjustmentViewModel {
     let recipe: SingleItemProduction.Output.Recipe
     let allowAdjustment: Bool
     let allowDeletion: Bool
-    let onChange: (ProductionProportion) -> Void
+    let onChange: (SHProductionProportion) -> Void
     let onDelete: () -> Void
     
-    var proportion: ProductionProportion {
+    var proportion: SHProductionProportion {
         didSet {
             onChange(proportion)
         }
@@ -20,7 +20,7 @@ final class RecipeAdjustmentViewModel {
         recipe: SingleItemProduction.Output.Recipe,
         allowAdjustment: Bool,
         allowDeletion: Bool,
-        onChange: @escaping (ProductionProportion) -> Void,
+        onChange: @escaping (SHProductionProportion) -> Void,
         onDelete: @escaping () -> Void
     ) {
         self.recipe = recipe

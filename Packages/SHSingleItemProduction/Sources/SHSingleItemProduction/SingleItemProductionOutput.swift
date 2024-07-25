@@ -53,7 +53,7 @@ extension SingleItemProduction.Output {
         public var output: OutputIngredient
         public var byproducts: [OutputIngredient]
         public var inputs: [InputIngredient]
-        public var proportion: ProductionProportion
+        public var proportion: SHProductionProportion
         
         public var id: String { model.id }
         
@@ -62,7 +62,7 @@ extension SingleItemProduction.Output {
             output: OutputIngredient,
             byproducts: [OutputIngredient],
             inputs: [InputIngredient],
-            proportion: ProductionProportion
+            proportion: SHProductionProportion
         ) {
             self.model = model
             self.output = output

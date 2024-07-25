@@ -28,7 +28,7 @@ public final class SingleItemProduction {
     public func addRecipe(
         _ recipe: Recipe,
         to item: some Item,
-        with proportion: ProductionProportion = .auto
+        with proportion: SHProductionProportion = .auto
     ) {
         userInput.addRecipe(recipe, with: proportion, to: item)
     }
@@ -100,7 +100,7 @@ public final class SingleItemProduction {
     public func changeProportion(
         of recipe: Recipe,
         for item: any Item,
-        to newProportion: ProductionProportion
+        to newProportion: SHProductionProportion
     ) {
         userInput.changeProportion(of: recipe, for: item, to: newProportion)
     }

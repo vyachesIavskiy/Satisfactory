@@ -21,9 +21,6 @@ struct ProductionProportionView: View {
     @MainActor @State
     var fixedAmount: Double
     
-//    @State
-//    private var isSelecting = false
-    
     @State
     private var buttonWidth = 0.0
     
@@ -70,7 +67,10 @@ struct ProductionProportionView: View {
                     focusField = nil
                 } label: {
                     Image(systemName: "checkmark")
-                        .frame(height: 20)
+                        .font(.caption)
+                        .fontWeight(.medium)
+                        .frame(height: 16)
+                        .frame(minWidth: 32)
                 }
                 .buttonStyle(.shTinted)
                 .transition(.scale.combined(with: .opacity))
@@ -91,15 +91,18 @@ struct ProductionProportionView: View {
                         switch proportion {
                         case .auto:
                             Text("AUTO")
+                                .font(.caption)
                                 .fixedSize()
                         case .fraction:
                             Image(systemName: "percent")
+                                .font(.caption)
+                                .fontWeight(.medium)
                         case .fixed:
                             Image(systemName: "textformat.123")
                         }
                     }
-                    .frame(height: 20)
-                    .frame(minWidth: 50)
+                    .frame(height: 16)
+                    .frame(minWidth: 32)
                 }
                 .menuStyle(.button)
                 .buttonStyle(.shTinted)
@@ -132,22 +135,6 @@ struct ProductionProportionView: View {
             proportion = .fixed(fixedAmount)
         }
     }
-}
-
-private struct ProductionProportionButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.footnote)
-            .multilineTextAlignment(.center)
-            .lineLimit(1)
-            .frame(width: 40)
-            .padding(.horizontal, 4)
-            .frame(height: 24)
-    }
-}
-
-private extension ButtonStyle where Self == ProductionProportionButtonStyle {
-    static var productionProportion: Self { ProductionProportionButtonStyle() }
 }
 
 private struct ProductionProportionTextfield: View {
@@ -195,11 +182,7 @@ private struct ProductionProportionTextfield: View {
     
     private var shadowRadius: Double {
         if isEnabled {
-            if isFocused {
-                5.0
-            } else {
-                3.0
-            }
+            2.0
         } else {
             0.0
         }
@@ -222,14 +205,12 @@ private struct ProductionProportionTextfield: View {
             .focused(focus, equals: field)
             .foregroundStyle(foregroundStyle)
             .padding(.horizontal, 4)
-            .frame(height: 28)
+            .frame(height: 24)
+            .background(.background, in: RoundedRectangle(cornerRadius: 4, style: .continuous))
             .background {
                 RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .fill(backgroundStyle)
-                    .shadow(
-                        color: shadowColor,
-                        radius: shadowRadius
-                    )
+                    .fill(shadowColor)
+                    .blur(radius: shadowRadius)
             }
             .animation(.default, value: isFocused)
     }

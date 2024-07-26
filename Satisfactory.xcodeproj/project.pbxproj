@@ -475,8 +475,8 @@
 		D31E83A22C3EEC7C0054C504 /* ProductAdjustmentView */ = {
 			isa = PBXGroup;
 			children = (
-				D31E83A52C3EEC9F0054C504 /* ProductAdjustmentViewModel.swift */,
 				D31E83A32C3EEC810054C504 /* ProductAdjustmentView.swift */,
+				D31E83A52C3EEC9F0054C504 /* ProductAdjustmentViewModel.swift */,
 			);
 			path = ProductAdjustmentView;
 			sourceTree = "<group>";

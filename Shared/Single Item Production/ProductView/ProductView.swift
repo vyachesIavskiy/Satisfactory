@@ -53,7 +53,8 @@ struct ProductView: View {
                         viewModel.removeItem()
                     } label: {
                         Image(systemName: "trash")
-                            .font(.subheadline)
+                            .font(.caption)
+                            .frame(height: 16)
                     }
                     .buttonStyle(.shTinted)
                     .tint(.sh(.red))
@@ -63,6 +64,7 @@ struct ProductView: View {
                     } label: {
                         Image(systemName: "slider.horizontal.3")
                             .font(.subheadline)
+                            .frame(height: 16)
                     }
                     .buttonStyle(.shTinted)
                 }

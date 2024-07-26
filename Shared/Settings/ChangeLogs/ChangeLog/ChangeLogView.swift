@@ -37,6 +37,7 @@ struct ChangeLogView: View {
             if mode == .showOnLaunch {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("OK") {
+                        ChangeLog.allChangeLogsAreShown = true
                         dismiss()
                     }
                 }

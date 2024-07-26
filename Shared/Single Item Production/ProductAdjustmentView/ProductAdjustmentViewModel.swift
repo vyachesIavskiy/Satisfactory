@@ -8,8 +8,9 @@ import SHSingleItemProduction
 final class ProductAdjustmentViewModel: Identifiable {
     let product: SHSingleItemProduction.OutputItem
     let allowDeletion: Bool
-    private(set) var production: SHSingleItemProduction
     private let onApply: @MainActor (SHSingleItemProduction.InputItem) -> Void
+    
+    private(set) var production: SHSingleItemProduction
     
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService

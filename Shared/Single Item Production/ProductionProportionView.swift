@@ -129,7 +129,7 @@ struct ProductionProportionView: View {
             proportion = .auto
             
         case .fraction:
-            proportion = .fraction(fractionAmount / 100)
+            proportion = .fraction(fractionAmount / 200)
             
         case .fixed:
             proportion = .fixed(fixedAmount)

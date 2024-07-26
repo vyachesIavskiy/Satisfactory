@@ -3,33 +3,31 @@ import SHStorage
 import SHModels
 
 @Observable
-final class SingleItemProductionInitialRecipeSelectionViewModel {
-    @ObservationIgnored
-    @Dependency(\.storageService)
-    private var storageService
-        
+final class InitialRecipeSelectionViewModel {
+    // MARK: Ignored properties
     let item: any Item
     let onRecipeSelected: @MainActor (Recipe) -> Void
     
     private let outputRecipes: [Recipe]
     private let byproductRecipes: [Recipe]
     
-    @MainActor
+    @MainActor @ObservationIgnored
     private var pinnedRecipeIDs: Set<String> {
         didSet {
             buildSections()
         }
     }
     
+    // MARK: Observed properties
     @MainActor
     var sections = [Section]()
     
+    // MARK: Dependencies
+    @ObservationIgnored @Dependency(\.storageService)
+    private var storageService
+    
     @MainActor
-    init(
-        item: any Item,
-        filterOutRecipeIDs: [String] = [],
-        onRecipeSelected: @MainActor @escaping (Recipe) -> Void
-    ) {
+    init(item: any Item, onRecipeSelected: @MainActor @escaping (Recipe) -> Void) {
         @Dependency(\.storageService)
         var storageService
         
@@ -38,22 +36,16 @@ final class SingleItemProductionInitialRecipeSelectionViewModel {
         
         outputRecipes = storageService
             .recipes(for: item, as: .output)
-            .filter { $0.machine != nil && !filterOutRecipeIDs.contains($0.id) }
+            .filter { $0.machine != nil }
         
         byproductRecipes = storageService
             .recipes(for: item, as: .byproduct)
-            .filter { $0.machine != nil && !filterOutRecipeIDs.contains($0.id) }
+            .filter { $0.machine != nil }
         
         pinnedRecipeIDs = storageService.pinnedRecipeIDs(for: item, as: [.output, .byproduct])
+        observeStorage()
+
         buildSections()
-        
-        Task { @MainActor [weak self] in
-            for await pinnedRecipeIDs in storageService.streamPinnedRecipeIDs(for: item, as: [.output, .byproduct]) {
-                guard !Task.isCancelled else { break }
-                
-                self?.pinnedRecipeIDs = pinnedRecipeIDs
-            }
-        }
     }
     
     @MainActor
@@ -81,9 +73,23 @@ final class SingleItemProductionInitialRecipeSelectionViewModel {
     func changePinStatus(for recipe: Recipe) {
         storageService.changePinStatus(for: recipe)
     }
+}
+
+private extension InitialRecipeSelectionViewModel {
+    func observeStorage() {
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            
+            for await pinnedRecipeIDs in storageService.streamPinnedRecipeIDs(for: item, as: [.output, .byproduct]) {
+                guard !Task.isCancelled else { break }
+                
+                self.pinnedRecipeIDs = pinnedRecipeIDs
+            }
+        }
+    }
     
     @MainActor
-    private func buildSections() {
+    func buildSections() {
         let (pinned, product, byproduct) = splitRecipes()
         
         if sections.isEmpty {
@@ -101,10 +107,10 @@ final class SingleItemProductionInitialRecipeSelectionViewModel {
         }
     }
     
-    private typealias RecipesSplit = (pinned: [Recipe], product: [Recipe], byproduct: [Recipe])
+    typealias RecipesSplit = (pinned: [Recipe], product: [Recipe], byproduct: [Recipe])
     
     @MainActor
-    private func splitRecipes() -> RecipesSplit {
+    func splitRecipes() -> RecipesSplit {
         let (pinnedProduct, product) = outputRecipes.reduce(into: ([Recipe](), [Recipe]())) { partialResult, recipe in
             if pinnedRecipeIDs.contains(recipe.id) {
                 partialResult.0.append(recipe)
@@ -130,7 +136,7 @@ final class SingleItemProductionInitialRecipeSelectionViewModel {
 }
 
 // MARK: - Section
-extension SingleItemProductionInitialRecipeSelectionViewModel {
+extension InitialRecipeSelectionViewModel {
     struct Section: Identifiable, Equatable {
         enum ID {
             case pinned

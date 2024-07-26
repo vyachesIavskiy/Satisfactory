@@ -26,6 +26,9 @@ struct ProductAdjustmentView: View {
                     unselectedSection
                 }
             }
+            .animation(.default, value: viewModel.selectedRecipes)
+            .animation(.default, value: viewModel.pinnedRecipes)
+            .animation(.default, value: viewModel.unselectedRecipes)
             .safeAreaInset(edge: .top, spacing: 0) {
                 HStack(alignment: .firstTextBaseline) {
                     Text(viewModel.product.item.localizedName)
@@ -82,6 +85,7 @@ struct ProductAdjustmentView: View {
                                 }
                             )
                             .padding(.horizontal, 16)
+                            .matchedGeometryEffect(id: recipe.id, in: namespace)
                             
                             if index != viewModel.selectedRecipes.count - 1 {
                                 Divider()
@@ -102,8 +106,14 @@ struct ProductAdjustmentView: View {
                 Section {
                     ForEach(Array(viewModel.pinnedRecipes.enumerated()), id: \.element.id) { index, pinnedRecipe in
                         VStack {
-                            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: pinnedRecipe))
-                                .padding(.horizontal, 16)
+                            Button {
+                                viewModel.addRecipe(pinnedRecipe)
+                            } label: {
+                                RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: pinnedRecipe))
+                                    .padding(.horizontal, 16)
+                            }
+                            .buttonStyle(.plain)
+                            .matchedGeometryEffect(id: pinnedRecipe.id, in: namespace)
                             
                             if index != viewModel.pinnedRecipes.count - 1 {
                                 Divider()
@@ -133,8 +143,14 @@ struct ProductAdjustmentView: View {
                 Section {
                     ForEach(Array(viewModel.unselectedRecipes.enumerated()), id: \.element.id) { index, unselectedRecipe in
                         VStack {
-                            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: unselectedRecipe))
-                                .padding(.horizontal, 16)
+                            Button {
+                                viewModel.addRecipe(unselectedRecipe)
+                            } label: {
+                                RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: unselectedRecipe))
+                                    .padding(.horizontal, 16)
+                            }
+                            .buttonStyle(.plain)
+                            .matchedGeometryEffect(id: unselectedRecipe.id, in: namespace)
                             
                             if index != viewModel.unselectedRecipes.count - 1 {
                                 Divider()

@@ -1,10 +1,9 @@
 import SwiftUI
-import SHStorage
 import SHModels
 
-struct SingleItemProductionInitialRecipeSelectionView: View {
+struct InitialRecipeSelectionView: View {
     @State
-    var viewModel: SingleItemProductionInitialRecipeSelectionViewModel
+    var viewModel: InitialRecipeSelectionViewModel
     
     @Environment(\.displayScale)
     private var displayScale
@@ -22,18 +21,22 @@ struct SingleItemProductionInitialRecipeSelectionView: View {
     private var recipeSpacing = 16.0
     
     var body: some View {
-        LazyVStack(alignment: .leading, spacing: 16) {
-            ForEach($viewModel.sections) { $section in
-                recipesSection($section)
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 16) {
+                ForEach($viewModel.sections) { $section in
+                    recipesSection($section)
+                }
             }
+            .padding(.top, 8)
+            .padding(.bottom, 16)
         }
-        .padding(.top, 8)
-        .padding(.bottom, 16)
+        .navigationTitle(viewModel.item.localizedName)
+        .navigationBarTitleDisplayMode(.inline)
     }
     
     @MainActor
     @ViewBuilder
-    private func recipesSection(_ _section: Binding<SingleItemProductionInitialRecipeSelectionViewModel.Section>) -> some View {
+    private func recipesSection(_ _section: Binding<InitialRecipeSelectionViewModel.Section>) -> some View {
         let section = _section.wrappedValue
         if !section.recipes.isEmpty {
             LazyVStack(alignment: .leading, spacing: 8, pinnedViews: .sectionHeaders) {
@@ -87,68 +90,32 @@ struct SingleItemProductionInitialRecipeSelectionView: View {
         }
         .padding(.horizontal, 16)
     }
-    
-    @MainActor
-    @ViewBuilder
-    private var alternateIndicatorView: some View {
-        Text("Alternate")
-            .font(.footnote)
-            .fontWeight(.light)
-            .padding(.vertical, 2)
-            .padding(.horizontal, 4)
-            .overlay {
-                AngledRectangle(cornerRadius: 2)
-                    .stroke(lineWidth: 2 / displayScale)
-            }
-            .foregroundStyle(Color("Primary"))
-    }
 }
 
 #if DEBUG
-private enum ItemPreview {
-    case ironIngot
-    case reinforcedIronPlate
-    case water
-    case steelPipe
-    case portableMiner
-    
-    var itemID: String {
-        switch self {
-        case .ironIngot: "part-iron-ingot"
-        case .reinforcedIronPlate: "part-reinforced-iron-plate"
-        case .water: "part-water"
-        case .steelPipe: "part-steel-pipe"
-        case .portableMiner: "equipment-portable-miner"
-        }
-    }
-    
-    var item: (any Item)? {
-        @Dependency(\.storageService)
-        var storageService
-        
-        return switch self {
-        // Parts
-        case .ironIngot, .reinforcedIronPlate, .water, .steelPipe:
-            storageService.item(id: itemID)
-            
-        // Equipment
-        case .portableMiner:
-            storageService.item(id: itemID)
-        }
-    }
-}
+import SHStorage
 
-private struct _ItemRecipesPreview: View {
-    var itemPreview: ItemPreview
+private struct _InitialRecipeSelectionPreview: View {
+    let itemID: String
+    
+    @Dependency(\.storageService)
+    private var storageService
+    
+    private var item: (any Item)? {
+        storageService.item(id: itemID)
+    }
     
     var body: some View {
         NavigationStack {
-            if let item = itemPreview.item {
+            if let item {
                 ScrollView {
-                    SingleItemProductionInitialRecipeSelectionView(viewModel: SingleItemProductionInitialRecipeSelectionViewModel(item: item, onRecipeSelected: { _ in }))
+                    InitialRecipeSelectionView(viewModel: InitialRecipeSelectionViewModel(
+                        item: item,
+                        onRecipeSelected: { _ in }
+                    ))
                 }
             } else {
-                Text("There is no item with ID '\(itemPreview.itemID)'")
+                Text("There is no item with ID '\(itemID)'")
                     .font(.largeTitle)
                     .padding()
             }
@@ -157,22 +124,10 @@ private struct _ItemRecipesPreview: View {
 }
 
 #Preview("Iron Ingot") {
-    _ItemRecipesPreview(itemPreview: .ironIngot)
+    _InitialRecipeSelectionPreview(itemID: "part-iron-ingot")
 }
 
 #Preview("Reinforced Iron Plate") {
-    _ItemRecipesPreview(itemPreview: .reinforcedIronPlate)
-}
-
-#Preview("Water") {
-    _ItemRecipesPreview(itemPreview: .water)
-}
-
-#Preview("Steel Pipe") {
-    _ItemRecipesPreview(itemPreview: .steelPipe)
-}
-
-#Preview("Portable Miner") {
-    _ItemRecipesPreview(itemPreview: .portableMiner)
+    _InitialRecipeSelectionPreview(itemID: "part-reinforced-iron-plate")
 }
 #endif

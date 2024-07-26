@@ -6,11 +6,29 @@ import SHModels
 
 @Observable
 final class NewProductionViewModel {
+    // MARK: Ignored values
     private let parts: [Part]
     private let equipment: [Equipment]
     
+    @ObservationIgnored
     private(set) var pinnedItemIDs: Set<String>
+    
+    @ObservationIgnored
     private(set) var showFICSMAS: Bool
+    
+    @MainActor @ObservationIgnored
+    var searchText = "" {
+        didSet {
+            buildSections()
+        }
+    }
+    
+    // MARK: Dependencies
+    @ObservationIgnored @Dependency(\.storageService)
+    private var storageService
+    
+    @ObservationIgnored @Dependency(\.settingsService)
+    private var settingsService
     
     @MainActor
     var sorting = Sorting.progression {
@@ -18,28 +36,12 @@ final class NewProductionViewModel {
             buildSections()
         }
     }
-    
-    @MainActor
-    var searchText = "" {
-        didSet {
-            buildSections()
-        }
-    }
-    
+    // MARK: Observed values
     @MainActor
     var selectedItemID: String?
     
     @MainActor
     var sections = [Section]()
-    
-    // Dependencies
-    @ObservationIgnored
-    @Dependency(\.storageService)
-    private var storageService
-    
-    @ObservationIgnored
-    @Dependency(\.settingsService)
-    private var settingsService
     
     @MainActor
     init() {
@@ -54,8 +56,35 @@ final class NewProductionViewModel {
         pinnedItemIDs = storageService.pinnedItemIDs
         showFICSMAS = settingsService.showFICSMAS
         
-        buildSections()
+        observeSettingsAndStorage()
         
+        buildSections()
+    }
+    
+    @MainActor
+    func isPinned(_ item: some Item) -> Bool {
+        storageService.isPinned(item)
+    }
+    
+    @MainActor
+    func changePinStatus(for item: some Item) {
+        storageService.changePinStatus(for: item)
+    }
+    
+    @MainActor
+    func productionViewModel(for itemID: String) -> ProductionViewModel {
+        guard let item = storageService.item(id: itemID) else {
+            fatalError("Item with provided itemID '\(itemID)' not found!")
+        }
+        
+        return ProductionViewModel(item: item)
+    }
+}
+
+// MARK: Private
+private extension NewProductionViewModel {
+    @MainActor
+    func observeSettingsAndStorage() {
         Task {
             await withTaskGroup(of: Void.self) { group in
                 group.addTask { @MainActor [weak self] in
@@ -85,28 +114,6 @@ final class NewProductionViewModel {
         }
     }
     
-    @MainActor
-    func isPinned(_ item: some Item) -> Bool {
-        storageService.isPinned(item)
-    }
-    
-    @MainActor
-    func changePinStatus(for item: some Item) {
-        storageService.changePinStatus(for: item)
-    }
-    
-    @MainActor
-    func productionViewModel(for itemID: String) -> ProductionViewModel {
-        guard let item = storageService.item(id: itemID) else {
-            fatalError("Item with provided itemID '\(itemID)' not found!")
-        }
-        
-        return ProductionViewModel(item: item)
-    }
-}
-
-// MARK: Private
-private extension NewProductionViewModel {
     @MainActor
     func buildSections() {
         var newSections = buildCategoriesSections()

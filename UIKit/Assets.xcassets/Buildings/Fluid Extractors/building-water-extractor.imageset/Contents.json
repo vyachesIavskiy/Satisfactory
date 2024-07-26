@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "building-water-extractor.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

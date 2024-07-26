@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "building-nuclear-power-plant.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

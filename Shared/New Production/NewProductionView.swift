@@ -24,8 +24,7 @@ struct NewProductionView: View {
             .navigationTitle("New Production")
             .searchable(text: $viewModel.searchText, prompt: "Search")
             .autocorrectionDisabled()
-            .animation(.default, value: viewModel.pinnedItemIDs)
-            .animation(.default, value: viewModel.showFICSMAS)
+            .animation(.default, value: viewModel.sections)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Menu {
@@ -61,11 +60,13 @@ struct NewProductionView: View {
                 } header: {
                     SHSectionHeader(section.title, expanded: _section.expanded)
                         .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
+                        .padding(.top, 8)
+                        .padding(.bottom, 4)
                         .background(.background)
                 }
             }
             .id(section.id)
+            .tag(section.id)
         }
     }
     
@@ -85,6 +86,7 @@ struct NewProductionView: View {
             }
         }
         .id(item.id)
+        .tag(item.id)
         .matchedGeometryEffect(id: item.id, in: namespace)
     }
 }

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Pillar Base.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

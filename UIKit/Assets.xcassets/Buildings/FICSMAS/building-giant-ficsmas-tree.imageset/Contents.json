@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "building-giant-ficsmas-tree.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

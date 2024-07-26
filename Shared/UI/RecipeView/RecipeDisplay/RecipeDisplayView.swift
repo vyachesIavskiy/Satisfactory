@@ -20,11 +20,13 @@ struct RecipeDisplayView: View {
     private var namespace
     
     var body: some View {
+        let backgroundShape = AngledRectangle(cornerRadius: 8).inset(by: -4)
+        
         recipeBody
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.background, in: AngledRectangle(cornerRadius: 8).inset(by: -4))
+            .background(.background, in: backgroundShape)
             .contentShape(.interaction, Rectangle())
-            .contentShape(.contextMenuPreview, AngledRectangle(cornerRadius: 8).inset(by: -4))
+            .contentShape(.contextMenuPreview, backgroundShape)
     }
     
     @MainActor @ViewBuilder
@@ -60,6 +62,7 @@ struct RecipeDisplayView: View {
                 }
             }
         }
+        .padding(4)
     }
     
     @MainActor @ViewBuilder
@@ -123,14 +126,14 @@ private struct _RecipeDisplayViewPreview: View {
     
     private var recipes: [Recipe] {
         [
-            storageService.recipe(for: "recipe-iron-ingot"),
-            storageService.recipe(for: "recipe-reinforced-iron-plate"),
-            storageService.recipe(for: "recipe-crystal-oscillator"),
-            storageService.recipe(for: "recipe-plastic"),
-            storageService.recipe(for: "recipe-diluted-fuel"),
-            storageService.recipe(for: "recipe-non-fissile-uranium"),
-            storageService.recipe(for: "recipe-alternate-heavy-oil-residue"),
-            storageService.recipe(for: "recipe-smart-plating")
+            storageService.recipe(id: "recipe-iron-ingot"),
+            storageService.recipe(id: "recipe-reinforced-iron-plate"),
+            storageService.recipe(id: "recipe-crystal-oscillator"),
+            storageService.recipe(id: "recipe-plastic"),
+            storageService.recipe(id: "recipe-diluted-fuel"),
+            storageService.recipe(id: "recipe-non-fissile-uranium"),
+            storageService.recipe(id: "recipe-alternate-heavy-oil-residue"),
+            storageService.recipe(id: "recipe-smart-plating")
         ].compactMap { $0 }
     }
     

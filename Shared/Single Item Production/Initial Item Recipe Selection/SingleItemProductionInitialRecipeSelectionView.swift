@@ -22,9 +22,13 @@ struct SingleItemProductionInitialRecipeSelectionView: View {
     private var recipeSpacing = 16.0
     
     var body: some View {
-        ForEach($viewModel.sections) { $section in
-            recipesSection($section)
+        LazyVStack(alignment: .leading, spacing: 16) {
+            ForEach($viewModel.sections) { $section in
+                recipesSection($section)
+            }
         }
+        .padding(.top, 8)
+        .padding(.bottom, 16)
     }
     
     @MainActor
@@ -32,17 +36,29 @@ struct SingleItemProductionInitialRecipeSelectionView: View {
     private func recipesSection(_ _section: Binding<SingleItemProductionInitialRecipeSelectionViewModel.Section>) -> some View {
         let section = _section.wrappedValue
         if !section.recipes.isEmpty {
-            Section(isExpanded: _section.expanded) {
-                ForEach(section.recipes) { recipe in
-                    recipeView(recipe)
+            LazyVStack(alignment: .leading, spacing: 8, pinnedViews: .sectionHeaders) {
+                Section(isExpanded: _section.expanded) {
+                    ForEach(Array(section.recipes.enumerated()), id: \.element.id) { index, recipe in
+                        VStack {
+                            recipeView(recipe)
+                            
+                            if index != section.recipes.count - 1 {
+                                Divider()
+                                    .padding(.leading, 16)
+                            }
+                        }
+                        .padding(.vertical, 8)
                         .disabled(!section.expanded)
-                }
-            } header: {
-                if viewModel.sectionHeaderVisible(section) {
-                    SHSectionHeader(section.title, expanded: _section.expanded)
+                    }
+                } header: {
+                    if viewModel.sectionHeaderVisible(section) {
+                        SHSectionHeader(section.title, expanded: _section.expanded)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(.background)
+                    }
                 }
             }
-            .listSectionSeparator(.hidden)
         }
     }
     
@@ -69,6 +85,7 @@ struct SingleItemProductionInitialRecipeSelectionView: View {
                 }
             }
         }
+        .padding(.horizontal, 16)
     }
     
     @MainActor
@@ -112,11 +129,11 @@ private enum ItemPreview {
         return switch self {
         // Parts
         case .ironIngot, .reinforcedIronPlate, .water, .steelPipe:
-            storageService.item(withID: itemID)
+            storageService.item(id: itemID)
             
         // Equipment
         case .portableMiner:
-            storageService.item(withID: itemID)
+            storageService.item(id: itemID)
         }
     }
 }
@@ -127,10 +144,9 @@ private struct _ItemRecipesPreview: View {
     var body: some View {
         NavigationStack {
             if let item = itemPreview.item {
-                List {
+                ScrollView {
                     SingleItemProductionInitialRecipeSelectionView(viewModel: SingleItemProductionInitialRecipeSelectionViewModel(item: item, onRecipeSelected: { _ in }))
                 }
-                .listStyle(.plain)
             } else {
                 Text("There is no item with ID '\(itemPreview.itemID)'")
                     .font(.largeTitle)

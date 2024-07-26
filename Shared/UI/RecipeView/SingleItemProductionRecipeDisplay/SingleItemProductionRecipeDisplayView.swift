@@ -87,14 +87,14 @@ private struct _SingleItemProductionRecipeDisplayPreview: View {
     
     var recipes: [Recipe] {
         [
-            storageService.recipe(for: "recipe-iron-ingot"),
-            storageService.recipe(for: "recipe-iron-ingot"),
-            storageService.recipe(for: "recipe-reinforced-iron-plate"),
-            storageService.recipe(for: "recipe-crystal-oscillator"),
-            storageService.recipe(for: "recipe-plastic"),
-            storageService.recipe(for: "recipe-diluted-fuel"),
-            storageService.recipe(for: "recipe-non-fissile-uranium"),
-            storageService.recipe(for: "recipe-alternate-heavy-oil-residue")
+            storageService.recipe(id: "recipe-iron-ingot"),
+            storageService.recipe(id: "recipe-iron-ingot"),
+            storageService.recipe(id: "recipe-reinforced-iron-plate"),
+            storageService.recipe(id: "recipe-crystal-oscillator"),
+            storageService.recipe(id: "recipe-plastic"),
+            storageService.recipe(id: "recipe-diluted-fuel"),
+            storageService.recipe(id: "recipe-non-fissile-uranium"),
+            storageService.recipe(id: "recipe-alternate-heavy-oil-residue")
         ].compactMap { $0 }
     }
     

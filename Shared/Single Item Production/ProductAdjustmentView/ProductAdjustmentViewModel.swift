@@ -23,11 +23,13 @@ final class ProductAdjustmentViewModel: Identifiable {
         @Dependency(\.storageService)
         var storageService
         
-        return storageService.recipes(for: product.item, as: [.output, .byproduct]).count != production.output.products.first?.recipes.count
+        let storedRecipes = storageService.recipes(for: product.item, as: [.output, .byproduct])
+        let selectedRecipes = production.outputRecipes(for: product.item)
+        return storedRecipes.count != selectedRecipes.count
     }
     
     var selectedRecipes: [SHSingleItemProduction.OutputRecipe] {
-        production.output.products.first?.recipes ?? []
+        production.outputRecipes(for: product.item)
     }
     
     init(
@@ -99,7 +101,7 @@ final class ProductAdjustmentViewModel: Identifiable {
     var unselectedItemRecipesViewModel: SingleItemProductionInitialRecipeSelectionViewModel {
         SingleItemProductionInitialRecipeSelectionViewModel(
             item: product.item,
-            filterOutRecipeIDs: production.output.products.first?.recipes.map(\.recipe.id) ?? [],
+            filterOutRecipeIDs: production.outputRecipes(for: product.item).map(\.recipe.id),
             onRecipeSelected: addRecipe
         )
     }

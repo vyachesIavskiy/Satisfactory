@@ -71,9 +71,10 @@ struct SHSectionHeader: View {
             }
         } label: {
             Text(title)
-                .font(.callout.lowercaseSmallCaps())
-                .fontWeight(.bold)
-                .foregroundStyle(.sh(expanded ? .midnight30 : .midnight))
+                .textCase(nil)
+                .font(.callout)
+                .fontWeight(.semibold)
+                .foregroundStyle(.sh(expanded ? .gray : .midnight))
         }
         .buttonStyle(ButtonStyle(expanded))
     }

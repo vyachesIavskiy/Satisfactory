@@ -44,7 +44,7 @@ public extension SHStorageService {
     /// Fetch an item (part or equipment) with a provided ID.
     /// - Parameter id: An ID for an item.
     /// - Returns: An item with a provided ID or `nil` if there is no item with a provided ID.
-    func item(withID id: String) -> (any Item)? {
+    func item(id: String) -> (any Item)? {
         let items: [any Item] = parts() + equipment()
         return items.first { $0.id == id }
     }
@@ -69,7 +69,7 @@ public extension SHStorageService {
     /// Fetch a recipe with a provided ID.
     /// - Parameter id: An ID for an recipe.
     /// - Returns: A recipe with a provided ID or `nil` if there is no recipe with a provided ID.
-    func recipe(for id: String) -> Recipe? {
+    func recipe(id: String) -> Recipe? {
         recipes().first(id: id)
     }
     

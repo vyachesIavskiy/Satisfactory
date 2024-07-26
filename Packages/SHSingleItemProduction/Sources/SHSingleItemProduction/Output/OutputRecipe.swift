@@ -4,14 +4,14 @@ import SHModels
 extension SHSingleItemProduction {
     public struct OutputRecipe: Identifiable, Equatable {
         public let id = UUID()
-        public let recipe: SHModels.Recipe
+        public let recipe: Recipe
         public var output: OutputIngredient
         public var byproducts: [OutputIngredient]
         public var inputs: [InputIngredient]
         public var proportion: SHProductionProportion
         
         public init(
-            recipe: SHModels.Recipe,
+            recipe: Recipe,
             output: OutputIngredient,
             byproducts: [OutputIngredient],
             inputs: [InputIngredient],

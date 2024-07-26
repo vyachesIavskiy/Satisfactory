@@ -60,7 +60,7 @@ private struct _ProductionNewProductRecipeSelectionPreview: View {
         @Dependency(\.storageService)
         var storageService
         
-        return storageService.item(withID: itemID)!
+        return storageService.item(id: itemID)!
     }
     
     var body: some View {

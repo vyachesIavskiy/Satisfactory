@@ -13,7 +13,7 @@ extension SHSingleItemProduction {
             self.producers = producers
         }
         
-        public init(item: any Item, producer: SHModels.Recipe, consumer: SHModels.Recipe) {
+        public init(item: any Item, producer: Recipe, consumer: Recipe) {
             self.init(item: item, producers: [Producer(producer, consumer: consumer)])
         }
     }

@@ -21,12 +21,12 @@ struct ProductionView: View {
     
     var body: some View {
         ZStack {
-            List {
+            ScrollView {
                 switch viewModel.step {
-                case .selectingInitialRecipe:
-                    SingleItemProductionInitialRecipeSelectionView(viewModel: SingleItemProductionInitialRecipeSelectionViewModel(item: viewModel.item, onRecipeSelected: viewModel.addInitialRecipe))
+                case .initialRecipe:
+                    SingleItemProductionInitialRecipeSelectionView(viewModel: viewModel.initialRecipeSelectionViewModel())
                     
-                case .production:
+                default:
                     productionList
                         .sheet(item: $viewModel.selectedNewItemID) { itemID in
                             ProductionNewProductRecipeSelectionView(viewModel: viewModel.addInitialRecipeViewModel(for: itemID))
@@ -37,14 +37,14 @@ struct ProductionView: View {
                 }
             }
             .listStyle(.plain)
-            .safeAreaInset(edge: .top) {
+            .safeAreaInset(edge: .top, spacing: 0) {
                 Rectangle()
                     .foregroundStyle(.sh(.midnight))
                     .frame(height: 1 / displayScale)
                     .background(.background, ignoresSafeAreaEdges: .top)
             }
             .safeAreaInset(edge: .bottom) {
-                if viewModel.step != .selectingInitialRecipe {
+                if viewModel.step != .initialRecipe {
                     HStack {
                         Text("Amount")
                         
@@ -86,25 +86,36 @@ struct ProductionView: View {
                             .foregroundStyle(.sh(.midnight))
                             .frame(height: 1 / displayScale)
                     }
+                    .background(.background)
                 }
             }
             .toolbar {
                 if viewModel.step == .production {
                     ToolbarItem(placement: .cancellationAction) {
-                        Button("Close", systemImage: "xmark.square") {
+                        Button {
                             if viewModel.hasUnsavedChanges {
                                 viewModel.showUnsavedAlert = true
                             } else {
                                 dismiss()
                             }
+                        } label: {
+                            HStack(spacing: 4) {
+                                Image(systemName: "chevron.backward")
+                                    .fontWeight(.semibold)
+                                
+                                Text("Back")
+                            }
+                            .offset(x: -8)
                         }
                     }
                 }
                 
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Save", systemImage: "square.and.arrow.down") {
+                if viewModel.hasUnsavedChanges {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button("Save", systemImage: "square.and.arrow.down") {
+                            viewModel.saveProduction()
+                        }
                     }
-                    .disabled(true)
                 }
             }
             .toolbarBackground(.hidden, for: .navigationBar)
@@ -116,72 +127,16 @@ struct ProductionView: View {
             
             // Alerts
             if viewModel.showUnsavedAlert {
-                LinearGradient(
-                    colors: [.black.opacity(0.6), .black.opacity(0.4), .clear],
-                    startPoint: .bottom,
-                    endPoint: .top
-                )
-                .opacity(0.5)
-                .ignoresSafeArea()
-                .transition(.opacity.animation(.default.speed(0.75)))
-                .contentShape(Rectangle())
-                .zIndex(1)
-                .onTapGesture {
+                UnsavedChangesAlert {
                     viewModel.showUnsavedAlert = false
+                } onSaveAndExit: {
+                    viewModel.showUnsavedAlert = false
+                    viewModel.saveProduction()
+                    dismiss()
+                } onExit: {
+                    viewModel.showUnsavedAlert = false
+                    dismiss()
                 }
-                
-                VStack {
-                    Button("Cancel") {
-                        viewModel.showUnsavedAlert = false
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, 4)
-                    
-                    Text("You have unsaved changes")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Text("If you close production now, all unsaved changes will be lost. Would you like to save those changes?")
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity)
-                        .multilineTextAlignment(.center)
-                        .padding(.vertical)
-                    
-                    HStack(spacing: 24) {
-                        Button {
-                            viewModel.showUnsavedAlert = false
-                            dismiss()
-                        } label: {
-                            Text("Close")
-                                .frame(maxWidth: .infinity)
-                        }
-                        .buttonStyle(.shTinted)
-                        .tint(.sh(.red))
-                        
-                        Button {
-                            viewModel.showUnsavedAlert = false
-                            viewModel.saveProduction()
-                            dismiss()
-                        } label: {
-                            Text("Save and close")
-                                .fontWeight(.bold)
-                                .frame(maxWidth: .infinity)
-                        }
-                        .buttonStyle(.shTinted)
-                    }
-                    .padding(.top)
-                }
-                .padding(24)
-                .background(
-                    .background.shadow(.drop(color: .sh(.midnight100), radius: 2)),
-                    in: RoundedRectangle(cornerRadius: 24, style: .continuous)
-                )
-                .padding(8)
-                .frame(maxHeight: .infinity, alignment: .bottom)
-                .padding(.bottom, 16)
-                .transition(.move(edge: .bottom))
-                .zIndex(2)
             }
         }
         .animation(.default, value: viewModel.showUnsavedAlert)
@@ -207,9 +162,8 @@ struct ProductionView: View {
                 ProductView(viewModel: productViewModel, namespace: namespace)
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.top, 12)
-        .padding(.bottom, 36)
+        .padding(.top, 8)
+        .padding(.bottom, 16)
     }
 }
 
@@ -223,7 +177,7 @@ private struct _ProductionPreview: View {
         @Dependency(\.storageService)
         var storageService
         
-        return storageService.item(withID: itemID)!
+        return storageService.item(id: itemID)!
     }
     
     var body: some View {

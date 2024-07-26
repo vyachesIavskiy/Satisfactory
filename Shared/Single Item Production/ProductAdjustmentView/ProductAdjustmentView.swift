@@ -116,7 +116,7 @@ private struct _ProductAdjustmentPreview: View {
     var storageService
     
     private var item: any Item {
-        storageService.item(withID: itemID)!
+        storageService.item(id: itemID)!
     }
     
     private var recipes: [Recipe] {

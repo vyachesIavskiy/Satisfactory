@@ -55,6 +55,7 @@ struct SingleItemProductionRecipeSelectView: View {
         outputViewBuilder(output: viewModel.recipe.output) { outputViewModel in
             RecipeIngredientView(viewModel: outputViewModel)
         }
+        .buttonStyle(.shIngredient)
     }
     
     @MainActor @ViewBuilder
@@ -63,6 +64,7 @@ struct SingleItemProductionRecipeSelectView: View {
             byproductViewBuilder(byproduct: byproduct) { byproductViewModel in
                 RecipeIngredientView(viewModel: byproductViewModel)
             }
+            .buttonStyle(.shIngredient)
         }
     }
     
@@ -72,6 +74,7 @@ struct SingleItemProductionRecipeSelectView: View {
             inputViewBuilder(input: input) { inputViewModel in
                 RecipeIngredientView(viewModel: inputViewModel)
             }
+            .buttonStyle(.shIngredient)
         }
     }
     
@@ -180,6 +183,7 @@ struct SingleItemProductionRecipeSelectView: View {
                 } label: {
                     inputView
                 }
+                .menuStyle(.button)
                 .disabled(viewModel.ingredientDisabled(input))
             }
         } else if canSelectRecipe {
@@ -194,6 +198,23 @@ struct SingleItemProductionRecipeSelectView: View {
                 .grayscale(viewModel.ingredientDisabled(input) ? 1.0 : 0.0)
         }
     }
+}
+
+struct RecipeIngredientButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled)
+    private var isEnabled
+    
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.825 : 1.0)
+            .opacity(configuration.isPressed ? 0.65 : 1.0)
+            .grayscale(isEnabled ? 0.0 : 1.0)
+            .animation(.default, value: configuration.isPressed)
+    }
+}
+
+extension ButtonStyle where Self == RecipeIngredientButtonStyle {
+    static var shIngredient: Self { RecipeIngredientButtonStyle() }
 }
 
 #if DEBUG
@@ -212,13 +233,13 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
     
     var recipes: [Recipe] {
         [
-            storageService.recipe(for: "recipe-iron-ingot"),
-            storageService.recipe(for: "recipe-reinforced-iron-plate"),
-            storageService.recipe(for: "recipe-crystal-oscillator"),
-            storageService.recipe(for: "recipe-plastic"),
-            storageService.recipe(for: "recipe-diluted-fuel"),
-            storageService.recipe(for: "recipe-non-fissile-uranium"),
-            storageService.recipe(for: "recipe-alternate-heavy-oil-residue")
+            storageService.recipe(id: "recipe-iron-ingot"),
+            storageService.recipe(id: "recipe-reinforced-iron-plate"),
+            storageService.recipe(id: "recipe-crystal-oscillator"),
+            storageService.recipe(id: "recipe-plastic"),
+            storageService.recipe(id: "recipe-diluted-fuel"),
+            storageService.recipe(id: "recipe-non-fissile-uranium"),
+            storageService.recipe(id: "recipe-alternate-heavy-oil-residue")
         ].compactMap { $0 }
     }
     

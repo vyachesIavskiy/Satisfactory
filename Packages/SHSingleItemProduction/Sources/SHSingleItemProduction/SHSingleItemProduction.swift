@@ -5,7 +5,7 @@ import SHUtils
 
 public final class SHSingleItemProduction {
     private var input: Input
-    public private(set) var output: Output
+    private(set) var output: Output
     
     public var item: any Item {
         input.finalItem
@@ -16,13 +16,17 @@ public final class SHSingleItemProduction {
         set { input.amount = newValue }
     }
     
+    public var outputItems: [OutputItem] {
+        output.outputItems
+    }
+    
     private var rootNodes = [Node]()
     private var internalState = InternalState()
     private var balancingState = BalancingState.unchecked
     
     public init(item: any Item) {
         input = Input(finalItem: item, amount: 1.0)
-        output = Output(products: [], unselectedItems: [item], hasByproducts: false)
+        output = Output(outputItems: [], unselectedItems: [item], hasByproducts: false)
     }
     
     // MARK: - Input
@@ -67,12 +71,22 @@ public final class SHSingleItemProduction {
         set { input.inputItems[index] = newValue }
     }
     
-    public func inputContains(_ item: some Item) -> Bool {
+    public func inputItemsContains(where predicate: (_ inputItem: InputItem) throws -> Bool) rethrows -> Bool {
+        try input.inputItems.contains(where: predicate)
+    }
+    
+    public func inputItemsContains(item: some Item) -> Bool {
         input.inputItems.contains(item)
     }
     
-    public func inputContains(where predicate: (_ item: InputItem) throws -> Bool) rethrows -> Bool {
-        try input.inputItems.contains(where: predicate)
+    public func inputRecipesContains(where predicate: (_ inputRecipe: InputRecipe) throws -> Bool) rethrows -> Bool {
+        try inputItemsContains { item in
+            try item.recipes.contains(where: predicate)
+        }
+    }
+    
+    public func inputRecipesContains(recipe: Recipe) -> Bool {
+        inputRecipesContains { $0.id == recipe.id }
     }
     
     public func iterateInputItems(_ handler: (_ offset: Int, _ inputItem: InputItem) -> Void) {
@@ -97,7 +111,7 @@ public final class SHSingleItemProduction {
     }
     
     // Byproducts
-    public func addByproduct(_ item: any Item, producer: SHModels.Recipe, consumer: SHModels.Recipe) {
+    public func addByproduct(_ item: any Item, producer: Recipe, consumer: Recipe) {
         input.addByproduct(item, producer: producer, consumer: consumer)
     }
     
@@ -111,6 +125,33 @@ public final class SHSingleItemProduction {
     
     public func removeConsumer(_ recipe: Recipe, for byproduct: any Item) {
         input.removeConsumer(recipe, for: byproduct)
+    }
+    
+    // Output
+    public func outputItem(for item: any Item) -> OutputItem? {
+        output.outputItems.first { $0.item.id == item.id }
+    }
+    
+    public func outputRecipes(for item: any Item) -> [OutputRecipe] {
+        output.outputItems.first { $0.item.id == item.id }.map(\.recipes) ?? []
+    }
+    
+    public func outputItemsContains(where predicate: (_ outputItem: OutputItem) throws -> Bool) rethrows -> Bool {
+        try output.outputItems.contains(where: predicate)
+    }
+    
+    public func outputItemsContains(item: any Item) -> Bool {
+        outputItemsContains { $0.item.id == item.id }
+    }
+    
+    public func outputRecipesContains(where predicate: (_ outputRecipe: OutputRecipe) throws -> Bool) rethrows -> Bool {
+        try outputItemsContains { outputItem in
+            try outputItem.recipes.contains(where: predicate)
+        }
+    }
+    
+    public func outputRecipesContains(recipe: Recipe) -> Bool {
+        outputRecipesContains { $0.recipe.id == recipe.id }
     }
     
     /// Triggers production recalculation. Output will be populated after calling this function.
@@ -488,7 +529,7 @@ private extension SHSingleItemProduction {
     func buildOutput() {
         var nodes = rootNodes
         var unselectedItems = [any Item]()
-        var products = [OutputItem]()
+        var outputItems = [OutputItem]()
         var ingredientConverter = IngredientConverter()
         
         func isSelected(_ input: Node.Input, node: Node) -> Bool {
@@ -505,11 +546,11 @@ private extension SHSingleItemProduction {
         while !nodes.isEmpty {
             for node in nodes {
                 // If there is already an product in output.
-                if let productIndex = products.firstIndex(where: { $0.item.id == node.output.item.id }) {
+                if let productIndex = outputItems.firstIndex(where: { $0.item.id == node.output.item.id }) {
                     // And if there is already a recipe for a product in output.
-                    if let recipeIndex = products[productIndex].recipes.firstIndex(where: { $0.recipe.id == node.recipe.id }) {
+                    if let recipeIndex = outputItems[productIndex].recipes.firstIndex(where: { $0.recipe.id == node.recipe.id }) {
                         // Accumulate saved values with new values.
-                        var recipe = products[productIndex].recipes[recipeIndex]
+                        var recipe = outputItems[productIndex].recipes[recipeIndex]
                         recipe.output.amount += node.output.amount
                         recipe.output.byproducts.merge(with: node.output.asByproduct.consumers.map {
                             ingredientConverter.byproductConverter.convert(producingRecipeID: node.recipe.id, outputConsumer: $0)
@@ -523,17 +564,17 @@ private extension SHSingleItemProduction {
                                 isSelected: isSelected(input, node: node)
                             )
                         })
-                        products[productIndex].recipes[recipeIndex] = recipe
+                        outputItems[productIndex].recipes[recipeIndex] = recipe
                     } else {
                         // If a recipe is new, add this to output product.
                         let proportion = input
                             .inputItems
-                            .first(item: products[productIndex].item)?
+                            .first(item: outputItems[productIndex].item)?
                             .recipes
                             .first(where: { $0.recipe == node.recipe })?
                             .proportion ?? .auto
                         
-                        products[productIndex].recipes.append(
+                        outputItems[productIndex].recipes.append(
                             OutputRecipe(
                                 recipe: node.recipe,
                                 output: ingredientConverter.convert(producingRecipeID: node.recipe.id, output: node.output),
@@ -574,17 +615,17 @@ private extension SHSingleItemProduction {
                     )
                     
                     // Populate producingProductID field for inputs with a newly created product
-                    for productIndex in products.indices {
-                        for (recipeIndex, recipe) in products[productIndex].recipes.enumerated() {
+                    for productIndex in outputItems.indices {
+                        for (recipeIndex, recipe) in outputItems[productIndex].recipes.enumerated() {
                             for (inputIndex, input) in recipe.inputs.enumerated() {
                                 if input.item.id == product.item.id {
-                                    products[productIndex].recipes[recipeIndex].inputs[inputIndex].producingProductID = product.id
+                                    outputItems[productIndex].recipes[recipeIndex].inputs[inputIndex].producingProductID = product.id
                                 }
                             }
                         }
                     }
                     
-                    products.append(product)
+                    outputItems.append(product)
                 }
                 
                 for input in node.inputs {
@@ -607,7 +648,7 @@ private extension SHSingleItemProduction {
             nodes = nodes.flatMap(\.inputNodes)
         }
         
-        output = Output(products: products, unselectedItems: unselectedItems, hasByproducts: !internalState.byproducts.isEmpty)
+        output = Output(outputItems: outputItems, unselectedItems: unselectedItems, hasByproducts: !internalState.byproducts.isEmpty)
     }
 }
 

@@ -97,7 +97,7 @@ final class NewProductionViewModel {
     
     @MainActor
     func productionViewModel(for itemID: String) -> ProductionViewModel {
-        guard let item = storageService.item(withID: itemID) else {
+        guard let item = storageService.item(id: itemID) else {
             fatalError("Item with provided itemID '\(itemID)' not found!")
         }
         
@@ -109,11 +109,16 @@ final class NewProductionViewModel {
 private extension NewProductionViewModel {
     @MainActor
     func buildSections() {
-        let newSections = buildCategoriesSections()
+        var newSections = buildCategoriesSections()
         
         if sections.isEmpty {
             sections = newSections
         } else {
+            for (index, newSection) in newSections.enumerated() {
+                let expanded = sections.first { $0.id == newSection.id }?.expanded ?? true
+                newSections[index].expanded = expanded
+            }
+            
             withAnimation {
                 self.sections = newSections
             }

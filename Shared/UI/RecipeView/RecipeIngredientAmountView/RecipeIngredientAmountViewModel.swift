@@ -116,24 +116,40 @@ final class RecipeIngredientAmountViewModel {
         let foregroundStyle: AnyShapeStyle
         let primaryColor: Color
         let shadowColor: Color
+        let part = (input.item as? Part)
+        let isNaturalResource = part?.isNaturalResource == true
         
-        switch (input.item as? Part)?.form {
+        switch part?.form {
         case .solid, nil:
-            primaryColor = .sh(.orange)
-            shadowColor = .sh(.orange30)
+            if isNaturalResource {
+                primaryColor = .sh(.orange80)
+                shadowColor = .sh(.orange20)
+            } else {
+                primaryColor = .sh(.orange)
+                shadowColor = .sh(.orange30)
+            }
             
             if input.isSelected {
                 foregroundStyle = AnyShapeStyle(.sh(.orange30).gradient)
+            } else if isNaturalResource {
+                foregroundStyle = AnyShapeStyle(.sh(.orange10).gradient)
             } else {
                 foregroundStyle = AnyShapeStyle(.background)
             }
             
         case .fluid, .gas:
-            primaryColor = .sh(.cyan)
-            shadowColor = .sh(.cyan30)
+            if isNaturalResource {
+                primaryColor = .sh(.gray80)
+                shadowColor = .sh(.gray20)
+            } else {
+                primaryColor = .sh(.cyan)
+                shadowColor = .sh(.cyan30)
+            }
             
             if input.isSelected {
                 foregroundStyle = AnyShapeStyle(.sh(.cyan30).gradient)
+            } else if isNaturalResource {
+                foregroundStyle = AnyShapeStyle(.sh(.cyan10).gradient)
             } else {
                 foregroundStyle = AnyShapeStyle(.background)
             }

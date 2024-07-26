@@ -38,7 +38,23 @@ struct SettingsView: View {
     @MainActor @ViewBuilder
     private var recipeSection: some View {
         Section("Recipes") {
-            Toggle("Show recipe ingredient names", isOn: $viewModel.settings.showIngredientNames)
+            ZStack {
+                let recipeViewModel = RecipeDisplayViewModel(recipe: viewModel.recipe)
+                
+                RecipeDisplayView(viewModel: recipeViewModel)
+                    .showIngredientNames(true)
+                    .hidden()
+                
+                RecipeDisplayView(viewModel: recipeViewModel)
+            }
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Toggle("Show recipe ingredient names", isOn: $viewModel.settings.showIngredientNames)
+                
+                Text("If it is difficult for you to distinguish recipe ingredients only by it's icon, you can enable this setting to also see recipe ingredient names.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
             
             Toggle("Auto-select single recipe", isOn: $viewModel.settings.autoSelectSingleRecipe)
             

@@ -12,6 +12,11 @@ extension SHSingleItemProduction {
         /// This can be also used to calculate final product.
         public var proportion: SHProductionProportion
         
+        public init(recipe: Recipe, proportion: SHProductionProportion) {
+            self.recipe = recipe
+            self.proportion = proportion
+        }
+        
         public subscript<Member>(dynamicMember keyPath: KeyPath<Recipe, Member>) -> Member {
             recipe[keyPath: keyPath]
         }

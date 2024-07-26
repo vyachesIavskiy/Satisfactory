@@ -31,7 +31,7 @@ final class ProductViewModel: Identifiable {
     }
     
     @MainActor
-    func viewModel(for recipe: SHSingleItemProduction.OutputRecipe) -> SingleItemProductionRecipeSelectViewModel {
+    func outputRecipeViewModel(for recipe: SHSingleItemProduction.OutputRecipe) -> SingleItemProductionRecipeSelectViewModel {
         SingleItemProductionRecipeSelectViewModel(
             product: product,
             recipe: recipe,

@@ -37,7 +37,7 @@ extension NewProductionView {
             min(titleSpacing, 32)
         }
         
-        private var backgroundShape: AnyShape {
+        private var backgroundIconShape: AnyShape {
             switch (item as? Part)?.form {
             case .solid, nil:
                 AnyShape(AngledRectangle(cornerRadius: resolvedCornerRadius).inset(by: 1 / displayScale))
@@ -48,6 +48,10 @@ extension NewProductionView {
                     topTrailingRadius: resolvedCornerRadius * 2
                 ).inset(by: 1 / displayScale))
             }
+        }
+        
+        private var backgroundShape: some Shape {
+            AngledRectangle(cornerRadius: 8).inset(by: -6)
         }
         
         init(_ item: any Item) {
@@ -61,7 +65,7 @@ extension NewProductionView {
                     .frame(width: resolvedImageSize, height: resolvedImageSize)
                     .padding(resolvedPaddingSize)
                     .background {
-                        backgroundShape
+                        backgroundIconShape
                             .fill(.sh(.midnight10))
                             .stroke(.sh(.midnight30), lineWidth: 2 / displayScale)
                     }
@@ -86,6 +90,9 @@ extension NewProductionView {
                     .frame(maxHeight: .infinity, alignment: .bottom)
                 }
             }
+            .background(.background, in: backgroundShape)
+            .contentShape(.interaction, Rectangle())
+            .contentShape(.contextMenuPreview, backgroundShape)
             .fixedSize(horizontal: false, vertical: true)
             .contentShape(.interaction, Rectangle())
         }
@@ -101,29 +108,28 @@ private struct _ItemRowPreview: View {
     
     var items: [any Item] {
         [
-            storageService.item(withID: "part-iron-ore"),
-            storageService.item(withID: "part-iron-ingot"),
-            storageService.item(withID: "part-iron-plate"),
-            storageService.item(withID: "part-heavy-modular-frame"),
-            storageService.item(withID: "part-water"),
-            storageService.item(withID: "part-nitrogen-gas"),
-            storageService.item(withID: "part-packaged-oil")
+            storageService.item(id: "part-iron-ore"),
+            storageService.item(id: "part-iron-ingot"),
+            storageService.item(id: "part-iron-plate"),
+            storageService.item(id: "part-heavy-modular-frame"),
+            storageService.item(id: "part-water"),
+            storageService.item(id: "part-nitrogen-gas"),
+            storageService.item(id: "part-packaged-oil")
         ].compactMap { $0 }
     }
     
     var body: some View {
-        List {
+        ScrollView {
             ForEach(items, id: \.id) { item in
                 NewProductionView.ItemRow(item)
-                    .listRowSeparator(.hidden)
                     .contextMenu {
                         Button("Preview") {
                             
                         }
                     }
             }
+            .padding(.horizontal, 16)
         }
-        .listStyle(.plain)
     }
 }
 

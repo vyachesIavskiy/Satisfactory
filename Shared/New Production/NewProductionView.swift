@@ -14,12 +14,13 @@ struct NewProductionView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach($viewModel.sections) { $section in
-                    itemsSection($section)
+            ScrollView {
+                LazyVStack(spacing: 16) {
+                    ForEach($viewModel.sections) { $section in
+                        itemsSection($section)
+                    }
                 }
             }
-            .listStyle(.plain)
             .navigationTitle("New Production")
             .searchable(text: $viewModel.searchText, prompt: "Search")
             .autocorrectionDisabled()
@@ -50,15 +51,21 @@ struct NewProductionView: View {
     private func itemsSection(_ _section: Binding<NewProductionViewModel.Section>) -> some View {
         let section = _section.wrappedValue
         if !section.items.isEmpty {
-            Section(isExpanded: _section.expanded) {
-                ForEach(section.items, id: \.id) { item in
-                    itemRow(item)
-                        .disabled(!section.expanded)
-                        .listRowSeparator(.hidden)
+            LazyVStack(spacing: 12, pinnedViews: .sectionHeaders) {
+                Section(isExpanded: _section.expanded) {
+                    ForEach(section.items, id: \.id) { item in
+                        itemRow(item)
+                            .padding(.horizontal, 16)
+                            .disabled(!section.expanded)
+                    }
+                } header: {
+                    SHSectionHeader(section.title, expanded: _section.expanded)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .background(.background)
                 }
-            } header: {
-                SHSectionHeader(section.title, expanded: _section.expanded)
             }
+            .id(section.id)
         }
     }
     
@@ -77,6 +84,8 @@ struct NewProductionView: View {
                 Text(viewModel.isPinned(item) ? "Unpin" : "Pin")
             }
         }
+        .id(item.id)
+        .matchedGeometryEffect(id: item.id, in: namespace)
     }
 }
 

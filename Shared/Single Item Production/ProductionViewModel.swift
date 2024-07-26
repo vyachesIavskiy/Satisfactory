@@ -5,6 +5,7 @@ import SHSingleItemProduction
 
 enum SingleProductionAction {
     case adjust(SHSingleItemProduction.OutputItem)
+    case removeItem(any Item)
     case selectRecipeForInput(SHSingleItemProduction.OutputRecipe.InputIngredient)
     case selectByproductProducer(
         product: SHSingleItemProduction.OutputItem,
@@ -36,7 +37,6 @@ final class ProductionViewModel {
         case saved
     }
     
-    @ObservationIgnored
     private var production: SHSingleItemProduction
     
     @ObservationIgnored @Dependency(\.storageService)
@@ -49,6 +49,9 @@ final class ProductionViewModel {
     var selectedNewItemID: String?
     var selectedByproduct: ByproductSelection?
     var showUnsavedAlert = false
+    
+    @ObservationIgnored
+    private var explicitlyDeletedItemIDs = Set<String>()
     
     var item: any Item {
         production.item
@@ -86,7 +89,9 @@ final class ProductionViewModel {
     
     @MainActor
     func update() {
-        production.update()
+        _$observationRegistrar.withMutation(of: self, keyPath: \.production) {
+            production.update()
+        }
     }
 
     func unselectedRecipes(for item: some Item) -> [Recipe] {
@@ -134,7 +139,10 @@ final class ProductionViewModel {
                 let inputItems = recipe.inputs.map(\.item)
                 
                 for inputItem in inputItems {
-                    guard !production.inputItemsContains(item: inputItem) else { continue }
+                    guard
+                        !production.inputItemsContains(item: inputItem),
+                        !explicitlyDeletedItemIDs.contains(inputItem.id)
+                    else { continue }
                     
                     let inputItemRecipes = storageService.recipes(for: inputItem, as: [.output, .byproduct])
                     if 
@@ -165,26 +173,11 @@ final class ProductionViewModel {
     
     @MainActor
     private func addAutomaticInitialRecipeIfNeeded() {
-        let shouldAddSingleRecipe = settingsService.autoSelectSingleRecipe
-        let shouldAddSinglePinnedRecipe = settingsService.autoSelectSinglePinnedRecipe
-        
+        // Add initial recipe if item has only one recipe
         let inputItemRecipes = storageService.recipes(for: item, as: [.output, .byproduct])
         if
-            shouldAddSingleRecipe,
             inputItemRecipes.count == 1,
             let recipeToAdd = inputItemRecipes.first,
-            !recipeToAdd.id.contains("packaged"), // Special case for packaged and unpackaged recipes
-            !recipeToAdd.id.contains("unpackaged")
-        {
-            addInitialRecipe(recipeToAdd)
-        }
-        
-        let inputItemPinnedRecipeIDs = storageService.pinnedRecipeIDs(for: item, as: [.output, .byproduct])
-        if
-            shouldAddSinglePinnedRecipe,
-            inputItemPinnedRecipeIDs.count == 1,
-            let recipeID = inputItemPinnedRecipeIDs.first,
-            let recipeToAdd = storageService.recipe(id: recipeID),
             !recipeToAdd.id.contains("packaged"), // Special case for packaged and unpackaged recipes
             !recipeToAdd.id.contains("unpackaged")
         {
@@ -208,6 +201,9 @@ final class ProductionViewModel {
                 return switch action {
                 case let .adjust(product):
                     canAdjustProduct(product)
+                    
+                case let .removeItem(item):
+                    item.id != production.item.id
                     
                 case let .selectRecipeForInput(input):
                     !production.inputItemsContains(item: input.item) &&
@@ -237,6 +233,11 @@ final class ProductionViewModel {
                 switch action {
                 case let .adjust(product):
                     adjustProduct(product)
+                    
+                case let .removeItem(item):
+                    production.removeInputItem(item)
+                    explicitlyDeletedItemIDs.insert(item.id)
+                    update()
                     
                 case let .selectRecipeForInput(input):
                     selectedNewItemID = input.item.id
@@ -280,6 +281,7 @@ final class ProductionViewModel {
             
             if product.recipes.isEmpty {
                 production.removeInputItem(product.item)
+                explicitlyDeletedItemIDs.insert(item.id)
             } else {
                 production.updateInputItem(product)
             }
@@ -293,6 +295,7 @@ final class ProductionViewModel {
     }
     
     func canAdjustProduct(_ product: SHSingleItemProduction.OutputItem) -> Bool {
+        product.item.id != production.item.id ||
         storageService.recipes(for: product.item, as: [.output, .byproduct]).count > 1
     }
     

@@ -48,13 +48,24 @@ struct ProductView: View {
             Spacer()
             
             if viewModel.canAdjust {
-                Button {
-                    viewModel.adjust()
-                } label: {
-                    Image(systemName: "slider.horizontal.3")
-                        .font(.subheadline)
+                if viewModel.hasOnlyOneRecipe {
+                    Button {
+                        viewModel.removeItem()
+                    } label: {
+                        Image(systemName: "trash")
+                            .font(.subheadline)
+                    }
+                    .buttonStyle(.shTinted)
+                    .tint(.sh(.red))
+                } else {
+                    Button {
+                        viewModel.adjust()
+                    } label: {
+                        Image(systemName: "slider.horizontal.3")
+                            .font(.subheadline)
+                    }
+                    .buttonStyle(.shTinted)
                 }
-                .buttonStyle(.shTinted)
             }
         }
         .padding(.vertical, 8)

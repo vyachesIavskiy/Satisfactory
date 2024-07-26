@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import SHStorage
 import SHModels
 import SHSingleItemProduction
 
@@ -16,6 +17,13 @@ final class ProductViewModel: Identifiable {
     
     var canAdjust: Bool {
         canPerformAction(.adjust(product))
+    }
+    
+    var hasOnlyOneRecipe: Bool {
+        @Dependency(\.storageService)
+        var storageService
+        
+        return storageService.recipes(for: product.item, as: [.output, .byproduct]).count == 1
     }
     
     init(
@@ -44,5 +52,10 @@ final class ProductViewModel: Identifiable {
     @MainActor
     func adjust() {
         performAction(.adjust(product))
+    }
+    
+    @MainActor
+    func removeItem() {
+        performAction(.removeItem(product.item))
     }
 }

@@ -554,8 +554,8 @@
 		D3BB55582C3FD7240052DF56 /* RecipeIngredientView */ = {
 			isa = PBXGroup;
 			children = (
-				D3BB55592C3FD7350052DF56 /* RecipeIngredientViewModel.swift */,
 				D3ACE5D82C387CA40081D2C5 /* RecipeIngredientView.swift */,
+				D3BB55592C3FD7350052DF56 /* RecipeIngredientViewModel.swift */,
 			);
 			path = RecipeIngredientView;
 			sourceTree = "<group>";

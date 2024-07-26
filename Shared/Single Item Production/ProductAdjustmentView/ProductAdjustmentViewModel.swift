@@ -11,6 +11,9 @@ final class ProductAdjustmentViewModel: Identifiable {
     private(set) var production: SHSingleItemProduction
     private let onApply: @MainActor (SHSingleItemProduction.InputItem) -> Void
     
+    @ObservationIgnored @Dependency(\.storageService)
+    private var storageService
+    
     var id: UUID {
         product.id
     }
@@ -32,6 +35,24 @@ final class ProductAdjustmentViewModel: Identifiable {
         production.outputRecipes(for: product.item)
     }
     
+    var pinnedRecipes: [Recipe] {
+        let allRecipes = storageService.recipes(for: product.item, as: [.output, .byproduct])
+        let pinnedIDs = storageService.pinnedRecipeIDs(for: product.item, as: [.output, .byproduct])
+        
+        return allRecipes.filter { recipe in
+            pinnedIDs.contains(recipe.id) && !selectedRecipes.contains { $0.recipe.id == recipe.id }
+        }
+    }
+    
+    var unselectedRecipes: [Recipe] {
+        let allRecipes = storageService.recipes(for: product.item, as: [.output, .byproduct])
+        let pinnedIDs = storageService.pinnedRecipeIDs(for: product.item, as: [.output, .byproduct])
+        
+        return allRecipes.filter { recipe in
+            !pinnedIDs.contains(recipe.id) && !selectedRecipes.contains { $0.recipe.id == recipe.id }
+        }
+    }
+    
     init(
         product: SHSingleItemProduction.OutputItem,
         allowDeletion: Bool,
@@ -47,6 +68,17 @@ final class ProductAdjustmentViewModel: Identifiable {
         self.production = production
         self.onApply = onApply
         production.update()
+        
+        @Dependency(\.storageService)
+        var storageService
+        
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            
+            for await _ in storageService.streamPinnedRecipeIDs(for: product.item, as: [.output, .byproduct]) {
+                update()
+            }
+        }
     }
     
     @MainActor
@@ -98,16 +130,9 @@ final class ProductAdjustmentViewModel: Identifiable {
     }
     
     @MainActor
-    var unselectedItemRecipesViewModel: SingleItemProductionInitialRecipeSelectionViewModel {
-        SingleItemProductionInitialRecipeSelectionViewModel(
-            item: product.item,
-            filterOutRecipeIDs: production.outputRecipes(for: product.item).map(\.recipe.id),
-            onRecipeSelected: addRecipe
-        )
-    }
-    
-    @MainActor
     private func update() {
-        production.update()
+        _$observationRegistrar.withMutation(of: self, keyPath: \.production) {
+            production.update()
+        }
     }
 }

@@ -147,10 +147,10 @@ final class ProductionViewModel {
                     let inputItemRecipes = storageService.recipes(for: inputItem, as: [.output, .byproduct])
                     if 
                         shouldAddSingleRecipe,
+                        (inputItem as? Part)?.isNaturalResource == false, // Do not autoselect recipes for natural resources
                         inputItemRecipes.count == 1,
                         let recipeToAdd = inputItemRecipes.first,
-                        !recipeToAdd.id.contains("packaged"), // Special case for packaged and unpackaged recipes
-                        !recipeToAdd.id.contains("unpackaged")
+                        !recipeToAdd.id.contains("packaged") // Do not autoselect packaged recipes
                     {
                         production.addRecipe(recipeToAdd, to: inputItem)
                     }
@@ -158,11 +158,11 @@ final class ProductionViewModel {
                     let inputItemPinnedRecipeIDs = storageService.pinnedRecipeIDs(for: inputItem, as: [.output, .byproduct])
                     if
                         shouldAddSinglePinnedRecipe,
+                        (inputItem as? Part)?.isNaturalResource == false, // Do not autoselect recipes for natural resources
                         inputItemPinnedRecipeIDs.count == 1,
                         let recipeID = inputItemPinnedRecipeIDs.first,
                         let recipeToAdd = storageService.recipe(id: recipeID),
-                        !recipeToAdd.id.contains("packaged"), // Special case for packaged and unpackaged recipes
-                        !recipeToAdd.id.contains("unpackaged")
+                        !recipeToAdd.id.contains("packaged") // Do not autoselect packaged recipes
                     {
                         production.addRecipe(recipeToAdd, to: inputItem)
                     }
@@ -178,8 +178,7 @@ final class ProductionViewModel {
         if
             inputItemRecipes.count == 1,
             let recipeToAdd = inputItemRecipes.first,
-            !recipeToAdd.id.contains("packaged"), // Special case for packaged and unpackaged recipes
-            !recipeToAdd.id.contains("unpackaged")
+            !recipeToAdd.id.contains("packaged") // Do not autoselect packaged recipes
         {
             addInitialRecipe(recipeToAdd)
         }

@@ -24,7 +24,7 @@ struct SettingsView: View {
                 .frame(maxWidth: 600)
                 .navigationTitle("Settings")
             }
-            .disabled(viewModel.feedbackResult != nil)
+            .disabled(viewModel.feedbackResult == .sent)
             
             if viewModel.feedbackResult == .sent {
                 feedbackShaderView

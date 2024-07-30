@@ -16,6 +16,7 @@ struct FeedbackView: View {
     var body: some View {
         if EmailFeedbackView.canShow {
             EmailFeedbackView(result: $result)
+                .ignoresSafeArea()
         } else {
             // Fallback for simulators and previews
             DebugFeedbackView(result: $result)
@@ -73,7 +74,7 @@ private struct EmailFeedbackView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> some UIViewController {
         let vc = MFMailComposeViewController()
         vc.mailComposeDelegate = context.coordinator
-        vc.navigationBar.tintColor = UIColor(named: "Colors/Orange/Orange - 60")
+        vc.navigationBar.tintColor = SHColor.orange.uiColor
         
         vc.setToRecipients(["satisfactory.helper.app@gmail.com"])
         vc.setSubject("Feedback about Satisfactory Helper app v\(Bundle.main.appVersion)")

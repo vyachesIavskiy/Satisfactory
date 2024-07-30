@@ -14,13 +14,12 @@ struct NewProductionView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVStack(spacing: 16) {
-                    ForEach($viewModel.sections) { $section in
-                        itemsSection($section)
-                    }
+            List {
+                ForEach($viewModel.sections) { $section in
+                    itemsSection($section)
                 }
             }
+            .listStyle(.plain)
             .navigationTitle("New Production")
             .searchable(text: $viewModel.searchText, prompt: "Search")
             .autocorrectionDisabled()
@@ -56,23 +55,21 @@ struct NewProductionView: View {
     private func itemsSection(_ _section: Binding<NewProductionViewModel.Section>) -> some View {
         let section = _section.wrappedValue
         if !section.items.isEmpty {
-            LazyVStack(spacing: 12, pinnedViews: .sectionHeaders) {
-                Section(isExpanded: _section.expanded) {
-                    ForEach(section.items, id: \.id) { item in
-                        itemRow(item)
-                            .padding(.horizontal, 16)
-                            .disabled(!section.expanded)
-                    }
-                } header: {
-                    SHSectionHeader(section.title, expanded: _section.expanded)
-                        .padding(.horizontal, 16)
-                        .padding(.top, 8)
-                        .padding(.bottom, 4)
-                        .background(.background)
+            Section(isExpanded: _section.expanded) {
+                ForEach(section.items, id: \.id) { item in
+                    itemRow(item)
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(EdgeInsets(top: 4, leading: 20, bottom: 4, trailing: 20))
+                        .disabled(!section.expanded)
                 }
+            } header: {
+                SHSectionHeader(section.title, expanded: _section.expanded)
+                    .listRowInsets(EdgeInsets())
+                    .padding(.horizontal, 20)
+                    .padding(.top, 8)
+                    .padding(.bottom, 4)
+                    .background(.background)
             }
-            .id(section.id)
-            .tag(section.id)
         }
     }
     

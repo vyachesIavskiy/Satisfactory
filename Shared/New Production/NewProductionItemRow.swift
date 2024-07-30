@@ -66,8 +66,8 @@ extension NewProductionView {
                     .padding(resolvedPaddingSize)
                     .background {
                         backgroundIconShape
-                            .fill(.sh(.midnight10))
-                            .stroke(.sh(.midnight30), lineWidth: 2 / displayScale)
+                            .fill(.sh(.gray20))
+                            .stroke(.sh(.midnight40), lineWidth: 2 / displayScale)
                     }
                 
                 ZStack {
@@ -82,7 +82,7 @@ extension NewProductionView {
                     }
                     
                     LinearGradient(
-                        colors: [.sh(.midnight30), .sh(.midnight10)],
+                        colors: [.sh(.midnight40), .sh(.gray10)],
                         startPoint: .leading,
                         endPoint: UnitPoint(x: 0.85, y: 0.5)
                     )
@@ -90,11 +90,6 @@ extension NewProductionView {
                     .frame(maxHeight: .infinity, alignment: .bottom)
                 }
             }
-            .background(.background, in: backgroundShape)
-            .contentShape(.interaction, Rectangle())
-            .contentShape(.contextMenuPreview, backgroundShape)
-            .fixedSize(horizontal: false, vertical: true)
-            .contentShape(.interaction, Rectangle())
         }
     }
 }

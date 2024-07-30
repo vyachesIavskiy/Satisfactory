@@ -19,8 +19,21 @@ extension SHSingleItemProduction {
     }
 }
 
+// MARK: Hashable
+extension SHSingleItemProduction.InputByproduct: Hashable {
+    public static func == (lhs: SHSingleItemProduction.InputByproduct, rhs: SHSingleItemProduction.InputByproduct) -> Bool {
+        lhs.item.id == rhs.item.id &&
+        lhs.producers == rhs.producers
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(item.id)
+        hasher.combine(producers)
+    }
+}
+
 extension SHSingleItemProduction.InputByproduct {
-    public struct Producer {
+    public struct Producer: Hashable {
         /// An actual recipe producing a byproduct.
         public let recipe: Recipe
         

@@ -2,7 +2,7 @@ import Foundation
 import SHModels
 
 extension SHSingleItemProduction {
-    public struct OutputRecipe: Identifiable, Equatable {
+    public struct OutputRecipe: Identifiable, Hashable {
         public let id = UUID()
         public let recipe: Recipe
         public var output: OutputIngredient
@@ -75,7 +75,7 @@ extension SHSingleItemProduction.OutputRecipe {
         }
     }
     
-    public struct Byproduct: Equatable {
+    public struct Byproduct: Hashable {
         public let index: Int
         public var amount: Double
         
@@ -86,7 +86,7 @@ extension SHSingleItemProduction.OutputRecipe {
     }
 }
 
-extension SHSingleItemProduction.OutputRecipe.OutputIngredient: Equatable {
+extension SHSingleItemProduction.OutputRecipe.OutputIngredient: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.item.id == rhs.item.id &&
@@ -94,9 +94,17 @@ extension SHSingleItemProduction.OutputRecipe.OutputIngredient: Equatable {
         lhs.byproducts == rhs.byproducts &&
         lhs.isSelected == rhs.isSelected
     }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(item.id)
+        hasher.combine(amount)
+        hasher.combine(byproducts)
+        hasher.combine(isSelected)
+    }
 }
 
-extension SHSingleItemProduction.OutputRecipe.InputIngredient: Equatable {
+extension SHSingleItemProduction.OutputRecipe.InputIngredient: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.producingProductID == rhs.producingProductID &&
@@ -104,5 +112,14 @@ extension SHSingleItemProduction.OutputRecipe.InputIngredient: Equatable {
         lhs.amount == rhs.amount &&
         lhs.byproducts == rhs.byproducts &&
         lhs.isSelected == rhs.isSelected
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(producingProductID)
+        hasher.combine(item.id)
+        hasher.combine(amount)
+        hasher.combine(byproducts)
+        hasher.combine(isSelected)
     }
 }

@@ -206,9 +206,12 @@ struct RecipeIngredientButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 0.825 : 1.0)
-            .opacity(configuration.isPressed ? 0.65 : 1.0)
+            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
             .grayscale(isEnabled ? 0.0 : 1.0)
+            .background(
+                configuration.isPressed ? Color.sh(.gray20) : .clear,
+                in: AngledRectangle(cornerRadius: 8)
+            )
             .animation(.default, value: configuration.isPressed)
     }
 }

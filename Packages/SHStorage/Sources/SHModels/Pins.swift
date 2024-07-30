@@ -4,6 +4,10 @@ public struct Pins: Equatable {
     public var equipmentIDs: Set<String>
     public var recipeIDs: Set<String>
     
+    public var itemIDs: Set<String> {
+        partIDs.union(equipmentIDs)
+    }
+    
     public var isEmpty: Bool {
         partIDs.isEmpty && equipmentIDs.isEmpty && recipeIDs.isEmpty
     }

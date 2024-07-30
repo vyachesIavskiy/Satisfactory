@@ -7,9 +7,9 @@ import SHSingleItemProduction
 @Observable
 final class ProductViewModel: Identifiable {
     let product: SHSingleItemProduction.OutputItem
-    let selectedByproduct: ProductionViewModel.ByproductSelection?
-    let canPerformAction: (SingleProductionAction) -> Bool
-    let performAction: (SingleProductionAction) -> Void
+    let selectedByproduct: CalculationViewModel.ByproductSelectionState?
+    let canPerformAction: (CalculationViewModel.Action) -> Bool
+    let performAction: (CalculationViewModel.Action) -> Void
     
     var id: UUID {
         product.id
@@ -28,9 +28,9 @@ final class ProductViewModel: Identifiable {
     
     init(
         product: SHSingleItemProduction.OutputItem,
-        selectedByproduct: ProductionViewModel.ByproductSelection?,
-        canPerformAction: @escaping (SingleProductionAction) -> Bool,
-        performAction: @escaping (SingleProductionAction) -> Void
+        selectedByproduct: CalculationViewModel.ByproductSelectionState?,
+        canPerformAction: @escaping (CalculationViewModel.Action) -> Bool,
+        performAction: @escaping (CalculationViewModel.Action) -> Void
     ) {
         self.product = product
         self.canPerformAction = canPerformAction

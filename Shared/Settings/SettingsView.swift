@@ -50,6 +50,7 @@ struct SettingsView: View {
             
             VStack(alignment: .leading, spacing: 8) {
                 Toggle("Show recipe ingredient names", isOn: $viewModel.settings.showIngredientNames)
+                    .tint(.sh(.orange))
                 
                 Text("If it is difficult for you to distinguish recipe ingredients only by it's icon, you can enable this setting to also see recipe ingredient names.")
                     .font(.caption)
@@ -57,8 +58,10 @@ struct SettingsView: View {
             }
             
             Toggle("Auto-select single recipe", isOn: $viewModel.settings.autoSelectSingleRecipe)
+                .tint(.sh(.orange))
             
             Toggle("Auto-select single pinned recipe", isOn: $viewModel.settings.autoSelectSinglePinnedRecipe)
+                .tint(.sh(.orange))
         }
     }
     
@@ -66,6 +69,7 @@ struct SettingsView: View {
     private var seasonalEventsSection: some View {
         Section("Seasonal events") {
             Toggle("FICSMAS", isOn: $viewModel.settings.showFICSMAS)
+                .tint(.sh(.orange))
         }
     }
     

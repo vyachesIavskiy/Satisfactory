@@ -18,10 +18,16 @@ extension SHSingleItemProduction {
     }
 }
 
-extension SHSingleItemProduction.OutputItem: Equatable {
+extension SHSingleItemProduction.OutputItem: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.item.id == rhs.item.id &&
         lhs.recipes == rhs.recipes
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(item.id)
+        hasher.combine(recipes)
     }
 }

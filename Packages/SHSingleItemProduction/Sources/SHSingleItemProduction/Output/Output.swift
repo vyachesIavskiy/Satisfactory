@@ -14,10 +14,16 @@ extension SHSingleItemProduction {
     }
 }
 
-extension SHSingleItemProduction.Output: Equatable {
+extension SHSingleItemProduction.Output: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.outputItems == rhs.outputItems &&
         lhs.unselectedItems.map(\.id) == rhs.unselectedItems.map(\.id) &&
         lhs.hasByproducts == rhs.hasByproducts
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(outputItems)
+        hasher.combine(unselectedItems.map(\.id))
+        hasher.combine(hasByproducts)
     }
 }

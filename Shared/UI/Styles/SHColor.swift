@@ -1,10 +1,19 @@
+import UIKit
 import SwiftUI
 
 struct SHColor {
-    let color: Color
+    private let name: String
+    
+    var color: Color {
+        Color(name)
+    }
+    
+    var uiColor: UIColor {
+        UIColor(named: name) ?? .gray
+    }
     
     fileprivate init(name: String) {
-        self.color = Color(name)
+        self.name = name
     }
 }
 

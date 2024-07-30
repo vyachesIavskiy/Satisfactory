@@ -12,6 +12,9 @@ struct RootView: View {
                 
             case .loaded:
                 TabsView()
+                    .task {
+                        await viewModel.observeSettings()
+                    }
                 
             case let .failed(error):
                 loadingFailedView(error)
@@ -29,9 +32,7 @@ struct RootView: View {
             Text("Failed to load application. Please try again later.")
             
             Button("Show error details") {
-                withAnimation {
-                    viewModel.showErrorDetails = true
-                }
+                viewModel.showErrorDetails = true
             }
             
             if viewModel.showErrorDetails {

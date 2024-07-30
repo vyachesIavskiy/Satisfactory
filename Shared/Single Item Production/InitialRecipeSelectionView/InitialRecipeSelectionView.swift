@@ -7,6 +7,9 @@ struct InitialRecipeSelectionView: View {
     
     @Environment(\.displayScale)
     private var displayScale
+    
+    @Environment(\.dismiss)
+    private var dismiss
 
     @Namespace
     private var namespace
@@ -31,11 +34,9 @@ struct InitialRecipeSelectionView: View {
             .padding(.bottom, 16)
         }
         .navigationTitle(viewModel.item.localizedName)
-        .navigationBarTitleDisplayMode(.inline)
     }
     
-    @MainActor
-    @ViewBuilder
+    @MainActor @ViewBuilder
     private func recipesSection(_ _section: Binding<InitialRecipeSelectionViewModel.Section>) -> some View {
         let section = _section.wrappedValue
         if !section.recipes.isEmpty {
@@ -65,11 +66,10 @@ struct InitialRecipeSelectionView: View {
         }
     }
     
-    @MainActor
-    @ViewBuilder
+    @MainActor @ViewBuilder
     private func recipeView(_ recipe: Recipe) -> some View {
         Button {
-            viewModel.onRecipeSelected(recipe)
+            viewModel.onRecipeSelected?(recipe)
         } label: {
             RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
         }
@@ -109,10 +109,7 @@ private struct _InitialRecipeSelectionPreview: View {
         NavigationStack {
             if let item {
                 ScrollView {
-                    InitialRecipeSelectionView(viewModel: InitialRecipeSelectionViewModel(
-                        item: item,
-                        onRecipeSelected: { _ in }
-                    ))
+                    InitialRecipeSelectionView(viewModel: InitialRecipeSelectionViewModel(item: item))
                 }
             } else {
                 Text("There is no item with ID '\(itemID)'")

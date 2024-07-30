@@ -2,7 +2,7 @@ import SHModels
 
 extension SHSingleItemProduction {
     @dynamicMemberLookup
-    public struct InputRecipe: Equatable {
+    public struct InputRecipe: Hashable {
         /// A recipe used to produce product.
         let recipe: Recipe
         

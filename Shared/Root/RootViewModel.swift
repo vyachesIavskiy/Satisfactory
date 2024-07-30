@@ -12,13 +12,16 @@ final class RootViewModel {
         case failed(Error)
     }
     
+    // MARK: Ignored properties
+    @ObservationIgnored
+    private let logger = SHLogger(subsystemName: "Satisfactory", category: "Root")
+    
+    // MARK: Observed properties
     var showIngredientNames: Bool
     var loadingState: LoadingState
     var showErrorDetails: Bool
     
-    private let logger = SHLogger(subsystemName: "Satisfactory", category: "Root")
-    
-    // Dependencies
+    // MARK: Dependencies
     @ObservationIgnored
     @Dependency(\.storageService)
     private var storageService
@@ -31,17 +34,6 @@ final class RootViewModel {
         self.showIngredientNames = showIngredientNames
         self.loadingState = loadingState
         self.showErrorDetails = showErrorDetails
-        
-        Task { @MainActor [weak self] in
-            guard let self else { return }
-            
-            for await showIngredientNames in settingsService.streamSettings().map(\.showIngredientNames) {
-                guard !Task.isCancelled else { break }
-                guard self.showIngredientNames != showIngredientNames else { continue }
-                
-                self.showIngredientNames = showIngredientNames
-            }
-        }
     }
     
     @MainActor
@@ -53,6 +45,16 @@ final class RootViewModel {
         } catch {
             logger.error(error)
             loadingState = .failed(error)
+        }
+    }
+    
+    @MainActor
+    func observeSettings() async {
+        for await showIngredientNames in settingsService.streamSettings().map(\.showIngredientNames) {
+            guard !Task.isCancelled else { break }
+            guard self.showIngredientNames != showIngredientNames else { continue }
+            
+            self.showIngredientNames = showIngredientNames
         }
     }
 }

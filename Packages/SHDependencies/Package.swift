@@ -5,8 +5,8 @@ import PackageDescription
 let package = Package(
     name: "SHDependencies",
     platforms: [
-        .macOS(.v13),
-        .iOS(.v16)
+        .iOS(.v17),
+        .macOS(.v14)
     ],
     products: [
         .library(

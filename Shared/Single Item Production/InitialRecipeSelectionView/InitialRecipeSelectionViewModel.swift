@@ -1,12 +1,13 @@
 import SwiftUI
 import SHStorage
 import SHModels
+import SHUtils
 
 @Observable
 final class InitialRecipeSelectionViewModel {
     // MARK: Ignored properties
     let item: any Item
-    let onRecipeSelected: @MainActor (Recipe) -> Void
+    var onRecipeSelected: (@MainActor (Recipe) -> Void)?
     
     private let outputRecipes: [Recipe]
     private let byproductRecipes: [Recipe]
@@ -27,7 +28,7 @@ final class InitialRecipeSelectionViewModel {
     private var storageService
     
     @MainActor
-    init(item: any Item, onRecipeSelected: @MainActor @escaping (Recipe) -> Void) {
+    init(item: any Item, onRecipeSelected: (@MainActor (Recipe) -> Void)? = nil) {
         @Dependency(\.storageService)
         var storageService
         
@@ -75,6 +76,18 @@ final class InitialRecipeSelectionViewModel {
     }
 }
 
+// MARK: Hashable
+extension InitialRecipeSelectionViewModel: Hashable {
+    static func == (lhs: InitialRecipeSelectionViewModel, rhs: InitialRecipeSelectionViewModel) -> Bool {
+        lhs.item.id == rhs.item.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(item.id)
+    }
+}
+
+// MARK: Private
 private extension InitialRecipeSelectionViewModel {
     func observeStorage() {
         Task { @MainActor [weak self] in

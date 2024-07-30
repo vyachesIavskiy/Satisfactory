@@ -16,6 +16,19 @@ extension SHSingleItemProduction {
     }
 }
 
+// MARK: Hashable
+extension SHSingleItemProduction.InputItem: Hashable {
+    public static func == (lhs: SHSingleItemProduction.InputItem, rhs: SHSingleItemProduction.InputItem) -> Bool {
+        lhs.item.id == rhs.item.id &&
+        lhs.recipes == rhs.recipes
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(item.id)
+        hasher.combine(recipes)
+    }
+}
+
 extension Sequence<SHSingleItemProduction.InputItem> {
     func first(item: any Item) -> Element? {
         first { $0.item.id == item.id }

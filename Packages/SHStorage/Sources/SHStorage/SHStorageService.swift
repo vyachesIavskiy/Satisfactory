@@ -10,6 +10,12 @@ public struct SHStorageService: Sendable {
     /// Fetch a persistent configuration for a storage. This information is not changed during execution.
     public var persistentConfiguration: @Sendable () -> Configuration
     
+    /// Fetch all pins (parts, equipment and recipes) from storage.
+    public var pins: @Sendable () -> Pins
+    
+    /// Stream for any changes done to pins in a storage.
+    public var streamPins: @Sendable () -> AsyncStream<Pins>
+    
     /// Fetch all parts from storage. This information is not changed during execution.
     var parts: @Sendable () -> [Part]
     
@@ -21,12 +27,6 @@ public struct SHStorageService: Sendable {
     
     /// Fetch all recipes from storage. This information is not changed during execution.
     var recipes: @Sendable () -> [Recipe]
-    
-    /// Fetch all pins (parts, equipment and recipes) from storage.
-    var pins: @Sendable () -> Pins
-    
-    /// Stream for any changes done to pins in a storage.
-    var streamPins: @Sendable () -> AsyncStream<Pins>
     
     /// Changes pin status for a provided part ID.
     var changePartPinStatus: @Sendable (_ partID: String) -> Void

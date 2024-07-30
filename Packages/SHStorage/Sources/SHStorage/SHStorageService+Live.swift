@@ -18,12 +18,12 @@ extension SHStorageService {
             persistentStorage.configuration
         }
         
-        var streamPins: AsyncStream<Pins> {
-            persistentStorage.streamPins
-        }
-        
         var pins: Pins {
             persistentStorage.pins
+        }
+        
+        var streamPins: AsyncStream<Pins> {
+            persistentStorage.streamPins
         }
         
         init() {

@@ -7,16 +7,16 @@ import SHSingleItemProduction
 final class SingleItemProductionRecipeSelectViewModel {
     private let product: SHSingleItemProduction.OutputItem
     let recipe: SHSingleItemProduction.OutputRecipe
-    private let selectedByproduct: ProductionViewModel.ByproductSelection?
-    private let canPerformAction: (SingleProductionAction) -> Bool
-    private let performAction: (SingleProductionAction) -> Void
+    private let selectedByproduct: CalculationViewModel.ByproductSelectionState?
+    private let canPerformAction: (CalculationViewModel.Action) -> Bool
+    private let performAction: (CalculationViewModel.Action) -> Void
     
     init(
         product: SHSingleItemProduction.OutputItem,
         recipe: SHSingleItemProduction.OutputRecipe,
-        selectedByproduct: ProductionViewModel.ByproductSelection?,
-        canPerformAction: @escaping (SingleProductionAction) -> Bool,
-        performAction: @escaping (SingleProductionAction) -> Void
+        selectedByproduct: CalculationViewModel.ByproductSelectionState?,
+        canPerformAction: @escaping (CalculationViewModel.Action) -> Bool,
+        performAction: @escaping (CalculationViewModel.Action) -> Void
     ) {
         self.product = product
         self.recipe = recipe

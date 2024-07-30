@@ -4,9 +4,7 @@ import SHModels
 import SHUtils
 
 public final class SHSingleItemProduction {
-    private var input: Input
-    private(set) var output: Output
-    
+    // MARK: Ignored properties
     public var item: any Item {
         input.finalItem
     }
@@ -21,8 +19,14 @@ public final class SHSingleItemProduction {
     }
     
     private var rootNodes = [Node]()
+    
     private var internalState = InternalState()
+    
     private var balancingState = BalancingState.unchecked
+    
+    // MARK: Observed properties
+    private var input: Input
+    private(set) var output: Output
     
     public init(item: any Item) {
         input = Input(finalItem: item, amount: 1.0)
@@ -701,6 +705,19 @@ extension SHSingleItemProduction {
     }
 }
 
+// MARK: Hashable
+extension SHSingleItemProduction: Hashable {
+    public static func == (lhs: SHSingleItemProduction, rhs: SHSingleItemProduction) -> Bool {
+        lhs.input == rhs.input &&
+        lhs.output == rhs.output
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(input)
+        hasher.combine(output)
+    }
+}
+
 // MARK: Print format
 extension SHSingleItemProduction: CustomStringConvertible {
     public var description: String {
@@ -721,6 +738,7 @@ extension SHSingleItemProduction: CustomStringConvertible {
     }
 }
 
+// MARK: Ingredient convertion
 private extension SHSingleItemProduction {
     struct IngredientConverter {
         var byproductConverter = ByproductConverter()
@@ -796,6 +814,7 @@ private extension SHSingleItemProduction {
     }
 }
 
+// MARK: Merging
 private extension [SHSingleItemProduction.OutputRecipe.OutputIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {

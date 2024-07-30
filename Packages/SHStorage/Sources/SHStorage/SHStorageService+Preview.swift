@@ -8,12 +8,12 @@ extension SHStorageService {
         private let staticStorage = SHStaticStorage()
         private let _pins = CurrentValueSubject<Pins, Never>(Pins())
         
-        var streamPins: AsyncStream<Pins> {
-            _pins.values.eraseToStream()
-        }
-        
         var pins: Pins {
             _pins.value
+        }
+        
+        var streamPins: AsyncStream<Pins> {
+            _pins.values.eraseToStream()
         }
         
         init() {

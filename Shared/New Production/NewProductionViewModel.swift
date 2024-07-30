@@ -6,15 +6,27 @@ import SHModels
 
 @Observable
 final class NewProductionViewModel {
-    // MARK: Ignored values
+    // MARK: Ignored properties
     private let parts: [Part]
     private let equipment: [Equipment]
     
-    @ObservationIgnored
-    private(set) var pinnedItemIDs: Set<String>
+    @MainActor @ObservationIgnored
+    private var pins: Pins {
+        didSet {
+            if oldValue.itemIDs != pins.itemIDs {
+                buildSections()
+            }
+        }
+    }
     
-    @ObservationIgnored
-    private(set) var showFICSMAS: Bool
+    @MainActor @ObservationIgnored
+    private var settings: Settings {
+        didSet {
+            if oldValue.showFICSMAS != settings.showFICSMAS {
+                buildSections()
+            }
+        }
+    }
     
     @MainActor @ObservationIgnored
     var searchText = "" {
@@ -30,15 +42,17 @@ final class NewProductionViewModel {
     @ObservationIgnored @Dependency(\.settingsService)
     private var settingsService
     
+    // MARK: Observed properties
+    
     @MainActor
     var sorting = Sorting.progression {
         didSet {
             buildSections()
         }
     }
-    // MARK: Observed values
+    
     @MainActor
-    var selectedItemID: String?
+    var productionViewModel: ProductionViewModel?
     
     @MainActor
     var sections = [Section]()
@@ -53,12 +67,31 @@ final class NewProductionViewModel {
         
         parts = storageService.automatableParts()
         equipment = storageService.automatableEquipment()
-        pinnedItemIDs = storageService.pinnedItemIDs
-        showFICSMAS = settingsService.showFICSMAS
         
-        observeSettingsAndStorage()
+        pins = storageService.pins()
+        settings = settingsService.settings
         
         buildSections()
+    }
+    
+    @MainActor
+    func observeStorage() async {
+        for await pins in storageService.streamPins() {
+            guard !Task.isCancelled else { break }
+            guard self.pins != pins else { continue }
+            
+            self.pins = pins
+        }
+    }
+    
+    @MainActor
+    func observeSettings() async {
+        for await settings in settingsService.streamSettings() {
+            guard !Task.isCancelled else { break }
+            guard self.settings != settings else { continue }
+            
+            self.settings = settings
+        }
     }
     
     @MainActor
@@ -72,48 +105,13 @@ final class NewProductionViewModel {
     }
     
     @MainActor
-    func productionViewModel(for itemID: String) -> ProductionViewModel {
-        guard let item = storageService.item(id: itemID) else {
-            fatalError("Item with provided itemID '\(itemID)' not found!")
-        }
-        
-        return ProductionViewModel(item: item)
+    func selectItem(_ item: some Item) {
+        productionViewModel = ProductionViewModel(item: item)
     }
 }
 
 // MARK: Private
 private extension NewProductionViewModel {
-    @MainActor
-    func observeSettingsAndStorage() {
-        Task {
-            await withTaskGroup(of: Void.self) { group in
-                group.addTask { @MainActor [weak self] in
-                    guard let self else { return }
-                    
-                    for await pinnedItemIDs in storageService.streamPinnedItemIDs {
-                        guard !Task.isCancelled else { break }
-                        guard self.pinnedItemIDs != pinnedItemIDs else { continue }
-                        
-                        self.pinnedItemIDs = pinnedItemIDs
-                        buildSections()
-                    }
-                }
-                
-                group.addTask { @MainActor [weak self] in
-                    guard let self else { return }
-                    
-                    for await showFICSMAS in settingsService.streamSettings().map(\.showFICSMAS) {
-                        guard !Task.isCancelled else { break }
-                        guard self.showFICSMAS != showFICSMAS else { continue }
-                        
-                        self.showFICSMAS = showFICSMAS
-                        buildSections()
-                    }
-                }
-            }
-        }
-    }
-    
     @MainActor
     func buildSections() {
         var newSections = buildCategoriesSections()
@@ -163,12 +161,12 @@ private extension NewProductionViewModel {
     @MainActor
     func split<T: ProgressiveItem>(_ items: [T]) -> (pinned: [T], unpinned: [T]) {
         var (pinned, unpinned) = items.reduce(into: ([T](), [T]())) { partialResult, item in
-            if item.category == .ficsmas, !showFICSMAS {
+            if item.category == .ficsmas, !settings.showFICSMAS {
                 return
             }
             
             if searchText.isEmpty || item.category.localizedName.localizedCaseInsensitiveContains(searchText) || item.localizedName.localizedCaseInsensitiveContains(searchText) {
-                if pinnedItemIDs.contains(item.id) {
+                if pins.itemIDs.contains(item.id) {
                     partialResult.0.append(item)
                 } else {
                     partialResult.1.append(item)

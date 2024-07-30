@@ -7,6 +7,9 @@ struct SatisfactoryApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .onAppear {
+                    UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .sh(.orange)
+                }
             
 //            FileManagerCheckView()
         }

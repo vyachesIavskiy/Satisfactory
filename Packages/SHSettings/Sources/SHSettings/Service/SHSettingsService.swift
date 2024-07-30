@@ -13,7 +13,14 @@ public extension SHSettingsService {
         nonmutating set { setSettings(newValue) }
     }
     
-    subscript<Member>(dynamicMember keyPath: KeyPath<Settings, Member>) -> Member {
-        getSettings()[keyPath: keyPath]
+    subscript<Member>(dynamicMember keyPath: WritableKeyPath<Settings, Member>) -> Member {
+        get {
+            getSettings()[keyPath: keyPath]
+        }
+        nonmutating set {
+            var newSettings = getSettings()
+            newSettings[keyPath: keyPath] = newValue
+            setSettings(newSettings)
+        }
     }
 }

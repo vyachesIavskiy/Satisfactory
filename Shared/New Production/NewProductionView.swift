@@ -40,9 +40,15 @@ struct NewProductionView: View {
                     }
                 }
             }
-            .navigationDestination(item: $viewModel.selectedItemID) { id in
-                ProductionView(viewModel: viewModel.productionViewModel(for: id))
+            .navigationDestination(item: $viewModel.productionViewModel) { viewModel in
+                ProductionView(viewModel: viewModel)
             }
+        }
+        .task {
+            await viewModel.observeStorage()
+        }
+        .task {
+            await viewModel.observeSettings()
         }
     }
     
@@ -73,7 +79,7 @@ struct NewProductionView: View {
     @ViewBuilder
     private func itemRow(_ item: any Item) -> some View {
         Button {
-            viewModel.selectedItemID = item.id
+            viewModel.selectItem(item)
         } label: {
             ItemRow(item)
         }

@@ -128,3 +128,19 @@ private extension SHSingleItemProduction.Input {
         inputItems[index].addProductRecipe(inputRecipe)
     }
 }
+
+extension SHSingleItemProduction.Input: Hashable {
+    static func == (lhs: SHSingleItemProduction.Input, rhs: SHSingleItemProduction.Input) -> Bool {
+        lhs.finalItem.id == rhs.finalItem.id &&
+        lhs.amount == rhs.amount &&
+        lhs.inputItems == rhs.inputItems &&
+        lhs.byproducts == rhs.byproducts
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(finalItem.id)
+        hasher.combine(amount)
+        hasher.combine(inputItems)
+        hasher.combine(byproducts)
+    }
+}

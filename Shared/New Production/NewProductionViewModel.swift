@@ -35,6 +35,8 @@ final class NewProductionViewModel {
         }
     }
     
+    var navigationPath = [String]() // Item IDs
+    
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
@@ -43,16 +45,12 @@ final class NewProductionViewModel {
     private var settingsService
     
     // MARK: Observed properties
-    
     @MainActor
     var sorting = Sorting.progression {
         didSet {
             buildSections()
         }
     }
-    
-    @MainActor
-    var productionViewModel: ProductionViewModel?
     
     @MainActor
     var sections = [Section]()
@@ -105,8 +103,8 @@ final class NewProductionViewModel {
     }
     
     @MainActor
-    func selectItem(_ item: some Item) {
-        productionViewModel = ProductionViewModel(item: item)
+    func item(id: String) -> (any Item)? {
+        storageService.item(id: id)
     }
 }
 

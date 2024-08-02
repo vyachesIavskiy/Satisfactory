@@ -6,14 +6,14 @@ extension SHSingleItemProduction {
         public let id = UUID()
         public let recipe: Recipe
         public var output: OutputIngredient
-        public var byproducts: [OutputIngredient]
+        public var byproducts: [ByproductIngredient]
         public var inputs: [InputIngredient]
         public var proportion: SHProductionProportion
         
         public init(
             recipe: Recipe,
             output: OutputIngredient,
-            byproducts: [OutputIngredient],
+            byproducts: [ByproductIngredient],
             inputs: [InputIngredient],
             proportion: SHProductionProportion
         ) {
@@ -44,6 +44,19 @@ extension Collection<SHSingleItemProduction.OutputRecipe> {
 
 extension SHSingleItemProduction.OutputRecipe {
     public struct OutputIngredient: Identifiable {
+        public let id = UUID()
+        public let item: any Item
+        public var amount: Double
+        public var byproducts: [Byproduct]
+        
+        public init(item: any Item, amount: Double, byproducts: [Byproduct]) {
+            self.item = item
+            self.amount = amount
+            self.byproducts = byproducts
+        }
+    }
+    
+    public struct ByproductIngredient: Identifiable {
         public let id = UUID()
         public let item: any Item
         public var amount: Double
@@ -87,6 +100,22 @@ extension SHSingleItemProduction.OutputRecipe {
 }
 
 extension SHSingleItemProduction.OutputRecipe.OutputIngredient: Hashable {
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id &&
+        lhs.item.id == rhs.item.id &&
+        lhs.amount == rhs.amount &&
+        lhs.byproducts == rhs.byproducts
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(item.id)
+        hasher.combine(amount)
+        hasher.combine(byproducts)
+    }
+}
+
+extension SHSingleItemProduction.OutputRecipe.ByproductIngredient: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.item.id == rhs.item.id &&

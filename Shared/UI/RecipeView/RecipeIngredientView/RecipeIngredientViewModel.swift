@@ -11,7 +11,7 @@ final class RecipeIngredientViewModel: Identifiable {
     
     enum ProductionRole {
         case output(SHSingleItemProduction.OutputRecipe.OutputIngredient)
-        case byproduct(SHSingleItemProduction.OutputRecipe.OutputIngredient)
+        case byproduct(SHSingleItemProduction.OutputRecipe.ByproductIngredient)
         case input(SHSingleItemProduction.OutputRecipe.InputIngredient)
     }
     
@@ -23,7 +23,8 @@ final class RecipeIngredientViewModel: Identifiable {
             
         case let .production(role):
             switch role {
-            case let .output(ingredient), let .byproduct(ingredient): ingredient.id.uuidString
+            case let .output(ingredient): ingredient.id.uuidString
+            case let .byproduct(ingredient): ingredient.id.uuidString
             case let .input(ingredient): ingredient.id.uuidString
             }
         }
@@ -49,7 +50,7 @@ final class RecipeIngredientViewModel: Identifiable {
         self.init(mode: .production(.output(ingredient)))
     }
     
-    convenience init(productionByproduct ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient) {
+    convenience init(productionByproduct ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient) {
         self.init(mode: .production(.byproduct(ingredient)))
     }
     
@@ -63,15 +64,12 @@ final class RecipeIngredientViewModel: Identifiable {
     
     @MainActor
     func amountViewModels() -> [RecipeIngredientAmountViewModel] {
-        func showMainAmount(for ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient) -> Bool {
-            ingredient.isSelected ||
-            ingredient.byproducts.isEmpty ||
+        func showMainAmount(for ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient) -> Bool {
             ingredient.byproducts.first?.amount != ingredient.amount
         }
         
         func showMainAmount(for ingredient: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
             ingredient.isSelected ||
-            ingredient.byproducts.isEmpty ||
             ingredient.byproducts.first?.amount != ingredient.amount
         }
         

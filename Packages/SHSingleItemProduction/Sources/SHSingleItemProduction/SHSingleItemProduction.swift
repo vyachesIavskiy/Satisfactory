@@ -33,6 +33,23 @@ public final class SHSingleItemProduction {
         output = Output(outputItems: [], unselectedItems: [item], hasByproducts: false)
     }
     
+    public init(production: Production) {
+        input = Input(finalItem: production.item, amount: production.amount)
+        output = Output(outputItems: [], unselectedItems: [production.item], hasByproducts: false)
+        
+        input.inputItems = production.inputItems.map {
+            InputItem(item: $0.item, recipes: $0.recipes.map {
+                InputRecipe(recipe: $0.recipe, proportion: $0.proportion)
+            })
+        }
+        
+        input.byproducts = production.byproducts.map {
+            InputByproduct(item: $0.item, producers: $0.producers.map {
+                InputByproduct.Producer(recipe: $0.recipe, consumers: $0.consumers)
+            })
+        }
+    }
+    
     // MARK: - Input
     public func addRecipe(
         _ recipe: Recipe,
@@ -749,13 +766,12 @@ private extension SHSingleItemProduction {
                 amount: output.amount,
                 byproducts: output.asByproduct.consumers.map {
                     byproductConverter.convert(producingRecipeID: producingRecipeID, outputConsumer: $0)
-                },
-                isSelected: false
+                }
             )
         }
         
-        mutating func convert(producingRecipeID: String, byproduct: SHSingleItemProduction.Node.Byproduct) -> SHSingleItemProduction.OutputRecipe.OutputIngredient {
-            SHSingleItemProduction.OutputRecipe.OutputIngredient(
+        mutating func convert(producingRecipeID: String, byproduct: SHSingleItemProduction.Node.Byproduct) -> SHSingleItemProduction.OutputRecipe.ByproductIngredient {
+            SHSingleItemProduction.OutputRecipe.ByproductIngredient(
                 item: byproduct.item,
                 amount: byproduct.amount,
                 byproducts: byproduct.consumers.map {
@@ -816,6 +832,17 @@ private extension SHSingleItemProduction {
 
 // MARK: Merging
 private extension [SHSingleItemProduction.OutputRecipe.OutputIngredient] {
+    mutating func merge(with other: Self) {
+        merge(with: other) {
+            $0.item.id == $1.item.id
+        } merging: {
+            $0.amount += $1.amount
+            $0.byproducts.merge(with: $1.byproducts)
+        }
+    }
+}
+
+private extension [SHSingleItemProduction.OutputRecipe.ByproductIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.item.id == $1.item.id

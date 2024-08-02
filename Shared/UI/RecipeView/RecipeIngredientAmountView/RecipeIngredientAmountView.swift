@@ -199,6 +199,14 @@ private func productionIngredient(form: Part.Form, selected: Bool) -> SHSingleIt
     SHSingleItemProduction.OutputRecipe.OutputIngredient(
         item: Part(id: "preview-part", category: .special, progressionIndex: 0, form: form),
         amount: 10,
+        byproducts: []
+    )
+}
+
+private func productionIngredient(form: Part.Form, selected: Bool) -> SHSingleItemProduction.OutputRecipe.ByproductIngredient {
+    SHSingleItemProduction.OutputRecipe.ByproductIngredient(
+        item: Part(id: "preview-part", category: .special, progressionIndex: 0, form: form),
+        amount: 10,
         byproducts: [],
         isSelected: selected
     )

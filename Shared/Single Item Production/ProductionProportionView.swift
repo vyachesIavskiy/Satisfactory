@@ -2,42 +2,42 @@ import SwiftUI
 import SHSingleItemProduction
 import SHUtils
 
-struct ProductionProportionView: View {
-    private enum ProductionProportionDisplay {
+@Observable
+final class ProductionProportionViewModel {
+    enum ProductionProportionDisplay {
         case auto
         case fraction
         case fixed
     }
     
-    @Binding
-    var proportion: SHProductionProportion
+    @MainActor @ObservationIgnored
+    var proportionDisplay: ProductionProportionDisplay {
+        didSet {
+            update()
+        }
+    }
     
-    @MainActor @State
-    private var proportionDisplay: ProductionProportionDisplay
-    
-    @MainActor @State
+    @MainActor @ObservationIgnored
     var fractionAmount: Double
     
-    @MainActor @State
+    @MainActor @ObservationIgnored
     var fixedAmount: Double
     
-    @State
-    private var buttonWidth = 0.0
-    
-    @FocusState
-    private var focusField: ProductionProportionTextfield.Field?
-    
-    @Namespace
-    private var namespace
+    @ObservationIgnored
+    private var onChange: (SHProductionProportion) -> Void
     
     @MainActor
-    init(_ proportion: Binding<SHProductionProportion>, totalAmount: Double) {
-        self._proportion = proportion
-        
-        switch proportion.wrappedValue {
+    init(
+        proportion: SHProductionProportion,
+        totalAmount: Double,
+        numberOfRecipes: Int,
+        onChange: @escaping (SHProductionProportion) -> Void
+    ) {
+        self.onChange = onChange
+        switch proportion {
         case .auto:
             proportionDisplay = .auto
-            fractionAmount = 100
+            fractionAmount = 100.0 / Double(numberOfRecipes)
             
         case let .fraction(fraction):
             proportionDisplay = .fraction
@@ -45,26 +45,106 @@ struct ProductionProportionView: View {
             
         case .fixed:
             proportionDisplay = .fixed
-            fractionAmount = 100
+            fractionAmount = 100.0 / Double(numberOfRecipes)
         }
         
         fixedAmount = totalAmount
     }
     
+    @MainActor
+    func update() {
+        switch proportionDisplay {
+        case .auto:
+            onChange(.auto)
+            
+        case .fraction:
+            onChange(.fraction(fractionAmount / 100))
+            
+        case .fixed:
+            onChange(.fixed(fixedAmount))
+        }
+    }
+}
+
+struct ProductionProportionView: View {
+    @State
+    var viewModel: ProductionProportionViewModel
+    
+//    private enum ProductionProportionDisplay {
+//        case auto
+//        case fraction
+//        case fixed
+//    }
+//    
+//    @Binding
+//    var proportion: SHProductionProportion
+//    
+//    @MainActor @State
+//    private var proportionDisplay: ProductionProportionDisplay
+//    
+//    @MainActor @State
+//    var fractionAmount: Double
+//    
+//    @MainActor @State
+//    var fixedAmount: Double
+    
+    @FocusState
+    private var focusField: ProductionProportionTextfield.Field?
+    
+//    @MainActor
+//    init(_ proportion: Binding<SHProductionProportion>, totalAmount: Double) {
+//        self._proportion = proportion
+//        
+//        switch proportion.wrappedValue {
+//        case .auto:
+//            proportionDisplay = .auto
+//            fractionAmount = 100
+//            
+//        case let .fraction(fraction):
+//            proportionDisplay = .fraction
+//            fractionAmount = fraction * 100
+//            
+//        case .fixed:
+//            proportionDisplay = .fixed
+//            fractionAmount = 100
+//        }
+//        
+//        fixedAmount = totalAmount
+//    }
+    
     var body: some View {
         HStack(spacing: 8) {
             ZStack {
-                ProductionProportionTextfield($fractionAmount, focus: $focusField, field: .fraction)
-                    .opacity(proportionDisplay == .fraction ? 1.0 : 0.0)
+                ProductionProportionTextfield(
+                    $viewModel.fractionAmount,
+                    focus: $focusField,
+                    field: .fraction
+                )
+                .opacity(viewModel.proportionDisplay == .fraction ? 1.0 : 0.0)
+                .onSubmit {
+                    focusField = nil
+                    viewModel.update()
+                }
+                .focused($focusField, equals: .fraction)
                 
-                ProductionProportionTextfield($fixedAmount, focus: $focusField, field: .fixed)
-                    .opacity(proportionDisplay == .fixed ? 1.0 : 0.0)
+                ProductionProportionTextfield(
+                    $viewModel.fixedAmount,
+                    focus: $focusField,
+                    field: .fixed
+                )
+                .opacity(viewModel.proportionDisplay == .fixed ? 1.0 : 0.0)
+                .onSubmit {
+                    focusField = nil
+                    viewModel.update()
+                }
+                .focused($focusField, equals: .fixed)
             }
             .frame(width: 100)
             
             if focusField != nil {
                 Button {
                     focusField = nil
+                    viewModel.update()
                 } label: {
                     Image(systemName: "checkmark")
                         .font(.caption)
@@ -76,19 +156,19 @@ struct ProductionProportionView: View {
                 .transition(.scale.combined(with: .opacity))
             } else {
                 Menu {
-                    Picker("", selection: $proportionDisplay) {
+                    Picker("", selection: $viewModel.proportionDisplay) {
                         Text("Automatically")
-                            .tag(ProductionProportionDisplay.auto)
+                            .tag(ProductionProportionViewModel.ProductionProportionDisplay.auto)
                         
                         Label("Percentage", systemImage: "percent")
-                            .tag(ProductionProportionDisplay.fraction)
+                            .tag(ProductionProportionViewModel.ProductionProportionDisplay.fraction)
                         
                         Label("Amount", systemImage: "textformat.123")
-                            .tag(ProductionProportionDisplay.fixed)
+                            .tag(ProductionProportionViewModel.ProductionProportionDisplay.fixed)
                     }
                 } label: {
                     ZStack {
-                        switch proportion {
+                        switch viewModel.proportionDisplay {
                         case .auto:
                             Text("AUTO")
                                 .font(.caption)
@@ -111,29 +191,6 @@ struct ProductionProportionView: View {
             }
         }
         .animation(.bouncy, value: focusField)
-        .onChange(of: proportionDisplay) {
-            update()
-        }
-        .onChange(of: fractionAmount) {
-            update()
-        }
-        .onChange(of: fixedAmount) {
-            update()
-        }
-    }
-
-    @MainActor
-    private func update() {
-        switch proportionDisplay {
-        case .auto:
-            proportion = .auto
-            
-        case .fraction:
-            proportion = .fraction(fractionAmount / 200)
-            
-        case .fixed:
-            proportion = .fixed(fixedAmount)
-        }
     }
 }
 
@@ -199,10 +256,6 @@ private struct ProductionProportionTextfield: View {
             .multilineTextAlignment(.center)
             .keyboardType(.decimalPad)
             .submitLabel(.done)
-            .onSubmit {
-                focus.wrappedValue = nil
-            }
-            .focused(focus, equals: field)
             .foregroundStyle(foregroundStyle)
             .padding(.horizontal, 4)
             .frame(height: 24)
@@ -217,6 +270,8 @@ private struct ProductionProportionTextfield: View {
 }
 
 #if DEBUG
+import SHModels
+
 private struct _ProductionProportionPreview: View {
     @State
     private var proportion: SHProductionProportion
@@ -226,7 +281,15 @@ private struct _ProductionProportionPreview: View {
     }
     
     var body: some View {
-        ProductionProportionView($proportion, totalAmount: 50)
+        ProductionProportionView(
+            viewModel: ProductionProportionViewModel(
+                proportion: proportion,
+                totalAmount: 50,
+                numberOfRecipes: 1
+            ) {
+                proportion = $0
+            }
+        )
     }
 }
 

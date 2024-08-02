@@ -116,11 +116,10 @@ private struct _SingleItemProductionRecipeDisplayPreview: View {
             output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
                 item: recipe.output.item,
                 amount: recipe.amountPerMinute(for: recipe.output),
-                byproducts: [],
-                isSelected: false
+                byproducts: []
             ),
             byproducts: recipe.byproducts.map {
-                SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                SHSingleItemProduction.OutputRecipe.ByproductIngredient(
                     item: $0.item,
                     amount: recipe.amountPerMinute(for: $0),
                     byproducts: [],

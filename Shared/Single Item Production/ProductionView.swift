@@ -3,20 +3,16 @@ import SHModels
 import SHUtils
 
 struct ProductionView: View {
-    @Bindable
+    @State
     var viewModel: ProductionViewModel
     
-    @Environment(\.dismiss)
-    private var dismiss
+    init(item: any Item) {
+        _viewModel = State(initialValue: ProductionViewModel(item: item))
+    }
     
-    @Environment(\.displayScale)
-    private var displayScale
-    
-    @FocusState
-    private var focused
-    
-    @Namespace
-    private var namespace
+    init(production: Production) {
+        _viewModel = State(initialValue: ProductionViewModel(production: production))
+    }
     
     var body: some View {
         ZStack {
@@ -39,23 +35,17 @@ import SHStorage
 private struct _ProductionPreview: View {
     let itemID: String
     
-    @State
-    private var viewModel: ProductionViewModel?
+    @Dependency(\.storageService)
+    private var storageService
     
-    init(itemID: String) {
-        @Dependency(\.storageService)
-        var storageService
-        
-        self.itemID = itemID
-        _viewModel = State(initialValue: storageService.item(id: itemID).map { item in
-            ProductionViewModel(item: item)
-        })
+    private var item: (any Item)? {
+        storageService.item(id: itemID)
     }
     
     var body: some View {
-        if let viewModel {
+        if let item {
             NavigationStack {
-                ProductionView(viewModel: viewModel)
+                ProductionView(item: item)
             }
         } else {
             Text("There is no item with id '\(itemID)'")

@@ -42,6 +42,17 @@ final class Legacy: VersionedStorage {
         logger.info("Legacy storage is loaded.")
     }
     
+    func load(from options: LoadOptions) {
+        logger.info("Loading Legacy storage from load options.")
+        
+        parts = options.v1.pinnedPartIDs.map { Part.Persistent.Legacy(id: $0, isFavorite: true) }
+        equipment = options.v1.pinnedEquipmentIDs.map { Equipment.Persistent.Legacy(id: $0, isFavorite: true) }
+        recipes = options.v1.pinnedRecipeIDs.map { Recipe.Persistent.Legacy(id: $0, isFavorite: true) }
+        productions = options.v1.savedProductions
+        
+        logger.info("Legacy storage is loaded.")
+    }
+    
     func remove() throws {
         func remove(file: String) throws {
             let url = fileManager.url.appendingPathComponent(file, conformingTo: .json)

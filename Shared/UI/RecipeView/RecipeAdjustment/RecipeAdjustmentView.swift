@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RecipeAdjustmentView: View {
-    @Bindable
+    @State
     var viewModel: RecipeAdjustmentViewModel
     
     var body: some View {
@@ -14,7 +14,7 @@ struct RecipeAdjustmentView: View {
                 
                 HStack(spacing: 12) {
                     if viewModel.allowAdjustment {
-                        ProductionProportionView($viewModel.proportion, totalAmount: viewModel.recipe.output.amount)
+                        ProductionProportionView(viewModel: viewModel.proportionViewModel())
                     }
                     
                     if viewModel.allowDeletion {
@@ -62,11 +62,10 @@ private struct _RecipeAdjustmentPreview: View {
                 output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
                     item: $0.output.item,
                     amount: 20,
-                    byproducts: [],
-                    isSelected: false
+                    byproducts: []
                 ),
                 byproducts: $0.byproducts.map {
-                    SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                    SHSingleItemProduction.OutputRecipe.ByproductIngredient(
                         item: $0.item,
                         amount: 20,
                         byproducts: [],
@@ -90,6 +89,7 @@ private struct _RecipeAdjustmentPreview: View {
         outputRecipe.map {
             RecipeAdjustmentViewModel(
                 recipe: $0,
+                numberOfRecipes: 1,
                 allowAdjustment: true,
                 allowDeletion: true,
                 onChange: { _ in },

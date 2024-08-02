@@ -16,9 +16,8 @@ struct TabsView: View {
                 }
                 .tag(0)
             
-            Text("Under construction")
+            FactoriesView()
                 .tint(.sh(.orange))
-                .font(.title)
                 .tabItem {
                     if selectedTab == 1 {
                         Label("Factories", systemImage: "building.2.fill")

@@ -7,6 +7,8 @@ extension SHStorageService {
     final class Preview {
         private let staticStorage = SHStaticStorage()
         private let _pins = CurrentValueSubject<Pins, Never>(Pins())
+        private let _productions = CurrentValueSubject<[Production], Never>([])
+        private let _factories = CurrentValueSubject<[Factory], Never>([])
         
         var pins: Pins {
             _pins.value
@@ -14,6 +16,22 @@ extension SHStorageService {
         
         var streamPins: AsyncStream<Pins> {
             _pins.values.eraseToStream()
+        }
+        
+        var factories: [Factory] {
+            _factories.value
+        }
+        
+        var streamFactories: AsyncStream<[Factory]> {
+            _factories.values.eraseToStream()
+        }
+        
+        var productions: [Production] {
+            _productions.value
+        }
+        
+        var streamProductions: AsyncStream<[Production]> {
+            _productions.values.eraseToStream()
         }
         
         init() {
@@ -45,6 +63,34 @@ extension SHStorageService {
                 _pins.value.recipeIDs.remove(recipeID)
             } else {
                 _pins.value.recipeIDs.insert(recipeID)
+            }
+        }
+        
+        func saveFactory(_ factory: Factory) {
+            if let index = _factories.value.firstIndex(id: factory.id) {
+                _factories.value[index] = factory
+            } else {
+                _factories.value.append(factory)
+            }
+        }
+        
+        func saveProduction(_ production: Production) {
+            if let index = _productions.value.firstIndex(id: production.id) {
+                _productions.value[index] = production
+            } else {
+                _productions.value.append(production)
+            }
+        }
+        
+        func deleteFactory(_ factory: Factory) {
+            if let index = _factories.value.firstIndex(id: factory.id) {
+                _factories.value.remove(at: index)
+            }
+        }
+        
+        func deleteProduction(_ production: Production) {
+            if let index = _productions.value.firstIndex(id: production.id) {
+                _productions.value.remove(at: index)
             }
         }
     }

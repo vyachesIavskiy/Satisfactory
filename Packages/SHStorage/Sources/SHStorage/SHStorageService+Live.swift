@@ -26,6 +26,22 @@ extension SHStorageService {
             persistentStorage.streamPins
         }
         
+        var factories: [Factory] {
+            persistentStorage.factories
+        }
+        
+        var streamFactories: AsyncStream<[Factory]> {
+            persistentStorage.streamFactories
+        }
+        
+        var productions: [Production] {
+            persistentStorage.productions
+        }
+        
+        var streamProductions: AsyncStream<[Production]> {
+            persistentStorage.streamProductions
+        }
+        
         init() {
             persistentStorage = SHPersistentStorage(staticStorage: staticStorage)
         }
@@ -36,9 +52,13 @@ extension SHStorageService {
         }
         
         // MARK: Loading
-        func load() throws {
+        func load(_ options: LoadOptions) throws {
             try staticStorage.load()
-            try persistentStorage.load()
+            try persistentStorage.load(options)
+        }
+        
+        func loadForMigration() throws {
+            try staticStorage.load()
         }
         
         // MARK: Change pin status
@@ -52,6 +72,24 @@ extension SHStorageService {
         
         func changeRecipePinStatus(_ recipeID: String) {
             try? persistentStorage.changeRecipePinStatus(recipeID)
+        }
+        
+        // MARK: Saving
+        func saveFactory(_ factory: Factory) {
+            try? persistentStorage.saveFactory(factory)
+        }
+        
+        func saveProduction(_ production: Production) {
+            try? persistentStorage.saveProduction(production)
+        }
+        
+        // MARK: Deleting
+        func deleteFactory(_ factory: Factory) {
+            try? persistentStorage.deleteFactory(factory)
+        }
+        
+        func deleteProduction(_ production: Production) {
+            try? persistentStorage.deleteProduction(production)
         }
     }
 }

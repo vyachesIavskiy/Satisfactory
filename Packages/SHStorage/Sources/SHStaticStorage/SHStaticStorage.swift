@@ -18,7 +18,7 @@ public final class SHStaticStorage {
     
     public init() {}
     
-    public func load(onlyData: Bool = false) throws {
+    public func load() throws {
         logger.info("Loading SHStaticStorage.")
         
         guard !loaded else {
@@ -57,9 +57,7 @@ public final class SHStaticStorage {
         }
         
         // Step 6
-        if !onlyData {
-            migrations = try load(subdirectory: .migrations)
-        }
+        migrations = try load(subdirectory: .migrations)
         
         loaded = true
         
@@ -68,7 +66,7 @@ public final class SHStaticStorage {
 }
 
 // MARK: - Subscripts
-extension SHStaticStorage {
+package extension SHStaticStorage {
     subscript(partID id: String) -> Part? {
         let part = parts.first(id: id)
         
@@ -143,7 +141,7 @@ extension SHStaticStorage {
 }
 
 // MARK: - Throwing subscripts
-extension SHStaticStorage {
+package extension SHStaticStorage {
     subscript(partID id: String) -> Part {
         get throws {
             guard let part = self[partID: id] else {

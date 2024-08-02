@@ -90,6 +90,7 @@ extension NewProductionView {
                     .frame(maxHeight: .infinity, alignment: .bottom)
                 }
             }
+            .fixedSize(horizontal: false, vertical: true)
         }
     }
 }
@@ -114,7 +115,7 @@ private struct _ItemRowPreview: View {
     }
     
     var body: some View {
-        ScrollView {
+        List {
             ForEach(items, id: \.id) { item in
                 NewProductionView.ItemRow(item)
                     .contextMenu {
@@ -123,8 +124,10 @@ private struct _ItemRowPreview: View {
                         }
                     }
             }
-            .padding(.horizontal, 16)
+            .listRowSeparator(.hidden)
+//            .padding(.horizontal, 16)
         }
+        .listStyle(.plain)
     }
 }
 

@@ -8,9 +8,6 @@ struct RecipeIngredientView: View {
     @Environment(\.showIngredientNames)
     private var showIngredientNames
     
-    @Namespace
-    private var namespace
-    
     private var iconSpacing: Double {
         showIngredientNames ? 12.0 : 0.0
     }
@@ -26,7 +23,6 @@ struct RecipeIngredientView: View {
                     .resizable()
                     .frame(width: iconSize, height: iconSize)
                     .padding(4)
-                    .matchedGeometryEffect(id: "recipe-ingredient-icon", in: namespace)
                 
                 if showIngredientNames {
                     Text(viewModel.item.localizedName)
@@ -34,7 +30,6 @@ struct RecipeIngredientView: View {
                         .multilineTextAlignment(.center)
                         .minimumScaleFactor(0.7)
                         .frame(maxWidth: 100)
-                        .matchedGeometryEffect(id: "recipe-ingredient-name", in: namespace)
                 }
             }
 
@@ -44,7 +39,6 @@ struct RecipeIngredientView: View {
                         .offset(x: 4 * Double(index))
                 }
             }
-            .matchedGeometryEffect(id: "recipe-ingredient-amounts", in: namespace)
         }
     }
 }
@@ -223,7 +217,6 @@ private struct _ProductionIngredientPreview: View {
                 RecipeIngredientViewModel(
                     productionOutput: productionIngredient(
                         form: form,
-                        selected: selected,
                         byproductCount: byproductCount
                     )
                 )
@@ -270,7 +263,7 @@ private func displayIngredient(role: Recipe.Ingredient.Role, form: Part.Form) ->
     Recipe.Ingredient(role: role, item: part(form: form), amount: 10)
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool, byproductCount: Int = 0) -> SHSingleItemProduction.OutputRecipe.OutputIngredient {
+private func productionIngredient(form: Part.Form, byproductCount: Int = 0) -> SHSingleItemProduction.OutputRecipe.OutputIngredient {
     let id = switch form {
     case .solid: "part-iron-ingot"
     case .fluid: "part-water"
@@ -278,6 +271,22 @@ private func productionIngredient(form: Part.Form, selected: Bool, byproductCoun
     }
     
     return SHSingleItemProduction.OutputRecipe.OutputIngredient(
+        item: Part(id: id, category: .special, progressionIndex: 0, form: form),
+        amount: 10,
+        byproducts: (0..<byproductCount).map {
+            SHSingleItemProduction.OutputRecipe.Byproduct(index: $0, amount: 10)
+        }
+    )
+}
+
+private func productionIngredient(form: Part.Form, selected: Bool, byproductCount: Int = 0) -> SHSingleItemProduction.OutputRecipe.ByproductIngredient {
+    let id = switch form {
+    case .solid: "part-iron-ingot"
+    case .fluid: "part-water"
+    case .gas: "part-nitrogen-gas"
+    }
+    
+    return SHSingleItemProduction.OutputRecipe.ByproductIngredient(
         item: Part(id: id, category: .special, progressionIndex: 0, form: form),
         amount: 10,
         byproducts: (0..<byproductCount).map {

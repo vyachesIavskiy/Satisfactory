@@ -1,8 +1,9 @@
 import SHModels
+import struct SHPersistentStorage.LoadOptions
 
 public struct SHStorageService: Sendable {
     /// Loads storage. This should be called before any other call to storage is made.
-    public var load: @Sendable () throws -> Void
+    public var load: @Sendable (_ loadOptions: LoadOptions) throws -> Void
     
     /// Fetch a static configuration for a storage. This information is not changed during execution.
     public var staticConfiguration: @Sendable () -> Configuration
@@ -16,14 +17,30 @@ public struct SHStorageService: Sendable {
     /// Stream for any changes done to pins in a storage.
     public var streamPins: @Sendable () -> AsyncStream<Pins>
     
+    public var factories: @Sendable () -> [Factory]
+    
+    public var streamFactories: @Sendable () -> AsyncStream<[Factory]>
+    
+    public var productions: @Sendable () -> [Production]
+    
+    public var streamProductions: @Sendable () -> AsyncStream<[Production]>
+    
+    public var saveFactory: @Sendable (_ factory: Factory) -> Void
+    
+    public var saveProduction: @Sendable (_ production: Production) -> Void
+    
+    public var deleteFactory: @Sendable (_ factory: Factory) -> Void
+    
+    public var deleteProduction: @Sendable (_ production: Production) -> Void
+    
     /// Fetch all parts from storage. This information is not changed during execution.
-    var parts: @Sendable () -> [Part]
+    public var parts: @Sendable () -> [Part]
     
     /// Fetch all equipment from storage. This information is not changed during execution.
-    var equipment: @Sendable () -> [Equipment]
+    public var equipment: @Sendable () -> [Equipment]
     
     /// Fetch all buildings from storage. This information is not changed during execution.
-    var buildings: @Sendable () -> [Building]
+    public var buildings: @Sendable () -> [Building]
     
     /// Fetch all recipes from storage. This information is not changed during execution.
     var recipes: @Sendable () -> [Recipe]
@@ -307,5 +324,15 @@ public extension SHStorageService {
         } else if let equipment = item as? Equipment {
             changePinStatus(for: equipment)
         }
+    }
+    
+    func produtions(inside factory: Factory) -> [Production] {
+        productions().filter { factory.productionIDs.contains($0.id) }
+    }
+    
+    func streamProductions(inside factory: Factory) -> AsyncStream<[Production]> {
+        streamProductions()
+            .map { $0.filter { factory.productionIDs.contains($0.id) } }
+            .eraseToStream()
     }
 }

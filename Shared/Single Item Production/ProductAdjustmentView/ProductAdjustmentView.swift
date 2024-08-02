@@ -12,9 +12,6 @@ struct ProductAdjustmentView: View {
     @Environment(\.displayScale)
     private var displayScale
     
-    @Namespace
-    private var namespace
-    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -64,6 +61,9 @@ struct ProductAdjustmentView: View {
             }
             .toolbarBackground(.hidden, for: .navigationBar)
         }
+        .task {
+            await viewModel.observePins()
+        }
     }
     
     @MainActor @ViewBuilder
@@ -72,27 +72,25 @@ struct ProductAdjustmentView: View {
             LazyVStack(spacing: 8, pinnedViews: .sectionHeaders) {
                 Section {
                     ForEach(Array(viewModel.selectedRecipes.enumerated()), id: \.element.id) { index, recipe in
-                        VStack {
-                            RecipeAdjustmentView(
-                                viewModel: RecipeAdjustmentViewModel(
-                                    recipe: recipe,
-                                    allowAdjustment: viewModel.selectedRecipes.count > 1,
-                                    allowDeletion: viewModel.allowDeletion || viewModel.selectedRecipes.count > 1
-                                ) { [weak viewModel] proportion in
-                                    viewModel?.updateRecipe(recipe, with: proportion)
-                                } onDelete: { [weak viewModel] in
-                                    viewModel?.removeRecipe(recipe)
-                                }
-                            )
-                            .padding(.horizontal, 16)
-                            .matchedGeometryEffect(id: recipe.id, in: namespace)
-                            
-                            if index != viewModel.selectedRecipes.count - 1 {
-                                Divider()
-                                    .padding(.leading, 16)
+                        RecipeAdjustmentView(
+                            viewModel: RecipeAdjustmentViewModel(
+                                recipe: recipe,
+                                numberOfRecipes: viewModel.selectedRecipes.count,
+                                allowAdjustment: viewModel.selectedRecipes.count > 1,
+                                allowDeletion: viewModel.allowDeletion || viewModel.selectedRecipes.count > 1
+                            ) { [weak viewModel] proportion in
+                                viewModel?.updateRecipe(recipe, with: proportion)
+                            } onDelete: { [weak viewModel] in
+                                viewModel?.removeRecipe(recipe)
                             }
-                        }
+                        )
+                        .padding(.horizontal, 16)
                         .padding(.vertical, 8)
+                        
+                        if index != viewModel.selectedRecipes.count - 1 {
+                            Divider()
+                                .padding(.leading, 16)
+                        }
                     }
                 }
             }
@@ -105,22 +103,19 @@ struct ProductAdjustmentView: View {
             LazyVStack(spacing: 8, pinnedViews: .sectionHeaders) {
                 Section {
                     ForEach(Array(viewModel.pinnedRecipes.enumerated()), id: \.element.id) { index, pinnedRecipe in
-                        VStack {
-                            Button {
-                                viewModel.addRecipe(pinnedRecipe)
-                            } label: {
-                                RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: pinnedRecipe))
-                                    .padding(.horizontal, 16)
-                            }
-                            .buttonStyle(.plain)
-                            .matchedGeometryEffect(id: pinnedRecipe.id, in: namespace)
-                            
-                            if index != viewModel.pinnedRecipes.count - 1 {
-                                Divider()
-                                    .padding(.leading, 16)
-                            }
+                        Button {
+                            viewModel.addRecipe(pinnedRecipe)
+                        } label: {
+                            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: pinnedRecipe))
+                                .padding(.horizontal, 16)
                         }
+                        .buttonStyle(.plain)
                         .padding(.vertical, 8)
+                        
+                        if index != viewModel.pinnedRecipes.count - 1 {
+                            Divider()
+                                .padding(.leading, 16)
+                        }
                     }
                 } header: {
                     Text("Pinned recipes")
@@ -142,37 +137,29 @@ struct ProductAdjustmentView: View {
             LazyVStack(spacing: 8, pinnedViews: .sectionHeaders) {
                 Section {
                     ForEach(Array(viewModel.unselectedRecipes.enumerated()), id: \.element.id) { index, unselectedRecipe in
-                        VStack {
-                            Button {
-                                viewModel.addRecipe(unselectedRecipe)
-                            } label: {
-                                RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: unselectedRecipe))
-                                    .padding(.horizontal, 16)
-                            }
-                            .buttonStyle(.plain)
-                            .matchedGeometryEffect(id: unselectedRecipe.id, in: namespace)
-                            
-                            if index != viewModel.unselectedRecipes.count - 1 {
-                                Divider()
-                                    .padding(.leading, 16)
-                            }
+                        Button {
+                            viewModel.addRecipe(unselectedRecipe)
+                        } label: {
+                            RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: unselectedRecipe))
+                                .padding(.horizontal, 16)
                         }
+                        .buttonStyle(.plain)
                         .padding(.vertical, 8)
+                        
+                        if index != viewModel.unselectedRecipes.count - 1 {
+                            Divider()
+                                .padding(.leading, 16)
+                        }
                     }
                 } header: {
-                    VStack {
-                        Divider()
-                            .padding(.leading, 16)
-                        
-                        Text("Unselected recipes")
-                            .fontWeight(.medium)
-                            .foregroundStyle(.secondary)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, 16)
-                            .padding(.top, 8)
-                            .padding(.bottom, 4)
-                            .background(.background)
-                    }
+                    Text("Unselected recipes")
+                        .fontWeight(.medium)
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 16)
+                        .padding(.top, 8)
+                        .padding(.bottom, 4)
+                        .background(.background)
                 }
             }
         }
@@ -209,11 +196,10 @@ private struct _ProductAdjustmentPreview: View {
                             output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
                                 item: recipe.output.item,
                                 amount: recipe.amountPerMinute(for: recipe.output),
-                                byproducts: [],
-                                isSelected: true
+                                byproducts: []
                             ),
                             byproducts: recipe.byproducts.map {
-                                SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                                SHSingleItemProduction.OutputRecipe.ByproductIngredient(
                                     item: $0.item,
                                     amount: recipe.amountPerMinute(for: $0),
                                     byproducts: [],

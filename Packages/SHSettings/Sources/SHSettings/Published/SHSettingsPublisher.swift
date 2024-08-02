@@ -19,7 +19,7 @@ final class SHSettingsPublisher {
     
     private func save() {
         do {
-            try persistence.save(model: settings, to: Self.filename)
+            try persistence.save(settings, toFile: Self.filename)
         } catch {
             print(error)
         }

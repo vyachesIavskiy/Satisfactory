@@ -6,14 +6,8 @@ struct NewProductionView: View {
     @State
     var viewModel = NewProductionViewModel()
     
-    @Namespace
-    private var namespace
-    
-    @ScaledMetric(relativeTo: .body)
-    private var itemSpacing = 8.0
-    
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $viewModel.navigationPath) {
             List {
                 ForEach($viewModel.sections) { $section in
                     itemsSection($section)
@@ -39,8 +33,10 @@ struct NewProductionView: View {
                     }
                 }
             }
-            .navigationDestination(item: $viewModel.productionViewModel) { viewModel in
-                ProductionView(viewModel: viewModel)
+            .navigationDestination(for: String.self) { itemID in
+                if let item = viewModel.item(id: itemID) {
+                    ProductionView(item: item)
+                }
             }
         }
         .task {
@@ -76,26 +72,34 @@ struct NewProductionView: View {
     @ViewBuilder
     private func itemRow(_ item: any Item) -> some View {
         Button {
-            viewModel.selectItem(item)
+            viewModel.navigationPath = [item.id]
         } label: {
             ItemRow(item)
+                .contentShape(.interaction, Rectangle())
         }
-        .buttonStyle(.plain)
+        .listRowBackground(Color.clear)
         .contextMenu {
             Button {
                 viewModel.changePinStatus(for: item)
             } label: {
-                Text(viewModel.isPinned(item) ? "Unpin" : "Pin")
+                if viewModel.isPinned(item) {
+                    Label("Unpin", systemImage: "pin.slash.fill")
+                } else {
+                    Label("Pin", systemImage: "pin.fill")
+                }
             }
         }
-        .id(item.id)
-        .tag(item.id)
-        .matchedGeometryEffect(id: item.id, in: namespace)
+//            .background {
+//                NavigationLink("") {
+//                    ProductionView(viewModel: ProductionViewModel(item: item))
+//                }
+//                .opacity(0)
+//            }
     }
 }
 
 #if DEBUG
 #Preview("New production") {
-    NewProductionView(viewModel: NewProductionViewModel())
+    NewProductionView()
 }
 #endif

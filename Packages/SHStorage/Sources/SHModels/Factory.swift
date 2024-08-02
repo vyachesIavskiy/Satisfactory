@@ -2,39 +2,35 @@ import Foundation
 
 // MARK: Model
 
-public struct Factory: Equatable {
+public struct Factory: Identifiable, Hashable {
     public var id: UUID
     public var name: String
-    public var image: Image
-    public var productions: [Production]
+    public var assetType: AssetType
+    public var productionIDs: [UUID]
     
-    public init(id: UUID, name: String, productions: [Production]) {
+    public init(id: UUID, name: String, assetType: AssetType, productionIDs: [UUID]) {
         self.id = id
         self.name = name
-        self.image = .abbreviation
-        self.productions = productions
-    }
-    
-    public init(id: UUID, name: String, assetName: String, productions: [Production]) {
-        self.id = id
-        self.name = name
-        self.image = .asset(name: assetName)
-        self.productions = productions
+        self.assetType = assetType
+        self.productionIDs = productionIDs
     }
 }
 
 extension Factory {
-    public enum Image: Equatable {
+    public enum AssetType: Hashable {
+        case legacy
         case abbreviation
-        case asset(name: String)
+        case assetCatalog(name: String)
+    }
+}
+
+public extension Sequence<Factory> {
+    func first(id: UUID) -> Element? {
+        first { $0.id == id }
     }
 }
 
 public extension Collection<Factory> {
-    func first(id: UUID) -> Element? {
-        first { $0.id == id }
-    }
-    
     func firstIndex(id: UUID) -> Index? {
         firstIndex { $0.id == id }
     }

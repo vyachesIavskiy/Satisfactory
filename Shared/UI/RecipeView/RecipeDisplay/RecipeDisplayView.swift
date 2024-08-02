@@ -16,9 +16,6 @@ struct RecipeDisplayView: View {
     @ScaledMetric(relativeTo: .body)
     private var titleRowSpacing = 16.0
     
-    @Namespace
-    private var namespace
-    
     var body: some View {
         let backgroundShape = AngledRectangle(cornerRadius: 8).inset(by: -4)
         
@@ -33,7 +30,6 @@ struct RecipeDisplayView: View {
     private var recipeBody: some View {
         VStack(alignment: .leading, spacing: titleIconSpacing) {
             titleView
-                .matchedGeometryEffect(id: "recipe-title", in: namespace)
             
             ViewThatFits(in: .horizontal) {
                 HStack(alignment: .top, spacing: 24) {

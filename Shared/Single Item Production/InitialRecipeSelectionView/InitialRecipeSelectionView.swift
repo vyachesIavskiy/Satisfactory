@@ -10,9 +10,6 @@ struct InitialRecipeSelectionView: View {
     
     @Environment(\.dismiss)
     private var dismiss
-
-    @Namespace
-    private var namespace
     
     @ScaledMetric(relativeTo: .title)
     private var iconSize = 30.0
@@ -24,43 +21,35 @@ struct InitialRecipeSelectionView: View {
     private var recipeSpacing = 16.0
     
     var body: some View {
-        ScrollView {
-            LazyVStack(alignment: .leading, spacing: 16) {
-                ForEach($viewModel.sections) { $section in
-                    recipesSection($section)
-                }
+        List {
+            ForEach($viewModel.sections) { $section in
+                recipesSection($section)
             }
-            .padding(.top, 8)
-            .padding(.bottom, 16)
+            .listSectionSeparator(.hidden)
         }
+        .listStyle(.plain)
         .navigationTitle(viewModel.item.localizedName)
+        .task {
+            await viewModel.observeStorage()
+        }
     }
     
     @MainActor @ViewBuilder
     private func recipesSection(_ _section: Binding<InitialRecipeSelectionViewModel.Section>) -> some View {
         let section = _section.wrappedValue
         if !section.recipes.isEmpty {
-            LazyVStack(alignment: .leading, spacing: 8, pinnedViews: .sectionHeaders) {
-                Section(isExpanded: _section.expanded) {
-                    ForEach(Array(section.recipes.enumerated()), id: \.element.id) { index, recipe in
-                        VStack {
-                            recipeView(recipe)
-                            
-                            if index != section.recipes.count - 1 {
-                                Divider()
-                                    .padding(.leading, 16)
-                            }
-                        }
-                        .padding(.vertical, 8)
-                        .disabled(!section.expanded)
-                    }
-                } header: {
-                    if viewModel.sectionHeaderVisible(section) {
-                        SHSectionHeader(section.title, expanded: _section.expanded)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .background(.background)
-                    }
+            Section(isExpanded: _section.expanded) {
+                ForEach(section.recipes) { recipe in
+                    recipeView(recipe)
+                }
+            } header: {
+                if viewModel.sectionHeaderVisible(section) {
+                    SHSectionHeader(section.title, expanded: _section.expanded)
+                        .listRowInsets(EdgeInsets())
+                        .padding(.horizontal, 20)
+                        .padding(.top, 8)
+                        .padding(.bottom, 4)
+                        .background(.background)
                 }
             }
         }
@@ -74,21 +63,19 @@ struct InitialRecipeSelectionView: View {
             RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
         }
         .buttonStyle(.plain)
-        .matchedGeometryEffect(id: recipe.id, in: namespace)
         .contextMenu {
             if viewModel.pinsAllowed() {
                 Button {
                     viewModel.changePinStatus(for: recipe)
                 } label: {
                     if viewModel.isPinned(recipe) {
-                        Text("Unpin")
+                        Label("Unpin", systemImage: "pin.slash.fill")
                     } else {
-                        Text("Pin")
+                        Label("Pin", systemImage: "pin.fill")
                     }
                 }
             }
         }
-        .padding(.horizontal, 16)
     }
 }
 
@@ -108,9 +95,7 @@ private struct _InitialRecipeSelectionPreview: View {
     var body: some View {
         NavigationStack {
             if let item {
-                ScrollView {
-                    InitialRecipeSelectionView(viewModel: InitialRecipeSelectionViewModel(item: item))
-                }
+                InitialRecipeSelectionView(viewModel: InitialRecipeSelectionViewModel(item: item))
             } else {
                 Text("There is no item with ID '\(itemID)'")
                     .font(.largeTitle)

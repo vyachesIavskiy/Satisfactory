@@ -35,7 +35,7 @@ extension SHSettingsService {
         
         private func save() {
             do {
-                try persistence.save(model: _settings.value, to: Self.filename)
+                try persistence.save(_settings.value, toFile: Self.filename)
             } catch {
                 print(error)
             }

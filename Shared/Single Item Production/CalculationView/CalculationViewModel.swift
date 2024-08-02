@@ -18,18 +18,11 @@ final class CalculationViewModel {
     @ObservationIgnored
     private var production: SHSingleItemProduction
     
+    @ObservationIgnored
+    var amount: Double
+    
     var item: any Item {
         production.item
-    }
-    
-    var amount: Double {
-        get { production.amount }
-        set {
-            guard newValue != production.amount else { return }
-            
-            production.amount = newValue
-            update()
-        }
     }
     
     var hasUnsavedChanges: Bool {
@@ -37,28 +30,52 @@ final class CalculationViewModel {
         true
     }
     
+    @MainActor
+    var selectingByproduct: Bool {
+        byproductSelectionState != nil
+    }
+    
     // MARK: Observed properties
     var outputItemViewModels = [ProductViewModel]()
     var modalNavigationState: ModalNavigationState?
     var showingUnsavedConfirmationDialog = false
-    private var byproductSelectionState: ByproductSelectionState?
+    
+    @MainActor
+    private var byproductSelectionState: ByproductSelectionState? {
+        didSet {
+            buildOutputItemViewModels()
+        }
+    }
     
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
     
-    init(item: some Item, recipe: Recipe) {
+    convenience init(item: some Item, recipe: Recipe) {
+        let production = SHSingleItemProduction(item: item)
+        self.init(production: production)
+        
+        addInitialRecipe(recipe)
+    }
+    
+    convenience init(production: Production) {
+        let production = SHSingleItemProduction(production: production)
+        self.init(production: production)
+        
+        update()
+    }
+    
+    private init(production: SHSingleItemProduction) {
         @Dependency(\.storageService)
         var storageService
         
         @Dependency(\.settingsService)
         var settingsService
         
-        production = SHSingleItemProduction(item: item)
-        self.pins = storageService.pins()
-        self.settings = settingsService.settings
-        
-        addInitialRecipe(recipe)
+        self.production = production
+        amount = production.amount
+        pins = storageService.pins()
+        settings = settingsService.settings
     }
     
     func addRecipe(_ recipe: Recipe, to item: some Item) {
@@ -69,6 +86,20 @@ final class CalculationViewModel {
     
     func saveProduction() {
         
+    }
+    
+    @MainActor
+    func cancelByproductSelection() {
+        byproductSelectionState = nil
+    }
+    
+    // MARK: Update
+    func update() {
+        production.amount = amount
+        production.update()
+        Task { @MainActor [weak self] in
+            self?.buildOutputItemViewModels()
+        }
     }
 }
 
@@ -87,6 +118,7 @@ extension CalculationViewModel: Hashable {
 private extension CalculationViewModel {
     func addInitialRecipe(_ recipe: Recipe) {
         production.amount = recipe.amountPerMinute(for: recipe.output)
+        amount = production.amount
         production.addRecipe(recipe, to: item)
         addInputRecipesIfNeeded()
         update()
@@ -137,18 +169,12 @@ private extension CalculationViewModel {
         }
     }
     
-    // MARK: Update
-    func update() {
-        production.update()
-        Task { @MainActor [weak self] in
-            self?.buildOutputItemViewModels()
-        }
-    }
-    
     // MARK: Can perform actions
+    @MainActor
     func canAdjustItem(_ outputItem: SHSingleItemProduction.OutputItem) -> Bool {
-        outputItem.item.id != item.id ||
-        storageService.recipes(for: outputItem.item, as: [.output, .byproduct]).count > 1
+        byproductSelectionState == nil &&
+        (outputItem.item.id != item.id ||
+        storageService.recipes(for: outputItem.item, as: [.output, .byproduct]).count > 1)
     }
     
     func canRemoveItem(_ item: some Item) -> Bool {
@@ -160,35 +186,48 @@ private extension CalculationViewModel {
         !storageService.recipes(for: input.item, as: [.output, .byproduct]).isEmpty
     }
     
-    func canSelectByproductProducer(
-        outputItem: SHSingleItemProduction.OutputItem,
+    @MainActor
+    func canSelectOutputAsByproductProducer(
         ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient
     ) -> Bool {
-        // Producing recipe is already selected
+        // If producing recipe is not yet selected
         byproductSelectionState?.producingRecipe == nil &&
         
-        // outputItem is not produced by another recipe
-        !production.outputRecipesContains {
-            $0.inputs.contains { $0.producingProductID == outputItem.id }
-        } &&
-        
-        // ingredient is an input of another recipe
-        production.inputRecipesContains { inputRecipe in
-            inputRecipe.inputs.contains { $0.item.id == ingredient.item.id }
+        // If production has an input with the same item and this input is not selected yet
+        production.outputRecipesContains {
+            $0.inputs.contains {
+                $0.item.id == ingredient.item.id &&
+                $0.producingProductID == nil
+            }
         }
     }
     
+    @MainActor
+    func canSelectByproductProducer(
+        ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient
+    ) -> Bool {
+        // If producing recipe is not yet selected
+        byproductSelectionState?.producingRecipe == nil &&
+        
+        // If production has at least one input with the same item
+        production.outputRecipesContains {
+            $0.inputs.contains { $0.item.id == ingredient.item.id }
+        }
+    }
+    
+    @MainActor
     func canSelectByproductConsumer(ingredient: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
-        // Consuming recipe is already selected
+        // If consuming recipe is not yet selected
         byproductSelectionState?.consumingRecipe == nil &&
         
-        // ingredient is not producing an item
-        !production.outputItemsContains { $0.id == ingredient.producingProductID } &&
-        
-        // ingredient is either output or byproduct of another selected item
-        production.inputRecipesContains { inputRecipe in
-            inputRecipe.output.item.id == ingredient.item.id ||
-            inputRecipe.byproducts.contains { $0.item.id == ingredient.item.id }
+        production.outputRecipesContains {
+            // If ingredient is not selected and there is an output with the same item
+            (!ingredient.isSelected && $0.output.item.id == ingredient.item.id) ||
+            
+            // Or if there is at least one byproduct with the same item
+            $0.byproducts.contains {
+                $0.item.id == ingredient.item.id
+            }
         }
     }
     
@@ -233,6 +272,7 @@ private extension CalculationViewModel {
         modalNavigationState = .selectInitialRecipeForItem(viewModel: viewModel)
     }
     
+    @MainActor
     func selectByproductProducer(ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient, recipe: Recipe) {
         if byproductSelectionState == nil {
             byproductSelectionState = ByproductSelectionState(
@@ -246,6 +286,21 @@ private extension CalculationViewModel {
         checkByproductSelectionState()
     }
     
+    @MainActor
+    func selectByproductProducer(ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient, recipe: Recipe) {
+        if byproductSelectionState == nil {
+            byproductSelectionState = ByproductSelectionState(
+                item: ingredient.item,
+                producingRecipe: recipe
+            )
+        } else {
+            byproductSelectionState?.producingRecipe = recipe
+        }
+        
+        checkByproductSelectionState()
+    }
+    
+    @MainActor
     func selectByproductConsumer(ingredient: SHSingleItemProduction.OutputRecipe.InputIngredient, recipe: Recipe) {
         if byproductSelectionState == nil {
             byproductSelectionState = ByproductSelectionState(
@@ -259,6 +314,7 @@ private extension CalculationViewModel {
         checkByproductSelectionState()
     }
     
+    @MainActor
     func checkByproductSelectionState() {
         guard
             let item = byproductSelectionState?.item,
@@ -292,8 +348,11 @@ private extension CalculationViewModel {
                     case let .selectRecipeForInput(input):
                         canSelectRecipe(for: input)
                         
-                    case let .selectByproductProducer(item, ingredient, _):
-                        canSelectByproductProducer(outputItem: item, ingredient: ingredient)
+                    case let .selectOutputAsByproductProducer(ingredient, _):
+                        canSelectOutputAsByproductProducer(ingredient: ingredient)
+                        
+                    case let .selectByproductProducer(ingredient, _):
+                        canSelectByproductProducer(ingredient: ingredient)
                         
                     case let .selectByproductConsumer(ingredient, _):
                         canSelectByproductConsumer(ingredient: ingredient)
@@ -312,7 +371,10 @@ private extension CalculationViewModel {
                     case let .selectRecipeForInput(input):
                         selectRecipe(for: input)
                         
-                    case let .selectByproductProducer(_, ingredient, recipe):
+                    case let .selectOutputAsByproductProducer(ingredient, recipe):
+                        selectByproductProducer(ingredient: ingredient, recipe: recipe)
+                        
+                    case let .selectByproductProducer(ingredient, recipe):
                         selectByproductProducer(ingredient: ingredient, recipe: recipe)
                         
                     case let .selectByproductConsumer(ingredient, recipe):
@@ -330,9 +392,12 @@ extension CalculationViewModel {
         case adjust(SHSingleItemProduction.OutputItem)
         case removeItem(any Item)
         case selectRecipeForInput(SHSingleItemProduction.OutputRecipe.InputIngredient)
-        case selectByproductProducer(
-            product: SHSingleItemProduction.OutputItem,
+        case selectOutputAsByproductProducer(
             ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient,
+            recipe: Recipe
+        )
+        case selectByproductProducer(
+            ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient,
             recipe: Recipe
         )
         case selectByproductConsumer(input: SHSingleItemProduction.OutputRecipe.InputIngredient, recipe: Recipe)

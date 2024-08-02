@@ -254,8 +254,27 @@
         }
       }
     },
+    "factory-legacy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legacy"
+          }
+        }
+      }
+    },
     "part-actual-snow" : {
-      "extractionState" : "manual"
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actual Snow"
+          }
+        }
+      }
     },
     "part-adaptive-control-unit" : {
       "extractionState" : "manual",

@@ -72,13 +72,12 @@ final class ProductAdjustmentViewModel: Identifiable {
         
         @Dependency(\.storageService)
         var storageService
-        
-        Task { @MainActor [weak self] in
-            guard let self else { return }
-            
-            for await _ in storageService.streamPinnedRecipeIDs(for: product.item, as: [.output, .byproduct]) {
-                update()
-            }
+    }
+    
+    @MainActor
+    func observePins() async {
+        for await _ in storageService.streamPinnedRecipeIDs(for: product.item, as: [.output, .byproduct]) {
+            update()
         }
     }
     

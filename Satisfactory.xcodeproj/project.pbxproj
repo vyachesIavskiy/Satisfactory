@@ -92,6 +92,11 @@
 		D356C51C2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356C51B2BF7CCCC00A4CE6E /* SettingsViewModel.swift */; };
 		D356C51D2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356C51B2BF7CCCC00A4CE6E /* SettingsViewModel.swift */; };
 		D356C51E2BF7CCCC00A4CE6E /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356C51B2BF7CCCC00A4CE6E /* SettingsViewModel.swift */; };
+		D37F8A652C5BAD7600D3AB99 /* String+Abbreviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F8A642C5BAD7600D3AB99 /* String+Abbreviation.swift */; };
+		D37F8A662C5BAD7600D3AB99 /* String+Abbreviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F8A642C5BAD7600D3AB99 /* String+Abbreviation.swift */; };
+		D37F8A672C5BAD7600D3AB99 /* String+Abbreviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F8A642C5BAD7600D3AB99 /* String+Abbreviation.swift */; };
+		D37F8A692C5BB58D00D3AB99 /* BorderedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F8A682C5BB58D00D3AB99 /* BorderedButtonStyle.swift */; };
+		D37F8A6A2C5BB58D00D3AB99 /* BorderedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37F8A682C5BB58D00D3AB99 /* BorderedButtonStyle.swift */; };
 		D385EF772C53F8720083BFA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D385EF6E2C53F8690083BFA1 /* AppDelegate.swift */; };
 		D385EFBA2C53F8720083BFA1 /* SHSingleItemProduction in Frameworks */ = {isa = PBXBuildFile; productRef = D385EF752C53F8720083BFA1 /* SHSingleItemProduction */; };
 		D385EFBB2C53F8720083BFA1 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D385EF732C53F8720083BFA1 /* SHDebug */; };
@@ -223,6 +228,8 @@
 		D356C5132BF7CAA700A4CE6E /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		D356C51B2BF7CCCC00A4CE6E /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D356C53A2BF7D79700A4CE6E /* SHSettings */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHSettings; sourceTree = "<group>"; };
+		D37F8A642C5BAD7600D3AB99 /* String+Abbreviation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Abbreviation.swift"; sourceTree = "<group>"; };
+		D37F8A682C5BB58D00D3AB99 /* BorderedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButtonStyle.swift; sourceTree = "<group>"; };
 		D385EF6E2C53F8690083BFA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D385EFC62C53F8720083BFA1 /* iOS UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D385EFC72C53F8720083BFA1 /* iOS Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iOS Info.plist"; path = "/Users/slavanagornyak/Developer/Satisfactory/UIKit/iOS Info.plist"; sourceTree = "<absolute>"; };
@@ -270,6 +277,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D31389002C5A8AE700D90006 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				NewFactoryAssetCatalogView.swift,
+				NewFactoryView.swift,
+			);
+			target = 450BD19524A6395700948B47 /* iOS */;
+		};
 		D33189332C56577E00F822C9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -313,6 +328,24 @@
 			);
 			target = D385EF702C53F8720083BFA1 /* iOS UIKit */;
 		};
+		D37E131B2C5953D40085FEC0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				FactoriesView.swift,
+				FactoriesViewModel.swift,
+				FactoryRowView.swift,
+			);
+			target = 450BD19524A6395700948B47 /* iOS */;
+		};
+		D37F8A5F2C5BA4A600D3AB99 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				FactoryView.swift,
+				FactoryViewModel.swift,
+				ProductionRowView.swift,
+			);
+			target = 450BD19524A6395700948B47 /* iOS */;
+		};
 		D385F03C2C5410740083BFA1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -331,10 +364,13 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		D31388FD2C5A8AD600D90006 /* NewFactoryView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D31389002C5A8AE700D90006 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = NewFactoryView; sourceTree = "<group>"; };
 		D33189302C56576A00F822C9 /* CalculationView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D33189332C56577E00F822C9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = CalculationView; sourceTree = "<group>"; };
 		D3501C802C57E76D00A67D74 /* NewProductionTab */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3501C812C57E77600A67D74 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = NewProductionTab; sourceTree = "<group>"; };
 		D3501C932C580D4500A67D74 /* FactoriesTab */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3501C972C580D5F00A67D74 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = FactoriesTab; sourceTree = "<group>"; };
 		D3501C942C580D4C00A67D74 /* SettingsTab */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3501C9F2C580FF900A67D74 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = SettingsTab; sourceTree = "<group>"; };
+		D37E13182C5953C40085FEC0 /* Factories */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D37E131B2C5953D40085FEC0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Factories; sourceTree = "<group>"; };
+		D37F8A5B2C5BA49900D3AB99 /* FactoryView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D37F8A5F2C5BA4A600D3AB99 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = FactoryView; sourceTree = "<group>"; };
 		D385F0392C5410690083BFA1 /* InitialRecipeSelectionView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D385F0402C54109B0083BFA1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D385F03C2C5410740083BFA1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = InitialRecipeSelectionView; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -399,6 +435,9 @@
 				450BD18F24A6395700948B47 /* SatisfactoryApp.swift */,
 				D30D978D2BF69C85007B6850 /* Root */,
 				D30D97A02BF75400007B6850 /* New Production */,
+				D37E13182C5953C40085FEC0 /* Factories */,
+				D31388FD2C5A8AD600D90006 /* NewFactoryView */,
+				D37F8A5B2C5BA49900D3AB99 /* FactoryView */,
 				D30D97922BF6A9F4007B6850 /* Settings */,
 				D3E7B87D2C2C5F5400DB7177 /* Single Item Production */,
 				D30BDE182C4191D7005757BB /* Environment */,
@@ -447,6 +486,7 @@
 				F9B92FE42A265F3C00C173BF /* CGRect+Points.swift */,
 				F9B92FE72A26603A00C173BF /* CGPoint+Offset.swift */,
 				D38BE1CE2C57816A0022F557 /* NSLayoutContraint.swift */,
+				D37F8A642C5BAD7600D3AB99 /* String+Abbreviation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -592,6 +632,7 @@
 			children = (
 				D31E83AD2C3F03BD0054C504 /* ToolbarButtonStyle.swift */,
 				D333C8D12C4289EC0021E225 /* TintedButtonStyle.swift */,
+				D37F8A682C5BB58D00D3AB99 /* BorderedButtonStyle.swift */,
 			);
 			path = "Button Styles";
 			sourceTree = "<group>";
@@ -934,6 +975,7 @@
 				F998FFF12A1159CC00EB7225 /* FeedbackView.swift in Sources */,
 				D31E83AB2C3EECC20054C504 /* RecipeAdjustmentViewModel.swift in Sources */,
 				D31E839F2C3EEC380054C504 /* ProductView.swift in Sources */,
+				D37F8A652C5BAD7600D3AB99 /* String+Abbreviation.swift in Sources */,
 				D300D5502C3FE4A000D1C391 /* RecipeIngredientAmountViewModel.swift in Sources */,
 				D300D55D2C3FFA6800D1C391 /* RecipeDisplayViewModel.swift in Sources */,
 				D314C3B02C0464EB002825C9 /* TabsView.swift in Sources */,
@@ -947,6 +989,7 @@
 				F9CBF0BA27493FD90020871C /* SettingsView.swift in Sources */,
 				D32AC7EA2C16F3C700BDFBAC /* RecipeByproductShape.swift in Sources */,
 				D38F69CD2C426A87000F4CEE /* ChangeLog_V1.7.swift in Sources */,
+				D37F8A692C5BB58D00D3AB99 /* BorderedButtonStyle.swift in Sources */,
 				D31E83A12C3EEC570054C504 /* ProductViewModel.swift in Sources */,
 				D38F69D02C426B0F000F4CEE /* ChangeLogView.swift in Sources */,
 				D300D56E2C401E9400D1C391 /* SingleItemProductionRecipeDisplayViewModel.swift in Sources */,
@@ -1002,6 +1045,7 @@
 			files = (
 				D385F02F2C5408B70083BFA1 /* SHColor+Color.swift in Sources */,
 				D385F02E2C5408B20083BFA1 /* SHShapeStyle.swift in Sources */,
+				D37F8A672C5BAD7600D3AB99 /* String+Abbreviation.swift in Sources */,
 				D385EF772C53F8720083BFA1 /* AppDelegate.swift in Sources */,
 				D38BE1D12C57816A0022F557 /* NSLayoutContraint.swift in Sources */,
 				D3501C992C580D7900A67D74 /* SHNavigationController.swift in Sources */,
@@ -1063,6 +1107,8 @@
 				F95DAFB72AC6ACC60062A5AD /* CGPoint+Offset.swift in Sources */,
 				D333C8BB2C4288750021E225 /* ProductViewModel.swift in Sources */,
 				D3ACE5DA2C387CA40081D2C5 /* RecipeIngredientView.swift in Sources */,
+				D37F8A6A2C5BB58D00D3AB99 /* BorderedButtonStyle.swift in Sources */,
+				D37F8A662C5BAD7600D3AB99 /* String+Abbreviation.swift in Sources */,
 				D314C3B12C0464EB002825C9 /* TabsView.swift in Sources */,
 				D333C8CB2C4288AF0021E225 /* AppInfoView.swift in Sources */,
 				D356C5152BF7CAA700A4CE6E /* RootViewModel.swift in Sources */,

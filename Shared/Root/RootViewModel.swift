@@ -1,6 +1,9 @@
 import SwiftUI
 import SHDependencies
+import SHModels
+import SHPersistentModels
 import SHStorage
+import SHPersistentStorage
 import SHSettings
 import SHLogger
 
@@ -38,9 +41,194 @@ final class RootViewModel {
     
     @MainActor
     func load() async {
+        let ironIngot1 = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "iron-ingot",
+            recipeID: "iron-ingot",
+            children: []
+        )
+        
+        let ironIngot2 = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "iron-ingot",
+            recipeID: "iron-ingot",
+            children: []
+        )
+        
+        let ironIngot3 = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "iron-ingot",
+            recipeID: "iron-ingot",
+            children: []
+        )
+        
+        let ironIngot4 = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "iron-ingot",
+            recipeID: "iron-ingot",
+            children: []
+        )
+        
+        let ironIngot5 = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "iron-ingot",
+            recipeID: "iron-ingot",
+            children: []
+        )
+        
+        let steelIngot1 = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "steel-ingot",
+            recipeID: "alternate-solid-steel-ingot",
+            children: [
+                ironIngot1.id
+            ]
+        )
+        
+        let steelIngot2 = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "steel-ingot",
+            recipeID: "alternate-solid-steel-ingot",
+            children: [
+                ironIngot2.id
+            ]
+        )
+        
+        let ironPlate = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "iron-plate",
+            recipeID: "iron-plate",
+            children: [
+                ironIngot3.id
+            ]
+        )
+        
+        let screw = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "screw",
+            recipeID: "alternate-cast screw",
+            children: [
+                ironIngot4.id
+            ]
+        )
+        
+        let reinforcedIronPlate = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "reinforced-iron-plate",
+            recipeID: "reinforced-iron-plate",
+            children: [
+                ironPlate.id,
+                screw.id
+            ]
+        )
+        
+        let ironRod = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "iron-rod",
+            recipeID: "iron-rod",
+            children: [
+                ironIngot5.id
+            ]
+        )
+        
+        let steelPipe2 = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "steel-pipe",
+            recipeID: "steel-pipe",
+            children: [
+                steelIngot2.id
+            ]
+        )
+        
+        let concrete2 = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "concrete",
+            recipeID: "concrete",
+            children: []
+        )
+        
+        let modularFrame = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "modular-frame",
+            recipeID: "modular-frame",
+            children: [
+                reinforcedIronPlate.id,
+                ironRod.id
+            ]
+        )
+        
+        let eib = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "encased-industrial-beam",
+            recipeID: "alternate-encased-industrial-pipe",
+            children: [
+                steelPipe2.id,
+                concrete2.id
+            ]
+        )
+        
+        let steelPipe1 = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "steel-pipe",
+            recipeID: "steel-pipe",
+            children: [
+                steelIngot1.id
+            ]
+        )
+        
+        let concrete1 = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "concrete",
+            recipeID: "concrete",
+            children: []
+        )
+        
+        let hmf = Production.Persistent.Legacy.Chain(
+            id: UUID(),
+            itemID: "heavy-modular-frame",
+            recipeID: "alternate-heavy-encased-frame",
+            children: [
+                modularFrame.id,
+                eib.id,
+                steelPipe1.id,
+                concrete1.id
+            ]
+        )
+        
+        let chain = [
+            hmf,
+            modularFrame,
+            eib,
+            steelPipe1,
+            concrete1,
+            reinforcedIronPlate,
+            ironRod,
+            steelPipe2,
+            concrete2,
+            ironPlate,
+            screw,
+            steelIngot1,
+            steelIngot2,
+            ironIngot1,
+            ironIngot2,
+            ironIngot3,
+            ironIngot4,
+            ironIngot5
+        ]
+        
+        let production = Production.Persistent.Legacy(
+            productionTreeRootID: hmf.id,
+            amount: 12,
+            productionChain: chain
+        )
+        
         do {
             showIngredientNames = settingsService.showIngredientNames
-            try storageService.load()
+//            try storageService.load(LoadOptions(v1: LoadOptions.V1(
+//                pinnedPartIDs: ["heavy-modular-frame"],
+//                savedProductions: [production]
+//            )))
+            try storageService.load(LoadOptions())
             loadingState = .loaded
         } catch {
             logger.error(error)

@@ -11,8 +11,8 @@ final class V2: VersionedStorage {
     
     var configuration = Configuration.Persistent.V2()
     var pins = CurrentValueSubject<Pins.Persistent.V2, Never>(Pins.Persistent.V2())
-    var productions = [Production.Persistent.V2]()
-    var factories = [Factory.Persistent.V2]()
+    var productions = CurrentValueSubject<[Production.Persistent.V2], Never>([])
+    var factories = CurrentValueSubject<[Factory.Persistent.V2], Never>([])
     
     private let persistence = SHPersistence(homeDirectoryName: "Storage/V2")
     private let logger = SHLogger(subsystemName: "SHStorage", category: "Persistent.V2")
@@ -28,8 +28,8 @@ final class V2: VersionedStorage {
         
         configuration = try persistence.loadOne(Configuration.Persistent.V2.self, fromFile: .configuration)
         pins.value = try persistence.loadOne(Pins.Persistent.V2.self, fromFile: .pins)
-        productions = try persistence.loadMany(Production.Persistent.V2.self, fromDirectory: .productions)
-        factories = try persistence.loadMany(Factory.Persistent.V2.self, fromDirectory: .factories)
+        productions.value = try persistence.loadMany(Production.Persistent.V2.self, fromDirectory: .productions)
+        factories.value = try persistence.loadMany(Factory.Persistent.V2.self, fromDirectory: .factories)
         
         logger.info("V2: loaded.")
     }
@@ -37,12 +37,10 @@ final class V2: VersionedStorage {
     func save() throws {
         logger.info("V2: Saving.")
         
-        try persistence.createHomeDirectoryIfNeeded()
-        
-        try persistence.save(model: configuration, to: .configuration)
-        try persistence.save(model: pins.value, to: .pins)
-        try persistence.save(models: productions, to: .productions)
-        try persistence.save(models: factories, to: .factories)
+        try persistence.save(configuration, toFile: .configuration)
+        try persistence.save(pins.value, toFile: .pins)
+        try persistence.save(productions.value, toDirectory: .productions)
+        try persistence.save(factories.value, toDirectory: .factories)
         
         logger.info("V2: Saved.")
     }
@@ -99,7 +97,7 @@ final class V2: VersionedStorage {
         logger.info("V2: Saving pins.")
         try persistence.createHomeDirectoryIfNeeded()
         
-        try persistence.save(model: pins.value, to: .pins)
+        try persistence.save(pins.value, toFile: .pins)
         logger.info("V2: Pins saved.")
     }
     
@@ -108,12 +106,64 @@ final class V2: VersionedStorage {
         
         configuration = Configuration.Persistent.V2(version: 1)
         
-        try persistence.createHomeDirectoryIfNeeded()
-        
-        try persistence.save(model: configuration, to: .configuration)
-        try persistence.save(model: pins.value, to: .pins)
+        try persistence.save(configuration, toFile: .configuration)
+        try persistence.save(pins.value, toFile: .pins)
         
         logger.info("V2: Initial data saved.")
+    }
+    
+    func saveFactory(_ factory: Factory.Persistent.V2) throws {
+        if let index = factories.value.firstIndex(where: { $0.id == factory.id }) {
+            factories.value[index] = factory
+        } else {
+            factories.value.append(factory)
+        }
+        
+        try persistence.save(factories.value, toDirectory: .factories)
+    }
+    
+    func saveProduction(_ production: Production.Persistent.V2) throws {
+        if let index = productions.value.firstIndex(where: { $0.id == production.id }) {
+            productions.value[index] = production
+        } else {
+            productions.value.append(production)
+        }
+        
+        try persistence.save(productions.value, toDirectory: .productions)
+    }
+    
+    func deleteFactory(_ factory: Factory.Persistent.V2) throws {
+        if let index = factories.value.firstIndex(where: { $0.id == factory.id }) {
+            let factory = factories.value[index]
+            for productionID in factory.productionIDs {
+                try deleteProduction(id: productionID)
+            }
+            
+            factories.value.remove(at: index)
+        }
+        
+        try persistence.save(factories.value, toDirectory: .factories)
+    }
+    
+    func deleteProduction(_ production: Production.Persistent.V2) throws {
+        try deleteProduction(id: production.id)
+    }
+    
+    func deleteProduction(id: UUID) throws {
+        if let index = productions.value.firstIndex(where: { $0.id == id }) {
+            for (factoryIndex, factory) in factories.value.enumerated() {
+                for (productionIndex, productionID) in factory.productionIDs.enumerated() {
+                    if productionID == id {
+                        factories.value[factoryIndex].productionIDs.remove(at: productionIndex)
+                    }
+                }
+            }
+            
+            productions.value.remove(at: index)
+        }
+        
+        try persistence.save(productions.value, toDirectory: .productions)
+        try persistence.save(factories.value, toDirectory: .factories)
     }
     
     func remove() throws {
@@ -140,15 +190,31 @@ final class V2: VersionedStorage {
         
         logger.debug("V2: Migrating productions.")
         let legacyProductions = legacy.productions
-        productions = legacyProductions.compactMap {
+        productions.value = legacyProductions.compactMap {
             guard let root = $0.root else { return nil }
             
             return Production.Persistent.V2(
                 id: $0.productionTreeRootID,
                 name: $0.name,
                 itemID: root.itemID,
-                amount: $0.amount
+                amount: $0.amount,
+                inputItems: $0.productionChain.map {
+                    Production.Persistent.V2.InputItem(
+                        id: $0.itemID,
+                        recipes: [Production.Persistent.V2.InputItem.Recipe(id: $0.recipeID, proportion: .auto)]
+                    )
+                },
+                byproducts: []
             )
+        }
+        
+        if !productions.value.isEmpty {
+            factories.value = [Factory.Persistent.V2(
+                id: UUID(),
+                name: "Legacy",
+                assetType: .legacy,
+                productionIDs: productions.value.map(\.id)
+            )]
         }
         
         if let migration {
@@ -173,8 +239,8 @@ private extension V2 {
             pins.value = newPins
         }
         
-        if newProductions != productions {
-            productions = newProductions
+        if newProductions != productions.value {
+            productions.value = newProductions
         }
         logger.info("V2: Content migrated.")
     }
@@ -214,13 +280,27 @@ private extension V2 {
     }
     
     func migrateProductionItemIDs(migration: Migration) -> [Production.Persistent.V2] {
-        var productions = productions
+        var productions = productions.value
         
-        for (index, production) in productions.enumerated() {
-            if let partID = migration.partIDs.first(oldID: production.itemID) {
-                productions[index].itemID = partID.newID
-            } else if let equipmentID = migration.equipmentIDs.first(oldID: production.itemID) {
-                productions[index].itemID = equipmentID.newID
+        for (productionIndex, production) in productions.enumerated() {
+            if let part = migration.partIDs.first(oldID: production.itemID) {
+                productions[productionIndex].itemID = part.newID
+            } else if let equipment = migration.equipmentIDs.first(oldID: production.itemID) {
+                productions[productionIndex].itemID = equipment.newID
+            }
+            
+            for (inputItemIndex, inputItem) in production.inputItems.enumerated() {
+                if let part = migration.partIDs.first(oldID: inputItem.id) {
+                    productions[productionIndex].inputItems[inputItemIndex].id = part.newID
+                } else if let equipment = migration.equipmentIDs.first(oldID: inputItem.id) {
+                    productions[productionIndex].inputItems[inputItemIndex].id = equipment.newID
+                }
+                
+                for (recipeIndex, recipe) in inputItem.recipes.enumerated() {
+                    if let recipe = migration.recipeIDs.first(oldID: recipe.id) {
+                        productions[productionIndex].inputItems[inputItemIndex].recipes[recipeIndex].id = recipe.newID
+                    }
+                }
             }
         }
         

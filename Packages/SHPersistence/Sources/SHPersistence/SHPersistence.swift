@@ -55,14 +55,14 @@ public struct SHPersistence {
     
     // MARK: - Save
     
-    public func save<E: Encodable>(model: E, to fileName: String) throws {
+    public func save<E: Encodable>(_ model: E, toFile fileName: String) throws {
         try createHomeDirectoryIfNeeded()
         
         let fileURL = fileURL(for: fileName)
         try save(model: model, to: fileURL)
     }
     
-    public func save<E: Encodable>(models: [E], to directoryName: String, fileName: (_ model: E) -> String) throws {
+    public func save<E: Encodable>(_ models: [E], toDirectory directoryName: String, fileName: (_ model: E) -> String) throws {
         let directoryURL = directoryURL(for: directoryName)
         if !_fileManager.directoryExists(at: directoryURL) {
             try _fileManager.createDirectory(at: directoryURL)
@@ -77,8 +77,8 @@ public struct SHPersistence {
         }
     }
     
-    public func save<E: Encodable & Identifiable>(models: [E], to directoryName: String) throws where E.ID == UUID {
-        try save(models: models, to: directoryName, fileName: \.id.uuidString)
+    public func save<E: Encodable & Identifiable>(_ models: [E], toDirectory directoryName: String) throws where E.ID == UUID {
+        try save(models, toDirectory: directoryName, fileName: \.id.uuidString)
     }
     
     // MARK: - URLs

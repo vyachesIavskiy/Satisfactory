@@ -72,7 +72,7 @@ final class RecipeIngredientAmountViewModel {
         )
     }
     
-    convenience init(productionByproduct byproduct: SHSingleItemProduction.OutputRecipe.OutputIngredient) {
+    convenience init(productionByproduct byproduct: SHSingleItemProduction.OutputRecipe.ByproductIngredient) {
         var foregroundStyle = AnyShapeStyle(.background)
         let secondaryStyle: AnyShapeStyle
         let primaryColor: Color

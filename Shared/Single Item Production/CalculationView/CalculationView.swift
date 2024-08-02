@@ -1,11 +1,8 @@
 import SwiftUI
 
 struct CalculationView: View {
-    @Bindable
+    @State
     var viewModel: CalculationViewModel
-    
-    @Namespace
-    private var namespace
     
     @Environment(\.displayScale)
     private var displayScale
@@ -20,7 +17,7 @@ struct CalculationView: View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 16) {
                 ForEach(viewModel.outputItemViewModels) { viewModel in
-                    ProductView(viewModel: viewModel, namespace: namespace)
+                    ProductView(viewModel: viewModel)
                 }
             }
             .padding(.top, 8)
@@ -32,21 +29,21 @@ struct CalculationView: View {
         .navigationBarBackButtonHidden(viewModel.hasUnsavedChanges)
         .navigationTitle(viewModel.item.localizedName)
         .toolbar {
-            if viewModel.hasUnsavedChanges {
+            if viewModel.selectingByproduct {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button {
-                        if viewModel.hasUnsavedChanges {
-                            viewModel.showingUnsavedConfirmationDialog = true
-                        } else {
-                            dismiss()
-                        }
-                    } label: {
-                        Image(systemName: "chevron.backward")
-                            .fontWeight(.semibold)
-                            .offset(x: -8)
+                    Button("Cancel") {
+                        viewModel.cancelByproductSelection()
                     }
                 }
+            } else if viewModel.hasUnsavedChanges {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        viewModel.showingUnsavedConfirmationDialog = true
+                    }
+                }
+            }
                 
+            if viewModel.hasUnsavedChanges, !viewModel.selectingByproduct {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Save", systemImage: "square.and.arrow.down") {
                         viewModel.saveProduction()
@@ -98,17 +95,15 @@ struct CalculationView: View {
     @MainActor @ViewBuilder
     private func selectInitialRecipeView(viewModel: InitialRecipeSelectionViewModel) -> some View {
         NavigationStack {
-            ScrollView {
-                InitialRecipeSelectionView(viewModel: viewModel)
-                    .navigationTitle(viewModel.item.localizedName)
-                    .toolbar {
-                        ToolbarItem(placement: .cancellationAction) {
-                            Button("Cancel") {
-                                self.viewModel.modalNavigationState = nil
-                            }
+            InitialRecipeSelectionView(viewModel: viewModel)
+                .navigationTitle(viewModel.item.localizedName)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") {
+                            self.viewModel.modalNavigationState = nil
                         }
                     }
-            }
+                }
         }
     }
     
@@ -129,6 +124,11 @@ struct CalculationView: View {
                 .padding(.horizontal, 8)
                 .padding(.vertical, 2)
                 .focused($focused)
+                .submitLabel(.done)
+                .onSubmit {
+                    focused = false
+                    viewModel.update()
+                }
                 .frame(maxWidth: 150)
                 .background(.background, in: RoundedRectangle(cornerRadius: 4, style: .continuous))
                 .overlay(
@@ -141,6 +141,7 @@ struct CalculationView: View {
                 if focused {
                     Button {
                         focused = false
+                        viewModel.update()
                     } label: {
                         Image(systemName: "checkmark")
                             .fontWeight(.semibold)

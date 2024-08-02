@@ -44,9 +44,17 @@ final class InitialRecipeSelectionViewModel {
             .filter { $0.machine != nil }
         
         pinnedRecipeIDs = storageService.pinnedRecipeIDs(for: item, as: [.output, .byproduct])
-        observeStorage()
 
         buildSections()
+    }
+    
+    @MainActor
+    func observeStorage() async {
+        for await pinnedRecipeIDs in storageService.streamPinnedRecipeIDs(for: item, as: [.output, .byproduct]) {
+            guard !Task.isCancelled else { break }
+            
+            self.pinnedRecipeIDs = pinnedRecipeIDs
+        }
     }
     
     @MainActor
@@ -89,18 +97,6 @@ extension InitialRecipeSelectionViewModel: Hashable {
 
 // MARK: Private
 private extension InitialRecipeSelectionViewModel {
-    func observeStorage() {
-        Task { @MainActor [weak self] in
-            guard let self else { return }
-            
-            for await pinnedRecipeIDs in storageService.streamPinnedRecipeIDs(for: item, as: [.output, .byproduct]) {
-                guard !Task.isCancelled else { break }
-                
-                self.pinnedRecipeIDs = pinnedRecipeIDs
-            }
-        }
-    }
-    
     @MainActor
     func buildSections() {
         let (pinned, product, byproduct) = splitRecipes()

@@ -85,38 +85,36 @@ struct SingleItemProductionRecipeSelectView: View {
     ) -> some View {
         let outputViewModel = RecipeIngredientViewModel(productionOutput: output)
         let outputView = outputViewBuilder(outputViewModel)
-        let canSelectByproduct = viewModel.canSelectByproductProducer(for: output)
+        let canSelectByproduct = viewModel.canSelectOutputAsByproductProducer(ingredient: output)
         let canConfirmByproduct = viewModel.canConfirmByproduct(output)
         
         if canSelectByproduct {
             if canConfirmByproduct {
                 Button {
-                    viewModel.selectByproductProducer(for: output)
+                    viewModel.selectOutputAsByproductProducer(ingredient: output)
                 } label: {
                     outputView
                 }
-                .disabled(viewModel.ingredientDisabled(output))
             } else {
                 Menu {
                     Button {
-                        viewModel.selectByproductProducer(for: output)
+                        viewModel.selectOutputAsByproductProducer(ingredient: output)
                     } label: {
                         Text("Select as byproduct producer")
                     }
                 } label: {
                     outputView
                 }
-                .disabled(viewModel.ingredientDisabled(output))
             }
         } else {
             outputView
-                .grayscale(viewModel.ingredientDisabled(output) ? 1.0 : 0.0)
+                .grayscale(viewModel.selectedByproduct != nil ? 1.0 : 0.0)
         }
     }
     
     @MainActor @ViewBuilder
     private func byproductViewBuilder<Byproduct: View>(
-        byproduct: SHSingleItemProduction.OutputRecipe.OutputIngredient,
+        byproduct: SHSingleItemProduction.OutputRecipe.ByproductIngredient,
         @ViewBuilder _ byproductViewBuilder: (RecipeIngredientViewModel) -> Byproduct
     ) -> some View {
         let byproductViewModel = RecipeIngredientViewModel(productionByproduct: byproduct)
@@ -131,7 +129,6 @@ struct SingleItemProductionRecipeSelectView: View {
                 } label: {
                     byproductView
                 }
-                .disabled(viewModel.ingredientDisabled(byproduct))
             } else {
                 Menu {
                     Button {
@@ -142,11 +139,10 @@ struct SingleItemProductionRecipeSelectView: View {
                 } label: {
                     byproductView
                 }
-                .disabled(viewModel.ingredientDisabled(byproduct))
             }
         } else {
             byproductView
-                .grayscale(viewModel.ingredientDisabled(byproduct) ? 1.0 : 0.0)
+                .grayscale(viewModel.selectedByproduct != nil ? 1.0 : 0.0)
         }
     }
     
@@ -168,7 +164,6 @@ struct SingleItemProductionRecipeSelectView: View {
                 } label: {
                     inputView
                 }
-                .disabled(viewModel.ingredientDisabled(input))
             } else {
                 Menu {
                     if canSelectRecipe {
@@ -184,7 +179,6 @@ struct SingleItemProductionRecipeSelectView: View {
                     inputView
                 }
                 .menuStyle(.button)
-                .disabled(viewModel.ingredientDisabled(input))
             }
         } else if canSelectRecipe {
             Button {
@@ -192,10 +186,10 @@ struct SingleItemProductionRecipeSelectView: View {
             } label: {
                 inputView
             }
-            .disabled(viewModel.ingredientDisabled(input))
+            .disabled(viewModel.selectedByproduct != nil)
         } else {
             inputView
-                .grayscale(viewModel.ingredientDisabled(input) ? 1.0 : 0.0)
+                .grayscale(viewModel.selectedByproduct != nil ? 1.0 : 0.0)
         }
     }
 }
@@ -264,11 +258,10 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
             output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
                 item: recipe.output.item,
                 amount: recipe.amountPerMinute(for: recipe.output),
-                byproducts: [],
-                isSelected: false
+                byproducts: []
             ),
             byproducts: recipe.byproducts.map {
-                SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                SHSingleItemProduction.OutputRecipe.ByproductIngredient(
                     item: $0.item,
                     amount: recipe.amountPerMinute(for: $0),
                     byproducts: [],

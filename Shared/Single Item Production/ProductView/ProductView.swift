@@ -3,7 +3,6 @@ import SHSingleItemProduction
 
 struct ProductView: View {
     let viewModel: ProductViewModel
-    var namespace: Namespace.ID
     
     private var nameID: String {
         if viewModel.product.recipes.count == 1 {
@@ -113,9 +112,6 @@ private struct _ProductPreview: View {
     let itemID: String
     let recipeIDs: [String]
     
-    @Namespace
-    private var namespace
-    
     private var item: (any Item)? {
         @Dependency(\.storageService)
         var storageService
@@ -134,11 +130,10 @@ private struct _ProductPreview: View {
                     output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
                         item: $0.output.item,
                         amount: 20,
-                        byproducts: [],
-                        isSelected: false
+                        byproducts: []
                     ),
                     byproducts: $0.byproducts.map {
-                        SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                        SHSingleItemProduction.OutputRecipe.ByproductIngredient(
                             item: $0.item,
                             amount: 20,
                             byproducts: [],
@@ -173,7 +168,7 @@ private struct _ProductPreview: View {
     var body: some View {
         if let viewModel {
             ScrollView {
-                ProductView(viewModel: viewModel, namespace: namespace)
+                ProductView(viewModel: viewModel)
             }
         } else {
             Text("There is no item with ID '\(itemID)'")

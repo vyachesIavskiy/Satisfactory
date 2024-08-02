@@ -28,29 +28,54 @@ public final class SHPersistentStorage {
         Pins(v2.pins.value)
     }
     
-    public var factories = [Factory]()
+    public var factories: [Factory] {
+        v2.factories.value.map(Factory.init)
+    }
+    
+    public var streamFactories: AsyncStream<[Factory]> {
+        v2.factories
+            .map { $0.map(Factory.init) }
+            .values
+            .eraseToStream()
+    }
+    
+    public var productions: [Production] {
+        v2.productions.value.map(map)
+    }
+    
+    public var streamProductions: AsyncStream<[Production]> {
+        v2.productions
+            .map { [weak self] in
+                guard let self else { return [] }
+                
+                return $0.map(map)
+            }
+            .values
+            .eraseToStream()
+    }
     
     public init(staticStorage: SHStaticStorage) {
         self.staticStorage = staticStorage
     }
     
     // MARK: Loading
-    public func load() throws {
+    public func load(_ options: LoadOptions) throws {
         logger.info("Loading Persistent storage.")
         
         // Check if storage can be loaded
         let legacy = Legacy()
-        guard legacy.canBeLoaded() || v2.canBeLoaded() else {
+        let canLegacyBeLoaded = legacy.canBeLoaded() || !options.v1.isEmpty
+        guard canLegacyBeLoaded || v2.canBeLoaded() else {
             logger.info("Persistent storage is not detected, saving initial data.")
             
             try v2.saveInitial()
             return
         }
         
-        if !v2.canBeLoaded() {
+        if !v2.canBeLoaded() || !options.v1.isEmpty {
             // Migrate
             let migration = createContentMigration()
-            try migrateIfNeeded(legacy: legacy, migration: migration)
+            try migrateIfNeeded(legacy: legacy, options: options, migration: migration)
         } else {
             // Load v2 Storage
             try v2.load()
@@ -84,26 +109,47 @@ public final class SHPersistentStorage {
     public func changeRecipePinStatus(_ recipeID: String) throws {
         try v2.changeRecipePinStatus(recipeID)
     }
+    
+    public func saveFactory(_ factory: Factory) throws {
+        try v2.saveFactory(Factory.Persistent.V2(factory))
+    }
+    
+    public func saveProduction(_ production: Production) throws {
+        try v2.saveProduction(Production.Persistent.V2(production))
+    }
+    
+    public func deleteFactory(_ factory: Factory) throws {
+        try v2.deleteFactory(Factory.Persistent.V2(factory))
+    }
+    
+    public func deleteProduction(_ production: Production) throws {
+        try v2.deleteProduction(Production.Persistent.V2(production))
+    }
 }
 
 // MARK: Migration
 private extension SHPersistentStorage {
-    func migrateIfNeeded(legacy: Legacy, migration: Migration?) throws {
+    func migrateIfNeeded(legacy: Legacy, options: LoadOptions, migration: Migration?) throws {
         logger.info("Migrating Persistent storage.")
         
-        // Handle each version separately
-        if legacy.canBeLoaded() {
-            logger.debug("Legacy Persistent storage detected. Starting Legacy -> V2 migration.")
-            
-            try legacy.load()
-            try v2.migrate(legacy: legacy, migration: migration)
-            try legacy.remove()
+        func migrateLegacy() throws {
+            if !options.v1.isEmpty {
+                logger.debug("Load options detected. Migrating from debug provided Legacy to V2.")
+                legacy.load(from: options)
+                try v2.migrate(legacy: legacy, migration: migration)
+            } else if legacy.canBeLoaded() {
+                logger.debug("Legacy storage detected. Migrating from Legacy to V2.")
+                try legacy.load()
+                try v2.migrate(legacy: legacy, migration: migration)
+                try legacy.remove()
+            }
         }
         
+        // Handle each version separately
+        try migrateLegacy()
+        
         // Migrate next versions
-        // if try v2.canBeLoaded() {
-        //     ...
-        // }
+        // try migrateV2()
     }
     
     func createContentMigration() -> Migration? {
@@ -150,6 +196,28 @@ private extension SHPersistentStorage {
         }
         
         return migrationPlan
+    }
+}
+
+// MARK: Mapping
+
+private extension SHPersistentStorage {
+    func map(_ savedProduction: Production.Persistent.V2) -> Production {
+        Production(savedProduction, itemPorivder: item(id:), recipeProvider: recipe(id:))
+    }
+    
+    func item(id: String) -> any Item {
+        guard let item = staticStorage[itemID: id] else {
+            fatalError("No item with id '\(id)'")
+        }
+        return item
+    }
+    
+    func recipe(id: String) -> Recipe {
+        guard let recipe = staticStorage[recipeID: id] else {
+            fatalError("No recipe with id '\(id)'")
+        }
+        return recipe
     }
 }
 

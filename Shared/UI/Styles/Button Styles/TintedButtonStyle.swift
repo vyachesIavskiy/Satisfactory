@@ -8,15 +8,15 @@ struct SHTintedButtonStyle: ButtonStyle {
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
             .background {
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .foregroundStyle(.tint)
-                    .blur(radius: 2)
-                
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .foregroundStyle(.background)
-                    .transaction { transaction in
-                        transaction.disablesAnimations = true
-                    }
+                ZStack {
+                    RoundedRectangle(cornerRadius: 4, style: .continuous)
+                        .foregroundStyle(.tint)
+                        .blur(radius: 2)
+                    
+                    RoundedRectangle(cornerRadius: 4, style: .continuous)
+                        .foregroundStyle(.background)
+                }
+                .compositingGroup()
             }
             .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
     }

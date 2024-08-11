@@ -13,7 +13,7 @@ struct ProductView: View {
     }
     
     var body: some View {
-        LazyVStack(alignment: .leading, spacing: 8, pinnedViews: .sectionHeaders) {
+        VStack {
             Section {
                 ForEach(Array(viewModel.product.recipes.enumerated()), id: \.element.id) { index, outputRecipe in
                     VStack {
@@ -69,8 +69,10 @@ struct ProductView: View {
                 }
             }
         }
+        .frame(minHeight: 24)
         .padding(.vertical, 8)
         .background(.background)
+        .animation(.default, value: viewModel.canAdjust)
     }
     
     @MainActor @ViewBuilder
@@ -79,6 +81,7 @@ struct ProductView: View {
             if viewModel.product.recipes.count > 1 {
                 HStack {
                     Text(outputRecipe.recipe.localizedName)
+                        .font(.headline)
                     
                     Spacer()
                     
@@ -87,16 +90,16 @@ struct ProductView: View {
                         case .auto:
                             Text("AUTO")
                             
-                        case .fraction:
-                            Image(systemName: "percent")
+                        case let .fraction(fraction):
+                            Text(fraction, format: .shPercent)
                             
                         case .fixed:
-                            Image(systemName: "123.rectangle")
+                            Text("FIXED")
                         }
                     }
                     .font(.footnote)
+                    .foregroundStyle(.secondary)
                 }
-                .font(.headline)
             }
             
             SingleItemProductionRecipeSelectView(viewModel: viewModel.outputRecipeViewModel(for: outputRecipe))
@@ -147,7 +150,11 @@ private struct _ProductPreview: View {
                             isSelected: false
                         )
                     },
-                    proportion: .auto
+                    proportion: [
+                        SHProductionProportion.auto,
+                        .fraction(.random(in: 0...1)),
+                        .fixed(.random(in: 1...100))
+                    ].randomElement()!
                 )
             }
         }

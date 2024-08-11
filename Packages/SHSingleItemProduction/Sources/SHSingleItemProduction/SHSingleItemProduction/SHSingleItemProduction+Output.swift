@@ -8,25 +8,27 @@ extension SHSingleItemProduction {
             self.input.inputItems.contains(input.item)
         }
         
-        var outputItems = collectFromMainTree(
+        var outputItems = buildOutputItems(
             ingredientConverter: &ingredientConverter,
             isSelected: isSelected
         )
         
-        collectFromAdditionalTrees(
-            updating: &outputItems,
-            ingredientConverter: &ingredientConverter,
-            isSelected: isSelected
-        )
+        for subproduction in subproductions {
+            subproduction.addToParentOutputItems(
+                &outputItems,
+                ingredientConverter: &ingredientConverter,
+                isSelected: isSelected
+            )
+        }
         
         self.outputItems = outputItems
     }
     
-    private func collectFromMainTree(
+    private func buildOutputItems(
         ingredientConverter: inout IngredientConverter,
         isSelected: (_ input: Node.Input, _ node: Node) -> Bool
     ) -> [OutputItem] {
-        var nodes = mainNodes
+        var nodes = nodes
         var outputItems = [OutputItem]()
         
         while !nodes.isEmpty {
@@ -128,50 +130,10 @@ extension SHSingleItemProduction {
         
         return outputItems
     }
-    
-    private func collectFromAdditionalTrees(
-        updating outputItems: inout [OutputItem],
-        ingredientConverter: inout IngredientConverter,
-        isSelected: (_ input: Node.Input, _ node: Node) -> Bool
-    ) {
-        // Handle additional trees to represent additional amounts in output ingredients.
-        var nodes = additionalNodes
-        while !nodes.isEmpty {
-            for node in nodes {
-                guard
-                    let (outputIndex, output) = outputItems.enumerated().first(where: { $0.1.item.id == node.item.id }),
-                    let recipeIndex = output.recipes.firstIndex(where: { $0.recipe.id == node.recipe.id })
-                else { continue }
-                
-                // Accumulate saved values with new values.
-                var recipe = output.recipes[recipeIndex]
-                
-                if additionalNodes.contains(where: { $0.id == node.id }) {
-                    // If node is top node in additional nodes, append additional amount
-                    recipe.output.additionalAmounts.append(node.amount)
-                } else {
-                    // Otherwise accumulate normal amount
-                    recipe.output.amount += node.amount
-                }
-                recipe.byproducts.merge(with: node.byproducts.map {
-                    ingredientConverter.convert(producingRecipeID: recipe.recipe.id, byproduct: $0)
-                })
-                recipe.inputs.merge(with: node.inputs.map { input in
-                    ingredientConverter.convert(
-                        input: input,
-                        isSelected: isSelected(input, node)
-                    )
-                })
-                outputItems[outputIndex].recipes[recipeIndex] = recipe
-            }
-            
-            nodes = nodes.flatMap(\.inputNodes)
-        }
-    }
 }
 
 // MARK: Ingredient convertion
-private extension SHSingleItemProduction {
+extension SHSingleItemProduction {
     struct IngredientConverter {
         var byproductConverter = ByproductConverter()
         
@@ -234,7 +196,7 @@ private extension SHSingleItemProduction {
 }
 
 // MARK: Merging
-private extension [SHSingleItemProduction.OutputRecipe.OutputIngredient] {
+extension [SHSingleItemProduction.OutputRecipe.OutputIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.item.id == $1.item.id
@@ -244,19 +206,7 @@ private extension [SHSingleItemProduction.OutputRecipe.OutputIngredient] {
     }
 }
 
-private extension [SHSingleItemProduction.OutputRecipe.ByproductIngredient] {
-    mutating func merge(with other: Self) {
-        merge(with: other) {
-            $0.item.id == $1.item.id
-        } merging: {
-            $0.amount += $1.amount
-            $0.isSelected = $0.isSelected || $1.isSelected
-            $0.byproducts.merge(with: $1.byproducts)
-        }
-    }
-}
-
-private extension [SHSingleItemProduction.OutputRecipe.InputIngredient] {
+extension [SHSingleItemProduction.OutputRecipe.ByproductIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.item.id == $1.item.id
@@ -268,7 +218,19 @@ private extension [SHSingleItemProduction.OutputRecipe.InputIngredient] {
     }
 }
 
-private extension [SHSingleItemProduction.OutputRecipe.Byproduct] {
+extension [SHSingleItemProduction.OutputRecipe.InputIngredient] {
+    mutating func merge(with other: Self) {
+        merge(with: other) {
+            $0.item.id == $1.item.id
+        } merging: {
+            $0.amount += $1.amount
+            $0.isSelected = $0.isSelected || $1.isSelected
+            $0.byproducts.merge(with: $1.byproducts)
+        }
+    }
+}
+
+extension [SHSingleItemProduction.OutputRecipe.Byproduct] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.index == $1.index

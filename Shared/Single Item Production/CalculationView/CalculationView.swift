@@ -4,6 +4,9 @@ struct CalculationView: View {
     @State
     var viewModel: CalculationViewModel
     
+    @State
+    private var viewModelToDrag: ProductViewModel?
+    
     @Environment(\.displayScale)
     private var displayScale
     
@@ -15,7 +18,7 @@ struct CalculationView: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack(alignment: .leading, spacing: 16) {
+            LazyVStack(alignment: .leading, spacing: 16, pinnedViews: .sectionHeaders) {
                 ForEach(viewModel.outputItemViewModels) { viewModel in
                     ProductView(viewModel: viewModel)
                 }
@@ -28,6 +31,7 @@ struct CalculationView: View {
         }
         .navigationBarBackButtonHidden(!viewModel.canBeDismissedWithoutSaving)
         .navigationTitle(viewModel.item.localizedName)
+        .toolbarBackground(.background, for: .navigationBar)
         .toolbar {
             if viewModel.selectingByproduct {
                 ToolbarItem(placement: .cancellationAction) {
@@ -47,6 +51,7 @@ struct CalculationView: View {
                 Button("Statistics", systemImage: "info.bubble") {
 //                    viewModel.showingStatisticsSheet = true
                 }
+                .buttonStyle(.shTinted)
             }
                 
             if viewModel.hasUnsavedChanges, !viewModel.selectingByproduct {
@@ -55,6 +60,7 @@ struct CalculationView: View {
                         viewModel.saveProduction()
                     }
                     .disabled(true)
+                    .buttonStyle(.shTinted)
                 }
             }
         }

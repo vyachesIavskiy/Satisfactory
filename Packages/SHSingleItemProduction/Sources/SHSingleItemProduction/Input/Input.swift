@@ -113,6 +113,9 @@ extension SHSingleItemProduction {
                 guard let consumingIndex = producingRecipe.consumers.firstIndex(of: recipe) else { continue }
                 
                 byproducts[byproductIndex].producers[producingIndex].consumers.remove(at: consumingIndex)
+                if byproducts[byproductIndex].producers[producingIndex].consumers.isEmpty {
+                    byproducts[byproductIndex].producers.remove(at: producingIndex)
+                }
             }
         }
     }

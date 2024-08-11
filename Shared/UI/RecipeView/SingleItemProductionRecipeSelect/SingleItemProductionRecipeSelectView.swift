@@ -18,6 +18,7 @@ struct SingleItemProductionRecipeSelectView: View {
     var body: some View {
         recipeBody
             .frame(maxWidth: .infinity, alignment: .leading)
+            .animation(.default, value: viewModel.selectedByproduct == nil)
     }
     
     @MainActor @ViewBuilder
@@ -52,10 +53,10 @@ struct SingleItemProductionRecipeSelectView: View {
     
     @MainActor @ViewBuilder
     private var outputView: some View {
-        outputViewBuilder(output: viewModel.recipe.output) { outputViewModel in
-            RecipeIngredientView(viewModel: outputViewModel)
-        }
-        .buttonStyle(.shIngredient)
+        let outputViewModel = RecipeIngredientViewModel(productionOutput: viewModel.recipe.output)
+        
+        RecipeIngredientView(viewModel: outputViewModel)
+            .disabledStyle(viewModel.selectedByproduct != nil)
     }
     
     @MainActor @ViewBuilder
@@ -79,18 +80,6 @@ struct SingleItemProductionRecipeSelectView: View {
     }
     
     @MainActor @ViewBuilder
-    private func outputViewBuilder<Output: View>(
-        output: SHSingleItemProduction.OutputRecipe.OutputIngredient,
-        @ViewBuilder _ outputViewBuilder: (RecipeIngredientViewModel) -> Output
-    ) -> some View {
-        let outputViewModel = RecipeIngredientViewModel(productionOutput: output)
-        let outputView = outputViewBuilder(outputViewModel)
-        
-        outputView
-            .grayscale(viewModel.selectedByproduct != nil ? 1.0 : 0.0)
-    }
-    
-    @MainActor @ViewBuilder
     private func byproductViewBuilder<Byproduct: View>(
         byproduct: SHSingleItemProduction.OutputRecipe.ByproductIngredient,
         @ViewBuilder _ byproductViewBuilder: (RecipeIngredientViewModel) -> Byproduct
@@ -98,29 +87,34 @@ struct SingleItemProductionRecipeSelectView: View {
         let byproductViewModel = RecipeIngredientViewModel(productionByproduct: byproduct)
         let byproductView = byproductViewBuilder(byproductViewModel)
         let canSelectByproduct = viewModel.canSelectByproductProducer(for: byproduct)
+        let canUnselectByproduct = viewModel.canUnselectByproductProducer(for: byproduct)
         let canConfirmByproduct = viewModel.canConfirmByproduct(byproduct)
         
-        if canSelectByproduct {
-            if canConfirmByproduct {
-                Button {
-                    viewModel.selectByproductProducer(for: byproduct)
-                } label: {
-                    byproductView
-                }
-            } else {
-                Menu {
-                    Button {
-                        viewModel.selectByproductProducer(for: byproduct)
-                    } label: {
-                        Text("Select as byproduct producer")
+        if canConfirmByproduct {
+            Button {
+                viewModel.selectByproductProducer(for: byproduct)
+            } label: {
+                byproductView
+            }
+        } else if canSelectByproduct || canUnselectByproduct {
+            Menu {
+                if canUnselectByproduct {
+                    Button("Stop providing byproduct") {
+                        viewModel.unselectByproductProducer(for: byproduct)
                     }
-                } label: {
-                    byproductView
                 }
+                
+                if canSelectByproduct {
+                    Button("Provide byproduct...") {
+                        viewModel.selectByproductProducer(for: byproduct)
+                    }
+                }
+            } label: {
+                byproductView
             }
         } else {
             byproductView
-                .grayscale(viewModel.selectedByproduct != nil ? 1.0 : 0.0)
+                .disabledStyle(viewModel.selectedByproduct != nil)
         }
     }
     
@@ -133,42 +127,59 @@ struct SingleItemProductionRecipeSelectView: View {
         let inputView = inputViewBuilder(inputViewModel)
         let canSelectRecipe = viewModel.canSelectRecipe(for: input)
         let canSelectByproduct = viewModel.canSelectByproductConsumer(for: input)
+        let canUnselectByproduct = viewModel.canUnselectByproductConsumer(for: input)
         let canConfirmByproduct = viewModel.canConfirmByproduct(input)
         
-        if canSelectByproduct {
-            if canConfirmByproduct {
-                Button {
-                    viewModel.selectByproductConsumer(for: input)
-                } label: {
-                    inputView
-                }
-            } else {
-                Menu {
-                    if canSelectRecipe {
-                        Button("Select recipe") {
-                            viewModel.selectRecipe(for: input)
-                        }
+        if canConfirmByproduct {
+            Button {
+                viewModel.selectByproductConsumer(for: input)
+            } label: {
+                inputView
+            }
+        } else if canSelectByproduct || canUnselectByproduct {
+            Menu {
+                if canSelectRecipe {
+                    Button("Select recipe") {
+                        viewModel.selectRecipe(for: input)
                     }
-                    
-                    Button("Select as byproduct consumer") {
+                }
+                
+                Divider()
+                
+                if canUnselectByproduct {
+                    Button("Stop consuming byproduct") {
+                        viewModel.unselectByproductConsumer(for: input)
+                    }
+                }
+                
+                if canSelectByproduct {
+                    Button("Consume byproduct...") {
                         viewModel.selectByproductConsumer(for: input)
                     }
-                } label: {
-                    inputView
                 }
-                .menuStyle(.button)
+            } label: {
+                inputView
             }
+            .menuStyle(.button)
         } else if canSelectRecipe {
             Button {
                 viewModel.selectRecipe(for: input)
             } label: {
                 inputView
             }
-            .disabled(viewModel.selectedByproduct != nil)
+            .disabledStyle(viewModel.selectedByproduct != nil)
         } else {
             inputView
-                .grayscale(viewModel.selectedByproduct != nil ? 1.0 : 0.0)
+                .disabledStyle(viewModel.selectedByproduct != nil)
         }
+    }
+}
+
+private extension View {
+    @MainActor @ViewBuilder
+    func disabledStyle(_ disabled: Bool) -> some View {
+        grayscale(disabled ? 0.5 : 0.0)
+            .brightness(disabled ? -0.25 : 0.0)
     }
 }
 
@@ -179,12 +190,11 @@ struct RecipeIngredientButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
-            .grayscale(isEnabled ? 0.0 : 1.0)
+            .disabledStyle(!isEnabled)
             .background(
                 configuration.isPressed ? Color.sh(.gray20) : .clear,
                 in: AngledRectangle(cornerRadius: 8)
             )
-            .animation(.default, value: configuration.isPressed)
     }
 }
 

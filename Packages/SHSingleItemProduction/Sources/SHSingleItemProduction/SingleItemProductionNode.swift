@@ -69,6 +69,29 @@ extension SHSingleItemProduction {
             }
         }
         
+        func updateInputs() {
+            for input in inputs {
+                guard
+                    // Check if this input has a corresponding input node (i.e. a recipe for this input is selected).
+                    let (inputNodeIndex, inputNode) = inputNodes.enumerated().first(where: { $0.1.item.id == input.item.id }),
+                    // Check if amount is different. If not, do not update.
+                    input.availableAmount != inputNode.amount
+                else { continue }
+                
+                if input.availableAmount > 0 {
+                    // If amount is not zero, update node.
+                    inputNode.amount = input.availableAmount
+                } else {
+                    // If amount is zero, remove this node, it's obsolete.
+                    inputNodes.remove(at: inputNodeIndex)
+                }
+            }
+            
+            for inputNode in inputNodes {
+                inputNode.updateInputs()
+            }
+        }
+        
         func inputContains(_ predicate: (Node) -> Bool) -> Bool {
             inputNodes.contains(where: predicate)
         }
@@ -85,7 +108,7 @@ extension SHSingleItemProduction {
 }
 
 extension [SHSingleItemProduction.Node] {
-    func containsRecurcievly(predicate: (SHSingleItemProduction.Node) throws -> Bool) rethrows -> Bool {
+    func containsRecurcievly(where predicate: (SHSingleItemProduction.Node) throws -> Bool) rethrows -> Bool {
         var nodes = self
         var result = false
         while !nodes.isEmpty {
@@ -99,7 +122,22 @@ extension [SHSingleItemProduction.Node] {
     }
     
     func contains(id: UUID) -> Bool {
-        containsRecurcievly(predicate: { $0.id == id })
+        containsRecurcievly(where: { $0.id == id })
+    }
+}
+
+extension SHSingleItemProduction.Node {
+    func anyParentContains(where predicate: (SHSingleItemProduction.Node) throws -> Bool) rethrows -> Bool {
+        var parentNode = parentRecipeNode
+        while parentNode != nil {
+            if let parentNode, try predicate(parentNode) {
+                return true
+            }
+            
+            parentNode = parentNode?.parentRecipeNode
+        }
+        
+        return false
     }
 }
 

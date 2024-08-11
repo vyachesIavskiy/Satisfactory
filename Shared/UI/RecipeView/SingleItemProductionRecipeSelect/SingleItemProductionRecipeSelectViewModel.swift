@@ -25,6 +25,7 @@ final class SingleItemProductionRecipeSelectViewModel {
         self.performAction = performAction
     }
 
+    // Recipe
     @MainActor
     func canSelectRecipe(for input: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
         canPerformAction(.selectRecipeForInput(input))
@@ -35,16 +36,29 @@ final class SingleItemProductionRecipeSelectViewModel {
         performAction(.selectRecipeForInput(input))
     }
     
+    // Select byproduct producer
     @MainActor
-    func canSelectByproductProducer(for ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient) -> Bool {
-        canPerformAction(.selectByproductProducer(ingredient: ingredient, recipe: recipe.recipe))
+    func canSelectByproductProducer(for byproduct: SHSingleItemProduction.OutputRecipe.ByproductIngredient) -> Bool {
+        canPerformAction(.selectByproductProducer(byproduct: byproduct, recipe: recipe.recipe))
     }
     
     @MainActor
-    func selectByproductProducer(for ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient) {
-        performAction(.selectByproductProducer(ingredient: ingredient, recipe: recipe.recipe))
+    func selectByproductProducer(for byproduct: SHSingleItemProduction.OutputRecipe.ByproductIngredient) {
+        performAction(.selectByproductProducer(byproduct: byproduct, recipe: recipe.recipe))
     }
     
+    // Unselect byproduct producer
+    @MainActor
+    func canUnselectByproductProducer(for byproduct: SHSingleItemProduction.OutputRecipe.ByproductIngredient) -> Bool {
+        canPerformAction(.unselectByproductProducer(byproduct: byproduct, recipe: recipe.recipe))
+    }
+    
+    @MainActor
+    func unselectByproductProducer(for byproduct: SHSingleItemProduction.OutputRecipe.ByproductIngredient) {
+        performAction(.unselectByproductProducer(byproduct: byproduct, recipe: recipe.recipe))
+    }
+    
+    // Select byproduct consumer
     @MainActor
     func canSelectByproductConsumer(for input: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
         canPerformAction(.selectByproductConsumer(input: input, recipe: recipe.recipe))
@@ -55,31 +69,25 @@ final class SingleItemProductionRecipeSelectViewModel {
         performAction(.selectByproductConsumer(input: input, recipe: recipe.recipe))
     }
     
+    // Unselect byproduct consumer
     @MainActor
-    func ingredientDisabled(_ ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient) -> Bool {
-        guard let selectedByproduct else { return false }
-        
-        return selectedByproduct.item.id != ingredient.item.id ||
-        recipe.recipe.id == selectedByproduct.producingRecipe?.id ||
-        recipe.recipe.id == selectedByproduct.consumingRecipe?.id
+    func canUnselectByproductConsumer(for input: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
+        canPerformAction(.unselectByproductConsumer(input: input, recipe: recipe.recipe))
     }
     
     @MainActor
-    func ingredientDisabled(_ ingredient: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
-        guard let selectedByproduct else { return false }
-        
-        return selectedByproduct.item.id != ingredient.item.id ||
-        recipe.recipe.id == selectedByproduct.producingRecipe?.id ||
-        recipe.recipe.id == selectedByproduct.consumingRecipe?.id
+    func unselectByproductConsumer(for input: SHSingleItemProduction.OutputRecipe.InputIngredient) {
+        performAction(.unselectByproductConsumer(input: input, recipe: recipe.recipe))
+    }
+    
+    // Can confirm byproduct
+    @MainActor
+    func canConfirmByproduct(_ byproduct: SHSingleItemProduction.OutputRecipe.ByproductIngredient) -> Bool {
+        canSelectByproductProducer(for: byproduct) && selectedByproduct?.consumingRecipe != nil
     }
     
     @MainActor
-    func canConfirmByproduct(_ ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient) -> Bool {
-        canSelectByproductProducer(for: ingredient) && selectedByproduct?.consumingRecipe != nil
-    }
-    
-    @MainActor
-    func canConfirmByproduct(_ ingredient: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
-        canSelectByproductConsumer(for: ingredient) && selectedByproduct?.producingRecipe != nil
+    func canConfirmByproduct(_ input: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
+        canSelectByproductConsumer(for: input) && selectedByproduct?.producingRecipe != nil
     }
 }

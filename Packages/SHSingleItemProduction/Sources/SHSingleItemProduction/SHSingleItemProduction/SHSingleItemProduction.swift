@@ -14,8 +14,8 @@ public final class SHSingleItemProduction {
         set { input.amount = newValue }
     }
     
-    var mainNodes = [Node]()
-    var additionalNodes = [Node]()
+    var nodes = [Node]()
+    var subproductions = [Subproduction]()
     
     var internalState = InternalState()
     
@@ -132,6 +132,24 @@ public final class SHSingleItemProduction {
         input.addByproduct(item, producer: producer, consumer: consumer)
     }
     
+    public func hasProducer(_ item: any Item, recipe: Recipe) -> Bool {
+        input.byproducts.contains {
+            $0.item.id == item.id && $0.producers.contains {
+                $0.recipe.id == recipe.id
+            }
+        }
+    }
+    
+    public func hasConsumer(_ item: any Item, recipe: Recipe) -> Bool {
+        input.byproducts.contains {
+            $0.item.id == item.id && $0.producers.contains {
+                $0.consumers.contains {
+                    $0.id == recipe.id
+                }
+            }
+        }
+    }
+    
     public func removeByrpoduct(_ item: any Item) {
         input.removeByrpoduct(item)
     }
@@ -177,16 +195,18 @@ public final class SHSingleItemProduction {
         internalState.reset(input: input)
         
         // Reset additional nodes
-        additionalNodes = []
+        subproductions = []
         
         // Create nodes for final product recipes
-        buildMainNodes()
+        buildNodes()
         
         // Build a tree
-        buildMainTree()
+        buildTree()
         
-        // Build additional trees
-        buildAdditionalTrees()
+        // Build subproductions
+        for subproduction in subproductions {
+            subproduction.update()
+        }
         
         // Build and return an output
         buildOutput()
@@ -281,7 +301,7 @@ extension SHSingleItemProduction: Hashable {
 extension SHSingleItemProduction: CustomStringConvertible {
     public var description: String {
         var nodeDescription = ""
-        var nodes = mainNodes
+        var nodes = nodes
         var spacing = ""
         while !nodes.isEmpty {
             nodeDescription += nodes.map { $0.description(with: spacing) }.joined(separator: "\n") + "\n"

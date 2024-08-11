@@ -72,6 +72,15 @@ final class RecipeIngredientAmountViewModel {
         )
     }
     
+    convenience init(additionalProductionOutput output: SHSingleItemProduction.OutputRecipe.OutputIngredient, amount: Double) {
+        self.init(
+            item: output.item,
+            amount: amount,
+            primaryColor: .sh(.gray40),
+            shadowColor: .sh(.gray30)
+        )
+    }
+    
     convenience init(productionByproduct byproduct: SHSingleItemProduction.OutputRecipe.ByproductIngredient) {
         var foregroundStyle = AnyShapeStyle(.background)
         let secondaryStyle: AnyShapeStyle

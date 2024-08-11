@@ -2,16 +2,21 @@ import Foundation
 import SHModels
 
 extension SHSingleItemProduction {
-    public struct OutputItem: Identifiable {
-        public let id = UUID()
+    public struct OutputItem: Identifiable, CustomStringConvertible {
+        public let id: UUID
         public let item: any Item
         public var recipes: [OutputRecipe]
+        
+        public var description: String {
+            "Output: \(item), amount: \(amount), recipes: \(recipes)"
+        }
         
         public var amount: Double {
             recipes.reduce(0.0) { $0 + $1.output.amount }
         }
         
-        public init(item: any Item, recipes: [OutputRecipe]) {
+        public init(id: UUID = UUID(), item: any Item, recipes: [OutputRecipe]) {
+            self.id = id
             self.item = item
             self.recipes = recipes
         }

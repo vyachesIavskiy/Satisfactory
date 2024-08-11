@@ -36,16 +36,6 @@ final class SingleItemProductionRecipeSelectViewModel {
     }
     
     @MainActor
-    func canSelectOutputAsByproductProducer(ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient) -> Bool {
-        canPerformAction(.selectOutputAsByproductProducer(ingredient: ingredient, recipe: recipe.recipe))
-    }
-    
-    @MainActor
-    func selectOutputAsByproductProducer(ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient) {
-        performAction(.selectOutputAsByproductProducer(ingredient: ingredient, recipe: recipe.recipe))
-    }
-    
-    @MainActor
     func canSelectByproductProducer(for ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient) -> Bool {
         canPerformAction(.selectByproductProducer(ingredient: ingredient, recipe: recipe.recipe))
     }
@@ -81,11 +71,6 @@ final class SingleItemProductionRecipeSelectViewModel {
         return selectedByproduct.item.id != ingredient.item.id ||
         recipe.recipe.id == selectedByproduct.producingRecipe?.id ||
         recipe.recipe.id == selectedByproduct.consumingRecipe?.id
-    }
-    
-    @MainActor
-    func canConfirmByproduct(_ ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient) -> Bool {
-        canSelectOutputAsByproductProducer(ingredient: ingredient) && selectedByproduct?.consumingRecipe != nil
     }
     
     @MainActor

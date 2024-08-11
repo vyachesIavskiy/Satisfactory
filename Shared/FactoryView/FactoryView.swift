@@ -38,10 +38,20 @@ struct FactoryView: View {
         }
         .listStyle(.plain)
         .navigationTitle(viewModel.factory.name)
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button("Statistics", systemImage: "info.bubble") {
+                    viewModel.showingStatisticsSheet = true
+                }
+            }
+            
+            ToolbarItem(placement: .primaryAction) {
+                Button("Edit") {
+                    // Edit factory
+                }
+            }
+        }
         .searchable(text: $viewModel.searchText, prompt: Text("Search productions"))
-//        .navigationDestination(item: $viewModel.selectedProduction) { production in
-//
-//        }
         .alert(
             "Rename production",
             isPresented: $viewModel.showingRenameAlert,
@@ -75,6 +85,21 @@ struct FactoryView: View {
             }
         } message: { _ in
             Text("This action cannot be undone.")
+        }
+        .sheet(isPresented: $viewModel.showingStatisticsSheet) {
+            NavigationStack {
+                Text("Statistics will be here")
+                    .font(.title)
+                    .padding()
+                    .navigationTitle(viewModel.factory.name)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                viewModel.showingStatisticsSheet = false
+                            }
+                        }
+                    }
+            }
         }
         .task {
             await viewModel.observeProductions()

@@ -19,6 +19,9 @@ final class CalculationViewModel {
     private var production: SHSingleItemProduction
     
     @ObservationIgnored
+    private var savedProduction: Production?
+    
+    @ObservationIgnored
     var amount: Double
     
     var item: any Item {
@@ -39,6 +42,7 @@ final class CalculationViewModel {
     var outputItemViewModels = [ProductViewModel]()
     var modalNavigationState: ModalNavigationState?
     var showingUnsavedConfirmationDialog = false
+    var canBeDismissedWithoutSaving = true
     
     @MainActor
     private var byproductSelectionState: ByproductSelectionState? {
@@ -59,8 +63,10 @@ final class CalculationViewModel {
     }
     
     convenience init(production: Production) {
-        let production = SHSingleItemProduction(production: production)
-        self.init(production: production)
+        let singleItemProduction = SHSingleItemProduction(production: production)
+        self.init(production: singleItemProduction)
+        
+        self.savedProduction = production
         
         update()
     }
@@ -82,10 +88,12 @@ final class CalculationViewModel {
         production.addRecipe(recipe, to: item)
         addInputRecipesIfNeeded()
         update()
+        
+        canBeDismissedWithoutSaving = false
     }
     
     func saveProduction() {
-        
+        // TODO: Show production saving screen
     }
     
     @MainActor
@@ -122,6 +130,9 @@ private extension CalculationViewModel {
         production.addRecipe(recipe, to: item)
         addInputRecipesIfNeeded()
         update()
+        
+        // Update this value since it was reset
+        canBeDismissedWithoutSaving = true
     }
     
     // MARK: Auto-selection recipes
@@ -187,22 +198,6 @@ private extension CalculationViewModel {
     }
     
     @MainActor
-    func canSelectOutputAsByproductProducer(
-        ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient
-    ) -> Bool {
-        // If producing recipe is not yet selected
-        byproductSelectionState?.producingRecipe == nil &&
-        
-        // If production has an input with the same item and this input is not selected yet
-        production.outputRecipesContains {
-            $0.inputs.contains {
-                $0.item.id == ingredient.item.id &&
-                $0.producingProductID == nil
-            }
-        }
-    }
-    
-    @MainActor
     func canSelectByproductProducer(
         ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient
     ) -> Bool {
@@ -221,10 +216,7 @@ private extension CalculationViewModel {
         byproductSelectionState?.consumingRecipe == nil &&
         
         production.outputRecipesContains {
-            // If ingredient is not selected and there is an output with the same item
-            (!ingredient.isSelected && $0.output.item.id == ingredient.item.id) ||
-            
-            // Or if there is at least one byproduct with the same item
+            // If there is at least one byproduct with the same item
             $0.byproducts.contains {
                 $0.item.id == ingredient.item.id
             }
@@ -257,6 +249,8 @@ private extension CalculationViewModel {
         production.removeInputItem(item)
         explicitlyDeletedItemIDs.insert(item.id)
         update()
+        
+        canBeDismissedWithoutSaving = false
     }
     
     @MainActor
@@ -270,20 +264,6 @@ private extension CalculationViewModel {
         }
         
         modalNavigationState = .selectInitialRecipeForItem(viewModel: viewModel)
-    }
-    
-    @MainActor
-    func selectByproductProducer(ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient, recipe: Recipe) {
-        if byproductSelectionState == nil {
-            byproductSelectionState = ByproductSelectionState(
-                item: ingredient.item,
-                producingRecipe: recipe
-            )
-        } else {
-            byproductSelectionState?.producingRecipe = recipe
-        }
-        
-        checkByproductSelectionState()
     }
     
     @MainActor
@@ -326,6 +306,8 @@ private extension CalculationViewModel {
         
         production.addByproduct(item, producer: producingRecipe, consumer: consumingRecipe)
         update()
+        
+        canBeDismissedWithoutSaving = false
     }
     
     // MARK: ViewModels
@@ -348,9 +330,6 @@ private extension CalculationViewModel {
                     case let .selectRecipeForInput(input):
                         canSelectRecipe(for: input)
                         
-                    case let .selectOutputAsByproductProducer(ingredient, _):
-                        canSelectOutputAsByproductProducer(ingredient: ingredient)
-                        
                     case let .selectByproductProducer(ingredient, _):
                         canSelectByproductProducer(ingredient: ingredient)
                         
@@ -371,9 +350,6 @@ private extension CalculationViewModel {
                     case let .selectRecipeForInput(input):
                         selectRecipe(for: input)
                         
-                    case let .selectOutputAsByproductProducer(ingredient, recipe):
-                        selectByproductProducer(ingredient: ingredient, recipe: recipe)
-                        
                     case let .selectByproductProducer(ingredient, recipe):
                         selectByproductProducer(ingredient: ingredient, recipe: recipe)
                         
@@ -392,10 +368,6 @@ extension CalculationViewModel {
         case adjust(SHSingleItemProduction.OutputItem)
         case removeItem(any Item)
         case selectRecipeForInput(SHSingleItemProduction.OutputRecipe.InputIngredient)
-        case selectOutputAsByproductProducer(
-            ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient,
-            recipe: Recipe
-        )
         case selectByproductProducer(
             ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient,
             recipe: Recipe

@@ -27,6 +27,7 @@ final class FactoryViewModel {
     
     var showingRenameAlert = false
     var showingDeleteAlert = false
+    var showingStatisticsSheet = false
     
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)

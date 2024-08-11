@@ -2,18 +2,18 @@ import Foundation
 import SHModels
 
 extension SHSingleItemProduction {
-    struct Input {
+    public struct Input {
         /// A final item produced by calculation.
-        let finalItem: any Item
+        public let finalItem: any Item
         
         /// Target amount of final item. All other items will be calculated based on this number.
-        var amount: Double
+        public var amount: Double
         
         /// Final and intermediate items with corresponding recipes, selected to produce the final item.
-        var inputItems: [InputItem]
+        public var inputItems: [InputItem]
         
         /// A separate byproduct relation between different items.
-        var byproducts: [InputByproduct]
+        public var byproducts: [InputByproduct]
         
         init(finalItem: any Item, amount: Double) {
             self.finalItem = finalItem
@@ -130,14 +130,14 @@ private extension SHSingleItemProduction.Input {
 }
 
 extension SHSingleItemProduction.Input: Hashable {
-    static func == (lhs: SHSingleItemProduction.Input, rhs: SHSingleItemProduction.Input) -> Bool {
+    public static func == (lhs: SHSingleItemProduction.Input, rhs: SHSingleItemProduction.Input) -> Bool {
         lhs.finalItem.id == rhs.finalItem.id &&
         lhs.amount == rhs.amount &&
         lhs.inputItems == rhs.inputItems &&
         lhs.byproducts == rhs.byproducts
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(finalItem.id)
         hasher.combine(amount)
         hasher.combine(inputItems)

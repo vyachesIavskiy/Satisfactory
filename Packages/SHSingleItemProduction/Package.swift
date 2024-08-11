@@ -34,7 +34,9 @@ let package = Package(
         // Test targets
         .testTarget(
             name: "SHSingleItemProductionTests",
-            dependencies: ["SHSingleItemProduction"]
+            dependencies: [
+                "SHSingleItemProduction"
+            ]
         ),
     ]
 )

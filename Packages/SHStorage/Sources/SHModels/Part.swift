@@ -7,6 +7,10 @@ public struct Part: ProgressiveItem {
     public let form: Form
     public let isNaturalResource: Bool
     
+    public var description: String {
+        "Part: \(localizedName)"
+    }
+    
     public init(id: String, category: Category, progressionIndex: Int, form: Form, isNaturalResource: Bool = false) {
         self.id = id
         self.category = category
@@ -17,7 +21,7 @@ public struct Part: ProgressiveItem {
 }
 
 public extension Part {
-    enum Form {
+    enum Form: Sendable {
         case solid
         case fluid
         case gas

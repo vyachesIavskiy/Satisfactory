@@ -4,7 +4,7 @@ extension SHSingleItemProduction {
     @dynamicMemberLookup
     public struct InputRecipe: Hashable {
         /// A recipe used to produce product.
-        let recipe: Recipe
+        public let recipe: Recipe
         
         /// A proportion of total amount of product.
         ///

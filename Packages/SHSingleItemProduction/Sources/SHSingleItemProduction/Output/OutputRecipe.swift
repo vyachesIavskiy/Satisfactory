@@ -2,21 +2,27 @@ import Foundation
 import SHModels
 
 extension SHSingleItemProduction {
-    public struct OutputRecipe: Identifiable, Hashable {
-        public let id = UUID()
+    public struct OutputRecipe: Identifiable, Hashable, CustomStringConvertible {
+        public let id: UUID
         public let recipe: Recipe
         public var output: OutputIngredient
         public var byproducts: [ByproductIngredient]
         public var inputs: [InputIngredient]
         public var proportion: SHProductionProportion
         
+        public var description: String {
+            "\(recipe), output: \(output), byproducts: \(byproducts), inputs: \(inputs)"
+        }
+        
         public init(
+            id: UUID = UUID(),
             recipe: Recipe,
             output: OutputIngredient,
             byproducts: [ByproductIngredient],
             inputs: [InputIngredient],
             proportion: SHProductionProportion
         ) {
+            self.id = id
             self.recipe = recipe
             self.output = output
             self.byproducts = byproducts
@@ -43,27 +49,36 @@ extension Collection<SHSingleItemProduction.OutputRecipe> {
 }
 
 extension SHSingleItemProduction.OutputRecipe {
-    public struct OutputIngredient: Identifiable {
-        public let id = UUID()
+    public struct OutputIngredient: Identifiable, CustomStringConvertible {
+        public let id: UUID
         public let item: any Item
         public var amount: Double
-        public var byproducts: [Byproduct]
+        public var additionalAmounts = [Double]()
         
-        public init(item: any Item, amount: Double, byproducts: [Byproduct]) {
+        public var description: String {
+            "id: \(id), \(item), amount: \(amount), additional amounts: \(additionalAmounts)"
+        }
+        
+        public init(id: UUID = UUID(), item: any Item, amount: Double) {
+            self.id = id
             self.item = item
             self.amount = amount
-            self.byproducts = byproducts
         }
     }
     
-    public struct ByproductIngredient: Identifiable {
-        public let id = UUID()
+    public struct ByproductIngredient: Identifiable, CustomStringConvertible {
+        public let id: UUID
         public let item: any Item
         public var amount: Double
         public var byproducts: [Byproduct]
         public var isSelected: Bool
         
-        public init(item: any Item, amount: Double, byproducts: [Byproduct], isSelected: Bool) {
+        public var description: String {
+            "id: \(id), \(item), amount: \(amount), byproducts: \(byproducts), \(isSelected ? "selected" : "not selected")"
+        }
+        
+        public init(id: UUID = UUID(), item: any Item, amount: Double, byproducts: [Byproduct], isSelected: Bool) {
+            self.id = id
             self.item = item
             self.amount = amount
             self.byproducts = byproducts
@@ -71,15 +86,27 @@ extension SHSingleItemProduction.OutputRecipe {
         }
     }
     
-    public struct InputIngredient: Identifiable {
-        public let id = UUID()
+    public struct InputIngredient: Identifiable, CustomStringConvertible {
+        public let id: UUID
         public var producingProductID: UUID?
         public let item: any Item
         public var amount: Double
         public var byproducts: [Byproduct]
         public var isSelected: Bool
         
-        public init(producingProductID: UUID? = nil, item: any Item, amount: Double, byproducts: [Byproduct], isSelected: Bool) {
+        public var description: String {
+            "id: \(id) \(item), amount: \(amount), byproducts: \(byproducts), \(isSelected ? "selected" : "not selected")"
+        }
+        
+        public init(
+            id: UUID = UUID(),
+            producingProductID: UUID? = nil,
+            item: any Item,
+            amount: Double,
+            byproducts: [Byproduct],
+            isSelected: Bool
+        ) {
+            self.id = id
             self.producingProductID = producingProductID
             self.item = item
             self.amount = amount
@@ -88,9 +115,13 @@ extension SHSingleItemProduction.OutputRecipe {
         }
     }
     
-    public struct Byproduct: Hashable {
+    public struct Byproduct: Hashable, CustomStringConvertible {
         public let index: Int
         public var amount: Double
+        
+        public var description: String {
+            "index: \(index), amount: \(amount)"
+        }
         
         public init(index: Int, amount: Double) {
             self.index = index
@@ -103,15 +134,13 @@ extension SHSingleItemProduction.OutputRecipe.OutputIngredient: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.item.id == rhs.item.id &&
-        lhs.amount == rhs.amount &&
-        lhs.byproducts == rhs.byproducts
+        lhs.amount == rhs.amount
     }
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(item.id)
         hasher.combine(amount)
-        hasher.combine(byproducts)
     }
 }
 

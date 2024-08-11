@@ -198,8 +198,7 @@ private func ingredient(role: Recipe.Ingredient.Role, form: Part.Form) -> Recipe
 private func productionIngredient(form: Part.Form, selected: Bool) -> SHSingleItemProduction.OutputRecipe.OutputIngredient {
     SHSingleItemProduction.OutputRecipe.OutputIngredient(
         item: Part(id: "preview-part", category: .special, progressionIndex: 0, form: form),
-        amount: 10,
-        byproducts: []
+        amount: 10
     )
 }
 

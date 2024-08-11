@@ -129,8 +129,7 @@ private struct _ProductPreview: View {
                     recipe: $0,
                     output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
                         item: $0.output.item,
-                        amount: 20,
-                        byproducts: []
+                        amount: 20
                     ),
                     byproducts: $0.byproducts.map {
                         SHSingleItemProduction.OutputRecipe.ByproductIngredient(

@@ -12,6 +12,10 @@ public struct Recipe: BaseItem {
     public let duration: Int
     public let isDefault: Bool
     
+    public var description: String {
+        "Recipe: \(localizedName)"
+    }
+    
     public init(
         id: String,
         output: Ingredient,

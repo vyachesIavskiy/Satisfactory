@@ -195,8 +195,7 @@ private struct _ProductAdjustmentPreview: View {
                             recipe: recipe,
                             output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
                                 item: recipe.output.item,
-                                amount: recipe.amountPerMinute(for: recipe.output),
-                                byproducts: []
+                                amount: recipe.amountPerMinute(for: recipe.output)
                             ),
                             byproducts: recipe.byproducts.map {
                                 SHSingleItemProduction.OutputRecipe.ByproductIngredient(

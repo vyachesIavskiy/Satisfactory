@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol BaseItem: Identifiable, Hashable, Sendable {
+public protocol BaseItem: Identifiable, Hashable, Sendable, CustomStringConvertible {
     var id: String { get }
     var localizedName: String { get }
 }

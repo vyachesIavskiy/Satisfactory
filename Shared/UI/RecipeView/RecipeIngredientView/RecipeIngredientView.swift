@@ -272,10 +272,7 @@ private func productionIngredient(form: Part.Form, byproductCount: Int = 0) -> S
     
     return SHSingleItemProduction.OutputRecipe.OutputIngredient(
         item: Part(id: id, category: .special, progressionIndex: 0, form: form),
-        amount: 10,
-        byproducts: (0..<byproductCount).map {
-            SHSingleItemProduction.OutputRecipe.Byproduct(index: $0, amount: 10)
-        }
+        amount: 10
     )
 }
 

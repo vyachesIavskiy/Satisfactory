@@ -136,6 +136,8 @@ struct NewFactoryView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     NewFactoryView()
 }
+#endif

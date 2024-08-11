@@ -26,7 +26,7 @@ struct CalculationView: View {
         .safeAreaInset(edge: .bottom, spacing: 0) {
             amountView
         }
-        .navigationBarBackButtonHidden(viewModel.hasUnsavedChanges)
+        .navigationBarBackButtonHidden(!viewModel.canBeDismissedWithoutSaving)
         .navigationTitle(viewModel.item.localizedName)
         .toolbar {
             if viewModel.selectingByproduct {
@@ -35,11 +35,17 @@ struct CalculationView: View {
                         viewModel.cancelByproductSelection()
                     }
                 }
-            } else if viewModel.hasUnsavedChanges {
+            } else if !viewModel.canBeDismissedWithoutSaving {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
                         viewModel.showingUnsavedConfirmationDialog = true
                     }
+                }
+            }
+            
+            ToolbarItem(placement: .primaryAction) {
+                Button("Statistics", systemImage: "info.bubble") {
+//                    viewModel.showingStatisticsSheet = true
                 }
             }
                 
@@ -59,7 +65,7 @@ struct CalculationView: View {
                         viewModel.showingUnsavedConfirmationDialog = true
                     }
                 },
-            isEnabled: !viewModel.showingUnsavedConfirmationDialog || viewModel.hasUnsavedChanges || viewModel.modalNavigationState == nil
+            isEnabled: !viewModel.showingUnsavedConfirmationDialog || !viewModel.canBeDismissedWithoutSaving || viewModel.modalNavigationState == nil
         )
         .confirmationDialog(
             "You have unsaved changes",

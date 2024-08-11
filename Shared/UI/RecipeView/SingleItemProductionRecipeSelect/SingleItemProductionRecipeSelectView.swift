@@ -85,31 +85,9 @@ struct SingleItemProductionRecipeSelectView: View {
     ) -> some View {
         let outputViewModel = RecipeIngredientViewModel(productionOutput: output)
         let outputView = outputViewBuilder(outputViewModel)
-        let canSelectByproduct = viewModel.canSelectOutputAsByproductProducer(ingredient: output)
-        let canConfirmByproduct = viewModel.canConfirmByproduct(output)
         
-        if canSelectByproduct {
-            if canConfirmByproduct {
-                Button {
-                    viewModel.selectOutputAsByproductProducer(ingredient: output)
-                } label: {
-                    outputView
-                }
-            } else {
-                Menu {
-                    Button {
-                        viewModel.selectOutputAsByproductProducer(ingredient: output)
-                    } label: {
-                        Text("Select as byproduct producer")
-                    }
-                } label: {
-                    outputView
-                }
-            }
-        } else {
-            outputView
-                .grayscale(viewModel.selectedByproduct != nil ? 1.0 : 0.0)
-        }
+        outputView
+            .grayscale(viewModel.selectedByproduct != nil ? 1.0 : 0.0)
     }
     
     @MainActor @ViewBuilder
@@ -257,8 +235,7 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
             recipe: recipe,
             output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
                 item: recipe.output.item,
-                amount: recipe.amountPerMinute(for: recipe.output),
-                byproducts: []
+                amount: recipe.amountPerMinute(for: recipe.output)
             ),
             byproducts: recipe.byproducts.map {
                 SHSingleItemProduction.OutputRecipe.ByproductIngredient(

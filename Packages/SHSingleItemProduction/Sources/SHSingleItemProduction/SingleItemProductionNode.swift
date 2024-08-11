@@ -1,25 +1,25 @@
+import Foundation
 import SHModels
 import SHUtils
 
 extension SHSingleItemProduction {
     final class Node {
+        let id: UUID
+        
+        /// A node output item. This can be recipe output or recipe byproduct ingredient.
+        var item: any Item
+        
         /// A Recipe used to populate and recalculate this node.
         var recipe: Recipe
         
-        var amount: Double {
-            get {
-                output.amount
-            }
-            set {
-                output.amount = newValue
-                updateAll()
-            }
-        }
-        
-        /// Primary output ingredient.
+        /// Output amount for a subnode.
         ///
         /// This represents an ingredient which is primary output product for recipe node. Apart from Recipe, this can represent Recipe secondary output.
-        var output: Output
+        var amount: Double {
+            didSet {
+                update()
+            }
+        }
         
         /// Seondary output (Byproducts) ingredients.
         ///
@@ -37,47 +37,28 @@ extension SHSingleItemProduction {
         /// An array of input recipe nodes. Might be empty if a user did not select any recipe for an input product or if a product is a natural resource.
         var inputNodes = [Node]()
         
-        init(item: any Item, recipe: Recipe, amount: Double, parentRecipeNode: Node? = nil) {
+        init(id: UUID, item: any Item, recipe: Recipe, amount: Double, parentRecipeNode: Node? = nil) {
+            self.id = id
+            self.item = item
             self.recipe = recipe
-            self.output = Output(item: item, amount: amount)
+            self.amount = amount
             self.parentRecipeNode = parentRecipeNode
             
             update()
         }
         
-        /// Updates input nodes with input values crecursively.
-        func updateInputs() {
-            for input in inputs {
-                guard
-                    // Check if this input has a corresponding input node (i.e. a recipe for this input is selected).
-                    let (inputNodeIndex, inputNode) = inputNodes.enumerated().first(where: { $0.1.output.item.id == input.item.id }),
-                    // Check if amount is different. If not, do not update.
-                    input.availableAmount != inputNode.amount
-                else { continue }
-                
-                if input.availableAmount > 0 {
-                    // If amount is not zero, update node.
-                    inputNode.amount = input.availableAmount
-                } else {
-                    // If amount is zero, remove this node, it's obsolete.
-                    inputNodes.remove(at: inputNodeIndex)
-                }
-            }
-        }
-        
-        /// Updates byproducts and inputs based on output.
         func update() {
             let outputIngredients = recipe.byproducts + CollectionOfOne(recipe.output)
-            let producingIngredient = outputIngredients.first { $0.item.id == output.item.id }
+            let producingIngredient = outputIngredients.first { $0.item.id == item.id }
             
             guard let producingIngredient else {
-                fatalError("Could not find ingredient for '\(output.item.localizedName)' in '\(recipe.localizedName)'")
+                fatalError("Could not find ingredient for '\(item.localizedName)' in '\(recipe.localizedName)'")
             }
             
             let amountPerRecipe = recipe.amountPerMinute(for: producingIngredient)
-            let multiplier = output.availableAmount / amountPerRecipe
+            let multiplier = amount / amountPerRecipe
             
-            byproducts = outputIngredients.filter { $0.item.id != output.item.id }.map { ingredient in
+            byproducts = outputIngredients.filter { $0.item.id != item.id }.map { ingredient in
                 let amountPerRecipe = recipe.amountPerMinute(for: ingredient)
                 return Byproduct(item: ingredient.item, amount: amountPerRecipe * multiplier)
             }
@@ -86,10 +67,6 @@ extension SHSingleItemProduction {
                 let amountPerRecipe = recipe.amountPerMinute(for: ingredient)
                 return Input(item: ingredient.item, amount: amountPerRecipe * multiplier)
             }
-        }
-        
-        func removeInputNodes() {
-            inputNodes.removeAll()
         }
         
         func inputContains(_ predicate: (Node) -> Bool) -> Bool {
@@ -107,35 +84,22 @@ extension SHSingleItemProduction {
     }
 }
 
-private extension SHSingleItemProduction.Node {
-    /// Updates byproduct and input based on output, then updates input nodes with input values crecursively.
-    func updateAll() {
-        update()
+extension [SHSingleItemProduction.Node] {
+    func containsRecurcievly(predicate: (SHSingleItemProduction.Node) throws -> Bool) rethrows -> Bool {
+        var nodes = self
+        var result = false
+        while !nodes.isEmpty {
+            result = try nodes.contains(where: predicate)
+            guard !result else { break }
+            
+            nodes = nodes.flatMap(\.inputNodes)
+        }
         
-        updateInputs()
+        return result
     }
-}
-
-// MARK: Output
-extension SHSingleItemProduction.Node {
-    struct Output {
-        let item: any Item
-        var amount: Double
-        var asByproduct = Byproduct(amount: 0.0)
-        
-        var availableAmount: Double {
-            amount + asByproduct.amount
-        }
-        
-        struct Byproduct {
-            var amount: Double
-            var consumers = [Consumer]()
-        }
-        
-        struct Consumer {
-            var recipeID: String
-            var amount: Double
-        }
+    
+    func contains(id: UUID) -> Bool {
+        containsRecurcievly(predicate: { $0.id == id })
     }
 }
 
@@ -178,16 +142,11 @@ extension SHSingleItemProduction.Node {
 // MARK: Description for print
 extension SHSingleItemProduction.Node {
     func description(with spacing: String) -> String {
-        let name = output.item.localizedName
+        let name = item.localizedName
         let recipe = "[R: \(recipe.localizedName)]"
         let amount = "\(amount.formatted(.shNumber))"
-        let byproductAmount = "\(output.asByproduct.amount.formatted(.shNumber))"
         
-        let joinedAmount = if byproductAmount.isEmpty {
-            "(\(amount))"
-        } else {
-            "(\(amount) [\(byproductAmount)])"
-        }
+        let joinedAmount = "(\(amount))"
         
         let byproducts = byproducts.map { byproduct in
             let name = byproduct.item.localizedName

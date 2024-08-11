@@ -8,6 +8,10 @@ extension SHSingleItemProduction {
         var amount: Double
         var consumers: [Consumer]
         
+        var consumedCompletely: Bool {
+            consumers.reduce(false) { $0 && $1.amount > 0 }
+        }
+        
         var availableAmount: Double {
             amount - totalConsumingAmount
         }
@@ -21,6 +25,10 @@ extension SHSingleItemProduction {
             self.recipeID = recipeID
             self.amount = amount
             self.consumers = consumers
+        }
+        
+        func consumedAmount(of recipe: Recipe) -> Double {
+            consumers.filter { $0.recipeID == recipe.id }.reduce(0.0) { $0 + $1.amount }
         }
     }
 }

@@ -361,6 +361,13 @@
 			);
 			target = 450BD19524A6395700948B47 /* iOS */;
 		};
+		D3B700872C5D77B500797978 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				EditProductionView.swift,
+			);
+			target = 450BD19524A6395700948B47 /* iOS */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -372,6 +379,7 @@
 		D37E13182C5953C40085FEC0 /* Factories */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D37E131B2C5953D40085FEC0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Factories; sourceTree = "<group>"; };
 		D37F8A5B2C5BA49900D3AB99 /* FactoryView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D37F8A5F2C5BA4A600D3AB99 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = FactoryView; sourceTree = "<group>"; };
 		D385F0392C5410690083BFA1 /* InitialRecipeSelectionView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D385F0402C54109B0083BFA1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D385F03C2C5410740083BFA1 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = InitialRecipeSelectionView; sourceTree = "<group>"; };
+		D3B700832C5D779C00797978 /* EditProductionView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3B700872C5D77B500797978 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EditProductionView; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -432,6 +440,7 @@
 		450BD18E24A6395700948B47 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D3B700832C5D779C00797978 /* EditProductionView */,
 				450BD18F24A6395700948B47 /* SatisfactoryApp.swift */,
 				D30D978D2BF69C85007B6850 /* Root */,
 				D30D97A02BF75400007B6850 /* New Production */,

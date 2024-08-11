@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Category: Int, Equatable {
+public enum Category: Int, Equatable, Sendable {
     // Parts
     case special
     case ores

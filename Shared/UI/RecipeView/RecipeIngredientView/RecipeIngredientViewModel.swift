@@ -83,8 +83,10 @@ final class RecipeIngredientViewModel: Identifiable {
             switch role {
             case let .output(ingredient):
                 result.append(RecipeIngredientAmountViewModel(productionOutput: ingredient))
-                result += ingredient.byproducts.map {
-                    RecipeIngredientAmountViewModel(productionSecondaryByproduct: $0, item: ingredient.item)
+                for additionalAmount in ingredient.additionalAmounts {
+                    result.append(
+                        RecipeIngredientAmountViewModel(additionalProductionOutput: ingredient, amount: additionalAmount)
+                    )
                 }
                 
             case let .byproduct(ingredient):

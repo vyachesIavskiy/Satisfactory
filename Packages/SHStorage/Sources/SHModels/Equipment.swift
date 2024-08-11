@@ -10,6 +10,10 @@ public struct Equipment: ProgressiveItem {
     public let consumes: [Part]
     public let requireElectrecity: Bool
     
+    public var description: String {
+        "Equipment: \(localizedName)"
+    }
+    
     public init(
         id: String,
         category: Category,
@@ -32,7 +36,7 @@ public struct Equipment: ProgressiveItem {
 }
 
 public extension Equipment {
-    enum Slot {
+    enum Slot: Sendable {
         case head
         case body
         case back

@@ -127,14 +127,15 @@ struct CalculationView: View {
             
             TextField("Amount", value: $viewModel.amount, format: .shNumber)
                 .multilineTextAlignment(.center)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 2)
+                .keyboardType(.decimalPad)
                 .focused($focused)
                 .submitLabel(.done)
                 .onSubmit {
                     focused = false
                     viewModel.update()
                 }
+                .padding(.horizontal, 8)
+                .padding(.vertical, 2)
                 .frame(maxWidth: 150)
                 .background(.background, in: RoundedRectangle(cornerRadius: 4, style: .continuous))
                 .overlay(

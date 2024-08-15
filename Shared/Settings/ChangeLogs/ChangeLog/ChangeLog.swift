@@ -10,7 +10,7 @@ struct ChangeLog: Equatable, Identifiable {
         case v1_7
         case v1_7_1
         
-        static var validVersions: [Version] = Array(allCases.dropFirst())
+        static let validVersions = Array(allCases.dropFirst())
         
         var title: String {
             switch self {

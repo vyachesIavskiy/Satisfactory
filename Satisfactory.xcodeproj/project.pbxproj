@@ -149,6 +149,7 @@
 		D3BB86882C53B990009E2B5F /* UnsavedChangesAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BB86862C53B990009E2B5F /* UnsavedChangesAlert.swift */; };
 		D3D976ED2C37F2B50069C421 /* RecipeIngredientAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D976EC2C37F2B50069C421 /* RecipeIngredientAmountView.swift */; };
 		D3D976EE2C37F2B50069C421 /* RecipeIngredientAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D976EC2C37F2B50069C421 /* RecipeIngredientAmountView.swift */; };
+		D3E700AC2C6EA8C400822F09 /* NewProductionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E700AB2C6EA8C400822F09 /* NewProductionTest.swift */; };
 		D3E7B87F2C2C5F5E00DB7177 /* ProductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E7B87E2C2C5F5E00DB7177 /* ProductionView.swift */; };
 		D3FA3DDA2BF8E270004CD46D /* AngledBottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA3DD92BF8E270004CD46D /* AngledBottomLine.swift */; };
 		D3FA3DDB2BF8E270004CD46D /* AngledBottomLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA3DD92BF8E270004CD46D /* AngledBottomLine.swift */; };
@@ -258,6 +259,7 @@
 		D3BB55592C3FD7350052DF56 /* RecipeIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientViewModel.swift; sourceTree = "<group>"; };
 		D3BB86862C53B990009E2B5F /* UnsavedChangesAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsavedChangesAlert.swift; sourceTree = "<group>"; };
 		D3D976EC2C37F2B50069C421 /* RecipeIngredientAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientAmountView.swift; sourceTree = "<group>"; };
+		D3E700AB2C6EA8C400822F09 /* NewProductionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductionTest.swift; sourceTree = "<group>"; };
 		D3E7B87E2C2C5F5E00DB7177 /* ProductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionView.swift; sourceTree = "<group>"; };
 		D3FA3DD92BF8E270004CD46D /* AngledBottomLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngledBottomLine.swift; sourceTree = "<group>"; };
 		F95DAFDB2AC6ACC60062A5AD /* iOS AppStore Screenshots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS AppStore Screenshots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -455,6 +457,7 @@
 				D3C6FF5F2C173D82007542F2 /* Production */,
 				450BD19124A6395700948B47 /* Assets.xcassets */,
 				D331892C2C56357300F822C9 /* ObservableTest.swift */,
+				D3E700AB2C6EA8C400822F09 /* NewProductionTest.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -1013,6 +1016,7 @@
 				D399267F2C04DBB8000D7308 /* SHSection.swift in Sources */,
 				D32AC7ED2C16FA9900BDFBAC /* ScrollOffsetReader.swift in Sources */,
 				D3BB555A2C3FD7350052DF56 /* RecipeIngredientViewModel.swift in Sources */,
+				D3E700AC2C6EA8C400822F09 /* NewProductionTest.swift in Sources */,
 				D38F69C72C426A87000F4CEE /* ChangeLog_V1.6.swift in Sources */,
 				D356C5142BF7CAA700A4CE6E /* RootViewModel.swift in Sources */,
 				D3E7B87F2C2C5F5E00DB7177 /* ProductionView.swift in Sources */,

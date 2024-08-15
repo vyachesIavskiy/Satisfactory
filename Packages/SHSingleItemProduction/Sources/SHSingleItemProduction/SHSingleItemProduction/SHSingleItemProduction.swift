@@ -249,8 +249,10 @@ public final class SHSingleItemProduction {
     }
     
     public func hasUnsavedChanges(comparingTo savedProduction: Production) -> Bool {
-        // TODO: Compare
-        true
+        savedProduction.item.id != item.id ||
+        savedProduction.amount != amount/* ||
+        savedProduction.inputItems != input.inputItems ||
+        savedProduction.byproducts != input.byproducts*/
     }
 }
 

@@ -1,7 +1,6 @@
 
 extension String {
     var words: [String] {
-        let range = Range(uncheckedBounds: (lower: startIndex, upper: endIndex))
         var words = [String]()
         
         enumerateSubstrings(in: (startIndex..<endIndex), options: .byWords) { word, _, _, _ in

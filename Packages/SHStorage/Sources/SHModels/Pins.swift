@@ -1,5 +1,5 @@
 
-public struct Pins: Equatable {
+public struct Pins: Equatable, Sendable {
     public var partIDs: Set<String>
     public var equipmentIDs: Set<String>
     public var recipeIDs: Set<String>

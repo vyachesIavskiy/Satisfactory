@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: Model
 
-public struct Production: Identifiable, Hashable {
+public struct Production: Identifiable, Hashable, Sendable {
     public var id: UUID
     public var name: String
     public var item: any Item
@@ -41,7 +41,7 @@ public struct Production: Identifiable, Hashable {
 }
 
 extension Production {
-    public struct InputItem: Hashable {
+    public struct InputItem: Hashable, Sendable {
         public var item: any Item
         public var recipes: [InputRecipe]
         
@@ -63,7 +63,7 @@ extension Production {
 }
 
 extension Production {
-    public struct InputRecipe: Hashable {
+    public struct InputRecipe: Hashable, Sendable {
         public var recipe: Recipe
         public var proportion: SHProductionProportion
         
@@ -75,7 +75,7 @@ extension Production {
 }
 
 extension Production {
-    public struct InputByproduct: Hashable {
+    public struct InputByproduct: Hashable, Sendable {
         public var item: any Item
         public var producers: [InputByproductProducer]
         
@@ -97,7 +97,7 @@ extension Production {
 }
 
 extension Production {
-    public struct InputByproductProducer: Hashable {
+    public struct InputByproductProducer: Hashable, Sendable {
         public var recipe: Recipe
         public var consumers: [Recipe]
         

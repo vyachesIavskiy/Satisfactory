@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: Model
 
-public struct Factory: Identifiable, Hashable {
+public struct Factory: Identifiable, Hashable, Sendable {
     public var id: UUID
     public var name: String
     public var assetType: AssetType
@@ -17,7 +17,7 @@ public struct Factory: Identifiable, Hashable {
 }
 
 extension Factory {
-    public enum AssetType: Hashable {
+    public enum AssetType: Hashable, Sendable {
         case legacy
         case abbreviation
         case assetCatalog(name: String)

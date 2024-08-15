@@ -22,16 +22,15 @@ struct RecipeAdjustmentView: View {
                             viewModel.onDelete()
                         } label: {
                             Image(systemName: "trash")
-                                .font(.caption)
-                                .frame(height: 16)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
                         }
-                        .buttonStyle(.shTinted)
+                        .buttonStyle(.shBordered)
                         .tint(.sh(.red))
-                        .padding(.horizontal, 4)
                     }
                 }
             }
-            .frame(minHeight: 24)
             
             SingleItemProductionRecipeDisplayView(
                 viewModel: SingleItemProductionRecipeDisplayViewModel(

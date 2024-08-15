@@ -14,18 +14,26 @@ struct ProductAdjustmentView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVStack(spacing: 24) {
-                    adjustingSection
-                    
-                    pinnedSection
-                    
-                    unselectedSection
-                }
+//            ScrollView {
+//                LazyVStack(spacing: 24) {
+//                    adjustingSection
+//                    
+//                    pinnedSection
+//                    
+//                    unselectedSection
+//                }
+//            }
+            List {
+                adjustingSection
+                
+                pinnedSection
+                
+                unselectedSection
             }
+            .listStyle(.plain)
             .animation(.default, value: viewModel.selectedRecipes)
-            .animation(.default, value: viewModel.pinnedRecipes)
-            .animation(.default, value: viewModel.unselectedRecipes)
+//            .animation(.default, value: viewModel.pinnedRecipes)
+//            .animation(.default, value: viewModel.unselectedRecipes)
             .safeAreaInset(edge: .top, spacing: 0) {
                 HStack(alignment: .firstTextBaseline) {
                     Text(viewModel.product.item.localizedName)
@@ -68,41 +76,64 @@ struct ProductAdjustmentView: View {
     
     @MainActor @ViewBuilder
     private var adjustingSection: some View {
-        if !viewModel.selectedRecipes.isEmpty {
-            LazyVStack(spacing: 8, pinnedViews: .sectionHeaders) {
-                Section {
+            Section {
+                if !viewModel.selectedRecipes.isEmpty {
                     ForEach(Array(viewModel.selectedRecipes.enumerated()), id: \.element.id) { index, recipe in
-                        RecipeAdjustmentView(
-                            viewModel: RecipeAdjustmentViewModel(
-                                recipe: recipe,
-                                numberOfRecipes: viewModel.selectedRecipes.count,
-                                allowAdjustment: viewModel.selectedRecipes.count > 1,
-                                allowDeletion: viewModel.allowDeletion || viewModel.selectedRecipes.count > 1
-                            ) { [weak viewModel] proportion in
-                                viewModel?.updateRecipe(recipe, with: proportion)
-                            } onDelete: { [weak viewModel] in
-                                viewModel?.removeRecipe(recipe)
+                        VStack(spacing: 8) {
+                            RecipeAdjustmentView(
+                                viewModel: RecipeAdjustmentViewModel(
+                                    recipe: recipe,
+                                    numberOfRecipes: viewModel.selectedRecipes.count,
+                                    allowAdjustment: viewModel.selectedRecipes.count > 1,
+                                    allowDeletion: viewModel.allowDeletion || viewModel.selectedRecipes.count > 1
+                                ) { [weak viewModel] proportion in
+                                    viewModel?.updateRecipe(recipe, with: proportion)
+                                } onDelete: { [weak viewModel] in
+                                    viewModel?.removeRecipe(recipe)
+                                }
+                            )
+                            .padding(.vertical, 8)
+                            .padding(.horizontal, 16)
+                            
+                            if index != viewModel.selectedRecipes.count - 1 {
+                                Rectangle()
+                                    .fill(.sh(.midnight))
+                                    .frame(height: 1 / displayScale)
+                                    .padding(.leading, 16)
                             }
-                        )
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        
-                        if index != viewModel.selectedRecipes.count - 1 {
-                            Divider()
-                                .padding(.leading, 16)
                         }
+                        .id(recipe.recipe.id)
                     }
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                } else {
+                    VStack(spacing: 24) {
+                        Text("No selected recipes for \(viewModel.product.item.localizedName).")
+                            .font(.title3)
+                        
+                        Text("Applying now will remove \(viewModel.product.item.localizedName) from calculation.")
+                            .font(.subheadline)
+                        
+                        Rectangle()
+                            .fill(.sh(.midnight))
+                            .frame(height: 2 / displayScale)
+                    }
+                    
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+                    .padding(16)
+                    .listRowSeparator(.hidden)
                 }
             }
-        }
+        
     }
     
     @MainActor @ViewBuilder
     private var pinnedSection: some View {
         if !viewModel.pinnedRecipes.isEmpty {
-            LazyVStack(spacing: 8, pinnedViews: .sectionHeaders) {
-                Section {
-                    ForEach(Array(viewModel.pinnedRecipes.enumerated()), id: \.element.id) { index, pinnedRecipe in
+            Section {
+                ForEach(Array(viewModel.pinnedRecipes.enumerated()), id: \.element.id) { index, pinnedRecipe in
+                    VStack(spacing: 8) {
                         Button {
                             viewModel.addRecipe(pinnedRecipe)
                         } label: {
@@ -113,30 +144,35 @@ struct ProductAdjustmentView: View {
                         .padding(.vertical, 8)
                         
                         if index != viewModel.pinnedRecipes.count - 1 {
-                            Divider()
+                            Rectangle()
+                                .fill(.sh(.midnight))
+                                .frame(height: 1 / displayScale)
                                 .padding(.leading, 16)
                         }
                     }
-                } header: {
-                    Text("Pinned recipes")
-                        .fontWeight(.medium)
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 16)
-                        .padding(.top, 8)
-                        .padding(.bottom, 4)
-                        .background(.background)
+                    .id(pinnedRecipe.id)
                 }
+            } header: {
+                Text("Pinned recipes")
+                    .fontWeight(.medium)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
+                    .padding(.bottom, 4)
+                    .background(.background)
             }
+            .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets())
         }
     }
     
     @MainActor @ViewBuilder
     private var unselectedSection: some View {
         if !viewModel.unselectedRecipes.isEmpty {
-            LazyVStack(spacing: 8, pinnedViews: .sectionHeaders) {
-                Section {
-                    ForEach(Array(viewModel.unselectedRecipes.enumerated()), id: \.element.id) { index, unselectedRecipe in
+            Section {
+                ForEach(Array(viewModel.unselectedRecipes.enumerated()), id: \.element.id) { index, unselectedRecipe in
+                    VStack(spacing: 8) {
                         Button {
                             viewModel.addRecipe(unselectedRecipe)
                         } label: {
@@ -147,21 +183,26 @@ struct ProductAdjustmentView: View {
                         .padding(.vertical, 8)
                         
                         if index != viewModel.unselectedRecipes.count - 1 {
-                            Divider()
+                            Rectangle()
+                                .fill(.sh(.midnight))
+                                .frame(height: 1 / displayScale)
                                 .padding(.leading, 16)
                         }
                     }
-                } header: {
-                    Text("Unselected recipes")
-                        .fontWeight(.medium)
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 16)
-                        .padding(.top, 8)
-                        .padding(.bottom, 4)
-                        .background(.background)
+                    .id(unselectedRecipe.id)
                 }
+            } header: {
+                Text("Unselected recipes")
+                    .fontWeight(.medium)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
+                    .padding(.bottom, 4)
+                    .background(.background)
             }
+            .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets())
         }
     }
 }

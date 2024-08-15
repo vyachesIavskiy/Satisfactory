@@ -9,7 +9,7 @@ extension SHSingleItemProduction {
         var consumers: [Consumer]
         
         var consumedCompletely: Bool {
-            consumers.reduce(false) { $0 && $1.amount > 0 }
+            consumers.reduce(true) { $0 && $1.amount > 0 }
         }
         
         var availableAmount: Double {

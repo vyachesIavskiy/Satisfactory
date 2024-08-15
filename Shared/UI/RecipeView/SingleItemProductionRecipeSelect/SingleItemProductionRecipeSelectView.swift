@@ -45,6 +45,7 @@ struct SingleItemProductionRecipeSelectView: View {
                 
                 LazyVGrid(columns: [gridItem, gridItem], spacing: 12) {
                     inputsView
+                        .frame(maxHeight: .infinity)
                 }
                 .fixedSize()
             }

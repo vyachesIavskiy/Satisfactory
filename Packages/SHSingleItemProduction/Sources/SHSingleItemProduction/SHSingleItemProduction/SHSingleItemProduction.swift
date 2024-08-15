@@ -14,8 +14,8 @@ public final class SHSingleItemProduction {
         set { input.amount = newValue }
     }
     
-    var nodes = [Node]()
-    var subproductions = [Subproduction]()
+    var mainNodes = [Node]()
+    var additionalNodes = [Node]()
     
     var internalState = InternalState()
     
@@ -195,7 +195,7 @@ public final class SHSingleItemProduction {
         internalState.reset(input: input)
         
         // Reset additional nodes
-        subproductions = []
+        additionalNodes = []
         
         // Create nodes for final product recipes
         buildNodes()
@@ -203,10 +203,8 @@ public final class SHSingleItemProduction {
         // Build a tree
         buildTree()
         
-        // Build subproductions
-        for subproduction in subproductions {
-            subproduction.update()
-        }
+        // Build additional trees
+        buildAdditionalTrees()
         
         // Build and return an output
         buildOutput()
@@ -301,7 +299,7 @@ extension SHSingleItemProduction: Hashable {
 extension SHSingleItemProduction: CustomStringConvertible {
     public var description: String {
         var nodeDescription = ""
-        var nodes = nodes
+        var nodes = mainNodes + additionalNodes
         var spacing = ""
         while !nodes.isEmpty {
             nodeDescription += nodes.map { $0.description(with: spacing) }.joined(separator: "\n") + "\n"

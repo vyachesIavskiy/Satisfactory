@@ -30,7 +30,7 @@ struct UnsavedChangesAlert: View {
                             Text("Don't save")
                                 .frame(maxWidth: .infinity)
                         }
-                        .buttonStyle(.shTinted)
+                        .buttonStyle(.shBordered)
                         .tint(.sh(.red))
                         
                         Button(action: onSaveAndExit) {
@@ -38,14 +38,14 @@ struct UnsavedChangesAlert: View {
                                 .fontWeight(.bold)
                                 .frame(maxWidth: .infinity)
                         }
-                        .buttonStyle(.shTinted)
+                        .buttonStyle(.shBordered)
                     }
                     
                     Button(action: onCancel) {
                         Text("Cancel")
                             .frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.shTinted)
+                    .buttonStyle(.shBordered)
                     .tint(.sh(.gray80))
                 }
                 .padding(.top, 24)

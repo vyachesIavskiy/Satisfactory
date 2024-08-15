@@ -13,13 +13,11 @@ extension SHSingleItemProduction {
             isSelected: isSelected
         )
         
-        for subproduction in subproductions {
-            subproduction.addToParentOutputItems(
-                &outputItems,
-                ingredientConverter: &ingredientConverter,
-                isSelected: isSelected
-            )
-        }
+        addAdditionalOutputItems(
+            updating: &outputItems,
+            ingredientConverter: &ingredientConverter,
+            isSelected: isSelected
+        )
         
         self.outputItems = outputItems
     }
@@ -28,7 +26,7 @@ extension SHSingleItemProduction {
         ingredientConverter: inout IngredientConverter,
         isSelected: (_ input: Node.Input, _ node: Node) -> Bool
     ) -> [OutputItem] {
-        var nodes = nodes
+        var nodes = mainNodes
         var outputItems = [OutputItem]()
         
         while !nodes.isEmpty {
@@ -130,11 +128,51 @@ extension SHSingleItemProduction {
         
         return outputItems
     }
+    
+    private func addAdditionalOutputItems(
+        updating outputItems: inout [OutputItem],
+        ingredientConverter: inout IngredientConverter,
+        isSelected: (_ input: Node.Input, _ node: Node) -> Bool
+    ) {
+        // Handle additional trees to represent additional amounts in output ingredients.
+        var nodes = additionalNodes
+        while !nodes.isEmpty {
+            for node in nodes {
+                guard
+                    let (outputIndex, output) = outputItems.enumerated().first(where: { $0.1.item.id == node.item.id }),
+                    let recipeIndex = output.recipes.firstIndex(where: { $0.recipe.id == node.recipe.id })
+                else { continue }
+                
+                // Accumulate saved values with new values.
+                var recipe = output.recipes[recipeIndex]
+                
+                if additionalNodes.contains(where: { $0.id == node.id }) {
+                    // If node is top node in additional nodes, append additional amount
+                    recipe.output.additionalAmounts.append(node.amount)
+                } else {
+                    // Otherwise accumulate normal amount
+                    recipe.output.amount += node.amount
+                }
+                recipe.byproducts.merge(with: node.byproducts.map {
+                    ingredientConverter.convert(producingRecipeID: recipe.recipe.id, byproduct: $0)
+                })
+                recipe.inputs.merge(with: node.inputs.map { input in
+                    ingredientConverter.convert(
+                        input: input,
+                        isSelected: isSelected(input, node)
+                    )
+                })
+                outputItems[outputIndex].recipes[recipeIndex] = recipe
+            }
+            
+            nodes = nodes.flatMap(\.inputNodes)
+        }
+    }
 }
 
 // MARK: Ingredient convertion
 extension SHSingleItemProduction {
-    struct IngredientConverter {
+    private struct IngredientConverter {
         var byproductConverter = ByproductConverter()
         
         @Dependency(\.uuid)
@@ -144,7 +182,7 @@ extension SHSingleItemProduction {
             SHSingleItemProduction.OutputRecipe.ByproductIngredient(
                 id: uuid(),
                 item: byproduct.item,
-                amount: byproduct.amount,
+                amount: byproduct.availableAmount,
                 byproducts: byproduct.consumers.map {
                     byproductConverter.convert(producerRecipeID: producingRecipeID, byproductConsumer: $0)
                 },
@@ -159,7 +197,7 @@ extension SHSingleItemProduction {
             SHSingleItemProduction.OutputRecipe.InputIngredient(
                 id: uuid(),
                 item: input.item,
-                amount: input.amount,
+                amount: input.availableAmount,
                 byproducts: input.byproductProducers.map {
                     byproductConverter.convert(inputProducer: $0)
                 },
@@ -168,7 +206,7 @@ extension SHSingleItemProduction {
         }
     }
     
-    struct ByproductConverter {
+    private struct ByproductConverter {
         private var recipeIDs = [String]()
         
         mutating func convert(
@@ -196,7 +234,7 @@ extension SHSingleItemProduction {
 }
 
 // MARK: Merging
-extension [SHSingleItemProduction.OutputRecipe.OutputIngredient] {
+private extension [SHSingleItemProduction.OutputRecipe.OutputIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.item.id == $1.item.id
@@ -206,19 +244,7 @@ extension [SHSingleItemProduction.OutputRecipe.OutputIngredient] {
     }
 }
 
-extension [SHSingleItemProduction.OutputRecipe.ByproductIngredient] {
-    mutating func merge(with other: Self) {
-        merge(with: other) {
-            $0.item.id == $1.item.id
-        } merging: {
-            $0.amount += $1.amount
-            $0.isSelected = $0.isSelected || $1.isSelected
-            $0.byproducts.merge(with: $1.byproducts)
-        }
-    }
-}
-
-extension [SHSingleItemProduction.OutputRecipe.InputIngredient] {
+private extension [SHSingleItemProduction.OutputRecipe.ByproductIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.item.id == $1.item.id
@@ -230,7 +256,19 @@ extension [SHSingleItemProduction.OutputRecipe.InputIngredient] {
     }
 }
 
-extension [SHSingleItemProduction.OutputRecipe.Byproduct] {
+private extension [SHSingleItemProduction.OutputRecipe.InputIngredient] {
+    mutating func merge(with other: Self) {
+        merge(with: other) {
+            $0.item.id == $1.item.id
+        } merging: {
+            $0.amount += $1.amount
+            $0.isSelected = $0.isSelected || $1.isSelected
+            $0.byproducts.merge(with: $1.byproducts)
+        }
+    }
+}
+
+private extension [SHSingleItemProduction.OutputRecipe.Byproduct] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.index == $1.index

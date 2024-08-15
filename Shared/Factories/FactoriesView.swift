@@ -179,7 +179,7 @@ struct FactoriesView: View {
                     .padding(.horizontal, 16)
                     .padding(.vertical, 4)
             }
-            .buttonStyle(.shBordered())
+            .buttonStyle(.shBorderedProminent)
         }
         .padding(32)
     }

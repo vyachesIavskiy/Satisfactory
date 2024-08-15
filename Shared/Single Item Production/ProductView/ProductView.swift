@@ -55,7 +55,7 @@ struct ProductView: View {
                             .font(.caption)
                             .frame(height: 16)
                     }
-                    .buttonStyle(.shTinted)
+                    .buttonStyle(.shBordered)
                     .tint(.sh(.red))
                 } else {
                     Button {
@@ -65,7 +65,7 @@ struct ProductView: View {
                             .font(.subheadline)
                             .frame(height: 16)
                     }
-                    .buttonStyle(.shTinted)
+                    .buttonStyle(.shBordered)
                 }
             }
         }

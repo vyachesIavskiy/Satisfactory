@@ -70,50 +70,11 @@ struct ProductionProportionView: View {
     @State
     var viewModel: ProductionProportionViewModel
     
-//    private enum ProductionProportionDisplay {
-//        case auto
-//        case fraction
-//        case fixed
-//    }
-//    
-//    @Binding
-//    var proportion: SHProductionProportion
-//    
-//    @MainActor @State
-//    private var proportionDisplay: ProductionProportionDisplay
-//    
-//    @MainActor @State
-//    var fractionAmount: Double
-//    
-//    @MainActor @State
-//    var fixedAmount: Double
-    
     @FocusState
     private var focusField: ProductionProportionTextfield.Field?
     
-//    @MainActor
-//    init(_ proportion: Binding<SHProductionProportion>, totalAmount: Double) {
-//        self._proportion = proportion
-//        
-//        switch proportion.wrappedValue {
-//        case .auto:
-//            proportionDisplay = .auto
-//            fractionAmount = 100
-//            
-//        case let .fraction(fraction):
-//            proportionDisplay = .fraction
-//            fractionAmount = fraction * 100
-//            
-//        case .fixed:
-//            proportionDisplay = .fixed
-//            fractionAmount = 100
-//        }
-//        
-//        fixedAmount = totalAmount
-//    }
-    
     var body: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: 12) {
             ZStack {
                 ProductionProportionTextfield(
                     $viewModel.fractionAmount,
@@ -147,12 +108,12 @@ struct ProductionProportionView: View {
                     viewModel.update()
                 } label: {
                     Image(systemName: "checkmark")
-                        .font(.caption)
+                        .font(.callout)
                         .fontWeight(.medium)
                         .frame(height: 16)
                         .frame(minWidth: 32)
                 }
-                .buttonStyle(.shTinted)
+                .buttonStyle(.shBordered)
                 .transition(.scale.combined(with: .opacity))
             } else {
                 Menu {
@@ -171,21 +132,16 @@ struct ProductionProportionView: View {
                         switch viewModel.proportionDisplay {
                         case .auto:
                             Text("AUTO")
-                                .font(.caption)
-                                .fixedSize()
                         case .fraction:
-                            Image(systemName: "percent")
-                                .font(.caption)
-                                .fontWeight(.medium)
+                            Text("%")
                         case .fixed:
-                            Image(systemName: "textformat.123")
+                            Text("123")
                         }
                     }
-                    .frame(height: 16)
                     .frame(minWidth: 32)
                 }
                 .menuStyle(.button)
-                .buttonStyle(.shTinted)
+                .buttonStyle(.shBordered)
                 .tint(.sh(.midnight))
                 .transition(.move(edge: .trailing).combined(with: .opacity))
             }
@@ -225,7 +181,7 @@ private struct ProductionProportionTextfield: View {
         }
     }
     
-    private var shadowColor: Color {
+    private var borderColor: Color {
         if isEnabled {
             if isFocused {
                 .sh(.orange)
@@ -234,14 +190,6 @@ private struct ProductionProportionTextfield: View {
             }
         } else {
             .clear
-        }
-    }
-    
-    private var shadowRadius: Double {
-        if isEnabled {
-            2.0
-        } else {
-            0.0
         }
     }
     
@@ -258,12 +206,11 @@ private struct ProductionProportionTextfield: View {
             .submitLabel(.done)
             .foregroundStyle(foregroundStyle)
             .padding(.horizontal, 4)
-            .frame(height: 24)
-            .background(.background, in: RoundedRectangle(cornerRadius: 4, style: .continuous))
+            .frame(height: 28)
             .background {
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .fill(shadowColor)
-                    .blur(radius: shadowRadius)
+                AngledRectangle(cornerRadius: 4)
+                    .fill(backgroundStyle)
+                    .stroke(borderColor, lineWidth: 1)
             }
             .animation(.default, value: isFocused)
     }

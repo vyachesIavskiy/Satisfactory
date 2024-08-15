@@ -51,14 +51,24 @@ struct RecipeDisplayView: View {
                         byproductsView
                     }
                     
-                    LazyVGrid(columns: [gridItem, gridItem], spacing: 12) {
-                        inputsView
+                    ViewThatFits(in: .horizontal) {
+                        HStack(alignment: .top, spacing: 12) {
+                            inputsView
+                        }
+                        
+                        VStack(spacing: 12) {
+                            inputsGridView
+                        }
                     }
-                    .fixedSize()
+                    
+//                    LazyVGrid(columns: [gridItem, gridItem], spacing: 12) {
+//                        inputsView
+//                            .frame(maxHeight: .infinity)
+//                    }
+//                    .fixedSize()
                 }
             }
         }
-        .padding(4)
     }
     
     @MainActor @ViewBuilder
@@ -97,16 +107,40 @@ struct RecipeDisplayView: View {
     
     @MainActor @ViewBuilder
     private var byproductsView: some View {
-        ForEach(Array(viewModel.byproductIngredientViewModels().enumerated()), id: \.element.item.id) { index, viewModel in
+        ForEach(viewModel.byproductIngredientViewModels()) { viewModel in
             RecipeIngredientView(viewModel: viewModel)
         }
     }
     
     @MainActor @ViewBuilder
     private var inputsView: some View {
-        ForEach(Array(viewModel.inputIngredientViewModels().enumerated()), id: \.element.item.id) { index, viewModel in
+        ForEach(viewModel.inputIngredientViewModels()) { viewModel in
             RecipeIngredientView(viewModel: viewModel)
         }
+    }
+    
+    @MainActor @ViewBuilder
+    private var inputsGridView: some View {
+        let viewModels = viewModel.inputIngredientViewModels()
+            .reduce(into: [[RecipeIngredientViewModel]]()) { partialResult, viewModel in
+                if let lastIndex = partialResult.indices.last, partialResult[lastIndex].count < 2 {
+                    partialResult[lastIndex].append(viewModel)
+                } else {
+                    partialResult.append([viewModel])
+                }
+            }
+        
+        ForEach(Array(viewModels.enumerated()), id: \.offset) { index, viewModels in
+            HStack(alignment: .top, spacing: 12) {
+                ForEach(viewModels) { viewModel in
+                    RecipeIngredientView(viewModel: viewModel)
+                }
+            }
+        }
+//        
+//        ForEach(Array(viewModel.inputIngredientViewModels().enumerated()), id: \.element.item.id) { index, viewModel in
+//            RecipeIngredientView(viewModel: viewModel)
+//        }
     }
 }
 

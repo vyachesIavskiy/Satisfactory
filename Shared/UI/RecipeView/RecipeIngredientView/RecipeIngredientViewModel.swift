@@ -65,12 +65,13 @@ final class RecipeIngredientViewModel: Identifiable {
     @MainActor
     func amountViewModels() -> [RecipeIngredientAmountViewModel] {
         func showMainAmount(for ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient) -> Bool {
+            ingredient.amount > 0 &&
             ingredient.byproducts.first?.amount != ingredient.amount
         }
         
         func showMainAmount(for ingredient: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
-            ingredient.isSelected ||
-            ingredient.byproducts.first?.amount != ingredient.amount
+            ingredient.amount > 0 &&
+            (ingredient.isSelected || ingredient.byproducts.first?.amount != ingredient.amount)
         }
         
         var result = [RecipeIngredientAmountViewModel]()

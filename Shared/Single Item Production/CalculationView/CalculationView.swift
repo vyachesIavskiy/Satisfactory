@@ -48,10 +48,9 @@ struct CalculationView: View {
             }
             
             ToolbarItem(placement: .primaryAction) {
-                Button("Statistics", systemImage: "info.bubble") {
+                Button("Statistics", systemImage: "list.number") {
 //                    viewModel.showingStatisticsSheet = true
                 }
-                .buttonStyle(.shTinted)
             }
                 
             if viewModel.hasUnsavedChanges, !viewModel.selectingByproduct {
@@ -60,7 +59,6 @@ struct CalculationView: View {
                         viewModel.saveProduction()
                     }
                     .disabled(true)
-                    .buttonStyle(.shTinted)
                 }
             }
         }
@@ -141,7 +139,7 @@ struct CalculationView: View {
                     viewModel.update()
                 }
                 .padding(.horizontal, 8)
-                .padding(.vertical, 2)
+                .padding(.vertical, 4)
                 .frame(maxWidth: 150)
                 .background(.background, in: RoundedRectangle(cornerRadius: 4, style: .continuous))
                 .overlay(
@@ -159,7 +157,7 @@ struct CalculationView: View {
                         Image(systemName: "checkmark")
                             .fontWeight(.semibold)
                     }
-                    .buttonStyle(.shTinted)
+                    .buttonStyle(.shBordered)
                 } else {
                     Text("/ min")
                         .font(.headline)

@@ -20,7 +20,7 @@ struct NewProductionView: View {
             .animation(.default, value: viewModel.sections)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Menu {
+                    Menu("Sorting", systemImage: "arrow.up.arrow.down.square") {
                         Picker("Sorting", selection: $viewModel.sorting) {
                             Text("Name")
                                 .tag(NewProductionViewModel.Sorting.name)
@@ -28,8 +28,6 @@ struct NewProductionView: View {
                             Text("Progression")
                                 .tag(NewProductionViewModel.Sorting.progression)
                         }
-                    } label: {
-                        Label("Sorting", systemImage: "arrow.up.arrow.down.square")
                     }
                 }
             }
@@ -89,12 +87,6 @@ struct NewProductionView: View {
                 }
             }
         }
-//            .background {
-//                NavigationLink("") {
-//                    ProductionView(viewModel: ProductionViewModel(item: item))
-//                }
-//                .opacity(0)
-//            }
     }
 }
 

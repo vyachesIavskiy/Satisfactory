@@ -52,6 +52,10 @@ struct AngledRectangle: Shape {
     
     private var inset: CGFloat = 0
     
+    var layoutDirectionBehavior: LayoutDirectionBehavior {
+        .mirrors
+    }
+    
     init(cornerRadius: CGFloat, corners: Corner.Set = .diagonal) {
         self.cornerRadius = cornerRadius
         self.corners = corners

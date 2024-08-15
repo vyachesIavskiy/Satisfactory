@@ -21,7 +21,8 @@ let package = Package(
         .package(path: "../SHDependencies"),
         .package(path: "../SHLogger"),
         .package(path: "../SHPersistence"),
-        .package(path: "../SHFileManager")
+        .package(path: "../SHFileManager"),
+        .package(path: "../SHModels")
     ],
     targets: [
         .target(
@@ -32,7 +33,7 @@ let package = Package(
                 "SHPersistentStorage",
                 "SHPersistentModels",
                 "SHStaticModels",
-                "SHModels",
+                .product(name: "SHModels", package: "SHModels"),
                 .product(name: "SHLogger", package: "SHLogger")
             ],
             swiftSettings: [
@@ -61,17 +62,16 @@ let package = Package(
                 .product(name: "SHLogger", package: "SHLogger")
             ]
         ),
-        .target(name: "SHModels"),
         .target(
             name: "SHStaticModels",
             dependencies: [
-                "SHModels"
+                .product(name: "SHModels", package: "SHModels")
             ]
         ),
         .target(
             name: "SHPersistentModels",
             dependencies: [
-                "SHModels"
+                .product(name: "SHModels", package: "SHModels")
             ]
         ),
         
@@ -81,7 +81,7 @@ let package = Package(
             dependencies: [
                 "SHPersistentModels",
                 "SHStaticModels",
-                "SHModels",
+                .product(name: "SHModels", package: "SHModels"),
                 .product(name: "SHLogger", package: "SHLogger"),
             ]
         ),

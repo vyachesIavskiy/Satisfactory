@@ -138,6 +138,7 @@
 		D39926802C04DBB8000D7308 /* SHSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399267E2C04DBB8000D7308 /* SHSection.swift */; };
 		D39926882C04F537000D7308 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D39926872C04F537000D7308 /* SHDebug */; };
 		D399268A2C04FB4B000D7308 /* SHColor+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39926892C04FB4B000D7308 /* SHColor+Color.swift */; };
+		D3A84E932C6EB805005BB515 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D3A84E922C6EB805005BB515 /* SHModels */; };
 		D3ACE5D92C387CA40081D2C5 /* RecipeIngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ACE5D82C387CA40081D2C5 /* RecipeIngredientView.swift */; };
 		D3ACE5DA2C387CA40081D2C5 /* RecipeIngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ACE5D82C387CA40081D2C5 /* RecipeIngredientView.swift */; };
 		D3B32AC62C00B9FF0025B441 /* ChangeLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B32AC52C00B9FF0025B441 /* ChangeLogsView.swift */; };
@@ -260,6 +261,7 @@
 		D3BB86862C53B990009E2B5F /* UnsavedChangesAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsavedChangesAlert.swift; sourceTree = "<group>"; };
 		D3D976EC2C37F2B50069C421 /* RecipeIngredientAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientAmountView.swift; sourceTree = "<group>"; };
 		D3E700AB2C6EA8C400822F09 /* NewProductionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductionTest.swift; sourceTree = "<group>"; };
+		D3E700B12C6EAF6600822F09 /* SHModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SHModels; sourceTree = "<group>"; };
 		D3E7B87E2C2C5F5E00DB7177 /* ProductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionView.swift; sourceTree = "<group>"; };
 		D3FA3DD92BF8E270004CD46D /* AngledBottomLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngledBottomLine.swift; sourceTree = "<group>"; };
 		F95DAFDB2AC6ACC60062A5AD /* iOS AppStore Screenshots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS AppStore Screenshots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -392,6 +394,7 @@
 				D3045CC82C52B45700265500 /* SHSingleItemProduction in Frameworks */,
 				D39926882C04F537000D7308 /* SHDebug in Frameworks */,
 				D31F7C5A2BF7E2D900AAE5C0 /* SHSettings in Frameworks */,
+				D3A84E932C6EB805005BB515 /* SHModels in Frameworks */,
 				D341A9EE2BDD60E500ED36F6 /* SHStorage in Frameworks */,
 				D3045CC62C52B30B00265500 /* SHUtils in Frameworks */,
 			);
@@ -752,6 +755,7 @@
 		F94C7F462A93FD7D004E9F35 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				D3E700B12C6EAF6600822F09 /* SHModels */,
 				D32AC7F22C170D8800BDFBAC /* SHDependencies */,
 				D39597A22BFE99190046C23F /* SHPersistence */,
 				D386D5C32BEA03F200B584C9 /* SHFileManager */,
@@ -820,6 +824,7 @@
 				D39926872C04F537000D7308 /* SHDebug */,
 				D3045CC52C52B30B00265500 /* SHUtils */,
 				D3045CC72C52B45700265500 /* SHSingleItemProduction */,
+				D3A84E922C6EB805005BB515 /* SHModels */,
 			);
 			productName = iOS;
 			productReference = 450BD19624A6395700948B47 /* Satisfactory.app */;
@@ -889,8 +894,9 @@
 		450BD18A24A6395700948B47 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					450BD19524A6395700948B47 = {
 						CreatedOnToolsVersion = 12.0;
@@ -1193,9 +1199,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1258,9 +1266,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 5;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1337,6 +1347,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R7GVTFP58;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1361,6 +1372,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7R7GVTFP58;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1564,6 +1576,10 @@
 		D39926872C04F537000D7308 /* SHDebug */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHDebug;
+		};
+		D3A84E922C6EB805005BB515 /* SHModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHModels;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

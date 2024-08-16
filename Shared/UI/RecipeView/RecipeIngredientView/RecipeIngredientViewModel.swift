@@ -1,6 +1,6 @@
 import Observation
 import SHModels
-import SHSingleItemProduction
+import SingleItemCalculator
 
 @Observable
 final class RecipeIngredientViewModel: Identifiable {
@@ -10,9 +10,9 @@ final class RecipeIngredientViewModel: Identifiable {
     }
     
     enum ProductionRole {
-        case output(SHSingleItemProduction.OutputRecipe.OutputIngredient)
-        case byproduct(SHSingleItemProduction.OutputRecipe.ByproductIngredient)
-        case input(SHSingleItemProduction.OutputRecipe.InputIngredient)
+        case output(SingleItemCalculator.OutputRecipe.OutputIngredient)
+        case byproduct(SingleItemCalculator.OutputRecipe.ByproductIngredient)
+        case input(SingleItemCalculator.OutputRecipe.InputIngredient)
     }
     
     private let mode: Mode
@@ -46,15 +46,15 @@ final class RecipeIngredientViewModel: Identifiable {
         self.init(mode: .display(ingredient: ingredient, amount: amount))
     }
     
-    convenience init(productionOutput ingredient: SHSingleItemProduction.OutputRecipe.OutputIngredient) {
+    convenience init(productionOutput ingredient: SingleItemCalculator.OutputRecipe.OutputIngredient) {
         self.init(mode: .production(.output(ingredient)))
     }
     
-    convenience init(productionByproduct ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient) {
+    convenience init(productionByproduct ingredient: SingleItemCalculator.OutputRecipe.ByproductIngredient) {
         self.init(mode: .production(.byproduct(ingredient)))
     }
     
-    convenience init(productionInput ingredient: SHSingleItemProduction.OutputRecipe.InputIngredient) {
+    convenience init(productionInput ingredient: SingleItemCalculator.OutputRecipe.InputIngredient) {
         self.init(mode: .production(.input(ingredient)))
     }
 
@@ -64,12 +64,12 @@ final class RecipeIngredientViewModel: Identifiable {
     
     @MainActor
     func amountViewModels() -> [RecipeIngredientAmountViewModel] {
-        func showMainAmount(for ingredient: SHSingleItemProduction.OutputRecipe.ByproductIngredient) -> Bool {
+        func showMainAmount(for ingredient: SingleItemCalculator.OutputRecipe.ByproductIngredient) -> Bool {
             ingredient.amount > 0 &&
             ingredient.byproducts.first?.amount != ingredient.amount
         }
         
-        func showMainAmount(for ingredient: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
+        func showMainAmount(for ingredient: SingleItemCalculator.OutputRecipe.InputIngredient) -> Bool {
             ingredient.amount > 0 &&
             (ingredient.isSelected || ingredient.byproducts.first?.amount != ingredient.amount)
         }

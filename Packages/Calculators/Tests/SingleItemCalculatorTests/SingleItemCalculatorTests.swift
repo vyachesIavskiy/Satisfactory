@@ -1,8 +1,8 @@
 import XCTest
-@testable import SHSingleItemProduction
+@testable import SingleItemCalculator
 import SHStorage
 
-final class SHSingleItemProductionTests: XCTestCase {
+final class SingleItemCalculatorTests: XCTestCase {
     @Dependency(\.storageService)
     private var storageService
     
@@ -14,8 +14,8 @@ final class SHSingleItemProductionTests: XCTestCase {
             $0.storageService = .previewValue
         } operation: {
             let ironPlate = storageService.item(id: "part-iron-plate")!
-            let production = SHSingleItemProduction(item: ironPlate)
-            XCTAssertEqual(production.input, SHSingleItemProduction.Input(finalItem: ironPlate, amount: 1.0))
+            let production = SingleItemCalculator(item: ironPlate)
+            XCTAssertEqual(production.input, SingleItemCalculator.Input(finalItem: ironPlate, amount: 1.0))
         }
     }
     
@@ -24,7 +24,7 @@ final class SHSingleItemProductionTests: XCTestCase {
             $0.storageService = .previewValue
         } operation: {
             let ironPlate = storageService.item(id: "part-iron-plate")!
-            let production = SHSingleItemProduction(item: ironPlate)
+            let production = SingleItemCalculator(item: ironPlate)
             production.update()
             XCTAssertEqual(production.outputItems, [])
         }
@@ -38,25 +38,25 @@ final class SHSingleItemProductionTests: XCTestCase {
             let ironPlate = storageService.item(id: "part-iron-plate")!
             let ironPlateRecipe = storageService.recipe(id: "recipe-iron-plate")!
             let ironIngot = storageService.item(id: "part-iron-ingot")!
-            let production = SHSingleItemProduction(item: ironPlate)
+            let production = SingleItemCalculator(item: ironPlate)
             production.addRecipe(ironPlateRecipe, to: ironPlate)
             production.update()
             
-            let expectedOutput = SHSingleItemProduction.OutputItem(
+            let expectedOutput = SingleItemCalculator.OutputItem(
                 id: uuid(),
                 item: ironPlate,
                 recipes: [
-                    SHSingleItemProduction.OutputRecipe(
+                    SingleItemCalculator.OutputRecipe(
                         id: uuid(),
                         recipe: ironPlateRecipe,
-                        output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                        output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                             id: uuid(),
                             item: ironPlate,
                             amount: 1.0
                         ),
                         byproducts: [],
                         inputs: [
-                            SHSingleItemProduction.OutputRecipe.InputIngredient(
+                            SingleItemCalculator.OutputRecipe.InputIngredient(
                                 id: uuid(),
                                 item: ironIngot,
                                 amount: 1.5,
@@ -80,26 +80,26 @@ final class SHSingleItemProductionTests: XCTestCase {
             let ironPlate = storageService.item(id: "part-iron-plate")!
             let ironPlateRecipe = storageService.recipe(id: "recipe-iron-plate")!
             let ironIngot = storageService.item(id: "part-iron-ingot")!
-            let production = SHSingleItemProduction(item: ironPlate)
+            let production = SingleItemCalculator(item: ironPlate)
             production.addRecipe(ironPlateRecipe, to: ironPlate)
             production.amount = 20
             production.update()
             
-            let expectedOutput = SHSingleItemProduction.OutputItem(
+            let expectedOutput = SingleItemCalculator.OutputItem(
                 id: uuid(),
                 item: ironPlate,
                 recipes: [
-                    SHSingleItemProduction.OutputRecipe(
+                    SingleItemCalculator.OutputRecipe(
                         id: uuid(),
                         recipe: ironPlateRecipe,
-                        output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                        output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                             id: uuid(),
                             item: ironPlate,
                             amount: 20
                         ),
                         byproducts: [],
                         inputs: [
-                            SHSingleItemProduction.OutputRecipe.InputIngredient(
+                            SingleItemCalculator.OutputRecipe.InputIngredient(
                                 id: uuid(),
                                 item: ironIngot,
                                 amount: 30,
@@ -132,7 +132,7 @@ final class SHSingleItemProductionTests: XCTestCase {
             let residualRubberRecipe = storageService.recipe(id: "recipe-residual-rubber")!
             let dilutedFuelRecipe = storageService.recipe(id: "recipe-alternate-diluted-fuel")!
             
-            let production = SHSingleItemProduction(item: plastic)
+            let production = SingleItemCalculator(item: plastic)
             production.addRecipe(recycledPlasticRecipe, to: plastic)
             production.addRecipe(recycledRubberRecipe, to: rubber)
             production.addRecipe(residualRubberRecipe, to: rubber, with: .fixed(10))
@@ -141,21 +141,21 @@ final class SHSingleItemProductionTests: XCTestCase {
             production.update()
             
             let expectedOutput = [
-                SHSingleItemProduction.OutputItem(
+                SingleItemCalculator.OutputItem(
                     id: uuid(),
                     item: plastic,
                     recipes: [
-                        SHSingleItemProduction.OutputRecipe(
+                        SingleItemCalculator.OutputRecipe(
                             id: uuid(),
                             recipe: recycledPlasticRecipe,
-                            output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                            output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                                 id: uuid(),
                                 item: plastic,
                                 amount: 113.333_333_333_333_333_333_333_333_333_333
                             ),
                             byproducts: [],
                             inputs: [
-                                SHSingleItemProduction.OutputRecipe.InputIngredient(
+                                SingleItemCalculator.OutputRecipe.InputIngredient(
                                     id: uuid(),
                                     producingProductID: uuid(),
                                     item: rubber,
@@ -163,7 +163,7 @@ final class SHSingleItemProductionTests: XCTestCase {
                                     byproducts: [],
                                     isSelected: true
                                 ),
-                                SHSingleItemProduction.OutputRecipe.InputIngredient(
+                                SingleItemCalculator.OutputRecipe.InputIngredient(
                                     id: uuid(),
                                     item: fuel,
                                     amount: 56.666_666_666_666_666_666_666_666_666_666,
@@ -175,28 +175,28 @@ final class SHSingleItemProductionTests: XCTestCase {
                         )
                     ]
                 ),
-                SHSingleItemProduction.OutputItem(
+                SingleItemCalculator.OutputItem(
                     id: uuid(),
                     item: rubber,
                     recipes: [
-                        SHSingleItemProduction.OutputRecipe(
+                        SingleItemCalculator.OutputRecipe(
                             id: uuid(),
                             recipe: recycledRubberRecipe,
-                            output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                            output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                                 id: uuid(),
                                 item: rubber,
                                 amount: 56.666_666_666_666_666_666_666_666_666_666
                             ),
                             byproducts: [],
                             inputs: [
-                                SHSingleItemProduction.OutputRecipe.InputIngredient(
+                                SingleItemCalculator.OutputRecipe.InputIngredient(
                                     id: uuid(),
                                     item: plastic,
                                     amount: 28.333_333_333_333_333_333_333_333_333_333,
                                     byproducts: [],
                                     isSelected: true
                                 ),
-                                SHSingleItemProduction.OutputRecipe.InputIngredient(
+                                SingleItemCalculator.OutputRecipe.InputIngredient(
                                     id: uuid(),
                                     item: fuel,
                                     amount: 28.333_333_333_333_333_333_333_333_333_333,
@@ -206,24 +206,24 @@ final class SHSingleItemProductionTests: XCTestCase {
                             ],
                             proportion: .auto
                         ),
-                        SHSingleItemProduction.OutputRecipe(
+                        SingleItemCalculator.OutputRecipe(
                             id: uuid(),
                             recipe: residualRubberRecipe,
-                            output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                            output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                                 id: uuid(),
                                 item: rubber,
                                 amount: 10
                             ),
                             byproducts: [],
                             inputs: [
-                                SHSingleItemProduction.OutputRecipe.InputIngredient(
+                                SingleItemCalculator.OutputRecipe.InputIngredient(
                                     id: uuid(),
                                     item: polymerResin,
                                     amount: 20,
                                     byproducts: [],
                                     isSelected: false
                                 ),
-                                SHSingleItemProduction.OutputRecipe.InputIngredient(
+                                SingleItemCalculator.OutputRecipe.InputIngredient(
                                     id: uuid(),
                                     item: water,
                                     amount: 20,
@@ -235,28 +235,28 @@ final class SHSingleItemProductionTests: XCTestCase {
                         )
                     ]
                 ),
-                SHSingleItemProduction.OutputItem(
+                SingleItemCalculator.OutputItem(
                     id: uuid(),
                     item: fuel,
                     recipes: [
-                        SHSingleItemProduction.OutputRecipe(
+                        SingleItemCalculator.OutputRecipe(
                             id: uuid(),
                             recipe: dilutedFuelRecipe,
-                            output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                            output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                                 id: uuid(),
                                 item: fuel,
                                 amount: 85
                             ),
                             byproducts: [],
                             inputs: [
-                                SHSingleItemProduction.OutputRecipe.InputIngredient(
+                                SingleItemCalculator.OutputRecipe.InputIngredient(
                                     id: uuid(),
                                     item: heavyOilResidue,
                                     amount: 42.5,
                                     byproducts: [],
                                     isSelected: false
                                 ),
-                                SHSingleItemProduction.OutputRecipe.InputIngredient(
+                                SingleItemCalculator.OutputRecipe.InputIngredient(
                                     id: uuid(),
                                     item: water,
                                     amount: 42.5,

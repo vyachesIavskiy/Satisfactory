@@ -1,7 +1,7 @@
 import Foundation
 import SHModels
 
-extension SHSingleItemProduction {
+extension SingleItemCalculator {
     public struct OutputItem: Identifiable, CustomStringConvertible {
         public let id: UUID
         public let item: any Item
@@ -23,7 +23,7 @@ extension SHSingleItemProduction {
     }
 }
 
-extension SHSingleItemProduction.OutputItem: Hashable {
+extension SingleItemCalculator.OutputItem: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.item.id == rhs.item.id &&

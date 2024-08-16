@@ -1,5 +1,5 @@
 import SwiftUI
-import SHSingleItemProduction
+import SingleItemCalculator
 
 struct ProductView: View {
     let viewModel: ProductViewModel
@@ -76,7 +76,7 @@ struct ProductView: View {
     }
     
     @MainActor @ViewBuilder
-    private func recipeView(_ outputRecipe: SHSingleItemProduction.OutputRecipe) -> some View {
+    private func recipeView(_ outputRecipe: SingleItemCalculator.OutputRecipe) -> some View {
         VStack(alignment: .leading) {
             if viewModel.product.recipes.count > 1 {
                 HStack {
@@ -122,20 +122,20 @@ private struct _ProductPreview: View {
         return storageService.item(id: itemID)
     }
     
-    private var outputRecipes: [SHSingleItemProduction.OutputRecipe] {
+    private var outputRecipes: [SingleItemCalculator.OutputRecipe] {
         @Dependency(\.storageService)
         var storageService
         
         return recipeIDs.compactMap {
             storageService.recipe(id: $0).map {
-                SHSingleItemProduction.OutputRecipe(
+                SingleItemCalculator.OutputRecipe(
                     recipe: $0,
-                    output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                    output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                         item: $0.output.item,
                         amount: 20
                     ),
                     byproducts: $0.byproducts.map {
-                        SHSingleItemProduction.OutputRecipe.ByproductIngredient(
+                        SingleItemCalculator.OutputRecipe.ByproductIngredient(
                             item: $0.item,
                             amount: 20,
                             byproducts: [],
@@ -143,7 +143,7 @@ private struct _ProductPreview: View {
                         )
                     },
                     inputs: $0.inputs.map {
-                        SHSingleItemProduction.OutputRecipe.InputIngredient(
+                        SingleItemCalculator.OutputRecipe.InputIngredient(
                             item: $0.item,
                             amount: 20,
                             byproducts: [],
@@ -163,7 +163,7 @@ private struct _ProductPreview: View {
     private var viewModel: ProductViewModel? {
         item.map {
             ProductViewModel(
-                product: SHSingleItemProduction.OutputItem(item: $0, recipes: outputRecipes),
+                product: SingleItemCalculator.OutputItem(item: $0, recipes: outputRecipes),
                 selectedByproduct: nil,
                 canPerformAction: { _ in true },
                 performAction: { _ in }

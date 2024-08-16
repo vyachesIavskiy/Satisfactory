@@ -1,5 +1,5 @@
 import SwiftUI
-import SHSingleItemProduction
+import SingleItemCalculator
 
 struct SingleItemProductionRecipeDisplayView: View {
     let viewModel: SingleItemProductionRecipeDisplayViewModel
@@ -112,14 +112,14 @@ private struct _SingleItemProductionRecipeDisplayPreview: View {
     }
     
     func viewModel(for recipe: Recipe) -> SingleItemProductionRecipeDisplayViewModel {
-        let recipe = SHSingleItemProduction.OutputRecipe(
+        let recipe = SingleItemCalculator.OutputRecipe(
             recipe: recipe,
-            output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+            output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                 item: recipe.output.item,
                 amount: recipe.amountPerMinute(for: recipe.output)
             ),
             byproducts: recipe.byproducts.map {
-                SHSingleItemProduction.OutputRecipe.ByproductIngredient(
+                SingleItemCalculator.OutputRecipe.ByproductIngredient(
                     item: $0.item,
                     amount: recipe.amountPerMinute(for: $0),
                     byproducts: [],
@@ -127,7 +127,7 @@ private struct _SingleItemProductionRecipeDisplayPreview: View {
                 )
             },
             inputs: recipe.inputs.map {
-                SHSingleItemProduction.OutputRecipe.InputIngredient(
+                SingleItemCalculator.OutputRecipe.InputIngredient(
                     producingProductID: nil,
                     item: $0.item,
                     amount: recipe.amountPerMinute(for: $0),

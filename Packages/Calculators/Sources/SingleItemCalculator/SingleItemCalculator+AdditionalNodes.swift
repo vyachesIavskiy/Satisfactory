@@ -1,13 +1,13 @@
 import SHModels
 
-extension SHSingleItemProduction {
+extension SingleItemCalculator {
     func buildAdditionalTrees() {
         for node in additionalNodes {
             buildAdditionalNode(node)
         }
     }
     
-    private func buildAdditionalNode(_ node: SHSingleItemProduction.Node) {
+    private func buildAdditionalNode(_ node: SingleItemCalculator.Node) {
         registerByproducts(from: node)
         
         for (inputIndex, input) in node.inputs.enumerated() {
@@ -21,8 +21,8 @@ extension SHSingleItemProduction {
     }
     
     private func buildAdditionalInputNode(
-        for node: SHSingleItemProduction.Node,
-        input: SHSingleItemProduction.Node.Input,
+        for node: SingleItemCalculator.Node,
+        input: SingleItemCalculator.Node.Input,
         inputIndex: Int
     ) {
         // If input item is a top-level additional item, do not handle inputs for it.
@@ -45,8 +45,8 @@ extension SHSingleItemProduction {
     }
     
     private func buildAdditionalInputRecipeNode(
-        to node: SHSingleItemProduction.Node,
-        input: SHSingleItemProduction.Node.Input,
+        to node: SingleItemCalculator.Node,
+        input: SingleItemCalculator.Node.Input,
         inputItem: SingleItemProduction.InputItem,
         inputRecipe: SingleItemProduction.InputRecipe
     ) {
@@ -108,7 +108,7 @@ extension SHSingleItemProduction {
         guard inputRecipe.recipe != node.parentRecipeNode?.recipe else { return }
         
         // Input is new, item is not the same as parent output item and recipe is not fixed propotion. Add it.
-        let inputNode = SHSingleItemProduction.Node(
+        let inputNode = SingleItemCalculator.Node(
             id: uuid(),
             item: input.item,
             recipe: inputRecipe.recipe,

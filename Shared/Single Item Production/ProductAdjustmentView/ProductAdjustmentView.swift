@@ -1,5 +1,5 @@
 import SwiftUI
-import SHSingleItemProduction
+import SingleItemCalculator
 import SHUtils
 
 struct ProductAdjustmentView: View {
@@ -229,17 +229,17 @@ private struct _ProductAdjustmentPreview: View {
     var body: some View {
         ProductAdjustmentView(
             viewModel: ProductAdjustmentViewModel(
-                product: SHSingleItemProduction.OutputItem(
+                product: SingleItemCalculator.OutputItem(
                     item: item,
                     recipes: recipes.map { recipe in
-                        SHSingleItemProduction.OutputRecipe(
+                        SingleItemCalculator.OutputRecipe(
                             recipe: recipe,
-                            output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                            output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                                 item: recipe.output.item,
                                 amount: recipe.amountPerMinute(for: recipe.output)
                             ),
                             byproducts: recipe.byproducts.map {
-                                SHSingleItemProduction.OutputRecipe.ByproductIngredient(
+                                SingleItemCalculator.OutputRecipe.ByproductIngredient(
                                     item: $0.item,
                                     amount: recipe.amountPerMinute(for: $0),
                                     byproducts: [],
@@ -247,7 +247,7 @@ private struct _ProductAdjustmentPreview: View {
                                 )
                             },
                             inputs: recipe.inputs.map {
-                                SHSingleItemProduction.OutputRecipe.InputIngredient(
+                                SingleItemCalculator.OutputRecipe.InputIngredient(
                                     item: $0.item,
                                     amount: recipe.amountPerMinute(for: $0),
                                     byproducts: [],

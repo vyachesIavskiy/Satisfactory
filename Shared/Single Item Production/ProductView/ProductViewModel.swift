@@ -2,11 +2,11 @@ import Foundation
 import Observation
 import SHStorage
 import SHModels
-import SHSingleItemProduction
+import SingleItemCalculator
 
 @Observable
 final class ProductViewModel: Identifiable {
-    let product: SHSingleItemProduction.OutputItem
+    let product: SingleItemCalculator.OutputItem
     let selectedByproduct: CalculationViewModel.ByproductSelectionState?
     let canPerformAction: (CalculationViewModel.Action) -> Bool
     let performAction: (CalculationViewModel.Action) -> Void
@@ -27,7 +27,7 @@ final class ProductViewModel: Identifiable {
     }
     
     init(
-        product: SHSingleItemProduction.OutputItem,
+        product: SingleItemCalculator.OutputItem,
         selectedByproduct: CalculationViewModel.ByproductSelectionState?,
         canPerformAction: @escaping (CalculationViewModel.Action) -> Bool,
         performAction: @escaping (CalculationViewModel.Action) -> Void
@@ -39,7 +39,7 @@ final class ProductViewModel: Identifiable {
     }
     
     @MainActor
-    func outputRecipeViewModel(for recipe: SHSingleItemProduction.OutputRecipe) -> SingleItemProductionRecipeSelectViewModel {
+    func outputRecipeViewModel(for recipe: SingleItemCalculator.OutputRecipe) -> SingleItemProductionRecipeSelectViewModel {
         SingleItemProductionRecipeSelectViewModel(
             product: product,
             recipe: recipe,

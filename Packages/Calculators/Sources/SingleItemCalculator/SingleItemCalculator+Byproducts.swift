@@ -1,5 +1,5 @@
 
-extension SHSingleItemProduction {
+extension SingleItemCalculator {
     func registerByproducts(from node: Node) {
         for byproduct in node.byproducts {
             guard

@@ -3,7 +3,7 @@ import SHStorage
 import SHModels
 import SHUtils
 
-public final class SHSingleItemProduction {
+public final class SingleItemCalculator {
     // MARK: Ignored properties
     public var item: any Item {
         production.item
@@ -204,7 +204,7 @@ public final class SHSingleItemProduction {
 }
 
 // MARK: InternalState
-extension SHSingleItemProduction {
+extension SingleItemCalculator {
     struct InternalState {
         var selectedInputItems = [SingleItemProduction.InputItem]()
         var selectedByproducts = [SingleItemProduction.InputByproduct]()
@@ -232,8 +232,8 @@ extension SHSingleItemProduction {
 }
 
 // MARK: Hashable
-extension SHSingleItemProduction: Hashable {
-    public static func == (lhs: SHSingleItemProduction, rhs: SHSingleItemProduction) -> Bool {
+extension SingleItemCalculator: Hashable {
+    public static func == (lhs: SingleItemCalculator, rhs: SingleItemCalculator) -> Bool {
         lhs.production == rhs.production &&
         lhs.outputItems == rhs.outputItems
     }
@@ -245,7 +245,7 @@ extension SHSingleItemProduction: Hashable {
 }
 
 // MARK: Print format
-extension SHSingleItemProduction: CustomStringConvertible {
+extension SingleItemCalculator: CustomStringConvertible {
     public var description: String {
         var nodeDescription = ""
         var nodes = mainNodes + additionalNodes

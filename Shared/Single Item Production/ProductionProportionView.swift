@@ -1,5 +1,5 @@
 import SwiftUI
-import SHSingleItemProduction
+import SingleItemCalculator
 import SHUtils
 
 @Observable

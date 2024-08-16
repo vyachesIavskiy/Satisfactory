@@ -1,10 +1,10 @@
 import Observation
 import SHModels
-import SHSingleItemProduction
+import SingleItemCalculator
 
 @Observable
 final class RecipeAdjustmentViewModel {
-    let recipe: SHSingleItemProduction.OutputRecipe
+    let recipe: SingleItemCalculator.OutputRecipe
     let numberOfRecipes: Int
     let allowAdjustment: Bool
     let allowDeletion: Bool
@@ -13,7 +13,7 @@ final class RecipeAdjustmentViewModel {
     
     @MainActor
     init(
-        recipe: SHSingleItemProduction.OutputRecipe,
+        recipe: SingleItemCalculator.OutputRecipe,
         numberOfRecipes: Int,
         allowAdjustment: Bool,
         allowDeletion: Bool,

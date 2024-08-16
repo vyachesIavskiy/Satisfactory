@@ -1,7 +1,7 @@
 import SHModels
 import SHUtils
 
-extension SHSingleItemProduction {
+extension SingleItemCalculator {
     struct Byproduct {
         let item: any Item
         let recipeID: String
@@ -33,20 +33,20 @@ extension SHSingleItemProduction {
     }
 }
 
-extension SHSingleItemProduction.Byproduct {
+extension SingleItemCalculator.Byproduct {
     struct Consumer {
         let recipeID: String
         var amount: Double
     }
 }
 
-extension Array<SHSingleItemProduction.Byproduct> {
+extension Array<SingleItemCalculator.Byproduct> {
     var balanced: Bool {
         // Byproducts are balanced when amount of produced byproduct is equal to amount of consumed byproduct.
         allSatisfy { $0.availableAmount.isZero }
     }
     
-    mutating func merge(with other: [SHSingleItemProduction.Byproduct]) {
+    mutating func merge(with other: [SingleItemCalculator.Byproduct]) {
         merge(with: other) { lhs, rhs in
             lhs.recipeID == rhs.recipeID
         } merging: { lhs, rhs in

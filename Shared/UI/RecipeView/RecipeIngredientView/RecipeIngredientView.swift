@@ -1,6 +1,6 @@
 import SwiftUI
 import SHModels
-import SHSingleItemProduction
+import SingleItemCalculator
 
 struct RecipeIngredientView: View {
     let viewModel: RecipeIngredientViewModel
@@ -265,55 +265,55 @@ private func displayIngredient(role: Recipe.Ingredient.Role, form: Part.Form) ->
     Recipe.Ingredient(role: role, item: part(form: form), amount: 10)
 }
 
-private func productionIngredient(form: Part.Form, byproductCount: Int = 0) -> SHSingleItemProduction.OutputRecipe.OutputIngredient {
+private func productionIngredient(form: Part.Form, byproductCount: Int = 0) -> SingleItemCalculator.OutputRecipe.OutputIngredient {
     let id = switch form {
     case .solid: "part-iron-ingot"
     case .fluid: "part-water"
     case .gas: "part-nitrogen-gas"
     }
     
-    return SHSingleItemProduction.OutputRecipe.OutputIngredient(
+    return SingleItemCalculator.OutputRecipe.OutputIngredient(
         item: Part(id: id, category: .special, progressionIndex: 0, form: form),
         amount: 10
     )
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool, byproductCount: Int = 0) -> SHSingleItemProduction.OutputRecipe.ByproductIngredient {
+private func productionIngredient(form: Part.Form, selected: Bool, byproductCount: Int = 0) -> SingleItemCalculator.OutputRecipe.ByproductIngredient {
     let id = switch form {
     case .solid: "part-iron-ingot"
     case .fluid: "part-water"
     case .gas: "part-nitrogen-gas"
     }
     
-    return SHSingleItemProduction.OutputRecipe.ByproductIngredient(
+    return SingleItemCalculator.OutputRecipe.ByproductIngredient(
         item: Part(id: id, category: .special, progressionIndex: 0, form: form),
         amount: 10,
         byproducts: (0..<byproductCount).map {
-            SHSingleItemProduction.OutputRecipe.Byproduct(index: $0, amount: 10)
+            SingleItemCalculator.OutputRecipe.Byproduct(index: $0, amount: 10)
         },
         isSelected: selected
     )
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool, byproductCount: Int = 0) -> SHSingleItemProduction.OutputRecipe.InputIngredient {
+private func productionIngredient(form: Part.Form, selected: Bool, byproductCount: Int = 0) -> SingleItemCalculator.OutputRecipe.InputIngredient {
     let id = switch form {
     case .solid: "part-iron-ingot"
     case .fluid: "part-water"
     case .gas: "part-nitrogen-gas"
     }
     
-    return SHSingleItemProduction.OutputRecipe.InputIngredient(
+    return SingleItemCalculator.OutputRecipe.InputIngredient(
         producingProductID: nil,
         item: Part(id: id, category: .special, progressionIndex: 0, form: form),
         amount: 10,
         byproducts: (0..<byproductCount).map {
-            SHSingleItemProduction.OutputRecipe.Byproduct(index: $0, amount: 10)
+            SingleItemCalculator.OutputRecipe.Byproduct(index: $0, amount: 10)
         },
         isSelected: selected
     )
 }
 
-private func productionSecondaryByproduct(index: Int) -> SHSingleItemProduction.OutputRecipe.Byproduct {
-    SHSingleItemProduction.OutputRecipe.Byproduct(index: index, amount: 10)
+private func productionSecondaryByproduct(index: Int) -> SingleItemCalculator.OutputRecipe.Byproduct {
+    SingleItemCalculator.OutputRecipe.Byproduct(index: index, amount: 10)
 }
 #endif

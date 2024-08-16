@@ -2,7 +2,7 @@ import Foundation
 import SHModels
 import SHUtils
 
-extension SHSingleItemProduction {
+extension SingleItemCalculator {
     final class Node {
         let id: UUID
         
@@ -107,8 +107,8 @@ extension SHSingleItemProduction {
     }
 }
 
-extension [SHSingleItemProduction.Node] {
-    func containsRecurcievly(where predicate: (SHSingleItemProduction.Node) throws -> Bool) rethrows -> Bool {
+extension [SingleItemCalculator.Node] {
+    func containsRecurcievly(where predicate: (SingleItemCalculator.Node) throws -> Bool) rethrows -> Bool {
         var nodes = self
         var result = false
         while !nodes.isEmpty {
@@ -126,8 +126,8 @@ extension [SHSingleItemProduction.Node] {
     }
 }
 
-extension SHSingleItemProduction.Node {
-    func anyParentContains(where predicate: (SHSingleItemProduction.Node) throws -> Bool) rethrows -> Bool {
+extension SingleItemCalculator.Node {
+    func anyParentContains(where predicate: (SingleItemCalculator.Node) throws -> Bool) rethrows -> Bool {
         var parentNode = parentRecipeNode
         while parentNode != nil {
             if let parentNode, try predicate(parentNode) {
@@ -142,7 +142,7 @@ extension SHSingleItemProduction.Node {
 }
 
 // MARK: Byproduct
-extension SHSingleItemProduction.Node {
+extension SingleItemCalculator.Node {
     struct Byproduct {
         let item: any Item
         var amount: Double
@@ -160,7 +160,7 @@ extension SHSingleItemProduction.Node {
 }
 
 // MARK: Input
-extension SHSingleItemProduction.Node {
+extension SingleItemCalculator.Node {
     struct Input {
         let item: any Item
         var amount: Double
@@ -178,7 +178,7 @@ extension SHSingleItemProduction.Node {
 }
 
 // MARK: Description for print
-extension SHSingleItemProduction.Node {
+extension SingleItemCalculator.Node {
     func description(with spacing: String) -> String {
         let name = item.localizedName
         let recipe = "[R: \(recipe.localizedName)]"

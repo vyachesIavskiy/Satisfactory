@@ -44,26 +44,26 @@ struct RecipeAdjustmentView: View {
 #if DEBUG
 import SHStorage
 import SHModels
-import SHSingleItemProduction
+import SingleItemCalculator
 
 private struct _RecipeAdjustmentPreview: View {
     let recipeID: String
     
-    private var outputRecipe: SHSingleItemProduction.OutputRecipe? {
+    private var outputRecipe: SingleItemCalculator.OutputRecipe? {
         @Dependency(\.storageService)
         var storageService
         
         let recipe = storageService.recipe(id: recipeID)
         
         return recipe.map {
-            SHSingleItemProduction.OutputRecipe(
+            SingleItemCalculator.OutputRecipe(
                 recipe: $0,
-                output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                     item: $0.output.item,
                     amount: 20
                 ),
                 byproducts: $0.byproducts.map {
-                    SHSingleItemProduction.OutputRecipe.ByproductIngredient(
+                    SingleItemCalculator.OutputRecipe.ByproductIngredient(
                         item: $0.item,
                         amount: 20,
                         byproducts: [],
@@ -71,7 +71,7 @@ private struct _RecipeAdjustmentPreview: View {
                     )
                 },
                 inputs: $0.inputs.map {
-                    SHSingleItemProduction.OutputRecipe.InputIngredient(
+                    SingleItemCalculator.OutputRecipe.InputIngredient(
                         item: $0.item,
                         amount: 20,
                         byproducts: [],

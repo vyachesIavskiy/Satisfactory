@@ -1,7 +1,7 @@
 import Foundation
 import SHModels
 
-extension SHSingleItemProduction {
+extension SingleItemCalculator {
     public struct OutputRecipe: Identifiable, Hashable, CustomStringConvertible {
         public let id: UUID
         public let recipe: Recipe
@@ -32,7 +32,7 @@ extension SHSingleItemProduction {
     }
 }
 
-extension Sequence<SHSingleItemProduction.OutputRecipe> {
+extension Sequence<SingleItemCalculator.OutputRecipe> {
     func first(recipe: Recipe) -> Element? {
         first { $0.recipe.id == recipe.id }
     }
@@ -42,13 +42,13 @@ extension Sequence<SHSingleItemProduction.OutputRecipe> {
     }
 }
 
-extension Collection<SHSingleItemProduction.OutputRecipe> {
+extension Collection<SingleItemCalculator.OutputRecipe> {
     func firstIndex(recipe: Recipe) -> Index? {
         firstIndex { $0.recipe.id == recipe.id }
     }
 }
 
-extension SHSingleItemProduction.OutputRecipe {
+extension SingleItemCalculator.OutputRecipe {
     public struct OutputIngredient: Identifiable, CustomStringConvertible {
         public let id: UUID
         public let item: any Item
@@ -130,7 +130,7 @@ extension SHSingleItemProduction.OutputRecipe {
     }
 }
 
-extension SHSingleItemProduction.OutputRecipe.OutputIngredient: Hashable {
+extension SingleItemCalculator.OutputRecipe.OutputIngredient: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.item.id == rhs.item.id &&
@@ -144,7 +144,7 @@ extension SHSingleItemProduction.OutputRecipe.OutputIngredient: Hashable {
     }
 }
 
-extension SHSingleItemProduction.OutputRecipe.ByproductIngredient: Hashable {
+extension SingleItemCalculator.OutputRecipe.ByproductIngredient: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.item.id == rhs.item.id &&
@@ -162,7 +162,7 @@ extension SHSingleItemProduction.OutputRecipe.ByproductIngredient: Hashable {
     }
 }
 
-extension SHSingleItemProduction.OutputRecipe.InputIngredient: Hashable {
+extension SingleItemCalculator.OutputRecipe.InputIngredient: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.producingProductID == rhs.producingProductID &&

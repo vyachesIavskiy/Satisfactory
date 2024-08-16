@@ -1,6 +1,6 @@
 import SwiftUI
 import SHModels
-import SHSingleItemProduction
+import SingleItemCalculator
 import SHUtils
 
 struct RecipeIngredientAmountView: View {
@@ -195,15 +195,15 @@ private func ingredient(role: Recipe.Ingredient.Role, form: Part.Form) -> Recipe
     )
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool) -> SHSingleItemProduction.OutputRecipe.OutputIngredient {
-    SHSingleItemProduction.OutputRecipe.OutputIngredient(
+private func productionIngredient(form: Part.Form, selected: Bool) -> SingleItemCalculator.OutputRecipe.OutputIngredient {
+    SingleItemCalculator.OutputRecipe.OutputIngredient(
         item: Part(id: "preview-part", category: .special, progressionIndex: 0, form: form),
         amount: 10
     )
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool) -> SHSingleItemProduction.OutputRecipe.ByproductIngredient {
-    SHSingleItemProduction.OutputRecipe.ByproductIngredient(
+private func productionIngredient(form: Part.Form, selected: Bool) -> SingleItemCalculator.OutputRecipe.ByproductIngredient {
+    SingleItemCalculator.OutputRecipe.ByproductIngredient(
         item: Part(id: "preview-part", category: .special, progressionIndex: 0, form: form),
         amount: 10,
         byproducts: [],
@@ -211,8 +211,8 @@ private func productionIngredient(form: Part.Form, selected: Bool) -> SHSingleIt
     )
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool) -> SHSingleItemProduction.OutputRecipe.InputIngredient {
-    SHSingleItemProduction.OutputRecipe.InputIngredient(
+private func productionIngredient(form: Part.Form, selected: Bool) -> SingleItemCalculator.OutputRecipe.InputIngredient {
+    SingleItemCalculator.OutputRecipe.InputIngredient(
         producingProductID: nil,
         item: Part(id: "preview-part", category: .special, progressionIndex: 0, form: form),
         amount: 10,
@@ -221,7 +221,7 @@ private func productionIngredient(form: Part.Form, selected: Bool) -> SHSingleIt
     )
 }
 
-private func productionSecondaryByproduct(index: Int) -> SHSingleItemProduction.OutputRecipe.Byproduct {
-    SHSingleItemProduction.OutputRecipe.Byproduct(index: index, amount: 10)
+private func productionSecondaryByproduct(index: Int) -> SingleItemCalculator.OutputRecipe.Byproduct {
+    SingleItemCalculator.OutputRecipe.Byproduct(index: index, amount: 10)
 }
 #endif

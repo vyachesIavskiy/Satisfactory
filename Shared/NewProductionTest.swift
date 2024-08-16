@@ -1,6 +1,6 @@
 import Foundation
 import SHModels
-import SHSingleItemProduction
+import SingleItemCalculator
 
 enum SHProduction {
     case singleItem(SingleItemProduction)

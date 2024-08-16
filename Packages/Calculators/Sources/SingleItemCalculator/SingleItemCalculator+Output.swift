@@ -1,6 +1,6 @@
 import Dependencies
 
-extension SHSingleItemProduction {
+extension SingleItemCalculator {
     func buildOutput() {
         var ingredientConverter = IngredientConverter()
         
@@ -61,7 +61,7 @@ extension SHSingleItemProduction {
                             OutputRecipe(
                                 id: uuid(),
                                 recipe: node.recipe,
-                                output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                                output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                                     id: uuid(),
                                     item: node.item,
                                     amount: node.amount
@@ -92,7 +92,7 @@ extension SHSingleItemProduction {
                         recipes: [OutputRecipe(
                             id: uuid(),
                             recipe: node.recipe,
-                            output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+                            output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                                 id: uuid(),
                                 item: node.item,
                                 amount: node.amount
@@ -171,15 +171,15 @@ extension SHSingleItemProduction {
 }
 
 // MARK: Ingredient convertion
-extension SHSingleItemProduction {
+extension SingleItemCalculator {
     private struct IngredientConverter {
         var byproductConverter = ByproductConverter()
         
         @Dependency(\.uuid)
         private var uuid
         
-        mutating func convert(producingRecipeID: String, byproduct: SHSingleItemProduction.Node.Byproduct) -> SHSingleItemProduction.OutputRecipe.ByproductIngredient {
-            SHSingleItemProduction.OutputRecipe.ByproductIngredient(
+        mutating func convert(producingRecipeID: String, byproduct: SingleItemCalculator.Node.Byproduct) -> SingleItemCalculator.OutputRecipe.ByproductIngredient {
+            SingleItemCalculator.OutputRecipe.ByproductIngredient(
                 id: uuid(),
                 item: byproduct.item,
                 amount: byproduct.availableAmount,
@@ -191,10 +191,10 @@ extension SHSingleItemProduction {
         }
         
         mutating func convert(
-            input: SHSingleItemProduction.Node.Input,
+            input: SingleItemCalculator.Node.Input,
             isSelected: Bool
-        ) -> SHSingleItemProduction.OutputRecipe.InputIngredient {
-            SHSingleItemProduction.OutputRecipe.InputIngredient(
+        ) -> SingleItemCalculator.OutputRecipe.InputIngredient {
+            SingleItemCalculator.OutputRecipe.InputIngredient(
                 id: uuid(),
                 item: input.item,
                 amount: input.availableAmount,
@@ -211,14 +211,14 @@ extension SHSingleItemProduction {
         
         mutating func convert(
             producerRecipeID: String,
-            byproductConsumer: SHSingleItemProduction.Node.Byproduct.Consumer
-        ) -> SHSingleItemProduction.OutputRecipe.Byproduct {
+            byproductConsumer: SingleItemCalculator.Node.Byproduct.Consumer
+        ) -> SingleItemCalculator.OutputRecipe.Byproduct {
             OutputRecipe.Byproduct(index: index(for: producerRecipeID), amount: byproductConsumer.amount)
         }
         
         mutating func convert(
-            inputProducer: SHSingleItemProduction.Node.Input.ByproductProducer
-        ) -> SHSingleItemProduction.OutputRecipe.Byproduct {
+            inputProducer: SingleItemCalculator.Node.Input.ByproductProducer
+        ) -> SingleItemCalculator.OutputRecipe.Byproduct {
             OutputRecipe.Byproduct(index: index(for: inputProducer.recipeID), amount: inputProducer.amount)
         }
 
@@ -234,7 +234,7 @@ extension SHSingleItemProduction {
 }
 
 // MARK: Merging
-private extension [SHSingleItemProduction.OutputRecipe.OutputIngredient] {
+private extension [SingleItemCalculator.OutputRecipe.OutputIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.item.id == $1.item.id
@@ -244,19 +244,7 @@ private extension [SHSingleItemProduction.OutputRecipe.OutputIngredient] {
     }
 }
 
-private extension [SHSingleItemProduction.OutputRecipe.ByproductIngredient] {
-    mutating func merge(with other: Self) {
-        merge(with: other) {
-            $0.item.id == $1.item.id
-        } merging: {
-            $0.amount += $1.amount
-            $0.isSelected = $0.isSelected || $1.isSelected
-            $0.byproducts.merge(with: $1.byproducts)
-        }
-    }
-}
-
-private extension [SHSingleItemProduction.OutputRecipe.InputIngredient] {
+private extension [SingleItemCalculator.OutputRecipe.ByproductIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.item.id == $1.item.id
@@ -268,7 +256,19 @@ private extension [SHSingleItemProduction.OutputRecipe.InputIngredient] {
     }
 }
 
-private extension [SHSingleItemProduction.OutputRecipe.Byproduct] {
+private extension [SingleItemCalculator.OutputRecipe.InputIngredient] {
+    mutating func merge(with other: Self) {
+        merge(with: other) {
+            $0.item.id == $1.item.id
+        } merging: {
+            $0.amount += $1.amount
+            $0.isSelected = $0.isSelected || $1.isSelected
+            $0.byproducts.merge(with: $1.byproducts)
+        }
+    }
+}
+
+private extension [SingleItemCalculator.OutputRecipe.Byproduct] {
     mutating func merge(with other: Self) {
         merge(with: other) {
             $0.index == $1.index

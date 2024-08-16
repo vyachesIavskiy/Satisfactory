@@ -2,15 +2,15 @@ import Foundation
 import Observation
 import SHModels
 import SHStorage
-import SHSingleItemProduction
+import SingleItemCalculator
 
 @Observable
 final class ProductAdjustmentViewModel: Identifiable {
-    let product: SHSingleItemProduction.OutputItem
+    let product: SingleItemCalculator.OutputItem
     let allowDeletion: Bool
     private let onApply: @MainActor (SingleItemProduction.InputItem) -> Void
     
-    private(set) var production: SHSingleItemProduction
+    private(set) var production: SingleItemCalculator
     
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
@@ -32,7 +32,7 @@ final class ProductAdjustmentViewModel: Identifiable {
         return storedRecipes.count != selectedRecipes.count
     }
     
-    var selectedRecipes: [SHSingleItemProduction.OutputRecipe] {
+    var selectedRecipes: [SingleItemCalculator.OutputRecipe] {
         production.outputRecipes(for: product.item)
     }
     
@@ -55,13 +55,13 @@ final class ProductAdjustmentViewModel: Identifiable {
     }
     
     init(
-        product: SHSingleItemProduction.OutputItem,
+        product: SingleItemCalculator.OutputItem,
         allowDeletion: Bool,
         onApply: @escaping @MainActor (SingleItemProduction.InputItem) -> Void
     ) {
         self.product = product
         self.allowDeletion = allowDeletion
-        let production = SHSingleItemProduction(item: product.item)
+        let production = SingleItemCalculator(item: product.item)
         production.amount = product.amount
         for recipe in product.recipes {
             production.addRecipe(recipe.recipe, to: product.item, with: recipe.proportion)
@@ -82,7 +82,7 @@ final class ProductAdjustmentViewModel: Identifiable {
     }
     
     @MainActor
-    func removeRecipe(_ recipe: SHSingleItemProduction.OutputRecipe) {
+    func removeRecipe(_ recipe: SingleItemCalculator.OutputRecipe) {
         production.production.inputItems[0].recipes.removeAll {
             $0.recipe == recipe.recipe
         }
@@ -117,7 +117,7 @@ final class ProductAdjustmentViewModel: Identifiable {
     
     @MainActor
     func updateRecipe(
-        _ recipe: SHSingleItemProduction.OutputRecipe,
+        _ recipe: SingleItemCalculator.OutputRecipe,
         with proportion: Proportion
     ) {
         production.changeProportion(of: recipe.recipe, for: product.item, to: proportion)

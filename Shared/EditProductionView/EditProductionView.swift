@@ -1,13 +1,13 @@
 import SwiftUI
 import SHStorage
 import SHModels
-import SHSingleItemProduction
+import SingleItemCalculator
 
 @Observable
 final class EditProductionViewModel {
     // MARK: Ignored properties
     @ObservationIgnored
-    private let singleItemProduction: SHSingleItemProduction
+    private let singleItemProduction: SingleItemCalculator
     
     // MARK: Observed properties
     var productionName = ""
@@ -26,7 +26,7 @@ final class EditProductionViewModel {
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
     
-    init(singleItemProduction: SHSingleItemProduction) {
+    init(singleItemProduction: SingleItemCalculator) {
         self.singleItemProduction = singleItemProduction
     }
     
@@ -49,7 +49,7 @@ struct EditProductionView: View {
     @Environment(\.dismiss)
     private var dismiss
     
-    init(singleItemProduction: SHSingleItemProduction) {
+    init(singleItemProduction: SingleItemCalculator) {
         _viewModel = State(initialValue: EditProductionViewModel(singleItemProduction: singleItemProduction))
     }
     
@@ -144,7 +144,7 @@ private struct EditProductionPreview: View {
     
     var body: some View {
         if let item {
-            EditProductionView(singleItemProduction: SHSingleItemProduction(item: item))
+            EditProductionView(singleItemProduction: SingleItemCalculator(item: item))
         }
     }
 }

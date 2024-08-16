@@ -1,6 +1,6 @@
 import SwiftUI
 import SHModels
-import SHSingleItemProduction
+import SingleItemCalculator
 
 @Observable
 final class RecipeIngredientAmountViewModel {
@@ -63,7 +63,7 @@ final class RecipeIngredientAmountViewModel {
         )
     }
     
-    convenience init(productionOutput output: SHSingleItemProduction.OutputRecipe.OutputIngredient) {
+    convenience init(productionOutput output: SingleItemCalculator.OutputRecipe.OutputIngredient) {
         self.init(
             item: output.item,
             amount: output.amount,
@@ -72,7 +72,7 @@ final class RecipeIngredientAmountViewModel {
         )
     }
     
-    convenience init(additionalProductionOutput output: SHSingleItemProduction.OutputRecipe.OutputIngredient, amount: Double) {
+    convenience init(additionalProductionOutput output: SingleItemCalculator.OutputRecipe.OutputIngredient, amount: Double) {
         self.init(
             item: output.item,
             amount: amount,
@@ -81,7 +81,7 @@ final class RecipeIngredientAmountViewModel {
         )
     }
     
-    convenience init(productionByproduct byproduct: SHSingleItemProduction.OutputRecipe.ByproductIngredient) {
+    convenience init(productionByproduct byproduct: SingleItemCalculator.OutputRecipe.ByproductIngredient) {
         var foregroundStyle = AnyShapeStyle(.background)
         let secondaryStyle: AnyShapeStyle
         let primaryColor: Color
@@ -121,7 +121,7 @@ final class RecipeIngredientAmountViewModel {
         )
     }
     
-    convenience init(productionInput input: SHSingleItemProduction.OutputRecipe.InputIngredient) {
+    convenience init(productionInput input: SingleItemCalculator.OutputRecipe.InputIngredient) {
         let foregroundStyle: AnyShapeStyle
         let primaryColor: Color
         let shadowColor: Color
@@ -173,7 +173,7 @@ final class RecipeIngredientAmountViewModel {
         )
     }
     
-    convenience init(productionSecondaryByproduct byproduct: SHSingleItemProduction.OutputRecipe.Byproduct, item: any Item) {
+    convenience init(productionSecondaryByproduct byproduct: SingleItemCalculator.OutputRecipe.Byproduct, item: any Item) {
         let foregroundColors = [
             Color.sh(.blue30),
             .sh(.magenta30),

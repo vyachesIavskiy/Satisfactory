@@ -1,5 +1,5 @@
 import SwiftUI
-import SHSingleItemProduction
+import SingleItemCalculator
 
 struct SingleItemProductionRecipeSelectView: View {
     let viewModel: SingleItemProductionRecipeSelectViewModel
@@ -82,7 +82,7 @@ struct SingleItemProductionRecipeSelectView: View {
     
     @MainActor @ViewBuilder
     private func byproductViewBuilder<Byproduct: View>(
-        byproduct: SHSingleItemProduction.OutputRecipe.ByproductIngredient,
+        byproduct: SingleItemCalculator.OutputRecipe.ByproductIngredient,
         @ViewBuilder _ byproductViewBuilder: (RecipeIngredientViewModel) -> Byproduct
     ) -> some View {
         let byproductViewModel = RecipeIngredientViewModel(productionByproduct: byproduct)
@@ -121,7 +121,7 @@ struct SingleItemProductionRecipeSelectView: View {
     
     @MainActor @ViewBuilder
     private func inputViewBuilder<Input: View>(
-        input: SHSingleItemProduction.OutputRecipe.InputIngredient,
+        input: SingleItemCalculator.OutputRecipe.InputIngredient,
         @ViewBuilder _ inputViewBuilder: (RecipeIngredientViewModel) -> Input
     ) -> some View {
         let inputViewModel = RecipeIngredientViewModel(productionInput: input)
@@ -242,14 +242,14 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
     }
     
     func viewModel(for recipe: Recipe) -> SingleItemProductionRecipeSelectViewModel {
-        let recipe = SHSingleItemProduction.OutputRecipe(
+        let recipe = SingleItemCalculator.OutputRecipe(
             recipe: recipe,
-            output: SHSingleItemProduction.OutputRecipe.OutputIngredient(
+            output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                 item: recipe.output.item,
                 amount: recipe.amountPerMinute(for: recipe.output)
             ),
             byproducts: recipe.byproducts.map {
-                SHSingleItemProduction.OutputRecipe.ByproductIngredient(
+                SingleItemCalculator.OutputRecipe.ByproductIngredient(
                     item: $0.item,
                     amount: recipe.amountPerMinute(for: $0),
                     byproducts: [],
@@ -257,7 +257,7 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
                 )
             },
             inputs: recipe.inputs.map {
-                SHSingleItemProduction.OutputRecipe.InputIngredient(
+                SingleItemCalculator.OutputRecipe.InputIngredient(
                     producingProductID: nil,
                     item: $0.item,
                     amount: recipe.amountPerMinute(for: $0),
@@ -269,7 +269,7 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
         )
         
         return SingleItemProductionRecipeSelectViewModel(
-            product: SHSingleItemProduction.OutputItem(item: recipe.output.item, recipes: [recipe]),
+            product: SingleItemCalculator.OutputItem(item: recipe.output.item, recipes: [recipe]),
             recipe: recipe,
             selectedByproduct: nil,
             canPerformAction: { _ in true },

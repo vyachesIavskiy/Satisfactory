@@ -1,13 +1,13 @@
 import Observation
 import SHModels
 import SHSettings
-import SHSingleItemProduction
+import SingleItemCalculator
 
 @Observable
 final class SingleItemProductionRecipeDisplayViewModel {
-    let recipe: SHSingleItemProduction.OutputRecipe
+    let recipe: SingleItemCalculator.OutputRecipe
     
-    init(recipe: SHSingleItemProduction.OutputRecipe) {
+    init(recipe: SingleItemCalculator.OutputRecipe) {
         self.recipe = recipe
     }
 

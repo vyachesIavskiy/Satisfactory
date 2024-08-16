@@ -1,6 +1,6 @@
 import SHModels
 
-extension SHSingleItemProduction {
+extension SingleItemCalculator {
     /// Creates root recipes nodes for production product.
     func buildNodes() {
         guard let productionProduct = internalState.selectedInputItem(with: item.id) else { return }

@@ -32,36 +32,7 @@ struct CalculationView: View {
         .navigationBarBackButtonHidden(!viewModel.canBeDismissedWithoutSaving)
         .navigationTitle(viewModel.item.localizedName)
         .toolbarBackground(.background, for: .navigationBar)
-        .toolbar {
-            if viewModel.selectingByproduct {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        viewModel.cancelByproductSelection()
-                    }
-                }
-            } else if !viewModel.canBeDismissedWithoutSaving {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        viewModel.showingUnsavedConfirmationDialog = true
-                    }
-                }
-            }
-            
-            ToolbarItem(placement: .primaryAction) {
-                Button("Statistics", systemImage: "list.number") {
-//                    viewModel.showingStatisticsSheet = true
-                }
-            }
-                
-            if viewModel.hasUnsavedChanges, !viewModel.selectingByproduct {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Save", systemImage: "square.and.arrow.down") {
-                        viewModel.saveProduction()
-                    }
-                    .disabled(true)
-                }
-            }
-        }
+        .toolbar { toolbar }
         .gesture(
             DragGesture()
                 .onChanged { value in
@@ -69,7 +40,7 @@ struct CalculationView: View {
                         viewModel.showingUnsavedConfirmationDialog = true
                     }
                 },
-            isEnabled: !viewModel.showingUnsavedConfirmationDialog || !viewModel.canBeDismissedWithoutSaving || viewModel.modalNavigationState == nil
+            isEnabled: !viewModel.showingUnsavedConfirmationDialog && !viewModel.canBeDismissedWithoutSaving && viewModel.modalNavigationState == nil
         )
         .confirmationDialog(
             "You have unsaved changes",
@@ -77,8 +48,9 @@ struct CalculationView: View {
             titleVisibility: .visible
         ) {
             Button("Save and exit") {
-                viewModel.saveProduction()
-                dismiss()
+                viewModel.saveProduction {
+                    dismiss()
+                }
             }
             
             Button("Don't save", role: .destructive) {
@@ -92,13 +64,7 @@ struct CalculationView: View {
             Text("If you close production now, all unsaved changes will be lost. Would you like to save those changes?")
         }
         .sheet(item: $viewModel.modalNavigationState) { state in
-            switch state {
-            case let .selectInitialRecipeForItem(viewModel):
-                selectInitialRecipeView(viewModel: viewModel)
-                
-            case let .adjustItem(viewModel):
-                adjustItemView(viewModel: viewModel)
-            }
+            sheetContentView(state: state)
         }
     }
     
@@ -173,6 +139,50 @@ struct CalculationView: View {
                 .frame(height: 1 / displayScale)
         }
         .background(.background)
+    }
+    
+    @MainActor @ToolbarContentBuilder
+    private var toolbar: some ToolbarContent {
+        if viewModel.selectingByproduct {
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancel") {
+                    viewModel.cancelByproductSelection()
+                }
+            }
+        } else if !viewModel.canBeDismissedWithoutSaving {
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancel") {
+                    viewModel.showingUnsavedConfirmationDialog = true
+                }
+            }
+        }
+        
+        ToolbarItem(placement: .primaryAction) {
+            Button("Statistics", systemImage: "list.number") {
+//                viewModel.showingStatisticsSheet = true
+            }
+        }
+        
+        ToolbarItem(placement: .primaryAction) {
+            Button("Save", systemImage: "square.and.arrow.down") {
+                viewModel.saveProduction { }
+            }
+            .disabled(viewModel.canBeDismissedWithoutSaving || viewModel.selectingByproduct)
+        }
+    }
+    
+    @MainActor @ViewBuilder
+    private func sheetContentView(state: CalculationViewModel.ModalNavigationState) -> some View {
+        switch state {
+        case let .selectInitialRecipeForItem(viewModel):
+            selectInitialRecipeView(viewModel: viewModel)
+            
+        case let .adjustItem(viewModel):
+            adjustItemView(viewModel: viewModel)
+            
+        case let .saveProduction(viewModel):
+            EditProductionView(viewModel: viewModel)
+        }
     }
 }
 

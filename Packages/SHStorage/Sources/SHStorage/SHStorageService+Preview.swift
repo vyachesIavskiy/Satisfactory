@@ -1,3 +1,4 @@
+import Foundation
 import Combine
 import SHModels
 import SHStaticStorage
@@ -74,11 +75,22 @@ extension SHStorageService {
             }
         }
         
-        func saveProduction(_ production: SingleItemProduction) {
+        func saveProduction(_ production: SingleItemProduction, to factoryID: UUID) {
             if let index = _productions.value.firstIndex(id: production.id) {
                 _productions.value[index] = production
             } else {
                 _productions.value.append(production)
+            }
+            
+            if
+                let index = _factories.value.firstIndex(where: { $0.id == factoryID }),
+                !_factories.value[index].productionIDs.contains(factoryID)
+            {
+                _factories.value[index].productionIDs.append(production.id)
+            } else if
+                let index = _factories.value.firstIndex(where: { $0.productionIDs.contains(production.id) })
+            {
+                _factories.value[index].productionIDs.removeAll { $0 == production.id }
             }
         }
         

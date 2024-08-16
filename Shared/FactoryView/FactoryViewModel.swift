@@ -58,7 +58,7 @@ final class FactoryViewModel {
         var copy = production
         
         copy.name = newProductionName
-        storageService.saveProduction(copy)
+        storageService.saveProduction(copy, factory.id)
     }
     
     func deleteProduction(_ production: SingleItemProduction) {

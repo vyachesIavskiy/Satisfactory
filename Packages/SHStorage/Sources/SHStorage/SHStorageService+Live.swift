@@ -1,3 +1,4 @@
+import Foundation
 import Combine
 import SHModels
 import SHPersistentStorage
@@ -79,8 +80,8 @@ extension SHStorageService {
             try? persistentStorage.saveFactory(factory)
         }
         
-        func saveProduction(_ production: SingleItemProduction) {
-            try? persistentStorage.saveProduction(production)
+        func saveProduction(_ production: SingleItemProduction, to factoryID: UUID) {
+            try? persistentStorage.saveProduction(production, to: factoryID)
         }
         
         // MARK: Deleting

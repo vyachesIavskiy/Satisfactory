@@ -61,12 +61,12 @@ struct NewFactoryView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 4) {
-                HStack(spacing: 18) {
+                HStack(spacing: 12) {
                     iconView
                     
                     ZStack {
                         TextField("Factory name", text: $viewModel.factoryName)
-                            .font(.largeTitle)
+                            .submitLabel(.done)
                         
                         LinearGradient(
                             colors: [.sh(.midnight40), .sh(.gray10)],
@@ -79,7 +79,7 @@ struct NewFactoryView: View {
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 20)
-                .padding(.vertical, 32)
+                .padding(.vertical, 24)
                 
                 Toggle("Provide image", isOn: $viewModel.provideAssetImage)
                     .font(.title3)
@@ -126,12 +126,12 @@ struct NewFactoryView: View {
         }
         .font(.title)
         .foregroundStyle(.sh(.midnight50))
-        .frame(width: 60, height: 60)
-        .padding(10)
+        .frame(width: 40, height: 40)
+        .padding(6)
         .background {
-            AngledRectangle(cornerRadius: 8)
+            AngledRectangle(cornerRadius: 6)
                 .fill(.sh(.gray20))
-                .stroke(.sh(.midnight40), lineWidth: 4 / displayScale)
+                .stroke(.sh(.midnight40), lineWidth: 2 / displayScale)
         }
     }
 }

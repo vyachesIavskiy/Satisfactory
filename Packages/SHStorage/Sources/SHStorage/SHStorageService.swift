@@ -1,3 +1,4 @@
+import Foundation
 import SHModels
 import struct SHPersistentStorage.LoadOptions
 
@@ -27,7 +28,7 @@ public struct SHStorageService: Sendable {
     
     public var saveFactory: @Sendable (_ factory: Factory) -> Void
     
-    public var saveProduction: @Sendable (_ production: SingleItemProduction) -> Void
+    public var saveProduction: @Sendable (_ production: SingleItemProduction, _ factoryID: UUID) -> Void
     
     public var deleteFactory: @Sendable (_ factory: Factory) -> Void
     

@@ -114,8 +114,8 @@ public final class SHPersistentStorage {
         try v2.saveFactory(Factory.Persistent.V2(factory))
     }
     
-    public func saveProduction(_ production: SingleItemProduction) throws {
-        try v2.saveProduction(SingleItemProduction.Persistent.V2(production))
+    public func saveProduction(_ production: SingleItemProduction, to factoryID: UUID) throws {
+        try v2.saveProduction(SingleItemProduction.Persistent.V2(production), to: factoryID)
     }
     
     public func deleteFactory(_ factory: Factory) throws {

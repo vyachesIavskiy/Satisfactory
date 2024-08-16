@@ -445,8 +445,8 @@
 		450BD18E24A6395700948B47 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D3B700832C5D779C00797978 /* EditProductionView */,
 				450BD18F24A6395700948B47 /* SatisfactoryApp.swift */,
+				D3B700832C5D779C00797978 /* EditProductionView */,
 				D30D978D2BF69C85007B6850 /* Root */,
 				D30D97A02BF75400007B6850 /* New Production */,
 				D37E13182C5953C40085FEC0 /* Factories */,

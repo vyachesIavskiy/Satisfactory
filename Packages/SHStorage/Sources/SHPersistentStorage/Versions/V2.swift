@@ -122,14 +122,26 @@ final class V2: VersionedStorage {
         try persistence.save(factories.value, toDirectory: .factories)
     }
     
-    func saveProduction(_ production: SingleItemProduction.Persistent.V2) throws {
+    func saveProduction(_ production: SingleItemProduction.Persistent.V2, to factoryID: UUID) throws {
         if let index = productions.value.firstIndex(where: { $0.id == production.id }) {
             productions.value[index] = production
         } else {
             productions.value.append(production)
         }
         
+        if
+            let index = factories.value.firstIndex(where: { $0.id == factoryID }),
+            !factories.value[index].productionIDs.contains(factoryID)
+        {
+            factories.value[index].productionIDs.append(production.id)
+        } else if
+            let index = factories.value.firstIndex(where: { $0.productionIDs.contains(production.id) })
+        {
+            factories.value[index].productionIDs.removeAll { $0 == production.id }
+        }
+        
         try persistence.save(productions.value, toDirectory: .productions)
+        try persistence.save(factories.value, toDirectory: .factories)
     }
     
     func deleteFactory(_ factory: Factory.Persistent.V2) throws {

@@ -24,7 +24,7 @@ public final class SingleItemCalculator {
     
     // MARK: Observed properties
     public var production: SingleItemProduction
-    private var savedProduction: SingleItemProduction
+    private var savedProduction: SingleItemProduction?
     public internal(set) var outputItems = [OutputItem]()
     
     public init(item: any Item) {
@@ -32,7 +32,6 @@ public final class SingleItemCalculator {
         var uuid
         
         production = SingleItemProduction(id: uuid(), name: "", item: item, amount: 1.0)
-        savedProduction = production
     }
     
     public init(production: SingleItemProduction) {
@@ -61,14 +60,6 @@ public final class SingleItemCalculator {
         production.changeProportion(of: recipe, for: item, to: newProportion)
     }
     
-//    public func changeProportion(
-//        of recipe: InputRecipe,
-//        for item: any Item,
-//        to newProportion: Proportion
-//    ) {
-//        changeProportion(of: recipe.recipe, for: item, to: newProportion)
-//    }
-    
 //    public func moveInputItems(from offsets: IndexSet, to offset: Int) {
 //        input.moveInputItem(from: offsets, to: offset)
 //    }
@@ -76,50 +67,6 @@ public final class SingleItemCalculator {
     public func removeInputItem(_ item: some Item) {
         production.removeItem(item)
     }
-    
-//    public subscript(inputItemIndex index: Int) -> InputItem {
-//        get { input.inputItems[index] }
-//        set { input.inputItems[index] = newValue }
-//    }
-    
-//    public func inputItemsContains(where predicate: (_ inputItem: InputItem) throws -> Bool) rethrows -> Bool {
-//        try input.inputItems.contains(where: predicate)
-//    }
-    
-//    public func inputItemsContains(item: some Item) -> Bool {
-//        input.inputItems.contains(item)
-//    }
-    
-//    public func inputRecipesContains(where predicate: (_ inputRecipe: InputRecipe) throws -> Bool) rethrows -> Bool {
-//        try inputItemsContains { item in
-//            try item.recipes.contains(where: predicate)
-//        }
-//    }
-    
-//    public func inputRecipesContains(recipe: Recipe) -> Bool {
-//        inputRecipesContains { $0.id == recipe.id }
-//    }
-    
-//    public func iterateInputItems(_ handler: (_ offset: Int, _ inputItem: InputItem) -> Void) {
-//        var index = 0
-//        while input.inputItems.indices.contains(index) {
-//            let inputItem = input.inputItems[index]
-//            handler(index, inputItem)
-//            index += 1
-//        }
-//    }
-    
-//    public func iterateInputRecipes(
-//        for inputItem: InputItem,
-//        handler: (_ offset: Int, _ recipe: InputRecipe) -> Void
-//    ) {
-//        var index = 0
-//        while inputItem.recipes.indices.contains(index) {
-//            let inputRecipe = inputItem.recipes[index]
-//            handler(index, inputRecipe)
-//            index += 1
-//        }
-//    }
     
     // Byproducts
     public func addByproduct(_ item: any Item, producer: Recipe, consumer: Recipe) {
@@ -192,6 +139,10 @@ public final class SingleItemCalculator {
         
         // Build and return an output
         buildOutput()
+    }
+    
+    public var hasSavedProduction: Bool {
+        savedProduction != nil
     }
     
     public func save() {

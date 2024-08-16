@@ -6,36 +6,53 @@ import SingleItemCalculator
 @Observable
 final class EditProductionViewModel {
     // MARK: Ignored properties
-    @ObservationIgnored
-    private let singleItemProduction: SingleItemCalculator
+    let production: SingleItemProduction
+    private let onApply: () -> Void
     
     // MARK: Observed properties
+    var factories: [Factory]
     var productionName = ""
-    var provideAssetImage = false {
-        didSet {
-            selectedAssetName = nil
-        }
-    }
-    var selectedAssetName: String?
+    var selectedFactoryID: Factory.ID?
+    var showingNewFactoryModal = false
     
     var saveDisabled: Bool {
-        productionName.isEmpty
+        productionName.isEmpty || selectedFactoryID == nil
+    }
+    
+    var imageName: String {
+        production.item.id
     }
     
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
     
-    init(singleItemProduction: SingleItemCalculator) {
-        self.singleItemProduction = singleItemProduction
+    init(production: SingleItemProduction, onApply: @escaping () -> Void) {
+        @Dependency(\.storageService)
+        var storageService
+        
+        factories = storageService.factories()
+        self.production = production
+        self.onApply = onApply
+        productionName = production.name
+    }
+    
+    func observeFactories() async {
+        for await factories in storageService.streamFactories() {
+            guard !Task.isCancelled else { break }
+            
+            self.factories = factories
+        }
     }
     
     func saveProduction() {
-        singleItemProduction.save()
-        var newProduction = singleItemProduction.production
+        guard let selectedFactoryID else { return }
+        
+        var newProduction = production
         newProduction.name = productionName
         
-        storageService.saveProduction(newProduction)
+        storageService.saveProduction(newProduction, selectedFactoryID)
+        onApply()
     }
 }
 
@@ -49,19 +66,19 @@ struct EditProductionView: View {
     @Environment(\.dismiss)
     private var dismiss
     
-    init(singleItemProduction: SingleItemCalculator) {
-        _viewModel = State(initialValue: EditProductionViewModel(singleItemProduction: singleItemProduction))
+    init(viewModel: EditProductionViewModel) {
+        _viewModel = State(initialValue: viewModel)
     }
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 4) {
-                HStack(spacing: 18) {
+                HStack(spacing: 12) {
                     iconView
                     
                     ZStack {
                         TextField("Production name", text: $viewModel.productionName)
-                            .font(.largeTitle)
+                            .submitLabel(.done)
                         
                         LinearGradient(
                             colors: [.sh(.midnight40), .sh(.gray10)],
@@ -74,20 +91,10 @@ struct EditProductionView: View {
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.horizontal, 20)
-                .padding(.vertical, 32)
+                .padding(.top, 24)
                 
-//                Toggle("Provide image", isOn: $viewModel.provideAssetImage)
-//                    .font(.title3)
-//                    .tint(.sh(.orange))
-//                    .padding(.horizontal, 20)
-//                
-//                if viewModel.provideAssetImage {
-//                    NewFactoryAssetCatalogView(selectedAssetName: $viewModel.selectedAssetName)
-//                        .transition(.move(edge: .bottom).combined(with: .offset(y: 50)))
-//                }
+                factoriesView
             }
-            .frame(maxHeight: .infinity, alignment: .top)
-            .animation(.spring.speed(2), value: viewModel.provideAssetImage)
             .navigationTitle("New production")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -105,28 +112,148 @@ struct EditProductionView: View {
                 }
             }
         }
+        .task {
+            await viewModel.observeFactories()
+        }
+        .sheet(isPresented: $viewModel.showingNewFactoryModal) {
+            NewFactoryView()
+        }
     }
     
     @MainActor @ViewBuilder
     private var iconView: some View {
-        Group {
-            if viewModel.provideAssetImage, let selectedAssetName = viewModel.selectedAssetName {
-                Image(selectedAssetName)
-                    .resizable()
-            } else if !viewModel.productionName.isEmpty {
-                Text(viewModel.productionName.abbreviated())
-            } else {
-                Image(systemName: "questionmark")
+        Image(viewModel.imageName)
+            .resizable()
+            .frame(width: 40, height: 40)
+            .padding(6)
+            .background {
+                AngledRectangle(cornerRadius: 6)
+                    .fill(.sh(.gray20))
+                    .stroke(.sh(.midnight40), lineWidth: 2 / displayScale)
+            }
+    }
+    
+    @MainActor @ViewBuilder
+    private var factoriesView: some View {
+        if viewModel.factories.isEmpty {
+            factoriesEmptyView
+        } else {
+            factoriesListView
+        }
+    }
+    
+    @MainActor @ViewBuilder
+    private var factoriesEmptyView: some View {
+        VStack(spacing: 24) {
+            Text("To save a production you need to attach it to a Factory.")
+                .font(.title)
+            
+            Spacer()
+            
+            Text("Unfortunatelly, you did not create any factories yet.")
+                .font(.title3)
+            
+            Button {
+                viewModel.showingNewFactoryModal = true
+            } label: {
+                Text("Create a Factory")
+                    .font(.title2)
+                    .padding(12)
+            }
+            .buttonStyle(.shBorderedProminent)
+            .shButtonCornerRadius(8)
+            .padding(24)
+            
+            Spacer()
+        }
+        .multilineTextAlignment(.center)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding()
+    }
+    
+    @MainActor @ViewBuilder
+    private var factoriesListView: some View {
+        List {
+            Section {
+                ForEach(viewModel.factories) { factory in
+                    factoryRow(factory, isSelected: viewModel.selectedFactoryID == factory.id)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            viewModel.selectedFactoryID = factory.id
+                        }
+                        .listRowSeparator(.hidden)
+                }
+            } header: {
+                Text("Select a factory")
             }
         }
-        .font(.title)
-        .foregroundStyle(.sh(.midnight50))
-        .frame(width: 60, height: 60)
-        .padding(10)
+        .listStyle(.plain)
+    }
+    
+    @MainActor @ViewBuilder
+    private func factoryRow(_ factory: Factory, isSelected: Bool) -> some View {
+        HStack(spacing: 12) {
+            factoryIconView(factory)
+            
+            ZStack {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(factory.name)
+                        
+                        if !factory.productionIDs.isEmpty {
+                            Text("\(factory.productionIDs.count) productions")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    if isSelected {
+                        Image(systemName: "checkmark")
+                            .font(.callout)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.sh(.orange))
+                    }
+                }
+                
+                LinearGradient(
+                    colors: [.sh(.midnight40), .sh(.gray10)],
+                    startPoint: .leading,
+                    endPoint: UnitPoint(x: 0.85, y: 0.5)
+                )
+                .frame(height: 2 / displayScale)
+                .frame(maxHeight: .infinity, alignment: .bottom)
+            }
+        }
+        .fixedSize(horizontal: false, vertical: true)
+    }
+    
+    @MainActor @ViewBuilder
+    private func factoryIconView(_ factory: Factory) -> some View {
+        Group {
+            switch factory.asset {
+            case .abbreviation:
+                Text(factory.name.abbreviated())
+                    .font(.title2)
+                    .foregroundStyle(.sh(.midnight))
+                
+            case let .assetCatalog(name):
+                Image(name)
+                    .resizable()
+                
+            case .legacy:
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .symbolRenderingMode(.multicolor)
+                    .font(.title)
+            }
+        }
+        .frame(width: 40, height: 40)
+        .padding(6)
         .background {
-            AngledRectangle(cornerRadius: 8)
+            AngledRectangle(cornerRadius: 5)
                 .fill(.sh(.gray20))
-                .stroke(.sh(.midnight40), lineWidth: 4 / displayScale)
+                .stroke(.sh(.midnight40), lineWidth: 2 / displayScale)
         }
     }
 }
@@ -138,13 +265,23 @@ private struct EditProductionPreview: View {
     @Dependency(\.storageService)
     private var storageService
     
+    @Dependency(\.uuid)
+    private var uuid
+    
     private var item: (any Item)? {
         storageService.item(id: itemID)
     }
     
     var body: some View {
         if let item {
-            EditProductionView(singleItemProduction: SingleItemCalculator(item: item))
+            EditProductionView(viewModel: EditProductionViewModel(
+                production: SingleItemProduction(id: uuid(), name: "Plastic", item: item, amount: 20),
+                onApply: { }
+            ))
+        } else {
+            Text("There is no item with id '\(itemID)'")
+                .font(.title3)
+                .padding()
         }
     }
 }

@@ -1,3 +1,4 @@
+import SHModels
 
 extension SHSingleItemProduction {
     func buildAdditionalTrees() {
@@ -46,8 +47,8 @@ extension SHSingleItemProduction {
     private func buildAdditionalInputRecipeNode(
         to node: SHSingleItemProduction.Node,
         input: SHSingleItemProduction.Node.Input,
-        inputItem: SHSingleItemProduction.InputItem,
-        inputRecipe: SHSingleItemProduction.InputRecipe
+        inputItem: SingleItemProduction.InputItem,
+        inputRecipe: SingleItemProduction.InputRecipe
     ) {
         // Safety check if input node contains selected recipe. If this happens, this is logical error.
         guard !node.inputContains(inputRecipe.recipe) else { return }
@@ -104,7 +105,7 @@ extension SHSingleItemProduction {
         guard inputAmount > 0 else { return }
         
         // Additional nodes do not handle cases where input recipe is the same as parent recipe (recycled plastic/rubber, packaged/unpackaged recipes).
-        guard inputRecipe.id != node.parentRecipeNode?.recipe.id else { return }
+        guard inputRecipe.recipe != node.parentRecipeNode?.recipe else { return }
         
         // Input is new, item is not the same as parent output item and recipe is not fixed propotion. Add it.
         let inputNode = SHSingleItemProduction.Node(

@@ -131,9 +131,9 @@ extension SHSingleItemProduction {
     private func buildInputRecipeNode(
         to node: Node,
         input: Node.Input,
-        inputItem: InputItem,
+        inputItem: SingleItemProduction.InputItem,
         inputItemIndex: Int,
-        inputRecipe: InputRecipe,
+        inputRecipe: SingleItemProduction.InputRecipe,
         inputRecipeIndex: Int,
         inputAmount: Double,
         amountForFractions: Double,
@@ -161,8 +161,8 @@ extension SHSingleItemProduction {
             
             // Calculate difference between amount of item produced by parent recipe for input and amount of item in the input.
             var nodeAmountForFractions = input.amount
-            if let nodeItemIndex = self.input.inputItems.firstIndex(item: node.item) {
-                let nodeItem = self.input.inputItems[nodeItemIndex]
+            if let nodeItemIndex = self.production.inputItems.firstIndex(item: node.item) {
+                let nodeItem = self.production.inputItems[nodeItemIndex]
                 nodeAmountForFractions = nodeItem.recipes.reduce(input.amount) { partialResult, productionRecipe in
                     guard case let .fixed(amount) = productionRecipe.proportion else {
                         return partialResult

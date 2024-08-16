@@ -17,8 +17,16 @@ let package = Package(
             ]
         ),
     ],
+    dependencies: [
+        .package(path: "../SHDependencies")
+    ],
     targets: [
-        .target(name: "SHModels"),
+        .target(
+            name: "SHModels",
+            dependencies: [
+                .product(name: "SHDependencies", package: "SHDependencies")
+            ]
+        ),
 //        .target(
 //            name: "SHStaticModels",
 //            dependencies: [

@@ -31,30 +31,11 @@ final class EditProductionViewModel {
     }
     
     func saveProduction() {
-//        let assetType: Factory.AssetType = if provideAssetImage, let selectedAssetName {
-//            .assetCatalog(name: selectedAssetName)
-//        } else {
-//            .abbreviation
-//        }
+        singleItemProduction.save()
+        var newProduction = singleItemProduction.production
+        newProduction.name = productionName
         
-        let production = SingleItemProduction(
-            id: UUID(),
-            name: productionName,
-            item: singleItemProduction.item,
-            amount: singleItemProduction.amount,
-            inputItems: singleItemProduction.input.inputItems.map {
-                SingleItemProduction.InputItem(item: $0.item, recipes: $0.recipes.map {
-                    SingleItemProduction.InputRecipe(recipe: $0.recipe, proportion: $0.proportion)
-                })
-            },
-            byproducts: singleItemProduction.input.byproducts.map {
-                SingleItemProduction.InputByproduct(item: $0.item, producers: $0.producers.map {
-                    SingleItemProduction.InputByproductProducer(recipe: $0.recipe, consumers: $0.consumers)
-                })
-            }
-        )
-        
-        storageService.saveProduction(production)
+        storageService.saveProduction(newProduction)
     }
 }
 

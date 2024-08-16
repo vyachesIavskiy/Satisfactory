@@ -6,12 +6,12 @@ import SHUtils
 public final class SHSingleItemProduction {
     // MARK: Ignored properties
     public var item: any Item {
-        input.finalItem
+        production.item
     }
     
     public var amount: Double {
-        get { input.amount }
-        set { input.amount = newValue }
+        get { production.amount }
+        set { production.amount = newValue }
     }
     
     var mainNodes = [Node]()
@@ -23,27 +23,21 @@ public final class SHSingleItemProduction {
     var uuid
     
     // MARK: Observed properties
-    public var input: Input
+    public var production: SingleItemProduction
+    private var savedProduction: SingleItemProduction
     public internal(set) var outputItems = [OutputItem]()
     
     public init(item: any Item) {
-        input = Input(finalItem: item, amount: 1.0)
+        @Dependency(\.uuid)
+        var uuid
+        
+        production = SingleItemProduction(id: uuid(), name: "", item: item, amount: 1.0)
+        savedProduction = production
     }
     
     public init(production: SingleItemProduction) {
-        input = Input(finalItem: production.item, amount: production.amount)
-        
-        input.inputItems = production.inputItems.map {
-            InputItem(item: $0.item, recipes: $0.recipes.map {
-                InputRecipe(recipe: $0.recipe, proportion: $0.proportion)
-            })
-        }
-        
-        input.byproducts = production.byproducts.map {
-            InputByproduct(item: $0.item, producers: $0.producers.map {
-                InputByproduct.Producer(recipe: $0.recipe, consumers: $0.consumers)
-            })
-        }
+        self.production = production
+        savedProduction = production
     }
     
     // MARK: - Input
@@ -52,11 +46,11 @@ public final class SHSingleItemProduction {
         to item: some Item,
         with proportion: Proportion = .auto
     ) {
-        input.addRecipe(recipe, to: item, with: proportion)
+        production.addRecipe(recipe, to: item, with: proportion)
     }
     
-    public func updateInputItem(_ inputItem: InputItem) {
-        input.updateInputItem(inputItem)
+    public func updateInputItem(_ inputItem: SingleItemProduction.InputItem) {
+        production.updateInputItem(inputItem)
     }
     
     public func changeProportion(
@@ -64,102 +58,92 @@ public final class SHSingleItemProduction {
         for item: any Item,
         to newProportion: Proportion
     ) {
-        input.changeProportion(of: recipe, for: item, to: newProportion)
+        production.changeProportion(of: recipe, for: item, to: newProportion)
     }
     
-    public func changeProportion(
-        of recipe: InputRecipe,
-        for item: any Item,
-        to newProportion: Proportion
-    ) {
-        changeProportion(of: recipe.recipe, for: item, to: newProportion)
-    }
+//    public func changeProportion(
+//        of recipe: InputRecipe,
+//        for item: any Item,
+//        to newProportion: Proportion
+//    ) {
+//        changeProportion(of: recipe.recipe, for: item, to: newProportion)
+//    }
     
-    public func moveInputItems(from offsets: IndexSet, to offset: Int) {
-        input.moveInputItem(from: offsets, to: offset)
-    }
+//    public func moveInputItems(from offsets: IndexSet, to offset: Int) {
+//        input.moveInputItem(from: offsets, to: offset)
+//    }
     
     public func removeInputItem(_ item: some Item) {
-        input.removeInputItem(with: item)
+        production.removeItem(item)
     }
     
-    public subscript(inputItemIndex index: Int) -> InputItem {
-        get { input.inputItems[index] }
-        set { input.inputItems[index] = newValue }
-    }
+//    public subscript(inputItemIndex index: Int) -> InputItem {
+//        get { input.inputItems[index] }
+//        set { input.inputItems[index] = newValue }
+//    }
     
-    public func inputItemsContains(where predicate: (_ inputItem: InputItem) throws -> Bool) rethrows -> Bool {
-        try input.inputItems.contains(where: predicate)
-    }
+//    public func inputItemsContains(where predicate: (_ inputItem: InputItem) throws -> Bool) rethrows -> Bool {
+//        try input.inputItems.contains(where: predicate)
+//    }
     
-    public func inputItemsContains(item: some Item) -> Bool {
-        input.inputItems.contains(item)
-    }
+//    public func inputItemsContains(item: some Item) -> Bool {
+//        input.inputItems.contains(item)
+//    }
     
-    public func inputRecipesContains(where predicate: (_ inputRecipe: InputRecipe) throws -> Bool) rethrows -> Bool {
-        try inputItemsContains { item in
-            try item.recipes.contains(where: predicate)
-        }
-    }
+//    public func inputRecipesContains(where predicate: (_ inputRecipe: InputRecipe) throws -> Bool) rethrows -> Bool {
+//        try inputItemsContains { item in
+//            try item.recipes.contains(where: predicate)
+//        }
+//    }
     
-    public func inputRecipesContains(recipe: Recipe) -> Bool {
-        inputRecipesContains { $0.id == recipe.id }
-    }
+//    public func inputRecipesContains(recipe: Recipe) -> Bool {
+//        inputRecipesContains { $0.id == recipe.id }
+//    }
     
-    public func iterateInputItems(_ handler: (_ offset: Int, _ inputItem: InputItem) -> Void) {
-        var index = 0
-        while input.inputItems.indices.contains(index) {
-            let inputItem = input.inputItems[index]
-            handler(index, inputItem)
-            index += 1
-        }
-    }
+//    public func iterateInputItems(_ handler: (_ offset: Int, _ inputItem: InputItem) -> Void) {
+//        var index = 0
+//        while input.inputItems.indices.contains(index) {
+//            let inputItem = input.inputItems[index]
+//            handler(index, inputItem)
+//            index += 1
+//        }
+//    }
     
-    public func iterateInputRecipes(
-        for inputItem: InputItem,
-        handler: (_ offset: Int, _ recipe: InputRecipe) -> Void
-    ) {
-        var index = 0
-        while inputItem.recipes.indices.contains(index) {
-            let inputRecipe = inputItem.recipes[index]
-            handler(index, inputRecipe)
-            index += 1
-        }
-    }
+//    public func iterateInputRecipes(
+//        for inputItem: InputItem,
+//        handler: (_ offset: Int, _ recipe: InputRecipe) -> Void
+//    ) {
+//        var index = 0
+//        while inputItem.recipes.indices.contains(index) {
+//            let inputRecipe = inputItem.recipes[index]
+//            handler(index, inputRecipe)
+//            index += 1
+//        }
+//    }
     
     // Byproducts
     public func addByproduct(_ item: any Item, producer: Recipe, consumer: Recipe) {
-        input.addByproduct(item, producer: producer, consumer: consumer)
+        production.add(producingRecipe: producer, consumingRecipe: consumer, for: item)
     }
     
     public func hasProducer(_ item: any Item, recipe: Recipe) -> Bool {
-        input.byproducts.contains {
-            $0.item.id == item.id && $0.producers.contains {
-                $0.recipe.id == recipe.id
-            }
-        }
+        production.hasProducingRecipe(recipe, for: item)
     }
     
     public func hasConsumer(_ item: any Item, recipe: Recipe) -> Bool {
-        input.byproducts.contains {
-            $0.item.id == item.id && $0.producers.contains {
-                $0.consumers.contains {
-                    $0.id == recipe.id
-                }
-            }
-        }
+        production.hasConsumingRecipe(recipe, for: item)
     }
     
     public func removeByrpoduct(_ item: any Item) {
-        input.removeByrpoduct(item)
+        production.removeByproduct(item: item)
     }
     
     public func removeProducer(_ recipe: Recipe, for item: any Item) {
-        input.removeProducer(recipe, for: item)
+        production.removeProducingRecipe(recipe, item: item)
     }
     
-    public func removeConsumer(_ recipe: Recipe, for byproduct: any Item) {
-        input.removeConsumer(recipe, for: byproduct)
+    public func removeConsumer(_ recipe: Recipe, for item: any Item) {
+        production.removeConsumingRecipe(recipe, item: item)
     }
     
     // Output
@@ -192,7 +176,7 @@ public final class SHSingleItemProduction {
     /// Triggers production recalculation. Output will be populated after calling this function.
     public func update() {
         // Reseting internal state
-        internalState.reset(input: input)
+        internalState.reset(production: production)
         
         // Reset additional nodes
         additionalNodes = []
@@ -210,67 +194,30 @@ public final class SHSingleItemProduction {
         buildOutput()
     }
     
-    public func createNewSavedProduction() -> SingleItemProduction {
-        SingleItemProduction(
-            id: UUID(),
-            name: input.finalItem.localizedName,
-            item: input.finalItem,
-            amount: input.amount,
-            inputItems: input.inputItems.map {
-                SingleItemProduction.InputItem(item: $0.item, recipes: $0.recipes.map {
-                    SingleItemProduction.InputRecipe(recipe: $0.recipe, proportion: $0.proportion)
-                })
-            },
-            byproducts: input.byproducts.map {
-                SingleItemProduction.InputByproduct(item: $0.item, producers: $0.producers.map {
-                    SingleItemProduction.InputByproductProducer(recipe: $0.recipe, consumers: $0.consumers)
-                })
-            }
-        )
+    public func save() {
+        savedProduction = production
     }
     
-    public func updateSavedProduction(_ savedProduction: SingleItemProduction) -> SingleItemProduction {
-        SingleItemProduction(
-            id: savedProduction.id,
-            name: savedProduction.name,
-            item: savedProduction.item,
-            amount: input.amount,
-            inputItems: input.inputItems.map {
-                SingleItemProduction.InputItem(item: $0.item, recipes: $0.recipes.map {
-                    SingleItemProduction.InputRecipe(recipe: $0.recipe, proportion: $0.proportion)
-                })
-            },
-            byproducts: input.byproducts.map {
-                SingleItemProduction.InputByproduct(item: $0.item, producers: $0.producers.map {
-                    SingleItemProduction.InputByproductProducer(recipe: $0.recipe, consumers: $0.consumers)
-                })
-            }
-        )
-    }
-    
-    public func hasUnsavedChanges(comparingTo savedProduction: SingleItemProduction) -> Bool {
-        savedProduction.item.id != item.id ||
-        savedProduction.amount != amount/* ||
-        savedProduction.inputItems != input.inputItems ||
-        savedProduction.byproducts != input.byproducts*/
+    public var hasUnsavedChanges: Bool {
+        savedProduction != production
     }
 }
 
 // MARK: InternalState
 extension SHSingleItemProduction {
     struct InternalState {
-        var selectedInputItems = [SHSingleItemProduction.InputItem]()
-        var selectedByproducts = [SHSingleItemProduction.InputByproduct]()
+        var selectedInputItems = [SingleItemProduction.InputItem]()
+        var selectedByproducts = [SingleItemProduction.InputByproduct]()
         var byproducts = [Byproduct]()
         
-        mutating func reset(input: SHSingleItemProduction.Input) {
-            selectedInputItems = input.inputItems
-            selectedByproducts = input.byproducts
+        mutating func reset(production: SingleItemProduction) {
+            selectedInputItems = production.inputItems
+            selectedByproducts = production.byproducts
             byproducts = []
         }
         
         // MARK: Convenience helpers
-        func selectedInputItem(with id: String) -> SHSingleItemProduction.InputItem? {
+        func selectedInputItem(with id: String) -> SingleItemProduction.InputItem? {
             selectedInputItems.first { $0.item.id == id }
         }
         
@@ -278,7 +225,7 @@ extension SHSingleItemProduction {
             selectedInputItems.firstIndex { $0.item.id == item.id }
         }
         
-        func selectedByproduct(with id: String) -> SHSingleItemProduction.InputByproduct? {
+        func selectedByproduct(with id: String) -> SingleItemProduction.InputByproduct? {
             selectedByproducts.first { $0.item.id == id }
         }
     }
@@ -287,12 +234,12 @@ extension SHSingleItemProduction {
 // MARK: Hashable
 extension SHSingleItemProduction: Hashable {
     public static func == (lhs: SHSingleItemProduction, rhs: SHSingleItemProduction) -> Bool {
-        lhs.input == rhs.input &&
+        lhs.production == rhs.production &&
         lhs.outputItems == rhs.outputItems
     }
     
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(input)
+        hasher.combine(production)
         hasher.combine(outputItems)
     }
 }

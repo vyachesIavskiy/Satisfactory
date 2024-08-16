@@ -94,7 +94,7 @@ final class CalculationViewModel {
     }
     
     func moveItems(indexSet: IndexSet, at position: Int) {
-        production.moveInputItems(from: indexSet, to: position)
+//        production.moveInputItems(from: indexSet, to: position)
     }
     
     func saveProduction() {
@@ -147,13 +147,13 @@ private extension CalculationViewModel {
         
         guard addSingleRecipe || addSingleRecipe else { return }
         
-        production.iterateInputItems { inputItemIndex, inputItem in
-            production.iterateInputRecipes(for: inputItem) { recipeIndex, recipe in
-                let inputItems = recipe.inputs.map(\.item)
+        for (inputItemIndex, inputItem) in production.production.inputItems.enumerated() {
+            for (recipeIndex, recipe) in inputItem.recipes.enumerated() {
+                let inputItems = recipe.recipe.inputs.map(\.item)
                 
                 for inputItem in inputItems {
                     guard
-                        !production.inputItemsContains(item: inputItem),
+                        !production.production.inputItems.contains(item: inputItem),
                         !explicitlyDeletedItemIDs.contains(inputItem.id)
                     else { continue }
                     
@@ -198,7 +198,7 @@ private extension CalculationViewModel {
     }
     
     func canSelectRecipe(for input: SHSingleItemProduction.OutputRecipe.InputIngredient) -> Bool {
-        !production.inputItemsContains(item: input.item) &&
+        !production.production.inputItems.contains(item: input.item) &&
         !storageService.recipes(for: input.item, as: [.output, .byproduct]).isEmpty
     }
     

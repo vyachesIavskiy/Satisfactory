@@ -17,7 +17,7 @@ extension SHSingleItemProduction {
                 recipeID: node.recipe.id,
                 amount: byproduct.amount,
                 consumers: registeredProducingRecipe.consumers.map {
-                    Byproduct.Consumer(recipeID: $0.id, amount: 0)
+                    Byproduct.Consumer(recipeID: $0.recipe.id, amount: 0)
                 }
             )
             

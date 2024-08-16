@@ -5,7 +5,7 @@ extension SHSingleItemProduction {
         var ingredientConverter = IngredientConverter()
         
         func isSelected(_ input: Node.Input, node: Node) -> Bool {
-            self.input.inputItems.contains(input.item)
+            self.production.inputItems.contains(item: input.item)
         }
         
         var outputItems = buildOutputItems(
@@ -50,7 +50,7 @@ extension SHSingleItemProduction {
                         outputItems[productIndex].recipes[recipeIndex] = recipe
                     } else {
                         // If a recipe is new, add this to output product.
-                        let proportion = input
+                        let proportion = production
                             .inputItems
                             .first(item: outputItems[productIndex].item)?
                             .recipes
@@ -79,7 +79,7 @@ extension SHSingleItemProduction {
                     }
                 } else {
                     // If a product is new, add it.
-                    let proportion = input
+                    let proportion = production
                         .inputItems
                         .first(item: node.item)?
                         .recipes

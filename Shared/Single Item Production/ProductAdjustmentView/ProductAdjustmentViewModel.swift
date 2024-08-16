@@ -8,7 +8,7 @@ import SHSingleItemProduction
 final class ProductAdjustmentViewModel: Identifiable {
     let product: SHSingleItemProduction.OutputItem
     let allowDeletion: Bool
-    private let onApply: @MainActor (SHSingleItemProduction.InputItem) -> Void
+    private let onApply: @MainActor (SingleItemProduction.InputItem) -> Void
     
     private(set) var production: SHSingleItemProduction
     
@@ -57,7 +57,7 @@ final class ProductAdjustmentViewModel: Identifiable {
     init(
         product: SHSingleItemProduction.OutputItem,
         allowDeletion: Bool,
-        onApply: @escaping @MainActor (SHSingleItemProduction.InputItem) -> Void
+        onApply: @escaping @MainActor (SingleItemProduction.InputItem) -> Void
     ) {
         self.product = product
         self.allowDeletion = allowDeletion
@@ -83,8 +83,8 @@ final class ProductAdjustmentViewModel: Identifiable {
     
     @MainActor
     func removeRecipe(_ recipe: SHSingleItemProduction.OutputRecipe) {
-        production[inputItemIndex: 0].recipes.removeAll {
-            $0.id == recipe.recipe.id
+        production.production.inputItems[0].recipes.removeAll {
+            $0.recipe == recipe.recipe
         }
         
         defer {
@@ -93,11 +93,11 @@ final class ProductAdjustmentViewModel: Identifiable {
         
         guard case let .fraction(fraction) = recipe.proportion else { return }
         
-        for recipe in production[inputItemIndex: 0].recipes {
+        for recipe in production.production.inputItems[0].recipes {
             switch recipe.proportion {
             case let .fraction(recipeFraction):
                 production.changeProportion(
-                    of: recipe,
+                    of: recipe.recipe,
                     for: product.item,
                     to: .fraction(recipeFraction / (1 - fraction))
                 )
@@ -126,7 +126,7 @@ final class ProductAdjustmentViewModel: Identifiable {
     
     @MainActor
     func apply() {
-        onApply(production[inputItemIndex: 0])
+        onApply(production.production.inputItems[0])
     }
     
     @MainActor

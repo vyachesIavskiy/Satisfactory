@@ -2,7 +2,7 @@ import Foundation
 import SHModels
 
 extension Asset.Persistent {
-    public enum V2: Codable {
+    public enum V2: Codable, Hashable {
         case legacy
         case abbreviation
         case assetCatalog(name: String)

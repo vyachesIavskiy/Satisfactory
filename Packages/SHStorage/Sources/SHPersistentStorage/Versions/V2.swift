@@ -200,8 +200,15 @@ final class V2: VersionedStorage {
                 amount: $0.amount,
                 inputItems: $0.productionChain.map {
                     SingleItemProduction.Persistent.V2.InputItem(
-                        id: $0.itemID,
-                        recipes: [SingleItemProduction.Persistent.V2.InputItem.Recipe(id: $0.recipeID, proportion: .auto)]
+                        id: $0.id,
+                        itemID: $0.itemID,
+                        recipes: [
+                            SingleItemProduction.Persistent.V2.InputItem.Recipe(
+                                id: $0.id,
+                                recipeID: $0.recipeID,
+                                proportion: .auto
+                            )
+                        ]
                     )
                 },
                 byproducts: []
@@ -290,15 +297,15 @@ private extension V2 {
             }
             
             for (inputItemIndex, inputItem) in production.inputItems.enumerated() {
-                if let part = migration.partIDs.first(oldID: inputItem.id) {
-                    productions[productionIndex].inputItems[inputItemIndex].id = part.newID
-                } else if let equipment = migration.equipmentIDs.first(oldID: inputItem.id) {
-                    productions[productionIndex].inputItems[inputItemIndex].id = equipment.newID
+                if let part = migration.partIDs.first(oldID: inputItem.itemID) {
+                    productions[productionIndex].inputItems[inputItemIndex].itemID = part.newID
+                } else if let equipment = migration.equipmentIDs.first(oldID: inputItem.itemID) {
+                    productions[productionIndex].inputItems[inputItemIndex].itemID = equipment.newID
                 }
                 
                 for (recipeIndex, recipe) in inputItem.recipes.enumerated() {
-                    if let recipe = migration.recipeIDs.first(oldID: recipe.id) {
-                        productions[productionIndex].inputItems[inputItemIndex].recipes[recipeIndex].id = recipe.newID
+                    if let recipe = migration.recipeIDs.first(oldID: recipe.recipeID) {
+                        productions[productionIndex].inputItems[inputItemIndex].recipes[recipeIndex].recipeID = recipe.newID
                     }
                 }
             }

@@ -151,7 +151,7 @@ private struct _ProductPreview: View {
                         )
                     },
                     proportion: [
-                        SHProductionProportion.auto,
+                        Proportion.auto,
                         .fraction(.random(in: 0...1)),
                         .fixed(.random(in: 1...100))
                     ].randomElement()!

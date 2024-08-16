@@ -8,7 +8,7 @@ final class RecipeAdjustmentViewModel {
     let numberOfRecipes: Int
     let allowAdjustment: Bool
     let allowDeletion: Bool
-    let onChange: (SHProductionProportion) -> Void
+    let onChange: (Proportion) -> Void
     let onDelete: () -> Void
     
     @MainActor
@@ -17,7 +17,7 @@ final class RecipeAdjustmentViewModel {
         numberOfRecipes: Int,
         allowAdjustment: Bool,
         allowDeletion: Bool,
-        onChange: @escaping (SHProductionProportion) -> Void,
+        onChange: @escaping (Proportion) -> Void,
         onDelete: @escaping () -> Void
     ) {
         self.recipe = recipe

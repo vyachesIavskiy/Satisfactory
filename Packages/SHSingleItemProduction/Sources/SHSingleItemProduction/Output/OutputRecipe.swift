@@ -8,7 +8,7 @@ extension SHSingleItemProduction {
         public var output: OutputIngredient
         public var byproducts: [ByproductIngredient]
         public var inputs: [InputIngredient]
-        public var proportion: SHProductionProportion
+        public var proportion: Proportion
         
         public var description: String {
             "\(recipe), output: \(output), byproducts: \(byproducts), inputs: \(inputs)"
@@ -20,7 +20,7 @@ extension SHSingleItemProduction {
             output: OutputIngredient,
             byproducts: [ByproductIngredient],
             inputs: [InputIngredient],
-            proportion: SHProductionProportion
+            proportion: Proportion
         ) {
             self.id = id
             self.recipe = recipe

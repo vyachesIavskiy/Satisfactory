@@ -24,14 +24,14 @@ final class ProductionProportionViewModel {
     var fixedAmount: Double
     
     @ObservationIgnored
-    private var onChange: (SHProductionProportion) -> Void
+    private var onChange: (Proportion) -> Void
     
     @MainActor
     init(
-        proportion: SHProductionProportion,
+        proportion: Proportion,
         totalAmount: Double,
         numberOfRecipes: Int,
-        onChange: @escaping (SHProductionProportion) -> Void
+        onChange: @escaping (Proportion) -> Void
     ) {
         self.onChange = onChange
         switch proportion {
@@ -221,9 +221,9 @@ import SHModels
 
 private struct _ProductionProportionPreview: View {
     @State
-    private var proportion: SHProductionProportion
+    private var proportion: Proportion
     
-    init(_ proportion: SHProductionProportion) {
+    init(_ proportion: Proportion) {
         self.proportion = proportion
     }
     

@@ -10,9 +10,9 @@ extension SHSingleItemProduction {
         ///
         /// This is used when more than one recipe produce a single intermediate product.
         /// This can be also used to calculate final product.
-        public var proportion: SHProductionProportion
+        public var proportion: Proportion
         
-        public init(recipe: Recipe, proportion: SHProductionProportion) {
+        public init(recipe: Recipe, proportion: Proportion) {
             self.recipe = recipe
             self.proportion = proportion
         }

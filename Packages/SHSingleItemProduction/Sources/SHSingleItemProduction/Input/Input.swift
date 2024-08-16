@@ -22,7 +22,7 @@ extension SHSingleItemProduction {
             self.byproducts = []
         }
         
-        mutating func addRecipe(_ recipe: Recipe, to item: any Item, with proportion: SHProductionProportion) {
+        mutating func addRecipe(_ recipe: Recipe, to item: any Item, with proportion: Proportion) {
             addInputRecipe(InputRecipe(recipe: recipe, proportion: proportion), to: item)
         }
         
@@ -50,7 +50,7 @@ extension SHSingleItemProduction {
         mutating func changeProportion(
             of recipe: Recipe,
             for item: any Item,
-            to newProportion: SHProductionProportion
+            to newProportion: Proportion
         ) {
             guard
                 let itemIndex = inputItems.firstIndex(item: item),

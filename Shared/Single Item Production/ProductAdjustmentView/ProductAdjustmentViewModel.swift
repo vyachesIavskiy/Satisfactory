@@ -118,7 +118,7 @@ final class ProductAdjustmentViewModel: Identifiable {
     @MainActor
     func updateRecipe(
         _ recipe: SHSingleItemProduction.OutputRecipe,
-        with proportion: SHProductionProportion
+        with proportion: Proportion
     ) {
         production.changeProportion(of: recipe.recipe, for: product.item, to: proportion)
         update()

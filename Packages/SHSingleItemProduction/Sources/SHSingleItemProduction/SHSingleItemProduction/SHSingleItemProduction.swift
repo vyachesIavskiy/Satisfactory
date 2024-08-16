@@ -50,7 +50,7 @@ public final class SHSingleItemProduction {
     public func addRecipe(
         _ recipe: Recipe,
         to item: some Item,
-        with proportion: SHProductionProportion = .auto
+        with proportion: Proportion = .auto
     ) {
         input.addRecipe(recipe, to: item, with: proportion)
     }
@@ -62,7 +62,7 @@ public final class SHSingleItemProduction {
     public func changeProportion(
         of recipe: Recipe,
         for item: any Item,
-        to newProportion: SHProductionProportion
+        to newProportion: Proportion
     ) {
         input.changeProportion(of: recipe, for: item, to: newProportion)
     }
@@ -70,7 +70,7 @@ public final class SHSingleItemProduction {
     public func changeProportion(
         of recipe: InputRecipe,
         for item: any Item,
-        to newProportion: SHProductionProportion
+        to newProportion: Proportion
     ) {
         changeProportion(of: recipe.recipe, for: item, to: newProportion)
     }

@@ -70,9 +70,9 @@ extension SingleItemProduction {
 extension SingleItemProduction {
     public struct InputRecipe: Hashable, Sendable {
         public var recipe: Recipe
-        public var proportion: SHProductionProportion
+        public var proportion: Proportion
         
-        public init(recipe: Recipe, proportion: SHProductionProportion) {
+        public init(recipe: Recipe, proportion: Proportion) {
             self.recipe = recipe
             self.proportion = proportion
         }

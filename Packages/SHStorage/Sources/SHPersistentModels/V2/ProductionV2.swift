@@ -43,9 +43,9 @@ extension SingleItemProduction.Persistent.V2 {
 extension SingleItemProduction.Persistent.V2.InputItem {
     public struct Recipe: Codable, Hashable {
         public var id: String
-        public var proportion: SHProductionProportion
+        public var proportion: Proportion
         
-        public init(id: String, proportion: SHProductionProportion) {
+        public init(id: String, proportion: Proportion) {
             self.id = id
             self.proportion = proportion
         }

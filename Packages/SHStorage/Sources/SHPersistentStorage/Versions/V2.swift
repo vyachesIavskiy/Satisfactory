@@ -212,7 +212,7 @@ final class V2: VersionedStorage {
             factories.value = [Factory.Persistent.V2(
                 id: UUID(),
                 name: "Legacy",
-                assetType: .legacy,
+                asset: .legacy,
                 productionIDs: productions.value.map(\.id)
             )]
         }

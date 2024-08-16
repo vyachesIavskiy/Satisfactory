@@ -5,22 +5,14 @@ import Foundation
 public struct Factory: Identifiable, Hashable, Sendable {
     public var id: UUID
     public var name: String
-    public var assetType: AssetType
+    public var asset: Asset
     public var productionIDs: [UUID]
     
-    public init(id: UUID, name: String, assetType: AssetType, productionIDs: [UUID]) {
+    public init(id: UUID, name: String, asset: Asset, productionIDs: [UUID]) {
         self.id = id
         self.name = name
-        self.assetType = assetType
+        self.asset = asset
         self.productionIDs = productionIDs
-    }
-}
-
-extension Factory {
-    public enum AssetType: Hashable, Sendable {
-        case legacy
-        case abbreviation
-        case assetCatalog(name: String)
     }
 }
 

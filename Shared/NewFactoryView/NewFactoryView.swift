@@ -24,7 +24,7 @@ final class NewFactoryViewModel {
     private var storageService
     
     func saveFactory() {
-        let assetType: Factory.AssetType = if provideAssetImage, let selectedAssetName {
+        let asset: Asset = if provideAssetImage, let selectedAssetName {
             .assetCatalog(name: selectedAssetName)
         } else {
             .abbreviation
@@ -33,7 +33,7 @@ final class NewFactoryViewModel {
         let factory = Factory(
             id: UUID(),
             name: factoryName,
-            assetType: assetType,
+            asset: asset,
             productionIDs: []
         )
         

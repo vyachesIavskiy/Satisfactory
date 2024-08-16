@@ -150,7 +150,7 @@ private struct FactoryPreview: View {
                 factory: Factory(
                     id: UUID(),
                     name: "Preview factory",
-                    assetType: .abbreviation,
+                    asset: .abbreviation,
                     productionIDs: productions.map(\.id)
                 )
             )

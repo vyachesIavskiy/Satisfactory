@@ -122,7 +122,7 @@ struct FactoriesView: View {
     
     @MainActor @ViewBuilder
     func imageView(_ factory: Factory) -> some View {
-        switch factory.assetType {
+        switch factory.asset {
         case .abbreviation:
             let abbreviation = factory
                 .name

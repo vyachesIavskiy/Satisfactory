@@ -45,7 +45,7 @@ struct FactoryRowView: View {
     @MainActor @ViewBuilder
     private var iconView: some View {
         Group {
-            switch factory.assetType {
+            switch factory.asset {
             case .abbreviation:
                 Text(factory.name.abbreviated())
                     .font(.title2)
@@ -77,21 +77,21 @@ struct FactoryRowView: View {
             FactoryRowView(factory: Factory(
                 id: UUID(),
                 name: "Legacy",
-                assetType: .legacy,
+                asset: .legacy,
                 productionIDs: []
             ))
             
             FactoryRowView(factory: Factory(
                 id: UUID(),
                 name: "Abbreviated factory name",
-                assetType: .abbreviation,
+                asset: .abbreviation,
                 productionIDs: []
             ))
             
             FactoryRowView(factory: Factory(
                 id: UUID(),
                 name: "Reinforced Iron Plate",
-                assetType: .assetCatalog(name: "part-reinforced-iron-plate"),
+                asset: .assetCatalog(name: "part-reinforced-iron-plate"),
                 productionIDs: []
             ))
         }

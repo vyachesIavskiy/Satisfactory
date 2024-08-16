@@ -10,7 +10,7 @@ struct ProductionView: View {
         _viewModel = State(initialValue: ProductionViewModel(item: item))
     }
     
-    init(production: Production) {
+    init(production: SingleItemProduction) {
         _viewModel = State(initialValue: ProductionViewModel(production: production))
     }
     

@@ -11,7 +11,7 @@ final class V2: VersionedStorage {
     
     var configuration = Configuration.Persistent.V2()
     var pins = CurrentValueSubject<Pins.Persistent.V2, Never>(Pins.Persistent.V2())
-    var productions = CurrentValueSubject<[Production.Persistent.V2], Never>([])
+    var productions = CurrentValueSubject<[SingleItemProduction.Persistent.V2], Never>([])
     var factories = CurrentValueSubject<[Factory.Persistent.V2], Never>([])
     
     private let persistence = SHPersistence(homeDirectoryName: "Storage/V2")
@@ -28,7 +28,7 @@ final class V2: VersionedStorage {
         
         configuration = try persistence.loadOne(Configuration.Persistent.V2.self, fromFile: .configuration)
         pins.value = try persistence.loadOne(Pins.Persistent.V2.self, fromFile: .pins)
-        productions.value = try persistence.loadMany(Production.Persistent.V2.self, fromDirectory: .productions)
+        productions.value = try persistence.loadMany(SingleItemProduction.Persistent.V2.self, fromDirectory: .productions)
         factories.value = try persistence.loadMany(Factory.Persistent.V2.self, fromDirectory: .factories)
         
         logger.info("V2: loaded.")
@@ -122,7 +122,7 @@ final class V2: VersionedStorage {
         try persistence.save(factories.value, toDirectory: .factories)
     }
     
-    func saveProduction(_ production: Production.Persistent.V2) throws {
+    func saveProduction(_ production: SingleItemProduction.Persistent.V2) throws {
         if let index = productions.value.firstIndex(where: { $0.id == production.id }) {
             productions.value[index] = production
         } else {
@@ -145,7 +145,7 @@ final class V2: VersionedStorage {
         try persistence.save(factories.value, toDirectory: .factories)
     }
     
-    func deleteProduction(_ production: Production.Persistent.V2) throws {
+    func deleteProduction(_ production: SingleItemProduction.Persistent.V2) throws {
         try deleteProduction(id: production.id)
     }
     
@@ -193,15 +193,15 @@ final class V2: VersionedStorage {
         productions.value = legacyProductions.compactMap {
             guard let root = $0.root else { return nil }
             
-            return Production.Persistent.V2(
+            return SingleItemProduction.Persistent.V2(
                 id: $0.productionTreeRootID,
                 name: $0.name,
                 itemID: root.itemID,
                 amount: $0.amount,
                 inputItems: $0.productionChain.map {
-                    Production.Persistent.V2.InputItem(
+                    SingleItemProduction.Persistent.V2.InputItem(
                         id: $0.itemID,
-                        recipes: [Production.Persistent.V2.InputItem.Recipe(id: $0.recipeID, proportion: .auto)]
+                        recipes: [SingleItemProduction.Persistent.V2.InputItem.Recipe(id: $0.recipeID, proportion: .auto)]
                     )
                 },
                 byproducts: []
@@ -279,7 +279,7 @@ private extension V2 {
         return pins
     }
     
-    func migrateProductionItemIDs(migration: Migration) -> [Production.Persistent.V2] {
+    func migrateProductionItemIDs(migration: Migration) -> [SingleItemProduction.Persistent.V2] {
         var productions = productions.value
         
         for (productionIndex, production) in productions.enumerated() {

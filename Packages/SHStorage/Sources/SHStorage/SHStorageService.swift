@@ -21,17 +21,17 @@ public struct SHStorageService: Sendable {
     
     public var streamFactories: @Sendable () -> AsyncStream<[Factory]>
     
-    public var productions: @Sendable () -> [Production]
+    public var productions: @Sendable () -> [SingleItemProduction]
     
-    public var streamProductions: @Sendable () -> AsyncStream<[Production]>
+    public var streamProductions: @Sendable () -> AsyncStream<[SingleItemProduction]>
     
     public var saveFactory: @Sendable (_ factory: Factory) -> Void
     
-    public var saveProduction: @Sendable (_ production: Production) -> Void
+    public var saveProduction: @Sendable (_ production: SingleItemProduction) -> Void
     
     public var deleteFactory: @Sendable (_ factory: Factory) -> Void
     
-    public var deleteProduction: @Sendable (_ production: Production) -> Void
+    public var deleteProduction: @Sendable (_ production: SingleItemProduction) -> Void
     
     /// Fetch all parts from storage. This information is not changed during execution.
     public var parts: @Sendable () -> [Part]
@@ -326,11 +326,11 @@ public extension SHStorageService {
         }
     }
     
-    func produtions(inside factory: Factory) -> [Production] {
+    func produtions(inside factory: Factory) -> [SingleItemProduction] {
         productions().filter { factory.productionIDs.contains($0.id) }
     }
     
-    func streamProductions(inside factory: Factory) -> AsyncStream<[Production]> {
+    func streamProductions(inside factory: Factory) -> AsyncStream<[SingleItemProduction]> {
         streamProductions()
             .map { $0.filter { factory.productionIDs.contains($0.id) } }
             .eraseToStream()

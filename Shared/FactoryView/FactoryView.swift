@@ -114,7 +114,7 @@ private struct FactoryPreview: View {
     @Dependency(\.storageService)
     private var storageService
     
-    private var productions: [Production] {
+    private var productions: [SingleItemProduction] {
         let itemIDs = [
             "part-iron-plate",
             "part-iron-rod",
@@ -124,7 +124,7 @@ private struct FactoryPreview: View {
         let items = itemIDs.compactMap(storageService.item(id:))
         
         return items.map {
-            Production(
+            SingleItemProduction(
                 id: UUID(),
                 name: $0.localizedName,
                 item: $0,

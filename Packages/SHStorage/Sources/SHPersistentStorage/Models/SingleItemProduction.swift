@@ -1,7 +1,7 @@
 import SHModels
 import SHPersistentModels
 
-extension Production {
+extension SingleItemProduction {
     init(
         _ v2: Persistent.V2,
         itemPorivder: (String) -> any Item,
@@ -35,8 +35,8 @@ extension Production {
     }
 }
 
-extension Production.Persistent.V2 {
-    init(_ production: Production) {
+extension SingleItemProduction.Persistent.V2 {
+    init(_ production: SingleItemProduction) {
         self.init(
             id: production.id,
             name: production.name,

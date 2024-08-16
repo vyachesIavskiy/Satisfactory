@@ -20,7 +20,7 @@ final class CalculationViewModel {
     private var production: SHSingleItemProduction
     
     @ObservationIgnored
-    private var savedProduction: Production?
+    private var savedProduction: SingleItemProduction?
     
     @ObservationIgnored
     var amount: Double
@@ -63,7 +63,7 @@ final class CalculationViewModel {
         addInitialRecipe(recipe)
     }
     
-    convenience init(production: Production) {
+    convenience init(production: SingleItemProduction) {
         let singleItemProduction = SHSingleItemProduction(production: production)
         self.init(production: singleItemProduction)
         

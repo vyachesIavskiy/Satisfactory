@@ -19,7 +19,7 @@ extension LoadOptions {
         public var pinnedPartIDs: Set<String>
         public var pinnedEquipmentIDs: Set<String>
         public var pinnedRecipeIDs: Set<String>
-        public var savedProductions: [Production.Persistent.Legacy]
+        public var savedProductions: [SingleItemProduction.Persistent.Legacy]
         
         package var isEmpty: Bool {
             pinnedPartIDs.isEmpty &&
@@ -32,7 +32,7 @@ extension LoadOptions {
             pinnedPartIDs: Set<String> = [],
             pinnedEquipmentIDs: Set<String> = [],
             pinnedRecipeIDs: Set<String> = [],
-            savedProductions: [Production.Persistent.Legacy] = []
+            savedProductions: [SingleItemProduction.Persistent.Legacy] = []
         ) {
             self.pinnedPartIDs = pinnedPartIDs
             self.pinnedEquipmentIDs = pinnedEquipmentIDs

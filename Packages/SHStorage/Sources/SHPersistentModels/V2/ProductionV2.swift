@@ -1,7 +1,7 @@
 import Foundation
 import SHModels
 
-extension Production.Persistent {
+extension SingleItemProduction.Persistent {
     public struct V2: Codable, Identifiable, Hashable {
         public var id: UUID
         public var name: String
@@ -28,7 +28,7 @@ extension Production.Persistent {
     }
 }
 
-extension Production.Persistent.V2 {
+extension SingleItemProduction.Persistent.V2 {
     public struct InputItem: Codable, Hashable {
         public var id: String
         public var recipes: [Recipe]
@@ -40,7 +40,7 @@ extension Production.Persistent.V2 {
     }
 }
 
-extension Production.Persistent.V2.InputItem {
+extension SingleItemProduction.Persistent.V2.InputItem {
     public struct Recipe: Codable, Hashable {
         public var id: String
         public var proportion: SHProductionProportion
@@ -52,7 +52,7 @@ extension Production.Persistent.V2.InputItem {
     }
 }
 
-extension Production.Persistent.V2 {
+extension SingleItemProduction.Persistent.V2 {
     public struct Byproduct: Codable, Hashable {
         public var itemID: String
         public var producers: [Producer]
@@ -64,7 +64,7 @@ extension Production.Persistent.V2 {
     }
 }
 
-extension Production.Persistent.V2.Byproduct {
+extension SingleItemProduction.Persistent.V2.Byproduct {
     public struct Producer: Codable, Hashable {
         public var recipeID: String
         public var consumerRecipeIDs: [String]

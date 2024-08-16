@@ -37,19 +37,19 @@ final class EditProductionViewModel {
 //            .abbreviation
 //        }
         
-        let production = Production(
+        let production = SingleItemProduction(
             id: UUID(),
             name: productionName,
             item: singleItemProduction.item,
             amount: singleItemProduction.amount,
             inputItems: singleItemProduction.input.inputItems.map {
-                Production.InputItem(item: $0.item, recipes: $0.recipes.map {
-                    Production.InputRecipe(recipe: $0.recipe, proportion: $0.proportion)
+                SingleItemProduction.InputItem(item: $0.item, recipes: $0.recipes.map {
+                    SingleItemProduction.InputRecipe(recipe: $0.recipe, proportion: $0.proportion)
                 })
             },
             byproducts: singleItemProduction.input.byproducts.map {
-                Production.InputByproduct(item: $0.item, producers: $0.producers.map {
-                    Production.InputByproductProducer(recipe: $0.recipe, consumers: $0.consumers)
+                SingleItemProduction.InputByproduct(item: $0.item, producers: $0.producers.map {
+                    SingleItemProduction.InputByproductProducer(recipe: $0.recipe, consumers: $0.consumers)
                 })
             }
         )

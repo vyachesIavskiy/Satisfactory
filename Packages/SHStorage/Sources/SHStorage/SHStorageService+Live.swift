@@ -34,11 +34,11 @@ extension SHStorageService {
             persistentStorage.streamFactories
         }
         
-        var productions: [Production] {
+        var productions: [SingleItemProduction] {
             persistentStorage.productions
         }
         
-        var streamProductions: AsyncStream<[Production]> {
+        var streamProductions: AsyncStream<[SingleItemProduction]> {
             persistentStorage.streamProductions
         }
         
@@ -79,7 +79,7 @@ extension SHStorageService {
             try? persistentStorage.saveFactory(factory)
         }
         
-        func saveProduction(_ production: Production) {
+        func saveProduction(_ production: SingleItemProduction) {
             try? persistentStorage.saveProduction(production)
         }
         
@@ -88,7 +88,7 @@ extension SHStorageService {
             try? persistentStorage.deleteFactory(factory)
         }
         
-        func deleteProduction(_ production: Production) {
+        func deleteProduction(_ production: SingleItemProduction) {
             try? persistentStorage.deleteProduction(production)
         }
     }

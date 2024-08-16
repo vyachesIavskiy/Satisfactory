@@ -3,7 +3,7 @@ import SHModels
 import SHSingleItemProduction
 
 enum SHProduction {
-    case singleItem(Production)
+    case singleItem(SingleItemProduction)
 //    case fromResources(Production)
 //    case power(Production)
     

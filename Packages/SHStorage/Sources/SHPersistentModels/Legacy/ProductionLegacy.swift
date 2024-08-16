@@ -1,7 +1,7 @@
 import Foundation
 import SHModels
 
-extension Production.Persistent {
+extension SingleItemProduction.Persistent {
     public struct Legacy: Decodable {
         public let productionTreeRootID: UUID
         public let amount: Double
@@ -25,7 +25,7 @@ extension Production.Persistent {
     }
 }
 
-extension Production.Persistent.Legacy {
+extension SingleItemProduction.Persistent.Legacy {
     public struct Chain: Decodable {
         public let id: UUID
         public let itemID: String

@@ -35,7 +35,7 @@ final class ProductionViewModel {
     }
     
     @MainActor
-    init(production: Production) {
+    init(production: SingleItemProduction) {
         state = .calculation(viewModel: CalculationViewModel(production: production))
     }
 }

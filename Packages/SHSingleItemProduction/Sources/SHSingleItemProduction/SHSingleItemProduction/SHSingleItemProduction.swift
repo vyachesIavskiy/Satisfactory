@@ -30,7 +30,7 @@ public final class SHSingleItemProduction {
         input = Input(finalItem: item, amount: 1.0)
     }
     
-    public init(production: Production) {
+    public init(production: SingleItemProduction) {
         input = Input(finalItem: production.item, amount: production.amount)
         
         input.inputItems = production.inputItems.map {
@@ -210,45 +210,45 @@ public final class SHSingleItemProduction {
         buildOutput()
     }
     
-    public func createNewSavedProduction() -> Production {
-        Production(
+    public func createNewSavedProduction() -> SingleItemProduction {
+        SingleItemProduction(
             id: UUID(),
             name: input.finalItem.localizedName,
             item: input.finalItem,
             amount: input.amount,
             inputItems: input.inputItems.map {
-                Production.InputItem(item: $0.item, recipes: $0.recipes.map {
-                    Production.InputRecipe(recipe: $0.recipe, proportion: $0.proportion)
+                SingleItemProduction.InputItem(item: $0.item, recipes: $0.recipes.map {
+                    SingleItemProduction.InputRecipe(recipe: $0.recipe, proportion: $0.proportion)
                 })
             },
             byproducts: input.byproducts.map {
-                Production.InputByproduct(item: $0.item, producers: $0.producers.map {
-                    Production.InputByproductProducer(recipe: $0.recipe, consumers: $0.consumers)
+                SingleItemProduction.InputByproduct(item: $0.item, producers: $0.producers.map {
+                    SingleItemProduction.InputByproductProducer(recipe: $0.recipe, consumers: $0.consumers)
                 })
             }
         )
     }
     
-    public func updateSavedProduction(_ savedProduction: Production) -> Production {
-        Production(
+    public func updateSavedProduction(_ savedProduction: SingleItemProduction) -> SingleItemProduction {
+        SingleItemProduction(
             id: savedProduction.id,
             name: savedProduction.name,
             item: savedProduction.item,
             amount: input.amount,
             inputItems: input.inputItems.map {
-                Production.InputItem(item: $0.item, recipes: $0.recipes.map {
-                    Production.InputRecipe(recipe: $0.recipe, proportion: $0.proportion)
+                SingleItemProduction.InputItem(item: $0.item, recipes: $0.recipes.map {
+                    SingleItemProduction.InputRecipe(recipe: $0.recipe, proportion: $0.proportion)
                 })
             },
             byproducts: input.byproducts.map {
-                Production.InputByproduct(item: $0.item, producers: $0.producers.map {
-                    Production.InputByproductProducer(recipe: $0.recipe, consumers: $0.consumers)
+                SingleItemProduction.InputByproduct(item: $0.item, producers: $0.producers.map {
+                    SingleItemProduction.InputByproductProducer(recipe: $0.recipe, consumers: $0.consumers)
                 })
             }
         )
     }
     
-    public func hasUnsavedChanges(comparingTo savedProduction: Production) -> Bool {
+    public func hasUnsavedChanges(comparingTo savedProduction: SingleItemProduction) -> Bool {
         savedProduction.item.id != item.id ||
         savedProduction.amount != amount/* ||
         savedProduction.inputItems != input.inputItems ||

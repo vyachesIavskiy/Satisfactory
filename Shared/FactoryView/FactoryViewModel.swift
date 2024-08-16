@@ -9,7 +9,7 @@ final class FactoryViewModel {
     private(set) var factory: Factory
     
     @MainActor @ObservationIgnored
-    private var productions: [Production]
+    private var productions: [SingleItemProduction]
     
     @MainActor @ObservationIgnored
     var searchText = "" {
@@ -20,10 +20,10 @@ final class FactoryViewModel {
     
     // MARK: Observed properties
     var section = Section()
-    var selectedProduction: Production?
-    var productionToRename: Production?
+    var selectedProduction: SingleItemProduction?
+    var productionToRename: SingleItemProduction?
     var newProductionName = ""
-    var productionToDelete: Production?
+    var productionToDelete: SingleItemProduction?
     
     var showingRenameAlert = false
     var showingDeleteAlert = false
@@ -54,14 +54,14 @@ final class FactoryViewModel {
         }
     }
     
-    func renameProduction(_ production: Production) {
+    func renameProduction(_ production: SingleItemProduction) {
         var copy = production
         
         copy.name = newProductionName
         storageService.saveProduction(copy)
     }
     
-    func deleteProduction(_ production: Production) {
+    func deleteProduction(_ production: SingleItemProduction) {
         storageService.deleteProduction(production)
     }
 }
@@ -82,6 +82,6 @@ private extension FactoryViewModel {
 
 extension FactoryViewModel {
     struct Section {
-        var productions = [Production]()
+        var productions = [SingleItemProduction]()
     }
 }

@@ -2,7 +2,7 @@ import SwiftUI
 import SHModels
 
 struct ProductionRowView: View {
-    let production: Production
+    let production: SingleItemProduction
     
     @Environment(\.displayScale)
     private var displayScale
@@ -66,7 +66,7 @@ private struct ProductionRowPreview: View {
     
     var body: some View {
         if let item {
-            ProductionRowView(production: Production(id: UUID(), name: "Preview production", item: item, amount: amount, inputItems: [], byproducts: []))
+            ProductionRowView(production: SingleItemProduction(id: UUID(), name: "Preview production", item: item, amount: amount, inputItems: [], byproducts: []))
         } else {
             Text("There is no item with id '\(itemID)'")
         }

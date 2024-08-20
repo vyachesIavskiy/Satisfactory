@@ -2,7 +2,7 @@ import SwiftUI
 import SHModels
 
 struct ProductionRowView: View {
-    let production: SingleItemProduction
+    let production: Production
     
     @Environment(\.displayScale)
     private var displayScale
@@ -17,7 +17,16 @@ struct ProductionRowView: View {
                     
                     Spacer()
                     
-                    Text(production.amount, format: .shNumber)
+                    switch production {
+                    case let .singleItem(production):
+                        Text(production.amount, format: .shNumber)
+                        
+                    case .fromResources:
+                        EmptyView()
+                        
+                    case .power:
+                        Text("Consumed power here")
+                    }
                     
                     Image(systemName: "chevron.right")
                         .fontWeight(.light)
@@ -38,15 +47,27 @@ struct ProductionRowView: View {
     
     @MainActor @ViewBuilder
     private var iconView: some View {
-        Image(production.item.id)
-            .resizable()
-            .frame(width: 40, height: 40)
-            .padding(6)
-            .background {
-                AngledRectangle(cornerRadius: 5)
-                    .fill(.sh(.gray20))
-                    .stroke(.sh(.midnight40), lineWidth: 2 / displayScale)
+        ZStack {
+            switch production.asset {
+            case .legacy:
+                // This should never happen
+                EmptyView()
+                
+            case .abbreviation:
+                Text(production.name.abbreviated())
+                
+            case let .assetCatalog(name):
+                Image(name)
+                    .resizable()
             }
+        }
+        .frame(width: 40, height: 40)
+        .padding(6)
+        .background {
+            AngledRectangle(cornerRadius: 5)
+                .fill(.sh(.gray20))
+                .stroke(.sh(.midnight40), lineWidth: 2 / displayScale)
+        }
     }
 }
 
@@ -66,7 +87,9 @@ private struct ProductionRowPreview: View {
     
     var body: some View {
         if let item {
-            ProductionRowView(production: SingleItemProduction(id: UUID(), name: "Preview production", item: item, amount: amount, inputItems: [], byproducts: []))
+            ProductionRowView(production: .singleItem(
+                SingleItemProduction(id: UUID(), name: "Preview production", item: item, amount: amount, inputItems: [], byproducts: [])
+            ))
         } else {
             Text("There is no item with id '\(itemID)'")
         }

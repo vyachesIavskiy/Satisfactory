@@ -22,29 +22,32 @@ public struct SHStorageService: Sendable {
     
     public var streamFactories: @Sendable () -> AsyncStream<[Factory]>
     
-    public var productions: @Sendable () -> [SingleItemProduction]
+    public var productions: @Sendable () -> [Production]
     
-    public var streamProductions: @Sendable () -> AsyncStream<[SingleItemProduction]>
+    public var streamProductions: @Sendable () -> AsyncStream<[Production]>
     
     public var saveFactory: @Sendable (_ factory: Factory) -> Void
     
-    public var saveProduction: @Sendable (_ production: SingleItemProduction, _ factoryID: UUID) -> Void
+    public var saveProduction: @Sendable (_ production: Production, _ factoryID: UUID) -> Void
     
     public var deleteFactory: @Sendable (_ factory: Factory) -> Void
     
-    public var deleteProduction: @Sendable (_ production: SingleItemProduction) -> Void
+    public var deleteProduction: @Sendable (_ production: Production) -> Void
     
     /// Fetch all parts from storage. This information is not changed during execution.
     public var parts: @Sendable () -> [Part]
     
-    /// Fetch all equipment from storage. This information is not changed during execution.
+    /// Fetch all equipment from storage. This data is constant.
     public var equipment: @Sendable () -> [Equipment]
     
-    /// Fetch all buildings from storage. This information is not changed during execution.
+    /// Fetch all buildings from storage. This data is constant.
     public var buildings: @Sendable () -> [Building]
     
-    /// Fetch all recipes from storage. This information is not changed during execution.
+    /// Fetch all recipes from storage. This data is constant.
     var recipes: @Sendable () -> [Recipe]
+    
+    /// Fetch all extractions from storage. This data is constant.
+    var extractions: @Sendable () -> [Extraction]
     
     /// Changes pin status for a provided part ID.
     var changePartPinStatus: @Sendable (_ partID: String) -> Void
@@ -63,7 +66,7 @@ public extension SHStorageService {
     /// - Parameter id: An ID for an item.
     /// - Returns: An item with a provided ID or `nil` if there is no item with a provided ID.
     func item(id: String) -> (any Item)? {
-        let items: [any Item] = parts() + equipment()
+        let items: [any Item] = parts() + equipment() + buildings()
         return items.first { $0.id == id }
     }
     
@@ -327,13 +330,17 @@ public extension SHStorageService {
         }
     }
     
-    func produtions(inside factory: Factory) -> [SingleItemProduction] {
+    func produtions(inside factory: Factory) -> [Production] {
         productions().filter { factory.productionIDs.contains($0.id) }
     }
     
-    func streamProductions(inside factory: Factory) -> AsyncStream<[SingleItemProduction]> {
+    func streamProductions(inside factory: Factory) -> AsyncStream<[Production]> {
         streamProductions()
             .map { $0.filter { factory.productionIDs.contains($0.id) } }
             .eraseToStream()
+    }
+    
+    func extraction(for item: any Item) -> Extraction? {
+        extractions().first { $0.naturalResources.contains { $0.id == item.id } }
     }
 }

@@ -139,6 +139,9 @@ public final class SingleItemCalculator {
         
         // Build and return an output
         buildOutput()
+        
+        // Update statistics for production
+        updateStatistics()
     }
     
     public var hasSavedProduction: Bool {

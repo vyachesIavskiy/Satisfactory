@@ -41,10 +41,10 @@ private extension Part.Form {
 }
 
 private extension Part.Form {
-    enum Error: Swift.Error, CustomDebugStringConvertible {
+    enum Error: LocalizedError {
         case invalidID(String)
         
-        var debugDescription: String {
+        var errorDescription: String? {
             switch self {
             case let .invalidID(id): "Failed to initialized Part.Form with ID '\(id)'"
             }

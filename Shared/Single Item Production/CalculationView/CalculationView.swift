@@ -159,7 +159,7 @@ struct CalculationView: View {
         
         ToolbarItem(placement: .primaryAction) {
             Button("Statistics", systemImage: "list.number") {
-//                viewModel.showingStatisticsSheet = true
+                viewModel.showStatistics()
             }
         }
         
@@ -182,6 +182,9 @@ struct CalculationView: View {
             
         case let .saveProduction(viewModel):
             EditProductionView(viewModel: viewModel)
+            
+        case let .statistics(viewModel):
+            StatisticsView(viewModel: viewModel)
         }
     }
 }

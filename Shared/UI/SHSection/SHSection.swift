@@ -116,7 +116,7 @@ private extension SHSectionHeader {
 }
 
 // MARK: Arrow
-private extension SHSectionHeader {
+extension SHSectionHeader {
     struct ExpandArrow: Shape {
         var expanded: Bool
         private var expandedFloat: CGFloat
@@ -132,11 +132,23 @@ private extension SHSectionHeader {
         }
         
         func path(in rect: CGRect) -> Path {
-            Path { path in
-                path.move(to: rect.centerLeft.offsetBy(x: 5 * expandedFloat, y: 5 * expandedFloat))
+            let verticalOffset = rect.width / 4
+            
+            return Path { path in
+                path.move(
+                    to: rect.centerLeft.offsetBy(
+                        x: verticalOffset * expandedFloat,
+                        y: verticalOffset * expandedFloat
+                    )
+                )
                 path.addLine(to: rect.centerLeft)
                 path.addLine(to: rect.centerRight)
-                path.addLine(to: rect.centerRight.offsetBy(x: -5 * (1.0 - expandedFloat), y: -5 * (1.0 - expandedFloat)))
+                path.addLine(
+                    to: rect.centerRight.offsetBy(
+                        x: -verticalOffset * (1.0 - expandedFloat),
+                        y: -verticalOffset * (1.0 - expandedFloat)
+                    )
+                )
             }
         }
     }

@@ -15,7 +15,14 @@ struct FactoryView: View {
                 ProductionRowView(production: production)
                     .background {
                         NavigationLink("") {
-                            ProductionView(production: production)
+                            switch production {
+                            case let .singleItem(production):
+                                ProductionView(production: production)
+                            case .fromResources:
+                                Text("From Resources production")
+                            case .power:
+                                Text("Power production")
+                            }
                         }
                         .opacity(0)
                     }
@@ -40,7 +47,7 @@ struct FactoryView: View {
         .navigationTitle(viewModel.factory.name)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                Button("Statistics", systemImage: "info.bubble") {
+                Button("Statistics", systemImage: "list.number") {
                     viewModel.showingStatisticsSheet = true
                 }
             }
@@ -87,19 +94,7 @@ struct FactoryView: View {
             Text("This action cannot be undone.")
         }
         .sheet(isPresented: $viewModel.showingStatisticsSheet) {
-            NavigationStack {
-                Text("Statistics will be here")
-                    .font(.title)
-                    .padding()
-                    .navigationTitle(viewModel.factory.name)
-                    .toolbar {
-                        ToolbarItem(placement: .cancellationAction) {
-                            Button("Cancel") {
-                                viewModel.showingStatisticsSheet = false
-                            }
-                        }
-                    }
-            }
+            StatisticsView(viewModel: StatisticsViewModel(factory: viewModel.factory))
         }
         .task {
             await viewModel.observeProductions()
@@ -114,7 +109,7 @@ private struct FactoryPreview: View {
     @Dependency(\.storageService)
     private var storageService
     
-    private var productions: [SingleItemProduction] {
+    private var productions: [Production] {
         let itemIDs = [
             "part-iron-plate",
             "part-iron-rod",
@@ -124,14 +119,14 @@ private struct FactoryPreview: View {
         let items = itemIDs.compactMap(storageService.item(id:))
         
         return items.map {
-            SingleItemProduction(
+            .singleItem(SingleItemProduction(
                 id: UUID(),
                 name: $0.localizedName,
                 item: $0,
                 amount: Double(Int.random(in: 1...20)),
                 inputItems: [],
                 byproducts: []
-            )
+            ))
         }
     }
     

@@ -82,6 +82,9 @@ private extension Generator {
         logger.info("Writing recipes.")
         try write(V2.Recipes.all, to: .recipes)
         
+        logger.info("Writing extractions.")
+        try write(V2.Extractions.all, to: .extractions)
+        
         logger.info("Writing migrations.")
         for migration in Migrations.all {
             try write(migration, to: .migrations.appending("Migration \(migration.version)"))
@@ -128,6 +131,7 @@ private extension String {
     static let equipment = "Equipment"
     static let buildings = "Buildings"
     static let recipes = "Recipes"
+    static let extractions = "Extractions"
     static let migrations = "Migrations/"
     static let json = "json"
 }

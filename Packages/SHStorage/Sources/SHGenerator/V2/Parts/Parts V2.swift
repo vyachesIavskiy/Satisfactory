@@ -9,7 +9,7 @@ extension Part.Static {
 
 extension V2 {
     enum Parts {
-        static var all =
+        static let all =
         alienParts +
         biomassParts +
         communicationParts +

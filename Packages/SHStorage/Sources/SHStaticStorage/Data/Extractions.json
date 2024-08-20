@@ -1,0 +1,178 @@
+[
+  {
+    "buildingID" : "building-miner-mk-1",
+    "naturalResourceIDs" : [
+      "part-iron-ore",
+      "part-copper-ore",
+      "part-limestone",
+      "part-coal",
+      "part-caterium-ore",
+      "part-bauxite",
+      "part-raw-quartz",
+      "part-sulfur",
+      "part-uranium"
+    ],
+    "rates" : [
+      {
+        "amount" : 30,
+        "purityID" : "purity-impure"
+      },
+      {
+        "amount" : 60,
+        "purityID" : "purity-normal"
+      },
+      {
+        "amount" : 120,
+        "purityID" : "purity-pure"
+      }
+    ]
+  },
+  {
+    "buildingID" : "building-miner-mk-2",
+    "naturalResourceIDs" : [
+      "part-iron-ore",
+      "part-copper-ore",
+      "part-limestone",
+      "part-coal",
+      "part-caterium-ore",
+      "part-bauxite",
+      "part-raw-quartz",
+      "part-sulfur",
+      "part-uranium"
+    ],
+    "rates" : [
+      {
+        "amount" : 60,
+        "purityID" : "purity-impure"
+      },
+      {
+        "amount" : 120,
+        "purityID" : "purity-normal"
+      },
+      {
+        "amount" : 240,
+        "purityID" : "purity-pure"
+      }
+    ]
+  },
+  {
+    "buildingID" : "building-miner-mk-3",
+    "naturalResourceIDs" : [
+      "part-iron-ore",
+      "part-copper-ore",
+      "part-limestone",
+      "part-coal",
+      "part-caterium-ore",
+      "part-bauxite",
+      "part-raw-quartz",
+      "part-sulfur",
+      "part-uranium"
+    ],
+    "rates" : [
+      {
+        "amount" : 120,
+        "purityID" : "purity-impure"
+      },
+      {
+        "amount" : 240,
+        "purityID" : "purity-normal"
+      },
+      {
+        "amount" : 480,
+        "purityID" : "purity-pure"
+      }
+    ]
+  },
+  {
+    "buildingID" : "building-water-extractor",
+    "naturalResourceIDs" : [
+      "part-water"
+    ],
+    "rates" : [
+      {
+        "amount" : 120,
+        "purityID" : "purity-normal"
+      }
+    ]
+  },
+  {
+    "buildingID" : "building-oil-extractor",
+    "naturalResourceIDs" : [
+      "part-crude-oil"
+    ],
+    "rates" : [
+      {
+        "amount" : 30,
+        "purityID" : "purity-impure"
+      },
+      {
+        "amount" : 60,
+        "purityID" : "purity-normal"
+      },
+      {
+        "amount" : 120,
+        "purityID" : "purity-pure"
+      }
+    ]
+  },
+  {
+    "buildingID" : "building-resource-well-extractor",
+    "naturalResourceIDs" : [
+      "part-nitrogen-gas"
+    ],
+    "rates" : [
+      {
+        "amount" : 30,
+        "purityID" : "purity-impure"
+      },
+      {
+        "amount" : 60,
+        "purityID" : "purity-normal"
+      },
+      {
+        "amount" : 120,
+        "purityID" : "purity-pure"
+      }
+    ]
+  },
+  {
+    "buildingID" : "building-resource-well-extractor",
+    "naturalResourceIDs" : [
+      "part-water"
+    ],
+    "rates" : [
+      {
+        "amount" : 30,
+        "purityID" : "purity-impure"
+      },
+      {
+        "amount" : 60,
+        "purityID" : "purity-normal"
+      },
+      {
+        "amount" : 120,
+        "purityID" : "purity-pure"
+      }
+    ]
+  },
+  {
+    "buildingID" : "building-resource-well-extractor",
+    "naturalResourceIDs" : [
+      "part-crude-oil"
+    ],
+    "rates" : [
+      {
+        "amount" : 30,
+        "purityID" : "purity-impure"
+      },
+      {
+        "amount" : 60,
+        "purityID" : "purity-normal"
+      },
+      {
+        "amount" : 120,
+        "purityID" : "purity-pure"
+      }
+    ]
+  }
+]

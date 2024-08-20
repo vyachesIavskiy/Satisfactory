@@ -72,4 +72,26 @@ public enum Production: Identifiable, Hashable, Sendable {
             }
         }
     }
+    
+    public var statistics: Statistics {
+        switch self {
+        case let .singleItem(production): production.statistics
+        case let .fromResources(production): production.statistics
+        case let .power(production): production.statistics
+        }
+    }
+}
+
+// MARK: Production + Sequence
+public extension Sequence<Production> {
+    func first(id: UUID) -> Element?  {
+        first { $0.id == id }
+    }
+}
+
+// MARK: Production + Collection
+public extension Collection<Production> {
+    func firstIndex(id: UUID) -> Index? {
+        firstIndex { $0.id == id }
+    }
 }

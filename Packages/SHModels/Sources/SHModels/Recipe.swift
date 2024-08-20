@@ -36,6 +36,10 @@ public struct Recipe: BaseItem {
         self.isDefault = isDefault
     }
     
+    public var amountPerMinute: Double {
+        amountPerMinute(for: output)
+    }
+    
     public func amountPerMinute(for ingredient: Ingredient) -> Double {
         ingredient.amount * (60 / Double(duration))
     }

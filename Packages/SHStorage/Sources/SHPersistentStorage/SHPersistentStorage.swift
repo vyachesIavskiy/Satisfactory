@@ -39,11 +39,11 @@ public final class SHPersistentStorage {
             .eraseToStream()
     }
     
-    public var productions: [SingleItemProduction] {
+    public var productions: [Production] {
         v2.productions.value.map(map)
     }
     
-    public var streamProductions: AsyncStream<[SingleItemProduction]> {
+    public var streamProductions: AsyncStream<[Production]> {
         v2.productions
             .map { [weak self] in
                 guard let self else { return [] }
@@ -114,16 +114,16 @@ public final class SHPersistentStorage {
         try v2.saveFactory(Factory.Persistent.V2(factory))
     }
     
-    public func saveProduction(_ production: SingleItemProduction, to factoryID: UUID) throws {
-        try v2.saveProduction(SingleItemProduction.Persistent.V2(production), to: factoryID)
+    public func saveProduction(_ production: Production, to factoryID: UUID) throws {
+        try v2.saveProduction(Production.Persistent.V2(production), to: factoryID)
     }
     
     public func deleteFactory(_ factory: Factory) throws {
         try v2.deleteFactory(Factory.Persistent.V2(factory))
     }
     
-    public func deleteProduction(_ production: SingleItemProduction) throws {
-        try v2.deleteProduction(SingleItemProduction.Persistent.V2(production))
+    public func deleteProduction(_ production: Production) throws {
+        try v2.deleteProduction(Production.Persistent.V2(production))
     }
 }
 
@@ -202,8 +202,8 @@ private extension SHPersistentStorage {
 // MARK: Mapping
 
 private extension SHPersistentStorage {
-    func map(_ savedProduction: SingleItemProduction.Persistent.V2) -> SingleItemProduction {
-        SingleItemProduction(savedProduction, itemPorivder: item(id:), recipeProvider: recipe(id:))
+    func map(_ savedProduction: Production.Persistent.V2) -> Production {
+        Production(savedProduction, itemProvider: item(id:), recipeProvider: recipe(id:))
     }
     
     func item(id: String) -> any Item {

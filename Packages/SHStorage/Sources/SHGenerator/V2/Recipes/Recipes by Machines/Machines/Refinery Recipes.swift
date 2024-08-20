@@ -15,7 +15,7 @@ private extension Recipe.Static {
             inputs: inputs,
             output: output,
             byproducts: byproduct.map { [$0] },
-            machine: V2.Buildings.constructor,
+            machine: V2.Buildings.refinery,
             manualCrafting: [],
             duration: duration,
             isDefault: isDefault

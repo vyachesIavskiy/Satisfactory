@@ -33,6 +33,7 @@ extension SHStorageService {
         equipment: { [] },
         buildings: { [] },
         recipes: { [] },
+        extractions: { [] },
         changePartPinStatus: { _ in },
         changeEquipmentPinStatus: { _ in },
         changeRecipePinStatus: { _ in }
@@ -56,6 +57,7 @@ extension SHStorageService {
         equipment: unimplemented("SHStorageService.equipment"),
         buildings: unimplemented("SHStorageService.buildings"),
         recipes: unimplemented("SHStorageService.recipes"),
+        extractions: unimplemented("SHStorageService.extractions"),
         changePartPinStatus: unimplemented("SHStorageService.changePartPinStatus"),
         changeEquipmentPinStatus: unimplemented("SHStorageService.changeEquipmentPinStatus"),
         changeRecipePinStatus: unimplemented("SHStorageService.changeRecipePinStatus")
@@ -82,6 +84,7 @@ extension SHStorageService {
             equipment: { live.equipment },
             buildings: { live.buildings },
             recipes: { live.recipes },
+            extractions: { live.extractions },
             changePartPinStatus: { live.changePartPinStatus($0) },
             changeEquipmentPinStatus: { live.changeEquipmentPinStatus($0) },
             changeRecipePinStatus: { live.changeRecipePinStatus($0) }
@@ -109,6 +112,7 @@ extension SHStorageService {
             equipment: { preview.equipment },
             buildings: { preview.buildings },
             recipes: { preview.recipes },
+            extractions: { preview.extractions },
             changePartPinStatus: { preview.changePartPinStatus($0) },
             changeEquipmentPinStatus: { preview.changeEquipmentPinStatus($0) },
             changeRecipePinStatus: { preview.changeRecipePinStatus($0) }

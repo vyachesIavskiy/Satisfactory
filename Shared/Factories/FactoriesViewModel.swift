@@ -9,7 +9,7 @@ final class FactoriesViewModel {
     private var factories: [Factory]
     
     @ObservationIgnored
-    private var productions: [SingleItemProduction]
+    private var productions: [Production]
     
     @MainActor @ObservationIgnored
     var searchText = "" {
@@ -107,6 +107,6 @@ extension FactoriesViewModel {
     
     struct ProductionsSection: Identifiable {
         let id = "factories-view-productions-section"
-        var productions = [SingleItemProduction]()
+        var productions = [Production]()
     }
 }

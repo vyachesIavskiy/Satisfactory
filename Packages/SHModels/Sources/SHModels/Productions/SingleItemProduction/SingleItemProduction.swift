@@ -8,6 +8,7 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
     public var amount: Double
     public var inputItems: [InputItem]
     public var byproducts: [InputByproduct]
+    public var statistics: Statistics
     
     @Dependency(\.uuid)
     private var uuid
@@ -18,7 +19,8 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
         item: some Item,
         amount: Double,
         inputItems: [InputItem] = [],
-        byproducts: [InputByproduct] = []
+        byproducts: [InputByproduct] = [],
+        statistics: Statistics = Statistics()
     ) {
         self.id = id
         self.name = name
@@ -26,6 +28,7 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
         self.amount = amount
         self.inputItems = inputItems
         self.byproducts = byproducts
+        self.statistics = statistics
     }
     
     public mutating func addRecipe(_ recipe: Recipe, to item: some Item, with proportion: Proportion) {
@@ -131,7 +134,8 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
         lhs.item.id == rhs.item.id &&
         lhs.amount == rhs.amount &&
         lhs.inputItems == rhs.inputItems &&
-        lhs.byproducts == rhs.byproducts
+        lhs.byproducts == rhs.byproducts &&
+        lhs.statistics == rhs.statistics
     }
     
     // Hashable
@@ -142,19 +146,6 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
         hasher.combine(amount)
         hasher.combine(inputItems)
         hasher.combine(byproducts)
-    }
-}
-
-// MARK: Single item production + Sequence
-public extension Sequence<SingleItemProduction> {
-    func first(id: UUID) -> Element?  {
-        first { $0.id == id }
-    }
-}
-
-// MARK: Single item production + Collection
-public extension Collection<SingleItemProduction> {
-    func firstIndex(id: UUID) -> Index? {
-        firstIndex { $0.id == id }
+        hasher.combine(statistics)
     }
 }

@@ -15,7 +15,7 @@ private extension Recipe.Static {
             inputs: inputs,
             output: output,
             byproducts: [byproduct],
-            machine: V2.Buildings.assembler,
+            machine: V2.Buildings.blender,
             manualCrafting: [],
             duration: duration,
             isDefault: isDefault
@@ -34,7 +34,7 @@ private extension Recipe.Static {
             inputs: inputs,
             output: output,
             byproducts: [],
-            machine: V2.Buildings.assembler,
+            machine: V2.Buildings.blender,
             manualCrafting: [],
             duration: duration,
             isDefault: isDefault

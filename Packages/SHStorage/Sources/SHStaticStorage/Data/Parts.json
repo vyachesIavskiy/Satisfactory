@@ -31,14 +31,14 @@
     "categoryID" : "category-aliens",
     "formID" : "part-form-solid",
     "id" : "part-alien-protein",
-    "isNaturalResource" : true,
+    "isNaturalResource" : false,
     "progressionIndex" : 31
   },
   {
     "categoryID" : "category-aliens",
     "formID" : "part-form-solid",
     "id" : "part-alien-dna-capsule",
-    "isNaturalResource" : true,
+    "isNaturalResource" : false,
     "progressionIndex" : 32
   },
   {

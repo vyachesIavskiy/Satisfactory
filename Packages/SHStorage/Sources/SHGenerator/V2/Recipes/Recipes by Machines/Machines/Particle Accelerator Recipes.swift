@@ -14,7 +14,7 @@ private extension Recipe.Static {
             id: id,
             inputs: inputs,
             output: output,
-            machine: V2.Buildings.constructor,
+            machine: V2.Buildings.particleAccelerator,
             manualCrafting: (isDefault && manuallyCraftable) ? [V2.Buildings.craftBench] : [],
             duration: duration,
             isDefault: isDefault

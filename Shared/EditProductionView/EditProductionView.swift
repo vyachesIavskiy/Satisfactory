@@ -51,7 +51,7 @@ final class EditProductionViewModel {
         var newProduction = production
         newProduction.name = productionName
         
-        storageService.saveProduction(newProduction, selectedFactoryID)
+        storageService.saveProduction(.singleItem(newProduction), selectedFactoryID)
         onApply()
     }
 }

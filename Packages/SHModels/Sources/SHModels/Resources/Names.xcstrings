@@ -1,6 +1,116 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "building-assembler" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assembler"
+          }
+        }
+      }
+    },
+    "building-blender" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blender"
+          }
+        }
+      }
+    },
+    "building-constructor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Constructor"
+          }
+        }
+      }
+    },
+    "building-foundry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foundry"
+          }
+        }
+      }
+    },
+    "building-manufacturer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manufacturer"
+          }
+        }
+      }
+    },
+    "building-nuclear-power-plant" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuclear Power Plant"
+          }
+        }
+      }
+    },
+    "building-packager" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packager"
+          }
+        }
+      }
+    },
+    "building-particle-accelerator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Particle Accelerator"
+          }
+        }
+      }
+    },
+    "building-refinery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refinery"
+          }
+        }
+      }
+    },
+    "building-smelter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smelter"
+          }
+        }
+      }
+    },
     "equipment-beacon" : {
       "extractionState" : "manual",
       "localizations" : {

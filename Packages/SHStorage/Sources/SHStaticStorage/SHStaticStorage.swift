@@ -9,6 +9,7 @@ public final class SHStaticStorage {
     public private(set) var equipment = [Equipment]()
     public private(set) var buildings = [Building]()
     public private(set) var recipes = [Recipe]()
+    public private(set) var extractions = [Extraction]()
     public private(set) var migrations = [Migration]()
     
     private let logger = SHLogger(subsystemName: "SHStorage", category: "SHStaticStorage")
@@ -26,19 +27,19 @@ public final class SHStaticStorage {
             return
         }
         
-        // Step 1
+        // Load configuration
         let staticConfiguration = try load(Configuration.Static.self, resourceName: .configuration)
         configuration = Configuration(staticConfiguration)
         
-        // Step 2
+        // Load parts
         let staticParts = try load([Part.Static].self, resourceName: .parts)
         parts = try staticParts.map(Part.init)
         
-        // Step 3
+        // Load buildigns
         let staticBuildings = try load([Building.Static].self, resourceName: .buildings)
         buildings = try staticBuildings.map(Building.init)
         
-        // Step 4
+        // Load equipment
         let staticEquipment = try load([Equipment.Static].self, resourceName: .equipment)
         equipment = try staticEquipment.map { equipment in
             try Equipment(equipment) {
@@ -46,7 +47,18 @@ public final class SHStaticStorage {
             }
         }
         
-        // Step 5
+        // Load extractions
+        let staticExtractions = try load([Extraction.Static].self, resourceName: .extractions)
+        extractions = try staticExtractions.map { extraction in
+            try Extraction(extraction) {
+                try self[buildingID: $0]
+            } partProvider: {
+                try self[partID: $0]
+            }
+
+        }
+        
+        // Load recipes
         let staticRecipes = try load([Recipe.Static].self, resourceName: .recipes)
         recipes = try staticRecipes.map { recipe in
             try Recipe(recipe) {
@@ -56,7 +68,7 @@ public final class SHStaticStorage {
             }
         }
         
-        // Step 6
+        // Load migrations
         migrations = try load(subdirectory: .migrations)
         
         loaded = true
@@ -137,6 +149,16 @@ package extension SHStaticStorage {
         }
         
         return recipes
+    }
+    
+    subscript(extractionFor part: Part) -> Extraction? {
+        self[extractionFor: part.id]
+    }
+    
+    subscript(extractionFor partID: String) -> Extraction? {
+        extractions.first {
+            $0.naturalResources.contains { $0.id == partID }
+        }
     }
 }
 
@@ -280,6 +302,7 @@ private extension String {
     static let equipment = "Equipment"
     static let buildings = "Buildings"
     static let recipes = "Recipes"
+    static let extractions = "Extractions"
     static let migrations = "Migrations"
     static let json = "json"
 }

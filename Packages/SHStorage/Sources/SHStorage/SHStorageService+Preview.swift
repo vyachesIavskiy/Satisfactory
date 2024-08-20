@@ -8,7 +8,7 @@ extension SHStorageService {
     final class Preview {
         private let staticStorage = SHStaticStorage()
         private let _pins = CurrentValueSubject<Pins, Never>(Pins())
-        private let _productions = CurrentValueSubject<[SingleItemProduction], Never>([])
+        private let _productions = CurrentValueSubject<[Production], Never>([])
         private let _factories = CurrentValueSubject<[Factory], Never>([])
         
         var pins: Pins {
@@ -27,11 +27,11 @@ extension SHStorageService {
             _factories.values.eraseToStream()
         }
         
-        var productions: [SingleItemProduction] {
+        var productions: [Production] {
             _productions.value
         }
         
-        var streamProductions: AsyncStream<[SingleItemProduction]> {
+        var streamProductions: AsyncStream<[Production]> {
             _productions.values.eraseToStream()
         }
         
@@ -75,7 +75,7 @@ extension SHStorageService {
             }
         }
         
-        func saveProduction(_ production: SingleItemProduction, to factoryID: UUID) {
+        func saveProduction(_ production: Production, to factoryID: UUID) {
             if let index = _productions.value.firstIndex(id: production.id) {
                 _productions.value[index] = production
             } else {
@@ -100,7 +100,7 @@ extension SHStorageService {
             }
         }
         
-        func deleteProduction(_ production: SingleItemProduction) {
+        func deleteProduction(_ production: Production) {
             if let index = _productions.value.firstIndex(id: production.id) {
                 _productions.value.remove(at: index)
             }

@@ -125,6 +125,10 @@ final class CalculationViewModel {
             self?.buildOutputItemViewModels()
         }
     }
+    
+    func showStatistics() {
+        modalNavigationState = .statistics(viewModel: StatisticsViewModel(production: .singleItem(calculator.production)))
+    }
 }
 
 // MARK: Hashable
@@ -448,12 +452,14 @@ extension CalculationViewModel {
         case selectInitialRecipeForItem(viewModel: InitialRecipeSelectionViewModel)
         case adjustItem(viewModel: ProductAdjustmentViewModel)
         case saveProduction(viewModel: EditProductionViewModel)
+        case statistics(viewModel: StatisticsViewModel)
         
         var id: String {
             switch self {
             case let .selectInitialRecipeForItem(viewModel): viewModel.item.id
             case let .adjustItem(viewModel): viewModel.id.uuidString
             case let .saveProduction(viewModel): viewModel.production.id.uuidString
+            case let .statistics(viewModel): viewModel.productions[0].id.uuidString
             }
         }
     }

@@ -71,7 +71,8 @@ let package = Package(
         .target(
             name: "SHPersistentModels",
             dependencies: [
-                .product(name: "SHModels", package: "SHModels")
+                .product(name: "SHModels", package: "SHModels"),
+                "SHStaticModels"
             ]
         ),
         

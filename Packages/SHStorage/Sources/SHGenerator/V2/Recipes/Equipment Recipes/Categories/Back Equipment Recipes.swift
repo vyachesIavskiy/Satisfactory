@@ -10,7 +10,8 @@ private extension Recipe.Static {
             byproducts: [],
             machine: nil,
             manualCrafting: [V2.Buildings.equipmentWorkshop],
-            duration: 0
+            duration: 0,
+            electricityConsumption: ElectricityConsumption(min: 0, max: 0)
         )
     }
 }

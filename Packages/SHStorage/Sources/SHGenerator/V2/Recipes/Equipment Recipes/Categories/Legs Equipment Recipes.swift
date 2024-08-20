@@ -9,7 +9,8 @@ private extension Recipe.Static {
             output: Ingredient(equipment, amount: 1),
             machine: nil,
             manualCrafting: [V2.Buildings.equipmentWorkshop],
-            duration: 0
+            duration: 0,
+            electricityConsumption: ElectricityConsumption(min: 0, max: 0)
         )
     }
 }

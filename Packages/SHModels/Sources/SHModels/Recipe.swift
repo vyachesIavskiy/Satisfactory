@@ -10,6 +10,7 @@ public struct Recipe: BaseItem {
     public let machine: Building?
     public let manualCrafting: [Building]
     public let duration: Int
+    public let electricityConsumption: ElectricityConsumption
     public let isDefault: Bool
     
     public var description: String {
@@ -24,6 +25,7 @@ public struct Recipe: BaseItem {
         machine: Building? = nil,
         manualCrafting: [Building] = [],
         duration: Int,
+        electricityConsumption: ElectricityConsumption,
         isDefault: Bool = true
     ) {
         self.id = id
@@ -33,6 +35,7 @@ public struct Recipe: BaseItem {
         self.machine = machine
         self.manualCrafting = manualCrafting
         self.duration = duration
+        self.electricityConsumption = electricityConsumption
         self.isDefault = isDefault
     }
     
@@ -56,8 +59,8 @@ public struct Recipe: BaseItem {
     }
 }
 
-public extension Recipe {
-    struct Ingredient: Identifiable, Hashable, Sendable {
+extension Recipe {
+    public struct Ingredient: Identifiable, Hashable, Sendable {
         public let role: Role
         public let item: any Item
         public let amount: Double
@@ -82,13 +85,25 @@ public extension Recipe {
     }
 }
 
-public extension Recipe.Ingredient {
-    enum Role: String, Equatable, CustomStringConvertible, Sendable {
+extension Recipe.Ingredient {
+    public enum Role: String, Equatable, CustomStringConvertible, Sendable {
         case output = "Output"
         case byproduct = "Byproduct"
         case input = "Input"
         
         public var description: String { rawValue }
+    }
+}
+
+extension Recipe {
+    public struct ElectricityConsumption: Hashable, Sendable {
+        public let min: Int
+        public let max: Int
+        
+        public init(min: Int, max: Int) {
+            self.min = min
+            self.max = max
+        }
     }
 }
 

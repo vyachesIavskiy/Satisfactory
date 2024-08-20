@@ -10,6 +10,7 @@ extension Recipe.Static {
         machine: Building.Static?,
         manualCrafting: [Building.Static],
         duration: Int,
+        electricityConsumption: Recipe.Static.ElectricityConsumption,
         isDefault: Bool = true
     ) {
         self.init(
@@ -20,6 +21,7 @@ extension Recipe.Static {
             machineID: machine?.id,
             manualCraftingIDs: manualCrafting.map(\.id),
             duration: duration,
+            electricityConsumption: electricityConsumption,
             isDefault: isDefault
         )
     }

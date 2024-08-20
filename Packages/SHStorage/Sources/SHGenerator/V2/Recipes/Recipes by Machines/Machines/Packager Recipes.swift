@@ -6,24 +6,6 @@ private extension Recipe.Static {
         id: String,
         inputs: [Ingredient],
         output: Ingredient,
-        byproduct: Ingredient,
-        duration: Int
-    ) {
-        self.init(
-            id: id,
-            inputs: inputs,
-            output: output,
-            byproducts: [byproduct],
-            machine: V2.Buildings.packager,
-            manualCrafting: [],
-            duration: duration
-        )
-    }
-    
-    init(
-        id: String,
-        inputs: [Ingredient],
-        output: Ingredient,
         duration: Int,
         isDefault: Bool = true
     ) {
@@ -35,7 +17,27 @@ private extension Recipe.Static {
             machine: V2.Buildings.constructor,
             manualCrafting: [],
             duration: duration,
+            electricityConsumption: ElectricityConsumption(min: 10, max: 10),
             isDefault: isDefault
+        )
+    }
+    
+    init(
+        id: String,
+        inputs: Ingredient,
+        output: Ingredient,
+        byproduct: Ingredient,
+        duration: Int
+    ) {
+        self.init(
+            id: id,
+            inputs: [inputs],
+            output: output,
+            byproducts: [byproduct],
+            machine: V2.Buildings.packager,
+            manualCrafting: [],
+            duration: duration,
+            electricityConsumption: ElectricityConsumption(min: 10, max: 10)
         )
     }
 }
@@ -145,9 +147,7 @@ extension V2.Recipes {
     // MARK: - Unpackaging
     static let unpackagedWaterRecipe = Recipe.Static(
         id: "recipe-unpackaged-water",
-        inputs: [
-            Recipe.Static.Ingredient(V2.Parts.packagedWater, amount: 2)
-        ],
+        inputs: Recipe.Static.Ingredient(V2.Parts.packagedWater, amount: 2),
         output: Recipe.Static.Ingredient(V2.Parts.water, amount: 2),
         byproduct: Recipe.Static.Ingredient(V2.Parts.emptyCanister, amount: 2),
         duration: 1
@@ -155,9 +155,7 @@ extension V2.Recipes {
     
     static let unpackagedOilRecipe = Recipe.Static(
         id: "recipe-unpackaged-oil",
-        inputs: [
-            Recipe.Static.Ingredient(V2.Parts.packagedOil, amount: 2)
-        ],
+        inputs: Recipe.Static.Ingredient(V2.Parts.packagedOil, amount: 2),
         output: Recipe.Static.Ingredient(V2.Parts.crudeOil, amount: 2),
         byproduct: Recipe.Static.Ingredient(V2.Parts.emptyCanister, amount: 2),
         duration: 2
@@ -165,9 +163,7 @@ extension V2.Recipes {
     
     static let unpackagedHeavyOilResidueRecipe = Recipe.Static(
         id: "recipe-unpackaged-heavy-oil-residue",
-        inputs: [
-            Recipe.Static.Ingredient(V2.Parts.packagedHeavyOilResidue, amount: 2)
-        ],
+        inputs: Recipe.Static.Ingredient(V2.Parts.packagedHeavyOilResidue, amount: 2),
         output: Recipe.Static.Ingredient(V2.Parts.heavyOilResidue, amount: 2),
         byproduct: Recipe.Static.Ingredient(V2.Parts.emptyCanister, amount: 2),
         duration: 6
@@ -175,9 +171,7 @@ extension V2.Recipes {
     
     static let unpackagedFuelRecipe = Recipe.Static(
         id: "recipe-unpackaged-fuel",
-        inputs: [
-            Recipe.Static.Ingredient(V2.Parts.packagedFuel, amount: 2)
-        ],
+        inputs: Recipe.Static.Ingredient(V2.Parts.packagedFuel, amount: 2),
         output: Recipe.Static.Ingredient(V2.Parts.fuel, amount: 2),
         byproduct: Recipe.Static.Ingredient(V2.Parts.emptyCanister, amount: 2),
         duration: 2
@@ -185,9 +179,7 @@ extension V2.Recipes {
     
     static let unpackagedLiquidBiofuelRecipe = Recipe.Static(
         id: "recipe-unpackaged-liquid-biofuel",
-        inputs: [
-            Recipe.Static.Ingredient(V2.Parts.packagedLiquidBiofuel, amount: 2)
-        ],
+        inputs: Recipe.Static.Ingredient(V2.Parts.packagedLiquidBiofuel, amount: 2),
         output: Recipe.Static.Ingredient(V2.Parts.liquidBiofuel, amount: 2),
         byproduct: Recipe.Static.Ingredient(V2.Parts.emptyCanister, amount: 2),
         duration: 2
@@ -195,9 +187,7 @@ extension V2.Recipes {
     
     static let unpackagedTurbofuelRecipe = Recipe.Static(
         id: "recipe-unpackaged-turbofuel",
-        inputs: [
-            Recipe.Static.Ingredient(V2.Parts.packagedTurbofuel, amount: 2)
-        ],
+        inputs: Recipe.Static.Ingredient(V2.Parts.packagedTurbofuel, amount: 2),
         output: Recipe.Static.Ingredient(V2.Parts.turbofuel, amount: 2),
         byproduct: Recipe.Static.Ingredient(V2.Parts.emptyCanister, amount: 2),
         duration: 6
@@ -205,9 +195,7 @@ extension V2.Recipes {
     
     static let unpackagedAluminaSolutionRecipe = Recipe.Static(
         id: "recipe-unpackaged-alumina-solution",
-        inputs: [
-            Recipe.Static.Ingredient(V2.Parts.packagedAluminaSolution, amount: 2)
-        ],
+        inputs: Recipe.Static.Ingredient(V2.Parts.packagedAluminaSolution, amount: 2),
         output: Recipe.Static.Ingredient(V2.Parts.aluminaSolution, amount: 2),
         byproduct: Recipe.Static.Ingredient(V2.Parts.emptyCanister, amount: 2),
         duration: 1
@@ -215,9 +203,7 @@ extension V2.Recipes {
     
     static let unpackagedSulfuricAcidRecipe = Recipe.Static(
         id: "recipe-unpackaged-sulfuric-acid",
-        inputs: [
-            Recipe.Static.Ingredient(V2.Parts.packagedSulfuricAcid, amount: 1)
-        ],
+        inputs: Recipe.Static.Ingredient(V2.Parts.packagedSulfuricAcid, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.sulfuricAcid, amount: 1),
         byproduct: Recipe.Static.Ingredient(V2.Parts.emptyCanister, amount: 1),
         duration: 1
@@ -225,9 +211,7 @@ extension V2.Recipes {
     
     static let unpackagedNitrogenGasRecipe = Recipe.Static(
         id: "recipe-unpackaged-nitrogen-gas",
-        inputs: [
-            Recipe.Static.Ingredient(V2.Parts.packagedNitrogenGas, amount: 1)
-        ],
+        inputs: Recipe.Static.Ingredient(V2.Parts.packagedNitrogenGas, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.nitrogenGas, amount: 4),
         byproduct: Recipe.Static.Ingredient(V2.Parts.emptyFluidTank, amount: 1),
         duration: 1
@@ -235,9 +219,7 @@ extension V2.Recipes {
     
     static let unpackagedNitricAcidRecipe = Recipe.Static(
         id: "recipe-unpackaged-nitric-acid",
-        inputs: [
-            Recipe.Static.Ingredient(V2.Parts.packagedNitricAcid, amount: 1)
-        ],
+        inputs: Recipe.Static.Ingredient(V2.Parts.packagedNitricAcid, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.nitricAcid, amount: 1),
         byproduct: Recipe.Static.Ingredient(V2.Parts.emptyFluidTank, amount: 1),
         duration: 3

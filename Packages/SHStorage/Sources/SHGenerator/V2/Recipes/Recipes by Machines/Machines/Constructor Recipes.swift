@@ -18,6 +18,7 @@ private extension Recipe.Static {
             machine: V2.Buildings.constructor,
             manualCrafting: (isDefault && manuallyCraftable) ? [V2.Buildings.craftBench] + (additionalManualCrafting.map { [$0] } ?? []) : [],
             duration: duration,
+            electricityConsumption: ElectricityConsumption(min: 4, max: 4),
             isDefault: isDefault
         )
     }

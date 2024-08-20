@@ -14,7 +14,8 @@ private extension Recipe.Static {
             output: output,
             machine: V2.Buildings.nuclearPowerPlant,
             manualCrafting: [],
-            duration: duration
+            duration: duration,
+            electricityConsumption: ElectricityConsumption(min: 0, max: 0)
         )
     }
 }

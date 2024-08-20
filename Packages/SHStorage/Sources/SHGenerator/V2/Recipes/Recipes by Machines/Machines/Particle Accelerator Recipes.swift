@@ -7,6 +7,7 @@ private extension Recipe.Static {
         inputs: [Ingredient],
         output: Ingredient,
         duration: Int,
+        electricityConsumption: ElectricityConsumption,
         isDefault: Bool = true,
         manuallyCraftable: Bool = true
     ) {
@@ -17,6 +18,7 @@ private extension Recipe.Static {
             machine: V2.Buildings.particleAccelerator,
             manualCrafting: (isDefault && manuallyCraftable) ? [V2.Buildings.craftBench] : [],
             duration: duration,
+            electricityConsumption: electricityConsumption,
             isDefault: isDefault
         )
     }
@@ -31,7 +33,8 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.uraniumWaste, amount: 25)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.plutoniumPellet, amount: 30),
-        duration: 60
+        duration: 60,
+        electricityConsumption: Recipe.Static.ElectricityConsumption(min: 250, max: 750)
     )
     
     static let encasedPlutoniumCellRecipe1 = Recipe.Static(
@@ -42,6 +45,7 @@ extension V2.Recipes {
         ],
         output: Recipe.Static.Ingredient(V2.Parts.encasedPlutoniumCell, amount: 20),
         duration: 120,
+        electricityConsumption: Recipe.Static.ElectricityConsumption(min: 250, max: 750),
         isDefault: false
     )
     
@@ -54,6 +58,7 @@ extension V2.Recipes {
         ],
         output: Recipe.Static.Ingredient(V2.Parts.nuclearPasta, amount: 1),
         duration: 120,
+        electricityConsumption: Recipe.Static.ElectricityConsumption(min: 500, max: 1500),
         manuallyCraftable: false
     )
     

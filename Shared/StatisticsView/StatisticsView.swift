@@ -85,11 +85,25 @@ struct StatisticsView: View {
                     }
                 }
             } header: {
-                SHSectionHeader("Machine statistics", expanded: $viewModel.machinesSection.expanded)
-                    .background(.background)
+                SHSectionHeader(expanded: $viewModel.machinesSection.expanded) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Machine statistics")
+                        
+                        HStack(spacing: 4) {
+                            Image(systemName: "bolt.fill")
+                            
+                            Text(viewModel.machinesSection.powerConsumptionString)
+                        }
+                        .font(.footnote)
+                        .fontWeight(.medium)
+                        .foregroundStyle(.sh(viewModel.machinesSection.expanded ? .midnight : .gray))
+                    }
+                }
+                .background(.background)
             }
         }
     }
+
     
     @MainActor @ViewBuilder
     private func itemView(_ _item: Binding<StatisticsViewModel.Item>) -> some View {
@@ -97,7 +111,7 @@ struct StatisticsView: View {
         
         row(
             item: item.statisticItem.item,
-            subtitle: item.subtitle,
+            expandLabel: item.subtitle,
             valueString: AttributedString(item.statisticItem.amount.formatted(.shNumber)),
             expandable: item.expandable,
             isExpanded: _item.recipesExpanded,
@@ -139,7 +153,8 @@ struct StatisticsView: View {
         
         row(
             item: machine.building,
-            subtitle: machine.subtitle,
+            subValueString: machine.powerValueString,
+            expandLabel: machine.subtitle,
             valueString: machine.valueString,
             expandable: machine.expandable,
             isExpanded: _machine.recipesExpanded,
@@ -152,7 +167,8 @@ struct StatisticsView: View {
     @MainActor @ViewBuilder
     private func row<Data: Identifiable, Content: View>(
         item: any Item,
-        subtitle: String,
+        subValueString: String? = nil,
+        expandLabel: String,
         valueString: AttributedString,
         expandable: Bool,
         isExpanded: Binding<Bool>,
@@ -166,14 +182,20 @@ struct StatisticsView: View {
                 if expandable {
                     expandableRow(
                         title: item.localizedName,
-                        subtitle: subtitle,
+                        subValueString: subValueString,
+                        expandLabel: expandLabel,
                         valueString: valueString,
                         isExpanded: isExpanded,
                         data: data,
                         content: content
                     )
                 } else {
-                    staticRow(title: item.localizedName, subtitle: subtitle, valueString: valueString)
+                    staticRow(
+                        title: item.localizedName,
+                        subtitle: expandLabel,
+                        subValueString: subValueString,
+                        valueString: valueString
+                    )
                 }
             }
             .addListGradientSeparator()
@@ -184,7 +206,8 @@ struct StatisticsView: View {
     @MainActor @ViewBuilder
     private func expandableRow<Data: Identifiable, Content: View>(
         title: String,
-        subtitle: String,
+        subValueString: String? = nil,
+        expandLabel: String,
         valueString: AttributedString,
         isExpanded: Binding<Bool>,
         data: [Data],
@@ -205,19 +228,29 @@ struct StatisticsView: View {
                     .foregroundStyle(.sh(.midnight))
             }
             
+            if let subValueString {
+                HStack(spacing: 4) {
+                    Image(systemName: "bolt.fill")
+                    
+                    Text(subValueString)
+                }
+                .font(.footnote)
+                .foregroundStyle(.sh(.midnight))
+            }
+            
             Button {
                 isExpanded.wrappedValue.toggle()
             } label: {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
-                        Text(subtitle)
+                        Text(expandLabel)
                             .font(.caption)
                             .opacity(isExpanded.wrappedValue ? 0 : 1)
                             .animation(.default.speed(2), value: isExpanded.wrappedValue)
                         
                         Spacer()
                         
-                        SHSectionHeader.ExpandArrow(isExpanded.wrappedValue)
+                        ExpandArrow(isExpanded.wrappedValue)
                             .stroke(lineWidth: isExpanded.wrappedValue ? 0.5 : 1)
                             .foregroundStyle(.sh(isExpanded.wrappedValue ? .midnight30 : .midnight))
                             .fixedSize(horizontal: false, vertical: true)
@@ -248,14 +281,30 @@ struct StatisticsView: View {
     }
     
     @MainActor @ViewBuilder
-    private func staticRow(title: String, subtitle: String, valueString: AttributedString) -> some View {
+    private func staticRow(
+        title: String,
+        subtitle: String,
+        subValueString: String? = nil,
+        valueString: AttributedString
+    ) -> some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
                     .fontWeight(.semibold)
                 
+                if let subValueString {
+                    HStack(spacing: 4) {
+                        Image(systemName: "bolt.fill")
+                        
+                        Text(subValueString)
+                    }
+                    .font(.footnote)
+                    .foregroundStyle(.sh(.midnight))
+                }
+                
                 Text(subtitle)
                     .font(.caption)
+                    .padding(.bottom, 4)
             }
             
             Spacer()

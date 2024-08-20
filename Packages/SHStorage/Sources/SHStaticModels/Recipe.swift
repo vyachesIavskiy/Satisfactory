@@ -10,7 +10,7 @@ extension Recipe {
         public let machineID: String?
         public let manualCraftingIDs: [String]
         public let duration: Int
-        public let electricityConsumption: ElectricityConsumption
+        public let powerConsumption: PowerConsumption
         public let isDefault: Bool
         
         public init(
@@ -21,7 +21,7 @@ extension Recipe {
             machineID: String?,
             manualCraftingIDs: [String],
             duration: Int,
-            electricityConsumption: ElectricityConsumption,
+            powerConsumption: PowerConsumption,
             isDefault: Bool
         ) {
             self.id = id
@@ -31,7 +31,7 @@ extension Recipe {
             self.machineID = machineID
             self.manualCraftingIDs = manualCraftingIDs
             self.duration = duration
-            self.electricityConsumption = electricityConsumption
+            self.powerConsumption = powerConsumption
             self.isDefault = isDefault
         }
     }
@@ -49,9 +49,9 @@ extension Recipe {
             machine: recipe.machineID.map(buildingProvider),
             manualCrafting: recipe.manualCraftingIDs.map(buildingProvider),
             duration: recipe.duration,
-            electricityConsumption: ElectricityConsumption(
-                min: recipe.electricityConsumption.min,
-                max: recipe.electricityConsumption.max
+            powerConsumption: PowerConsumption(
+                min: recipe.powerConsumption.min,
+                max: recipe.powerConsumption.max
             ),
             isDefault: recipe.isDefault
         )
@@ -85,7 +85,7 @@ private extension Recipe.Ingredient {
 }
 
 extension Recipe.Static {
-    public struct ElectricityConsumption: Codable {
+    public struct PowerConsumption: Codable {
         public let min: Int
         public let max: Int
         

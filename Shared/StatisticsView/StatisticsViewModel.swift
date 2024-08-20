@@ -60,10 +60,15 @@ final class StatisticsViewModel {
             let recipeMachines = statisticItem.recipes.reduce(into: [Machine]()) { partialResult, statisticRecipe in
                 guard let recipeMachine = statisticRecipe.recipe.machine else { return }
                 
+                let recipeAmount = statisticRecipe.amount / statisticRecipe.recipe.amountPerMinute
                 let newMachineRecipe = MachineRecipe(
                     building: recipeMachine,
                     recipe: statisticRecipe.recipe,
-                    amount: statisticRecipe.amount / statisticRecipe.recipe.amountPerMinute
+                    amount: statisticRecipe.amount / statisticRecipe.recipe.amountPerMinute,
+                    powerConsumption: Recipe.PowerConsumption(
+                        min: statisticRecipe.recipe.powerConsumption.min * Int(recipeAmount.rounded(.up)),
+                        max: statisticRecipe.recipe.powerConsumption.max * Int(recipeAmount.rounded(.up))
+                    )
                 )
                 
                 if let index = partialResult.firstIndex(where: { $0.building == recipeMachine }) {
@@ -109,6 +114,21 @@ extension StatisticsViewModel {
     struct MachineSection: Hashable {
         var machines = [Machine]()
         var expanded = true
+        
+        private var totalPowerConsumption: Recipe.PowerConsumption {
+            machines.reduce(into: Recipe.PowerConsumption()) { partialResult, machine in
+                partialResult.min += machine.powerConsumption.min
+                partialResult.max += machine.powerConsumption.max
+            }
+        }
+        
+        var powerConsumptionString: String {
+            if totalPowerConsumption.min == totalPowerConsumption.max {
+                "\(totalPowerConsumption.max.formatted(.number)) MW"
+            } else {
+                "(\(totalPowerConsumption.min.formatted(.number)) ~ \(totalPowerConsumption.min.formatted(.number))) MW"
+            }
+        }
     }
 }
 
@@ -160,6 +180,13 @@ extension StatisticsViewModel {
             recipes.reduce(0) { $0 + $1.amount }
         }
         
+        var powerConsumption: Recipe.PowerConsumption {
+            recipes.reduce(into: Recipe.PowerConsumption()) { partialResult, machineRecipe in
+                partialResult.min += machineRecipe.powerConsumption.min
+                partialResult.max += machineRecipe.powerConsumption.max
+            }
+        }
+        
         private var intAmount: Int {
             recipes.reduce(0) { $0 + $1.intAmount }
         }
@@ -203,6 +230,14 @@ extension StatisticsViewModel {
             }
         }
         
+        var powerValueString: String {
+            if powerConsumption.min == powerConsumption.max {
+                "\(powerConsumption.max.formatted(.number)) MW"
+            } else {
+                "(\(powerConsumption.min.formatted(.number)) ~ \(powerConsumption.min.formatted(.number))) MW"
+            }
+        }
+        
         init(building: Building, recipes: [MachineRecipe], recipesExpanded: Bool = false) {
             self.building = building
             self.recipes = recipes
@@ -216,6 +251,7 @@ extension StatisticsViewModel {
         let building: Building
         let recipe: Recipe
         var amount: Double
+        var powerConsumption: Recipe.PowerConsumption
         
         var intAmount: Int {
             Int(amount.rounded(.up))
@@ -241,6 +277,14 @@ extension StatisticsViewModel {
                 return result
             } else {
                 return AttributedString()
+            }
+        }
+        
+        var powerValueString: AttributedString {
+            if powerConsumption.min == powerConsumption.max {
+                AttributedString("\(powerConsumption.max.formatted(.number)) MW")
+            } else {
+                AttributedString("(\(powerConsumption.min.formatted(.number)) ~ \(powerConsumption.min.formatted(.number))) MW")
             }
         }
         

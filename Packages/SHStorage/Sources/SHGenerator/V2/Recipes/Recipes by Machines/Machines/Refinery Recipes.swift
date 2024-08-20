@@ -18,7 +18,7 @@ private extension Recipe.Static {
             machine: V2.Buildings.refinery,
             manualCrafting: [],
             duration: duration,
-            electricityConsumption: ElectricityConsumption(min: 30, max: 30),
+            powerConsumption: PowerConsumption(min: 30, max: 30),
             isDefault: isDefault
         )
     }

@@ -18,7 +18,7 @@ private extension Recipe.Static {
             machine: V2.Buildings.blender,
             manualCrafting: [],
             duration: duration,
-            electricityConsumption: ElectricityConsumption(min: 75, max: 75),
+            powerConsumption: PowerConsumption(min: 75, max: 75),
             isDefault: isDefault
         )
     }
@@ -38,7 +38,7 @@ private extension Recipe.Static {
             machine: V2.Buildings.blender,
             manualCrafting: [],
             duration: duration,
-            electricityConsumption: ElectricityConsumption(min: 75, max: 75),
+            powerConsumption: PowerConsumption(min: 75, max: 75),
             isDefault: isDefault
         )
     }

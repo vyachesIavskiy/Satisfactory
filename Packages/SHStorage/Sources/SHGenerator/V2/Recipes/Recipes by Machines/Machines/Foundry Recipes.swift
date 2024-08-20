@@ -17,7 +17,7 @@ private extension Recipe.Static {
             machine: V2.Buildings.foundry,
             manualCrafting: (isDefault && manuallyCraftable) ? [V2.Buildings.craftBench] : [],
             duration: duration,
-            electricityConsumption: ElectricityConsumption(min: 16, max: 16),
+            powerConsumption: PowerConsumption(min: 16, max: 16),
             isDefault: isDefault
         )
     }

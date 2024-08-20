@@ -10,7 +10,7 @@ private extension Recipe.Static {
             machine: nil,
             manualCrafting: [],
             duration: 0,
-            electricityConsumption: Recipe.Static.ElectricityConsumption(min: 0, max: 0)
+            powerConsumption: PowerConsumption(min: 0, max: 0)
         )
     }
 }

@@ -18,7 +18,7 @@ private extension Recipe.Static {
             machine: V2.Buildings.smelter,
             manualCrafting: (isDefault && !manuallyCraftable) ? [V2.Buildings.craftBench] : [],
             duration: duration,
-            electricityConsumption: ElectricityConsumption(min: 4, max: 4),
+            powerConsumption: PowerConsumption(min: 4, max: 4),
             isDefault: isDefault
         )
     }

@@ -55,12 +55,17 @@ struct SHSection<Data, ID, Content: View>: View {
 }
 
 // MARK: - Header
-struct SHSectionHeader: View {
-    var title: String
+struct SHSectionHeader<Label: View>: View {
+    var label: Label
     @Binding var expanded: Bool
     
-    init(_ title: String, expanded: Binding<Bool>) {
-        self.title = title
+    init(expanded: Binding<Bool>, @ViewBuilder label: () -> Label) {
+        self.label = label()
+        self._expanded = expanded
+    }
+    
+    init(_ title: String, expanded: Binding<Bool>) where Label == Text {
+        self.label = Text(title)
         self._expanded = expanded
     }
     
@@ -70,11 +75,12 @@ struct SHSectionHeader: View {
                 expanded.toggle()
             }
         } label: {
-            Text(title)
+            label
                 .textCase(nil)
                 .font(.callout)
                 .fontWeight(.semibold)
                 .foregroundStyle(.sh(expanded ? .gray : .midnight))
+                .drawingGroup()
         }
         .buttonStyle(ButtonStyle(expanded))
     }
@@ -92,7 +98,7 @@ private extension SHSectionHeader {
         }
         
         func makeBody(configuration: Configuration) -> some View {
-            HStack(alignment: .lastTextBaseline, spacing: 16) {
+            HStack(spacing: 16) {
                 configuration.label
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
@@ -116,40 +122,38 @@ private extension SHSectionHeader {
 }
 
 // MARK: Arrow
-extension SHSectionHeader {
-    struct ExpandArrow: Shape {
-        var expanded: Bool
-        private var expandedFloat: CGFloat
+struct ExpandArrow: Shape {
+    var expanded: Bool
+    private var expandedFloat: CGFloat
+    
+    var animatableData: CGFloat {
+        get { expandedFloat }
+        set { expandedFloat = newValue }
+    }
+    
+    init(_ expanded: Bool) {
+        self.expanded = expanded
+        self.expandedFloat = expanded ? 1.0 : 0.0
+    }
+    
+    func path(in rect: CGRect) -> Path {
+        let verticalOffset = rect.width / 4
         
-        var animatableData: CGFloat {
-            get { expandedFloat }
-            set { expandedFloat = newValue }
-        }
-        
-        init(_ expanded: Bool) {
-            self.expanded = expanded
-            self.expandedFloat = expanded ? 1.0 : 0.0
-        }
-        
-        func path(in rect: CGRect) -> Path {
-            let verticalOffset = rect.width / 4
-            
-            return Path { path in
-                path.move(
-                    to: rect.centerLeft.offsetBy(
-                        x: verticalOffset * expandedFloat,
-                        y: verticalOffset * expandedFloat
-                    )
+        return Path { path in
+            path.move(
+                to: rect.centerLeft.offsetBy(
+                    x: verticalOffset * expandedFloat,
+                    y: verticalOffset * expandedFloat
                 )
-                path.addLine(to: rect.centerLeft)
-                path.addLine(to: rect.centerRight)
-                path.addLine(
-                    to: rect.centerRight.offsetBy(
-                        x: -verticalOffset * (1.0 - expandedFloat),
-                        y: -verticalOffset * (1.0 - expandedFloat)
-                    )
+            )
+            path.addLine(to: rect.centerLeft)
+            path.addLine(to: rect.centerRight)
+            path.addLine(
+                to: rect.centerRight.offsetBy(
+                    x: -verticalOffset * (1.0 - expandedFloat),
+                    y: -verticalOffset * (1.0 - expandedFloat)
                 )
-            }
+            )
         }
     }
 }

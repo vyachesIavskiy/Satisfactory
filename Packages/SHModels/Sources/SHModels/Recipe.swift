@@ -10,7 +10,7 @@ public struct Recipe: BaseItem {
     public let machine: Building?
     public let manualCrafting: [Building]
     public let duration: Int
-    public let electricityConsumption: ElectricityConsumption
+    public let powerConsumption: PowerConsumption
     public let isDefault: Bool
     
     public var description: String {
@@ -25,7 +25,7 @@ public struct Recipe: BaseItem {
         machine: Building? = nil,
         manualCrafting: [Building] = [],
         duration: Int,
-        electricityConsumption: ElectricityConsumption,
+        powerConsumption: PowerConsumption,
         isDefault: Bool = true
     ) {
         self.id = id
@@ -35,7 +35,7 @@ public struct Recipe: BaseItem {
         self.machine = machine
         self.manualCrafting = manualCrafting
         self.duration = duration
-        self.electricityConsumption = electricityConsumption
+        self.powerConsumption = powerConsumption
         self.isDefault = isDefault
     }
     
@@ -96,11 +96,11 @@ extension Recipe.Ingredient {
 }
 
 extension Recipe {
-    public struct ElectricityConsumption: Hashable, Sendable {
-        public let min: Int
-        public let max: Int
+    public struct PowerConsumption: Hashable, Sendable {
+        public var min: Int
+        public var max: Int
         
-        public init(min: Int, max: Int) {
+        public init(min: Int = 0, max: Int = 0) {
             self.min = min
             self.max = max
         }

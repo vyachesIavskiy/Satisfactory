@@ -1,10 +1,6 @@
 [
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-reinforced-iron-plate",
     "inputs" : [
       {
@@ -24,14 +20,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-reinforced-iron-plate"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-adhered-iron-plate",
     "inputs" : [
       {
@@ -51,14 +47,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-reinforced-iron-plate"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-bolted-iron-plate",
     "inputs" : [
       {
@@ -78,14 +74,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-reinforced-iron-plate"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 32,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-stitched-iron-plate",
     "inputs" : [
       {
@@ -105,14 +101,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-reinforced-iron-plate"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 60,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-modular-frame",
     "inputs" : [
       {
@@ -132,14 +128,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-modular-frame"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-bolted-frame",
     "inputs" : [
       {
@@ -159,14 +155,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-modular-frame"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 60,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-steeled-frame",
     "inputs" : [
       {
@@ -186,14 +182,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-modular-frame"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 10,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-encased-industrial-beam",
     "inputs" : [
       {
@@ -213,14 +209,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-encased-industrial-beam"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 15,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-encased-industrial-pipe",
     "inputs" : [
       {
@@ -240,14 +236,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-encased-industrial-beam"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alclad-aluminum-sheet",
     "inputs" : [
       {
@@ -267,14 +263,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-alclad-aluminum-sheet"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-coated-iron-plate",
     "inputs" : [
       {
@@ -294,14 +290,14 @@
     "output" : {
       "amount" : 15,
       "itemID" : "part-iron-plate"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-steel-coated-plate",
     "inputs" : [
       {
@@ -321,14 +317,14 @@
     "output" : {
       "amount" : 18,
       "itemID" : "part-iron-plate"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-alclad-casing",
     "inputs" : [
       {
@@ -348,14 +344,14 @@
     "output" : {
       "amount" : 15,
       "itemID" : "part-aluminum-casing"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 15,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-rotor",
     "inputs" : [
       {
@@ -375,14 +371,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-rotor"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-copper-rotor",
     "inputs" : [
       {
@@ -402,14 +398,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-rotor"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-steel-rotor",
     "inputs" : [
       {
@@ -429,14 +425,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-rotor"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-stator",
     "inputs" : [
       {
@@ -456,14 +452,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-stator"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 15,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-quickwire-stator",
     "inputs" : [
       {
@@ -483,14 +479,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-stator"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-motor",
     "inputs" : [
       {
@@ -510,14 +506,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-motor"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-electric-motor",
     "inputs" : [
       {
@@ -537,14 +533,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-motor"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-heat-sink",
     "inputs" : [
       {
@@ -564,14 +560,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-heat-sink"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-heat-exchanger",
     "inputs" : [
       {
@@ -591,14 +587,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-heat-sink"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-circuit-board",
     "inputs" : [
       {
@@ -618,14 +614,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-circuit-board"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-electrode-circuit-board",
     "inputs" : [
       {
@@ -645,14 +641,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-circuit-board"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-silicon-circuit-board",
     "inputs" : [
       {
@@ -672,14 +668,14 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-circuit-board"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 48,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-caterium-circuit-board",
     "inputs" : [
       {
@@ -699,14 +695,14 @@
     "output" : {
       "amount" : 7,
       "itemID" : "part-circuit-board"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-ai-limiter",
     "inputs" : [
       {
@@ -726,14 +722,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-ai-limiter"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 20,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-fused-wire",
     "inputs" : [
       {
@@ -753,14 +749,14 @@
     "output" : {
       "amount" : 30,
       "itemID" : "part-wire"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-insulated-cable",
     "inputs" : [
       {
@@ -780,14 +776,14 @@
     "output" : {
       "amount" : 20,
       "itemID" : "part-cable"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-quickwire-cable",
     "inputs" : [
       {
@@ -807,14 +803,14 @@
     "output" : {
       "amount" : 11,
       "itemID" : "part-cable"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-fused-quickwire",
     "inputs" : [
       {
@@ -834,14 +830,14 @@
     "output" : {
       "amount" : 12,
       "itemID" : "part-quickwire"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 64,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-crystal-computer",
     "inputs" : [
       {
@@ -861,14 +857,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-computer"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 20,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-oc-supercomputer",
     "inputs" : [
       {
@@ -888,14 +884,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-supercomputer"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-rubber-concrete",
     "inputs" : [
       {
@@ -915,14 +911,14 @@
     "output" : {
       "amount" : 9,
       "itemID" : "part-concrete"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-fine-concrete",
     "inputs" : [
       {
@@ -942,14 +938,14 @@
     "output" : {
       "amount" : 10,
       "itemID" : "part-concrete"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-compacted-coal",
     "inputs" : [
       {
@@ -969,14 +965,14 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-compacted-coal"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-cheap-silica",
     "inputs" : [
       {
@@ -996,14 +992,14 @@
     "output" : {
       "amount" : 7,
       "itemID" : "part-silica"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 30,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-electromagnetic-control-rod",
     "inputs" : [
       {
@@ -1023,14 +1019,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-electromagnetic-control-rod"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 15,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-electromagnetic-connection-rod",
     "inputs" : [
       {
@@ -1050,14 +1046,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-electromagnetic-control-rod"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-encased-plutonium-cell",
     "inputs" : [
       {
@@ -1077,14 +1073,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-encased-plutonium-cell"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 120,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-plutonium-fuel-unit",
     "inputs" : [
       {
@@ -1104,14 +1100,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-plutonium-fuel-rod"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 30,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-smart-plating",
     "inputs" : [
       {
@@ -1131,14 +1127,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-smart-plating"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-versatile-framework",
     "inputs" : [
       {
@@ -1158,14 +1154,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-versatile-framework"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-automated-wiring",
     "inputs" : [
       {
@@ -1185,14 +1181,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-automated-wiring"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 80,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-assembly-director-system",
     "inputs" : [
       {
@@ -1212,14 +1208,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-assembly-director-system"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-fabric",
     "inputs" : [
       {
@@ -1239,14 +1235,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-fabric"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 60,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-pressure-conversion-cube",
     "inputs" : [
       {
@@ -1266,14 +1262,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-pressure-conversion-cube"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-coated-iron-canister",
     "inputs" : [
       {
@@ -1293,14 +1289,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-empty-canister"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-ficsmas-ornament-bundle",
     "inputs" : [
       {
@@ -1320,14 +1316,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-ficsmas-ornament-bundle"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 60,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-ficsmas-decoration",
     "inputs" : [
       {
@@ -1347,14 +1343,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-ficsmas-decoration"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 60,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-ficsmas-wonder-star",
     "inputs" : [
       {
@@ -1374,14 +1370,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-ficsmas-wonder-star"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-black-powder",
     "inputs" : [
       {
@@ -1402,14 +1398,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-black-powder"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-alternate-fine-black-powder",
     "inputs" : [
       {
@@ -1429,14 +1425,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-black-powder"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-stun-rebar",
     "inputs" : [
       {
@@ -1457,14 +1453,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-stun-rebar"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-shatter-rebar",
     "inputs" : [
       {
@@ -1485,14 +1481,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-shatter-rebar"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-nobelisk",
     "inputs" : [
       {
@@ -1513,14 +1509,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-nobelisk"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-gas-nobelisk",
     "inputs" : [
       {
@@ -1541,14 +1537,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-gas-nobelisk"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-cluster-nobelisk",
     "inputs" : [
       {
@@ -1569,14 +1565,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-cluster-nobelisk"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 60,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-pulse-nobelisk",
     "inputs" : [
       {
@@ -1597,14 +1593,14 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-pulse-nobelisk"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-rifle-ammo",
     "inputs" : [
       {
@@ -1625,14 +1621,14 @@
     "output" : {
       "amount" : 15,
       "itemID" : "part-rifle-ammo"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 15,
-      "min" : 15
-    },
     "id" : "recipe-homing-rifle-ammo",
     "inputs" : [
       {
@@ -1653,6 +1649,10 @@
     "output" : {
       "amount" : 10,
       "itemID" : "part-homing-rifle-ammo"
+    },
+    "powerConsumption" : {
+      "max" : 15,
+      "min" : 15
     }
   },
   {
@@ -1660,10 +1660,6 @@
 
     ],
     "duration" : 10,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-cooling-system",
     "inputs" : [
       {
@@ -1691,6 +1687,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-cooling-system"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -1698,10 +1698,6 @@
 
     ],
     "duration" : 32,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-alternate-cooling-device",
     "inputs" : [
       {
@@ -1725,6 +1721,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-cooling-system"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -1732,10 +1732,6 @@
 
     ],
     "duration" : 40,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-fused-modular-frame",
     "inputs" : [
       {
@@ -1759,6 +1755,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-fused-modular-frame"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -1766,10 +1766,6 @@
 
     ],
     "duration" : 20,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-alternate-heat-fused-frame",
     "inputs" : [
       {
@@ -1797,6 +1793,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-fused-modular-frame"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -1807,10 +1807,6 @@
       }
     ],
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-battery",
     "inputs" : [
       {
@@ -1834,6 +1830,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-battery"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -1841,10 +1841,6 @@
 
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-alternate-diluted-fuel",
     "inputs" : [
       {
@@ -1864,6 +1860,10 @@
     "output" : {
       "amount" : 10,
       "itemID" : "part-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -1871,10 +1871,6 @@
 
     ],
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-alternate-turbo-blend-fuel",
     "inputs" : [
       {
@@ -1902,6 +1898,10 @@
     "output" : {
       "amount" : 6,
       "itemID" : "part-turbofuel"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -1912,10 +1912,6 @@
       }
     ],
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-non-fissile-uranium",
     "inputs" : [
       {
@@ -1943,6 +1939,10 @@
     "output" : {
       "amount" : 20,
       "itemID" : "part-non-fissile-uranium"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -1953,10 +1953,6 @@
       }
     ],
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-alternate-fertile-uranium",
     "inputs" : [
       {
@@ -1984,6 +1980,10 @@
     "output" : {
       "amount" : 20,
       "itemID" : "part-non-fissile-uranium"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -1994,10 +1994,6 @@
       }
     ],
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-encased-uranium-cell",
     "inputs" : [
       {
@@ -2021,6 +2017,10 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-encased-uranium-cell"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -2028,10 +2028,6 @@
 
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-nitric-acid",
     "inputs" : [
       {
@@ -2055,6 +2051,10 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-nitric-acid"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -2065,10 +2065,6 @@
       }
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 75,
-      "min" : 75
-    },
     "id" : "recipe-alternate-instant-scrap",
     "inputs" : [
       {
@@ -2096,14 +2092,14 @@
     "output" : {
       "amount" : 30,
       "itemID" : "part-aluminum-scrap"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-iron-plate",
     "inputs" : [
       {
@@ -2119,14 +2115,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-iron-plate"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-iron-rod",
     "inputs" : [
       {
@@ -2142,14 +2138,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-iron-rod"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 5,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-alternate-steel-rod",
     "inputs" : [
       {
@@ -2165,14 +2161,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-iron-rod"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-screw",
     "inputs" : [
       {
@@ -2188,14 +2184,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-screw"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-alternate-cast-screw",
     "inputs" : [
       {
@@ -2211,14 +2207,14 @@
     "output" : {
       "amount" : 20,
       "itemID" : "part-screw"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-alternate-steel-screw",
     "inputs" : [
       {
@@ -2234,14 +2230,14 @@
     "output" : {
       "amount" : 52,
       "itemID" : "part-screw"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-copper-sheet",
     "inputs" : [
       {
@@ -2257,14 +2253,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-copper-sheet"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-steel-beam",
     "inputs" : [
       {
@@ -2280,14 +2276,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-steel-beam"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-steel-pipe",
     "inputs" : [
       {
@@ -2303,14 +2299,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-steel-pipe"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 2,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-aluminum-casing",
     "inputs" : [
       {
@@ -2326,14 +2322,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-aluminum-casing"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-wire",
     "inputs" : [
       {
@@ -2349,14 +2345,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-wire"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-alternate-iron-wire",
     "inputs" : [
       {
@@ -2372,14 +2368,14 @@
     "output" : {
       "amount" : 9,
       "itemID" : "part-wire"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-alternate-caterium-wire",
     "inputs" : [
       {
@@ -2395,14 +2391,14 @@
     "output" : {
       "amount" : 8,
       "itemID" : "part-wire"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 2,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-cable",
     "inputs" : [
       {
@@ -2418,14 +2414,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-cable"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 5,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-quickwire",
     "inputs" : [
       {
@@ -2441,14 +2437,14 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-quickwire"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-concrete",
     "inputs" : [
       {
@@ -2464,14 +2460,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-concrete"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-quartz-crystal",
     "inputs" : [
       {
@@ -2487,14 +2483,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-quartz-crystal"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-silica",
     "inputs" : [
       {
@@ -2510,14 +2506,14 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-silica"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-copper-powder",
     "inputs" : [
       {
@@ -2533,14 +2529,14 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-copper-powder"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-color-cartridge",
     "inputs" : [
       {
@@ -2556,14 +2552,14 @@
     "output" : {
       "amount" : 10,
       "itemID" : "part-color-cartridge"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 5,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-biomass-leaves",
     "inputs" : [
       {
@@ -2579,14 +2575,14 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-biomass"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-biomass-wood",
     "inputs" : [
       {
@@ -2602,14 +2598,14 @@
     "output" : {
       "amount" : 20,
       "itemID" : "part-biomass"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-biomass-mycelia",
     "inputs" : [
       {
@@ -2625,14 +2621,14 @@
     "output" : {
       "amount" : 10,
       "itemID" : "part-biomass"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-biomass-alien-protein",
     "inputs" : [
       {
@@ -2648,14 +2644,14 @@
     "output" : {
       "amount" : 100,
       "itemID" : "part-biomass"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-solid-biofuel",
     "inputs" : [
       {
@@ -2671,14 +2667,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-solid-biofuel"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-alternate-biocoal",
     "inputs" : [
       {
@@ -2694,14 +2690,14 @@
     "output" : {
       "amount" : 6,
       "itemID" : "part-coal"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-alternate-charcoal",
     "inputs" : [
       {
@@ -2717,14 +2713,14 @@
     "output" : {
       "amount" : 10,
       "itemID" : "part-coal"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-empty-canister",
     "inputs" : [
       {
@@ -2740,14 +2736,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-empty-canister"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-alternate-steel-canister",
     "inputs" : [
       {
@@ -2763,14 +2759,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-empty-canister"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 1,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-empty-fluid-tank",
     "inputs" : [
       {
@@ -2786,14 +2782,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-empty-fluid-tank"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-hog-protein",
     "inputs" : [
       {
@@ -2809,14 +2805,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-alien-protein"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-hatcher-protein",
     "inputs" : [
       {
@@ -2832,14 +2828,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-alien-protein"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-stinger-protein",
     "inputs" : [
       {
@@ -2855,14 +2851,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-alien-protein"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-plasma-spitter-protein",
     "inputs" : [
       {
@@ -2878,14 +2874,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-alien-protein"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-alien-dna-capsule",
     "inputs" : [
       {
@@ -2901,14 +2897,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-alien-dna-capsule"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-power-shard-1",
     "inputs" : [
       {
@@ -2924,14 +2920,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-power-shard"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-power-shard-2",
     "inputs" : [
       {
@@ -2947,14 +2943,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-power-shard"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-power-shard-5",
     "inputs" : [
       {
@@ -2970,14 +2966,14 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-power-shard"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-iron-rebar",
     "inputs" : [
       {
@@ -2994,14 +2990,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-iron-rebar"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-ficsmas-tree-branch",
     "inputs" : [
       {
@@ -3017,14 +3013,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-ficsmas-tree-branch"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-candy-cane",
     "inputs" : [
       {
@@ -3040,14 +3036,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-candy-cane"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-ficsmas-bow",
     "inputs" : [
       {
@@ -3063,14 +3059,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-ficsmas-bow"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-actual-snow",
     "inputs" : [
       {
@@ -3086,14 +3082,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-actual-snow"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-snowball",
     "inputs" : [
       {
@@ -3109,14 +3105,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-snowball"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 16,
-      "min" : 16
-    },
     "id" : "recipe-steel-ingot",
     "inputs" : [
       {
@@ -3136,14 +3132,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-steel-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
     }
   },
   {
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 16,
-      "min" : 16
-    },
     "id" : "recipe-alternate-solid-steel-ingot",
     "inputs" : [
       {
@@ -3163,14 +3159,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-steel-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 16,
-      "min" : 16
-    },
     "id" : "recipe-alternate-compacted-steel-ingot",
     "inputs" : [
       {
@@ -3190,14 +3186,14 @@
     "output" : {
       "amount" : 10,
       "itemID" : "part-steel-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 16,
-      "min" : 16
-    },
     "id" : "recipe-alternate-coke-steel-ingot",
     "inputs" : [
       {
@@ -3217,14 +3213,14 @@
     "output" : {
       "amount" : 20,
       "itemID" : "part-steel-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 16,
-      "min" : 16
-    },
     "id" : "recipe-alternate-iron-alloy-ingot",
     "inputs" : [
       {
@@ -3244,14 +3240,14 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-iron-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 16,
-      "min" : 16
-    },
     "id" : "recipe-alternate-copper-alloy-ingot",
     "inputs" : [
       {
@@ -3271,14 +3267,14 @@
     "output" : {
       "amount" : 20,
       "itemID" : "part-copper-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 16,
-      "min" : 16
-    },
     "id" : "recipe-aluminum-ingot",
     "inputs" : [
       {
@@ -3298,14 +3294,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-aluminum-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 16,
-      "min" : 16
-    },
     "id" : "recipe-copprt-ficsmas-ornament",
     "inputs" : [
       {
@@ -3325,14 +3321,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-copper-ficsmas-ornament"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 16,
-      "min" : 16
-    },
     "id" : "recipe-iron-ficsmas-ornament",
     "inputs" : [
       {
@@ -3352,14 +3348,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-iron-ficsmas-ornament"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
     }
   },
   {
     "duration" : 30,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-heavy-modular-frame",
     "inputs" : [
       {
@@ -3387,14 +3383,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-heavy-modular-frame"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-heavy-flexible-frame",
     "inputs" : [
       {
@@ -3422,14 +3418,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-heavy-modular-frame"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 64,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-heavy-encased-frame",
     "inputs" : [
       {
@@ -3457,14 +3453,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-heavy-modular-frame"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 32,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-turbo-motor",
     "inputs" : [
       {
@@ -3492,14 +3488,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-turbo-motor"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 64,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-turbo-electric-motor",
     "inputs" : [
       {
@@ -3527,14 +3523,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-turbo-motor"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 32,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-turbo-pressure-motor",
     "inputs" : [
       {
@@ -3562,14 +3558,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-turbo-motor"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 48,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-rigour-motor",
     "inputs" : [
       {
@@ -3593,14 +3589,14 @@
     "output" : {
       "amount" : 6,
       "itemID" : "part-motor"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-classic-battery",
     "inputs" : [
       {
@@ -3628,14 +3624,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-battery"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-high-speed-connector",
     "inputs" : [
       {
@@ -3659,14 +3655,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-high-speed-connector"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 40,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-silicon-high-speed-connector",
     "inputs" : [
       {
@@ -3690,14 +3686,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-high-speed-connector"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-computer",
     "inputs" : [
       {
@@ -3725,14 +3721,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-computer"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-caterium-computer",
     "inputs" : [
       {
@@ -3756,14 +3752,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-computer"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 120,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-crystal-oscillator",
     "inputs" : [
       {
@@ -3787,14 +3783,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-crystal-oscillator"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 32,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-insulated-crystal-oscillator",
     "inputs" : [
       {
@@ -3818,14 +3814,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-crystal-oscillator"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 32,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-supercomputer",
     "inputs" : [
       {
@@ -3853,14 +3849,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-supercomputer"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 50,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-super-state-computer",
     "inputs" : [
       {
@@ -3888,14 +3884,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-supercomputer"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 48,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-radio-control-unit",
     "inputs" : [
       {
@@ -3919,14 +3915,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-radio-control-unit"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-radio-connection-unit",
     "inputs" : [
       {
@@ -3950,14 +3946,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-radio-control-unit"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 40,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-radio-control-system",
     "inputs" : [
       {
@@ -3985,14 +3981,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-radio-control-unit"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 150,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-uranium-fuel-rod",
     "inputs" : [
       {
@@ -4016,14 +4012,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-uranium-fuel-rod"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 300,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-uranium-fuel-unit",
     "inputs" : [
       {
@@ -4051,14 +4047,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-uranium-fuel-rod"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-infused-uranium-cell",
     "inputs" : [
       {
@@ -4086,14 +4082,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-encased-uranium-cell"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 240,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-plutonium-fuel-rod",
     "inputs" : [
       {
@@ -4121,14 +4117,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-plutonium-fuel-rod"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-gas-filter",
     "inputs" : [
       {
@@ -4152,14 +4148,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-gas-filter"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-iodine-infused-filter",
     "inputs" : [
       {
@@ -4183,14 +4179,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-iodine-infused-filter"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 20,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-rifle-cartridge",
     "inputs" : [
       {
@@ -4218,14 +4214,14 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-rifle-ammo"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 60,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-modular-engine",
     "inputs" : [
       {
@@ -4249,14 +4245,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-modular-engine"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 120,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-adaptive-control-unit",
     "inputs" : [
       {
@@ -4284,14 +4280,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-adaptive-control-unit"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 120,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-magnetic-field-generator",
     "inputs" : [
       {
@@ -4315,14 +4311,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-magnetic-field-generator"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 120,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-thermal-propulsion-rocket",
     "inputs" : [
       {
@@ -4350,14 +4346,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-thermal-propulsion-rocket"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-plastic-smart-plating",
     "inputs" : [
       {
@@ -4381,14 +4377,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-smart-plating"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-flexible-framework",
     "inputs" : [
       {
@@ -4412,14 +4408,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-versatile-framework"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 32,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-automated-speed-wiring",
     "inputs" : [
       {
@@ -4443,14 +4439,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-automated-wiring"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-beacon",
     "inputs" : [
       {
@@ -4478,14 +4474,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-beacon"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 120,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-crystal-beacon",
     "inputs" : [
       {
@@ -4509,14 +4505,14 @@
     "output" : {
       "amount" : 20,
       "itemID" : "equipment-beacon"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 60,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-alternate-automated-miner",
     "inputs" : [
       {
@@ -4544,14 +4540,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-portable-miner"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-explosive-rebar",
     "inputs" : [
       {
@@ -4575,14 +4571,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-explosive-rebar"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 120,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-nuke-nobelisk",
     "inputs" : [
       {
@@ -4610,14 +4606,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-nuke-nobelisk"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 55,
-      "min" : 55
-    },
     "id" : "recipe-turbo-rifle-ammo",
     "inputs" : [
       {
@@ -4641,14 +4637,14 @@
     "output" : {
       "amount" : 50,
       "itemID" : "part-turbo-rifle-ammo"
+    },
+    "powerConsumption" : {
+      "max" : 55,
+      "min" : 55
     }
   },
   {
     "duration" : 300,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-uranium-waste",
     "inputs" : [
       {
@@ -4664,14 +4660,14 @@
     "output" : {
       "amount" : 50,
       "itemID" : "part-uranium-waste"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 600,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-plutonium-waste",
     "inputs" : [
       {
@@ -4687,6 +4683,10 @@
     "output" : {
       "amount" : 10,
       "itemID" : "part-plutonium-waste"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
@@ -4694,10 +4694,6 @@
 
     ],
     "duration" : 2,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-packaged-water",
     "inputs" : [
       {
@@ -4717,6 +4713,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-packaged-water"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -4724,10 +4724,6 @@
 
     ],
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-packaged-oil",
     "inputs" : [
       {
@@ -4747,6 +4743,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-packaged-oil"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -4754,10 +4754,6 @@
 
     ],
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-packaged-heavy-oil-residue",
     "inputs" : [
       {
@@ -4777,6 +4773,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-packaged-heavy-oil-residue"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -4784,10 +4784,6 @@
 
     ],
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-packaged-fuel",
     "inputs" : [
       {
@@ -4807,6 +4803,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-packaged-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -4814,10 +4814,6 @@
 
     ],
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-packaged-liquid-biofuel",
     "inputs" : [
       {
@@ -4837,6 +4833,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-packaged-liquid-biofuel"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -4844,10 +4844,6 @@
 
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-packaged-turbofuel",
     "inputs" : [
       {
@@ -4867,6 +4863,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-packaged-turbofuel"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -4874,10 +4874,6 @@
 
     ],
     "duration" : 1,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-packaged-alumina-solution",
     "inputs" : [
       {
@@ -4897,6 +4893,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-packaged-alumina-solution"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -4904,10 +4904,6 @@
 
     ],
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-packaged-sulfuric-acid",
     "inputs" : [
       {
@@ -4927,6 +4923,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-packaged-sulfuric-acid"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -4934,10 +4934,6 @@
 
     ],
     "duration" : 1,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-packaged-nitrogen-gas",
     "inputs" : [
       {
@@ -4957,6 +4953,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-packaged-nitrogen-gas"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -4964,10 +4964,6 @@
 
     ],
     "duration" : 2,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-packaged-nitric-acid",
     "inputs" : [
       {
@@ -4987,6 +4983,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-packaged-nitric-acid"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -4997,10 +4997,6 @@
       }
     ],
     "duration" : 1,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-unpackaged-water",
     "inputs" : [
       {
@@ -5016,6 +5012,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-water"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -5026,10 +5026,6 @@
       }
     ],
     "duration" : 2,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-unpackaged-oil",
     "inputs" : [
       {
@@ -5045,6 +5041,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-crude-oil"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -5055,10 +5055,6 @@
       }
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-unpackaged-heavy-oil-residue",
     "inputs" : [
       {
@@ -5074,6 +5070,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-heavy-oil-residue"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -5084,10 +5084,6 @@
       }
     ],
     "duration" : 2,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-unpackaged-fuel",
     "inputs" : [
       {
@@ -5103,6 +5099,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -5113,10 +5113,6 @@
       }
     ],
     "duration" : 2,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-unpackaged-liquid-biofuel",
     "inputs" : [
       {
@@ -5132,6 +5128,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-liquid-biofuel"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -5142,10 +5142,6 @@
       }
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-unpackaged-turbofuel",
     "inputs" : [
       {
@@ -5161,6 +5157,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-turbofuel"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -5171,10 +5171,6 @@
       }
     ],
     "duration" : 1,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-unpackaged-alumina-solution",
     "inputs" : [
       {
@@ -5190,6 +5186,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-alumina-solution"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -5200,10 +5200,6 @@
       }
     ],
     "duration" : 1,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-unpackaged-sulfuric-acid",
     "inputs" : [
       {
@@ -5219,6 +5215,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-sulfuric-acid"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -5229,10 +5229,6 @@
       }
     ],
     "duration" : 1,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-unpackaged-nitrogen-gas",
     "inputs" : [
       {
@@ -5248,6 +5244,10 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-nitrogen-gas"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
@@ -5258,10 +5258,6 @@
       }
     ],
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 10,
-      "min" : 10
-    },
     "id" : "recipe-unpackaged-nitric-acid",
     "inputs" : [
       {
@@ -5277,14 +5273,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-nitric-acid"
+    },
+    "powerConsumption" : {
+      "max" : 10,
+      "min" : 10
     }
   },
   {
     "duration" : 60,
-    "electricityConsumption" : {
-      "max" : 750,
-      "min" : 250
-    },
     "id" : "recipe-plutonium-pellet",
     "inputs" : [
       {
@@ -5304,14 +5300,14 @@
     "output" : {
       "amount" : 30,
       "itemID" : "part-plutonium-pellet"
+    },
+    "powerConsumption" : {
+      "max" : 750,
+      "min" : 250
     }
   },
   {
     "duration" : 120,
-    "electricityConsumption" : {
-      "max" : 750,
-      "min" : 250
-    },
     "id" : "recipe-alternate-instant-plutonium-cell",
     "inputs" : [
       {
@@ -5331,14 +5327,14 @@
     "output" : {
       "amount" : 20,
       "itemID" : "part-encased-plutonium-cell"
+    },
+    "powerConsumption" : {
+      "max" : 750,
+      "min" : 250
     }
   },
   {
     "duration" : 120,
-    "electricityConsumption" : {
-      "max" : 1500,
-      "min" : 500
-    },
     "id" : "recipe-nuclear-pasta",
     "inputs" : [
       {
@@ -5358,14 +5354,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-nuclear-pasta"
+    },
+    "powerConsumption" : {
+      "max" : 1500,
+      "min" : 500
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-pure-iron-ingot",
     "inputs" : [
       {
@@ -5385,14 +5381,14 @@
     "output" : {
       "amount" : 13,
       "itemID" : "part-iron-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 24,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-pure-copper-ingot",
     "inputs" : [
       {
@@ -5412,14 +5408,14 @@
     "output" : {
       "amount" : 15,
       "itemID" : "part-copper-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 5,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-pure-caterium-ingot",
     "inputs" : [
       {
@@ -5439,14 +5435,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-caterium-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-wet-concrete",
     "inputs" : [
       {
@@ -5466,14 +5462,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-concrete"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-pure-quartz-crystal",
     "inputs" : [
       {
@@ -5493,14 +5489,14 @@
     "output" : {
       "amount" : 7,
       "itemID" : "part-quartz-crystal"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-polyester-fabric",
     "inputs" : [
       {
@@ -5520,14 +5516,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-fabric"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-steamed-copper-sheet",
     "inputs" : [
       {
@@ -5547,14 +5543,14 @@
     "output" : {
       "amount" : 3,
       "itemID" : "part-copper-sheet"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-coated-cable",
     "inputs" : [
       {
@@ -5574,6 +5570,10 @@
     "output" : {
       "amount" : 9,
       "itemID" : "part-cable"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
@@ -5584,10 +5584,6 @@
       }
     ],
     "duration" : 1,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-aluminum-scrap",
     "inputs" : [
       {
@@ -5607,6 +5603,10 @@
     "output" : {
       "amount" : 6,
       "itemID" : "part-aluminum-scrap"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
@@ -5617,10 +5617,6 @@
       }
     ],
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-electrode-aluminum-scrap",
     "inputs" : [
       {
@@ -5640,6 +5636,10 @@
     "output" : {
       "amount" : 20,
       "itemID" : "part-aluminum-scrap"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
@@ -5650,10 +5650,6 @@
       }
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alumina-solution",
     "inputs" : [
       {
@@ -5673,14 +5669,14 @@
     "output" : {
       "amount" : 12,
       "itemID" : "part-alumina-solution"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 3,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-sloppy-alumina",
     "inputs" : [
       {
@@ -5700,14 +5696,14 @@
     "output" : {
       "amount" : 12,
       "itemID" : "part-alumina-solution"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-sulfuric-acid",
     "inputs" : [
       {
@@ -5727,6 +5723,10 @@
     "output" : {
       "amount" : 10,
       "itemID" : "part-sulfuric-acid"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
@@ -5737,10 +5737,6 @@
       }
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-plastic",
     "inputs" : [
       {
@@ -5756,14 +5752,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-plastic"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-residual-plastic",
     "inputs" : [
       {
@@ -5783,14 +5779,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-plastic"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-recycled-plastic",
     "inputs" : [
       {
@@ -5810,6 +5806,10 @@
     "output" : {
       "amount" : 12,
       "itemID" : "part-plastic"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
@@ -5820,10 +5820,6 @@
       }
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-rubber",
     "inputs" : [
       {
@@ -5839,14 +5835,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-rubber"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-residual-rubber",
     "inputs" : [
       {
@@ -5866,14 +5862,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-rubber"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-recycled-rubber",
     "inputs" : [
       {
@@ -5893,14 +5889,14 @@
     "output" : {
       "amount" : 12,
       "itemID" : "part-rubber"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-petroleum-coke",
     "inputs" : [
       {
@@ -5916,6 +5912,10 @@
     "output" : {
       "amount" : 12,
       "itemID" : "part-petroleum-coke"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
@@ -5926,10 +5926,6 @@
       }
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-polymer-resin",
     "inputs" : [
       {
@@ -5945,6 +5941,10 @@
     "output" : {
       "amount" : 13,
       "itemID" : "part-polymer-resin"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
@@ -5955,10 +5955,6 @@
       }
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-heavy-oil-residue",
     "inputs" : [
       {
@@ -5974,6 +5970,10 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-heavy-oil-residue"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
@@ -5984,10 +5984,6 @@
       }
     ],
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-fuel",
     "inputs" : [
       {
@@ -6003,14 +5999,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-residual-fuel",
     "inputs" : [
       {
@@ -6026,14 +6022,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 2,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-diluted-packaged-fuel",
     "inputs" : [
       {
@@ -6053,14 +6049,14 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-packaged-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-liquid-biofuel",
     "inputs" : [
       {
@@ -6080,14 +6076,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-liquid-biofuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 16,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-turbofuel",
     "inputs" : [
       {
@@ -6107,14 +6103,14 @@
     "output" : {
       "amount" : 5,
       "itemID" : "part-turbofuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 8,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-alternate-turbo-heavy-fuel",
     "inputs" : [
       {
@@ -6134,14 +6130,14 @@
     "output" : {
       "amount" : 4,
       "itemID" : "part-turbofuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 6,
-    "electricityConsumption" : {
-      "max" : 30,
-      "min" : 30
-    },
     "id" : "recipe-smokeless-powder",
     "inputs" : [
       {
@@ -6161,6 +6157,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-smokeless-powder"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
@@ -6168,10 +6168,6 @@
 
     ],
     "duration" : 2,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-iron-ingot",
     "inputs" : [
       {
@@ -6187,6 +6183,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-iron-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
@@ -6194,10 +6194,6 @@
 
     ],
     "duration" : 2,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-copper-ingot",
     "inputs" : [
       {
@@ -6213,6 +6209,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-copper-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
@@ -6220,10 +6220,6 @@
 
     ],
     "duration" : 4,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-caterium-ingot",
     "inputs" : [
       {
@@ -6239,6 +6235,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-caterium-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
@@ -6246,10 +6246,6 @@
 
     ],
     "duration" : 2,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-altername-pure-aluminum-ingot",
     "inputs" : [
       {
@@ -6265,6 +6261,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-aluminum-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
@@ -6272,10 +6272,6 @@
 
     ],
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-red-ficsmas-ornament",
     "inputs" : [
       {
@@ -6291,6 +6287,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "part-red-ficsmas-ornament"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
@@ -6298,10 +6298,6 @@
 
     ],
     "duration" : 12,
-    "electricityConsumption" : {
-      "max" : 4,
-      "min" : 4
-    },
     "id" : "recipe-blue-ficsmas-ornament",
     "inputs" : [
       {
@@ -6317,6 +6313,10 @@
     "output" : {
       "amount" : 2,
       "itemID" : "part-blue-ficsmas-ornament"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
     }
   },
   {
@@ -6324,10 +6324,6 @@
 
     ],
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-parachute",
     "inputs" : [
       {
@@ -6346,6 +6342,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-parachute"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
@@ -6353,10 +6353,6 @@
 
     ],
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-jetpack",
     "inputs" : [
       {
@@ -6383,6 +6379,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-jetpack"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
@@ -6390,10 +6390,6 @@
 
     ],
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-hoverpack",
     "inputs" : [
       {
@@ -6420,6 +6416,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-hover-pack"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
@@ -6427,10 +6427,6 @@
 
     ],
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-hazmat-suit",
     "inputs" : [
       {
@@ -6457,14 +6453,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-hazmat-suit"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-portable-miner",
     "inputs" : [
       {
@@ -6483,14 +6479,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-portable-miner"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-object-scanner",
     "inputs" : [
       {
@@ -6513,14 +6509,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-object-scanner"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-chainsaw",
     "inputs" : [
       {
@@ -6547,14 +6543,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-chainsaw"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-factory-cart",
     "inputs" : [
       {
@@ -6577,14 +6573,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-factory-cart"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-zipline",
     "inputs" : [
       {
@@ -6611,14 +6607,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-zipline"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-golden-factory-cart",
     "inputs" : [
       {
@@ -6641,14 +6637,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-golden-factory-cart"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-protein-inhaler",
     "inputs" : [
       {
@@ -6667,14 +6663,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-medicinal-inhaler"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-nutritional-inhaler",
     "inputs" : [
       {
@@ -6697,14 +6693,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-medicinal-inhaler"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-vitamin-inhaler",
     "inputs" : [
       {
@@ -6723,14 +6719,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-medicinal-inhaler"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-therapeutic-inhaler",
     "inputs" : [
       {
@@ -6753,14 +6749,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-medicinal-inhaler"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-xeno-zapper",
     "inputs" : [
       {
@@ -6787,14 +6783,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-xeno-zapper"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-nobelisk-detonator",
     "inputs" : [
       {
@@ -6817,14 +6813,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-nobelisk-detonator"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-xeno-basher",
     "inputs" : [
       {
@@ -6851,14 +6847,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-xeno-basher"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-rebar-gun",
     "inputs" : [
       {
@@ -6881,14 +6877,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-rebar-gun"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-rifle",
     "inputs" : [
       {
@@ -6915,14 +6911,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-rifle"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-candy-cane-basher",
     "inputs" : [
       {
@@ -6945,14 +6941,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-candy-cane-basher"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-gas-mask",
     "inputs" : [
       {
@@ -6975,14 +6971,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-gas-mask"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-blade-runners",
     "inputs" : [
       {
@@ -7005,14 +7001,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "equipment-blade-runners"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-nuclear-power-plant",
     "inputs" : [
       {
@@ -7043,14 +7039,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-nuclear-power-plant"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-water-extractor",
     "inputs" : [
       {
@@ -7073,14 +7069,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-water-extractor"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-oil-extractor",
     "inputs" : [
       {
@@ -7103,14 +7099,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-oil-extractor"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-resource-well-pressurizer",
     "inputs" : [
       {
@@ -7137,14 +7133,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-resource-well-pressurizer"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-resource-well-extractor",
     "inputs" : [
       {
@@ -7163,14 +7159,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-resource-well-extractor"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-constructor",
     "inputs" : [
       {
@@ -7189,14 +7185,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-constructor"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-assembler",
     "inputs" : [
       {
@@ -7219,14 +7215,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-assembler"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-manufacturer",
     "inputs" : [
       {
@@ -7253,14 +7249,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-manufacturer"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-packager",
     "inputs" : [
       {
@@ -7283,14 +7279,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-packager"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-refinery",
     "inputs" : [
       {
@@ -7317,14 +7313,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-refinery"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-blender",
     "inputs" : [
       {
@@ -7351,14 +7347,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-blender"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-particle-accelerator",
     "inputs" : [
       {
@@ -7393,14 +7389,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-particle-accelerator"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-miner-mk-1",
     "inputs" : [
       {
@@ -7423,14 +7419,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-miner-mk-1"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-miner-mk-2",
     "inputs" : [
       {
@@ -7457,14 +7453,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-miner-mk-2"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-miner-mk-3",
     "inputs" : [
       {
@@ -7495,14 +7491,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-miner-mk-3"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-smelter",
     "inputs" : [
       {
@@ -7521,14 +7517,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-smelter"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-foundry",
     "inputs" : [
       {
@@ -7551,14 +7547,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-foundry"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-craft-bench",
     "inputs" : [
       {
@@ -7577,14 +7573,14 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-craft-bench"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   },
   {
     "duration" : 0,
-    "electricityConsumption" : {
-      "max" : 0,
-      "min" : 0
-    },
     "id" : "recipe-equipment-workshop",
     "inputs" : [
       {
@@ -7603,6 +7599,10 @@
     "output" : {
       "amount" : 1,
       "itemID" : "building-equipment-workshop"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
     }
   }
 ]

@@ -262,16 +262,18 @@ extension StatisticsViewModel {
             let additionalPercent = amount - Double(intAmount)
             
             if intAmount > 0, additionalPercent > 0 {
-                var result = AttributedString((intAmount + 1).formatted(.number))
                 var container = AttributeContainer()
+                container.font = .caption.weight(.semibold)
+                var result = AttributedString((intAmount + 1).formatted(.number), attributes: container)
                 container.font = .caption
                 result.append(AttributedString(" (1x \(additionalPercent.formatted(.shPercent)))", attributes: container))
                 return result
             } else if intAmount > 0 {
                 return AttributedString(intAmount.formatted(.number))
             } else if additionalPercent > 0 {
-                var result = AttributedString("1")
                 var container = AttributeContainer()
+                container.font = .caption.weight(.semibold)
+                var result = AttributedString("1", attributes: container)
                 container.font = .caption
                 result.append(AttributedString(" (\(additionalPercent.formatted(.shPercent)))", attributes: container))
                 return result

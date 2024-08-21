@@ -1,14 +1,21 @@
 import SwiftUI
 
 struct ListGradientSeparatorViewModifier: ViewModifier {
+    private let leadingPadding: Double
+    
     @Environment(\.displayScale)
     private var displayScale
+    
+    init(leadingPadding: Double) {
+        self.leadingPadding = leadingPadding
+    }
     
     func body(content: Content) -> some View {
         ZStack {
             content
             
             separator
+                .padding(.leading, leadingPadding)
         }
     }
     
@@ -26,7 +33,7 @@ struct ListGradientSeparatorViewModifier: ViewModifier {
 
 extension View {
     @MainActor @ViewBuilder
-    func addListGradientSeparator() -> some View {
-        modifier(ListGradientSeparatorViewModifier())
+    func addListGradientSeparator(leadingPadding: Double = 0) -> some View {
+        modifier(ListGradientSeparatorViewModifier(leadingPadding: leadingPadding))
     }
 }

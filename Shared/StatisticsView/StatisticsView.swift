@@ -27,6 +27,8 @@ struct StatisticsView: View {
                     
                     machinesSection
                         .padding(.horizontal, 20)
+                    
+                    Spacer(minLength: 30)
                 }
             }
             .animation(.default, value: viewModel.itemsSection)
@@ -108,20 +110,59 @@ struct StatisticsView: View {
     @MainActor @ViewBuilder
     private func itemView(_ _item: Binding<StatisticsViewModel.Item>) -> some View {
         let item = _item.wrappedValue
+        let name = item.statisticItem.item.localizedName
+        let valueString = AttributedString(item.statisticItem.amount.formatted(.shNumber))
         
-        row(
-            item: item.statisticItem.item,
-            expandLabel: item.subtitle,
-            valueString: AttributedString(item.statisticItem.amount.formatted(.shNumber)),
-            expandable: item.expandable,
-            isExpanded: _item.recipesExpanded,
-            data: item.statisticItem.recipes
-        ) { recipe in
-            contentRow(
-                title: recipe.recipe.localizedName,
-                valueString: AttributedString(recipe.amount.formatted(.shNumber))
-            )
+        VStack(spacing: 4) {
+            HStack(spacing: 12) {
+                ItemRowIcon(item.statisticItem.item)
+                
+                let itemRowView = itemRowContent(
+                    title: name,
+                    valueString: valueString,
+                    subtitle: item.subtitle,
+                    expandable: item.expandable,
+                    expanded: _item.recipesExpanded
+                )
+                
+                if item.expandable {
+                    Button {
+                        _item.wrappedValue.recipesExpanded.toggle()
+                    } label: {
+                        itemRowView
+                            .contentShape(.interaction, Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                } else {
+                    itemRowView
+                }
+            }
+            
+            if item.recipesExpanded {
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(item.statisticItem.recipes) { recipe in
+                        HStack(alignment: .firstTextBaseline) {
+                            Text(recipe.recipe.localizedName)
+                            
+                            Spacer()
+                            
+                            Text(AttributedString(recipe.amount.formatted(.shNumber)))
+                                .foregroundStyle(.sh(.midnight))
+                        }
+                    }
+                }
+                .font(.caption)
+                .padding(.leading, 64)
+                .padding(.bottom, 4)
+                .transition(
+                    .asymmetric(
+                        insertion: .opacity.animation(.default.speed(0.5)),
+                        removal: .opacity.animation(.default.speed(3))
+                    )
+                )
+            }
         }
+        .addListGradientSeparator(leadingPadding: 64)
     }
     
     @MainActor @ViewBuilder
@@ -130,17 +171,11 @@ struct StatisticsView: View {
             ItemRowIcon(naturalResource.item)
             
             HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(naturalResource.item.localizedName)
-                        .fontWeight(.semibold)
-                }
+                titleText(naturalResource.item.localizedName)
                 
                 Spacer()
                 
-                Text(naturalResource.amount, format: .shNumber)
-                    .font(.callout)
-                    .fontWeight(.medium)
-                    .foregroundStyle(.sh(.midnight))
+                valueText(naturalResource.amount.formatted(.shNumber))
             }
             .addListGradientSeparator()
         }
@@ -151,179 +186,179 @@ struct StatisticsView: View {
     private func machineView(_ _machine: Binding<StatisticsViewModel.Machine>) -> some View {
         let machine = _machine.wrappedValue
         
-        row(
-            item: machine.building,
-            subValueString: machine.powerValueString,
-            expandLabel: machine.subtitle,
-            valueString: machine.valueString,
-            expandable: machine.expandable,
-            isExpanded: _machine.recipesExpanded,
-            data: machine.recipes
-        ) { recipe in
-            contentRow(title: recipe.recipe.localizedName, valueString: recipe.valueString)
-        }
-    }
-    
-    @MainActor @ViewBuilder
-    private func row<Data: Identifiable, Content: View>(
-        item: any Item,
-        subValueString: String? = nil,
-        expandLabel: String,
-        valueString: AttributedString,
-        expandable: Bool,
-        isExpanded: Binding<Bool>,
-        data: [Data],
-        @ViewBuilder content: @escaping (Data) -> Content
-    ) -> some View {
-        HStack(alignment: .statisticItemCenter, spacing: 12) {
-            ItemRowIcon(item)
-            
-            ZStack {
-                if expandable {
-                    expandableRow(
-                        title: item.localizedName,
-                        subValueString: subValueString,
-                        expandLabel: expandLabel,
-                        valueString: valueString,
-                        isExpanded: isExpanded,
-                        data: data,
-                        content: content
-                    )
+        VStack(spacing: 4) {
+            HStack(spacing: 12) {
+                ItemRowIcon(machine.building)
+                
+                let rowContentView = productionBuildingRowContent(
+                    title: machine.building.localizedName,
+                    valueString: machine.valueString,
+                    subtitle: machine.subtitle,
+                    powerConsumptionValueString: machine.powerValueString,
+                    expandable: machine.expandable,
+                    expanded: _machine.recipesExpanded
+                )
+                
+                if machine.expandable {
+                    Button {
+                        _machine.recipesExpanded.wrappedValue.toggle()
+                    } label: {
+                        rowContentView
+                            .contentShape(.interaction, Rectangle())
+                    }
+                    .buttonStyle(.plain)
                 } else {
-                    staticRow(
-                        title: item.localizedName,
-                        subtitle: expandLabel,
-                        subValueString: subValueString,
-                        valueString: valueString
-                    )
+                    rowContentView
                 }
             }
-            .addListGradientSeparator()
-        }
-        .fixedSize(horizontal: false, vertical: true)
-    }
-    
-    @MainActor @ViewBuilder
-    private func expandableRow<Data: Identifiable, Content: View>(
-        title: String,
-        subValueString: String? = nil,
-        expandLabel: String,
-        valueString: AttributedString,
-        isExpanded: Binding<Bool>,
-        data: [Data],
-        @ViewBuilder content: @escaping (Data) -> Content
-    ) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            HStack(alignment: .firstTextBaseline) {
-                Text(title)
-                    .fontWeight(.semibold)
-                    .alignmentGuide(.statisticItemCenter) { d in
-                        d[.bottom] - 1
-                    }
-                
-                Spacer()
-                
-                Text(valueString)
-                    .font(.callout)
-                    .foregroundStyle(.sh(.midnight))
-            }
             
-            if let subValueString {
-                HStack(spacing: 4) {
-                    Image(systemName: "bolt.fill")
-                    
-                    Text(subValueString)
-                }
-                .font(.footnote)
-                .foregroundStyle(.sh(.midnight))
-            }
-            
-            Button {
-                isExpanded.wrappedValue.toggle()
-            } label: {
+            if machine.recipesExpanded {
                 VStack(alignment: .leading, spacing: 4) {
-                    HStack {
-                        Text(expandLabel)
-                            .font(.caption)
-                            .opacity(isExpanded.wrappedValue ? 0 : 1)
-                            .animation(.default.speed(2), value: isExpanded.wrappedValue)
-                        
-                        Spacer()
-                        
-                        ExpandArrow(isExpanded.wrappedValue)
-                            .stroke(lineWidth: isExpanded.wrappedValue ? 0.5 : 1)
-                            .foregroundStyle(.sh(isExpanded.wrappedValue ? .midnight30 : .midnight))
-                            .fixedSize(horizontal: false, vertical: true)
-                            .frame(width: 16)
-                    }
-                    
-                    if isExpanded.wrappedValue {
-                        VStack(alignment: .leading, spacing: 4) {
-                            ForEach(data) { data in
-                                HStack(alignment: .firstTextBaseline) {
-                                    content(data)
+                    ForEach(machine.recipes) { recipe in
+                        HStack(spacing: 12) {
+                            Image(recipe.recipe.output.item.id)
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .padding(4)
+                                .background {
+                                    AngledRectangle(cornerRadius: 4).inset(by: 1 / displayScale)
+                                        .fill(.sh(.gray20))
+                                        .stroke(.sh(.midnight40), lineWidth: 2 / displayScale)
                                 }
+                            
+                            HStack(alignment: .firstTextBaseline) {
+                                Text(recipe.recipe.localizedName)
+                                
+                                Spacer()
+                                
+                                Text(recipe.valueString)
+                                    .foregroundStyle(.sh(.midnight))
                             }
                         }
-                        .font(.caption)
-                        .transition(
-                            .asymmetric(
-                                insertion: .opacity.animation(.default.speed(0.5)),
-                                removal: .opacity.animation(.default.speed(3))
-                            )
-                        )
                     }
                 }
-                .contentShape(.interaction, Rectangle())
+                .font(.caption)
+                .padding(.leading, 24)
+                .transition(
+                    .asymmetric(
+                        insertion: .opacity.animation(.default.speed(0.5)),
+                        removal: .opacity.animation(.default.speed(3))
+                    )
+                )
             }
-            .buttonStyle(.plain)
         }
+        .padding(.bottom, 4)
+        .addListGradientSeparator(leadingPadding: 64)
     }
     
     @MainActor @ViewBuilder
-    private func staticRow(
+    private func itemRowContent(
         title: String,
+        valueString: AttributedString,
         subtitle: String,
-        subValueString: String? = nil,
-        valueString: AttributedString
+        expandable: Bool,
+        expanded: Binding<Bool>
     ) -> some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                Text(title)
-                    .fontWeight(.semibold)
+                titleText(title)
                 
-                if let subValueString {
-                    HStack(spacing: 4) {
-                        Image(systemName: "bolt.fill")
-                        
-                        Text(subValueString)
-                    }
-                    .font(.footnote)
-                    .foregroundStyle(.sh(.midnight))
-                }
-                
-                Text(subtitle)
-                    .font(.caption)
-                    .padding(.bottom, 4)
+                subtitleText(subtitle)
+                    .opacity(expanded.wrappedValue ? 0 : 1)
+                    .animation(.default.speed(2), value: expanded.wrappedValue)
             }
             
             Spacer()
             
-            Text(valueString)
-                .font(.callout)
-                .foregroundStyle(.sh(.midnight))
+            VStack(alignment: .trailing, spacing: 4) {
+                valueText(valueString)
+                
+                if expandable {
+                    expandArrow(expanded.wrappedValue)
+                }
+            }
         }
     }
     
     @MainActor @ViewBuilder
-    private func contentRow(title: String, valueString: AttributedString) -> some View {
+    private func productionBuildingRowContent(
+        title: String,
+        valueString: AttributedString,
+        subtitle: String,
+        powerConsumptionValueString: String,
+        expandable: Bool,
+        expanded: Binding<Bool>
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack(alignment: .firstTextBaseline) {
+                titleText(title)
+                
+                Spacer()
+                
+                valueText(valueString)
+            }
+            
+            powerConsumptionText(powerConsumptionValueString)
+            
+            HStack {
+                subtitleText(subtitle)
+                    .opacity(expanded.wrappedValue ? 0 : 1)
+                    .animation(.default.speed(2), value: expanded.wrappedValue)
+                
+                Spacer()
+                
+                if expandable {
+                    expandArrow(expanded.wrappedValue)
+                }
+            }
+        }
+    }
+    
+    // MARK: Components
+    @MainActor @ViewBuilder
+    private func titleText(_ title: String) -> some View {
         Text(title)
-        
-        Spacer()
-        
-        Text(valueString)
             .fontWeight(.semibold)
+    }
+    
+    @MainActor @ViewBuilder
+    private func valueText(_ valueString: String) -> some View {
+        Text(valueString)
+            .font(.callout)
             .foregroundStyle(.sh(.midnight))
+    }
+    
+    @MainActor @ViewBuilder
+    private func valueText(_ valueString: AttributedString) -> some View {
+        Text(valueString)
+            .font(.callout)
+            .foregroundStyle(.sh(.midnight))
+    }
+    
+    @MainActor @ViewBuilder
+    private func subtitleText(_ subtitle: String) -> some View {
+        Text(subtitle)
+            .font(.caption)
+    }
+    
+    @MainActor @ViewBuilder
+    private func expandArrow(_ expanded: Bool) -> some View {
+        ExpandArrow(expanded)
+            .stroke(lineWidth: expanded ? 0.5 : 1)
+            .foregroundStyle(.sh(expanded ? .midnight30 : .midnight))
+            .fixedSize(horizontal: false, vertical: true)
+            .frame(width: 16)
+    }
+    
+    @MainActor @ViewBuilder
+    private func powerConsumptionText(_ valueString: String) -> some View {
+        HStack(spacing: 4) {
+            Image(systemName: "bolt.fill")
+                .foregroundStyle(.sh(.cyan))
+
+            Text(valueString)
+        }
+        .font(.footnote)
     }
 }
 
@@ -333,12 +368,23 @@ private struct StatisticItemCenterAlignment: AlignmentID {
     }
 }
 
+private struct ProductionBuildingIconAlignment: AlignmentID {
+    static func defaultValue(in context: ViewDimensions) -> CGFloat {
+        context[.trailing]
+    }
+}
+
 private extension VerticalAlignment {
     static let statisticItemCenter = VerticalAlignment(StatisticItemCenterAlignment.self)
 }
 
+private extension HorizontalAlignment {
+    static let productionBuildingIcon = HorizontalAlignment(ProductionBuildingIconAlignment.self)
+}
+
 private extension Alignment {
     static let statisticItemCenter = Alignment(horizontal: .center, vertical: .statisticItemCenter)
+    static let productionBuildingIcon = Alignment(horizontal: .productionBuildingIcon, vertical: .center)
 }
 
 #if DEBUG

@@ -60,12 +60,8 @@ struct RecipeIngredientAmountView: View {
     _ProductionRecipeIngredientAmountPreview(role: .input)
 }
 
-#Preview("Production Recipe - Secondary byproduct (Index 0)") {
-    _ProductionRecipeIngredientAmountPreview(role: .secondaryByproduct, index: 0)
-}
-
-#Preview("Production Recipe - Secondary byproduct (Index 1)") {
-    _ProductionRecipeIngredientAmountPreview(role: .secondaryByproduct, index: 1)
+#Preview("Production Recipe - Additional amount") {
+    _ProductionRecipeAdditionalAmountPreview()
 }
 
 private struct _RecipeIngredientAmountPreview: View {
@@ -110,7 +106,6 @@ private struct _ProductionRecipeIngredientAmountPreview: View {
         case output
         case byproduct
         case input
-        case secondaryByproduct
     }
     
     let role: Role
@@ -127,28 +122,39 @@ private struct _ProductionRecipeIngredientAmountPreview: View {
                 .padding(.vertical)
             
             HStack {
-                ingredientAmount(form: .solid, selected: false)
+                ingredientAmount(form: .solid, selected: false, naturalResource: false)
                 
-                ingredientAmount(form: .fluid, selected: false)
+                ingredientAmount(form: .fluid, selected: false, naturalResource: false)
                 
-                ingredientAmount(form: .gas, selected: false)
+                ingredientAmount(form: .gas, selected: false, naturalResource: false)
+            }
+            
+            Text("Natural Resource")
+                .padding(.vertical)
+            
+            HStack {
+                ingredientAmount(form: .solid, selected: false, naturalResource: true)
+                
+                ingredientAmount(form: .fluid, selected: false, naturalResource: true)
+                
+                ingredientAmount(form: .gas, selected: false, naturalResource: true)
             }
             
             Text("Selected")
                 .padding(.vertical)
             
             HStack {
-                ingredientAmount(form: .solid, selected: true)
+                ingredientAmount(form: .solid, selected: true, naturalResource: false)
                 
-                ingredientAmount(form: .fluid, selected: true)
+                ingredientAmount(form: .fluid, selected: true, naturalResource: false)
                 
-                ingredientAmount(form: .gas, selected: true)
+                ingredientAmount(form: .gas, selected: true, naturalResource: false)
             }
         }
     }
     
     @ViewBuilder
-    private func ingredientAmount(form: Part.Form, selected: Bool) -> some View {
+    private func ingredientAmount(form: Part.Form, selected: Bool, naturalResource: Bool) -> some View {
         VStack {
             switch form {
             case .solid:
@@ -166,19 +172,50 @@ private struct _ProductionRecipeIngredientAmountPreview: View {
                 RecipeIngredientAmountViewModel(productionOutput: productionIngredient(form: form, selected: selected))
                 
             case .byproduct:
-                RecipeIngredientAmountViewModel(productionByproduct: productionIngredient(form: form, selected: selected))
+                RecipeIngredientAmountViewModel(productionByproduct: productionIngredient(form: form, selected: selected, naturalResource: naturalResource))
                 
             case .input:
-                RecipeIngredientAmountViewModel(productionInput: productionIngredient(form: form, selected: selected))
-                
-            case .secondaryByproduct:
-                RecipeIngredientAmountViewModel(
-                    productionSecondaryByproduct: productionSecondaryByproduct(index: index ?? 0),
-                    item: part(form: form)
-                )
+                RecipeIngredientAmountViewModel(productionInput: productionIngredient(form: form, selected: selected, naturalResource: naturalResource))
             }
             
             RecipeIngredientAmountView(viewModel: viewModel)
+        }
+    }
+}
+
+private struct _ProductionRecipeAdditionalAmountPreview: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            ForEach(0..<7) { index in
+                HStack {
+                    ingredientAmount(form: .solid, index: index)
+                    
+                    ingredientAmount(form: .fluid, index: index)
+                    
+                    ingredientAmount(form: .gas, index: index)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func ingredientAmount(form: Part.Form, index: Int) -> some View {
+        VStack {
+            switch form {
+            case .solid:
+                Text("Solid")
+                
+            case .fluid:
+                Text("Fluid")
+                
+            case .gas:
+                Text("Gas")
+            }
+            
+            RecipeIngredientAmountView(viewModel: RecipeIngredientAmountViewModel(
+                productionSecondaryByproduct: productionSecondaryByproduct(index: index),
+                item: part(form: form)
+            ))
         }
     }
 }
@@ -202,19 +239,31 @@ private func productionIngredient(form: Part.Form, selected: Bool) -> SingleItem
     )
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool) -> SingleItemCalculator.OutputRecipe.ByproductIngredient {
+private func productionIngredient(form: Part.Form, selected: Bool, naturalResource: Bool) -> SingleItemCalculator.OutputRecipe.ByproductIngredient {
     SingleItemCalculator.OutputRecipe.ByproductIngredient(
-        item: Part(id: "preview-part", category: .special, progressionIndex: 0, form: form),
+        item: Part(
+            id: "preview-part",
+            category: .special,
+            progressionIndex: 0,
+            form: form,
+            isNaturalResource: naturalResource
+        ),
         amount: 10,
         byproducts: [],
         isSelected: selected
     )
 }
 
-private func productionIngredient(form: Part.Form, selected: Bool) -> SingleItemCalculator.OutputRecipe.InputIngredient {
+private func productionIngredient(form: Part.Form, selected: Bool, naturalResource: Bool) -> SingleItemCalculator.OutputRecipe.InputIngredient {
     SingleItemCalculator.OutputRecipe.InputIngredient(
         producingProductID: nil,
-        item: Part(id: "preview-part", category: .special, progressionIndex: 0, form: form),
+        item: Part(
+            id: "preview-part",
+            category: .special,
+            progressionIndex: 0,
+            form: form,
+            isNaturalResource: naturalResource
+        ),
         amount: 10,
         byproducts: [],
         isSelected: selected

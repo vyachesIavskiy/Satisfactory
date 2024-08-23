@@ -17,6 +17,11 @@ struct SHColor {
     }
 }
 
+// MARK: General
+extension SHColor {
+    static let background1 = SHColor(name: "Colors/Background - 1")
+}
+
 // MARK: - Orange
 extension SHColor {
     static let orange10 = SHColor(name: "Colors/Orange/Orange - 10")

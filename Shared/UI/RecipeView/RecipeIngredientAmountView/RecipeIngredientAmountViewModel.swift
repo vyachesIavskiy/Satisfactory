@@ -26,7 +26,7 @@ final class RecipeIngredientAmountViewModel {
         
         switch ingredient.role {
         case .output:
-            primaryColor = .sh(.gray40)
+            primaryColor = .sh(.gray50)
             shadowColor = .sh(.gray30)
             
         case .byproduct:
@@ -34,12 +34,12 @@ final class RecipeIngredientAmountViewModel {
             case .solid, nil:
                 primaryColor = .sh(.orange)
                 shadowColor = .sh(.orange30)
-                secondaryStyle = AnyShapeStyle(.sh(.orange20).gradient)
+                secondaryStyle = AnyShapeStyle(Gradient(colors: [.sh(.orange10), .sh(.orange50)]))
                 
             case .fluid, .gas:
                 primaryColor = .sh(.cyan)
                 shadowColor = .sh(.cyan30)
-                secondaryStyle = AnyShapeStyle(.sh(.cyan20).gradient)
+                secondaryStyle = AnyShapeStyle(Gradient(colors: [.sh(.cyan10), .sh(.cyan50)]))
             }
             
         case .input:
@@ -67,7 +67,7 @@ final class RecipeIngredientAmountViewModel {
         self.init(
             item: output.item,
             amount: output.amount,
-            primaryColor: .sh(.gray40),
+            primaryColor: .sh(.gray50),
             shadowColor: .sh(.gray30)
         )
     }
@@ -76,7 +76,7 @@ final class RecipeIngredientAmountViewModel {
         self.init(
             item: output.item,
             amount: amount,
-            primaryColor: .sh(.gray40),
+            primaryColor: .sh(.gray50),
             shadowColor: .sh(.gray30)
         )
     }
@@ -86,17 +86,26 @@ final class RecipeIngredientAmountViewModel {
         let secondaryStyle: AnyShapeStyle
         let primaryColor: Color
         let shadowColor: Color
+        let part = (byproduct.item as? Part)
+        let isNaturalResource = part?.isNaturalResource == true
         
-        switch (byproduct.item as? Part)?.form {
+        switch part?.form {
         case .solid, nil:
             primaryColor = .sh(.orange)
             shadowColor = .sh(.orange30)
             
             if byproduct.isSelected {
-                foregroundStyle = AnyShapeStyle(.sh(.orange30).gradient)
-                secondaryStyle = AnyShapeStyle(.sh(.orange20))
+                foregroundStyle = AnyShapeStyle(Gradient(colors: [.sh(.orange30), .sh(.orange)]))
+                secondaryStyle = AnyShapeStyle(Gradient(colors: [.sh(.orange10), .sh(.orange40)]))
             } else {
-                secondaryStyle = AnyShapeStyle(.sh(.orange20).gradient)
+                if isNaturalResource {
+                    foregroundStyle = AnyShapeStyle(Gradient(stops: [
+                        Gradient.Stop(color: .sh(.background1), location: 0),
+                        Gradient.Stop(color: .sh(.background1), location: 0.7),
+                        Gradient.Stop(color: .sh(.orange50), location: 1)
+                    ]))
+                }
+                secondaryStyle = AnyShapeStyle(Gradient(colors: [.sh(.orange10), .sh(.orange50)]))
             }
             
         case .fluid, .gas:
@@ -104,10 +113,17 @@ final class RecipeIngredientAmountViewModel {
             shadowColor = .sh(.cyan30)
             
             if byproduct.isSelected {
-                foregroundStyle = AnyShapeStyle(.sh(.cyan30).gradient)
-                secondaryStyle = AnyShapeStyle(.sh(.cyan20))
+                foregroundStyle = AnyShapeStyle(Gradient(colors: [.sh(.cyan30), .sh(.cyan)]))
+                secondaryStyle = AnyShapeStyle(Gradient(colors: [.sh(.cyan10), .sh(.cyan40)]))
             } else {
-                secondaryStyle = AnyShapeStyle(.sh(.cyan20).gradient)
+                if isNaturalResource {
+                    foregroundStyle = AnyShapeStyle(Gradient(stops: [
+                        Gradient.Stop(color: .sh(.background1), location: 0),
+                        Gradient.Stop(color: .sh(.background1), location: 0.7),
+                        Gradient.Stop(color: .sh(.cyan50), location: 1)
+                    ]))
+                }
+                secondaryStyle = AnyShapeStyle(Gradient(colors: [.sh(.cyan10), .sh(.cyan50)]))
             }
         }
         
@@ -130,37 +146,35 @@ final class RecipeIngredientAmountViewModel {
         
         switch part?.form {
         case .solid, nil:
-            if isNaturalResource {
-                primaryColor = .sh(.orange80)
-                shadowColor = .sh(.orange20)
-            } else {
-                primaryColor = .sh(.orange)
-                shadowColor = .sh(.orange30)
-            }
+            primaryColor = .sh(.orange)
+            shadowColor = .sh(.orange30)
             
-            if input.isSelected {
-                foregroundStyle = AnyShapeStyle(.sh(.orange30).gradient)
+            foregroundStyle = if input.isSelected {
+                AnyShapeStyle(Gradient(colors: [.sh(.orange30), .sh(.orange)]))
             } else if isNaturalResource {
-                foregroundStyle = AnyShapeStyle(.sh(.orange10).gradient)
+                AnyShapeStyle(Gradient(stops: [
+                    Gradient.Stop(color: .sh(.background1), location: 0),
+                    Gradient.Stop(color: .sh(.background1), location: 0.7),
+                    Gradient.Stop(color: .sh(.orange50), location: 1)
+                ]))
             } else {
-                foregroundStyle = AnyShapeStyle(.background)
+                AnyShapeStyle(.background)
             }
             
         case .fluid, .gas:
-            if isNaturalResource {
-                primaryColor = .sh(.gray80)
-                shadowColor = .sh(.gray20)
-            } else {
-                primaryColor = .sh(.cyan)
-                shadowColor = .sh(.cyan30)
-            }
+            primaryColor = .sh(.cyan)
+            shadowColor = .sh(.cyan30)
             
-            if input.isSelected {
-                foregroundStyle = AnyShapeStyle(.sh(.cyan30).gradient)
+            foregroundStyle = if input.isSelected {
+                AnyShapeStyle(Gradient(colors: [.sh(.cyan30), .sh(.cyan60)]))
             } else if isNaturalResource {
-                foregroundStyle = AnyShapeStyle(.sh(.cyan10).gradient)
+                AnyShapeStyle(Gradient(stops: [
+                    Gradient.Stop(color: .sh(.background1), location: 0),
+                    Gradient.Stop(color: .sh(.background1), location: 0.7),
+                    Gradient.Stop(color: .sh(.cyan50), location: 1)
+                ]))
             } else {
-                foregroundStyle = AnyShapeStyle(.background)
+                AnyShapeStyle(.background)
             }
         }
         
@@ -174,40 +188,52 @@ final class RecipeIngredientAmountViewModel {
     }
     
     convenience init(productionSecondaryByproduct byproduct: SingleItemCalculator.OutputRecipe.Byproduct, item: any Item) {
-        let foregroundColors = [
-            Color.sh(.blue30),
-            .sh(.magenta30),
-            .sh(.purple30),
-            .sh(.yellow30)
-        ]
-        
-        let secondaryColors = [
-            Color.sh(.blue20),
-            .sh(.magenta20),
-            .sh(.purple20),
-            .sh(.yellow20)
-        ]
-        
         let primaryColors = [
-            Color.sh(.blue),
-            .sh(.magenta),
-            .sh(.purple),
-            .sh(.yellow)
+            Color.sh(.yellow40),
+            Color.sh(.purple40),
+            Color.sh(.turquoise40),
+            Color.sh(.magenta40),
+            Color.sh(.blue40),
+            Color.sh(.green40),
+            Color.sh(.lime40),
         ]
         
         let shadowColors = [
+            Color.sh(.yellow30),
+            Color.sh(.purple30),
+            Color.sh(.turquoise30),
+            Color.sh(.magenta30),
             Color.sh(.blue30),
-            .sh(.magenta30),
-            .sh(.purple30),
-            .sh(.yellow30)
+            Color.sh(.green30),
+            Color.sh(.lime30),
+        ]
+        
+        let foregroundStyleColors = [
+            [Color.sh(.yellow20), Color.sh(.yellow40)],
+            [Color.sh(.purple20), Color.sh(.purple40)],
+            [Color.sh(.turquoise20), Color.sh(.turquoise40)],
+            [Color.sh(.magenta20), Color.sh(.magenta40)],
+            [Color.sh(.blue20), Color.sh(.blue40)],
+            [Color.sh(.green20), Color.sh(.green40)],
+            [Color.sh(.lime20), Color.sh(.lime40)],
+        ]
+        
+        let secondaryStyteColors = [
+            [Color.sh(.yellow10), Color.sh(.yellow20)],
+            [Color.sh(.purple10), Color.sh(.purple20)],
+            [Color.sh(.turquoise10), Color.sh(.turquoise20)],
+            [Color.sh(.magenta10), Color.sh(.magenta20)],
+            [Color.sh(.blue10), Color.sh(.blue20)],
+            [Color.sh(.green10), Color.sh(.green20)],
+            [Color.sh(.lime10), Color.sh(.lime20)],
         ]
         
         let resolvedIndex = byproduct.index % primaryColors.count
         
-        let foregroundStyle = AnyShapeStyle(foregroundColors[resolvedIndex].gradient)
-        let secondaryStyle = AnyShapeStyle(secondaryColors[resolvedIndex])
         let primaryColor = primaryColors[resolvedIndex]
         let shadowColor = shadowColors[resolvedIndex]
+        let foregroundStyle = AnyShapeStyle(Gradient(colors: foregroundStyleColors[resolvedIndex]))
+        let secondaryStyle = AnyShapeStyle(Gradient(colors: secondaryStyteColors[resolvedIndex]))
         
         self.init(
             item: item,

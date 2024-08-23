@@ -30,8 +30,7 @@ struct RecipeIngredientView: View {
                         .multilineTextAlignment(.center)
                         .lineLimit(2)
                         .minimumScaleFactor(0.7)
-                        .frame(maxWidth: 100)
-                        .fixedSize(horizontal: true, vertical: false)
+                        .frame(width: 100, height: 40)
                 }
             }
 

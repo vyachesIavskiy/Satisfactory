@@ -162,12 +162,12 @@ private struct _RecipeDisplayViewPreview: View {
     }
 }
 
-#Preview("Recipe Display View (Icon)") {
+#Preview("Recipe Display View") {
     _RecipeDisplayViewPreview()
         .showIngredientNames(false)
 }
 
-#Preview("Recipe Display View (Row)") {
+#Preview("Recipe Display View (with ingredient names)") {
     _RecipeDisplayViewPreview()
         .showIngredientNames(true)
 }

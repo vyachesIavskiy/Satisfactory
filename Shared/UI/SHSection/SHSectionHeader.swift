@@ -1,88 +1,52 @@
 import SwiftUI
 
-struct SHSection<Data, ID, Content: View>: View {
-    @Binding var expanded: Bool
-
-    private let title: String
-    private let data: [Data]
-    private let id: KeyPath<Data, ID>
-    private let content: (Data) -> Content
-    
-    @Environment(\.defaultMinListHeaderHeight)
-    private var defaultMinListHeaderHeight
-    
-    init(
-        _ title: String,
-        data: [Data],
-        id: KeyPath<Data, ID>,
-        expanded: Binding<Bool>,
-        @ViewBuilder content: @escaping (Data) -> Content
-    ) {
-        self.title = title
-        self.data = data
-        self.id = id
-        self._expanded = expanded
-        self.content = content
-    }
-    
-    init(
-        _ title: String,
-        data: [Data],
-        expanded: Binding<Bool>,
-        @ViewBuilder content: @escaping (Data) -> Content
-    ) where Data: Identifiable, Data.ID == ID {
-        self.init(title, data: data, id: \.id, expanded: expanded, content: content)
-    }
-    
-    init(
-        _ title: String,
-        range: Range<Int>,
-        expanded: Binding<Bool>,
-        @ViewBuilder content: @escaping (Data) -> Content
-    ) where Data == Int, ID == Int {
-        self.init(title, data: Array(range), id: \.self, expanded: expanded, content: content)
-    }
-    
-    var body: some View {
-        Section(isExpanded: $expanded) {
-            ForEach(data.indices, id: \.self) { index in
-                content(data[index])
-            }
-        } header: {
-            SHSectionHeader(title, expanded: $expanded)
-        }
-    }
-}
-
-// MARK: - Header
 struct SHSectionHeader<Label: View>: View {
-    var label: Label
-    @Binding var expanded: Bool
+    @Environment(\.displayScale)
+    private var displayScale
     
-    init(expanded: Binding<Bool>, @ViewBuilder label: () -> Label) {
+    var label: Label
+    var expanded: Binding<Bool>?
+    
+    init(expanded: Binding<Bool>? = nil, @ViewBuilder label: () -> Label) {
         self.label = label()
-        self._expanded = expanded
+        self.expanded = expanded
     }
     
-    init(_ title: String, expanded: Binding<Bool>) where Label == Text {
+    init(_ title: String, expanded: Binding<Bool>? = nil) where Label == Text {
         self.label = Text(title)
-        self._expanded = expanded
+        self.expanded = expanded
     }
     
     var body: some View {
-        Button {
-            withAnimation(.default.speed(2)) {
-                expanded.toggle()
+        let resolvedLabel = label
+            .textCase(nil)
+            .font(.callout)
+            .fontWeight(.semibold)
+            .drawingGroup()
+        
+        if let expanded {
+            Button {
+                withAnimation(.default.speed(2)) {
+                    expanded.wrappedValue.toggle()
+                }
+            } label: {
+                resolvedLabel
+                    .foregroundStyle(.sh(expanded.wrappedValue ? .gray : .midnight))
             }
-        } label: {
-            label
-                .textCase(nil)
-                .font(.callout)
-                .fontWeight(.semibold)
-                .foregroundStyle(.sh(expanded ? .gray : .midnight))
-                .drawingGroup()
+            .buttonStyle(ButtonStyle(expanded.wrappedValue))
+        } else {
+            resolvedLabel
+                .foregroundStyle(.sh(.gray))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 3)
+                .padding(.bottom, 5)
+                .padding(.trailing, 4)
+                .background(alignment: .bottom) {
+                    Rectangle()
+                        .frame(height: 2 / displayScale)
+                        .foregroundStyle(.sh(.midnight30))
+                }
         }
-        .buttonStyle(ButtonStyle(expanded))
     }
 }
 
@@ -91,7 +55,8 @@ private extension SHSectionHeader {
     struct ButtonStyle: SwiftUI.ButtonStyle {
         var expanded: Bool
         
-        @Environment(\.displayScale) private var displayScale
+        @Environment(\.displayScale)
+        private var displayScale
         
         init(_ expanded: Bool) {
             self.expanded = expanded
@@ -161,17 +126,25 @@ struct ExpandArrow: Shape {
 #if DEBUG
 // MARK: - Previews
 private struct _SHSectionPreview: View {
-    @State private var expanded1 = true
-    @State private var expanded2 = true
+    @State
+    private var expanded = true
     
     var body: some View {
         List {
-            SHSection("SHSection preview\n(Second line for preview of long section name)", range: 0..<10, expanded: $expanded1) { index in
-                Text("Row \(index)")
+            Section(isExpanded: $expanded) {
+                ForEach(0..<10) { index in
+                    Text("Row \(index)")
+                }
+            } header: {
+                SHSectionHeader("SHSection preview\n(Second line for preview of long section name)", expanded: $expanded)
             }
             
-            SHSection("SHSection preview", range: 0..<10, expanded: $expanded2) { index in
-                Text("Row \(index)")
+            Section {
+                ForEach(0..<10) { index in
+                    Text("Row \(index)")
+                }
+            } header: {
+                SHSectionHeader("SHSection preview")
             }
         }
     }

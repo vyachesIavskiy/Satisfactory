@@ -71,7 +71,6 @@ struct ProductView: View {
         }
         .frame(minHeight: 24)
         .padding(.vertical, 8)
-        .background(.background)
         .animation(.default, value: viewModel.canAdjust)
     }
     

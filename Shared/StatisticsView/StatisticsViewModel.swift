@@ -60,16 +60,7 @@ final class StatisticsViewModel {
             let recipeMachines = statisticItem.recipes.reduce(into: [Machine]()) { partialResult, statisticRecipe in
                 guard let recipeMachine = statisticRecipe.recipe.machine else { return }
                 
-                let recipeAmount = statisticRecipe.amount / statisticRecipe.recipe.amountPerMinute
-                let newMachineRecipe = MachineRecipe(
-                    building: recipeMachine,
-                    recipe: statisticRecipe.recipe,
-                    amount: statisticRecipe.amount / statisticRecipe.recipe.amountPerMinute,
-                    powerConsumption: Recipe.PowerConsumption(
-                        min: statisticRecipe.recipe.powerConsumption.min * Int(recipeAmount.rounded(.up)),
-                        max: statisticRecipe.recipe.powerConsumption.max * Int(recipeAmount.rounded(.up))
-                    )
-                )
+                let newMachineRecipe = MachineRecipe(statisticRecipe: statisticRecipe)
                 
                 if let index = partialResult.firstIndex(where: { $0.building == recipeMachine }) {
                     partialResult[index].recipes.append(newMachineRecipe)
@@ -248,7 +239,7 @@ extension StatisticsViewModel {
 
 extension StatisticsViewModel {
     struct MachineRecipe: Identifiable, Hashable {
-        let building: Building
+        let id = UUID()
         let recipe: Recipe
         var amount: Double
         var powerConsumption: Recipe.PowerConsumption
@@ -290,7 +281,15 @@ extension StatisticsViewModel {
             }
         }
         
-        var id: String { "\(building.id)-\(recipe.id)" }
+        init(statisticRecipe: StatisticRecipe) {
+            let recipeAmount = statisticRecipe.amount / statisticRecipe.recipe.amountPerMinute
+            recipe = statisticRecipe.recipe
+            amount = statisticRecipe.amount / statisticRecipe.recipe.amountPerMinute
+            powerConsumption = Recipe.PowerConsumption(
+                min: statisticRecipe.recipe.powerConsumption.min * Int(recipeAmount.rounded(.up)),
+                max: statisticRecipe.recipe.powerConsumption.max * Int(recipeAmount.rounded(.up))
+            )
+        }
     }
 }
 

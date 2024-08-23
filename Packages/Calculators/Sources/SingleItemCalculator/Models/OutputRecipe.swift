@@ -59,10 +59,11 @@ extension SingleItemCalculator.OutputRecipe {
             "id: \(id), \(item), amount: \(amount), additional amounts: \(additionalAmounts)"
         }
         
-        public init(id: UUID = UUID(), item: any Item, amount: Double) {
+        public init(id: UUID = UUID(), item: any Item, amount: Double, additionalAmounts: [Double] = []) {
             self.id = id
             self.item = item
             self.amount = amount
+            self.additionalAmounts = additionalAmounts
         }
     }
     

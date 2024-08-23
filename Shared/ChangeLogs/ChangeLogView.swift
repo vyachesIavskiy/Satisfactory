@@ -1,31 +1,25 @@
 import SwiftUI
 
 struct ChangeLogView: View {
-    enum Mode {
-        case showOnLaunch
-        case normal
-    }
-    
-    let mode: Mode
-    let changeLog: ChangeLog
-    
     @Environment(\.dismiss)
     private var dismiss
     
-    init(_ changeLog: ChangeLog, mode: Mode) {
+    @Environment(\.displayScale)
+    private var displayScale
+    
+    let changeLog: ChangeLog
+    
+    init(_ changeLog: ChangeLog) {
         self.changeLog = changeLog
-        self.mode = mode
     }
     
     var body: some View {
         ScrollView {
             LazyVStack {
                 updateMessageSection
-                
-                whatsNewSection
-                
-                changeSection("Fixes", changes: changeLog.changes[.fix])
+                                
                 changeSection("Important", changes: changeLog.changes[.important])
+                changeSection("Fixes", changes: changeLog.changes[.fix])
                 changeSection("Added", changes: changeLog.changes[.addition])
                 changeSection("Removed", changes: changeLog.changes[.removal])
             }
@@ -33,34 +27,13 @@ struct ChangeLogView: View {
         }
         .background(.sh(.midnight10))
         .navigationTitle(changeLog.version.title)
-        .toolbar {
-            if mode == .showOnLaunch {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("OK") {
-                        ChangeLog.allChangeLogsAreShown = true
-                        dismiss()
-                    }
-                }
-            }
-        }
-        .interactiveDismissDisabled(mode == .showOnLaunch)
     }
     
     @MainActor @ViewBuilder
     private var updateMessageSection: some View {
         Text(changeLog.updateMessage)
-            .font(.headline)
-            .fontWeight(.regular)
+            .font(.title3)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
-            .background(.background, in: AngledRectangle(cornerRadius: 8))
-    }
-    
-    @MainActor @ViewBuilder
-    private var whatsNewSection: some View {
-        Text("What's changed:")
-            .font(.largeTitle)
             .padding(.vertical, 12)
     }
     
@@ -73,19 +46,24 @@ struct ChangeLogView: View {
                         (imageTextAttachment(for: change.changeType) + Text(change.log))
                             .font(.callout)
                             .foregroundStyle(.primary)
+                            .padding(.vertical, 4)
+                        
+                        if index != changes.indices.last {
+                            LinearGradient(
+                                colors: [.sh(.midnight40), .sh(.gray10)],
+                                startPoint: .leading,
+                                endPoint: UnitPoint(x: 0.85, y: 0.5)
+                            )
+                            .frame(height: 2 / displayScale)
+                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 12)
-                    .padding(.vertical, 8)
-                    .background(.background, in: AngledRectangle(cornerRadius: 8))
                 }
+                .padding(.vertical, 8)
+                .background(.background, in: AngledRectangle(cornerRadius: 8))
             } header: {
-                Text(title)
-                    .font(.footnote)
-                    .fontWeight(.semibold)
-                    .textCase(.uppercase)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundStyle(.sh(.midnight50))
+                SHSectionHeader(title)
             }
         }
     }
@@ -96,33 +74,24 @@ struct ChangeLogView: View {
         case .important: "exclamationmark.square.fill"
         }
         
-        let color: Color = switch changeType {
-        case .fix: .sh(.blue70)
-        case .addition: .sh(.green70)
-        case .removal: .sh(.red70)
-        case .important: .sh(.orange70)
+        let gradient: Gradient = switch changeType {
+        case .fix: Gradient(colors: [.sh(.blue50), .sh(.blue70)])
+        case .addition: Gradient(colors: [.sh(.green50), .sh(.green70)])
+        case .removal: Gradient(colors: [.sh(.red50), .sh(.red70)])
+        case .important: Gradient(colors: [.sh(.orange50), .sh(.orange70)])
         }
         
         let image = Image(systemName: imageName)
         return Text("\(image)  ")
             .font(.footnote)
-            .foregroundStyle(color)
+            .foregroundStyle(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
     }
 }
 
 #if DEBUG
 #Preview("Change log") {
     NavigationStack {
-        ChangeLogView(.previewValue, mode: .normal)
+        ChangeLogView(.previewValue)
     }
-}
-
-#Preview("Change log (show on launch)") {
-    Color.clear
-        .sheet(isPresented: .constant(true)) {
-            NavigationStack {
-                ChangeLogView(.previewValue, mode: .showOnLaunch)
-            }
-        }
 }
 #endif

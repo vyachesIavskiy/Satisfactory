@@ -17,17 +17,6 @@ struct RecipeDisplayView: View {
     private var titleRowSpacing = 16.0
     
     var body: some View {
-        let backgroundShape = AngledRectangle(cornerRadius: 8).inset(by: -4)
-        
-        recipeBody
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.background, in: backgroundShape)
-            .contentShape(.interaction, Rectangle())
-            .contentShape(.contextMenuPreview, backgroundShape)
-    }
-    
-    @MainActor @ViewBuilder
-    private var recipeBody: some View {
         VStack(alignment: .leading, spacing: titleIconSpacing) {
             titleView
             
@@ -60,15 +49,10 @@ struct RecipeDisplayView: View {
                             inputsGridView
                         }
                     }
-                    
-//                    LazyVGrid(columns: [gridItem, gridItem], spacing: 12) {
-//                        inputsView
-//                            .frame(maxHeight: .infinity)
-//                    }
-//                    .fixedSize()
                 }
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     @MainActor @ViewBuilder
@@ -137,10 +121,6 @@ struct RecipeDisplayView: View {
                 }
             }
         }
-//        
-//        ForEach(Array(viewModel.inputIngredientViewModels().enumerated()), id: \.element.item.id) { index, viewModel in
-//            RecipeIngredientView(viewModel: viewModel)
-//        }
     }
 }
 

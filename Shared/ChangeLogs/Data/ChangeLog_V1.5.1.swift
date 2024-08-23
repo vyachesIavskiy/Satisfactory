@@ -11,7 +11,7 @@ extension ChangeLog {
             Shotout to Alexander, who sent me a feedback about this issue.
             """,
             changes: [
-                Change(
+                ChangeLog.Change(
                     log: "Fixed a crash when you try to access Uranium or Plutonium waste.",
                     changeType: .fix
                 )

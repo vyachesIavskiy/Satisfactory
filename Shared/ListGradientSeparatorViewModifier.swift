@@ -11,7 +11,7 @@ struct ListGradientSeparatorViewModifier: ViewModifier {
     }
     
     func body(content: Content) -> some View {
-        ZStack {
+        ZStack(alignment: .leading) {
             content
             
             separator

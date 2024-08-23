@@ -2,13 +2,10 @@ import SwiftUI
 
 struct TabsView: View {
     @State
-    var changeLogToShow = ChangeLog.latest
-    
-    @State
-    var selectedTab = 0
+    private var viewModel = TabsViewModel()
     
     var body: some View {
-        TabView(selection: $selectedTab) {
+        TabView(selection: $viewModel.selectedTabIndex) {
             NewProductionView()
                 .tint(.sh(.orange))
                 .tabItem {
@@ -19,7 +16,7 @@ struct TabsView: View {
             FactoriesView()
                 .tint(.sh(.orange))
                 .tabItem {
-                    if selectedTab == 1 {
+                    if viewModel.selectedTabIndex == 1 {
                         Label("Factories", systemImage: "building.2.fill")
                     } else {
                         Label("Factories", systemImage: "building.2")
@@ -36,9 +33,14 @@ struct TabsView: View {
                 .tag(2)
         }
         .tint(.sh(.midnight))
-        .sheet(item: $changeLogToShow) { changeLog in
+        .onAppear {
+            viewModel.checkWhatsNewStatus()
+        }
+        .sheet(isPresented: $viewModel.shouldPresentWhatsNew) {
             NavigationStack {
-                ChangeLogView(changeLog, mode: .showOnLaunch)
+                WhatsNewView {
+                    viewModel.didShowWhatsNew()
+                }
             }
             .interactiveDismissDisabled(true)
         }

@@ -70,6 +70,18 @@ public extension SHStorageService {
         return items.first { $0.id == id }
     }
     
+    func part(id: String) -> Part? {
+        parts().first { $0.id == id }
+    }
+    
+    func equipment(id: String) -> Equipment? {
+        equipment().first { $0.id == id }
+    }
+    
+    func building(id: String) -> Building? {
+        buildings().first { $0.id == id }
+    }
+    
     /// Fetch all parts that can be automated.
     ///
     /// A part can be automated if there is a recipe which produces this part (as an output or a byproduct) and this recipe can be set in any production machine.

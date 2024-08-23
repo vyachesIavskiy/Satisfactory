@@ -42,27 +42,6 @@ struct CalculationView: View {
                 },
             isEnabled: !viewModel.showingUnsavedConfirmationDialog && !viewModel.canBeDismissedWithoutSaving && viewModel.modalNavigationState == nil
         )
-        .confirmationDialog(
-            "You have unsaved changes",
-            isPresented: $viewModel.showingUnsavedConfirmationDialog,
-            titleVisibility: .visible
-        ) {
-            Button("Save and exit") {
-                viewModel.saveProduction {
-                    dismiss()
-                }
-            }
-            
-            Button("Don't save", role: .destructive) {
-                dismiss()
-            }
-            
-            Button("Cancel", role: .cancel) {
-                // Do nothing
-            }
-        } message: {
-            Text("If you close production now, all unsaved changes will be lost. Would you like to save those changes?")
-        }
         .sheet(item: $viewModel.modalNavigationState) { state in
             sheetContentView(state: state)
         }
@@ -153,6 +132,27 @@ struct CalculationView: View {
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel") {
                     viewModel.showingUnsavedConfirmationDialog = true
+                }
+                .confirmationDialog(
+                    "You have unsaved changes",
+                    isPresented: $viewModel.showingUnsavedConfirmationDialog,
+                    titleVisibility: .visible
+                ) {
+                    Button("Save and exit") {
+                        viewModel.saveProduction {
+                            dismiss()
+                        }
+                    }
+                    
+                    Button("Don't save", role: .destructive) {
+                        dismiss()
+                    }
+                    
+                    Button("Cancel", role: .cancel) {
+                        // Do nothing
+                    }
+                } message: {
+                    Text("If you close production now, all unsaved changes will be lost. Would you like to save those changes?")
                 }
             }
         }

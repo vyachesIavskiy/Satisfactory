@@ -17,6 +17,7 @@ struct InitialRecipeSelectionView: View {
                 recipesSection($section)
             }
             .listSectionSeparator(.hidden)
+            .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
         .navigationTitle(viewModel.item.localizedName)
@@ -30,8 +31,20 @@ struct InitialRecipeSelectionView: View {
         let section = _section.wrappedValue
         if !section.recipes.isEmpty {
             Section(isExpanded: _section.expanded) {
-                ForEach(section.recipes) { recipe in
-                    recipeView(recipe)
+                VStack(spacing: 16) {
+                    ForEach(Array(section.recipes.enumerated()), id: \.element.id) { index, recipe in
+                        recipeView(recipe)
+                        
+                        if index != section.recipes.indices.last {
+                            Rectangle()
+                                .fill(LinearGradient(
+                                    colors: [.sh(.midnight40), .sh(.gray10)],
+                                    startPoint: .leading,
+                                    endPoint: UnitPoint(x: 0.85, y: 0.5)
+                                ))
+                                .frame(height: 2 / displayScale)
+                        }
+                    }
                 }
             } header: {
                 if viewModel.sectionHeaderVisible(section) {

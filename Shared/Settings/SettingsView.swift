@@ -21,7 +21,6 @@ struct SettingsView: View {
                     
                     feedbackSection
                 }
-                .frame(maxWidth: 600)
                 .navigationTitle("Settings")
             }
             .disabled(viewModel.feedbackResult == .sent)

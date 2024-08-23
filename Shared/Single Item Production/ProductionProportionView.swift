@@ -139,7 +139,9 @@ struct ProductionProportionView: View {
                         }
                     }
                     .frame(minWidth: 32)
+                    .lineLimit(1)
                 }
+                .fixedSize()
                 .menuStyle(.button)
                 .buttonStyle(.shBordered)
                 .tint(.sh(.midnight))

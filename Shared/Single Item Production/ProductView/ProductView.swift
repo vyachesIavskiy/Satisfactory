@@ -2,27 +2,30 @@ import SwiftUI
 import SingleItemCalculator
 
 struct ProductView: View {
-    let viewModel: ProductViewModel
+    @Environment(\.displayScale)
+    private var displayScale
     
-    private var nameID: String {
-        if viewModel.product.recipes.count == 1 {
-            "\(viewModel.product.recipes[0].id)_name"
-        } else {
-            "\(viewModel.product.item.id)_recipe_name"
-        }
-    }
+    let viewModel: ProductViewModel
     
     var body: some View {
         VStack {
             Section {
                 ForEach(Array(viewModel.product.recipes.enumerated()), id: \.element.id) { index, outputRecipe in
-                    VStack {
+                    VStack(spacing: 8) {
                         recipeView(outputRecipe)
                             .padding(.horizontal, 16)
                             .padding(.vertical, 8)
                         
-                        Divider()
-                            .padding(.leading, 16)
+                        if index != viewModel.product.recipes.indices.last {
+                            Rectangle()
+                                .fill(LinearGradient(
+                                    colors: [.sh(.midnight40), .sh(.gray10)],
+                                    startPoint: .leading,
+                                    endPoint: UnitPoint(x: 0.85, y: 0.5)
+                                ))
+                                .frame(height: 2 / displayScale)
+                                .padding(.leading, 16)
+                        }
                     }
                 }
             } header: {
@@ -69,7 +72,7 @@ struct ProductView: View {
                 }
             }
         }
-        .frame(minHeight: 24)
+        .frame(minHeight: 28)
         .padding(.vertical, 8)
         .animation(.default, value: viewModel.canAdjust)
     }
@@ -97,6 +100,7 @@ struct ProductView: View {
                         }
                     }
                     .font(.footnote)
+                    .lineLimit(1)
                     .foregroundStyle(.secondary)
                 }
             }

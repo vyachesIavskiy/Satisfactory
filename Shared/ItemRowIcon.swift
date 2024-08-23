@@ -7,36 +7,15 @@ struct ItemRowIcon: View {
     @Environment(\.displayScale)
     private var displayScale
     
-    @ScaledMetric(relativeTo: .body)
-    private var imageSize = 40.0
-    
-    @ScaledMetric(relativeTo: .body)
-    private var paddingSize = 6.0
-    
-    @ScaledMetric(relativeTo: .body)
-    private var cornerRadius = 5.0
-    
-    private var resolvedImageSize: Double {
-        min(imageSize, 90)
-    }
-    
-    private var resolvedPaddingSize: Double {
-        min(paddingSize, 10)
-    }
-    
-    private var resolvedCornerRadius: Double {
-        min(cornerRadius, 10)
-    }
-    
     private var backgroundIconShape: AnyShape {
         switch (item as? Part)?.form {
         case .solid, nil:
-            AnyShape(AngledRectangle(cornerRadius: resolvedCornerRadius).inset(by: 1 / displayScale))
+            AnyShape(AngledRectangle(cornerRadius: 5).inset(by: 1 / displayScale))
             
         case .fluid, .gas:
             AnyShape(UnevenRoundedRectangle(
-                bottomLeadingRadius: resolvedCornerRadius * 2,
-                topTrailingRadius: resolvedCornerRadius * 2
+                bottomLeadingRadius: 10,
+                topTrailingRadius: 10
             ).inset(by: 1 / displayScale))
         }
     }
@@ -48,8 +27,8 @@ struct ItemRowIcon: View {
     var body: some View {
         Image(item.id)
             .resizable()
-            .frame(width: resolvedImageSize, height: resolvedImageSize)
-            .padding(resolvedPaddingSize)
+            .frame(width: 40, height: 40)
+            .padding(6)
             .background {
                 backgroundIconShape
                     .fill(.sh(.gray20))

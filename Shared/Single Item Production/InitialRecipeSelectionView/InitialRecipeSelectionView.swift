@@ -11,15 +11,6 @@ struct InitialRecipeSelectionView: View {
     @Environment(\.dismiss)
     private var dismiss
     
-    @ScaledMetric(relativeTo: .title)
-    private var iconSize = 30.0
-    
-    @ScaledMetric(relativeTo: .body)
-    private var sectionSpacing = 8.0
-    
-    @ScaledMetric(relativeTo: .body)
-    private var recipeSpacing = 16.0
-    
     var body: some View {
         List {
             ForEach($viewModel.sections) { $section in

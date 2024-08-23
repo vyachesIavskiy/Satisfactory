@@ -9,19 +9,12 @@ extension NewProductionView {
         @Environment(\.displayScale) 
         private var displayScale
         
-        @ScaledMetric(relativeTo: .body)
-        private var titleSpacing = 12.0
-                
-        private var resolvedTitleSpacing: Double {
-            min(titleSpacing, 32)
-        }
-        
         init(_ item: any Item) {
             self.item = item
         }
         
         var body: some View {
-            HStack(spacing: resolvedTitleSpacing) {
+            HStack(spacing: 12) {
                 ItemRowIcon(item)
                 
                 HStack {

@@ -10,14 +10,8 @@ struct RecipeDisplayView: View {
     @Environment(\.displayScale)
     private var displayScale
     
-    @ScaledMetric(relativeTo: .body)
-    private var titleIconSpacing = 8.0
-    
-    @ScaledMetric(relativeTo: .body)
-    private var titleRowSpacing = 16.0
-    
     var body: some View {
-        VStack(alignment: .leading, spacing: titleIconSpacing) {
+        VStack(alignment: .leading, spacing: 8) {
             titleView
             
             ViewThatFits(in: .horizontal) {

@@ -9,12 +9,6 @@ struct SingleItemProductionRecipeDisplayView: View {
     @Environment(\.displayScale)
     private var displayScale
     
-    @ScaledMetric(relativeTo: .body)
-    private var titleIconSpacing = 8.0
-    
-    @ScaledMetric(relativeTo: .body)
-    private var titleRowSpacing = 16.0
-    
     var body: some View {
         recipeBody
             .frame(maxWidth: .infinity, alignment: .leading)

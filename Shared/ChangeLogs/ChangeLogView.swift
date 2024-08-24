@@ -18,10 +18,10 @@ struct ChangeLogView: View {
             LazyVStack {
                 updateMessageSection
                                 
-                changeSection("Important", changes: changeLog.changes[.important])
-                changeSection("Fixes", changes: changeLog.changes[.fix])
-                changeSection("Added", changes: changeLog.changes[.addition])
-                changeSection("Removed", changes: changeLog.changes[.removal])
+                changeSection("change-log-important-section-name", changes: changeLog.changes[.important])
+                changeSection("change-log-fixes-section-name", changes: changeLog.changes[.fix])
+                changeSection("change-log-added-section-name", changes: changeLog.changes[.addition])
+                changeSection("change-log-removed-section-name", changes: changeLog.changes[.removal])
             }
             .padding(.horizontal, 16)
         }
@@ -38,7 +38,7 @@ struct ChangeLogView: View {
     }
     
     @MainActor @ViewBuilder
-    private func changeSection(_ title: String, changes: [ChangeLog.Change]) -> some View {
+    private func changeSection(_ title: LocalizedStringKey, changes: [ChangeLog.Change]) -> some View {
         if !changes.isEmpty {
             Section {
                 VStack(spacing: 8) {

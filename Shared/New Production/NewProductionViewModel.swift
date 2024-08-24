@@ -209,7 +209,7 @@ extension NewProductionViewModel {
         
         var title: String {
             switch id {
-            case .pinned: "Pinned"
+            case .pinned: NSLocalizedString("new-production-pinned-section-name", value: "Pinned", comment: "")
             case let .parts(title), let .equipment(title): title
             }
         }

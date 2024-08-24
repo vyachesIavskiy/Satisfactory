@@ -1,0 +1,1773 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "'%@' is not found" : {
+
+    },
+    "[w: %@, h: %@]" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "[w: %1$@, h: %2$@]"
+          }
+        }
+      }
+    },
+    "[x: %lf, y: %lf]" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "[x: %1$lf, y: %2$lf]"
+          }
+        }
+      }
+    },
+    "%@" : {
+
+    },
+    "%@  " : {
+
+    },
+    "%lld productions" : {
+
+    },
+    "Are you sure you would like to delete production?" : {
+
+    },
+    "Bigger test in red border that will hold a couple of additional words to represent bigger UI control" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "change-log-added-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added"
+          }
+        }
+      }
+    },
+    "change-log-fixes-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixes"
+          }
+        }
+      }
+    },
+    "change-log-important-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Important"
+          }
+        }
+      }
+    },
+    "change-log-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changes"
+          }
+        }
+      }
+    },
+    "change-log-removed-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Removed"
+          }
+        }
+      }
+    },
+    "change-log-v1-4-change-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All recipes and items are updated to the latest data in the game"
+          }
+        }
+      }
+    },
+    "change-log-v1-4-change-2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It's now possible to hide items that do not have recipes."
+          }
+        }
+      }
+    },
+    "change-log-v1-4-change-3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed a bug with keyboard is not able to hide when you type amount of produced item."
+          }
+        }
+      }
+    },
+    "change-log-v1-4-change-4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In **Settings** menu there is now a new entry for sending your feedback. With this you can have more direct contact with me. All proposals, issues or anything else related to this app is much appreciated."
+          }
+        }
+      }
+    },
+    "change-log-v1-4-change-5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unfortunately if you had any saved production chains for items that are no longer in game (primarely weapons), these production chains are no longer available and you will have to create new ones."
+          }
+        }
+      }
+    },
+    "change-log-v1-4-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 1.4"
+          }
+        }
+      }
+    },
+    "change-log-v1-4-update-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It's been a while since you saw an update here. I promised on **reddit**, on **AppStore** and other places that you should expect a lot of changes in the next version, including a new design.\n            \nWell... This is not an update we were talking about. Unfortunately, I'm still working on it and I don't have even rough estimation on when it will be available. What bothered me very much all this time is that currently my app does not represent reality of **Satisfactory** and I constantly thought that I need to fix it. So that's why we have this update."
+          }
+        }
+      }
+    },
+    "change-log-v1-5-1-change-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed a crash when you try to access Uranium or Plutonium waste."
+          }
+        }
+      }
+    },
+    "change-log-v1-5-1-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 1.5.1"
+          }
+        }
+      }
+    },
+    "change-log-v1-5-1-update-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Long time no see!\n            \nToday we have a very small update that fixes a significant crash.\n            \nShootout to **Alexander**, who sent me a feedback about this issue."
+          }
+        }
+      }
+    },
+    "change-log-v1-5-change-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changed from split view to tab bar. iPad users are affected the most."
+          }
+        }
+      }
+    },
+    "change-log-v1-5-change-2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand new production screen. Only UI changes, functionality is the same"
+          }
+        }
+      }
+    },
+    "change-log-v1-5-change-3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite is renamed to Pinned since it makes more sense to me."
+          }
+        }
+      }
+    },
+    "change-log-v1-5-change-4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings is now a separate tab."
+          }
+        }
+      }
+    },
+    "change-log-v1-5-change-5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "From now on all change logs can be found in the settings screen."
+          }
+        }
+      }
+    },
+    "change-log-v1-5-change-6" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Removed items without recipes from production list."
+          }
+        }
+      }
+    },
+    "change-log-v1-5-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 1.5"
+          }
+        }
+      }
+    },
+    "change-log-v1-5-update-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello again, folks!\n            \nToday we have a small update with only two significant changes. But I wanted to talk about different topic.\n            \nStarting with this update I plan to release updates from time to time with smaller changes, but more frequently. This is needed more for me, than for you, to be honest, so if you want to share your opinion with me, you can do so via Share Feedback button in **Settings**. I want to say beforehand, that some of my changes might break your current saved productions and pinned items/recipes, but there's small I can do about that. At least you will not loose any progress in game 😅"
+          }
+        }
+      }
+    },
+    "change-log-v1-6-change-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recipe view for both icon and row style are now updated to use new UI style."
+          }
+        }
+      }
+    },
+    "change-log-v1-6-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 1.6"
+          }
+        }
+      }
+    },
+    "change-log-v1-6-update-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Good day, folks!\n            \nToday we have another small update without any changes in functionality. I just updated recipes UI for more mature feel and look. Any feedback about new style and design is very appreciated."
+          }
+        }
+      }
+    },
+    "change-log-v1-7-1-change-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restored ability to change production amount while selecting recipes."
+          }
+        }
+      }
+    },
+    "change-log-v1-7-1-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 1.7.1"
+          }
+        }
+      }
+    },
+    "change-log-v1-7-1-update-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A very big thanks this time goes to **Christopher Notley-Smith** for pointing out that a most recent change in UI removed an ability to change the amount of production while selecting recipes. This update fixes this issue."
+          }
+        }
+      }
+    },
+    "change-log-v1-7-change-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saved productions are no longer visible in recipe selection screen for production."
+          }
+        }
+      }
+    },
+    "change-log-v1-7-change-2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Items list has a new UI (again)."
+          }
+        }
+      }
+    },
+    "change-log-v1-7-change-3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Production screen is now a separate full screen view. We hope this way it will not so confusing."
+          }
+        }
+      }
+    },
+    "change-log-v1-7-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 1.7"
+          }
+        }
+      }
+    },
+    "change-log-v1-7-update-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ahoj!\n            \nAnother small update that does not break anything 🤞. Although there are some fixes in UI. Hope you enjoy! In any case you can let us know via a feedback in settings!"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A new fresh design for the whole app."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Organise your productions into Factories with a new Factories tab."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take more control over your production lines with a whole new production calculator."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-4" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do not forget to share your feedback via a corresponding button in a Settings tab."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-5" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added categories for New Production screen."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-6" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added ability to disable Seasonal event content."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-7" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added ability to adjust recipes for items with 3 different modes: **Auto**, **Fraction** and **Fixed amount**."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-8" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added ability to use byproducts in production lines."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-9" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added Factories tab."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-10" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added ability to see production statistics for a Factory."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-11" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added power consumption for production building information to Production Statistics."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-change-12" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Removed support for **iOS 16** with this release."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 2.0"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-update-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A good day to everybody! \n\nOn behalf of the whole **Satisfactory Helper** team I would like to thank you for using this app and waiting so patiently for this big release."
+          }
+        }
+      }
+    },
+    "Changes" : {
+
+    },
+    "Consumed power here" : {
+
+    },
+    "Create a Factory" : {
+
+    },
+    "Debug feedback" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Edit" : {
+
+    },
+    "Equipment" : {
+
+    },
+    "Factories" : {
+
+    },
+    "factories-%lld-amount-of-produictions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld production"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld productions"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "factories-create-factory" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create factory"
+          }
+        }
+      }
+    },
+    "factories-delete-factory" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete factory"
+          }
+        }
+      }
+    },
+    "factories-factories-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Factories"
+          }
+        }
+      }
+    },
+    "factories-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Factories"
+          }
+        }
+      }
+    },
+    "factories-no-factories-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You don't have any factory yet!"
+          }
+        }
+      }
+    },
+    "factories-productions-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Productions"
+          }
+        }
+      }
+    },
+    "factories-search-factories-and-productions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search factories and productions"
+          }
+        }
+      }
+    },
+    "Factory name" : {
+
+    },
+    "factory-delete-factory-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you delete a factory, all of the productions inside this factory will be also deleted.\\n\\nThis action cannot be undone.\\n\\nAre you sure you want to delete a factory?"
+          }
+        }
+      }
+    },
+    "Fluid" : {
+
+    },
+    "From Resources production" : {
+
+    },
+    "Gas" : {
+
+    },
+    "general-apply" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apply"
+          }
+        }
+      }
+    },
+    "general-cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "general-close" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        }
+      }
+    },
+    "general-delete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
+    },
+    "general-done" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "general-pin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin"
+          }
+        }
+      }
+    },
+    "general-search" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        }
+      }
+    },
+    "general-unpin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unpin"
+          }
+        }
+      }
+    },
+    "Icon" : {
+
+    },
+    "Legacy File system" : {
+
+    },
+    "Load storage" : {
+
+    },
+    "Max: [w: %@, h: %@]" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Max: [w: %1$@, h: %2$@]"
+          }
+        }
+      }
+    },
+    "Natural Resource" : {
+
+    },
+    "New Factory" : {
+
+    },
+    "New production" : {
+
+    },
+    "New production name" : {
+
+    },
+    "new-production-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Production"
+          }
+        }
+      }
+    },
+    "new-production-pinned-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pinned"
+          }
+        }
+      }
+    },
+    "new-production-sorting-button-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorting"
+          }
+        }
+      }
+    },
+    "new-production-sorting-name-option" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        }
+      }
+    },
+    "new-production-sorting-progression-option" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progression"
+          }
+        }
+      }
+    },
+    "Parts" : {
+
+    },
+    "Power production" : {
+
+    },
+    "Preview" : {
+
+    },
+    "Preview (should not be visible in production)" : {
+
+    },
+    "Production name" : {
+
+    },
+    "Provide image" : {
+
+    },
+    "recipe-alternate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternate"
+          }
+        }
+      }
+    },
+    "Recipes" : {
+
+    },
+    "Rename" : {
+
+    },
+    "Rename production" : {
+
+    },
+    "root-failed-to-load-application" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to load application. Please try again later."
+          }
+        }
+      }
+    },
+    "root-show-error-details" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show error details"
+          }
+        }
+      }
+    },
+    "Row" : {
+
+    },
+    "Row %lld" : {
+
+    },
+    "Save" : {
+
+    },
+    "Search productions" : {
+
+    },
+    "Select a factory" : {
+
+    },
+    "Selected" : {
+
+    },
+    "Send" : {
+
+    },
+    "settings-app-info-app-build-number-row-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App build number"
+          }
+        }
+      }
+    },
+    "settings-app-info-app-version-row-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App version"
+          }
+        }
+      }
+    },
+    "settings-app-info-game-update-row-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Game update"
+          }
+        }
+      }
+    },
+    "settings-app-info-game-version-row-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Game version"
+          }
+        }
+      }
+    },
+    "settings-app-info-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Info"
+          }
+        }
+      }
+    },
+    "settings-feedback-email-subject-%@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback about Satisfactory Helper app v%@"
+          }
+        }
+      }
+    },
+    "settings-feedback-section-send-feedback" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send feedback"
+          }
+        }
+      }
+    },
+    "settings-feedback-sent-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thank you! We appreciate this very much!\n\nEvery message helps us to make app better. And now **YOU** are now a part of this!"
+          }
+        }
+      }
+    },
+    "settings-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "settings-other-section-app-info" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Info"
+          }
+        }
+      }
+    },
+    "settings-other-section-changes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changes"
+          }
+        }
+      }
+    },
+    "settings-recipe-section-auto-select-pinned-recipe" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto-select single pinned recipe"
+          }
+        }
+      }
+    },
+    "settings-recipe-section-auto-select-single-recipe" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto-select single recipe"
+          }
+        }
+      }
+    },
+    "settings-recipe-section-show-ingredient-names" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show recipe ingredient names"
+          }
+        }
+      }
+    },
+    "settings-recipe-section-show-ingredient-names-explanation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If it is difficult for you to distinguish recipe ingredients only by it's icon, you can enable this setting to also see recipe ingredient names."
+          }
+        }
+      }
+    },
+    "settings-recipes-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recipes"
+          }
+        }
+      }
+    },
+    "settings-seasonal-events-section-ficsmas" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FICSMAS"
+          }
+        }
+      }
+    },
+    "settings-seasonal-events-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seasonal events"
+          }
+        }
+      }
+    },
+    "SHSection preview" : {
+
+    },
+    "SHSection preview\n(Second line for preview of long section name)" : {
+
+    },
+    "single-item-production-adjustment-%@-per-minute" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ / min"
+          }
+        }
+      }
+    },
+    "single-item-production-adjustment-no-recipes-for-**%@**" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No selected recipes for **%@**."
+          }
+        }
+      }
+    },
+    "single-item-production-adjustment-no-recipes-for-**%@**." : {
+
+    },
+    "single-item-production-adjustment-pinned-recipes-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pinned recipes"
+          }
+        }
+      }
+    },
+    "single-item-production-adjustment-unselected-recipes-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unselected recipes"
+          }
+        }
+      }
+    },
+    "single-item-production-calculation-amount-per-minute" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/ min"
+          }
+        }
+      }
+    },
+    "single-item-production-calculation-amount-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amount"
+          }
+        }
+      }
+    },
+    "single-item-production-calculation-dont-save" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Don't save"
+          }
+        }
+      }
+    },
+    "single-item-production-calculation-save" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        }
+      }
+    },
+    "single-item-production-calculation-save-and-exit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save and exit"
+          }
+        }
+      }
+    },
+    "single-item-production-calculation-statistics" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistics"
+          }
+        }
+      }
+    },
+    "single-item-production-calculation-you-have-unsaved-changes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You have unsaved changes"
+          }
+        }
+      }
+    },
+    "single-item-production-calculation-you-have-unsaved-changes-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you close production now, all unsaved changes will be lost. Would you like to save those changes?"
+          }
+        }
+      }
+    },
+    "single-item-production-ingredient-consume-byproduct" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consume byproduct..."
+          }
+        }
+      }
+    },
+    "single-item-production-ingredient-provide-byproduct" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Provide byproduct..."
+          }
+        }
+      }
+    },
+    "single-item-production-ingredient-select-recipe" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select recipe"
+          }
+        }
+      }
+    },
+    "single-item-production-ingredient-stop-consuming-byproduct" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop consuming byproduct"
+          }
+        }
+      }
+    },
+    "single-item-production-ingredient-stop-providing-byproduct" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop providing byproduct"
+          }
+        }
+      }
+    },
+    "single-item-production-initial-recipe-byproduct-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Byproduct"
+          }
+        }
+      }
+    },
+    "single-item-production-initial-recipe-output-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Output"
+          }
+        }
+      }
+    },
+    "single-item-production-initial-recipe-pinned-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pinned"
+          }
+        }
+      }
+    },
+    "single-item-production-proportion-auto" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AUTO"
+          }
+        }
+      }
+    },
+    "single-item-production-proportion-fixed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FIXED"
+          }
+        }
+      }
+    },
+    "single-item-production-proportion-percent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%"
+          }
+        }
+      }
+    },
+    "single-item-production-proportion-picker-automatically" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatically"
+          }
+        }
+      }
+    },
+    "single-item-production-proportion-picker-fixed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed"
+          }
+        }
+      }
+    },
+    "single-item-production-proportion-picker-percentage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Percentage"
+          }
+        }
+      }
+    },
+    "Small text in orange border" : {
+
+    },
+    "Solid" : {
+
+    },
+    "Statistics" : {
+
+    },
+    "statistics-%lld-of-recipes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld recipes"
+          }
+        }
+      }
+    },
+    "statistics-items-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Items"
+          }
+        }
+      }
+    },
+    "statistics-natural-resources-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Natural resources"
+          }
+        }
+      }
+    },
+    "statistics-power-consumption-fixed-%@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ MW"
+          }
+        }
+      }
+    },
+    "statistics-power-consumption-fluctuated-(%@-%@)" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%@ ~ %@) MW"
+          }
+        }
+      }
+    },
+    "statistics-production-buildings-section-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Production Buildings"
+          }
+        }
+      }
+    },
+    "Storage" : {
+
+    },
+    "tab-factories" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Factories"
+          }
+        }
+      }
+    },
+    "tab-new-production" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Production"
+          }
+        }
+      }
+    },
+    "tab-settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "The size of this text will be read and prompted below" : {
+
+    },
+    "There is no item with ID\n'%@'" : {
+
+    },
+    "There is no item with id '%@'" : {
+
+    },
+    "There is no item with ID '%@'" : {
+
+    },
+    "There is no recipe with id '%@'" : {
+
+    },
+    "This action cannot be undone." : {
+
+    },
+    "This is a fix" : {
+
+    },
+    "This is a preview of change log. This message appears on top of the change log and should describe what is the general purpose of the change." : {
+
+    },
+    "This is a removal change" : {
+
+    },
+    "This is a very important change" : {
+
+    },
+    "This is an addition change" : {
+
+    },
+    "This is an another addition change, probably very good addition" : {
+
+    },
+    "This is an another fix" : {
+
+    },
+    "This is an another removal change, sometimes this might now be exactly what users expect to see" : {
+
+    },
+    "This is an another very important change. Such changes appear in orange section." : {
+
+    },
+    "To save a production you need to attach it to a Factory." : {
+
+    },
+    "Unfortunatelly, you did not create any factories yet." : {
+
+    },
+    "Unselected" : {
+
+    },
+    "V2 File system" : {
+
+    },
+    "whats-new-bullet-new-design" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "・ New design"
+          }
+        }
+      }
+    },
+    "whats-new-bullet-new-factories-tab" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "・ New production calculator"
+          }
+        }
+      }
+    },
+    "whats-new-bullet-new-production-calculator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "・ New Factories tab"
+          }
+        }
+      }
+    },
+    "whats-new-bullet-new-statistics" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "・ New Statistics"
+          }
+        }
+      }
+    },
+    "whats-new-page-2-a-completely-new-design" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A completely new design"
+          }
+        }
+      }
+    },
+    "whats-new-page-3-new-production-calculator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New production calculator"
+          }
+        }
+      }
+    },
+    "whats-new-page-4-legacy-factory-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legacy"
+          }
+        }
+      }
+    },
+    "whats-new-page-4-organize-your-productions-with-new-factories-tab" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Organize your productions with new Factories tab"
+          }
+        }
+      }
+    },
+    "whats-new-page-4-starter-factory-factory-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starter factory"
+          }
+        }
+      }
+    },
+    "whats-new-page-4-steel-factory-factory-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel factory"
+          }
+        }
+      }
+    },
+    "whats-new-page-5-all-new-statistics-design-which-shows-even-more-information" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All new statistics design which shows even more information"
+          }
+        }
+      }
+    },
+    "whats-new-welcome-to-satisfactory-helper-2-0" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to Satisfactory Helper 2.0"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

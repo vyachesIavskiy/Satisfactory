@@ -48,16 +48,16 @@ struct WhatsNewView: View {
     @MainActor @ViewBuilder
     private var page1View: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Welcome to Satisfactory Helper 2.0")
+            Text("whats-new-welcome-to-satisfactory-helper-2-0")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.bottom, 40)
             
             Group {
-                Text("・ New design")
-                Text("・ New production calculator")
-                Text("・ New Factories tab")
-                Text("・ New Statistics")
+                Text("whats-new-bullet-new-design")
+                Text("whats-new-bullet-new-factories-tab")
+                Text("whats-new-bullet-new-production-calculator")
+                Text("whats-new-bullet-new-statistics")
             }
             .fontWeight(.medium)
             .foregroundStyle(.sh(.midnight50))
@@ -71,7 +71,7 @@ struct WhatsNewView: View {
         let recipe = storageService.recipe(id: "recipe-alumina-solution")
         
         VStack {
-            pageTitleText("A completely new design")
+            pageTitleText("whats-new-page-2-a-completely-new-design")
                 .frame(maxHeight: .infinity)
             
             contentBox {
@@ -95,7 +95,7 @@ struct WhatsNewView: View {
     @MainActor @ViewBuilder
     private var page3View: some View {
         VStack {
-            pageTitleText("New production calculator")
+            pageTitleText("whats-new-page-3-new-production-calculator")
             
             ScrollView {
                 contentBox {
@@ -126,14 +126,14 @@ struct WhatsNewView: View {
     @MainActor @ViewBuilder
     private var page4View: some View {
         VStack {
-            pageTitleText("Organise your productions with new Factories tab")
+            pageTitleText("whats-new-page-4-organize-your-productions-with-new-factories-tab")
                 .frame(maxHeight: .infinity)
             
             contentBox {
                 FactoryRowView(
                     factory: Factory(
                         id: UUID(),
-                        name: "Legacy",
+                        name: "whats-new-page-4-legacy-factory-name",
                         asset: .legacy,
                         productionIDs: [UUID(), UUID(), UUID()]
                     )
@@ -142,7 +142,7 @@ struct WhatsNewView: View {
                 FactoryRowView(
                     factory: Factory(
                         id: UUID(),
-                        name: "Starter factory",
+                        name: "whats-new-page-4-starter-factory-factory-name",
                         asset: .abbreviation,
                         productionIDs: [UUID(), UUID()]
                     )
@@ -151,7 +151,7 @@ struct WhatsNewView: View {
                 FactoryRowView(
                     factory: Factory(
                         id: UUID(),
-                        name: "Steel factory",
+                        name: "whats-new-page-4-steel-factory-factory-name",
                         asset: .assetCatalog(name: "part-encased-industrial-beam"),
                         productionIDs: [UUID(), UUID(), UUID(), UUID(), UUID()]
                     )
@@ -167,7 +167,7 @@ struct WhatsNewView: View {
     @MainActor @ViewBuilder
     private var page5View: some View {
         VStack {
-            pageTitleText("All new statistics design which shows even more information")
+            pageTitleText("whats-new-page-5-all-new-statistics-design-which-shows-even-more-information")
                 .frame(maxHeight: .infinity)
             
             contentBox {
@@ -199,7 +199,7 @@ struct WhatsNewView: View {
             Button {
                 didFinish()
             } label: {
-                Text("Close")
+                Text("general-close")
                     .font(.title2)
                     .fontWeight(.medium)
                     .padding(.vertical, 8)

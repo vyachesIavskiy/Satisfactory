@@ -94,13 +94,13 @@ struct SingleItemProductionRecipeSelectView: View {
         } else if canSelectByproduct || canUnselectByproduct {
             Menu {
                 if canUnselectByproduct {
-                    Button("Stop providing byproduct") {
+                    Button("single-item-production-ingredient-stop-providing-byproduct") {
                         viewModel.unselectByproductProducer(for: byproduct)
                     }
                 }
                 
                 if canSelectByproduct {
-                    Button("Provide byproduct...") {
+                    Button("single-item-production-ingredient-provide-byproduct") {
                         viewModel.selectByproductProducer(for: byproduct)
                     }
                 }
@@ -134,7 +134,7 @@ struct SingleItemProductionRecipeSelectView: View {
         } else if canSelectByproduct || canUnselectByproduct {
             Menu {
                 if canSelectRecipe {
-                    Button("Select recipe") {
+                    Button("single-item-production-ingredient-select-recipe") {
                         viewModel.selectRecipe(for: input)
                     }
                 }
@@ -142,13 +142,13 @@ struct SingleItemProductionRecipeSelectView: View {
                 Divider()
                 
                 if canUnselectByproduct {
-                    Button("Stop consuming byproduct") {
+                    Button("single-item-production-ingredient-stop-consuming-byproduct") {
                         viewModel.unselectByproductConsumer(for: input)
                     }
                 }
                 
                 if canSelectByproduct {
-                    Button("Consume byproduct...") {
+                    Button("single-item-production-ingredient-consume-byproduct") {
                         viewModel.selectByproductConsumer(for: input)
                     }
                 }

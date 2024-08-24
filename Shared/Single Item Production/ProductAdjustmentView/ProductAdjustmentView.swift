@@ -29,7 +29,7 @@ struct ProductAdjustmentView: View {
                     
                     Spacer()
                     
-                    Text("\(viewModel.product.amount.formatted(.shNumber)) / min")
+                    Text("single-item-production-adjustment-\(viewModel.product.amount.formatted(.shNumber))-per-minute")
                         .font(.headline)
                 }
                 .padding(.horizontal, 16)
@@ -43,13 +43,13 @@ struct ProductAdjustmentView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button("general-cancel") {
                         dismiss()
                     }
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Apply") {
+                    Button("general-apply") {
                         viewModel.apply()
                         dismiss()
                     }
@@ -85,7 +85,7 @@ struct ProductAdjustmentView: View {
                     .padding(.horizontal, 16)
                 }
             } else {
-                Text("No selected recipes for **\(viewModel.product.item.localizedName)**.")
+                Text("single-item-production-adjustment-no-recipes-for-**\(viewModel.product.item.localizedName)**.")
                     .font(.title3)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
@@ -112,7 +112,7 @@ struct ProductAdjustmentView: View {
                     .padding(.vertical, 8)
                 }
             } header: {
-                SHSectionHeader("Pinned recipes")
+                SHSectionHeader("single-item-production-adjustment-pinned-recipes-section-name")
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
                     .padding(.bottom, 4)
@@ -140,7 +140,7 @@ struct ProductAdjustmentView: View {
                     .padding(.vertical, 8)
                 }
             } header: {
-                SHSectionHeader("Unselected recipes")
+                SHSectionHeader("single-item-production-adjustment-unselected-recipes-section-name")
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
                     .padding(.bottom, 4)

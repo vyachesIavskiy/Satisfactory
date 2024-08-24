@@ -8,6 +8,7 @@ struct ChangeLog: Equatable, Identifiable {
     var id: Version { version }
 }
 
+#if DEBUG
 extension ChangeLog {
     static let previewValue = ChangeLog(
         version: .preview,
@@ -27,11 +28,14 @@ extension ChangeLog {
         ]
     )
 }
+#endif
 
 extension ChangeLog {
     static subscript(version: Version) -> ChangeLog {
         switch version {
+        #if DEBUG
         case .preview: .previewValue
+        #endif
         case .v1_4: .v1_4
         case .v1_5: .v1_5
         case .v1_5_1: .v1_5_1

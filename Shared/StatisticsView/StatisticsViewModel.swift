@@ -1,5 +1,4 @@
-import Foundation
-import Observation
+import SwiftUI
 import SHModels
 import SHStorage
 
@@ -115,11 +114,11 @@ extension StatisticsViewModel {
             }
         }
         
-        var powerConsumptionString: String {
+        var powerConsumptionString: LocalizedStringKey {
             if totalPowerConsumption.min == totalPowerConsumption.max {
-                "\(totalPowerConsumption.max.formatted(.number)) MW"
+                "statistics-power-consumption-fixed-\(totalPowerConsumption.max.formatted(.number))"
             } else {
-                "(\(totalPowerConsumption.min.formatted(.number)) ~ \(totalPowerConsumption.max.formatted(.number))) MW"
+                "statistics-power-consumption-fluctuated-(\(totalPowerConsumption.min.formatted(.number))-\(totalPowerConsumption.max.formatted(.number)))"
             }
         }
     }
@@ -136,9 +135,9 @@ extension StatisticsViewModel {
             statisticItem.recipes.count > 1
         }
         
-        var subtitle: String {
+        var subtitle: LocalizedStringKey {
             if expandable {
-                "\(statisticItem.recipes.count) recipes"
+                "statistics-\(statisticItem.recipes.count)-of-recipes"
             } else {
                 "\(statisticItem.recipes[0].recipe.localizedName)"
             }
@@ -188,11 +187,11 @@ extension StatisticsViewModel {
             recipes.count > 1
         }
         
-        var subtitle: String {
+        var subtitle: LocalizedStringKey {
             if expandable {
-                "\(recipes.count) recipes"
+                "statistics-\(recipes.count)-of-recipes"
             } else {
-                recipes[0].recipe.localizedName
+                "\(recipes[0].recipe.localizedName)"
             }
         }
         
@@ -229,9 +228,9 @@ extension StatisticsViewModel {
         
         var powerValueString: String {
             if powerConsumption.min == powerConsumption.max {
-                "\(powerConsumption.max.formatted(.number)) MW"
+                "statistics-power-consumption-fixed-\(powerConsumption.max.formatted(.number))"
             } else {
-                "(\(powerConsumption.min.formatted(.number)) ~ \(powerConsumption.max.formatted(.number))) MW"
+                "statistics-power-consumption-fluctuated-(\(powerConsumption.min.formatted(.number))-\(powerConsumption.max.formatted(.number)))"
             }
         }
         
@@ -281,9 +280,9 @@ extension StatisticsViewModel {
         
         var powerValueString: AttributedString {
             if powerConsumption.min == powerConsumption.max {
-                AttributedString("\(powerConsumption.max.formatted(.number)) MW")
+                AttributedString("statistics-power-consumption-fixed-\(powerConsumption.max.formatted(.number))")
             } else {
-                AttributedString("(\(powerConsumption.min.formatted(.number)) ~ \(powerConsumption.min.formatted(.number))) MW")
+                AttributedString("statistics-power-consumption-fluctuated-(\(powerConsumption.min.formatted(.number))-\(powerConsumption.min.formatted(.number)))")
             }
         }
         

@@ -3,36 +3,30 @@ extension ChangeLog {
     static var v1_5: ChangeLog {
         ChangeLog(
             version: .v1_5,
-            updateMessage: """
-            Hello again, folks!
-            
-            Today we have a small update with only two significant changes. But I wanted to talk about different topic.
-            
-            Starting with this update I plan to releaes updates from time to time with smaller changes, but more frequently. This is needed more for me, than for you, to be honest, so if you want to share your opinion with me, you can do so via Share Feedback button in **Settings**. I want to say beforehand, that some of my changes might break your current saved productions and pinned items/recipes, but there's small I can do about that. At least you will not loose any progress in game 😅
-            """,
+            updateMessage: "change-log-v1-5-update-message",
             changes: [
                 ChangeLog.Change(
-                    log: "Changed from split view to tab bar. iPad users are affected the most.",
+                    log: "change-log-v1-5-change-1",
                     changeType: .addition
                 ),
                 ChangeLog.Change(
-                    log: "Brand new production screen. Only UI changes, functionality is the same",
+                    log: "change-log-v1-5-change-2",
                     changeType: .addition
                 ),
                 ChangeLog.Change(
-                    log: "Favorite is renamed to Pinned since it makes more sense to me.",
+                    log: "change-log-v1-5-change-3",
                     changeType: .addition
                 ),
                 ChangeLog.Change(
-                    log: "Settings is now a separate tab.",
+                    log: "change-log-v1-5-change-4",
                     changeType: .addition
                 ),
                 ChangeLog.Change(
-                    log: "From now on all change logs can be found in the settings screen.",
+                    log: "change-log-v1-5-change-5",
                     changeType: .addition
                 ),
                 ChangeLog.Change(
-                    log: "Removed items without recipes from production list.",
+                    log: "change-log-v1-5-change-6",
                     changeType: .removal
                 )
             ]

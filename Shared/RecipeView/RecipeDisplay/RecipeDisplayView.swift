@@ -63,7 +63,7 @@ struct RecipeDisplayView: View {
     
     @MainActor @ViewBuilder
     private var alternateIndicatorView: some View {
-        Text("Alternate")
+        Text("recipe-alternate")
             .font(.caption)
             .fontWeight(.light)
             .foregroundStyle(.sh(.midnight))

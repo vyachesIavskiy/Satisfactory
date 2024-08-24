@@ -157,11 +157,11 @@ extension InitialRecipeSelectionViewModel {
         var recipes: [Recipe]
         var expanded: Bool
         
-        var title: String {
+        var title: LocalizedStringKey {
             switch id {
-            case .pinned: "Pinned"
-            case .product: "Product"
-            case .byproduct: "Byproduct"
+            case .pinned: "single-item-production-initial-recipe-pinned-section-name"
+            case .product: "single-item-production-initial-recipe-output-section-name"
+            case .byproduct: "single-item-production-initial-recipe-byproduct-section-name"
             }
         }
         

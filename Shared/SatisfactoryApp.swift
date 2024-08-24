@@ -16,6 +16,7 @@ struct SatisfactoryApp: App {
     }
 }
 
+#if DEBUG
 private struct FileManagerCheckView: View {
     class File: Identifiable {
         let id = UUID()
@@ -305,3 +306,4 @@ private struct FileManagerCheckView: View {
 //        }
     }
 }
+#endif

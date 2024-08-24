@@ -9,7 +9,7 @@ struct TabsView: View {
             NewProductionView()
                 .tint(.sh(.orange))
                 .tabItem {
-                    Label("New Production", systemImage: "hammer")
+                    Label("tab-new-production", systemImage: "hammer")
                 }
                 .tag(0)
             
@@ -17,9 +17,9 @@ struct TabsView: View {
                 .tint(.sh(.orange))
                 .tabItem {
                     if viewModel.selectedTabIndex == 1 {
-                        Label("Factories", systemImage: "building.2.fill")
+                        Label("tab-factories", systemImage: "building.2.fill")
                     } else {
-                        Label("Factories", systemImage: "building.2")
+                        Label("tab-factories", systemImage: "building.2")
                             .environment(\.symbolVariants, .none)
                     }
                 }
@@ -28,7 +28,7 @@ struct TabsView: View {
             SettingsView()
                 .tint(.sh(.orange))
                 .tabItem {
-                    Label("Settings", systemImage: "gear")
+                    Label("tab-settings", systemImage: "gear")
                 }
                 .tag(2)
         }

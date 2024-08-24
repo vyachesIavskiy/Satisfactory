@@ -19,6 +19,7 @@ struct InitialRecipeSelectionView: View {
             .listSectionSeparator(.hidden)
             .listRowSeparator(.hidden)
         }
+        .environment(\.defaultMinListRowHeight, 2)
         .listStyle(.plain)
         .navigationTitle(viewModel.item.localizedName)
         .task {
@@ -31,19 +32,19 @@ struct InitialRecipeSelectionView: View {
         let section = _section.wrappedValue
         if !section.recipes.isEmpty {
             Section(isExpanded: _section.expanded) {
-                VStack(spacing: 16) {
-                    ForEach(Array(section.recipes.enumerated()), id: \.element.id) { index, recipe in
-                        recipeView(recipe)
-                        
-                        if index != section.recipes.indices.last {
-                            Rectangle()
-                                .fill(LinearGradient(
-                                    colors: [.sh(.midnight40), .sh(.gray10)],
-                                    startPoint: .leading,
-                                    endPoint: UnitPoint(x: 0.85, y: 0.5)
-                                ))
-                                .frame(height: 2 / displayScale)
-                        }
+                ForEach(section.recipes) { recipe in
+                    recipeView(recipe)
+                        .listRowInsets(EdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20))
+                    
+                    if recipe != section.recipes.last {
+                        Rectangle()
+                            .fill(LinearGradient(
+                                colors: [.sh(.midnight40), .sh(.gray10)],
+                                startPoint: .leading,
+                                endPoint: UnitPoint(x: 0.85, y: 0.5)
+                            ))
+                            .frame(height: 2 / displayScale)
+                            .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
                     }
                 }
             } header: {
@@ -65,6 +66,7 @@ struct InitialRecipeSelectionView: View {
             viewModel.onRecipeSelected?(recipe)
         } label: {
             RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
+                .contentShape(.interaction, Rectangle())
         }
         .buttonStyle(.plain)
         .contextMenu {
@@ -73,9 +75,9 @@ struct InitialRecipeSelectionView: View {
                     viewModel.changePinStatus(for: recipe)
                 } label: {
                     if viewModel.isPinned(recipe) {
-                        Label("Unpin", systemImage: "pin.slash.fill")
+                        Label("general-unpin", systemImage: "pin.slash.fill")
                     } else {
-                        Label("Pin", systemImage: "pin.fill")
+                        Label("general-pin", systemImage: "pin.fill")
                     }
                 }
             }

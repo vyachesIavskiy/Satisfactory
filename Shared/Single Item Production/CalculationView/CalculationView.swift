@@ -54,7 +54,7 @@ struct CalculationView: View {
                 .navigationTitle(viewModel.item.localizedName)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel") {
+                        Button("general-cancel") {
                             self.viewModel.modalNavigationState = nil
                         }
                     }
@@ -70,11 +70,11 @@ struct CalculationView: View {
     @MainActor @ViewBuilder
     private var amountView: some View {
         HStack {
-            Text("Amount")
+            Text("single-item-production-calculation-amount-title")
             
             Spacer()
             
-            TextField("Amount", value: $viewModel.amount, format: .shNumber)
+            TextField("single-item-production-calculation-amount-title", value: $viewModel.amount, format: .shNumber)
                 .multilineTextAlignment(.center)
                 .keyboardType(.decimalPad)
                 .focused($focused)
@@ -104,7 +104,7 @@ struct CalculationView: View {
                     }
                     .buttonStyle(.shBordered)
                 } else {
-                    Text("/ min")
+                    Text("single-item-production-calculation-amount-per-minute")
                         .font(.headline)
                 }
             }
@@ -124,47 +124,47 @@ struct CalculationView: View {
     private var toolbar: some ToolbarContent {
         if viewModel.selectingByproduct {
             ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
+                Button("general-cancel") {
                     viewModel.cancelByproductSelection()
                 }
             }
         } else if !viewModel.canBeDismissedWithoutSaving {
             ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
+                Button("general-cancel") {
                     viewModel.showingUnsavedConfirmationDialog = true
                 }
                 .confirmationDialog(
-                    "You have unsaved changes",
+                    "single-item-production-calculation-you-have-unsaved-changes",
                     isPresented: $viewModel.showingUnsavedConfirmationDialog,
                     titleVisibility: .visible
                 ) {
-                    Button("Save and exit") {
+                    Button("single-item-production-calculation-save-and-exit") {
                         viewModel.saveProduction {
                             dismiss()
                         }
                     }
                     
-                    Button("Don't save", role: .destructive) {
+                    Button("single-item-production-calculation-dont-save", role: .destructive) {
                         dismiss()
                     }
                     
-                    Button("Cancel", role: .cancel) {
+                    Button("general-cancel", role: .cancel) {
                         // Do nothing
                     }
                 } message: {
-                    Text("If you close production now, all unsaved changes will be lost. Would you like to save those changes?")
+                    Text("single-item-production-calculation-you-have-unsaved-changes-message")
                 }
             }
         }
         
         ToolbarItem(placement: .primaryAction) {
-            Button("Statistics", systemImage: "list.number") {
+            Button("single-item-production-calculation-statistics", systemImage: "list.number") {
                 viewModel.showStatistics()
             }
         }
         
         ToolbarItem(placement: .primaryAction) {
-            Button("Save", systemImage: "square.and.arrow.down") {
+            Button("single-item-production-calculation-save", systemImage: "square.and.arrow.down") {
                 viewModel.saveProduction { }
             }
             .disabled(viewModel.canBeDismissedWithoutSaving || viewModel.selectingByproduct)

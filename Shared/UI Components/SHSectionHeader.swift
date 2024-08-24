@@ -12,7 +12,13 @@ struct SHSectionHeader<Label: View>: View {
         self.expanded = expanded
     }
     
-    init(_ title: String, expanded: Binding<Bool>? = nil) where Label == Text {
+    @_disfavoredOverload
+    init<S: StringProtocol>(_ title: S, expanded: Binding<Bool>? = nil) where Label == Text {
+        self.label = Text(title)
+        self.expanded = expanded
+    }
+    
+    init(_ title: LocalizedStringKey, expanded: Binding<Bool>? = nil) where Label == Text {
         self.label = Text(title)
         self.expanded = expanded
     }

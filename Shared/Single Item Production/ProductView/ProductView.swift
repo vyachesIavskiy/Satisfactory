@@ -90,13 +90,13 @@ struct ProductView: View {
                     Group {
                         switch outputRecipe.proportion {
                         case .auto:
-                            Text("AUTO")
+                            Text("single-item-production-proportion-auto")
                             
                         case let .fraction(fraction):
                             Text(fraction, format: .shPercent)
                             
                         case .fixed:
-                            Text("FIXED")
+                            Text("single-item-production-proportion-fixed")
                         }
                     }
                     .font(.footnote)

@@ -118,24 +118,24 @@ struct ProductionProportionView: View {
             } else {
                 Menu {
                     Picker("", selection: $viewModel.proportionDisplay) {
-                        Text("Automatically")
+                        Text("single-item-production-proportion-picker-automatically")
                             .tag(ProductionProportionViewModel.ProductionProportionDisplay.auto)
                         
-                        Label("Percentage", systemImage: "percent")
+                        Label("single-item-production-proportion-picker-percentage", systemImage: "percent")
                             .tag(ProductionProportionViewModel.ProductionProportionDisplay.fraction)
                         
-                        Label("Amount", systemImage: "textformat.123")
+                        Label("single-item-production-proportion-picker-fixed", systemImage: "textformat.123")
                             .tag(ProductionProportionViewModel.ProductionProportionDisplay.fixed)
                     }
                 } label: {
                     ZStack {
                         switch viewModel.proportionDisplay {
                         case .auto:
-                            Text("AUTO")
+                            Text("single-item-production-proportion-auto")
                         case .fraction:
-                            Text("%")
+                            Text("single-item-production-proportion-percent")
                         case .fixed:
-                            Text("123")
+                            Text("single-item-production-proportion-fixed")
                         }
                     }
                     .frame(minWidth: 32)

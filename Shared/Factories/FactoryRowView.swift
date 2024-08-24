@@ -17,7 +17,7 @@ struct FactoryRowView: View {
                         Text(factory.name)
                         
                         if !factory.productionIDs.isEmpty {
-                            Text("\(factory.productionIDs.count) productions")
+                            Text("factories-\(factory.productionIDs.count)-amount-of-produictions")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
@@ -71,6 +71,7 @@ struct FactoryRowView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     List {
         Group {
@@ -99,3 +100,4 @@ struct FactoryRowView: View {
     }
     .listStyle(.plain)
 }
+#endif

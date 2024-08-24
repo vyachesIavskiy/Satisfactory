@@ -14,6 +14,7 @@ struct FeedbackView: View {
     var result: Result?
     
     var body: some View {
+        #if DEBUG
         if EmailFeedbackView.canShow {
             EmailFeedbackView(result: $result)
                 .ignoresSafeArea()
@@ -21,6 +22,12 @@ struct FeedbackView: View {
             // Fallback for simulators and previews
             DebugFeedbackView(result: $result)
         }
+        #else
+        if EmailFeedbackView.canShow {
+            EmailFeedbackView(result: $result)
+                .ignoresSafeArea()
+        }
+        #endif
     }
 }
 
@@ -77,7 +84,14 @@ private struct EmailFeedbackView: UIViewControllerRepresentable {
         vc.navigationBar.tintColor = SHColor.orange.uiColor
         
         vc.setToRecipients(["satisfactory.helper.app@gmail.com"])
-        vc.setSubject("Feedback about Satisfactory Helper app v\(Bundle.main.appVersion)")
+        vc.setSubject(String(
+            format: NSLocalizedString(
+                "settings-feedback-email-subject-%@",
+                value: "Feedback about Satisfactory Helper app v\(Bundle.main.appVersion)",
+                comment: ""
+            ),
+            Bundle.main.appVersion
+        ))
         return vc
     }
     
@@ -85,6 +99,7 @@ private struct EmailFeedbackView: UIViewControllerRepresentable {
     }
 }
 
+#if DEBUG
 private struct DebugFeedbackView: View {
     @Binding 
     var result: FeedbackView.Result?
@@ -116,7 +131,6 @@ private struct DebugFeedbackView: View {
     }
 }
 
-#if DEBUG
 private struct _DebugFeedbackPreview: View {
     @State 
     private var result: FeedbackView.Result?

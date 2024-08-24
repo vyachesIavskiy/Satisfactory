@@ -14,18 +14,18 @@ struct NewProductionView: View {
                 }
             }
             .listStyle(.plain)
-            .navigationTitle("New Production")
-            .searchable(text: $viewModel.searchText, prompt: "Search")
+            .navigationTitle("new-production-navigation-title")
+            .searchable(text: $viewModel.searchText, prompt: "general-search")
             .autocorrectionDisabled()
             .animation(.default, value: viewModel.sections)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
-                    Menu("Sorting", systemImage: "arrow.up.arrow.down.square") {
-                        Picker("Sorting", selection: $viewModel.sorting) {
-                            Text("Name")
+                    Menu("new-production-sorting-button-title", systemImage: "arrow.up.arrow.down.square") {
+                        Picker("new-production-sorting-button-title", selection: $viewModel.sorting) {
+                            Text("new-production-sorting-name-option")
                                 .tag(NewProductionViewModel.Sorting.name)
                             
-                            Text("Progression")
+                            Text("new-production-sorting-progression-option")
                                 .tag(NewProductionViewModel.Sorting.progression)
                         }
                     }
@@ -81,9 +81,9 @@ struct NewProductionView: View {
                 viewModel.changePinStatus(for: item)
             } label: {
                 if viewModel.isPinned(item) {
-                    Label("Unpin", systemImage: "pin.slash.fill")
+                    Label("general-unpin", systemImage: "pin.slash.fill")
                 } else {
-                    Label("Pin", systemImage: "pin.fill")
+                    Label("general-pin", systemImage: "pin.fill")
                 }
             }
         }

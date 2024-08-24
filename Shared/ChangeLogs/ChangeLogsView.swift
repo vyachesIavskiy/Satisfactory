@@ -12,16 +12,18 @@ struct ChangeLogsView: View {
         .navigationTitle("Changes")
     }
     
-    private func versionTitle(for version: ChangeLog.Version) -> String {
+    private func versionTitle(for version: ChangeLog.Version) -> LocalizedStringKey {
         switch version {
+        #if DEBUG
         case .preview: "Preview (should not be visible in production)"
-        case .v1_4: "Version 1.4"
-        case .v1_5: "Version 1.5"
-        case .v1_5_1: "Version 1.5.1"
-        case .v1_6: "Version 1.6"
-        case .v1_7: "Version 1.7"
-        case .v1_7_1: "Version 1.7.1"
-        case .v2_0: "Version 2.0"
+        #endif
+        case .v1_4: "change-log-v1-4-name"
+        case .v1_5: "change-log-v1-5-name"
+        case .v1_5_1: "change-log-v1-5-1-name"
+        case .v1_6: "change-log-v1-6-name"
+        case .v1_7: "change-log-v1-7-name"
+        case .v1_7_1: "change-log-v1-7-1-name"
+        case .v2_0: "change-log-v2-0-name"
         }
     }
 }

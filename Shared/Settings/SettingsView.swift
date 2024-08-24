@@ -21,7 +21,7 @@ struct SettingsView: View {
                     
                     feedbackSection
                 }
-                .navigationTitle("Settings")
+                .navigationTitle("settings-navigation-title")
             }
             .disabled(viewModel.feedbackResult == .sent)
             
@@ -36,7 +36,7 @@ struct SettingsView: View {
     
     @MainActor @ViewBuilder
     private var recipeSection: some View {
-        Section("Recipes") {
+        Section("settings-recipes-section-name") {
             ZStack {
                 let recipeViewModel = RecipeDisplayViewModel(recipe: viewModel.recipe)
                 
@@ -48,26 +48,35 @@ struct SettingsView: View {
             }
             
             VStack(alignment: .leading, spacing: 8) {
-                Toggle("Show recipe ingredient names", isOn: $viewModel.settings.showIngredientNames)
-                    .tint(.sh(.orange))
+                Toggle(
+                    "settings-recipe-section-show-ingredient-names",
+                    isOn: $viewModel.settings.showIngredientNames
+                )
+                .tint(.sh(.orange))
                 
-                Text("If it is difficult for you to distinguish recipe ingredients only by it's icon, you can enable this setting to also see recipe ingredient names.")
+                Text("settings-recipe-section-show-ingredient-names-explanation")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
             
-            Toggle("Auto-select single recipe", isOn: $viewModel.settings.autoSelectSingleRecipe)
-                .tint(.sh(.orange))
+            Toggle(
+                "settings-recipe-section-auto-select-single-recipe",
+                isOn: $viewModel.settings.autoSelectSingleRecipe
+            )
+            .tint(.sh(.orange))
             
-            Toggle("Auto-select single pinned recipe", isOn: $viewModel.settings.autoSelectSinglePinnedRecipe)
-                .tint(.sh(.orange))
+            Toggle(
+                "settings-recipe-section-auto-select-pinned-recipe",
+                isOn: $viewModel.settings.autoSelectSinglePinnedRecipe
+            )
+            .tint(.sh(.orange))
         }
     }
     
     @MainActor @ViewBuilder
     private var seasonalEventsSection: some View {
-        Section("Seasonal events") {
-            Toggle("FICSMAS", isOn: $viewModel.settings.showFICSMAS)
+        Section("settings-seasonal-events-section-name") {
+            Toggle("settings-seasonal-events-section-ficsmas", isOn: $viewModel.settings.showFICSMAS)
                 .tint(.sh(.orange))
         }
     }
@@ -75,11 +84,11 @@ struct SettingsView: View {
     @MainActor @ViewBuilder
     private var otherSection: some View {
         Section {
-            NavigationLink("Changes") {
+            NavigationLink("settings-other-section-changes") {
                 ChangeLogsView()
             }
             
-            NavigationLink("App Info") {
+            NavigationLink("settings-other-section-app-info") {
                 AppInfoView()
             }
         }
@@ -91,7 +100,7 @@ struct SettingsView: View {
             Button {
                 viewModel.showFeedback = true
             } label: {
-                Text("Send feedback")
+                Text("settings-feedback-section-send-feedback")
                     .fontWeight(.semibold)
                     .frame(maxWidth: .infinity)
                     .foregroundStyle(.background)
@@ -122,21 +131,16 @@ struct SettingsView: View {
     
     @MainActor @ViewBuilder
     private var feedbackSentView: some View {
-        Text(
-            """
-            Thank you! We appreciate this very much!
-            Every message helps us to make the app better. And now **YOU** are a part of this!
-            """
-        )
-        .padding()
-        .background(.background, in: RoundedRectangle(cornerRadius: 12))
-        .frame(maxHeight: .infinity, alignment: .bottom)
-        .padding(.bottom)
-        .onTapGesture {
-            viewModel.feedbackResult = nil
-        }
-        .zIndex(2)
-        .transition(.move(edge: .bottom))
+        Text("settings-feedback-sent-message")
+            .padding()
+            .background(.background, in: RoundedRectangle(cornerRadius: 12))
+            .frame(maxHeight: .infinity, alignment: .bottom)
+            .padding(.bottom)
+            .onTapGesture {
+                viewModel.feedbackResult = nil
+            }
+            .zIndex(2)
+            .transition(.move(edge: .bottom))
     }
 }
 

@@ -37,7 +37,7 @@ struct StatisticsView: View {
             .navigationTitle(viewModel.title)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
+                    Button("general-done") {
                         dismiss()
                     }
                 }
@@ -55,7 +55,7 @@ struct StatisticsView: View {
                     }
                 }
             } header: {
-                SHSectionHeader("Item statistics", expanded: $viewModel.itemsSection.expanded)
+                SHSectionHeader("statistics-items-section-name", expanded: $viewModel.itemsSection.expanded)
                     .background(.background)
             }
         }
@@ -71,8 +71,11 @@ struct StatisticsView: View {
                     }
                 }
             } header: {
-                SHSectionHeader("Natural resources", expanded: $viewModel.naturalResourcesSection.expanded)
-                    .background(.background)
+                SHSectionHeader(
+                    "statistics-natural-resources-section-name",
+                    expanded: $viewModel.naturalResourcesSection.expanded
+                )
+                .background(.background)
             }
         }
     }
@@ -89,7 +92,7 @@ struct StatisticsView: View {
             } header: {
                 SHSectionHeader(expanded: $viewModel.machinesSection.expanded) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Machine statistics")
+                        Text("statistics-production-buildings-section-name")
                         
                         HStack(spacing: 4) {
                             Image(systemName: "bolt.fill")

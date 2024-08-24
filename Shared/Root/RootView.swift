@@ -28,10 +28,12 @@ struct RootView: View {
     
     @MainActor @ViewBuilder
     private func loadingFailedView(_ error: Error) -> some View {
-        VStack {
-            Text("Failed to load application. Please try again later.")
+        VStack(spacing: 60) {
+            Text("root-failed-to-load-application")
+                .font(.title3)
+                .multilineTextAlignment(.center)
             
-            Button("Show error details") {
+            Button("root-show-error-details") {
                 viewModel.showErrorDetails = true
             }
             
@@ -45,6 +47,8 @@ struct RootView: View {
     }
 }
 
+#if DEBUG
 #Preview("Root view") {
     RootView()
 }
+#endif

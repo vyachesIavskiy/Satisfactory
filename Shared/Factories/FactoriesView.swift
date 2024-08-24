@@ -14,7 +14,7 @@ struct FactoriesView: View {
                     emptyStateView
                 }
             }
-            .navigationTitle("Factories")
+            .navigationTitle("factories-navigation-title")
         }
         .task {
             await viewModel.observeStorage()
@@ -33,13 +33,11 @@ struct FactoriesView: View {
         }
         .listStyle(.plain)
         .animation(.default, value: viewModel.searchText)
-        .searchable(text: $viewModel.searchText, prompt: Text("Search factories and productions"))
+        .searchable(text: $viewModel.searchText, prompt: Text("factories-search-factories-and-productions"))
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                Button {
+                Button("factories-create-factory", systemImage: "plus.square") {
                     viewModel.showingNewFactoryModal = true
-                } label: {
-                    Image(systemName: "plus.square")
                 }
             }
         }
@@ -58,7 +56,7 @@ struct FactoriesView: View {
                     }
                     .listRowSeparator(.hidden)
                     .contextMenu {
-                        Button("Delete", systemImage: "trash", role: .destructive) {
+                        Button("general-delete", systemImage: "trash", role: .destructive) {
                             viewModel.factoryToDelete = factory
                             viewModel.showingDeleteFactoryAlert = true
                         }
@@ -66,7 +64,7 @@ struct FactoriesView: View {
             }
         } header: {
             if !viewModel.productionsSection.productions.isEmpty {
-                SHSectionHeader("Factories", expanded: $viewModel.factoriesSectionExpanded)
+                SHSectionHeader("factories-factories-section-name", expanded: $viewModel.factoriesSectionExpanded)
                     .listRowInsets(EdgeInsets())
                     .padding(.horizontal, 20)
                     .padding(.top, 8)
@@ -76,19 +74,19 @@ struct FactoriesView: View {
         }
         .id(viewModel.factoriesSection.id)
         .confirmationDialog(
-            "Delete factory",
+            "factories-delete-factory",
             isPresented: $viewModel.showingDeleteFactoryAlert,
             presenting: viewModel.factoryToDelete
         ) { factory in
-            Button("Delete", role: .destructive) {
+            Button("general-delete", role: .destructive) {
                 viewModel.deleteFactory(factory)
             }
             
-            Button("Cancel", role: .cancel) {
+            Button("general-cancel", role: .cancel) {
                 viewModel.factoryToDelete = nil
             }
         } message: { _ in
-            Text("If you delete a factory, all of the productions inside this factory will be also deleted.\n\nThis action cannot be undone.\n\nAre you sure you want to delete a factory?")
+            Text("factory-delete-factory-message")
         }
     }
     
@@ -108,7 +106,7 @@ struct FactoriesView: View {
                 }
             } header: {
                 if !viewModel.productionsSection.productions.isEmpty {
-                    SHSectionHeader("Productions", expanded: $viewModel.productionsSectionExpanded)
+                    SHSectionHeader("factories-productions-section-name", expanded: $viewModel.productionsSectionExpanded)
                         .listRowInsets(EdgeInsets())
                         .padding(.horizontal, 20)
                         .padding(.top, 8)
@@ -164,7 +162,7 @@ struct FactoriesView: View {
     @MainActor @ViewBuilder
     private var emptyStateView: some View {
         VStack(spacing: 120) {
-            Text("You don't have any factory yet!")
+            Text("factories-no-factories-message")
                 .font(.title)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
@@ -172,7 +170,7 @@ struct FactoriesView: View {
             Button {
                 viewModel.showingNewFactoryModal = true
             } label: {
-                Text("Create a factory")
+                Text("factories-create-factory")
                     .font(.title3)
                     .fontWeight(.medium)
                     .foregroundStyle(.background)

@@ -342,6 +342,14 @@ public extension SHStorageService {
         }
     }
     
+    func factory(id: UUID) -> Factory? {
+        factories().first(id: id)
+    }
+    
+    func production(id: UUID) -> Production? {
+        productions().first(id: id)
+    }
+    
     func produtions(inside factory: Factory) -> [Production] {
         productions().filter { factory.productionIDs.contains($0.id) }
     }

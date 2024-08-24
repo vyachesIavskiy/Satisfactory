@@ -316,11 +316,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D3051BCB2C77640A00E0B6C3 /* WhatsNewView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3051BCE2C77641900E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = WhatsNewView; sourceTree = "<group>"; };
+		D3051BCB2C77640A00E0B6C3 /* Whats New */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3051BCE2C77641900E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Whats New"; sourceTree = "<group>"; };
 		D3051BD12C77643100E0B6C3 /* iOS */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3051BD62C77643100E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = iOS; sourceTree = "<group>"; };
 		D3051BD52C77643100E0B6C3 /* macOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = macOS; sourceTree = "<group>"; };
-		D3051BD72C77681600E0B6C3 /* TabsView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3051BD82C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3051BD92C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3051BDA2C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = TabsView; sourceTree = "<group>"; };
-		D31388FD2C5A8AD600D90006 /* NewFactoryView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D31389002C5A8AE700D90006 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = NewFactoryView; sourceTree = "<group>"; };
+		D3051BD72C77681600E0B6C3 /* Tabs */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3051BD82C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3051BD92C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3051BDA2C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Tabs; sourceTree = "<group>"; };
+		D31388FD2C5A8AD600D90006 /* New Factory */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D31389002C5A8AE700D90006 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "New Factory"; sourceTree = "<group>"; };
 		D33FBA392C76265200D6C089 /* Root */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Root; sourceTree = "<group>"; };
 		D33FBA462C76265400D6C089 /* New Production */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D33FBA502C76265400D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "New Production"; sourceTree = "<group>"; };
 		D33FBA612C76265A00D6C089 /* Settings */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D33FBAAA2C76265A00D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Settings; sourceTree = "<group>"; };
@@ -331,13 +331,13 @@
 		D3501C802C57E76D00A67D74 /* NewProductionTab */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3501C812C57E77600A67D74 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = NewProductionTab; sourceTree = "<group>"; };
 		D3501C932C580D4500A67D74 /* FactoriesTab */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3501C972C580D5F00A67D74 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = FactoriesTab; sourceTree = "<group>"; };
 		D3501C942C580D4C00A67D74 /* SettingsTab */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3501C9F2C580FF900A67D74 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = SettingsTab; sourceTree = "<group>"; };
-		D354B17A2C720ACB0008B82D /* StatisticsView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D354B17E2C720AD50008B82D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = StatisticsView; sourceTree = "<group>"; };
+		D354B17A2C720ACB0008B82D /* Statistics */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D354B17E2C720AD50008B82D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Statistics; sourceTree = "<group>"; };
 		D3691D732C7A2E8A0072322E /* UI Components */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3691D742C7A2E910072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3691D752C7A2E980072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3691D762C7A2E980072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3691D772C7A2EAC0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "UI Components"; sourceTree = "<group>"; };
-		D3691D8A2C7A2EB20072322E /* RecipeView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = RecipeView; sourceTree = "<group>"; };
+		D3691D8A2C7A2EB20072322E /* Recipe */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Recipe; sourceTree = "<group>"; };
 		D3691DA32C7A2FE30072322E /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3691DA42C7A2FEA0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3691DA52C7A2FEA0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3691DA62C7A2FEA0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
 		D37E13182C5953C40085FEC0 /* Factories */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D37E131B2C5953D40085FEC0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Factories; sourceTree = "<group>"; };
-		D37F8A5B2C5BA49900D3AB99 /* FactoryView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D37F8A5F2C5BA4A600D3AB99 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = FactoryView; sourceTree = "<group>"; };
-		D3B700832C5D779C00797978 /* EditProductionView */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3B700872C5D77B500797978 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EditProductionView; sourceTree = "<group>"; };
+		D37F8A5B2C5BA49900D3AB99 /* Factory */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D37F8A5F2C5BA4A600D3AB99 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Factory; sourceTree = "<group>"; };
+		D3B700832C5D779C00797978 /* Edit Production */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3B700872C5D77B500797978 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Edit Production"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,17 +401,17 @@
 			children = (
 				450BD18F24A6395700948B47 /* SatisfactoryApp.swift */,
 				D33FBA392C76265200D6C089 /* Root */,
-				D3051BD72C77681600E0B6C3 /* TabsView */,
-				D3051BCB2C77640A00E0B6C3 /* WhatsNewView */,
+				D3051BD72C77681600E0B6C3 /* Tabs */,
+				D3051BCB2C77640A00E0B6C3 /* Whats New */,
 				D33FBA462C76265400D6C089 /* New Production */,
 				D37E13182C5953C40085FEC0 /* Factories */,
 				D33FBA612C76265A00D6C089 /* Settings */,
 				D33FBA902C76265A00D6C089 /* Single Item Production */,
-				D3691D8A2C7A2EB20072322E /* RecipeView */,
-				D354B17A2C720ACB0008B82D /* StatisticsView */,
-				D3B700832C5D779C00797978 /* EditProductionView */,
-				D31388FD2C5A8AD600D90006 /* NewFactoryView */,
-				D37F8A5B2C5BA49900D3AB99 /* FactoryView */,
+				D3691D8A2C7A2EB20072322E /* Recipe */,
+				D354B17A2C720ACB0008B82D /* Statistics */,
+				D3B700832C5D779C00797978 /* Edit Production */,
+				D31388FD2C5A8AD600D90006 /* New Factory */,
+				D37F8A5B2C5BA49900D3AB99 /* Factory */,
 				D33FBB4D2C76273400D6C089 /* ChangeLogs */,
 				D33FBAAE2C76266400D6C089 /* Environment */,
 				D3691D732C7A2E8A0072322E /* UI Components */,
@@ -497,7 +497,7 @@
 				D33FBAAE2C76266400D6C089 /* Environment */,
 				D33FBB302C76266C00D6C089 /* Extensions */,
 				D33FBB4D2C76273400D6C089 /* ChangeLogs */,
-				D3691D8A2C7A2EB20072322E /* RecipeView */,
+				D3691D8A2C7A2EB20072322E /* Recipe */,
 			);
 			name = iOS;
 			packageProductDependencies = (
@@ -580,7 +580,7 @@
 				D33FBAAE2C76266400D6C089 /* Environment */,
 				D33FBB302C76266C00D6C089 /* Extensions */,
 				D33FBB4D2C76273400D6C089 /* ChangeLogs */,
-				D3691D8A2C7A2EB20072322E /* RecipeView */,
+				D3691D8A2C7A2EB20072322E /* Recipe */,
 			);
 			name = "iOS AppStore Screenshots";
 			productName = iOS;

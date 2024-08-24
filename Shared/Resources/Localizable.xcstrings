@@ -706,7 +706,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "If you delete a factory, all of the productions inside this factory will be also deleted.\\n\\nThis action cannot be undone.\\n\\nAre you sure you want to delete a factory?"
+            "value" : "If you delete a factory, all of the productions inside this factory will be also deleted.\n\nThis action cannot be undone.\n\nAre you sure you want to delete a factory?"
           }
         }
       }

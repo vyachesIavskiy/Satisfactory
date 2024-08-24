@@ -1,3 +1,4 @@
+import Foundation
 import Observation
 import SHModels
 import SHStorage
@@ -21,14 +22,12 @@ final class FactoriesViewModel {
     // MARK: Observed properties
     var factoriesSection = FactoriesSection()
     var productionsSection = ProductionsSection()
-    var selectedFactory: Factory?
     var factoryToDelete: Factory?
-    
-    var factoriesSectionExpanded = true
-    var productionsSectionExpanded = true
     
     var showingDeleteFactoryAlert = false
     var showingNewFactoryModal = false
+    
+    var navigationPath = [UUID]() // Factories ID
     
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
@@ -72,8 +71,12 @@ final class FactoriesViewModel {
         }
     }
     
-    func showDeleteFactoryAlert() {
-        
+    func factory(id factoryID: UUID) -> Factory? {
+        storageService.factory(id: factoryID)
+    }
+    
+    func production(id productionID: UUID) -> Production? {
+        storageService.production(id: productionID)
     }
     
     func deleteFactory(_ factory: Factory) {
@@ -103,10 +106,12 @@ extension FactoriesViewModel {
     struct FactoriesSection: Identifiable {
         let id = "factories-view-factories-section"
         var factories = [Factory]()
+        var expanded = true
     }
     
     struct ProductionsSection: Identifiable {
         let id = "factories-view-productions-section"
         var productions = [Production]()
+        var expanded = true
     }
 }

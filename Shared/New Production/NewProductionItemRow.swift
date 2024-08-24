@@ -63,7 +63,6 @@ private struct _ItemRowPreview: View {
                     }
             }
             .listRowSeparator(.hidden)
-//            .padding(.horizontal, 16)
         }
         .listStyle(.plain)
     }

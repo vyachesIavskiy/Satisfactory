@@ -35,8 +35,6 @@ final class NewProductionViewModel {
         }
     }
     
-    var navigationPath = [String]() // Item IDs
-    
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
@@ -54,6 +52,9 @@ final class NewProductionViewModel {
     
     @MainActor
     var sections = [Section]()
+    
+    @MainActor
+    var navigationPath = [String]() // Item IDs
     
     @MainActor
     init() {

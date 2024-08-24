@@ -6,15 +6,22 @@ struct FactoriesView: View {
     private var viewModel = FactoriesViewModel()
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $viewModel.navigationPath) {
             ZStack {
-                if !viewModel.factoriesSection.factories.isEmpty {
+                if !viewModel.factoriesSection.factories.isEmpty || !viewModel.searchText.isEmpty {
                     listView
                 } else {
                     emptyStateView
                 }
             }
             .navigationTitle("factories-navigation-title")
+            .navigationDestination(for: UUID.self) { id in
+                if let factory = viewModel.factory(id: id) {
+                    FactoryView(viewModel: FactoryViewModel(factory: factory))
+                } else if let production = viewModel.production(id: id) {
+                    // TODO: Add production view
+                }
+            }
         }
         .task {
             await viewModel.observeStorage()
@@ -45,34 +52,69 @@ struct FactoriesView: View {
     
     @MainActor @ViewBuilder
     private var factoriesSection: some View {
-        Section(isExpanded: $viewModel.factoriesSectionExpanded) {
-            ForEach(viewModel.factoriesSection.factories) { factory in
-                FactoryRowView(factory: factory)
-                    .background {
-                        NavigationLink("") {
-                            FactoryView(viewModel: FactoryViewModel(factory: factory))
-                        }
-                        .opacity(0)
-                    }
-                    .listRowSeparator(.hidden)
-                    .contextMenu {
-                        Button("general-delete", systemImage: "trash", role: .destructive) {
-                            viewModel.factoryToDelete = factory
-                            viewModel.showingDeleteFactoryAlert = true
-                        }
-                    }
-            }
-        } header: {
-            if !viewModel.productionsSection.productions.isEmpty {
-                SHSectionHeader("factories-factories-section-name", expanded: $viewModel.factoriesSectionExpanded)
-                    .listRowInsets(EdgeInsets())
-                    .padding(.horizontal, 20)
-                    .padding(.top, 8)
-                    .padding(.bottom, 4)
-                    .background(.background)
+        if !viewModel.factoriesSection.factories.isEmpty {
+            Section(isExpanded: $viewModel.factoriesSection.expanded) {
+                ForEach(viewModel.factoriesSection.factories) { factory in
+                    factoryRow(factory)
+                        .disabled(!viewModel.factoriesSection.expanded)
+                }
+            } header: {
+                if !viewModel.productionsSection.productions.isEmpty {
+                    SHSectionHeader("factories-factories-section-name", expanded: $viewModel.factoriesSection.expanded)
+                        .listRowInsets(EdgeInsets())
+                        .padding(.horizontal, 20)
+                        .padding(.top, 8)
+                        .padding(.bottom, 4)
+                        .background(.background)
+                }
             }
         }
-        .id(viewModel.factoriesSection.id)
+    }
+    
+    @MainActor @ViewBuilder
+    private var productionsSection: some View {
+        if !viewModel.searchText.isEmpty {
+            Section(isExpanded: $viewModel.productionsSection.expanded) {
+                ForEach(viewModel.productionsSection.productions) { production in
+                    Button {
+                        // TODO: Select production
+                    } label: {
+                        ProductionRowView(production: production)
+                            .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .listRowSeparator(.hidden)
+                    .disabled(!viewModel.productionsSection.expanded)
+                }
+            } header: {
+                if !viewModel.productionsSection.productions.isEmpty {
+                    SHSectionHeader("factories-productions-section-name", expanded: $viewModel.productionsSection.expanded)
+                        .listRowInsets(EdgeInsets())
+                        .padding(.horizontal, 20)
+                        .padding(.top, 8)
+                        .padding(.bottom, 4)
+                        .background(.background)
+                }
+            }
+        }
+    }
+    
+    @MainActor @ViewBuilder
+    private func factoryRow(_ factory: Factory) -> some View {
+        Button {
+            viewModel.navigationPath.append(factory.id)
+        } label: {
+            FactoryRowView(factory: factory)
+                .contentShape(.interaction, Rectangle())
+        }
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+        .contextMenu {
+            Button("general-delete", systemImage: "trash", role: .destructive) {
+                viewModel.factoryToDelete = factory
+                viewModel.showingDeleteFactoryAlert = true
+            }
+        }
         .confirmationDialog(
             "factories-delete-factory",
             isPresented: $viewModel.showingDeleteFactoryAlert,
@@ -87,34 +129,6 @@ struct FactoriesView: View {
             }
         } message: { _ in
             Text("factory-delete-factory-message")
-        }
-    }
-    
-    @MainActor @ViewBuilder
-    private var productionsSection: some View {
-        if !viewModel.searchText.isEmpty {
-            Section(isExpanded: $viewModel.productionsSectionExpanded) {
-                ForEach(viewModel.productionsSection.productions) { production in
-                    Button {
-                        // TODO: Select production
-                    } label: {
-                        ProductionRowView(production: production)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                    .listRowSeparator(.hidden)
-                }
-            } header: {
-                if !viewModel.productionsSection.productions.isEmpty {
-                    SHSectionHeader("factories-productions-section-name", expanded: $viewModel.productionsSectionExpanded)
-                        .listRowInsets(EdgeInsets())
-                        .padding(.horizontal, 20)
-                        .padding(.top, 8)
-                        .padding(.bottom, 4)
-                        .background(.background)
-                }
-            }
-            .id(viewModel.productionsSection.id)
         }
     }
     

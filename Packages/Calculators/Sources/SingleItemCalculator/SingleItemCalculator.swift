@@ -137,6 +137,9 @@ public final class SingleItemCalculator {
         // Build additional trees
         buildAdditionalTrees()
         
+        // Apply registered byproducts to all trees
+        applyByproducts()
+        
         // Build and return an output
         buildOutput()
         
@@ -162,12 +165,10 @@ extension SingleItemCalculator {
     struct InternalState {
         var selectedInputItems = [SingleItemProduction.InputItem]()
         var selectedByproducts = [SingleItemProduction.InputByproduct]()
-        var byproducts = [Byproduct]()
         
         mutating func reset(production: SingleItemProduction) {
             selectedInputItems = production.inputItems
             selectedByproducts = production.byproducts
-            byproducts = []
         }
         
         // MARK: Convenience helpers
@@ -182,19 +183,6 @@ extension SingleItemCalculator {
         func selectedByproduct(with id: String) -> SingleItemProduction.InputByproduct? {
             selectedByproducts.first { $0.item.id == id }
         }
-    }
-}
-
-// MARK: Hashable
-extension SingleItemCalculator: Hashable {
-    public static func == (lhs: SingleItemCalculator, rhs: SingleItemCalculator) -> Bool {
-        lhs.production == rhs.production &&
-        lhs.outputItems == rhs.outputItems
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(production)
-        hasher.combine(outputItems)
     }
 }
 

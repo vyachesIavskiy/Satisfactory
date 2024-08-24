@@ -22,6 +22,9 @@ final class CalculationViewModel {
     @ObservationIgnored
     var amount: Double
     
+    @ObservationIgnored
+    private var updateTask: Task<Void, Never>?
+    
     var item: any Item {
         calculator.item
     }
@@ -121,6 +124,7 @@ final class CalculationViewModel {
     func update() {
         calculator.amount = amount
         calculator.update()
+        
         Task { @MainActor [weak self] in
             self?.buildOutputItemViewModels()
         }
@@ -134,11 +138,11 @@ final class CalculationViewModel {
 // MARK: Hashable
 extension CalculationViewModel: Hashable {
     static func == (lhs: CalculationViewModel, rhs: CalculationViewModel) -> Bool {
-        lhs.calculator == rhs.calculator
+        lhs.calculator.production == rhs.calculator.production
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(calculator)
+        hasher.combine(calculator.production)
     }
 }
 

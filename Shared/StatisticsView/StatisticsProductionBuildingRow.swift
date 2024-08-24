@@ -80,13 +80,15 @@ extension StatisticsView {
                         .foregroundStyle(.sh(.midnight))
                 }
                 
-                HStack(spacing: 4) {
-                    Image(systemName: "bolt.fill")
-                        .foregroundStyle(.sh(.cyan))
-
-                    Text(productionBuilding.powerValueString)
+                if productionBuilding.shouldDisplayPowerConsumption {
+                    HStack(spacing: 4) {
+                        Image(systemName: "bolt.fill")
+                            .foregroundStyle(.sh(.cyan))
+                        
+                        Text(productionBuilding.powerValueString)
+                    }
+                    .font(.footnote)
                 }
-                .font(.footnote)
                 
                 HStack {
                     Text(productionBuilding.subtitle)

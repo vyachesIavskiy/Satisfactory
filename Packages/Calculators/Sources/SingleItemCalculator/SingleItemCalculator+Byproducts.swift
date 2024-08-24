@@ -1,6 +1,13 @@
 
 extension SingleItemCalculator {
-    func registerByproducts(from node: Node) {
+    func applyByproducts() {
+        let allNodes = mainNodes + additionalNodes
+        for node in allNodes {
+            applyByproducts(from: node)
+        }
+    }
+    
+    private func applyByproducts(from node: Node) {
         for byproduct in node.byproducts {
             guard
                 // Check if this byproduct is registered as produced byproduct by user.
@@ -23,9 +30,10 @@ extension SingleItemCalculator {
             
             // Update tree with found byproduct from the beginning.
             findConsumers(for: &byproduct, producingNode: node)
-            
-            // Save created byproduct.
-            internalState.byproducts.merge(with: [byproduct])
+        }
+        
+        for node in node.inputNodes {
+            applyByproducts(from: node)
         }
     }
     

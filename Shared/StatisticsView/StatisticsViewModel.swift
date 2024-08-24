@@ -81,6 +81,8 @@ final class StatisticsViewModel {
                     lhs.id == rhs.id
                 } merging: { lhs, rhs in
                     lhs.amount += rhs.amount
+                    lhs.powerConsumption.min += rhs.powerConsumption.min
+                    lhs.powerConsumption.max += rhs.powerConsumption.max
                 }
             }
         }
@@ -117,7 +119,7 @@ extension StatisticsViewModel {
             if totalPowerConsumption.min == totalPowerConsumption.max {
                 "\(totalPowerConsumption.max.formatted(.number)) MW"
             } else {
-                "(\(totalPowerConsumption.min.formatted(.number)) ~ \(totalPowerConsumption.min.formatted(.number))) MW"
+                "(\(totalPowerConsumption.min.formatted(.number)) ~ \(totalPowerConsumption.max.formatted(.number))) MW"
             }
         }
     }
@@ -221,11 +223,15 @@ extension StatisticsViewModel {
             }
         }
         
+        var shouldDisplayPowerConsumption: Bool {
+            powerConsumption.min > 0 || powerConsumption.max > 0
+        }
+        
         var powerValueString: String {
             if powerConsumption.min == powerConsumption.max {
                 "\(powerConsumption.max.formatted(.number)) MW"
             } else {
-                "(\(powerConsumption.min.formatted(.number)) ~ \(powerConsumption.min.formatted(.number))) MW"
+                "(\(powerConsumption.min.formatted(.number)) ~ \(powerConsumption.max.formatted(.number))) MW"
             }
         }
         

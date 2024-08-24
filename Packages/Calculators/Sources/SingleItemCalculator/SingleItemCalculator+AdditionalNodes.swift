@@ -8,8 +8,6 @@ extension SingleItemCalculator {
     }
     
     private func buildAdditionalNode(_ node: SingleItemCalculator.Node) {
-        registerByproducts(from: node)
-        
         for (inputIndex, input) in node.inputs.enumerated() {
             buildAdditionalInputNode(for: node, input: input, inputIndex: inputIndex)
         }

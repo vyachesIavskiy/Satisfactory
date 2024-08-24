@@ -50,8 +50,6 @@ extension SingleItemCalculator {
     /// Populates a recipe node with recipe, amounts and collects producing byproducts from recipe node. Recursively does the same for input recipe nodes.
     /// - Parameter recipeNode: A recipe node in question.
     private func buildNode(_ node: Node) {
-        registerByproducts(from: node)
-        
         for (inputIndex, input) in node.inputs.enumerated() {
             buildInputNode(for: node, input: input, inputIndex: inputIndex)
         }

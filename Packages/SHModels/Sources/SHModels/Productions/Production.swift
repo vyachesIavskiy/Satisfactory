@@ -48,12 +48,12 @@ public enum Production: Identifiable, Hashable, Sendable {
         }
     }
     
-    public var asset: Asset {
+    public var assetName: String {
         get {
             switch self {
-            case let .singleItem(production): .assetCatalog(name: production.item.id)
-            case let .fromResources(production): production.asset
-            case let .power(production): production.asset
+            case let .singleItem(production): production.assetName
+            case let .fromResources(production): production.assetName
+            case let .power(production): production.assetName
             }
         }
         set {
@@ -62,12 +62,12 @@ public enum Production: Identifiable, Hashable, Sendable {
                 
             case let .fromResources(production):
                 var copy = production
-                copy.asset = newValue
+                copy.assetName = newValue
                 self = .fromResources(copy)
                 
             case let .power(production):
                 var copy = production
-                copy.asset = newValue
+                copy.assetName = newValue
                 self = .power(copy)
             }
         }

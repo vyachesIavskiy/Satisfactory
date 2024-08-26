@@ -1,4 +1,4 @@
-import Observation
+import Foundation
 import SHModels
 import SHStorage
 
@@ -6,7 +6,7 @@ import SHStorage
 final class FactoryViewModel {
     // MARK: Ignored properties
     @ObservationIgnored
-    private(set) var factory: Factory
+    var factory: Factory
     
     @MainActor @ObservationIgnored
     private var productions: [Production]
@@ -20,14 +20,10 @@ final class FactoryViewModel {
     
     // MARK: Observed properties
     var section = Section()
-    var selectedProduction: Production?
-    var productionToRename: Production?
-    var newProductionName = ""
-    var productionToDelete: Production?
+    var productionToEdit: Production?
     
-    var showingRenameAlert = false
-    var showingDeleteAlert = false
     var showingStatisticsSheet = false
+    var showingEditFactorySheet = false
     
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
@@ -52,17 +48,6 @@ final class FactoryViewModel {
             self.productions = productions
             buildSection()
         }
-    }
-    
-    func renameProduction(_ production: Production) {
-        var copy = production
-        
-        copy.name = newProductionName
-        storageService.saveProduction(copy, factory.id)
-    }
-    
-    func deleteProduction(_ production: Production) {
-        storageService.deleteProduction(production)
     }
 }
 

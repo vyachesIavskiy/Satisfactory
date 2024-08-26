@@ -20,7 +20,7 @@ extension StatisticsView {
         var body: some View {
             VStack(spacing: 4) {
                 HStack(spacing: 12) {
-                    ItemRowIcon(item.statisticItem.item)
+                    ListRowIcon(item: item.statisticItem.item)
                     
                     if item.expandable {
                         Button {

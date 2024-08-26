@@ -22,9 +22,10 @@ final class FactoriesViewModel {
     // MARK: Observed properties
     var factoriesSection = FactoriesSection()
     var productionsSection = ProductionsSection()
-    var factoryToDelete: Factory?
     
-    var showingDeleteFactoryAlert = false
+    var factoryToEdit: Factory?
+    var productionToEdit: Production?
+    
     var showingNewFactoryModal = false
     
     var navigationPath = [UUID]() // Factories ID
@@ -82,6 +83,10 @@ final class FactoriesViewModel {
     func deleteFactory(_ factory: Factory) {
         storageService.deleteFactory(factory)
     }
+    
+    func deleteProduction(_ production: Production) {
+        storageService.deleteProduction(production)
+    }
 }
 
 // MARK: Private
@@ -99,6 +104,9 @@ private extension FactoriesViewModel {
                 $0.name.localizedCaseInsensitiveContains(searchText)
             }
         }
+        
+        factoriesSection.factories.sort(using: KeyPathComparator(\.name))
+        productionsSection.productions.sort(using: KeyPathComparator(\.name))
     }
 }
 

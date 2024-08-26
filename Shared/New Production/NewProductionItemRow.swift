@@ -15,7 +15,7 @@ extension NewProductionView {
         
         var body: some View {
             HStack(spacing: 12) {
-                ItemRowIcon(item)
+                ListRowIcon(item: item)
                 
                 HStack {
                     Text(item.localizedName)

@@ -10,6 +10,10 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
     public var byproducts: [InputByproduct]
     public var statistics: Statistics
     
+    public var assetName: String {
+        item.id
+    }
+    
     @Dependency(\.uuid)
     private var uuid
     

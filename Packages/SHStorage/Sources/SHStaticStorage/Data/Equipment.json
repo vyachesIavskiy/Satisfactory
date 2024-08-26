@@ -142,28 +142,28 @@
   {
     "categoryID" : "category-special",
     "id" : "equipment-golden-factory-cart",
-    "progressionIndex" : 19,
-    "requireElectricity" : false,
-    "slotID" : "equipment-slot-hands"
-  },
-  {
-    "categoryID" : "category-hands",
-    "id" : "equipment-ficsit-gold-coffee-cup",
-    "progressionIndex" : 20,
-    "requireElectricity" : false,
-    "slotID" : "equipment-slot-hands"
-  },
-  {
-    "categoryID" : "category-hands",
-    "id" : "equipment-candy-cane-basher",
     "progressionIndex" : 21,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },
   {
     "categoryID" : "category-hands",
-    "id" : "equipment-boombox",
+    "id" : "equipment-ficsit-gold-coffee-cup",
     "progressionIndex" : 22,
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-candy-cane-basher",
+    "progressionIndex" : 20,
+    "requireElectricity" : false,
+    "slotID" : "equipment-slot-hands"
+  },
+  {
+    "categoryID" : "category-hands",
+    "id" : "equipment-boombox",
+    "progressionIndex" : 19,
     "requireElectricity" : false,
     "slotID" : "equipment-slot-hands"
   },

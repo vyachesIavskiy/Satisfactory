@@ -2,16 +2,16 @@ import SwiftUI
 import SHModels
 import SHUtils
 
-struct ProductionView: View {
+struct SingleItemProductionView: View {
     @State
-    var viewModel: ProductionViewModel
+    var viewModel: SingleItemProductionViewModel
     
     init(item: any Item) {
-        _viewModel = State(initialValue: ProductionViewModel(item: item))
+        _viewModel = State(initialValue: SingleItemProductionViewModel(item: item))
     }
     
     init(production: SingleItemProduction) {
-        _viewModel = State(initialValue: ProductionViewModel(production: production))
+        _viewModel = State(initialValue: SingleItemProductionViewModel(production: production))
     }
     
     var body: some View {
@@ -32,7 +32,7 @@ struct ProductionView: View {
 #if DEBUG
 import SHStorage
 
-private struct _ProductionPreview: View {
+private struct _SingleItemProductionPreview: View {
     let itemID: String
     
     @Dependency(\.storageService)
@@ -45,7 +45,7 @@ private struct _ProductionPreview: View {
     var body: some View {
         if let item {
             NavigationStack {
-                ProductionView(item: item)
+                SingleItemProductionView(item: item)
             }
         } else {
             Text("There is no item with id '\(itemID)'")
@@ -54,10 +54,6 @@ private struct _ProductionPreview: View {
 }
 
 #Preview {
-    _ProductionPreview(itemID: "part-plastic")
+    _SingleItemProductionPreview(itemID: "part-plastic")
 }
 #endif
-
-extension String: @retroactive Identifiable {
-    public var id: String { self }
-}

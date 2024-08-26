@@ -107,10 +107,7 @@ final class CalculationViewModel {
         } else {
             // Create a new production and save it
             modalNavigationState = .saveProduction(
-                viewModel: EditProductionViewModel(
-                    production: calculator.production,
-                    onApply: sharedCompletion
-                )
+                viewModel: EditProductionViewModel(newProduction: .singleItem(calculator.production))
             )
         }
     }
@@ -462,7 +459,7 @@ extension CalculationViewModel {
             switch self {
             case let .selectInitialRecipeForItem(viewModel): viewModel.item.id
             case let .adjustItem(viewModel): viewModel.id.uuidString
-            case let .saveProduction(viewModel): viewModel.production.id.uuidString
+            case let .saveProduction(viewModel): viewModel.id.uuidString
             case let .statistics(viewModel): viewModel.productions[0].id.uuidString
             }
         }

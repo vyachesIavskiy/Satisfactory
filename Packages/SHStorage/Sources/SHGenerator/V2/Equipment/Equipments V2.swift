@@ -52,10 +52,10 @@ extension V2 {
             hoverPack,
             factoryCart,
             coffeCup,
-            goldenFactoryCart,
-            goldCoffeCup,
+            boombox,
             candyCaneBasher,
-            boombox
+            goldenFactoryCart,
+            goldCoffeCup
         ]
     }
 }

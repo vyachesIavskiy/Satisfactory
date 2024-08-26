@@ -11,7 +11,7 @@ extension StatisticsView {
         
         var body: some View {
             HStack(spacing: 12) {
-                ItemRowIcon(naturalResource.item)
+                ListRowIcon(item: naturalResource.item)
                 
                 HStack {
                     Text(naturalResource.item.localizedName)

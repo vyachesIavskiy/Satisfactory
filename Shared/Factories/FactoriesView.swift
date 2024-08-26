@@ -17,9 +17,9 @@ struct FactoriesView: View {
             .navigationTitle("factories-navigation-title")
             .navigationDestination(for: UUID.self) { id in
                 if let factory = viewModel.factory(id: id) {
-                    FactoryView(viewModel: FactoryViewModel(factory: factory))
+                    FactoryView(viewModel: FactoryViewModel(factory: factory), navigationPath: $viewModel.navigationPath)
                 } else if let production = viewModel.production(id: id) {
-                    // TODO: Add production view
+                    ProductionView(production: production)
                 }
             }
         }
@@ -27,7 +27,13 @@ struct FactoriesView: View {
             await viewModel.observeStorage()
         }
         .sheet(isPresented: $viewModel.showingNewFactoryModal) {
-            NewFactoryView()
+            EditFactoryView(viewModel: EditFactoryViewModel())
+        }
+        .sheet(item: $viewModel.factoryToEdit) { factory in
+            EditFactoryView(viewModel: EditFactoryViewModel(factory: factory, onSave: { _ in }, onDelete: { }))
+        }
+        .sheet(item: $viewModel.productionToEdit) { production in
+            EditProductionView(viewModel: EditProductionViewModel(editProduction: production))
         }
     }
     
@@ -73,28 +79,19 @@ struct FactoriesView: View {
     
     @MainActor @ViewBuilder
     private var productionsSection: some View {
-        if !viewModel.searchText.isEmpty {
+        if !viewModel.productionsSection.productions.isEmpty {
             Section(isExpanded: $viewModel.productionsSection.expanded) {
                 ForEach(viewModel.productionsSection.productions) { production in
-                    Button {
-                        // TODO: Select production
-                    } label: {
-                        ProductionRowView(production: production)
-                            .contentShape(Rectangle())
-                    }
-                    .buttonStyle(.plain)
-                    .listRowSeparator(.hidden)
-                    .disabled(!viewModel.productionsSection.expanded)
+                    productionView(production)
+                        .disabled(!viewModel.productionsSection.expanded)
                 }
             } header: {
-                if !viewModel.productionsSection.productions.isEmpty {
-                    SHSectionHeader("factories-productions-section-name", expanded: $viewModel.productionsSection.expanded)
-                        .listRowInsets(EdgeInsets())
-                        .padding(.horizontal, 20)
-                        .padding(.top, 8)
-                        .padding(.bottom, 4)
-                        .background(.background)
-                }
+                SHSectionHeader("factories-productions-section-name", expanded: $viewModel.productionsSection.expanded)
+                    .listRowInsets(EdgeInsets())
+                    .padding(.horizontal, 20)
+                    .padding(.top, 8)
+                    .padding(.bottom, 4)
+                    .background(.background)
             }
         }
     }
@@ -110,25 +107,26 @@ struct FactoriesView: View {
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
         .contextMenu {
-            Button("general-delete", systemImage: "trash", role: .destructive) {
-                viewModel.factoryToDelete = factory
-                viewModel.showingDeleteFactoryAlert = true
+            Button("factories-edit-factory", systemImage: "pencil") {
+                viewModel.factoryToEdit = factory
             }
         }
-        .confirmationDialog(
-            "factories-delete-factory",
-            isPresented: $viewModel.showingDeleteFactoryAlert,
-            presenting: viewModel.factoryToDelete
-        ) { factory in
-            Button("general-delete", role: .destructive) {
-                viewModel.deleteFactory(factory)
+    }
+    
+    @MainActor @ViewBuilder
+    private func productionView(_ production: Production) -> some View {
+        Button {
+            viewModel.navigationPath.append(production.id)
+        } label: {
+            ProductionRowView(production: production)
+                .contentShape(.interaction, Rectangle())
+        }
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+        .contextMenu {
+            Button("factories-edit-production", systemImage: "pencil") {
+                viewModel.productionToEdit = production
             }
-            
-            Button("general-cancel", role: .cancel) {
-                viewModel.factoryToDelete = nil
-            }
-        } message: { _ in
-            Text("factory-delete-factory-message")
         }
     }
     
@@ -187,11 +185,10 @@ struct FactoriesView: View {
                 Text("factories-create-factory")
                     .font(.title3)
                     .fontWeight(.medium)
-                    .foregroundStyle(.background)
                     .padding(.horizontal, 16)
                     .padding(.vertical, 4)
             }
-            .buttonStyle(.shBorderedProminent)
+            .buttonStyle(.shBordered)
         }
         .padding(32)
     }

@@ -14,6 +14,7 @@ extension String {
     
     func abbreviated(_ letterCount: Int = 2) -> String {
         words
+            .prefix(letterCount)
             .compactMap { $0.first.map(String.init) }
             .joined()
             .uppercased()

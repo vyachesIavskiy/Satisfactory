@@ -3,7 +3,7 @@ import SHModels
 import SHStorage
 
 @Observable
-final class ProductionViewModel {
+final class SingleItemProductionViewModel {
     enum State: Hashable {
         case initialRecipeSelection(viewModel: InitialRecipeSelectionViewModel)
         case calculation(viewModel: CalculationViewModel)
@@ -40,8 +40,8 @@ final class ProductionViewModel {
     }
 }
 
-extension ProductionViewModel: Hashable {
-    static func == (lhs: ProductionViewModel, rhs: ProductionViewModel) -> Bool {
+extension SingleItemProductionViewModel: Hashable {
+    static func == (lhs: SingleItemProductionViewModel, rhs: SingleItemProductionViewModel) -> Bool {
         lhs.state == rhs.state
     }
     

@@ -5,99 +5,87 @@ struct FactoryView: View {
     @State
     private var viewModel: FactoryViewModel
     
-    init(viewModel: FactoryViewModel) {
+    @Binding
+    private var navigationPath: [UUID]
+    
+    @Environment(\.dismiss)
+    private var dismiss
+    
+    init(viewModel: FactoryViewModel, navigationPath: Binding<[UUID]>) {
         self.viewModel = viewModel
+        self._navigationPath = navigationPath
     }
     
     var body: some View {
         List {
             ForEach(viewModel.section.productions) { production in
-                ProductionRowView(production: production)
-                    .background {
-                        NavigationLink("") {
-                            switch production {
-                            case let .singleItem(production):
-                                ProductionView(production: production)
-                            case .fromResources:
-                                Text("From Resources production")
-                            case .power:
-                                Text("Power production")
-                            }
-                        }
-                        .opacity(0)
-                    }
-                    .listRowSeparator(.hidden)
-                    .contextMenu {
-                        Button("Rename", systemImage: "pencil.line") {
-                            viewModel.productionToRename = production
-                            viewModel.newProductionName = production.name
-                            viewModel.showingRenameAlert = true
-                        }
-                        
-                        Divider()
-                        
-                        Button("Delete", systemImage: "trash", role: .destructive) {
-                            viewModel.productionToDelete = production
-                            viewModel.showingDeleteAlert = true
-                        }
-                    }
+                productionRow(production)
             }
         }
         .listStyle(.plain)
+        .searchable(text: $viewModel.searchText, prompt: Text("factories-search-productions"))
         .navigationTitle(viewModel.factory.name)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                Button("Statistics", systemImage: "list.number") {
+                Button("statistics-button-name", systemImage: "list.number") {
                     viewModel.showingStatisticsSheet = true
                 }
             }
             
             ToolbarItem(placement: .primaryAction) {
-                Button("Edit") {
-                    // Edit factory
+                Button("general-edit") {
+                    viewModel.showingEditFactorySheet = true
                 }
             }
         }
-        .searchable(text: $viewModel.searchText, prompt: Text("Search productions"))
-        .alert(
-            "Rename production",
-            isPresented: $viewModel.showingRenameAlert,
-            presenting: viewModel.productionToRename
-        ) { production in
-            TextField("New production name", text: $viewModel.newProductionName)
-                .submitLabel(.done)
-            
-            Button("Rename") {
-                viewModel.renameProduction(production)
-                viewModel.productionToRename = nil
-            }
-            
-            Button("Cancel", role: .cancel) {
-                viewModel.productionToRename = nil
-            }
-        }
-        .confirmationDialog(
-            "Are you sure you would like to delete production?",
-            isPresented: $viewModel.showingDeleteAlert,
-            titleVisibility: .visible,
-            presenting: viewModel.productionToDelete
-        ) { production in
-            Button("Delete", role: .destructive) {
-                viewModel.deleteProduction(production)
-                viewModel.productionToDelete = nil
-            }
-            
-            Button("Cancel", role: .cancel) {
-                viewModel.productionToDelete = nil
-            }
-        } message: { _ in
-            Text("This action cannot be undone.")
-        }
+//        .confirmationDialog(
+//            "Are you sure you would like to delete production?",
+//            isPresented: $viewModel.showingDeleteAlert,
+//            titleVisibility: .visible,
+//            presenting: viewModel.productionToDelete
+//        ) { production in
+//            Button("Delete", role: .destructive) {
+//                viewModel.deleteProduction(production)
+//                viewModel.productionToDelete = nil
+//            }
+//            
+//            Button("Cancel", role: .cancel) {
+//                viewModel.productionToDelete = nil
+//            }
+//        } message: { _ in
+//            Text("This action cannot be undone.")
+//        }
         .sheet(isPresented: $viewModel.showingStatisticsSheet) {
             StatisticsView(viewModel: StatisticsViewModel(factory: viewModel.factory))
         }
+        .sheet(isPresented: $viewModel.showingEditFactorySheet) {
+            EditFactoryView(viewModel: EditFactoryViewModel(factory: viewModel.factory) { newFactory in
+                viewModel.factory = newFactory
+            } onDelete: {
+                dismiss()
+            })
+        }
+        .sheet(item: $viewModel.productionToEdit) { production in
+            EditProductionView(viewModel: EditProductionViewModel(editProduction: production))
+        }
         .task {
             await viewModel.observeProductions()
+        }
+    }
+    
+    @MainActor @ViewBuilder
+    private func productionRow(_ production: Production) -> some View {
+        Button {
+            navigationPath.append(production.id)
+        } label: {
+            ProductionRowView(production: production)
+        }
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+        .contextMenu {
+            Button("factories-edit-production", systemImage: "pencil") {
+                viewModel.productionToEdit = production
+            }
         }
     }
 }
@@ -150,11 +138,13 @@ private struct FactoryPreview: View {
                 )
             )
         }
-
     }
     
+    @State
+    private var navigationPath = [UUID]()
+    
     var body: some View {
-        FactoryView(viewModel: viewModel)
+        FactoryView(viewModel: viewModel, navigationPath: $navigationPath)
     }
 }
 

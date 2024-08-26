@@ -226,7 +226,7 @@ extension StatisticsViewModel {
             powerConsumption.min > 0 || powerConsumption.max > 0
         }
         
-        var powerValueString: String {
+        var powerValueString: LocalizedStringKey {
             if powerConsumption.min == powerConsumption.max {
                 "statistics-power-consumption-fixed-\(powerConsumption.max.formatted(.number))"
             } else {

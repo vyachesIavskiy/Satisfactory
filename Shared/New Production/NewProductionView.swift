@@ -33,7 +33,7 @@ struct NewProductionView: View {
             }
             .navigationDestination(for: String.self) { itemID in
                 if let item = viewModel.item(id: itemID) {
-                    ProductionView(item: item)
+                    SingleItemProductionView(item: item)
                 }
             }
         }

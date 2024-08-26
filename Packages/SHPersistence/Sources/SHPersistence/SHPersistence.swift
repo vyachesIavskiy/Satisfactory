@@ -62,23 +62,48 @@ public struct SHPersistence {
         try save(model: model, to: fileURL)
     }
     
-    public func save<E: Encodable>(_ models: [E], toDirectory directoryName: String, fileName: (_ model: E) -> String) throws {
+    public func save<E: Encodable>(_ model: E, toDirectory directoryName: String, fileName: String) throws {
         let directoryURL = directoryURL(for: directoryName)
         if !_fileManager.directoryExists(at: directoryURL) {
             try _fileManager.createDirectory(at: directoryURL)
         }
         
+        let fileURL = directoryURL
+            .appending(path: fileName)
+            .appendingPathExtension(for: .json)
+        try save(model: model, to: fileURL)
+    }
+    
+    public func save<E: Encodable & Identifiable>(_ model: E, toDirectory directoryName: String) throws where E.ID == UUID {
+        try save(model, toDirectory: directoryName, fileName: model.id.uuidString)
+    }
+    
+    public func save<E: Encodable>(_ models: [E], toDirectory directoryName: String, fileName: (_ model: E) -> String) throws {
         for model in models {
-            let name = fileName(model)
-            let fileURL = directoryURL
-                .appending(path: name)
-                .appendingPathExtension(for: .json)
-            try save(model: model, to: fileURL)
+            try save(model, toDirectory: directoryName, fileName: fileName(model))
         }
     }
     
     public func save<E: Encodable & Identifiable>(_ models: [E], toDirectory directoryName: String) throws where E.ID == UUID {
         try save(models, toDirectory: directoryName, fileName: \.id.uuidString)
+    }
+    
+    // MARK: Delete
+    
+    public func delete<E: Encodable>(_ model: E, fromDirectory directoryName: String, filename: String) throws {
+        let directoryURL = directoryURL(for: directoryName)
+        
+        guard _fileManager.directoryExists(at: directoryURL) else { return }
+        
+        let fileURL = directoryURL
+            .appending(path: filename)
+            .appendingPathExtension(for: .json)
+        
+        try _fileManager.removeFile(at: fileURL)
+    }
+    
+    public func delete<Model: Encodable & Identifiable>(_ model: Model, fromDirectory directoryName: String) throws where Model.ID == UUID {
+        try delete(model, fromDirectory: directoryName, filename: model.id.uuidString)
     }
     
     // MARK: - URLs

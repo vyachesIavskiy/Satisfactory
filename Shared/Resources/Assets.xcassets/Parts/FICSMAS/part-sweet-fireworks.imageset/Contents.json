@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "part-sweet-fireworks.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

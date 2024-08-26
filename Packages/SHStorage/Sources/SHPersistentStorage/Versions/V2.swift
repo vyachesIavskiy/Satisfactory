@@ -145,16 +145,16 @@ final class V2: VersionedStorage {
     }
     
     func deleteFactory(_ factory: Factory.Persistent.V2) throws {
-        if let index = factories.value.firstIndex(where: { $0.id == factory.id }) {
-            let factory = factories.value[index]
-            for productionID in factory.productionIDs {
-                try deleteProduction(id: productionID)
-            }
-            
-            factories.value.remove(at: index)
-        }
+        guard let factoryIndex = factories.value.firstIndex(where: { $0.id == factory.id })
+        else { return }
         
-        try persistence.save(factories.value, toDirectory: .factories)
+        let factory = factories.value[factoryIndex]
+        factories.value.remove(at: factoryIndex)
+        try persistence.delete(factory, fromDirectory: .factories)
+        
+        for productionID in factory.productionIDs {
+            try deleteProduction(id: productionID)
+        }
     }
     
     func deleteProduction(_ production: Production.Persistent.V2) throws {
@@ -162,19 +162,17 @@ final class V2: VersionedStorage {
     }
     
     func deleteProduction(id: UUID) throws {
-        if let index = productions.value.firstIndex(where: { $0.id == id }) {
-            for (factoryIndex, factory) in factories.value.enumerated() {
-                for (productionIndex, productionID) in factory.productionIDs.enumerated() {
-                    if productionID == id {
-                        factories.value[factoryIndex].productionIDs.remove(at: productionIndex)
-                    }
-                }
-            }
-            
-            productions.value.remove(at: index)
-        }
+        guard let productionIndex = productions.value.firstIndex(where: { $0.id == id })
+        else { return }
         
-        try persistence.save(productions.value, toDirectory: .productions)
+        let production = productions.value[productionIndex]
+        productions.value.remove(at: productionIndex)
+        try persistence.delete(production, fromDirectory: .productions)
+        
+        guard let factoryIndex = factories.value.firstIndex(where: { $0.productionIDs.contains(production.id) })
+        else { return }
+        
+        factories.value[factoryIndex].productionIDs.removeAll(where: { $0 == production.id })
         try persistence.save(factories.value, toDirectory: .factories)
     }
     

@@ -60,6 +60,7 @@ struct CalculationView: View {
                     }
                 }
         }
+        .id(viewModel.item.id)
     }
     
     @MainActor @ViewBuilder

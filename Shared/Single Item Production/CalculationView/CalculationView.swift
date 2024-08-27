@@ -158,21 +158,21 @@ struct CalculationView: View {
         }
         
         ToolbarItem(placement: .primaryAction) {
+            Button("single-item-production-calculation-save", systemImage: "square.and.arrow.down") {
+                viewModel.saveProduction()
+            }
+            .disabled(viewModel.canBeDismissedWithoutSaving || viewModel.selectingByproduct)
+        }
+        
+        ToolbarItem(placement: .secondaryAction) {
             Button("single-item-production-calculation-statistics", systemImage: "list.number") {
                 viewModel.showStatistics()
             }
         }
         
-        ToolbarItem(placement: .primaryAction) {
-            switch viewModel.mode {
-            case .new:
-                Button("single-item-production-calculation-save", systemImage: "square.and.arrow.down") {
-                    viewModel.saveProduction()
-                }
-                .disabled(viewModel.canBeDismissedWithoutSaving || viewModel.selectingByproduct)
-            
-            case .edit:
-                Button("general-edit") {
+        if viewModel.hasSavedProduction {
+            ToolbarItem(placement: .secondaryAction) {
+                Button("general-edit", systemImage: "pencil") {
                     viewModel.editProduction()
                 }
             }

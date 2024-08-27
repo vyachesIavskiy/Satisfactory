@@ -38,12 +38,15 @@ final class CalculationViewModel {
         byproductSelectionState != nil
     }
     
+    var hasSavedProduction: Bool {
+        calculator.hasSavedProduction
+    }
+    
     // MARK: Observed properties
     var outputItemViewModels = [ProductViewModel]()
     var modalNavigationState: ModalNavigationState?
     var showingUnsavedConfirmationDialog = false
     var canBeDismissedWithoutSaving = true
-    let mode: Mode
     
     @MainActor
     private var byproductSelectionState: ByproductSelectionState? {
@@ -58,19 +61,19 @@ final class CalculationViewModel {
     
     convenience init(item: some Item, recipe: Recipe) {
         let calculator = SingleItemCalculator(item: item)
-        self.init(calculator: calculator, mode: .new)
+        self.init(calculator: calculator)
         
         addInitialRecipe(recipe)
     }
     
     convenience init(production: SingleItemProduction) {
         let calculator = SingleItemCalculator(production: production)
-        self.init(calculator: calculator, mode: .edit)
+        self.init(calculator: calculator)
                 
         update()
     }
     
-    private init(calculator: SingleItemCalculator, mode: Mode) {
+    private init(calculator: SingleItemCalculator) {
         @Dependency(\.storageService)
         var storageService
         
@@ -78,7 +81,6 @@ final class CalculationViewModel {
         var settingsService
         
         self.calculator = calculator
-        self.mode = mode
         amount = calculator.amount
         pins = storageService.pins()
         settings = settingsService.settings
@@ -137,13 +139,6 @@ final class CalculationViewModel {
     
     func showStatistics() {
         modalNavigationState = .statistics(viewModel: StatisticsViewModel(production: .singleItem(calculator.production)))
-    }
-}
-
-extension CalculationViewModel {
-    enum Mode {
-        case new
-        case edit
     }
 }
 

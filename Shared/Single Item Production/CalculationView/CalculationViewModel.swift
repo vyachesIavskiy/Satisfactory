@@ -43,6 +43,7 @@ final class CalculationViewModel {
     var modalNavigationState: ModalNavigationState?
     var showingUnsavedConfirmationDialog = false
     var canBeDismissedWithoutSaving = true
+    let mode: Mode
     
     @MainActor
     private var byproductSelectionState: ByproductSelectionState? {
@@ -57,19 +58,19 @@ final class CalculationViewModel {
     
     convenience init(item: some Item, recipe: Recipe) {
         let calculator = SingleItemCalculator(item: item)
-        self.init(calculator: calculator)
+        self.init(calculator: calculator, mode: .new)
         
         addInitialRecipe(recipe)
     }
     
     convenience init(production: SingleItemProduction) {
         let calculator = SingleItemCalculator(production: production)
-        self.init(calculator: calculator)
+        self.init(calculator: calculator, mode: .edit)
                 
         update()
     }
     
-    private init(calculator: SingleItemCalculator) {
+    private init(calculator: SingleItemCalculator, mode: Mode) {
         @Dependency(\.storageService)
         var storageService
         
@@ -77,6 +78,7 @@ final class CalculationViewModel {
         var settingsService
         
         self.calculator = calculator
+        self.mode = mode
         amount = calculator.amount
         pins = storageService.pins()
         settings = settingsService.settings
@@ -94,11 +96,11 @@ final class CalculationViewModel {
 //        production.moveInputItems(from: indexSet, to: position)
     }
     
-    func saveProduction(completion: @escaping () -> Void) {
+    func saveProduction(completion: (() -> Void)? = nil) {
         let sharedCompletion = { [weak self] in
             self?.calculator.save()
             self?.canBeDismissedWithoutSaving = true
-            completion()
+            completion?()
         }
         
         if calculator.hasSavedProduction {
@@ -106,10 +108,16 @@ final class CalculationViewModel {
             sharedCompletion()
         } else {
             // Create a new production and save it
-            modalNavigationState = .saveProduction(
+            modalNavigationState = .editProduction(
                 viewModel: EditProductionViewModel(newProduction: .singleItem(calculator.production))
             )
         }
+    }
+    
+    func editProduction() {
+        modalNavigationState = .editProduction(
+            viewModel: EditProductionViewModel(editProduction: .singleItem(calculator.production))
+        )
     }
     
     @MainActor
@@ -129,6 +137,13 @@ final class CalculationViewModel {
     
     func showStatistics() {
         modalNavigationState = .statistics(viewModel: StatisticsViewModel(production: .singleItem(calculator.production)))
+    }
+}
+
+extension CalculationViewModel {
+    enum Mode {
+        case new
+        case edit
     }
 }
 
@@ -452,14 +467,14 @@ extension CalculationViewModel {
     enum ModalNavigationState: Identifiable {
         case selectInitialRecipeForItem(viewModel: InitialRecipeSelectionViewModel)
         case adjustItem(viewModel: ProductAdjustmentViewModel)
-        case saveProduction(viewModel: EditProductionViewModel)
+        case editProduction(viewModel: EditProductionViewModel)
         case statistics(viewModel: StatisticsViewModel)
         
         var id: String {
             switch self {
             case let .selectInitialRecipeForItem(viewModel): viewModel.item.id
             case let .adjustItem(viewModel): viewModel.id.uuidString
-            case let .saveProduction(viewModel): viewModel.id.uuidString
+            case let .editProduction(viewModel): viewModel.id.uuidString
             case let .statistics(viewModel): viewModel.productions[0].id.uuidString
             }
         }

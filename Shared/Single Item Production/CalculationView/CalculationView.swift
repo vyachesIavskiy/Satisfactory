@@ -164,10 +164,18 @@ struct CalculationView: View {
         }
         
         ToolbarItem(placement: .primaryAction) {
-            Button("single-item-production-calculation-save", systemImage: "square.and.arrow.down") {
-                viewModel.saveProduction { }
+            switch viewModel.mode {
+            case .new:
+                Button("single-item-production-calculation-save", systemImage: "square.and.arrow.down") {
+                    viewModel.saveProduction()
+                }
+                .disabled(viewModel.canBeDismissedWithoutSaving || viewModel.selectingByproduct)
+            
+            case .edit:
+                Button("general-edit") {
+                    viewModel.editProduction()
+                }
             }
-            .disabled(viewModel.canBeDismissedWithoutSaving || viewModel.selectingByproduct)
         }
     }
     
@@ -180,7 +188,7 @@ struct CalculationView: View {
         case let .adjustItem(viewModel):
             adjustItemView(viewModel: viewModel)
             
-        case let .saveProduction(viewModel):
+        case let .editProduction(viewModel):
             EditProductionView(viewModel: viewModel)
             
         case let .statistics(viewModel):

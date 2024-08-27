@@ -133,7 +133,11 @@ struct WhatsNewView: View {
                 ListRowFactory(
                     Factory(
                         id: UUID(),
-                        name: "whats-new-page-4-legacy-factory-name",
+                        name: NSLocalizedString(
+                            "whats-new-page-4-legacy-factory-name",
+                            value: "Legacy",
+                            comment: ""
+                        ),
                         asset: .legacy,
                         productionIDs: [UUID(), UUID(), UUID()]
                     )
@@ -142,7 +146,11 @@ struct WhatsNewView: View {
                 ListRowFactory(
                     Factory(
                         id: UUID(),
-                        name: "whats-new-page-4-starter-factory-factory-name",
+                        name: NSLocalizedString(
+                            "whats-new-page-4-starter-factory-factory-name",
+                            value: "Starter Factory",
+                            comment: ""
+                        ),
                         asset: .abbreviation,
                         productionIDs: [UUID(), UUID()]
                     )
@@ -151,7 +159,11 @@ struct WhatsNewView: View {
                 ListRowFactory(
                     Factory(
                         id: UUID(),
-                        name: "whats-new-page-4-steel-factory-factory-name",
+                        name: NSLocalizedString(
+                            "whats-new-page-4-steel-factory-factory-name",
+                            value: "Steel Factory",
+                            comment: ""
+                        ),
                         asset: .assetCatalog(name: "part-encased-industrial-beam"),
                         productionIDs: [UUID(), UUID(), UUID(), UUID(), UUID()]
                     )
@@ -214,7 +226,7 @@ struct WhatsNewView: View {
     }
     
     @MainActor @ViewBuilder
-    private func pageTitleText(_ title: String) -> some View {
+    private func pageTitleText(_ title: LocalizedStringKey) -> some View {
         Text(title)
             .multilineTextAlignment(.center)
             .font(.largeTitle)

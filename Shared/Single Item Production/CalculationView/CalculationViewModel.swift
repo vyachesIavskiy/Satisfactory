@@ -20,7 +20,11 @@ final class CalculationViewModel {
     private var calculator: SingleItemCalculator
     
     @ObservationIgnored
-    var amount: Double
+    var amount: Double {
+        didSet {
+            canBeDismissedWithoutSaving = false
+        }
+    }
     
     @ObservationIgnored
     private var updateTask: Task<Void, Never>?
@@ -100,8 +104,14 @@ final class CalculationViewModel {
     
     func saveProduction(completion: (() -> Void)? = nil) {
         let sharedCompletion = { [weak self] in
-            self?.calculator.save()
-            self?.canBeDismissedWithoutSaving = true
+            guard let self else { return }
+            
+            calculator.save()
+            let production = Production.singleItem(calculator.production)
+            if let factoryID = storageService.factoryID(for: production) {
+                storageService.saveProduction(production, factoryID)
+            }
+            canBeDismissedWithoutSaving = true
             completion?()
         }
         

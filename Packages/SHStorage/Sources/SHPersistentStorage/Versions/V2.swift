@@ -129,15 +129,17 @@ final class V2: VersionedStorage {
             productions.value.append(production)
         }
         
-        if
-            let index = factories.value.firstIndex(where: { $0.id == factoryID }),
-            !factories.value[index].productionIDs.contains(factoryID)
-        {
-            factories.value[index].productionIDs.append(production.id)
-        } else if
-            let index = factories.value.firstIndex(where: { $0.productionIDs.contains(production.id) })
-        {
-            factories.value[index].productionIDs.removeAll { $0 == production.id }
+        if let indexToAdd = factories.value.firstIndex(where: { $0.id == factoryID }) {
+            if
+                let indexToRemove = factories.value.firstIndex(where: { $0.productionIDs.contains(production.id) }),
+                indexToAdd != indexToRemove
+            {
+                factories.value[indexToRemove].productionIDs.removeAll { $0 == production.id }
+            }
+            
+            if !factories.value[indexToAdd].productionIDs.contains(production.id) {
+                factories.value[indexToAdd].productionIDs.append(production.id)
+            }
         }
         
         try persistence.save(productions.value, toDirectory: .productions)

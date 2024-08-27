@@ -79,23 +79,19 @@ extension EditProductionView {
         
         @MainActor @ViewBuilder
         private func factoryRow(_ factory: Factory) -> some View {
-            HStack(spacing: 12) {
-                ListRowIcon(factory: factory)
-                
-                HStack {
+            if selectedFactoryID == factory.id {
+                ListRow(accessory: .checkmark) {
+                    ListRowIconFactory(factory)
+                } label: {
                     Text(factory.name)
-                    
-                    Spacer()
-                    
-                    if selectedFactoryID == factory.id {
-                        Image(systemName: "checkmark")
-                            .fontWeight(.medium)
-                            .foregroundColor(.sh(.orange))
-                    }
                 }
-                .addListGradientSeparator()
+            } else {
+                ListRow {
+                    ListRowIconFactory(factory)
+                } label: {
+                    Text(factory.name)
+                }
             }
-            .fixedSize(horizontal: false, vertical: true)
         }
     }
 }

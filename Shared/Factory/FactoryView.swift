@@ -38,23 +38,6 @@ struct FactoryView: View {
                 }
             }
         }
-//        .confirmationDialog(
-//            "Are you sure you would like to delete production?",
-//            isPresented: $viewModel.showingDeleteAlert,
-//            titleVisibility: .visible,
-//            presenting: viewModel.productionToDelete
-//        ) { production in
-//            Button("Delete", role: .destructive) {
-//                viewModel.deleteProduction(production)
-//                viewModel.productionToDelete = nil
-//            }
-//            
-//            Button("Cancel", role: .cancel) {
-//                viewModel.productionToDelete = nil
-//            }
-//        } message: { _ in
-//            Text("This action cannot be undone.")
-//        }
         .sheet(isPresented: $viewModel.showingStatisticsSheet) {
             StatisticsView(viewModel: StatisticsViewModel(factory: viewModel.factory))
         }
@@ -78,7 +61,7 @@ struct FactoryView: View {
         Button {
             navigationPath.append(production.id)
         } label: {
-            ProductionRowView(production: production)
+            ListRowProduction(production, accessory: .chevron)
         }
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)

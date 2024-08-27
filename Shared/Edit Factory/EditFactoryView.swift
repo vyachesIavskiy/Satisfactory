@@ -54,15 +54,13 @@ struct EditFactoryView: View {
     
     @MainActor @ViewBuilder
     private var factoryNameTextField: some View {
-        HStack(spacing: 12) {
+        ListRow {
             iconView
-            
+        } label: {
             TextField("edit-factory-factory-name-textfield-placeholder", text: $viewModel.factoryName)
                 .submitLabel(.done)
                 .focused($focused)
-                .addListGradientSeparator()
         }
-        .fixedSize(horizontal: false, vertical: true)
         .padding(.horizontal, 20)
         .padding(.vertical, viewModel.provideAssetImage ? 24 : 60)
     }

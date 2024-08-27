@@ -22,6 +22,8 @@ struct ChangeLogView: View {
                 changeSection("change-log-fixes-section-name", changes: changeLog.changes[.fix])
                 changeSection("change-log-added-section-name", changes: changeLog.changes[.addition])
                 changeSection("change-log-removed-section-name", changes: changeLog.changes[.removal])
+                
+                Spacer(minLength: 30)
             }
             .padding(.horizontal, 16)
         }

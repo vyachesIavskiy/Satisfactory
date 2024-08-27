@@ -76,7 +76,7 @@ struct WhatsNewView: View {
             
             contentBox {
                 if let item {
-                    NewProductionView.ItemRow(item)
+                    ListRowItem(item)
                         .padding(.horizontal, 10)
                 }
                 
@@ -130,8 +130,8 @@ struct WhatsNewView: View {
                 .frame(maxHeight: .infinity)
             
             contentBox {
-                FactoryRowView(
-                    factory: Factory(
+                ListRowFactory(
+                    Factory(
                         id: UUID(),
                         name: "whats-new-page-4-legacy-factory-name",
                         asset: .legacy,
@@ -139,8 +139,8 @@ struct WhatsNewView: View {
                     )
                 )
                 
-                FactoryRowView(
-                    factory: Factory(
+                ListRowFactory(
+                    Factory(
                         id: UUID(),
                         name: "whats-new-page-4-starter-factory-factory-name",
                         asset: .abbreviation,
@@ -148,8 +148,8 @@ struct WhatsNewView: View {
                     )
                 )
                 
-                FactoryRowView(
-                    factory: Factory(
+                ListRowFactory(
+                    Factory(
                         id: UUID(),
                         name: "whats-new-page-4-steel-factory-factory-name",
                         asset: .assetCatalog(name: "part-encased-industrial-beam"),

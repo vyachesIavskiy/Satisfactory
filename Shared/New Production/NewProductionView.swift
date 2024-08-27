@@ -72,7 +72,7 @@ struct NewProductionView: View {
         Button {
             viewModel.navigationPath = [item.id]
         } label: {
-            ItemRow(item)
+            ListRowItem(item, accessory: .chevron)
                 .contentShape(.interaction, Rectangle())
         }
         .listRowBackground(Color.clear)

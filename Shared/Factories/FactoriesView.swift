@@ -101,7 +101,7 @@ struct FactoriesView: View {
         Button {
             viewModel.navigationPath.append(factory.id)
         } label: {
-            FactoryRowView(factory: factory)
+            ListRowFactory(factory, accessory: .chevron)
                 .contentShape(.interaction, Rectangle())
         }
         .listRowBackground(Color.clear)
@@ -118,7 +118,7 @@ struct FactoriesView: View {
         Button {
             viewModel.navigationPath.append(production.id)
         } label: {
-            ProductionRowView(production: production)
+            ListRowProduction(production, accessory: .chevron)
                 .contentShape(.interaction, Rectangle())
         }
         .listRowBackground(Color.clear)

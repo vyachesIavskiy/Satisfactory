@@ -1,5 +1,4 @@
-import Foundation
-import Observation
+import SwiftUI
 import SHModels
 import SHStorage
 
@@ -16,6 +15,13 @@ final class EditProductionViewModel {
     var id: UUID {
         switch mode {
         case let .new(production), let .edit(production, _, _): production.id
+        }
+    }
+    
+    var navigationTitle: LocalizedStringKey {
+        switch mode {
+        case .new: "edit-production-new-production-navigation-title"
+        case .edit: "edit-production-edit-production-navigation-title"
         }
     }
     

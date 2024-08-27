@@ -31,7 +31,7 @@ struct EditProductionView: View {
                 
                 deleteButton
             }
-            .navigationTitle("New production")
+            .navigationTitle(viewModel.navigationTitle)
             .navigationDestination(for: EditProductionViewModel.NavigationPath.self) { path in
                 switch path {
                 case .selectFactory:
@@ -60,15 +60,13 @@ struct EditProductionView: View {
     
     @MainActor @ViewBuilder
     private var productionNameTextField: some View {
-        HStack(spacing: 12) {
+        ListRow {
             iconView
-            
-            TextField("Production name", text: $viewModel.productionName)
+        } label: {
+            TextField("edit-production-production-name-textfield-placeholder", text: $viewModel.productionName)
                 .submitLabel(.done)
                 .focused($focused)
-                .addListGradientSeparator()
         }
-        .fixedSize(horizontal: false, vertical: true)
         .padding(.horizontal, 20)
         .padding(.vertical, 24)
     }
@@ -76,7 +74,7 @@ struct EditProductionView: View {
     @MainActor @ViewBuilder
     private var factoryPicker: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Select factory")
+            Text("edit-production-select-factory-section-header")
                 .font(.headline)
                 .foregroundStyle(.secondary)
             
@@ -86,9 +84,18 @@ struct EditProductionView: View {
             } label: {
                 ZStack {
                     if let factory = viewModel.selectedFactory {
-                        FactoryRowView(factory: factory)
+                        ListRowFactory(factory, accessory: .chevron)
                     } else {
-                        emptyFactoryRow
+                        ListRow(accessory: .chevron) {
+                            ListRowIcon(backgroundShape: .angledRectangle) {
+                                Image(systemName: "questionmark")
+                                    .font(.title2)
+                                    .foregroundStyle(.sh(.midnight))
+                            }
+                        } label: {
+                            Text("edit-production-factory-is-not-selected")
+                                .foregroundStyle(.sh(.midnight).secondary)
+                        }
                     }
                 }
                 .contentShape(.interaction, Rectangle())
@@ -158,61 +165,50 @@ struct EditProductionView: View {
             .foregroundStyle(.sh(.midnight50))
         }
     }
-    
-    @MainActor @ViewBuilder
-    private var emptyFactoryRow: some View {
-        HStack(spacing: 12) {
-            ListRowIcon(backgroundShape: .angledRectangle) {
-                Image(systemName: "questionmark")
-                    .font(.title2)
-                    .foregroundStyle(.sh(.midnight))
-            }
-            
-            HStack {
-                Text("Factory is not selected")
-                    .foregroundStyle(.sh(.midnight).secondary)
-                
-                Spacer()
-                
-                Image(systemName: "chevron.forward")
-                    .fontWeight(.light)
-                    .foregroundStyle(.sh(.gray))
-            }
-            .addListGradientSeparator()
-        }
-        .fixedSize(horizontal: false, vertical: true)
-    }
 }
 
 #if DEBUG
+#Preview("New production") {
+    _EditProductionPreview(newProductionWithItemID: "part-plastic")
+}
+
+#Preview("Edit production") {
+    _EditProductionPreview(editProductionWithItemID: "part-plastic")
+}
+
 private struct _EditProductionPreview: View {
-    let itemID: String
-    
-    @Dependency(\.storageService)
-    private var storageService
+    let viewModel: EditProductionViewModel
     
     @Dependency(\.uuid)
     private var uuid
     
-    private var item: (any Item)? {
-        storageService.item(id: itemID)
+    init(newProductionWithItemID itemID: String) {
+        @Dependency(\.storageService)
+        var storageService
+        
+        @Dependency(\.uuid)
+        var uuid
+        
+        let item = storageService.item(id: itemID)!
+        let production = SingleItemProduction(id: uuid(), name: item.localizedName, item: item, amount: 0)
+        viewModel = EditProductionViewModel(newProduction: .singleItem(production))
+    }
+    
+    init(editProductionWithItemID itemID: String) {
+        @Dependency(\.storageService)
+        var storageService
+        
+        @Dependency(\.uuid)
+        var uuid
+        
+        let item = storageService.item(id: itemID)!
+        let production = SingleItemProduction(id: uuid(), name: item.localizedName, item: item, amount: 0)
+        viewModel = EditProductionViewModel(editProduction: .singleItem(production))
     }
     
     var body: some View {
-        if let item {
-            EditProductionView(viewModel: EditProductionViewModel(
-                newProduction: .singleItem(SingleItemProduction(id: uuid(), name: "Plastic", item: item, amount: 20))
-            ))
-        } else {
-            Text("There is no item with id '\(itemID)'")
-                .font(.title3)
-                .padding()
-        }
+        EditProductionView(viewModel: viewModel)
     }
-}
-
-#Preview {
-    _EditProductionPreview(itemID: "part-plastic")
 }
 #endif
 

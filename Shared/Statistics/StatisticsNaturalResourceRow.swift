@@ -10,22 +10,16 @@ extension StatisticsView {
         }
         
         var body: some View {
-            HStack(spacing: 12) {
-                ListRowIcon(item: naturalResource.item)
-                
-                HStack {
-                    Text(naturalResource.item.localizedName)
-                        .fontWeight(.semibold)
-                    
-                    Spacer()
-                    
-                    Text(naturalResource.amount, format: .shNumber)
-                        .font(.callout)
-                        .foregroundStyle(.sh(.midnight))
-                }
-                .addListGradientSeparator()
+            ListRow {
+                ListRowIconItem(naturalResource.item)
+            } label: {
+                Text(naturalResource.item.localizedName)
+                    .fontWeight(.semibold)
+            } accessory: {
+                Text(naturalResource.amount, format: .shNumber)
+                    .font(.callout)
+                    .foregroundStyle(.sh(.midnight))
             }
-            .fixedSize(horizontal: false, vertical: true)
         }
     }
 }

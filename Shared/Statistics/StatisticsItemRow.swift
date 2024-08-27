@@ -20,7 +20,7 @@ extension StatisticsView {
         var body: some View {
             VStack(spacing: 4) {
                 HStack(spacing: 12) {
-                    ListRowIcon(item: item.statisticItem.item)
+                    ListRowIconItem(item.statisticItem.item)
                     
                     if item.expandable {
                         Button {
@@ -65,31 +65,51 @@ extension StatisticsView {
         
         @MainActor @ViewBuilder
         private var itemRowContent: some View {
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(name)
-                        .fontWeight(.semibold)
+            if item.expandable {
+                VStack(spacing: 4) {
+                    HStack {
+                        Text(name)
+                            .fontWeight(.semibold)
+                        
+                        Spacer()
+                        
+                        Text(valueString)
+                            .font(.callout)
+                            .foregroundStyle(.sh(.midnight))
+                    }
                     
-                    Text(item.subtitle)
-                        .font(.caption)
-                        .opacity(item.recipesExpanded ? 0 : 1)
-                        .animation(.default.speed(2), value: item.recipesExpanded)
-                }
-                
-                Spacer()
-                
-                VStack(alignment: .trailing, spacing: 4) {
-                    Text(valueString)
-                        .font(.callout)
-                        .foregroundStyle(.sh(.midnight))
-                    
-                    if item.expandable {
+                    HStack {
+                        Text(item.subtitle)
+                            .font(.caption)
+                            .opacity(item.recipesExpanded ? 0 : 1)
+                            .animation(.default.speed(2), value: item.recipesExpanded)
+                        
+                        Spacer()
+                        
                         ExpandArrow(item.recipesExpanded)
                             .stroke(lineWidth: item.recipesExpanded ? 0.5 : 1)
                             .foregroundStyle(.sh(item.recipesExpanded ? .midnight30 : .midnight))
                             .fixedSize(horizontal: false, vertical: true)
                             .frame(width: 16)
                     }
+                }
+            } else {
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(name)
+                            .fontWeight(.semibold)
+                        
+                        Text(item.subtitle)
+                            .font(.caption)
+                            .opacity(item.recipesExpanded ? 0 : 1)
+                            .animation(.default.speed(2), value: item.recipesExpanded)
+                    }
+                    
+                    Spacer()
+                    
+                    Text(valueString)
+                        .font(.callout)
+                        .foregroundStyle(.sh(.midnight))
                 }
             }
         }

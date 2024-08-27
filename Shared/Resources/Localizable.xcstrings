@@ -653,6 +653,28 @@
         }
       }
     },
+    "edit-production-edit-production-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Production"
+          }
+        }
+      }
+    },
+    "edit-production-factory-is-not-selected" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Factory is not selected"
+          }
+        }
+      }
+    },
     "edit-production-factory-picker-navigation-title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -664,7 +686,40 @@
         }
       }
     },
+    "edit-production-new-production-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Production"
+          }
+        }
+      }
+    },
+    "edit-production-production-name-textfield-placeholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Production name"
+          }
+        }
+      }
+    },
     "edit-production-select-factory" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select factory"
+          }
+        }
+      }
+    },
+    "edit-production-select-factory-section-header" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -813,9 +868,6 @@
           }
         }
       }
-    },
-    "Factory is not selected" : {
-
     },
     "factory-asset-buildings-section-name" : {
       "extractionState" : "manual",
@@ -999,9 +1051,6 @@
     "Natural Resource" : {
 
     },
-    "New production" : {
-
-    },
     "new-production-navigation-title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1066,9 +1115,6 @@
     "Preview (should not be visible in production)" : {
 
     },
-    "Production name" : {
-
-    },
     "recipe-alternate" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1109,9 +1155,6 @@
 
     },
     "Row %lld" : {
-
-    },
-    "Select factory" : {
 
     },
     "Selected" : {

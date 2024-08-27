@@ -11,7 +11,7 @@ extension StatisticsView {
         var body: some View {
             VStack(spacing: 4) {
                 HStack(spacing: 12) {
-                    ListRowIcon(item: productionBuilding.building)
+                    ListRowIconItem(productionBuilding.building)
                     
                     if productionBuilding.expandable {
                         Button {
@@ -68,43 +68,69 @@ extension StatisticsView {
         
         @MainActor @ViewBuilder
         private var productionBuildingRowContent: some View {
-            VStack(alignment: .leading, spacing: 4) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text(productionBuilding.building.localizedName)
-                        .fontWeight(.semibold)
-                    
-                    Spacer()
-                    
-                    Text(productionBuilding.valueString)
-                        .font(.callout)
-                        .foregroundStyle(.sh(.midnight))
-                }
+            let titleView = Text(productionBuilding.building.localizedName)
+                .fontWeight(.semibold)
+            
+            let powerConsumptionView = HStack(spacing: 4) {
+                Image(systemName: "bolt.fill")
+                    .foregroundStyle(.sh(.cyan))
                 
-                if productionBuilding.shouldDisplayPowerConsumption {
-                    HStack(spacing: 4) {
-                        Image(systemName: "bolt.fill")
-                            .foregroundStyle(.sh(.cyan))
+                Text(productionBuilding.powerValueString)
+            }
+            .font(.footnote)
+            
+            let subtitleView = Text(productionBuilding.subtitle)
+                .font(.caption)
+                .opacity(productionBuilding.recipesExpanded ? 0 : 1)
+                .animation(.default.speed(2), value: productionBuilding.recipesExpanded)
+            
+            let valueView = Text(productionBuilding.valueString)
+                .font(.callout)
+                .foregroundStyle(.sh(.midnight))
+            
+            if productionBuilding.expandable {
+                VStack(spacing: 4) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            titleView
+                            
+                            if productionBuilding.shouldDisplayPowerConsumption {
+                                powerConsumptionView
+                            }
+                        }
                         
-                        Text(productionBuilding.powerValueString)
+                        Spacer()
+                        
+                        valueView
                     }
-                    .font(.footnote)
-                }
-                
-                HStack {
-                    Text(productionBuilding.subtitle)
-                        .font(.caption)
-                        .opacity(productionBuilding.recipesExpanded ? 0 : 1)
-                        .animation(.default.speed(2), value: productionBuilding.recipesExpanded)
                     
-                    Spacer()
-                    
-                    if productionBuilding.expandable {
+                    HStack {
+                        subtitleView
+                        
+                        Spacer()
+                        
                         ExpandArrow(productionBuilding.recipesExpanded)
                             .stroke(lineWidth: productionBuilding.recipesExpanded ? 0.5 : 1)
                             .foregroundStyle(.sh(productionBuilding.recipesExpanded ? .midnight30 : .midnight))
                             .fixedSize(horizontal: false, vertical: true)
                             .frame(width: 16)
                     }
+                }
+            } else {
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        titleView
+                        
+                        if productionBuilding.shouldDisplayPowerConsumption {
+                            powerConsumptionView
+                        }
+                        
+                        subtitleView
+                    }
+                    
+                    Spacer()
+                    
+                    valueView
                 }
             }
         }

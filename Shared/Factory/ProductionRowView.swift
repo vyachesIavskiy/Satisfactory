@@ -9,7 +9,7 @@ struct ProductionRowView: View {
     
     var body: some View {
         HStack(spacing: 12) {
-            ListRowIcon(production: production)
+            ListRowIconProduction(production)
             
             HStack {
                 Text(production.name)

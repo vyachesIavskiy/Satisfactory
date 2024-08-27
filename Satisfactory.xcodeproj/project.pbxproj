@@ -106,13 +106,6 @@
 			);
 			target = 450BD19524A6395700948B47 /* iOS */;
 		};
-		D33FBA502C76265400D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				NewProductionItemRow.swift,
-			);
-			target = 450BD19D24A6395700948B47 /* macOS */;
-		};
 		D33FBAAA2C76265A00D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -229,8 +222,15 @@
 		D3691D742C7A2E910072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"List Row/Icons/ListRowIcon.swift",
+				"List Row/Icons/ListRowIconFactory.swift",
+				"List Row/Icons/ListRowIconItem.swift",
+				"List Row/Icons/ListRowIconProduction.swift",
+				"List Row/ListRow.swift",
+				"List Row/ListRowFactory.swift",
+				"List Row/ListRowItem.swift",
+				"List Row/ListRowProduction.swift",
 				ListGradientSeparatorViewModifier.swift,
-				ListRowIcon.swift,
 				Shapes/AngledBottomLine.swift,
 				Shapes/AngledLinedBackground.swift,
 				Shapes/AngledRectangled.swift,
@@ -322,7 +322,6 @@
 			membershipExceptions = (
 				FactoriesView.swift,
 				FactoriesViewModel.swift,
-				FactoryRowView.swift,
 			);
 			target = 450BD19524A6395700948B47 /* iOS */;
 		};
@@ -331,7 +330,6 @@
 			membershipExceptions = (
 				FactoryView.swift,
 				FactoryViewModel.swift,
-				ProductionRowView.swift,
 			);
 			target = 450BD19524A6395700948B47 /* iOS */;
 		};
@@ -353,7 +351,7 @@
 		D3051BD72C77681600E0B6C3 /* Tabs */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3051BD82C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3051BD92C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3051BDA2C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Tabs; sourceTree = "<group>"; };
 		D31388FD2C5A8AD600D90006 /* Edit Factory */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D31389002C5A8AE700D90006 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Edit Factory"; sourceTree = "<group>"; };
 		D33FBA392C76265200D6C089 /* Root */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Root; sourceTree = "<group>"; };
-		D33FBA462C76265400D6C089 /* New Production */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D33FBA502C76265400D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "New Production"; sourceTree = "<group>"; };
+		D33FBA462C76265400D6C089 /* New Production */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "New Production"; sourceTree = "<group>"; };
 		D33FBA612C76265A00D6C089 /* Settings */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D33FBAAA2C76265A00D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Settings; sourceTree = "<group>"; };
 		D33FBAAE2C76266400D6C089 /* Environment */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Environment; sourceTree = "<group>"; };
 		D33FBB302C76266C00D6C089 /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D33FBB412C76266C00D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };

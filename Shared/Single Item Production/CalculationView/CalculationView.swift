@@ -82,6 +82,7 @@ struct CalculationView: View {
                 .submitLabel(.done)
                 .onSubmit {
                     focused = false
+                    viewModel.adjustNewAmount()
                     viewModel.update()
                 }
                 .padding(.horizontal, 8)
@@ -98,6 +99,7 @@ struct CalculationView: View {
                 if focused {
                     Button {
                         focused = false
+                        viewModel.adjustNewAmount()
                         viewModel.update()
                     } label: {
                         Image(systemName: "checkmark")
@@ -147,10 +149,6 @@ struct CalculationView: View {
                     
                     Button("single-item-production-calculation-dont-save", role: .destructive) {
                         dismiss()
-                    }
-                    
-                    Button("general-cancel", role: .cancel) {
-                        // Do nothing
                     }
                 } message: {
                     Text("single-item-production-calculation-you-have-unsaved-changes-message")

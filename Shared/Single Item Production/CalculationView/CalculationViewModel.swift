@@ -102,6 +102,10 @@ final class CalculationViewModel {
 //        production.moveInputItems(from: indexSet, to: position)
     }
     
+    func adjustNewAmount() {
+        amount = max(amount, 0.1)
+    }
+    
     func saveProduction(completion: (() -> Void)? = nil) {
         let sharedCompletion = { [weak self] in
             guard let self else { return }

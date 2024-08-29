@@ -24,7 +24,9 @@ struct SingleItemProductionView: View {
                 CalculationView(viewModel: viewModel)
             }
         }
+        #if os(iOS)
         .toolbar(.hidden, for: .bottomBar, .tabBar)
+        #endif
         .animation(.default, value: viewModel.state)
     }
 }

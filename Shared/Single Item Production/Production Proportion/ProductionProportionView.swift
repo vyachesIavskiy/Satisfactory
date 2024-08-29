@@ -147,7 +147,9 @@ private struct ProductionProportionTextfield: View {
     var body: some View {
         TextField("", value: $amount, format: .shNumber)
             .multilineTextAlignment(.center)
+            #if os(iOS)
             .keyboardType(.decimalPad)
+            #endif
             .submitLabel(.done)
             .foregroundStyle(foregroundStyle)
             .padding(.horizontal, 4)

@@ -66,7 +66,9 @@ struct ProductAdjustmentView: View {
                     .disabled(viewModel.applyButtonDisabled)
                 }
             }
+            #if os(iOS)
             .toolbarBackground(.hidden, for: .navigationBar)
+            #endif
         }
         .task {
             await viewModel.observePins()

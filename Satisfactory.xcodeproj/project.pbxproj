@@ -16,6 +16,19 @@
 		D341A9EE2BDD60E500ED36F6 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D341A9ED2BDD60E500ED36F6 /* SHStorage */; };
 		D3501C7D2C57E42800A67D74 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3501C7C2C57E42800A67D74 /* TabBarController.swift */; };
 		D3501C992C580D7900A67D74 /* SHNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3501C982C580D7900A67D74 /* SHNavigationController.swift */; };
+		D35736942C8115C600866E00 /* Calculators in Frameworks */ = {isa = PBXBuildFile; productRef = D35736932C8115C600866E00 /* Calculators */; };
+		D35736962C8115C600866E00 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D35736952C8115C600866E00 /* SHDebug */; };
+		D35736982C8115C600866E00 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D35736972C8115C600866E00 /* SHModels */; };
+		D357369A2C8115C600866E00 /* SHSettings in Frameworks */ = {isa = PBXBuildFile; productRef = D35736992C8115C600866E00 /* SHSettings */; };
+		D357369C2C8115C600866E00 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D357369B2C8115C600866E00 /* SHStorage */; };
+		D357369E2C8115C600866E00 /* SHUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D357369D2C8115C600866E00 /* SHUtils */; };
+		D35736F62C81162400866E00 /* Calculators in Frameworks */ = {isa = PBXBuildFile; productRef = D35736F52C81162400866E00 /* Calculators */; };
+		D35736F82C81162400866E00 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D35736F72C81162400866E00 /* SHDebug */; };
+		D35736FA2C81162400866E00 /* SHLogger in Frameworks */ = {isa = PBXBuildFile; productRef = D35736F92C81162400866E00 /* SHLogger */; };
+		D35736FC2C81162400866E00 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D35736FB2C81162400866E00 /* SHModels */; };
+		D35736FE2C81162400866E00 /* SHSettings in Frameworks */ = {isa = PBXBuildFile; productRef = D35736FD2C81162400866E00 /* SHSettings */; };
+		D35737002C81162400866E00 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D35736FF2C81162400866E00 /* SHStorage */; };
+		D35737022C81162400866E00 /* SHUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D35737012C81162400866E00 /* SHUtils */; };
 		D385EF772C53F8720083BFA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D385EF6E2C53F8690083BFA1 /* AppDelegate.swift */; };
 		D385EFBA2C53F8720083BFA1 /* SHSingleItemProduction in Frameworks */ = {isa = PBXBuildFile; productRef = D385EF752C53F8720083BFA1 /* SHSingleItemProduction */; };
 		D385EFBB2C53F8720083BFA1 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D385EF732C53F8720083BFA1 /* SHDebug */; };
@@ -58,76 +71,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D3051BCE2C77641900E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				WhatsNewView.swift,
-			);
-			target = 450BD19524A6395700948B47 /* iOS */;
-		};
 		D3051BD62C77643100E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Info-AppStoreScreenshots.plist",
 			);
 			target = 450BD19524A6395700948B47 /* iOS */;
-		};
-		D3051BD82C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				TabsView.swift,
-				TabsViewModel.swift,
-			);
-			target = 450BD19524A6395700948B47 /* iOS */;
-		};
-		D3051BD92C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				TabsView.swift,
-				TabsViewModel.swift,
-			);
-			target = F95DAF912AC6ACC60062A5AD /* iOS AppStore Screenshots */;
-		};
-		D3051BDA2C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				TabsView.swift,
-				TabsViewModel.swift,
-			);
-			target = 450BD19D24A6395700948B47 /* macOS */;
-		};
-		D31389002C5A8AE700D90006 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				EditFactoryView.swift,
-				EditFactoryViewModel.swift,
-				"Factory Asset Catalog/FactoryAssetCatalogView.swift",
-				"Factory Asset Catalog/FactoryAssetCatalogViewModel.swift",
-			);
-			target = 450BD19524A6395700948B47 /* iOS */;
-		};
-		D33FBAAA2C76265A00D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				FeedbackView.swift,
-				SettingsView.swift,
-				SettingsViewModel.swift,
-			);
-			target = 450BD19D24A6395700948B47 /* macOS */;
-		};
-		D33FBB412C76266C00D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Bundle/Bundle+Version.swift",
-			);
-			target = D385EF702C53F8720083BFA1 /* iOS UIKit */;
-		};
-		D33FBB612C76273400D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ChangeLogsView.swift,
-			);
-			target = 450BD19D24A6395700948B47 /* macOS */;
 		};
 		D3501C812C57E77600A67D74 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -164,212 +113,46 @@
 			);
 			target = D385EF702C53F8720083BFA1 /* iOS UIKit */;
 		};
-		D354B17E2C720AD50008B82D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		D35737032C81165D00866E00 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				StatisticsItemRow.swift,
-				StatisticsNaturalResourceRow.swift,
-				StatisticsProductionBuildingRow.swift,
-				StatisticsView.swift,
-				StatisticsViewModel.swift,
-			);
-			target = 450BD19524A6395700948B47 /* iOS */;
-		};
-		D35FC7062C7B6B240026E6B3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ProductionView.swift,
-			);
-			target = 450BD19524A6395700948B47 /* iOS */;
-		};
-		D35FC7522C7B6D660026E6B3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Calculation/CalculationView.swift,
-				Calculation/CalculationViewModel.swift,
-				"Initial Recipe Selection/InitialRecipeSelectionView.swift",
-				"Initial Recipe Selection/InitialRecipeSelectionViewModel.swift",
-				"Product Adjustment/ProductAdjustmentView.swift",
-				"Product Adjustment/ProductAdjustmentViewModel.swift",
-				"Product View/ProductView.swift",
-				"Product View/ProductViewModel.swift",
-				"Production Proportion/ProductionProportionView.swift",
-				"Production Proportion/ProductionProportionViewModel.swift",
-				SingleItemProductionView.swift,
-				SingleItemProductionViewModel.swift,
-			);
-			target = 450BD19524A6395700948B47 /* iOS */;
-		};
-		D35FC7532C7B6D660026E6B3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Initial Recipe Selection/InitialRecipeSelectionViewModel.swift",
-			);
-			target = D385EF702C53F8720083BFA1 /* iOS UIKit */;
-		};
-		D35FC7542C7B6D660026E6B3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Product Adjustment/ProductAdjustmentView.swift",
-				"Product Adjustment/ProductAdjustmentViewModel.swift",
-				"Product View/ProductView.swift",
-				"Product View/ProductViewModel.swift",
-				"Production Proportion/ProductionProportionView.swift",
-				"Production Proportion/ProductionProportionViewModel.swift",
-				SingleItemProductionView.swift,
-				SingleItemProductionViewModel.swift,
-			);
-			target = F95DAF912AC6ACC60062A5AD /* iOS AppStore Screenshots */;
-		};
-		D3691D742C7A2E910072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"List Row/Icons/ListRowIcon.swift",
-				"List Row/Icons/ListRowIconFactory.swift",
-				"List Row/Icons/ListRowIconItem.swift",
-				"List Row/Icons/ListRowIconProduction.swift",
-				"List Row/ListRow.swift",
-				"List Row/ListRowFactory.swift",
-				"List Row/ListRowItem.swift",
-				"List Row/ListRowProduction.swift",
-				ListGradientSeparatorViewModifier.swift,
-				Shapes/AngledBottomLine.swift,
-				Shapes/AngledLinedBackground.swift,
-				Shapes/AngledRectangled.swift,
-				Shapes/ItemIconShape.swift,
-				Shapes/RecipeByproductShape.swift,
-				Shapes/RecipeItemAmountShape.swift,
-				SHSectionHeader.swift,
-				"Styles/Button Styles/SHBorderedButtonStyle.swift",
-				"Styles/Button Styles/SHBorderedProminentButtonStyle.swift",
-				"Styles/Button Styles/SHButtonCornerRadius.swift",
-				Styles/SHColor.swift,
-				"Styles/SHColor+Color.swift",
-				Styles/SHShapeStyle.swift,
-				ViewModifiers/InverseMaskViewModifier.swift,
-				ViewModifiers/SafeAreaReader.swift,
-				ViewModifiers/ScrollOffsetReader.swift,
-				ViewModifiers/SizeReader.swift,
-			);
-			target = 450BD19524A6395700948B47 /* iOS */;
-		};
-		D3691D752C7A2E980072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Shapes/AngledBottomLine.swift,
-				Shapes/AngledLinedBackground.swift,
-				Shapes/AngledRectangled.swift,
-				Shapes/ItemIconShape.swift,
-				Shapes/RecipeByproductShape.swift,
-				Shapes/RecipeItemAmountShape.swift,
-				Styles/SHColor.swift,
-				"Styles/SHColor+Color.swift",
-				Styles/SHShapeStyle.swift,
-			);
-			target = D385EF702C53F8720083BFA1 /* iOS UIKit */;
-		};
-		D3691D762C7A2E980072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Shapes/AngledBottomLine.swift,
-				Shapes/AngledLinedBackground.swift,
-				Shapes/AngledRectangled.swift,
-				Shapes/ItemIconShape.swift,
-				Shapes/RecipeByproductShape.swift,
-				Shapes/RecipeItemAmountShape.swift,
-				SHSectionHeader.swift,
-				"Styles/Button Styles/SHBorderedButtonStyle.swift",
-				"Styles/Button Styles/SHBorderedProminentButtonStyle.swift",
-				"Styles/Button Styles/SHButtonCornerRadius.swift",
-				ViewModifiers/InverseMaskViewModifier.swift,
-				ViewModifiers/SafeAreaReader.swift,
-				ViewModifiers/ScrollOffsetReader.swift,
-				ViewModifiers/SizeReader.swift,
-			);
-			target = F95DAF912AC6ACC60062A5AD /* iOS AppStore Screenshots */;
-		};
-		D3691D772C7A2EAC0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				ViewModifiers/SizeReader.swift,
+				FeedbackView.swift,
 			);
 			target = 450BD19D24A6395700948B47 /* macOS */;
 		};
-		D3691DA42C7A2FEA0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		D35737042C81166A00866E00 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Assets.xcassets,
-				Localizable.xcstrings,
-			);
-			target = 450BD19524A6395700948B47 /* iOS */;
-		};
-		D3691DA52C7A2FEA0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Assets.xcassets,
-				Localizable.xcstrings,
-			);
-			target = F95DAF912AC6ACC60062A5AD /* iOS AppStore Screenshots */;
-		};
-		D3691DA62C7A2FEA0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Assets.xcassets,
-				Localizable.xcstrings,
+				NSLayoutContraint.swift,
 			);
 			target = 450BD19D24A6395700948B47 /* macOS */;
-		};
-		D37E131B2C5953D40085FEC0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				FactoriesView.swift,
-				FactoriesViewModel.swift,
-			);
-			target = 450BD19524A6395700948B47 /* iOS */;
-		};
-		D37F8A5F2C5BA4A600D3AB99 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				FactoryView.swift,
-				FactoryViewModel.swift,
-			);
-			target = 450BD19524A6395700948B47 /* iOS */;
-		};
-		D3B700872C5D77B500797978 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				EditProductionFactoryPickerView.swift,
-				EditProductionView.swift,
-				EditProductionViewModel.swift,
-			);
-			target = 450BD19524A6395700948B47 /* iOS */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D3051BCB2C77640A00E0B6C3 /* Whats New */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3051BCE2C77641900E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Whats New"; sourceTree = "<group>"; };
+		D3051BCB2C77640A00E0B6C3 /* Whats New */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Whats New"; sourceTree = "<group>"; };
 		D3051BD12C77643100E0B6C3 /* iOS */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3051BD62C77643100E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = iOS; sourceTree = "<group>"; };
 		D3051BD52C77643100E0B6C3 /* macOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = macOS; sourceTree = "<group>"; };
-		D3051BD72C77681600E0B6C3 /* Tabs */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3051BD82C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3051BD92C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3051BDA2C77681D00E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Tabs; sourceTree = "<group>"; };
-		D31388FD2C5A8AD600D90006 /* Edit Factory */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D31389002C5A8AE700D90006 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Edit Factory"; sourceTree = "<group>"; };
+		D3051BD72C77681600E0B6C3 /* Tabs */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tabs; sourceTree = "<group>"; };
+		D31388FD2C5A8AD600D90006 /* Edit Factory */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Edit Factory"; sourceTree = "<group>"; };
 		D33FBA392C76265200D6C089 /* Root */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Root; sourceTree = "<group>"; };
 		D33FBA462C76265400D6C089 /* New Production */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "New Production"; sourceTree = "<group>"; };
-		D33FBA612C76265A00D6C089 /* Settings */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D33FBAAA2C76265A00D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Settings; sourceTree = "<group>"; };
+		D33FBA612C76265A00D6C089 /* Settings */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D35737032C81165D00866E00 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Settings; sourceTree = "<group>"; };
 		D33FBAAE2C76266400D6C089 /* Environment */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Environment; sourceTree = "<group>"; };
-		D33FBB302C76266C00D6C089 /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D33FBB412C76266C00D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
-		D33FBB4D2C76273400D6C089 /* Change Logs */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D33FBB612C76273400D6C089 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Change Logs"; sourceTree = "<group>"; };
+		D33FBB302C76266C00D6C089 /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D35737042C81166A00866E00 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
+		D33FBB4D2C76273400D6C089 /* Change Logs */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Change Logs"; sourceTree = "<group>"; };
 		D3501C802C57E76D00A67D74 /* NewProductionTab */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3501C812C57E77600A67D74 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = NewProductionTab; sourceTree = "<group>"; };
 		D3501C932C580D4500A67D74 /* FactoriesTab */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3501C972C580D5F00A67D74 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = FactoriesTab; sourceTree = "<group>"; };
 		D3501C942C580D4C00A67D74 /* SettingsTab */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3501C9F2C580FF900A67D74 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = SettingsTab; sourceTree = "<group>"; };
-		D354B17A2C720ACB0008B82D /* Statistics */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D354B17E2C720AD50008B82D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Statistics; sourceTree = "<group>"; };
-		D35FC7032C7B6B150026E6B3 /* Production */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D35FC7062C7B6B240026E6B3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Production; sourceTree = "<group>"; };
-		D35FC73E2C7B6D660026E6B3 /* Single Item Production */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D35FC7522C7B6D660026E6B3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D35FC7532C7B6D660026E6B3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D35FC7542C7B6D660026E6B3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Single Item Production"; sourceTree = "<group>"; };
-		D3691D732C7A2E8A0072322E /* UI Components */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3691D742C7A2E910072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3691D752C7A2E980072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3691D762C7A2E980072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3691D772C7A2EAC0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "UI Components"; sourceTree = "<group>"; };
+		D354B17A2C720ACB0008B82D /* Statistics */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Statistics; sourceTree = "<group>"; };
+		D35FC7032C7B6B150026E6B3 /* Production */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Production; sourceTree = "<group>"; };
+		D35FC73E2C7B6D660026E6B3 /* Single Item Production */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Single Item Production"; sourceTree = "<group>"; };
+		D3691D732C7A2E8A0072322E /* UI Components */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "UI Components"; sourceTree = "<group>"; };
 		D3691D8A2C7A2EB20072322E /* Recipe */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Recipe; sourceTree = "<group>"; };
-		D3691DA32C7A2FE30072322E /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3691DA42C7A2FEA0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3691DA52C7A2FEA0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D3691DA62C7A2FEA0072322E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
-		D37E13182C5953C40085FEC0 /* Factories */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D37E131B2C5953D40085FEC0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Factories; sourceTree = "<group>"; };
-		D37F8A5B2C5BA49900D3AB99 /* Factory */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D37F8A5F2C5BA4A600D3AB99 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Factory; sourceTree = "<group>"; };
-		D3B700832C5D779C00797978 /* Edit Production */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3B700872C5D77B500797978 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Edit Production"; sourceTree = "<group>"; };
+		D3691DA32C7A2FE30072322E /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
+		D37E13182C5953C40085FEC0 /* Factories */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Factories; sourceTree = "<group>"; };
+		D37F8A5B2C5BA49900D3AB99 /* Factory */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Factory; sourceTree = "<group>"; };
+		D3B700832C5D779C00797978 /* Edit Production */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Edit Production"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +173,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35737022C81162400866E00 /* SHUtils in Frameworks */,
+				D35736F62C81162400866E00 /* Calculators in Frameworks */,
+				D35736FA2C81162400866E00 /* SHLogger in Frameworks */,
+				D35736F82C81162400866E00 /* SHDebug in Frameworks */,
+				D35737002C81162400866E00 /* SHStorage in Frameworks */,
+				D35736FC2C81162400866E00 /* SHModels in Frameworks */,
+				D35736FE2C81162400866E00 /* SHSettings in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +199,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35736982C8115C600866E00 /* SHModels in Frameworks */,
+				D35736942C8115C600866E00 /* Calculators in Frameworks */,
+				D357369A2C8115C600866E00 /* SHSettings in Frameworks */,
+				D357369E2C8115C600866E00 /* SHUtils in Frameworks */,
+				D35736962C8115C600866E00 /* SHDebug in Frameworks */,
+				D357369C2C8115C600866E00 /* SHStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,13 +319,24 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				D3051BCB2C77640A00E0B6C3 /* Whats New */,
+				D3051BD72C77681600E0B6C3 /* Tabs */,
+				D31388FD2C5A8AD600D90006 /* Edit Factory */,
 				D33FBA392C76265200D6C089 /* Root */,
 				D33FBA462C76265400D6C089 /* New Production */,
 				D33FBA612C76265A00D6C089 /* Settings */,
 				D33FBAAE2C76266400D6C089 /* Environment */,
 				D33FBB302C76266C00D6C089 /* Extensions */,
 				D33FBB4D2C76273400D6C089 /* Change Logs */,
+				D354B17A2C720ACB0008B82D /* Statistics */,
+				D35FC7032C7B6B150026E6B3 /* Production */,
+				D35FC73E2C7B6D660026E6B3 /* Single Item Production */,
+				D3691D732C7A2E8A0072322E /* UI Components */,
 				D3691D8A2C7A2EB20072322E /* Recipe */,
+				D3691DA32C7A2FE30072322E /* Resources */,
+				D37E13182C5953C40085FEC0 /* Factories */,
+				D37F8A5B2C5BA49900D3AB99 /* Factory */,
+				D3B700832C5D779C00797978 /* Edit Production */,
 			);
 			name = iOS;
 			packageProductDependencies = (
@@ -557,8 +364,24 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				D3051BCB2C77640A00E0B6C3 /* Whats New */,
+				D3051BD72C77681600E0B6C3 /* Tabs */,
+				D31388FD2C5A8AD600D90006 /* Edit Factory */,
 				D33FBA392C76265200D6C089 /* Root */,
 				D33FBA462C76265400D6C089 /* New Production */,
+				D33FBA612C76265A00D6C089 /* Settings */,
+				D33FBAAE2C76266400D6C089 /* Environment */,
+				D33FBB302C76266C00D6C089 /* Extensions */,
+				D33FBB4D2C76273400D6C089 /* Change Logs */,
+				D354B17A2C720ACB0008B82D /* Statistics */,
+				D35FC7032C7B6B150026E6B3 /* Production */,
+				D35FC73E2C7B6D660026E6B3 /* Single Item Production */,
+				D3691D732C7A2E8A0072322E /* UI Components */,
+				D3691D8A2C7A2EB20072322E /* Recipe */,
+				D3691DA32C7A2FE30072322E /* Resources */,
+				D37E13182C5953C40085FEC0 /* Factories */,
+				D37F8A5B2C5BA49900D3AB99 /* Factory */,
+				D3B700832C5D779C00797978 /* Edit Production */,
 			);
 			name = macOS;
 			productName = macOS;
@@ -576,9 +399,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				D33FBB302C76266C00D6C089 /* Extensions */,
 			);
 			name = "iOS UIKit";
 			packageProductDependencies = (
@@ -605,13 +425,24 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				D3051BCB2C77640A00E0B6C3 /* Whats New */,
+				D3051BD72C77681600E0B6C3 /* Tabs */,
+				D31388FD2C5A8AD600D90006 /* Edit Factory */,
 				D33FBA392C76265200D6C089 /* Root */,
 				D33FBA462C76265400D6C089 /* New Production */,
 				D33FBA612C76265A00D6C089 /* Settings */,
 				D33FBAAE2C76266400D6C089 /* Environment */,
 				D33FBB302C76266C00D6C089 /* Extensions */,
 				D33FBB4D2C76273400D6C089 /* Change Logs */,
+				D354B17A2C720ACB0008B82D /* Statistics */,
+				D35FC7032C7B6B150026E6B3 /* Production */,
+				D35FC73E2C7B6D660026E6B3 /* Single Item Production */,
+				D3691D732C7A2E8A0072322E /* UI Components */,
 				D3691D8A2C7A2EB20072322E /* Recipe */,
+				D3691DA32C7A2FE30072322E /* Resources */,
+				D37E13182C5953C40085FEC0 /* Factories */,
+				D37F8A5B2C5BA49900D3AB99 /* Factory */,
+				D3B700832C5D779C00797978 /* Edit Production */,
 			);
 			name = "iOS AppStore Screenshots";
 			productName = iOS;
@@ -1144,6 +975,58 @@
 		D341A9ED2BDD60E500ED36F6 /* SHStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHStorage;
+		};
+		D35736932C8115C600866E00 /* Calculators */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Calculators;
+		};
+		D35736952C8115C600866E00 /* SHDebug */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHDebug;
+		};
+		D35736972C8115C600866E00 /* SHModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHModels;
+		};
+		D35736992C8115C600866E00 /* SHSettings */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHSettings;
+		};
+		D357369B2C8115C600866E00 /* SHStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHStorage;
+		};
+		D357369D2C8115C600866E00 /* SHUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHUtils;
+		};
+		D35736F52C81162400866E00 /* Calculators */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Calculators;
+		};
+		D35736F72C81162400866E00 /* SHDebug */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHDebug;
+		};
+		D35736F92C81162400866E00 /* SHLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHLogger;
+		};
+		D35736FB2C81162400866E00 /* SHModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHModels;
+		};
+		D35736FD2C81162400866E00 /* SHSettings */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHSettings;
+		};
+		D35736FF2C81162400866E00 /* SHStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHStorage;
+		};
+		D35737012C81162400866E00 /* SHUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHUtils;
 		};
 		D385EF712C53F8720083BFA1 /* SHStorage */ = {
 			isa = XCSwiftPackageProductDependency;

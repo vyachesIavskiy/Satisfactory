@@ -1,4 +1,3 @@
-import UIKit
 import SwiftUI
 
 extension Color {
@@ -6,6 +5,9 @@ extension Color {
         shColor.color
     }
 }
+
+#if canImport(UIKit)
+import UIKit
 
 extension UIColor {
     static func sh(_ shColor: SHColor) -> UIColor {
@@ -18,3 +20,4 @@ extension CGColor {
         shColor.uiColor.cgColor
     }
 }
+#endif

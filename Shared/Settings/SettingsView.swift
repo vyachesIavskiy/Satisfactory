@@ -23,15 +23,21 @@ struct SettingsView: View {
                 }
                 .navigationTitle("settings-navigation-title")
             }
+            #if canImport(UIKit)
             .disabled(viewModel.feedbackResult == .sent)
+            #endif
             
+            #if canImport(UIKit)
             if viewModel.feedbackResult == .sent {
                 feedbackShaderView
                 
                 feedbackSentView
             }
+            #endif
         }
+        #if canImport(UIKit)
         .animation(.default, value: viewModel.feedbackResult)
+        #endif
     }
     
     @MainActor @ViewBuilder
@@ -107,9 +113,11 @@ struct SettingsView: View {
             }
             .listRowBackground(Color.sh(.orange))
         }
+        #if canImport(UIKit)
         .sheet(isPresented: $viewModel.showFeedback) {
             FeedbackView(result: $viewModel.feedbackResult)
         }
+        #endif
     }
     
     @MainActor @ViewBuilder
@@ -124,9 +132,11 @@ struct SettingsView: View {
         .transition(.opacity.animation(.default.speed(0.75)))
         .contentShape(Rectangle())
         .zIndex(1)
+        #if canImport(UIKit)
         .onTapGesture {
             viewModel.feedbackResult = nil
         }
+        #endif
     }
     
     @MainActor @ViewBuilder
@@ -136,9 +146,11 @@ struct SettingsView: View {
             .background(.background, in: RoundedRectangle(cornerRadius: 12))
             .frame(maxHeight: .infinity, alignment: .bottom)
             .padding(.bottom)
+            #if canImport(UIKit)
             .onTapGesture {
                 viewModel.feedbackResult = nil
             }
+            #endif
             .zIndex(2)
             .transition(.move(edge: .bottom))
     }

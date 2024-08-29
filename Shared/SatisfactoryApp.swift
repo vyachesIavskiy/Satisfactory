@@ -8,7 +8,9 @@ struct SatisfactoryApp: App {
         WindowGroup {
             RootView()
                 .onAppear {
+                    #if canImport(UIKit)
                     UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .sh(.orange)
+                    #endif
                 }
             
 //            FileManagerCheckView()
@@ -227,7 +229,9 @@ private struct FileManagerCheckView: View {
                         .padding()
                 }
                 .navigationTitle(preview.name)
+                #if os(iOS)
                 .navigationBarTitleDisplayMode(.inline)
+                #endif
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Cancel") {

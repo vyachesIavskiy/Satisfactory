@@ -12,7 +12,9 @@ final class SettingsViewModel {
     
     let recipe: Recipe
     var showFeedback = false
+    #if canImport(UIKit)
     var feedbackResult: FeedbackView.Result?
+    #endif
     
     var settings: Settings {
         didSet {

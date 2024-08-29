@@ -41,7 +41,9 @@ struct WhatsNewView: View {
                 page5View
                     .tag(4)
             }
+            #if os(iOS)
             .tabViewStyle(.page(indexDisplayMode: selectedPageIndex == 4 ? .never : .always))
+            #endif
         }
     }
     

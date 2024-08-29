@@ -20,7 +20,7 @@ final class NewProductionViewModel {
     }
     
     @MainActor @ObservationIgnored
-    private var settings: Settings {
+    private var settings: SHSettings.Settings {
         didSet {
             if oldValue.showFICSMAS != settings.showFICSMAS {
                 buildSections()

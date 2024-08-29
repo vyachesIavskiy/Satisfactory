@@ -31,7 +31,9 @@ struct CalculationView: View {
         }
         .navigationBarBackButtonHidden(!viewModel.canBeDismissedWithoutSaving)
         .navigationTitle(viewModel.item.localizedName)
+        #if os(iOS)
         .toolbarBackground(.background, for: .navigationBar)
+        #endif
         .toolbar { toolbar }
         .gesture(
             DragGesture()
@@ -77,7 +79,9 @@ struct CalculationView: View {
             
             TextField("single-item-production-calculation-amount-title", value: $viewModel.amount, format: .shNumber)
                 .multilineTextAlignment(.center)
+                #if os(iOS)
                 .keyboardType(.decimalPad)
+                #endif
                 .focused($focused)
                 .submitLabel(.done)
                 .onSubmit {

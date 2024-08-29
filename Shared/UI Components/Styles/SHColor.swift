@@ -1,4 +1,3 @@
-import UIKit
 import SwiftUI
 
 struct SHColor {
@@ -8,14 +7,20 @@ struct SHColor {
         Color(name)
     }
     
-    var uiColor: UIColor {
-        UIColor(named: name) ?? .gray
-    }
-    
     fileprivate init(name: String) {
         self.name = name
     }
 }
+
+#if canImport(UIKit)
+import UIKit
+
+extension SHColor {
+    var uiColor: UIColor {
+        UIColor(named: name) ?? .gray
+    }
+}
+#endif
 
 // MARK: General
 extension SHColor {

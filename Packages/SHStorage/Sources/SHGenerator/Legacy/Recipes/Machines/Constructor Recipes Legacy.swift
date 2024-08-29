@@ -41,7 +41,7 @@ extension Legacy.Recipes {
     )
 
     static let ironRodRecipe1 = Recipe.Static.Legacy(
-        id: "alternate-steel rod",
+        id: "alternate-steel-rod",
         name: "Alternate: Steel Rod",
         input: .init(Legacy.Parts.steelIngot, amount: 1),
         output: .init(Legacy.Parts.ironRod, amount: 4),
@@ -58,7 +58,7 @@ extension Legacy.Recipes {
     )
 
     static let screwRecipe1 = Recipe.Static.Legacy(
-        id: "alternate-cast screw",
+        id: "alternate-cast-screw",
         name: "Alternate: Cast Screw",
         input: .init(Legacy.Parts.ironIngot, amount: 5),
         output: .init(Legacy.Parts.screw, amount: 20),
@@ -67,7 +67,7 @@ extension Legacy.Recipes {
     )
 
     static let screwRecipe2 = Recipe.Static.Legacy(
-        id: "alternate-steel screw",
+        id: "alternate-steel-screw",
         name: "Alternate: Steel Screw",
         input: .init(Legacy.Parts.steelBeam, amount: 1),
         output: .init(Legacy.Parts.screw, amount: 52),
@@ -117,7 +117,7 @@ extension Legacy.Recipes {
     )
 
     static let wireRecipe1 = Recipe.Static.Legacy(
-        id: "alternate-iron wire",
+        id: "alternate-iron-wire",
         name: "Alternate: Iron Wire",
         input: .init(Legacy.Parts.ironIngot, amount: 5),
         output: .init(Legacy.Parts.wire, amount: 9),
@@ -126,7 +126,7 @@ extension Legacy.Recipes {
     )
 
     static let wireRecipe2 = Recipe.Static.Legacy(
-        id: "alternate-caterium wire",
+        id: "alternate-caterium-wire",
         name: "Alternate: Caterium wire",
         input: .init(Legacy.Parts.cateriumIngot, amount: 1),
         output: .init(Legacy.Parts.wire, amount: 8),
@@ -293,7 +293,7 @@ extension Legacy.Recipes {
     )
 
     static let emptyCanisterRecipe1 = Recipe.Static.Legacy(
-        id: "alternate-steel canister",
+        id: "alternate-steel-canister",
         name: "Alternate: Steel Canister",
         input: .init(Legacy.Parts.steelIngot, amount: 3),
         output: .init(Legacy.Parts.emptyCanister, amount: 2),

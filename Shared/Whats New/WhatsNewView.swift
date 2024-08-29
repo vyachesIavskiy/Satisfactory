@@ -171,6 +171,7 @@ struct WhatsNewView: View {
                     )
                 )
             }
+            .padding(.horizontal, 10)
             
             Color.clear
                 .frame(maxHeight: .infinity)
@@ -209,6 +210,7 @@ struct WhatsNewView: View {
                     ]
                 )))
             }
+            .padding(.horizontal, 10)
             
             Button {
                 didFinish()
@@ -241,15 +243,8 @@ struct WhatsNewView: View {
     private func contentBox<Content: View>(@ViewBuilder content: () -> Content) -> some View {
         VStack(alignment: .leading, spacing: 24) {
             content()
-                .padding(.horizontal, 10)
         }
         .padding(.vertical, 20)
-        .background(
-            AngledRectangle(cornerRadius: 12)
-                .foregroundStyle(.sh(.midnight10).opacity(0.1))
-                .shadow(color: .sh(.midnight40), radius: 12)
-        )
-        .padding(.horizontal, 10)
     }
     
     private var plasticOutputItem: SingleItemCalculator.OutputItem {

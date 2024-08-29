@@ -12,7 +12,8 @@ struct AngledBottomLine: Shape {
     }
 }
 
+#if DEBUG
 #Preview {
     AngledBottomLine(cornerRadius: 10)
 }
-
+#endif

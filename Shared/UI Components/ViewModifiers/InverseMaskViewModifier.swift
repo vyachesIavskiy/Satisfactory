@@ -44,7 +44,7 @@ extension View {
         .aspectRatio(1, contentMode: .fit)
         .border(.red)
         .inverseMask {
-            Text("This text will be cut out from circle")
+            Text(verbatim: "This text will be cut out from circle")
                 .font(.title)
                 .multilineTextAlignment(.center)
         }

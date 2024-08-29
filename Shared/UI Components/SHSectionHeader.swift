@@ -139,7 +139,7 @@ private struct _SHSectionPreview: View {
         List {
             Section(isExpanded: $expanded) {
                 ForEach(0..<10) { index in
-                    Text("Row \(index)")
+                    Text(verbatim: "Row \(index)")
                 }
             } header: {
                 SHSectionHeader("SHSection preview\n(Second line for preview of long section name)", expanded: $expanded)
@@ -147,7 +147,7 @@ private struct _SHSectionPreview: View {
             
             Section {
                 ForEach(0..<10) { index in
-                    Text("Row \(index)")
+                    Text(verbatim: "Row \(index)")
                 }
             } header: {
                 SHSectionHeader("SHSection preview")

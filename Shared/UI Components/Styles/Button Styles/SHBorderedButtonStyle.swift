@@ -42,8 +42,10 @@ extension ButtonStyle where Self == SHBorderedButtonStyle {
 #if DEBUG
 #Preview("Buttons") {
     HStack {
-        Button("Press me") {}
-            .buttonStyle(.shBordered)
+        Button {} label: {
+            Text(verbatim: "Press me")
+        }
+        .buttonStyle(.shBordered)
         
         Button {
             
@@ -52,34 +54,11 @@ extension ButtonStyle where Self == SHBorderedButtonStyle {
         }
         .buttonStyle(.shBordered)
         
-        Button("Red tint") {}
-            .buttonStyle(.shBordered)
-            .tint(.sh(.red))
+        Button {} label: {
+            Text(verbatim: "Red tint")
+        }
+        .buttonStyle(.shBordered)
+        .tint(.sh(.red))
     }
-    
-//    VStack {
-//        Button("Press me", systemImage: "star") {}
-//        
-//        Button("Press me", systemImage: "checkmark") {}
-//            .buttonStyle(.bordered)
-//        
-//        Button("Press me", systemImage: "star") {}
-//            .buttonStyle(.bordered)
-//            .tint(.red)
-//            .buttonBorderShape(.automatic)
-//        
-//        Button("Press me", systemImage: "star") {}
-//            .buttonStyle(.borderedProminent)
-//        
-//        Button("Delete", systemImage: "trash") {}
-//            .buttonStyle(.borderedProminent)
-//            .tint(.red)
-//        
-//        Button("Press me", systemImage: "star") {}
-//            .buttonStyle(.borderless)
-//        
-//        Button("Press me", systemImage: "star") {}
-//            .buttonStyle(.plain)
-//    }
 }
 #endif

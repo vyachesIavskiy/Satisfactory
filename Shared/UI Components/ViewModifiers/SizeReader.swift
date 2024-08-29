@@ -84,12 +84,12 @@ private struct _SizeReaderPreview: View {
     
     var body: some View {
         VStack(spacing: 24) {
-            Text("The size of this text will be read and prompted below")
+            Text(verbatim: "The size of this text will be read and prompted below")
                 .multilineTextAlignment(.center)
                 .border(.orange, width: 1)
                 .readSize($size)
             
-            Text("[w: \(size.width.formatted(.shNumber)), h: \(size.height.formatted(.shNumber))]")
+            Text(verbatim: "[w: \(size.width.formatted(.shNumber)), h: \(size.height.formatted(.shNumber))]")
                 .foregroundStyle(.orange)
         }
     }
@@ -102,27 +102,27 @@ private struct _MaxSizeReaderPreview: View {
     
     var body: some View {
         VStack(spacing: 24) {
-            Text("Small text in orange border")
+            Text(verbatim: "Small text in orange border")
                 .multilineTextAlignment(.center)
                 .border(.orange, width: 1)
                 .provideMaxSize()
                 .readSize($size1)
             
-            Text("Bigger test in red border that will hold a couple of additional words to represent bigger UI control")
+            Text(verbatim: "Bigger test in red border that will hold a couple of additional words to represent bigger UI control")
                 .multilineTextAlignment(.center)
                 .border(.red, width: 2)
                 .provideMaxSize()
                 .readSize($size2)
             
             HStack {
-                Text("[w: \(size1.width.formatted(.shNumber)), h: \(size1.height.formatted(.shNumber))]")
+                Text(verbatim: "[w: \(size1.width.formatted(.shNumber)), h: \(size1.height.formatted(.shNumber))]")
                     .foregroundStyle(.orange)
                 
-                Text("[w: \(size2.width.formatted(.shNumber)), h: \(size2.height.formatted(.shNumber))]")
+                Text(verbatim: "[w: \(size2.width.formatted(.shNumber)), h: \(size2.height.formatted(.shNumber))]")
                     .foregroundStyle(.red)
             }
             
-            Text("Max: [w: \(maxSize.width.formatted(.shNumber)), h: \(maxSize.height.formatted(.shNumber))]")
+            Text(verbatim: "Max: [w: \(maxSize.width.formatted(.shNumber)), h: \(maxSize.height.formatted(.shNumber))]")
                 .foregroundStyle(size1 == maxSize ? .orange : .red)
                 .bold()
         }

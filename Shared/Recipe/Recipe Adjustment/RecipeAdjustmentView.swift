@@ -121,7 +121,7 @@ private struct _RecipeAdjustmentPreview: View {
         if let viewModel {
             RecipeAdjustmentView(viewModel: viewModel)
         } else {
-            Text("There is no recipe with id '\(recipeID)'")
+            Text(verbatim: "There is no recipe with id '\(recipeID)'")
                 .font(.title3)
                 .padding()
         }

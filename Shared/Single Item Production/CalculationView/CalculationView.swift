@@ -233,11 +233,11 @@ private struct _CalculationPreview: View {
         } else {
             VStack(spacing: 24) {
                 if item == nil {
-                    Text("There is no item with id '\(itemID)'")
+                    Text(verbatim: "There is no item with id '\(itemID)'")
                 }
                 
                 if recipe == nil {
-                    Text("There is no recipe with id '\(recipeID)'")
+                    Text(verbatim: "There is no recipe with id '\(recipeID)'")
                 }
             }
             .font(.title2)

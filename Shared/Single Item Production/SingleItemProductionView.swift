@@ -48,7 +48,7 @@ private struct _SingleItemProductionPreview: View {
                 SingleItemProductionView(item: item)
             }
         } else {
-            Text("There is no item with id '\(itemID)'")
+            Text(verbatim: "There is no item with id '\(itemID)'")
         }
     }
 }

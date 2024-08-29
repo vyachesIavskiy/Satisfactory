@@ -42,8 +42,10 @@ extension ButtonStyle where Self == SHBorderedProminentButtonStyle {
 #if DEBUG
 #Preview {
     HStack {
-        Button("Press me") {}
-            .buttonStyle(.shBorderedProminent)
+        Button {} label: {
+            Text(verbatim: "Press me")
+        }
+        .buttonStyle(.shBorderedProminent)
         
         Button {
             
@@ -52,9 +54,11 @@ extension ButtonStyle where Self == SHBorderedProminentButtonStyle {
         }
         .buttonStyle(.shBorderedProminent)
         
-        Button("Red tint") {}
-            .buttonStyle(.shBorderedProminent)
-            .tint(.sh(.red))
+        Button {} label: {
+            Text(verbatim: "Red tint")
+        }
+        .buttonStyle(.shBorderedProminent)
+        .tint(.sh(.red))
     }
 }
 #endif

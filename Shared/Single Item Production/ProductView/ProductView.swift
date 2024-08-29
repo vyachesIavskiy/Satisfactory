@@ -180,7 +180,7 @@ private struct _ProductPreview: View {
                 ProductView(viewModel: viewModel)
             }
         } else {
-            Text("There is no item with ID '\(itemID)'")
+            Text(verbatim: "There is no item with ID '\(itemID)'")
                 .font(.title3)
                 .padding()
         }

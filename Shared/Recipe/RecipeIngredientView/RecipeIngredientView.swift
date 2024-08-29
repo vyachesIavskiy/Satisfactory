@@ -111,13 +111,13 @@ private struct _DisplayIngredientPreview: View {
         HStack(spacing: 40) {
             switch form {
             case .solid:
-                Text("Solid")
+                Text(verbatim: "Solid")
                 
             case .fluid:
-                Text("Fluid")
+                Text(verbatim: "Fluid")
                 
             case .gas:
-                Text("Gas")
+                Text(verbatim: "Gas")
             }
             
             RecipeIngredientView(
@@ -185,12 +185,12 @@ private struct _ProductionIngredientPreview: View {
         GridRow {
             Text(title)
             
-            Text("Icon")
+            Text(verbatim: "Icon")
                 .font(.headline)
                 .gridColumnAlignment(.center)
 
             
-            Text("Row")
+            Text(verbatim: "Row")
                 .font(.headline)
                 .gridColumnAlignment(.center)
         }
@@ -202,13 +202,13 @@ private struct _ProductionIngredientPreview: View {
             Group {
                 switch form {
                 case .solid:
-                    Text("Solid")
+                    Text(verbatim: "Solid")
                     
                 case .fluid:
-                    Text("Fluid")
+                    Text(verbatim: "Fluid")
                     
                 case .gas:
-                    Text("Gas")
+                    Text(verbatim: "Gas")
                 }
             }
             .frame(maxHeight: .infinity)

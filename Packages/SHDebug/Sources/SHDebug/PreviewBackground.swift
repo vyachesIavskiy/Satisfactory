@@ -27,17 +27,17 @@ public extension View {
 }
 
 #Preview("Default background") {
-    Text("Preview")
+    Text(verbatim: "Preview")
         .previewBackground()
 }
 
 #Preview("Orange background") {
-    Text("Preview")
+    Text(verbatim: "Preview")
         .previewBackground(.orange)
 }
 
 #Preview("Gradient background") {
-    Text("Preview")
+    Text(verbatim: "Preview")
         .previewBackground(
             .linearGradient(
                 colors: [.orange, .blue],
@@ -49,9 +49,9 @@ public extension View {
 
 #Preview("No/Default background") {
     ZStack {
-        Text("Preview")
+        Text(verbatim: "Preview")
         
-        Text("Preview")
+        Text(verbatim: "Preview")
             .previewBackground()
             .mask(
                 LinearGradient(

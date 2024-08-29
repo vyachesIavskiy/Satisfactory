@@ -2,36 +2,10 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
-    },
-    "'%@' is not found" : {
-
-    },
-    "[w: %@, h: %@]" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "[w: %1$@, h: %2$@]"
-          }
-        }
-      }
-    },
-    "[x: %lf, y: %lf]" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "[x: %1$lf, y: %2$lf]"
-          }
-        }
-      }
+      "shouldTranslate" : false
     },
     "%@" : {
-
-    },
-    "%@  " : {
-
+      "shouldTranslate" : false
     },
     "adjust-recipe-will-be-deleted" : {
       "extractionState" : "manual",
@@ -43,9 +17,6 @@
           }
         }
       }
-    },
-    "Bigger test in red border that will hold a couple of additional words to represent bigger UI control" : {
-
     },
     "Cancel" : {
 
@@ -584,9 +555,6 @@
     "Consumed power here" : {
 
     },
-    "Debug feedback" : {
-
-    },
     "edit-factory-delete-message" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -913,12 +881,6 @@
         }
       }
     },
-    "Fluid" : {
-
-    },
-    "Gas" : {
-
-    },
     "general-apply" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1040,26 +1002,10 @@
         }
       }
     },
-    "Icon" : {
-
-    },
     "Legacy File system" : {
 
     },
     "Load storage" : {
-
-    },
-    "Max: [w: %@, h: %@]" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Max: [w: %1$@, h: %2$@]"
-          }
-        }
-      }
-    },
-    "Natural Resource" : {
 
     },
     "new-production-navigation-title" : {
@@ -1213,16 +1159,7 @@
         }
       }
     },
-    "Row" : {
-
-    },
-    "Row %lld" : {
-
-    },
     "Selected" : {
-
-    },
-    "Send" : {
 
     },
     "settings-app-info-app-build-number-row-title" : {
@@ -1424,10 +1361,10 @@
       }
     },
     "SHSection preview" : {
-
+      "shouldTranslate" : false
     },
     "SHSection preview\n(Second line for preview of long section name)" : {
-
+      "shouldTranslate" : false
     },
     "single-item-production-adjustment-%@-per-minute" : {
       "extractionState" : "manual",
@@ -1450,9 +1387,6 @@
           }
         }
       }
-    },
-    "single-item-production-adjustment-no-recipes-for-**%@**." : {
-
     },
     "single-item-production-adjustment-pinned-recipes-section-name" : {
       "extractionState" : "manual",
@@ -1718,12 +1652,6 @@
         }
       }
     },
-    "Small text in orange border" : {
-
-    },
-    "Solid" : {
-
-    },
     "statistics-%lld-of-recipes" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1837,16 +1765,7 @@
         }
       }
     },
-    "The size of this text will be read and prompted below" : {
-
-    },
     "There is no item with id '%@'" : {
-
-    },
-    "There is no item with ID '%@'" : {
-
-    },
-    "There is no recipe with id '%@'" : {
 
     },
     "This is a fix" : {

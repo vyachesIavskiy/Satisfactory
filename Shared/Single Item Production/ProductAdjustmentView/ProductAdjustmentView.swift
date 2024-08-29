@@ -96,7 +96,7 @@ struct ProductAdjustmentView: View {
                     .padding(.horizontal, 16)
                 }
             } else {
-                Text("single-item-production-adjustment-no-recipes-for-**\(viewModel.product.item.localizedName)**.")
+                Text("single-item-production-adjustment-no-recipes-for-**\(viewModel.product.item.localizedName)**")
                     .font(.title3)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)

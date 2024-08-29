@@ -147,7 +147,9 @@ private struct _RecipeDisplayViewPreview: View {
                 ForEach(recipes) { recipe in
                     RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
                         .contextMenu {
-                            Button("Preview") {}
+                            Button {} label: {
+                                Text(verbatim: "Preview")
+                            }
                         }
                 }
             }

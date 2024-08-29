@@ -103,7 +103,7 @@ private struct _InitialRecipeSelectionPreview: View {
             if let item {
                 InitialRecipeSelectionView(viewModel: InitialRecipeSelectionViewModel(item: item))
             } else {
-                Text("There is no item with ID '\(itemID)'")
+                Text(verbatim: "There is no item with ID '\(itemID)'")
                     .font(.largeTitle)
                     .padding()
             }

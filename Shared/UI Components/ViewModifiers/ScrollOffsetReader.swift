@@ -47,7 +47,7 @@ private struct _ScrollOffsetReaderPreview: View {
             }
         }
         .overlay(alignment: .topTrailing) {
-            Text("[x: \(scrollOffset.x), y: \(scrollOffset.y)]")
+            Text(verbatim: "[x: \(scrollOffset.x), y: \(scrollOffset.y)]")
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .padding([.trailing, .top], 4)

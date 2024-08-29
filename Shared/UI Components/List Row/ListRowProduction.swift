@@ -70,7 +70,7 @@ private struct ProductionRowPreview: View {
                 accessory: accessory
             )
         } else {
-            Text("There is no item with id '\(itemID)'")
+            Text(verbatim: "There is no item with id '\(itemID)'")
         }
     }
 }

@@ -84,7 +84,7 @@ struct ChangeLogView: View {
         }
         
         let image = Image(systemName: imageName)
-        return Text("\(image)  ")
+        return Text(verbatim: "\(image)  ")
             .font(.footnote)
             .foregroundStyle(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
     }

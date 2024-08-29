@@ -112,20 +112,24 @@ private struct DebugFeedbackView: View {
             Color.clear
                 .toolbar {
                     ToolbarItem(placement: .confirmationAction) {
-                        Button("Send") {
+                        Button {
                             result = .sent
                             dismiss()
+                        } label: {
+                            Text(verbatim: "Send")
                         }
                     }
                     
                     ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel") {
+                        Button {
                             result = .cancelled
                             dismiss()
+                        } label: {
+                            Text(verbatim: "Cancel")
                         }
                     }
                 }
-                .navigationTitle("Debug feedback")
+                .navigationTitle(Text(verbatim: "Debug feedback"))
         }
         .presentationDetents([.height(150)])
     }

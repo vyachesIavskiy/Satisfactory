@@ -57,7 +57,7 @@ private struct ProductionRowPreview: View {
                 SingleItemProduction(id: UUID(), name: "Preview production", item: item, amount: amount, inputItems: [], byproducts: [])
             ))
         } else {
-            Text("There is no item with id '\(itemID)'")
+            Text(verbatim: "There is no item with id '\(itemID)'")
         }
     }
 }

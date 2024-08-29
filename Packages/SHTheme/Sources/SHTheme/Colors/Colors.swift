@@ -62,8 +62,8 @@ private struct ColorPreview: View {
                 
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Light: ")
-                        Text("Dark: ")
+                        Text(verbatim: "Light: ")
+                        Text(verbatim: "Dark: ")
                     }
                     
                     VStack(alignment: .leading) {

@@ -82,13 +82,13 @@ private struct _RecipeIngredientAmountPreview: View {
         VStack {
             switch form {
             case .solid:
-                Text("Solid")
+                Text(verbatim: "Solid")
                 
             case .fluid:
-                Text("Fluid")
+                Text(verbatim: "Fluid")
                 
             case .gas:
-                Text("Gas")
+                Text(verbatim: "Gas")
             }
             
             RecipeIngredientAmountView(
@@ -118,7 +118,7 @@ private struct _ProductionRecipeIngredientAmountPreview: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Unselected")
+            Text(verbatim: "Unselected")
                 .padding(.vertical)
             
             HStack {
@@ -129,7 +129,7 @@ private struct _ProductionRecipeIngredientAmountPreview: View {
                 ingredientAmount(form: .gas, selected: false, naturalResource: false)
             }
             
-            Text("Natural Resource")
+            Text(verbatim: "Natural Resource")
                 .padding(.vertical)
             
             HStack {
@@ -140,7 +140,7 @@ private struct _ProductionRecipeIngredientAmountPreview: View {
                 ingredientAmount(form: .gas, selected: false, naturalResource: true)
             }
             
-            Text("Selected")
+            Text(verbatim: "Selected")
                 .padding(.vertical)
             
             HStack {
@@ -158,13 +158,13 @@ private struct _ProductionRecipeIngredientAmountPreview: View {
         VStack {
             switch form {
             case .solid:
-                Text("Solid")
+                Text(verbatim: "Solid")
                 
             case .fluid:
-                Text("Fluid")
+                Text(verbatim: "Fluid")
                 
             case .gas:
-                Text("Gas")
+                Text(verbatim: "Gas")
             }
             
             let viewModel = switch role {
@@ -203,13 +203,13 @@ private struct _ProductionRecipeAdditionalAmountPreview: View {
         VStack {
             switch form {
             case .solid:
-                Text("Solid")
+                Text(verbatim: "Solid")
                 
             case .fluid:
-                Text("Fluid")
+                Text(verbatim: "Fluid")
                 
             case .gas:
-                Text("Gas")
+                Text(verbatim: "Gas")
             }
             
             RecipeIngredientAmountView(viewModel: RecipeIngredientAmountViewModel(

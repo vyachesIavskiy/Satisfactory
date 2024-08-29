@@ -69,7 +69,7 @@ private struct _ItemIconShapePreview: View {
             ItemIconShape(item: item, cornerRadius: cornerRadius)
                 .padding(20)
         } else {
-            Text("'\(itemID)' is not found")
+            Text(verbatim: "'\(itemID)' is not found")
         }
     }
 }

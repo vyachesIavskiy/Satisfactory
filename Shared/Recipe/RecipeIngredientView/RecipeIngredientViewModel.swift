@@ -65,13 +65,21 @@ final class RecipeIngredientViewModel: Identifiable {
     @MainActor
     func amountViewModels() -> [RecipeIngredientAmountViewModel] {
         func showMainAmount(for ingredient: SingleItemCalculator.OutputRecipe.ByproductIngredient) -> Bool {
-            ingredient.amount > 0 &&
-            ingredient.byproducts.first?.amount != ingredient.amount
+            if !ingredient.byproducts.isEmpty {
+                ingredient.amount > 0 &&
+                ingredient.byproducts.first?.amount != ingredient.amount
+            } else {
+                true
+            }
         }
         
         func showMainAmount(for ingredient: SingleItemCalculator.OutputRecipe.InputIngredient) -> Bool {
-            ingredient.amount > 0 &&
-            (ingredient.isSelected || ingredient.byproducts.first?.amount != ingredient.amount)
+            if !ingredient.byproducts.isEmpty || ingredient.isSelected {
+                ingredient.amount > 0 &&
+                (ingredient.isSelected || ingredient.byproducts.first?.amount != ingredient.amount)
+            } else {
+                true
+            }
         }
         
         var result = [RecipeIngredientAmountViewModel]()

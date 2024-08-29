@@ -23,15 +23,25 @@ struct ProductAdjustmentView: View {
             }
             .listStyle(.plain)
             .safeAreaInset(edge: .top, spacing: 0) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text(viewModel.product.item.localizedName)
-                        .font(.title3)
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack(alignment: .firstTextBaseline) {
+                        Text(viewModel.product.item.localizedName)
+                            .font(.title3)
+                        
+                        Spacer()
+                        
+                        Text("single-item-production-adjustment-\(viewModel.product.amount.formatted(.shNumber))-per-minute")
+                            .font(.headline)
+                    }
                     
-                    Spacer()
-                    
-                    Text("single-item-production-adjustment-\(viewModel.product.amount.formatted(.shNumber))-per-minute")
-                        .font(.headline)
+                    if let validationMessage = viewModel.validationMessage {
+                        Text(validationMessage)
+                            .font(.caption)
+                            .foregroundStyle(.sh(.red))
+                            .transition(.move(edge: .top).combined(with: .opacity))
+                    }
                 }
+                .animation(.default, value: viewModel.validationMessage == nil)
                 .padding(.horizontal, 16)
                 .padding(.bottom, 8)
                 .overlay(alignment: .bottom) {
@@ -53,6 +63,7 @@ struct ProductAdjustmentView: View {
                         viewModel.apply()
                         dismiss()
                     }
+                    .disabled(viewModel.applyButtonDisabled)
                 }
             }
             .toolbarBackground(.hidden, for: .navigationBar)

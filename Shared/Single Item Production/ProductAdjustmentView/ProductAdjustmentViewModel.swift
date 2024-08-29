@@ -1,5 +1,4 @@
-import Foundation
-import Observation
+import SwiftUI
 import SHModels
 import SHStorage
 import SingleItemCalculator
@@ -11,6 +10,8 @@ final class ProductAdjustmentViewModel: Identifiable {
     private let onApply: @MainActor (SingleItemProduction.InputItem) -> Void
     
     private(set) var production: SingleItemCalculator
+    
+    private var proportionsValidation = ProportionsValidation()
     
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
@@ -52,6 +53,14 @@ final class ProductAdjustmentViewModel: Identifiable {
         return allRecipes.filter { recipe in
             !pinnedIDs.contains(recipe.id) && !selectedRecipes.contains { $0.recipe.id == recipe.id }
         }
+    }
+    
+    var applyButtonDisabled: Bool {
+        !proportionsValidation.isValid
+    }
+    
+    var validationMessage: LocalizedStringKey? {
+        proportionsValidation.validationMessage
     }
     
     init(
@@ -133,6 +142,82 @@ final class ProductAdjustmentViewModel: Identifiable {
     private func update() {
         _$observationRegistrar.withMutation(of: self, keyPath: \.production) {
             production.update()
+        }
+        
+        let recipeAmounts = selectedRecipes.reduce(into: (0, 0.0, 0.0)) { partialResult, recipe in
+            switch recipe.proportion {
+            case .auto: partialResult.0 += 1
+            case let .fraction(fraction): partialResult.1 += fraction
+            case let .fixed(fixedAmount): partialResult.2 += fixedAmount
+            }
+        }
+        
+        proportionsValidation = ProportionsValidation(
+            amountOfAuto: recipeAmounts.0,
+            totalFractionAmount: recipeAmounts.1,
+            totalFixedAmount: recipeAmounts.2,
+            availableAmount: amount
+        )
+    }
+}
+
+extension ProductAdjustmentViewModel {
+    struct ProportionsValidation {
+        struct ValidationMessage: Identifiable, Hashable {
+            let id = UUID()
+            let message: LocalizedStringKey
+            
+            func hash(into hasher: inout Hasher) {
+                hasher.combine(id)
+            }
+        }
+        
+        var amountOfAuto: Int
+        var totalFractionAmount: Double
+        var totalFixedAmount: Double
+        var availableAmount: Double
+        
+        var isValid: Bool {
+            // Fractions are higher than 100%
+            if totalFractionAmount > 1.0 { false }
+            
+            // Fixed are higher that total available amount
+            else if totalFixedAmount > availableAmount { false }
+            
+            // There is no auto, but there are fractions and they do not make 100% in total
+            else if amountOfAuto == 0, totalFractionAmount > 0, totalFractionAmount < 1.0 { false }
+            
+            // There is no auto, no fractions and fixed amounts are not equal to total available amounts
+            else if amountOfAuto == 0, totalFractionAmount == 0.0, totalFixedAmount != availableAmount { false }
+            
+            // Otherwise it's fine
+            else { true }
+        }
+        
+        var validationMessage: LocalizedStringKey? {
+            if totalFractionAmount > 1.0 {
+                "product-adjustment-fraction-\(totalFractionAmount, format: .shPercent)-exceeds-\(1, format: .shPercent)"
+            } else if totalFixedAmount > availableAmount {
+                "product-adjustment-fixed-\(totalFixedAmount, format: .shNumber)-exceeds-\(availableAmount, format: .shNumber)"
+            } else if amountOfAuto == 0, totalFractionAmount > 0, totalFractionAmount < 1.0 {
+                "product-adjustment-fractions-\(totalFractionAmount, format: .shPercent)-should-be-exactly-\(1, format: .shPercent)"
+            } else if amountOfAuto == 0, totalFractionAmount == 0.0, totalFixedAmount != availableAmount {
+                "product-adjustment-fixed-\(totalFixedAmount, format: .shNumber)-should-be-equal-to-available-\(availableAmount, format: .shNumber)"
+            } else {
+                nil
+            }
+        }
+        
+        init(
+            amountOfAuto: Int = 0,
+            totalFractionAmount: Double = 0.0,
+            totalFixedAmount: Double = 0.0,
+            availableAmount: Double = 0.0
+        ) {
+            self.amountOfAuto = amountOfAuto
+            self.totalFractionAmount = totalFractionAmount
+            self.totalFixedAmount = totalFixedAmount
+            self.availableAmount = availableAmount
         }
     }
 }

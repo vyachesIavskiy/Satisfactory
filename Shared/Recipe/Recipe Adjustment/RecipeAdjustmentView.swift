@@ -4,6 +4,9 @@ struct RecipeAdjustmentView: View {
     @State
     var viewModel: RecipeAdjustmentViewModel
     
+    @Environment(\.displayScale)
+    private var displayScale
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
@@ -32,11 +35,29 @@ struct RecipeAdjustmentView: View {
                 }
             }
             
-            SingleItemProductionRecipeDisplayView(
-                viewModel: SingleItemProductionRecipeDisplayViewModel(
-                    recipe: viewModel.recipe
+            ZStack {
+                SingleItemProductionRecipeDisplayView(
+                    viewModel: SingleItemProductionRecipeDisplayViewModel(
+                        recipe: viewModel.recipe
+                    )
                 )
-            )
+                .opacity(viewModel.willBeRemoved ? 0.3 : 1.0)
+                .grayscale(viewModel.willBeRemoved ? 1.0 : 0.0)
+                
+                if viewModel.willBeRemoved {
+                    Text("adjust-recipe-will-be-deleted")
+                        .font(.title3)
+                        .foregroundStyle(.sh(.red))
+                        .padding(8)
+                        .frame(maxWidth: .infinity)
+                        .background {
+                            AngledRectangle(cornerRadius: 12)
+                                .fill(.sh(.red10))
+                                .stroke(.sh(.red), lineWidth: 2 / displayScale)
+                        }
+                        .padding(.horizontal, 20)
+                }
+            }
         }
     }
 }

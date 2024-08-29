@@ -11,6 +11,10 @@ final class RecipeAdjustmentViewModel {
     let onChange: (Proportion) -> Void
     let onDelete: () -> Void
     
+    var willBeRemoved: Bool {
+        recipe.output.amount.isZero
+    }
+    
     @MainActor
     init(
         recipe: SingleItemCalculator.OutputRecipe,

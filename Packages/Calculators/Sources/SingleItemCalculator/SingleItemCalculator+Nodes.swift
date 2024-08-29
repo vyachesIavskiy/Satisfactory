@@ -3,38 +3,16 @@ import SHModels
 extension SingleItemCalculator {
     /// Creates root recipes nodes for production product.
     func buildNodes() {
-        guard let productionProduct = internalState.selectedInputItem(with: item.id) else { return }
+        guard let inputItem = internalState.selectedInputItem(with: item.id) else { return }
         
-        // Get amounts without auto
-        var amounts: [Double?] = productionProduct.recipes.map { productionRecipe in
-            switch productionRecipe.proportion {
-            case let .fixed(fixedAmount): fixedAmount
-            case let .fraction(fraction): amount * fraction
-            case .auto: nil
+        let amounts = amounts(for: inputItem, availableAmount: amount)
+        
+        mainNodes = inputItem.recipes.map { productionRecipe in
+            let amount = switch productionRecipe.proportion {
+            case let .fraction(fraction): amounts.forFractions * fraction
+            case let .fixed(fixed): fixed
+            case .auto: amounts.forAutos / Double(amounts.amountOfAuto)
             }
-        }
-        
-        // Calculate how many auto there are
-        let autoCount = amounts.filter { $0 == nil }.count
-        
-        // Get amount left for auto
-        let unusedAmount = amount - amounts.reduce(0.0) { partialResult, amount in
-            if let amount {
-                partialResult + amount
-            } else {
-                partialResult
-            }
-        }
-        
-        // Update auto amounts from what is left
-        for index in amounts.indices {
-            if amounts[index] == nil {
-                amounts[index] = unusedAmount / Double(autoCount)
-            }
-        }
-        
-        mainNodes = zip(productionProduct.recipes, amounts).compactMap { productionRecipe, amount in
-            guard let amount else { return nil }
             
             return Node(id: uuid(), item: item, recipe: productionRecipe.recipe, amount: amount)
         }
@@ -47,29 +25,8 @@ extension SingleItemCalculator {
         }
     }
     
-    /// Populates a recipe node with recipe, amounts and collects producing byproducts from recipe node. Recursively does the same for input recipe nodes.
-    /// - Parameter recipeNode: A recipe node in question.
-    private func buildNode(_ node: Node) {
-        for (inputIndex, input) in node.inputs.enumerated() {
-            buildInputNode(for: node, input: input, inputIndex: inputIndex)
-        }
-        
-        // Repeat process for each input node
-        for node in node.inputNodes {
-            buildNode(node)
-        }
-    }
-    
-    private func buildInputNode(for node: Node, input: Node.Input, inputIndex: Int) {
-        // Check if user selected a recipe for an input.
-        guard let inputItemIndex = internalState.index(of: input.item) else { return }
-        
-        // Convenience selected item.
-        let inputItem = internalState.selectedInputItems[inputItemIndex]
-        
-        // Get available amount of input based on recipeNode recipe
-        let inputAmount = input.availableAmount
-        
+    private typealias Amounts = (forFractions: Double, forAutos: Double, amountOfAuto: Int)
+    private func amounts(for inputItem: SingleItemProduction.InputItem, availableAmount: Double) -> Amounts {
         /// Calculate input amount without fixed recipe proportions.
         /// This amount will be used as base amount for fraction proportions.
         ///
@@ -81,7 +38,7 @@ extension SingleItemCalculator {
         ///   Recipe3: .fraction(0.4)
         ///   Recipe4: .auto
         /// Returned amount will be: 563 - 100 - 125 = 338.
-        let amountForFractions = inputItem.recipes.reduce(inputAmount) { partialResult, productionRecipe in
+        let amountForFractions = inputItem.recipes.reduce(availableAmount) { partialResult, productionRecipe in
             guard case let .fixed(amount) = productionRecipe.proportion else {
                 return partialResult
             }
@@ -110,6 +67,35 @@ extension SingleItemCalculator {
         
         let amountOfAutoRecipes = inputItem.recipes.filter { $0.proportion == .auto }.count
         
+        return Amounts(forFractions: amountForFractions, forAutos: amountForAutos, amountOfAuto: amountOfAutoRecipes)
+    }
+    
+    /// Populates a recipe node with recipe, amounts and collects producing byproducts from recipe node. Recursively does the same for input recipe nodes.
+    /// - Parameter recipeNode: A recipe node in question.
+    private func buildNode(_ node: Node) {
+        for (inputIndex, input) in node.inputs.enumerated() {
+            buildInputNode(for: node, input: input, inputIndex: inputIndex)
+        }
+        
+        // Repeat process for each input node
+        for node in node.inputNodes {
+            buildNode(node)
+        }
+    }
+    
+    private func buildInputNode(for node: Node, input: Node.Input, inputIndex: Int) {
+        // Check if user selected a recipe for an input.
+        guard let inputItemIndex = internalState.index(of: input.item) else { return }
+        
+        // Convenience selected item.
+        let inputItem = internalState.selectedInputItems[inputItemIndex]
+        
+        // Get available amount of input based on recipeNode recipe
+        let inputAmount = input.availableAmount
+        
+        // Get amounts for fractions, autos and amount of auro recipes
+        let amounts = amounts(for: inputItem, availableAmount: inputAmount)
+        
         for (inputRecipeIndex, inputRecipe) in inputItem.recipes.enumerated() {
             buildInputRecipeNode(
                 to: node,
@@ -119,9 +105,7 @@ extension SingleItemCalculator {
                 inputRecipe: inputRecipe,
                 inputRecipeIndex: inputRecipeIndex,
                 inputAmount: inputAmount,
-                amountForFractions: amountForFractions,
-                amountForAutos: amountForAutos,
-                amountOfAutoRecipes: amountOfAutoRecipes
+                amounts: amounts
             )
         }
     }
@@ -134,9 +118,7 @@ extension SingleItemCalculator {
         inputRecipe: SingleItemProduction.InputRecipe,
         inputRecipeIndex: Int,
         inputAmount: Double,
-        amountForFractions: Double,
-        amountForAutos: Double,
-        amountOfAutoRecipes: Int
+        amounts: Amounts
     ) {
         // Safety check if input node contains selected recipe. If this happens, this is logical error.
         guard !node.inputContains(inputRecipe.recipe) else { return }
@@ -216,11 +198,11 @@ extension SingleItemCalculator {
             case let .fraction(fraction):
                 // Fractions are simple. Take available for fractions amoun and multiply it by fraction value.
                 // Production recipe proportion does not have to change.
-                inputAmount = amountForFractions * fraction
+                inputAmount = amounts.forFractions * fraction
                 
             case .auto:
                 // Auto take amount of item left after fixed and fraction and devide it equally between themselves.
-                inputAmount = amountForAutos / Double(amountOfAutoRecipes)
+                inputAmount = amounts.forAutos / Double(amounts.amountOfAuto)
             }
             
             // Do not create input nodes for inputs with zero or lower amount.

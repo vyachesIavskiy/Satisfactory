@@ -1,70 +1,4 @@
 import SwiftUI
-import SingleItemCalculator
-import SHUtils
-
-@Observable
-final class ProductionProportionViewModel {
-    enum ProductionProportionDisplay {
-        case auto
-        case fraction
-        case fixed
-    }
-    
-    @MainActor @ObservationIgnored
-    var proportionDisplay: ProductionProportionDisplay {
-        didSet {
-            update()
-        }
-    }
-    
-    @MainActor @ObservationIgnored
-    var fractionAmount: Double
-    
-    @MainActor @ObservationIgnored
-    var fixedAmount: Double
-    
-    @ObservationIgnored
-    private var onChange: (Proportion) -> Void
-    
-    @MainActor
-    init(
-        proportion: Proportion,
-        totalAmount: Double,
-        numberOfRecipes: Int,
-        onChange: @escaping (Proportion) -> Void
-    ) {
-        self.onChange = onChange
-        switch proportion {
-        case .auto:
-            proportionDisplay = .auto
-            fractionAmount = 100.0 / Double(numberOfRecipes)
-            
-        case let .fraction(fraction):
-            proportionDisplay = .fraction
-            fractionAmount = fraction * 100
-            
-        case .fixed:
-            proportionDisplay = .fixed
-            fractionAmount = 100.0 / Double(numberOfRecipes)
-        }
-        
-        fixedAmount = totalAmount
-    }
-    
-    @MainActor
-    func update() {
-        switch proportionDisplay {
-        case .auto:
-            onChange(.auto)
-            
-        case .fraction:
-            onChange(.fraction(fractionAmount / 100))
-            
-        case .fixed:
-            onChange(.fixed(fixedAmount))
-        }
-    }
-}
 
 struct ProductionProportionView: View {
     @State
@@ -84,8 +18,10 @@ struct ProductionProportionView: View {
                 .opacity(viewModel.proportionDisplay == .fraction ? 1.0 : 0.0)
                 .onSubmit {
                     focusField = nil
+                    viewModel.adjustFractionAmount()
                     viewModel.update()
                 }
+                .submitLabel(.done)
                 .focused($focusField, equals: .fraction)
                 
                 ProductionProportionTextfield(
@@ -96,14 +32,21 @@ struct ProductionProportionView: View {
                 .opacity(viewModel.proportionDisplay == .fixed ? 1.0 : 0.0)
                 .onSubmit {
                     focusField = nil
+                    viewModel.adjustFixedAmount()
                     viewModel.update()
                 }
+                .submitLabel(.done)
                 .focused($focusField, equals: .fixed)
             }
             .frame(width: 100)
             
             if focusField != nil {
                 Button {
+                    switch focusField {
+                    case .fraction: viewModel.adjustFractionAmount()
+                    case .fixed: viewModel.adjustFixedAmount()
+                    case nil: break
+                    }
                     focusField = nil
                     viewModel.update()
                 } label: {

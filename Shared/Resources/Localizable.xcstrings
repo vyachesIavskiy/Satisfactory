@@ -33,6 +33,17 @@
     "%@  " : {
 
     },
+    "adjust-recipe-will-be-deleted" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Will be deleted"
+          }
+        }
+      }
+    },
     "Bigger test in red border that will hold a couple of additional words to represent bigger UI control" : {
 
     },
@@ -1114,6 +1125,57 @@
     },
     "Preview (should not be visible in production)" : {
 
+    },
+    "product-adjustment-fixed-%@-exceeds-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total amount of fixed (%1$@) exceeds available amount (%2$@)."
+          }
+        }
+      }
+    },
+    "product-adjustment-fixed-%@-should-be-equal-to-available-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed (%1$@) should be equal to available amount (%2$@) when there is no auto or fraction proportions."
+          }
+        }
+      }
+    },
+    "product-adjustment-fraction-%@-exceeds-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total amount of fractions (%1$@) exceeds %2$@."
+          }
+        }
+      }
+    },
+    "product-adjustment-fraction-%lf-exceeds-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "product-adjustment-fraction-%1$lf-exceeds-%2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "product-adjustment-fractions-%@-should-be-exactly-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fractions (%1$@) should be exactly %2$@ when there is no auto proportion."
+          }
+        }
+      }
     },
     "recipe-alternate" : {
       "extractionState" : "manual",

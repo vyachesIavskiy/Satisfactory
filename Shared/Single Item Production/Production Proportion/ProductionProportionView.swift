@@ -53,7 +53,6 @@ struct ProductionProportionView: View {
                     Image(systemName: "checkmark")
                         .font(.callout)
                         .fontWeight(.medium)
-                        .frame(height: 16)
                         .frame(minWidth: 32)
                 }
                 .buttonStyle(.shBordered)
@@ -81,6 +80,7 @@ struct ProductionProportionView: View {
                             Text("single-item-production-proportion-fixed")
                         }
                     }
+                    .font(.callout)
                     .frame(minWidth: 32)
                     .lineLimit(1)
                 }
@@ -176,8 +176,8 @@ private struct _ProductionProportionPreview: View {
         ProductionProportionView(
             viewModel: ProductionProportionViewModel(
                 proportion: proportion,
-                totalAmount: 50,
-                numberOfRecipes: 1
+                recipeAmount: 50,
+                itemAmount: 50
             ) {
                 proportion = $0
             }

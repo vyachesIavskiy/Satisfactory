@@ -34,12 +34,11 @@ struct RecipeAdjustmentView: View {
                     }
                 }
             }
+            .frame(minHeight: 28)
             
             ZStack {
                 SingleItemProductionRecipeDisplayView(
-                    viewModel: SingleItemProductionRecipeDisplayViewModel(
-                        recipe: viewModel.recipe
-                    )
+                    viewModel: SingleItemProductionRecipeDisplayViewModel(recipe: viewModel.recipe)
                 )
                 .opacity(viewModel.willBeRemoved ? 0.3 : 1.0)
                 .grayscale(viewModel.willBeRemoved ? 1.0 : 0.0)
@@ -108,7 +107,7 @@ private struct _RecipeAdjustmentPreview: View {
         outputRecipe.map {
             RecipeAdjustmentViewModel(
                 recipe: $0,
-                numberOfRecipes: 1,
+                itemAmount: 20,
                 allowAdjustment: true,
                 allowDeletion: true,
                 onChange: { _ in },

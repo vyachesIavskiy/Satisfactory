@@ -139,6 +139,22 @@ final class ProductAdjustmentViewModel: Identifiable {
     }
     
     @MainActor
+    func recipeAdjustmentViewModel(_ recipe: SingleItemCalculator.OutputRecipe) -> RecipeAdjustmentViewModel {
+        RecipeAdjustmentViewModel(
+            recipe: recipe,
+            itemAmount: amount,
+            allowAdjustment: selectedRecipes.count > 1,
+            allowDeletion: allowDeletion || selectedRecipes.count > 1
+        ) { [weak self] proportion in
+            self?.updateRecipe(recipe, with: proportion)
+        } onDelete: { [weak self] in
+            withAnimation {
+                self?.removeRecipe(recipe)
+            }
+        }
+    }
+    
+    @MainActor
     private func update() {
         _$observationRegistrar.withMutation(of: self, keyPath: \.production) {
             production.update()
@@ -178,8 +194,13 @@ extension ProductAdjustmentViewModel {
         var availableAmount: Double
         
         var isValid: Bool {
+            guard amountOfAuto == 0, totalFractionAmount > 0, totalFixedAmount > 0 else {
+                // If both values are 0, we do not have any recipes selected
+                return true
+            }
+            
             // Fractions are higher than 100%
-            if totalFractionAmount > 1.0 { false }
+            return if totalFractionAmount > 1.0 { false }
             
             // Fixed are higher that total available amount
             else if totalFixedAmount > availableAmount { false }
@@ -195,7 +216,11 @@ extension ProductAdjustmentViewModel {
         }
         
         var validationMessage: LocalizedStringKey? {
-            if totalFractionAmount > 1.0 {
+            guard amountOfAuto == 0, totalFractionAmount > 0, totalFixedAmount > 0 else {
+                return nil
+            }
+            
+            return if totalFractionAmount > 1.0 {
                 "product-adjustment-fraction-\(totalFractionAmount, format: .shPercent)-exceeds-\(1, format: .shPercent)"
             } else if totalFixedAmount > availableAmount {
                 "product-adjustment-fixed-\(totalFixedAmount, format: .shNumber)-exceeds-\(availableAmount, format: .shNumber)"

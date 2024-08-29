@@ -5,7 +5,7 @@ import SingleItemCalculator
 @Observable
 final class RecipeAdjustmentViewModel {
     let recipe: SingleItemCalculator.OutputRecipe
-    let numberOfRecipes: Int
+    let itemAmount: Double
     let allowAdjustment: Bool
     let allowDeletion: Bool
     let onChange: (Proportion) -> Void
@@ -18,14 +18,14 @@ final class RecipeAdjustmentViewModel {
     @MainActor
     init(
         recipe: SingleItemCalculator.OutputRecipe,
-        numberOfRecipes: Int,
+        itemAmount: Double,
         allowAdjustment: Bool,
         allowDeletion: Bool,
         onChange: @escaping (Proportion) -> Void,
         onDelete: @escaping () -> Void
     ) {
         self.recipe = recipe
-        self.numberOfRecipes = numberOfRecipes
+        self.itemAmount = itemAmount
         self.allowAdjustment = allowAdjustment
         self.allowDeletion = allowDeletion
         self.onChange = onChange
@@ -36,8 +36,8 @@ final class RecipeAdjustmentViewModel {
     func proportionViewModel() -> ProductionProportionViewModel {
         ProductionProportionViewModel(
             proportion: recipe.proportion,
-            totalAmount: recipe.output.amount,
-            numberOfRecipes: numberOfRecipes,
+            recipeAmount: recipe.output.amount,
+            itemAmount: itemAmount,
             onChange: onChange
         )
     }

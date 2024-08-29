@@ -78,22 +78,9 @@ struct ProductAdjustmentView: View {
         Section {
             if !viewModel.selectedRecipes.isEmpty {
                 sectionContent(data: viewModel.selectedRecipes) { recipe in
-                    RecipeAdjustmentView(
-                        viewModel: RecipeAdjustmentViewModel(
-                            recipe: recipe,
-                            numberOfRecipes: viewModel.selectedRecipes.count,
-                            allowAdjustment: viewModel.selectedRecipes.count > 1,
-                            allowDeletion: viewModel.allowDeletion || viewModel.selectedRecipes.count > 1
-                        ) { [weak viewModel] proportion in
-                            viewModel?.updateRecipe(recipe, with: proportion)
-                        } onDelete: { [weak viewModel] in
-                            withAnimation {
-                                viewModel?.removeRecipe(recipe)
-                            }
-                        }
-                    )
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 16)
+                    RecipeAdjustmentView(viewModel: viewModel.recipeAdjustmentViewModel(recipe))
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 16)
                 }
             } else {
                 Text("single-item-production-adjustment-no-recipes-for-**\(viewModel.product.item.localizedName)**")

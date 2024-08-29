@@ -26,20 +26,20 @@ final class ProductionProportionViewModel {
     private var onChange: (Proportion) -> Void
     
     @ObservationIgnored
-    private let totalAmount: Double
+    private let itemAmount: Double
     
     @MainActor
     init(
         proportion: Proportion,
-        totalAmount: Double,
-        numberOfRecipes: Int,
+        recipeAmount: Double,
+        itemAmount: Double,
         onChange: @escaping (Proportion) -> Void
     ) {
         self.onChange = onChange
         switch proportion {
         case .auto:
             proportionDisplay = .auto
-            fractionAmount = 100.0 / Double(numberOfRecipes)
+            fractionAmount = (recipeAmount / itemAmount) * 100.0
             
         case let .fraction(fraction):
             proportionDisplay = .fraction
@@ -47,11 +47,11 @@ final class ProductionProportionViewModel {
             
         case .fixed:
             proportionDisplay = .fixed
-            fractionAmount = 100.0 / Double(numberOfRecipes)
+            fractionAmount = (recipeAmount / itemAmount) * 100.0
         }
         
-        fixedAmount = totalAmount
-        self.totalAmount = totalAmount
+        fixedAmount = recipeAmount
+        self.itemAmount = itemAmount
     }
     
     @MainActor
@@ -61,7 +61,7 @@ final class ProductionProportionViewModel {
     
     @MainActor
     func adjustFixedAmount() {
-        fixedAmount = min(totalAmount, max(0.0, fixedAmount))
+        fixedAmount = min(itemAmount, max(0.0, fixedAmount))
     }
     
     @MainActor

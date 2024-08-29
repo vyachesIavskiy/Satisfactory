@@ -9,13 +9,13 @@ struct ChangeLogsView: View {
                 }
             }
         }
-        .navigationTitle("Changes")
+        .navigationTitle("change-log-navigation-title")
     }
     
     private func versionTitle(for version: ChangeLog.Version) -> LocalizedStringKey {
         switch version {
         #if DEBUG
-        case .preview: "Preview (should not be visible in production)"
+        case .preview: "change-log-preview-name"
         #endif
         case .v1_4: "change-log-v1-4-name"
         case .v1_5: "change-log-v1-5-name"

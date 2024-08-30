@@ -856,7 +856,7 @@
     },
     {
       "newID" : "recipe-alternate-steel-rod",
-      "oldID" : "alternate-steel rod"
+      "oldID" : "alternate-steel-rod"
     },
     {
       "newID" : "recipe-screw",
@@ -864,11 +864,11 @@
     },
     {
       "newID" : "recipe-alternate-cast-screw",
-      "oldID" : "alternate-cast screw"
+      "oldID" : "alternate-cast-screw"
     },
     {
       "newID" : "recipe-alternate-steel-screw",
-      "oldID" : "alternate-steel screw"
+      "oldID" : "alternate-steel-screw"
     },
     {
       "newID" : "recipe-copper-sheet",
@@ -892,11 +892,11 @@
     },
     {
       "newID" : "recipe-alternate-iron-wire",
-      "oldID" : "alternate-iron wire"
+      "oldID" : "alternate-iron-wire"
     },
     {
       "newID" : "recipe-alternate-caterium-wire",
-      "oldID" : "alternate-caterium wire"
+      "oldID" : "alternate-caterium-wire"
     },
     {
       "newID" : "recipe-cable",
@@ -976,7 +976,7 @@
     },
     {
       "newID" : "recipe-alternate-steel-canister",
-      "oldID" : "alternate-steel canister"
+      "oldID" : "alternate-steel-canister"
     },
     {
       "newID" : "recipe-empty-fluid-tank",

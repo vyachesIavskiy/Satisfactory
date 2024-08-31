@@ -1,20 +1,6 @@
 import SHModels
 import SHStaticModels
 
-private extension Part.Static.Legacy {
-    init(id: String) {
-        self.init(
-            id: id,
-            name: id,
-            partType: PartTypeLegacy.industrialParts.rawValue,
-            tier: 0,
-            milestone: 0,
-            sortingPriority: 0,
-            rawResource: false
-        )
-    }
-}
-
 extension Legacy.Parts {
     static let rotor = Part.Static.Legacy(id: "rotor")
     static let stator = Part.Static.Legacy(id: "stator")

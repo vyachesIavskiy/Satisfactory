@@ -2,23 +2,8 @@ import SHModels
 import SHStaticModels
 
 private extension Recipe.Static.Legacy {
-    init(
-        id: String,
-        name: String,
-        input: [Ingredient],
-        output: Ingredient,
-        duration: Int,
-        isDefault: Bool = true
-    ) {
-        self.init(
-            id: id,
-            name: name,
-            input: input,
-            output: [output],
-            machines: [Legacy.Buildings.assembler.id],
-            duration: duration,
-            isDefault: isDefault
-        )
+    init(id: String, output: Ingredient, input: [Ingredient]) {
+        self.init(id: id, output: [output], input: input)
     }
 }
 
@@ -26,657 +11,514 @@ extension Legacy.Recipes {
     // Standard Parts
     static let reinforcedIronPlateRecipe = Recipe.Static.Legacy(
         id: "reinforced-iron-plate",
-        name: "Reinforced Iron Plate",
+        output: .init(Legacy.Parts.reinforcedIronPlate),
         input: [
-            .init(Legacy.Parts.ironPlate, amount: 6),
-            .init(Legacy.Parts.screw, amount: 12)
-        ],
-        output: .init(Legacy.Parts.reinforcedIronPlate, amount: 1),
-        duration: 12
+            .init(Legacy.Parts.ironPlate),
+            .init(Legacy.Parts.screw)
+        ]
     )
 
     static let reinforcedIronPlateRecipe1 = Recipe.Static.Legacy(
         id: "alternate-adhered-iron-plate",
-        name: "Alternate: Adhered Iron Plate",
+        output: .init(Legacy.Parts.reinforcedIronPlate),
         input: [
-            .init(Legacy.Parts.ironPlate, amount: 3),
-            .init(Legacy.Parts.rubber, amount: 1)
-        ],
-        output: .init(Legacy.Parts.reinforcedIronPlate, amount: 1),
-        duration: 16,
-        isDefault: false
+            .init(Legacy.Parts.ironPlate),
+            .init(Legacy.Parts.rubber)
+        ]
     )
 
     static let reinforcedIronPlateRecipe2 = Recipe.Static.Legacy(
         id: "alternate-bolted-iron-plate",
-        name: "Alternate: Bolted Iron Plate",
+        output: .init(Legacy.Parts.reinforcedIronPlate),
         input: [
-            .init(Legacy.Parts.ironPlate, amount: 18),
-            .init(Legacy.Parts.screw, amount: 50)
-        ],
-        output: .init(Legacy.Parts.reinforcedIronPlate, amount: 3),
-        duration: 12,
-        isDefault: false
+            .init(Legacy.Parts.ironPlate),
+            .init(Legacy.Parts.screw)
+        ]
     )
 
     static let reinforcedIronPlateRecipe3 = Recipe.Static.Legacy(
         id: "alternate-stitched-iron-plate",
-        name: "Alternate: Stitched Iron Plate",
+        output: .init(Legacy.Parts.reinforcedIronPlate),
         input: [
-            .init(Legacy.Parts.ironPlate, amount: 10),
-            .init(Legacy.Parts.wire, amount: 20)
-        ],
-        output: .init(Legacy.Parts.reinforcedIronPlate, amount: 3),
-        duration: 32,
-        isDefault: false
+            .init(Legacy.Parts.ironPlate),
+            .init(Legacy.Parts.wire)
+        ]
     )
 
     static let modularFrameRecipe = Recipe.Static.Legacy(
         id: "modular-frame",
-        name: "Modular Frame",
+        output: .init(Legacy.Parts.modularFrame),
         input: [
-            .init(Legacy.Parts.reinforcedIronPlate, amount: 3),
-            .init(Legacy.Parts.ironRod, amount: 12)
-        ],
-        output: .init(Legacy.Parts.modularFrame, amount: 2),
-        duration: 60
+            .init(Legacy.Parts.reinforcedIronPlate),
+            .init(Legacy.Parts.ironRod)
+        ]
     )
 
     static let modularFrameRecipe1 = Recipe.Static.Legacy(
         id: "alternate-bolted-frame",
-        name: "Alternate: Bolted Frame",
+        output: .init(Legacy.Parts.modularFrame),
         input: [
-            .init(Legacy.Parts.reinforcedIronPlate, amount: 3),
-            .init(Legacy.Parts.screw, amount: 56)
-        ],
-        output: .init(Legacy.Parts.modularFrame, amount: 2),
-        duration: 24,
-        isDefault: false
+            .init(Legacy.Parts.reinforcedIronPlate),
+            .init(Legacy.Parts.screw)
+        ]
     )
 
     static let modularFrameRecipe2 = Recipe.Static.Legacy(
         id: "alternate-steeled-frame",
-        name: "Alternate: Steeled Frame",
+        output: .init(Legacy.Parts.modularFrame),
         input: [
-            .init(Legacy.Parts.reinforcedIronPlate, amount: 2),
-            .init(Legacy.Parts.steelPipe, amount: 10)
-        ],
-        output: .init(Legacy.Parts.modularFrame, amount: 3),
-        duration: 60,
-        isDefault: false
+            .init(Legacy.Parts.reinforcedIronPlate),
+            .init(Legacy.Parts.steelPipe)
+        ]
     )
 
     static let encasedIndustrialBeamRecipe = Recipe.Static.Legacy(
         id: "encased-industrial-beam",
-        name: "Encased Industrial Beam",
+        output: .init(Legacy.Parts.encasedIndustrialBeam),
         input: [
-            .init(Legacy.Parts.steelBeam, amount: 4),
-            .init(Legacy.Parts.concrete, amount: 5)
-        ],
-        output: .init(Legacy.Parts.encasedIndustrialBeam, amount: 1),
-        duration: 10
+            .init(Legacy.Parts.steelBeam),
+            .init(Legacy.Parts.concrete)
+        ]
     )
 
     static let encasedIndustrialBeamRecipe1 = Recipe.Static.Legacy(
         id: "alternate-encased-industrial-pipe",
-        name: "Alternate: Encased Industrial Pipe",
+        output: .init(Legacy.Parts.encasedIndustrialBeam),
         input: [
-            .init(Legacy.Parts.steelPipe, amount: 7),
-            .init(Legacy.Parts.concrete, amount: 5)
-        ],
-        output: .init(Legacy.Parts.encasedIndustrialBeam, amount: 1),
-        duration: 15,
-        isDefault: false
+            .init(Legacy.Parts.steelPipe),
+            .init(Legacy.Parts.concrete)
+        ]
     )
 
     static let alcladAluminumSheetRecipe = Recipe.Static.Legacy(
         id: "alclad-aluminum-sheet",
-        name: "Alclad Aluminum Sheet",
+        output: .init(Legacy.Parts.alcladAluminumSheet),
         input: [
-            .init(Legacy.Parts.aluminumIngot, amount: 3),
-            .init(Legacy.Parts.copperIngot, amount: 1)
-        ],
-        output: .init(Legacy.Parts.alcladAluminumSheet, amount: 3),
-        duration: 6
+            .init(Legacy.Parts.aluminumIngot),
+            .init(Legacy.Parts.copperIngot)
+        ]
     )
 
     static let ironPlateRecipe1 = Recipe.Static.Legacy(
         id: "alternate-coated-iron-plate",
-        name: "Alternate: Coated Iron Plate",
+        output: .init(Legacy.Parts.ironPlate),
         input: [
-            .init(Legacy.Parts.ironIngot, amount: 10),
-            .init(Legacy.Parts.plastic, amount: 2)
-        ],
-        output: .init(Legacy.Parts.ironPlate, amount: 15),
-        duration: 12,
-        isDefault: false
+            .init(Legacy.Parts.ironIngot),
+            .init(Legacy.Parts.plastic)
+        ]
     )
 
     static let ironPlateRecipe2 = Recipe.Static.Legacy(
         id: "alternate-steel-coated-plate",
-        name: "Alternate: Steel Coated Plate",
+        output: .init(Legacy.Parts.ironPlate),
         input: [
-            .init(Legacy.Parts.steelIngot, amount: 3),
-            .init(Legacy.Parts.plastic, amount: 2)
-        ],
-        output: .init(Legacy.Parts.ironPlate, amount: 18),
-        duration: 24,
-        isDefault: false
+            .init(Legacy.Parts.steelIngot),
+            .init(Legacy.Parts.plastic)
+        ]
     )
 
     static let aluminumCasingRecipe1 = Recipe.Static.Legacy(
         id: "alternate-alclad-casing",
-        name: "Alternate: Alclad Casing",
+        output: .init(Legacy.Parts.aluminumCasing),
         input: [
-            .init(Legacy.Parts.aluminumIngot, amount: 20),
-            .init(Legacy.Parts.copperIngot, amount: 10)
-        ],
-        output: .init(Legacy.Parts.aluminumCasing, amount: 15),
-        duration: 8,
-        isDefault: false
+            .init(Legacy.Parts.aluminumIngot),
+            .init(Legacy.Parts.copperIngot)
+        ]
     )
 
     // Industrial Parts
     static let rotorRecipe = Recipe.Static.Legacy(
         id: "rotor",
-        name: "Rotor",
+        output: .init(Legacy.Parts.rotor),
         input: [
-            .init(Legacy.Parts.ironRod, amount: 5),
-            .init(Legacy.Parts.screw, amount: 25)
-        ],
-        output: .init(Legacy.Parts.rotor, amount: 1),
-        duration: 15
+            .init(Legacy.Parts.ironRod),
+            .init(Legacy.Parts.screw)
+        ]
     )
 
     static let rotorRecipe1 = Recipe.Static.Legacy(
         id: "alternate-copper-rotor",
-        name: "Alternate: Copper Rotor",
+        output: .init(Legacy.Parts.rotor),
         input: [
-            .init(Legacy.Parts.copperSheet, amount: 6),
-            .init(Legacy.Parts.screw, amount: 52)
-        ],
-        output: .init(Legacy.Parts.rotor, amount: 3),
-        duration: 16,
-        isDefault: false
+            .init(Legacy.Parts.copperSheet),
+            .init(Legacy.Parts.screw)
+        ]
     )
 
     static let rotorRecipe2 = Recipe.Static.Legacy(
         id: "alternate-steel-rotor",
-        name: "Alternate: Steel Rotor",
+        output: .init(Legacy.Parts.rotor),
         input: [
-            .init(Legacy.Parts.steelPipe, amount: 2),
-            .init(Legacy.Parts.wire, amount: 6)
-        ],
-        output: .init(Legacy.Parts.rotor, amount: 1),
-        duration: 12,
-        isDefault: false
+            .init(Legacy.Parts.steelPipe),
+            .init(Legacy.Parts.wire)
+        ]
     )
 
     static let statorRecipe = Recipe.Static.Legacy(
         id: "stator",
-        name: "Stator",
+        output: .init(Legacy.Parts.stator),
         input: [
-            .init(Legacy.Parts.steelPipe, amount: 3),
-            .init(Legacy.Parts.wire, amount: 8)
-        ],
-        output: .init(Legacy.Parts.stator, amount: 1),
-        duration: 12
+            .init(Legacy.Parts.steelPipe),
+            .init(Legacy.Parts.wire)
+        ]
     )
 
     static let statorRecipe1 = Recipe.Static.Legacy(
         id: "alternate-quickwire-stator",
-        name: "Alternate: Quickwire Stator",
+        output: .init(Legacy.Parts.stator),
         input: [
-            .init(Legacy.Parts.steelPipe, amount: 4),
-            .init(Legacy.Parts.quickwire, amount: 15)
-        ],
-        output: .init(Legacy.Parts.stator, amount: 2),
-        duration: 15,
-        isDefault: false
+            .init(Legacy.Parts.steelPipe),
+            .init(Legacy.Parts.quickwire)
+        ]
     )
 
     static let motorRecipe = Recipe.Static.Legacy(
         id: "motor",
-        name: "Motor",
+        output: .init(Legacy.Parts.motor),
         input: [
-            .init(Legacy.Parts.rotor, amount: 2),
-            .init(Legacy.Parts.stator, amount: 2)
-        ],
-        output: .init(Legacy.Parts.motor, amount: 1),
-        duration: 12
+            .init(Legacy.Parts.rotor),
+            .init(Legacy.Parts.stator)
+        ]
     )
 
     static let motorRecipe1 = Recipe.Static.Legacy(
         id: "alternate-electric-motor",
-        name: "Alternate: Electric Motor",
+        output: .init(Legacy.Parts.motor),
         input: [
-            .init(Legacy.Parts.electromagneticControlRod, amount: 1),
-            .init(Legacy.Parts.rotor, amount: 2)
-        ],
-        output: .init(Legacy.Parts.motor, amount: 2),
-        duration: 16,
-        isDefault: false
+            .init(Legacy.Parts.electromagneticControlRod),
+            .init(Legacy.Parts.rotor)
+        ]
     )
 
     static let heatSinkRecipe = Recipe.Static.Legacy(
         id: "heat-sink",
-        name: "Heat Sink",
+        output: .init(Legacy.Parts.heatSink),
         input: [
-            .init(Legacy.Parts.alcladAluminumSheet, amount: 5),
-            .init(Legacy.Parts.copperSheet, amount: 3)
-        ],
-        output: .init(Legacy.Parts.heatSink, amount: 1),
-        duration: 8
+            .init(Legacy.Parts.alcladAluminumSheet),
+            .init(Legacy.Parts.copperSheet)
+        ]
     )
 
     static let heatSinkRecipe1 = Recipe.Static.Legacy(
         id: "alternate-heat-exchanger",
-        name: "Alternate: Heat Exchanger",
+        output: .init(Legacy.Parts.heatSink),
         input: [
-            .init(Legacy.Parts.aluminumCasing, amount: 3),
-            .init(Legacy.Parts.rubber, amount: 3)
-        ],
-        output: .init(Legacy.Parts.heatSink, amount: 1),
-        duration: 6,
-        isDefault: false
+            .init(Legacy.Parts.aluminumCasing),
+            .init(Legacy.Parts.rubber)
+        ]
     )
 
     // Electronics
     static let circuitBoardRecipe = Recipe.Static.Legacy(
         id: "circuit-board",
-        name: "Circuit Board",
+        output: .init(Legacy.Parts.circuitBoard),
         input: [
-            .init(Legacy.Parts.copperSheet, amount: 2),
-            .init(Legacy.Parts.plastic, amount: 4)
-        ],
-        output: .init(Legacy.Parts.circuitBoard, amount: 1),
-        duration: 8
+            .init(Legacy.Parts.copperSheet),
+            .init(Legacy.Parts.plastic)
+        ]
     )
 
     static let circuitBoardRecipe1 = Recipe.Static.Legacy(
         id: "alternate-electrode-circuit-board",
-        name: "Alternate: Electrode Circuit Board",
+        output: .init(Legacy.Parts.circuitBoard),
         input: [
-            .init(Legacy.Parts.rubber, amount: 6),
-            .init(Legacy.Parts.petroleumCoke, amount: 9)
-        ],
-        output: .init(Legacy.Parts.circuitBoard, amount: 1),
-        duration: 12,
-        isDefault: false
+            .init(Legacy.Parts.rubber),
+            .init(Legacy.Parts.petroleumCoke)
+        ]
     )
 
     static let circuitBoardRecipe2 = Recipe.Static.Legacy(
         id: "alternate-silicone-circuit-board",
-        name: "Alternate: Silicone Circuit Board",
+        output: .init(Legacy.Parts.circuitBoard),
         input: [
-            .init(Legacy.Parts.copperSheet, amount: 11),
-            .init(Legacy.Parts.silica, amount: 11)
-        ],
-        output: .init(Legacy.Parts.circuitBoard, amount: 5),
-        duration: 24,
-        isDefault: false
+            .init(Legacy.Parts.copperSheet),
+            .init(Legacy.Parts.silica)
+        ]
     )
 
     static let circuitBoardRecipe3 = Recipe.Static.Legacy(
         id: "alternate-caterium-circuit-board",
-        name: "Alternate: Caterium Circuit Board",
+        output: .init(Legacy.Parts.circuitBoard),
         input: [
-            .init(Legacy.Parts.plastic, amount: 10),
-            .init(Legacy.Parts.quickwire, amount: 30)
-        ],
-        output: .init(Legacy.Parts.circuitBoard, amount: 7),
-        duration: 48,
-        isDefault: false
+            .init(Legacy.Parts.plastic),
+            .init(Legacy.Parts.quickwire)
+        ]
     )
 
     static let aiLimiterRecipe = Recipe.Static.Legacy(
         id: "ai-limiter",
-        name: "AI Limiter",
+        output: .init(Legacy.Parts.aiLimiter),
         input: [
-            .init(Legacy.Parts.copperSheet, amount: 5),
-            .init(Legacy.Parts.quickwire, amount: 20)
-        ],
-        output: .init(Legacy.Parts.aiLimiter, amount: 1),
-        duration: 12
+            .init(Legacy.Parts.copperSheet),
+            .init(Legacy.Parts.quickwire)
+        ]
     )
 
     static let wireRecipe3 = Recipe.Static.Legacy(
         id: "alternate-fused-wire",
-        name: "Alternate: Fused Wire",
+        output: .init(Legacy.Parts.wire),
         input: [
-            .init(Legacy.Parts.copperIngot, amount: 4),
-            .init(Legacy.Parts.cateriumIngot, amount: 1)
-        ],
-        output: .init(Legacy.Parts.wire, amount: 30),
-        duration: 20,
-        isDefault: false
+            .init(Legacy.Parts.copperIngot),
+            .init(Legacy.Parts.cateriumIngot)
+        ]
     )
 
     static let cableRecipe1 = Recipe.Static.Legacy(
         id: "alternate-insulated-cable",
-        name: "Alternate: Insulated Cable",
+        output: .init(Legacy.Parts.cable),
         input: [
-            .init(Legacy.Parts.wire, amount: 9),
-            .init(Legacy.Parts.rubber, amount: 6)
-        ],
-        output: .init(Legacy.Parts.cable, amount: 20),
-        duration: 12,
-        isDefault: false
+            .init(Legacy.Parts.wire),
+            .init(Legacy.Parts.rubber)
+        ]
     )
 
     static let cableRecipe2 = Recipe.Static.Legacy(
         id: "alternate-quickwire-cable",
-        name: "Alternate: Quickwire Cable",
+        output: .init(Legacy.Parts.cable),
         input: [
-            .init(Legacy.Parts.quickwire, amount: 3),
-            .init(Legacy.Parts.rubber, amount: 2)
-        ],
-        output: .init(Legacy.Parts.cable, amount: 11),
-        duration: 24,
-        isDefault: false
+            .init(Legacy.Parts.quickwire),
+            .init(Legacy.Parts.rubber)
+        ]
     )
 
     static let quickwireRecipe1 = Recipe.Static.Legacy(
         id: "alternate-fused-quickwire",
-        name: "Alternate: Fused Quickwire",
+        output: .init(Legacy.Parts.quickwire),
         input: [
-            .init(Legacy.Parts.cateriumIngot, amount: 1),
-            .init(Legacy.Parts.copperIngot, amount: 5)
-        ],
-        output: .init(Legacy.Parts.quickwire, amount: 12),
-        duration: 8,
-        isDefault: false
+            .init(Legacy.Parts.cateriumIngot),
+            .init(Legacy.Parts.copperIngot)
+        ]
     )
 
     static let computerRecipe1 = Recipe.Static.Legacy(
         id: "alternate-crystal-computer",
-        name: "Alternate: Crystal Computer",
+        output: .init(Legacy.Parts.computer),
         input: [
-            .init(Legacy.Parts.circuitBoard, amount: 8),
-            .init(Legacy.Parts.crystalOscillator, amount: 3)
-        ],
-        output: .init(Legacy.Parts.computer, amount: 3),
-        duration: 64,
-        isDefault: false
+            .init(Legacy.Parts.circuitBoard),
+            .init(Legacy.Parts.crystalOscillator)
+        ]
     )
 
     static let supercomputerRecipe2 = Recipe.Static.Legacy(
         id: "alternate-oc-supercomputer",
-        name: "Alternate: OC Supercomputer",
+        output: .init(Legacy.Parts.supercomputer),
         input: [
-            .init(Legacy.Parts.radioControlUnit, amount: 3),
-            .init(Legacy.Parts.coolingSystem, amount: 3)
-        ],
-        output: .init(Legacy.Parts.supercomputer, amount: 1),
-        duration: 20,
-        isDefault: false
+            .init(Legacy.Parts.radioControlUnit),
+            .init(Legacy.Parts.coolingSystem)
+        ]
     )
 
     // Minerals
     static let concreteRecipe1 = Recipe.Static.Legacy(
         id: "alternate-rubber-concrete",
-        name: "Alternate: Rubber Concrete",
+        output: .init(Legacy.Parts.concrete),
         input: [
-            .init(Legacy.Parts.limestone, amount: 10),
-            .init(Legacy.Parts.rubber, amount: 2)
-        ],
-        output: .init(Legacy.Parts.concrete, amount: 9),
-        duration: 12,
-        isDefault: false
+            .init(Legacy.Parts.limestone),
+            .init(Legacy.Parts.rubber)
+        ]
     )
 
     static let concreteRecipe2 = Recipe.Static.Legacy(
         id: "alternate-fine-concrete",
-        name: "Alternate: Fine Concrete",
+        output: .init(Legacy.Parts.concrete),
         input: [
-            .init(Legacy.Parts.silica, amount: 3),
-            .init(Legacy.Parts.limestone, amount: 12)
-        ],
-        output: .init(Legacy.Parts.concrete, amount: 10),
-        duration: 24,
-        isDefault: false
+            .init(Legacy.Parts.silica),
+            .init(Legacy.Parts.limestone)
+        ]
     )
 
     static let compactedCoalRecipe = Recipe.Static.Legacy(
         id: "alternate-compacted-coal",
-        name: "Alternate: Compacted Coal",
+        output: .init(Legacy.Parts.compactedCoal),
         input: [
-            .init(Legacy.Parts.coal, amount: 5),
-            .init(Legacy.Parts.sulfur, amount: 5)
-        ],
-        output: .init(Legacy.Parts.compactedCoal, amount: 5),
-        duration: 12,
-        isDefault: false
+            .init(Legacy.Parts.coal),
+            .init(Legacy.Parts.sulfur)
+        ]
     )
 
     static let silicaRecipe1 = Recipe.Static.Legacy(
         id: "alternate-cheap-silica",
-        name: "Alternate: Cheap Silica",
+        output: .init(Legacy.Parts.silica),
         input: [
-            .init(Legacy.Parts.rawQuartz, amount: 3),
-            .init(Legacy.Parts.limestone, amount: 5)
-        ],
-        output: .init(Legacy.Parts.silica, amount: 7),
-        duration: 16,
-        isDefault: false
+            .init(Legacy.Parts.rawQuartz),
+            .init(Legacy.Parts.limestone)
+        ]
     )
 
     // Nuclear
     static let electromagneticControlRodRecipe = Recipe.Static.Legacy(
         id: "electromagnetic-control-rod",
-        name: "Electromagnetic Control Rod",
+        output: .init(Legacy.Parts.electromagneticControlRod),
         input: [
-            .init(Legacy.Parts.stator, amount: 3),
-            .init(Legacy.Parts.aiLimiter, amount: 2)
-        ],
-        output: .init(Legacy.Parts.electromagneticControlRod, amount: 2),
-        duration: 30
+            .init(Legacy.Parts.stator),
+            .init(Legacy.Parts.aiLimiter)
+        ]
     )
 
     static let electromagneticControlRodRecipe1 = Recipe.Static.Legacy(
         id: "alternate-electromagnetic-connection-rod",
-        name: "Alternate: Electromagnetic Connection Rod",
+        output: .init(Legacy.Parts.electromagneticControlRod),
         input: [
-            .init(Legacy.Parts.stator, amount: 2),
-            .init(Legacy.Parts.highSpeedConnector, amount: 1)
-        ],
-        output: .init(Legacy.Parts.electromagneticControlRod, amount: 2),
-        duration: 15,
-        isDefault: false
+            .init(Legacy.Parts.stator),
+            .init(Legacy.Parts.highSpeedConnector)
+        ]
     )
 
     static let encasedPlutoniumCellRecipe = Recipe.Static.Legacy(
         id: "encased-plutonium-cell",
-        name: "Encased Plutonium Cell",
+        output: .init(Legacy.Parts.encasedPlutoniumCell),
         input: [
-            .init(Legacy.Parts.plutoniumPellet, amount: 2),
-            .init(Legacy.Parts.concrete, amount: 4)
-        ],
-        output: .init(Legacy.Parts.encasedPlutoniumCell, amount: 1),
-        duration: 12
+            .init(Legacy.Parts.plutoniumPellet),
+            .init(Legacy.Parts.concrete)
+        ]
     )
 
     static let plutoniumFuelRodRecipe1 = Recipe.Static.Legacy(
         id: "alternate-plutonium-fuel-unit",
-        name: "Alternate: Plutonium Fuel Unit",
+        output: .init(Legacy.Parts.plutoniumFuelRod),
         input: [
-            .init(Legacy.Parts.encasedPlutoniumCell, amount: 20),
-            .init(Legacy.Parts.pressureConversionCube, amount: 1)
-        ],
-        output: .init(Legacy.Parts.plutoniumFuelRod, amount: 1),
-        duration: 120,
-        isDefault: false
+            .init(Legacy.Parts.encasedPlutoniumCell),
+            .init(Legacy.Parts.pressureConversionCube)
+        ]
     )
 
     // Consumed
     static let blackPowderRecipe = Recipe.Static.Legacy(
         id: "black-powder",
-        name: "Black Powder",
+        output: .init(Legacy.Parts.blackPowder),
         input: [
-            .init(Legacy.Parts.coal, amount: 1),
-            .init(Legacy.Parts.sulfur, amount: 1)
-        ],
-        output: .init(Legacy.Parts.blackPowder, amount: 1),
-        duration: 4
+            .init(Legacy.Parts.coal),
+            .init(Legacy.Parts.sulfur)
+        ]
     )
 
     static let blackPowderRecipe1 = Recipe.Static.Legacy(
         id: "alternate-fine-black-powder",
-        name: "Alternate: Fine Black Powder",
+        output: .init(Legacy.Parts.blackPowder),
         input: [
-            .init(Legacy.Parts.sulfur, amount: 2),
-            .init(Legacy.Parts.compactedCoal, amount: 1)
-        ],
-        output: .init(Legacy.Parts.blackPowder, amount: 4),
-        duration: 16,
-        isDefault: false
+            .init(Legacy.Parts.sulfur),
+            .init(Legacy.Parts.compactedCoal)
+        ]
     )
 
     static let stunRebarRecipe = Recipe.Static.Legacy(
         id: "stun-rebar",
-        name: "Stun Rebar",
+        output: .init(Legacy.Parts.stunRebar),
         input: [
-            .init(Legacy.Parts.ironRebar, amount: 1),
-            .init(Legacy.Parts.quickwire, amount: 5)
-        ],
-        output: .init(Legacy.Parts.stunRebar, amount: 1),
-        duration: 6
+            .init(Legacy.Parts.ironRebar),
+            .init(Legacy.Parts.quickwire)
+        ]
     )
 
     static let shatterRebarRecipe = Recipe.Static.Legacy(
         id: "shutter-rebar",
-        name: "Shatter Rebar",
+        output: .init(Legacy.Parts.shatterRebar),
         input: [
-            .init(Legacy.Parts.ironRebar, amount: 2),
-            .init(Legacy.Parts.quartzCrystal, amount: 3)
-        ],
-        output: .init(Legacy.Parts.shatterRebar, amount: 1),
-        duration: 12
+            .init(Legacy.Parts.ironRebar),
+            .init(Legacy.Parts.quartzCrystal)
+        ]
     )
 
     static let nobeliskRecipe = Recipe.Static.Legacy(
         id: "nobelisk",
-        name: "Nobelisk",
+        output: .init(Legacy.Parts.nobelisk),
         input: [
-            .init(Legacy.Parts.blackPowder, amount: 2),
-            .init(Legacy.Parts.steelPipe, amount: 2)
-        ],
-        output: .init(Legacy.Parts.nobelisk, amount: 1),
-        duration: 6
+            .init(Legacy.Parts.blackPowder),
+            .init(Legacy.Parts.steelPipe)
+        ]
     )
 
     static let gasNobeliskRecipe = Recipe.Static.Legacy(
         id: "gas-nobelisk",
-        name: "Gas Nobelisk",
+        output: .init(Legacy.Parts.gasNobelisk),
         input: [
-            .init(Legacy.Parts.nobelisk, amount: 1),
-            .init(Legacy.Parts.biomass, amount: 10)
-        ],
-        output: .init(Legacy.Parts.gasNobelisk, amount: 1),
-        duration: 12
+            .init(Legacy.Parts.nobelisk),
+            .init(Legacy.Parts.biomass)
+        ]
     )
 
     static let pulseNobeliskRecipe = Recipe.Static.Legacy(
         id: "pulse-nobelisk",
-        name: "Pulse Nobelisk",
+        output: .init(Legacy.Parts.pulseNobelisk),
         input: [
-            .init(Legacy.Parts.nobelisk, amount: 5),
-            .init(Legacy.Parts.crystalOscillator, amount: 1)
-        ],
-        output: .init(Legacy.Parts.pulseNobelisk, amount: 5),
-        duration: 60
+            .init(Legacy.Parts.nobelisk),
+            .init(Legacy.Parts.crystalOscillator)
+        ]
     )
 
     static let clusterNobeliskRecipe = Recipe.Static.Legacy(
         id: "cluster-nobelisk",
-        name: "Cluster Nobelisk",
+        output: .init(Legacy.Parts.clusterNobelisk),
         input: [
-            .init(Legacy.Parts.nobelisk, amount: 3),
-            .init(Legacy.Parts.smokelessPowder, amount: 4)
-        ],
-        output: .init(Legacy.Parts.clusterNobelisk, amount: 1),
-        duration: 24
+            .init(Legacy.Parts.nobelisk),
+            .init(Legacy.Parts.smokelessPowder)
+        ]
     )
 
     // Space Elevator
     static let smartPlatingRecipe = Recipe.Static.Legacy(
         id: "smart-plating",
-        name: "Smart Plating",
+        output: .init(Legacy.Parts.smartPlating),
         input: [
-            .init(Legacy.Parts.reinforcedIronPlate, amount: 1),
-            .init(Legacy.Parts.rotor, amount: 1)
-        ],
-        output: .init(Legacy.Parts.smartPlating, amount: 1),
-        duration: 30
+            .init(Legacy.Parts.reinforcedIronPlate),
+            .init(Legacy.Parts.rotor)
+        ]
     )
 
     static let versatileFrameworkRecipe = Recipe.Static.Legacy(
         id: "versatile-framework",
-        name: "Versatile Framework",
+        output: .init(Legacy.Parts.versatileFramework),
         input: [
-            .init(Legacy.Parts.modularFrame, amount: 1),
-            .init(Legacy.Parts.steelBeam, amount: 12)
-        ],
-        output: .init(Legacy.Parts.versatileFramework, amount: 2),
-        duration: 24
+            .init(Legacy.Parts.modularFrame),
+            .init(Legacy.Parts.steelBeam)
+        ]
     )
 
     static let automatedWiringRecipe = Recipe.Static.Legacy(
         id: "automated-wiring",
-        name: "Automated Wiring",
+        output: .init(Legacy.Parts.automatedWiring),
         input: [
-            .init(Legacy.Parts.stator, amount: 1),
-            .init(Legacy.Parts.cable, amount: 20)
-        ],
-        output: .init(Legacy.Parts.automatedWiring, amount: 1),
-        duration: 24
+            .init(Legacy.Parts.stator),
+            .init(Legacy.Parts.cable)
+        ]
     )
 
     static let assemblyDirectorSystemRecipe = Recipe.Static.Legacy(
         id: "assembly-director-system",
-        name: "Assembly Director System",
+        output: .init(Legacy.Parts.assemblyDirectorSystem),
         input: [
-            .init(Legacy.Parts.adaptiveControlUnit, amount: 2),
-            .init(Legacy.Parts.supercomputer, amount: 1)
-        ],
-        output: .init(Legacy.Parts.assemblyDirectorSystem, amount: 1),
-        duration: 80
+            .init(Legacy.Parts.adaptiveControlUnit),
+            .init(Legacy.Parts.supercomputer)
+        ]
     )
 
     // Biomass
     static let fabricRecipe = Recipe.Static.Legacy(
         id: "fabric",
-        name: "Fabric",
+        output: .init(Legacy.Parts.fabric),
         input: [
-            .init(Legacy.Parts.mycelia, amount: 1),
-            .init(Legacy.Parts.biomass, amount: 5)
-        ],
-        output: .init(Legacy.Parts.fabric, amount: 1),
-        duration: 4
+            .init(Legacy.Parts.mycelia),
+            .init(Legacy.Parts.biomass)
+        ]
     )
 
     // Containers
     static let pressureConversionCubeRecipe = Recipe.Static.Legacy(
         id: "pressure-conversion-cube",
-        name: "Pressure Conversion Cube",
+        output: .init(Legacy.Parts.pressureConversionCube),
         input: [
-            .init(Legacy.Parts.fusedModularFrame, amount: 1),
-            .init(Legacy.Parts.radioControlUnit, amount: 2)
-        ],
-        output: .init(Legacy.Parts.pressureConversionCube, amount: 1),
-        duration: 60
+            .init(Legacy.Parts.fusedModularFrame),
+            .init(Legacy.Parts.radioControlUnit)
+        ]
     )
 
     static let emptyCanisterRecipe2 = Recipe.Static.Legacy(
         id: "alternate-coated-iron-canister",
-        name: "Alternate: Coated Iron Canister",
+        output: .init(Legacy.Parts.emptyCanister),
         input: [
-            .init(Legacy.Parts.ironPlate, amount: 2),
-            .init(Legacy.Parts.copperSheet, amount: 1)
-        ],
-        output: .init(Legacy.Parts.emptyCanister, amount: 4),
-        duration: 4,
-        isDefault: false
+            .init(Legacy.Parts.ironPlate),
+            .init(Legacy.Parts.copperSheet)
+        ]
     )
 
     static let assemblerRecipes = [

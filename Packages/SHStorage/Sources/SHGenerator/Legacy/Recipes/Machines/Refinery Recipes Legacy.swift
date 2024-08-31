@@ -1,433 +1,334 @@
 import SHModels
 import SHStaticModels
 
-private extension Recipe.Static.Legacy {
-    init(
-        id: String,
-        name: String,
-        input: [Ingredient],
-        output: [Ingredient],
-        duration: Int,
-        isDefault: Bool = true
-    ) {
-        self.init(
-            id: id,
-            name: name,
-            input: input,
-            output: output,
-            machines: [Legacy.Buildings.refinery.id],
-            duration: duration,
-            isDefault: isDefault
-        )
-    }
-}
-
 extension Legacy.Recipes {
     // Ingots
     static let ironIngotRecipe2 = Recipe.Static.Legacy(
         id: "alternate-pure-iron-ingot",
-        name: "Alternate: Pure Iron Ingot",
-        input: [
-            .init(Legacy.Parts.ironOre, amount: 7),
-            .init(Legacy.Parts.water, amount: 4)
-        ],
         output: [
-            .init(Legacy.Parts.ironIngot, amount: 13)
+            .init(Legacy.Parts.ironIngot)
         ],
-        duration: 12,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.ironOre),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     static let copperIngotRecipe2 = Recipe.Static.Legacy(
         id: "alternate-pure-copper-ingot",
-        name: "Alternate: Pure Copper Ingot",
-        input: [
-            .init(Legacy.Parts.copperOre, amount: 6),
-            .init(Legacy.Parts.water, amount: 4)
-        ],
         output: [
-            .init(Legacy.Parts.copperIngot, amount: 15)
+            .init(Legacy.Parts.copperIngot)
         ],
-        duration: 24,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.copperOre),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     static let cateriumIngotRecipe1 = Recipe.Static.Legacy(
         id: "alternate-pure-caterium-ingot",
-        name: "Alternate: Pure Caterium Ingot",
-        input: [
-            .init(Legacy.Parts.cateriumOre, amount: 2),
-            .init(Legacy.Parts.water, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.cateriumIngot, amount: 1)
+            .init(Legacy.Parts.cateriumIngot)
         ],
-        duration: 5,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.cateriumOre),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     // Minerals
     static let concreteRecipe3 = Recipe.Static.Legacy(
         id: "alternate-wet-concrete",
-        name: "Alternate: Wet Concrete",
-        input: [
-            .init(Legacy.Parts.limestone, amount: 6),
-            .init(Legacy.Parts.water, amount: 5)
-        ],
         output: [
-            .init(Legacy.Parts.concrete, amount: 4)
+            .init(Legacy.Parts.concrete)
         ],
-        duration: 3,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.limestone),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     static let quartzCrystalRecipe1 = Recipe.Static.Legacy(
         id: "alternate-pure-quartz-crystal",
-        name: "Alternate: Pure Quartz Crystal",
-        input: [
-            .init(Legacy.Parts.rawQuartz, amount: 9),
-            .init(Legacy.Parts.water, amount: 5)
-        ],
         output: [
-            .init(Legacy.Parts.quartzCrystal, amount: 7)
+            .init(Legacy.Parts.quartzCrystal)
         ],
-        duration: 8,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.rawQuartz),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     // Biomass
     static let fabricRecipe1 = Recipe.Static.Legacy(
         id: "alternate-polyester-fabric",
-        name: "Alternate: Polyester Fabric",
-        input: [
-            .init(Legacy.Parts.polymerResin, amount: 1),
-            .init(Legacy.Parts.water, amount: 1)
-        ],
         output: [
-            .init(Legacy.Parts.fabric, amount: 1)
+            .init(Legacy.Parts.fabric)
         ],
-        duration: 2,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.polymerResin),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     // Standard Parts
     static let copperSheetRecipe1 = Recipe.Static.Legacy(
         id: "alternate-steamed-copper-sheet",
-        name: "Alternate: Steamed Copper Sheet",
-        input: [
-            .init(Legacy.Parts.copperIngot, amount: 3),
-            .init(Legacy.Parts.water, amount: 3)
-        ],
         output: [
-            .init(Legacy.Parts.copperSheet, amount: 3)
+            .init(Legacy.Parts.copperSheet)
         ],
-        duration: 8,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.copperIngot),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     // Electronics
     static let cableRecipe3 = Recipe.Static.Legacy(
         id: "alternate-coated-cable",
-        name: "Alternate: Coated Cable",
-        input: [
-            .init(Legacy.Parts.wire, amount: 5),
-            .init(Legacy.Parts.heavyOilResidue, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.cable, amount: 9)
+            .init(Legacy.Parts.cable)
         ],
-        duration: 8,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.wire),
+            .init(Legacy.Parts.heavyOilResidue)
+        ]
     )
 
     // Advanced Refinement
     static let aluminumScrapRecipe = Recipe.Static.Legacy(
         id: "aluminum-scrap",
-        name: "Aluminum Scrap",
-        input: [
-            .init(Legacy.Parts.aluminaSolution, amount: 4),
-            .init(Legacy.Parts.coal, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.aluminumScrap, amount: 6),
-            .init(Legacy.Parts.water, amount: 2)
+            .init(Legacy.Parts.aluminumScrap),
+            .init(Legacy.Parts.water)
         ],
-        duration: 1
+        input: [
+            .init(Legacy.Parts.aluminaSolution),
+            .init(Legacy.Parts.coal)
+        ]
     )
 
     static let aluminumScrapRecipe1 = Recipe.Static.Legacy(
         id: "alternate-electrode---aluminumscrap",
-        name: "Alternate: Electrode - Aluminum Scrap",
-        input: [
-            .init(Legacy.Parts.aluminaSolution, amount: 12),
-            .init(Legacy.Parts.petroleumCoke, amount: 4)
-        ],
         output: [
-            .init(Legacy.Parts.aluminumScrap, amount: 20),
-            .init(Legacy.Parts.water, amount: 7)
+            .init(Legacy.Parts.aluminumScrap),
+            .init(Legacy.Parts.water)
         ],
-        duration: 4,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.aluminaSolution),
+            .init(Legacy.Parts.petroleumCoke)
+        ]
     )
 
     static let aluminaSolutionRecipe = Recipe.Static.Legacy(
         id: "alumina-solution",
-        name: "Alumina Solution",
-        input: [
-            .init(Legacy.Parts.bauxite, amount: 12),
-            .init(Legacy.Parts.water, amount: 18)
-        ],
         output: [
-            .init(Legacy.Parts.aluminaSolution, amount: 12),
-            .init(Legacy.Parts.silica, amount: 5)
+            .init(Legacy.Parts.aluminaSolution),
+            .init(Legacy.Parts.silica)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.bauxite),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     static let aluminaSolutionRecipe1 = Recipe.Static.Legacy(
         id: "alternate-sloppy-alumina",
-        name: "Alternate: Sloppy Alumina",
-        input: [
-            .init(Legacy.Parts.bauxite, amount: 10),
-            .init(Legacy.Parts.water, amount: 10)
-        ],
         output: [
-            .init(Legacy.Parts.aluminaSolution, amount: 12)
+            .init(Legacy.Parts.aluminaSolution)
         ],
-        duration: 3,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.bauxite),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     static let sulfuricAcidRecipe = Recipe.Static.Legacy(
         id: "sulfuric-acid",
-        name: "Sulfuric Acid",
-        input: [
-            .init(Legacy.Parts.sulfur, amount: 5),
-            .init(Legacy.Parts.water, amount: 5)
-        ],
         output: [
-            .init(Legacy.Parts.sulfuricAcid, amount: 10)
+            .init(Legacy.Parts.sulfuricAcid)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.sulfur),
+            .init(Legacy.Parts.water)
+        ]
     )
-
-
 
     // Oil Products
     static let plasticRecipe = Recipe.Static.Legacy(
         id: "plastic",
-        name: "Plastic",
-        input: [
-            .init(Legacy.Parts.crudeOil, amount: 3)
-        ],
         output: [
-            .init(Legacy.Parts.plastic, amount: 2),
-            .init(Legacy.Parts.heavyOilResidue, amount: 1)
+            .init(Legacy.Parts.plastic),
+            .init(Legacy.Parts.heavyOilResidue)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.crudeOil)
+        ]
     )
 
     static let residualPlasticRecipe = Recipe.Static.Legacy(
         id: "residual-plastic",
-        name: "Residual Plastic",
-        input: [
-            .init(Legacy.Parts.polymerResin, amount: 6),
-            .init(Legacy.Parts.water, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.plastic, amount: 2)
+            .init(Legacy.Parts.plastic)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.polymerResin),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     static let plasticRecipe1 = Recipe.Static.Legacy(
         id: "alternate-recycled-plastic",
-        name: "Alternate: Recycled Plastic",
-        input: [
-            .init(Legacy.Parts.rubber, amount: 6),
-            .init(Legacy.Parts.fuel, amount: 6)
-        ],
         output: [
-            .init(Legacy.Parts.plastic, amount: 12)
+            .init(Legacy.Parts.plastic)
         ],
-        duration: 12,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.rubber),
+            .init(Legacy.Parts.fuel)
+        ]
     )
 
     static let rubberRecipe = Recipe.Static.Legacy(
         id: "rubber",
-        name: "Rubber",
-        input: [
-            .init(Legacy.Parts.crudeOil, amount: 3)
-        ],
         output: [
-            .init(Legacy.Parts.rubber, amount: 2),
-            .init(Legacy.Parts.heavyOilResidue, amount: 2)
+            .init(Legacy.Parts.rubber),
+            .init(Legacy.Parts.heavyOilResidue)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.crudeOil)
+        ]
     )
 
     static let residualRubberRecipe = Recipe.Static.Legacy(
         id: "residual-rubber",
-        name: "Residual Rubber",
-        input: [
-            .init(Legacy.Parts.polymerResin, amount: 4),
-            .init(Legacy.Parts.water, amount: 4)
-        ],
         output: [
-            .init(Legacy.Parts.rubber, amount: 2)
+            .init(Legacy.Parts.rubber)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.polymerResin),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     static let rubberRecipe1 = Recipe.Static.Legacy(
         id: "alternate-recycled-rubber",
-        name: "Alternate: Recycled Rubber",
-        input: [
-            .init(Legacy.Parts.plastic, amount: 6),
-            .init(Legacy.Parts.fuel, amount: 6)
-        ],
         output: [
-            .init(Legacy.Parts.rubber, amount: 12)
+            .init(Legacy.Parts.rubber)
         ],
-        duration: 12,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.plastic),
+            .init(Legacy.Parts.fuel)
+        ]
     )
 
     static let petroleumCokeRecipe = Recipe.Static.Legacy(
         id: "petroleum-coke",
-        name: "Petroleum Coke",
-        input: [
-            .init(Legacy.Parts.heavyOilResidue, amount: 4)
-        ],
         output: [
-            .init(Legacy.Parts.petroleumCoke, amount: 12)
+            .init(Legacy.Parts.petroleumCoke)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.heavyOilResidue)
+        ]
     )
 
     static let polymerResinRecipe1 = Recipe.Static.Legacy(
         id: "alternate-polymer-resin",
-        name: "Alternate: Polymer Resin",
-        input: [
-            .init(Legacy.Parts.crudeOil, amount: 6)
-        ],
         output: [
-            .init(Legacy.Parts.polymerResin, amount: 13),
-            .init(Legacy.Parts.heavyOilResidue, amount: 2)
+            .init(Legacy.Parts.polymerResin),
+            .init(Legacy.Parts.heavyOilResidue)
         ],
-        duration: 6,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.crudeOil)
+        ]
     )
 
     static let heavyOilResidueRecipe1 = Recipe.Static.Legacy(
         id: "alternate-heavy-oil-residue",
-        name: "Alternate: Heavy Oil Residue",
-        input: [
-            .init(Legacy.Parts.crudeOil, amount: 3)
-        ],
         output: [
-            .init(Legacy.Parts.heavyOilResidue, amount: 4),
-            .init(Legacy.Parts.polymerResin, amount: 2)
+            .init(Legacy.Parts.heavyOilResidue),
+            .init(Legacy.Parts.polymerResin)
         ],
-        duration: 6,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.crudeOil)
+        ]
     )
 
     // Fuel
     static let fuelRecipe = Recipe.Static.Legacy(
         id: "fuel",
-        name: "Fuel",
-        input: [
-            .init(Legacy.Parts.crudeOil, amount: 6)
-        ],
         output: [
-            .init(Legacy.Parts.fuel, amount: 4),
-            .init(Legacy.Parts.polymerResin, amount: 3)
+            .init(Legacy.Parts.fuel),
+            .init(Legacy.Parts.polymerResin)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.crudeOil)
+        ]
     )
 
     static let residualFuelRecipe = Recipe.Static.Legacy(
         id: "residual-fuel",
-        name: "Residual Fuel",
-        input: [
-            .init(Legacy.Parts.heavyOilResidue, amount: 6)
-        ],
         output: [
-            .init(Legacy.Parts.fuel, amount: 4)
+            .init(Legacy.Parts.fuel)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.heavyOilResidue)
+        ]
     )
 
     static let fuelRecipe1 = Recipe.Static.Legacy(
         id: "alternate-diluted-packaged-fuel",
-        name: "Alternate: Diluted Packaged Fuel",
-        input: [
-            .init(Legacy.Parts.heavyOilResidue, amount: 1),
-            .init(Legacy.Parts.packagedWater, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.fuel, amount: 2)
+            .init(Legacy.Parts.fuel)
         ],
-        duration: 2,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.heavyOilResidue),
+            .init(Legacy.Parts.packagedWater)
+        ]
     )
 
     static let liquidBiofuelRecipe = Recipe.Static.Legacy(
         id: "liquid-biofuel",
-        name: "Liquid Biofuel",
-        input: [
-            .init(Legacy.Parts.solidBiofuel, amount: 6),
-            .init(Legacy.Parts.water, amount: 3)
-        ],
         output: [
-            .init(Legacy.Parts.liquidBiofuel, amount: 4)
+            .init(Legacy.Parts.liquidBiofuel)
         ],
-        duration: 4
+        input: [
+            .init(Legacy.Parts.solidBiofuel),
+            .init(Legacy.Parts.water)
+        ]
     )
 
     static let turbofuelRecipe = Recipe.Static.Legacy(
         id: "turbofuel",
-        name: "Turbofuel",
-        input: [
-            .init(Legacy.Parts.fuel, amount: 6),
-            .init(Legacy.Parts.compactedCoal, amount: 4)
-        ],
         output: [
-            .init(Legacy.Parts.turbofuel, amount: 5)
+            .init(Legacy.Parts.turbofuel)
         ],
-        duration: 16,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.fuel),
+            .init(Legacy.Parts.compactedCoal)
+        ]
     )
 
     static let turbofuelRecipe1 = Recipe.Static.Legacy(
         id: "alternate-turbo-heavy-fuel",
-        name: "Alternate: Turbo Heavy Fuel",
-        input: [
-            .init(Legacy.Parts.heavyOilResidue, amount: 5),
-            .init(Legacy.Parts.compactedCoal, amount: 4)
-        ],
         output: [
-            .init(Legacy.Parts.turbofuel, amount: 4)
+            .init(Legacy.Parts.turbofuel)
         ],
-        duration: 8,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.heavyOilResidue),
+            .init(Legacy.Parts.compactedCoal)
+        ]
     )
     
     // Cosumed
     static let smokelessPowderRecipe = Recipe.Static.Legacy(
         id: "smokeless-powder",
-        name: "Smokeless Powder",
-        input: [
-            .init(Legacy.Parts.blackPowder, amount: 2),
-            .init(Legacy.Parts.heavyOilResidue, amount: 1)
-        ],
         output: [
-            .init(Legacy.Parts.smokelessPowder, amount: 2)
+            .init(Legacy.Parts.smokelessPowder)
         ],
-        duration: 6,
-        isDefault: false
+        input: [
+            .init(Legacy.Parts.blackPowder),
+            .init(Legacy.Parts.heavyOilResidue)
+        ]
     )
 
     static let refineryRecipes = [

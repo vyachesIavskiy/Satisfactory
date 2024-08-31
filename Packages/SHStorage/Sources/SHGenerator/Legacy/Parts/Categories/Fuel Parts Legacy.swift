@@ -1,20 +1,6 @@
 import SHModels
 import SHStaticModels
 
-private extension Part.Static.Legacy {
-    init(id: String) {
-        self.init(
-            id: id,
-            name: id,
-            partType: PartTypeLegacy.fuels.rawValue,
-            tier: 0,
-            milestone: 0,
-            sortingPriority: 0,
-            rawResource: false
-        )
-    }
-}
-
 extension Legacy.Parts {
     static let leaves = Part.Static.Legacy(id: "leaves")
     static let wood = Part.Static.Legacy(id: "wood")

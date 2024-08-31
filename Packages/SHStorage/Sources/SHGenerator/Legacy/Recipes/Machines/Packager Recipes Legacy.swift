@@ -1,288 +1,227 @@
 import SHModels
 import SHStaticModels
 
-private extension Recipe.Static.Legacy {
-    init(
-        id: String,
-        name: String,
-        input: [Ingredient],
-        output: [Ingredient],
-        duration: Int,
-        isDefault: Bool = true
-    ) {
-        self.init(
-            id: id,
-            name: name,
-            input: input,
-            output: output,
-            machines: [Legacy.Buildings.packager.id],
-            duration: duration,
-            isDefault: isDefault
-        )
-    }
-}
-
 extension Legacy.Recipes {
     // MARK: - Packaging
     static let packagedWaterRecipe = Recipe.Static.Legacy(
         id: "packaged-water",
-        name: "Packaged Water",
-        input: [
-            .init(Legacy.Parts.water, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.packagedWater, amount: 2)
+            .init(Legacy.Parts.packagedWater)
         ],
-        duration: 2
+        input: [
+            .init(Legacy.Parts.water),
+            .init(Legacy.Parts.emptyCanister)
+        ]
     )
 
     static let packagedOilRecipe = Recipe.Static.Legacy(
         id: "packaged-oil",
-        name: "Packaged Oil",
-        input: [
-            .init(Legacy.Parts.crudeOil, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.packagedOil, amount: 2)
+            .init(Legacy.Parts.packagedOil)
         ],
-        duration: 4
+        input: [
+            .init(Legacy.Parts.crudeOil),
+            .init(Legacy.Parts.emptyCanister)
+        ]
     )
 
     static let packagedHeavyOilResidueRecipe = Recipe.Static.Legacy(
         id: "packaged-heavy-oil-residue",
-        name: "Packaged Heavy Oil Residue",
-        input: [
-            .init(Legacy.Parts.heavyOilResidue, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.packagedHeavyOilResidue, amount: 2)
+            .init(Legacy.Parts.packagedHeavyOilResidue)
         ],
-        duration: 4
+        input: [
+            .init(Legacy.Parts.heavyOilResidue),
+            .init(Legacy.Parts.emptyCanister)
+        ]
     )
 
     static let packagedLiquidBiofuelRecipe = Recipe.Static.Legacy(
         id: "packaged-liquid-biofuel",
-        name: "Packaged Liquid Biofuel",
-        input: [
-            .init(Legacy.Parts.liquidBiofuel, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.packagedLiquidBiofuel, amount: 2)
+            .init(Legacy.Parts.packagedLiquidBiofuel)
         ],
-        duration: 3
+        input: [
+            .init(Legacy.Parts.liquidBiofuel),
+            .init(Legacy.Parts.emptyCanister)
+        ]
     )
 
     static let packagedFuelRecipe = Recipe.Static.Legacy(
         id: "packaged-fuel",
-        name: "Packaged Fuel",
-        input: [
-            .init(Legacy.Parts.fuel, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.packagedFuel, amount: 2)
+            .init(Legacy.Parts.packagedFuel)
         ],
-        duration: 3
+        input: [
+            .init(Legacy.Parts.fuel),
+            .init(Legacy.Parts.emptyCanister)
+        ]
     )
 
     static let packagedTurbofuelRecipe = Recipe.Static.Legacy(
         id: "packaged-turbofuel",
-        name: "Packaged Turbofuel",
-        input: [
-            .init(Legacy.Parts.turbofuel, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.packagedTurbofuel, amount: 2)
+            .init(Legacy.Parts.packagedTurbofuel)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.turbofuel),
+            .init(Legacy.Parts.emptyCanister)
+        ]
     )
 
     static let packagedAluminaSolutionRecipe = Recipe.Static.Legacy(
         id: "packaged-alumina-solution",
-        name: "Packaged Alumina Solution",
-        input: [
-            .init(Legacy.Parts.aluminaSolution, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.packagedAluminaSolution, amount: 2)
+            .init(Legacy.Parts.packagedAluminaSolution)
         ],
-        duration: 1
+        input: [
+            .init(Legacy.Parts.aluminaSolution),
+            .init(Legacy.Parts.emptyCanister)
+        ]
     )
 
     static let packagedSulfuricAcidRecipe = Recipe.Static.Legacy(
         id: "packaged-sulfuric-acid",
-        name: "Packaged Sulfuric Acid",
-        input: [
-            .init(Legacy.Parts.sulfuricAcid, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.packagedSulfuricAcid, amount: 2)
+            .init(Legacy.Parts.packagedSulfuricAcid)
         ],
-        duration: 3
+        input: [
+            .init(Legacy.Parts.sulfuricAcid),
+            .init(Legacy.Parts.emptyCanister)
+        ]
     )
 
     static let packagedNitrogenGasRecipe = Recipe.Static.Legacy(
         id: "packaged-nitrogen-gas",
-        name: "Packaged Nitrogen Gas",
-        input: [
-            .init(Legacy.Parts.nitrogenGas, amount: 4),
-            .init(Legacy.Parts.emptyFluidTank, amount: 1)
-        ],
         output: [
-            .init(Legacy.Parts.packagedNitrogenGas, amount: 1)
+            .init(Legacy.Parts.packagedNitrogenGas)
         ],
-        duration: 1
+        input: [
+            .init(Legacy.Parts.nitrogenGas),
+            .init(Legacy.Parts.emptyFluidTank)
+        ]
     )
 
     static let packagedNitricAcidRecipe = Recipe.Static.Legacy(
         id: "packaged-nitric-acid",
-        name: "Packaged Nitric Acid",
-        input: [
-            .init(Legacy.Parts.nitricAcid, amount: 1),
-            .init(Legacy.Parts.emptyFluidTank, amount: 1)
-        ],
         output: [
-            .init(Legacy.Parts.packagedNitricAcid, amount: 1)
+            .init(Legacy.Parts.packagedNitricAcid)
         ],
-        duration: 2
+        input: [
+            .init(Legacy.Parts.nitricAcid),
+            .init(Legacy.Parts.emptyFluidTank)
+        ]
     )
 
     // MARK: - Unpackaging
     static let unpackagedWaterRecipe = Recipe.Static.Legacy(
         id: "unpackaged-water",
-        name: "Unpackaged Water",
-        input: [
-            .init(Legacy.Parts.packagedWater, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.water, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
+            .init(Legacy.Parts.water),
+            .init(Legacy.Parts.emptyCanister)
         ],
-        duration: 1
+        input: [
+            .init(Legacy.Parts.packagedWater)
+        ]
     )
 
     static let unpackagedOilRecipe = Recipe.Static.Legacy(
         id: "unpackaged-oil",
-        name: "Unpackaged Oil",
-        input: [
-            .init(Legacy.Parts.packagedOil, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.crudeOil, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
+            .init(Legacy.Parts.crudeOil),
+            .init(Legacy.Parts.emptyCanister)
         ],
-        duration: 2
+        input: [
+            .init(Legacy.Parts.packagedOil)
+        ]
     )
 
     static let unpackagedHeavyOilResidueRecipe = Recipe.Static.Legacy(
         id: "unpackaged-heavy-oil-residue",
-        name: "Unpackaged Heavy Oil Residue",
-        input: [
-            .init(Legacy.Parts.packagedHeavyOilResidue, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.heavyOilResidue, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
+            .init(Legacy.Parts.heavyOilResidue),
+            .init(Legacy.Parts.emptyCanister)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.packagedHeavyOilResidue)
+        ]
     )
 
     static let unpackagedLiquidBiofuelRecipe = Recipe.Static.Legacy(
         id: "unpackaged-liquid-biofuel",
-        name: "Unpackaged Liquid Biofuel",
-        input: [
-            .init(Legacy.Parts.packagedLiquidBiofuel, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.liquidBiofuel, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
+            .init(Legacy.Parts.liquidBiofuel),
+            .init(Legacy.Parts.emptyCanister)
         ],
-        duration: 2
+        input: [
+            .init(Legacy.Parts.packagedLiquidBiofuel)
+        ]
     )
 
     static let unpackagedFuelRecipe = Recipe.Static.Legacy(
         id: "unpackaged-fuel",
-        name: "Unpackaged Fuel",
-        input: [
-            .init(Legacy.Parts.packagedFuel, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.fuel, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
+            .init(Legacy.Parts.fuel),
+            .init(Legacy.Parts.emptyCanister)
         ],
-        duration: 2
+        input: [
+            .init(Legacy.Parts.packagedFuel)
+        ]
     )
 
     static let unpackagedTurbofuelRecipe = Recipe.Static.Legacy(
         id: "unpackaged-turbofuel",
-        name: "Unpackaged Turbofuel",
-        input: [
-            .init(Legacy.Parts.packagedTurbofuel, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.turbofuel, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
+            .init(Legacy.Parts.turbofuel),
+            .init(Legacy.Parts.emptyCanister)
         ],
-        duration: 6
+        input: [
+            .init(Legacy.Parts.packagedTurbofuel)
+        ]
     )
 
     static let unpackagedAluminaSolutionRecipe = Recipe.Static.Legacy(
         id: "unpackaged-alumina-solution",
-        name: "Unpackaged Alumina Solution",
-        input: [
-            .init(Legacy.Parts.packagedAluminaSolution, amount: 2)
-        ],
         output: [
-            .init(Legacy.Parts.aluminaSolution, amount: 2),
-            .init(Legacy.Parts.emptyCanister, amount: 2)
+            .init(Legacy.Parts.aluminaSolution),
+            .init(Legacy.Parts.emptyCanister)
         ],
-        duration: 1
+        input: [
+            .init(Legacy.Parts.packagedAluminaSolution)
+        ]
     )
 
     static let unpackagedSulfuricAcidRecipe = Recipe.Static.Legacy(
         id: "unpackaged-sulfuric-acid",
-        name: "Unpackaged Sulfuric Acid",
-        input: [
-            .init(Legacy.Parts.packagedSulfuricAcid, amount: 1)
-        ],
         output: [
-            .init(Legacy.Parts.sulfuricAcid, amount: 1),
-            .init(Legacy.Parts.emptyCanister, amount: 1)
+            .init(Legacy.Parts.sulfuricAcid),
+            .init(Legacy.Parts.emptyCanister)
         ],
-        duration: 1
+        input: [
+            .init(Legacy.Parts.packagedSulfuricAcid)
+        ]
     )
 
     static let unpackagedNitrogenGasRecipe = Recipe.Static.Legacy(
         id: "unpackaged-nitrogen-gas",
-        name: "Unpackaged Nitrogen Gas",
-        input: [
-            .init(Legacy.Parts.packagedNitrogenGas, amount: 1)
-        ],
         output: [
-            .init(Legacy.Parts.nitrogenGas, amount: 4),
-            .init(Legacy.Parts.emptyFluidTank, amount: 1)
+            .init(Legacy.Parts.nitrogenGas),
+            .init(Legacy.Parts.emptyFluidTank)
         ],
-        duration: 1
+        input: [
+            .init(Legacy.Parts.packagedNitrogenGas)
+        ]
     )
 
     static let unpackagedNitricAcidRecipe = Recipe.Static.Legacy(
         id: "unpackaged-nitric-acid",
-        name: "Unpackaged Nitric Acid",
-        input: [
-            .init(Legacy.Parts.packagedNitricAcid, amount: 1)
-        ],
         output: [
-            .init(Legacy.Parts.nitricAcid, amount: 1),
-            .init(Legacy.Parts.emptyFluidTank, amount: 1)
+            .init(Legacy.Parts.nitricAcid),
+            .init(Legacy.Parts.emptyFluidTank)
         ],
-        duration: 3
+        input: [
+            .init(Legacy.Parts.packagedNitricAcid)
+        ]
     )
 
     static let packagerRecipes = [

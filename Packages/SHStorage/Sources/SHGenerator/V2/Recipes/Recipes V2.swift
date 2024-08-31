@@ -44,8 +44,6 @@ extension Recipe.Static.Ingredient {
 extension V2 {
     enum Recipes {
         static let all =
-        machinesRecipes +
-        equipmentRecipes +
-        buildingsRecipes
+        machinesRecipes
     }
 }

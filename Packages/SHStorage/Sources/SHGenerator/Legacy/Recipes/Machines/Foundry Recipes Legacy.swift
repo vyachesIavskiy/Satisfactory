@@ -2,23 +2,8 @@ import SHModels
 import SHStaticModels
 
 private extension Recipe.Static.Legacy {
-    init(
-        id: String,
-        name: String,
-        input: [Ingredient],
-        output: Ingredient,
-        duration: Int,
-        isDefault: Bool = true
-    ) {
-        self.init(
-            id: id,
-            name: name,
-            input: input,
-            output: [output],
-            machines: [Legacy.Buildings.foundry.id],
-            duration: duration,
-            isDefault: isDefault
-        )
+    init(id: String, output: Ingredient, input: [Ingredient]) {
+        self.init(id: id, output: [output], input: input)
     }
 }
 
@@ -26,84 +11,65 @@ extension Legacy.Recipes {
     // Ingots
     static let steelIngotRecipe = Recipe.Static.Legacy(
         id: "steel-ingot",
-        name: "Steel Ingot",
+        output: .init(Legacy.Parts.steelIngot),
         input: [
-            .init(Legacy.Parts.ironOre, amount: 3),
-            .init(Legacy.Parts.coal, amount: 3)
-        ],
-        output: .init(Legacy.Parts.steelIngot, amount: 3),
-        duration: 4
+            .init(Legacy.Parts.ironOre),
+            .init(Legacy.Parts.coal)
+        ]
     )
 
     static let steelIngotRecipe1 = Recipe.Static.Legacy(
         id: "alternate-solid-steel-ingot",
-        name: "Alternate: Solid Steel Ingot",
+        output: .init(Legacy.Parts.steelIngot),
         input: [
-            .init(Legacy.Parts.ironIngot, amount: 2),
-            .init(Legacy.Parts.coal, amount: 2)
-        ],
-        output: .init(Legacy.Parts.steelIngot, amount: 3),
-        duration: 3,
-        isDefault: false
+            .init(Legacy.Parts.ironIngot),
+            .init(Legacy.Parts.coal)
+        ]
     )
 
     static let steelIngotRecipe2 = Recipe.Static.Legacy(
         id: "alternate-compacted-steel-ingot",
-        name: "Alternate: Compacted Steel Ingot",
+        output: .init(Legacy.Parts.steelIngot),
         input: [
-            .init(Legacy.Parts.ironOre, amount: 6),
-            .init(Legacy.Parts.compactedCoal, amount: 3)
-        ],
-        output: .init(Legacy.Parts.steelIngot, amount: 10),
-        duration: 16,
-        isDefault: false
+            .init(Legacy.Parts.ironOre),
+            .init(Legacy.Parts.compactedCoal)
+        ]
     )
 
     static let steelIngotRecipe3 = Recipe.Static.Legacy(
         id: "alternate-coke-steel-ingot",
-        name: "Alternate: Coke Steel Ingot",
+        output: .init(Legacy.Parts.steelIngot),
         input: [
-            .init(Legacy.Parts.ironOre, amount: 15),
-            .init(Legacy.Parts.petroleumCoke, amount: 15)
-        ],
-        output: .init(Legacy.Parts.steelIngot, amount: 20),
-        duration: 12,
-        isDefault: false
+            .init(Legacy.Parts.ironOre),
+            .init(Legacy.Parts.petroleumCoke)
+        ]
     )
 
     static let ironIngotRecipe1 = Recipe.Static.Legacy(
         id: "alternate-iron-alloy-ingot",
-        name: "Alternate: Iron Alloy Ingot",
+        output: .init(Legacy.Parts.ironIngot),
         input: [
-            .init(Legacy.Parts.ironOre, amount: 2),
-            .init(Legacy.Parts.copperOre, amount: 2)
-        ],
-        output: .init(Legacy.Parts.ironIngot, amount: 5),
-        duration: 6,
-        isDefault: false
+            .init(Legacy.Parts.ironOre),
+            .init(Legacy.Parts.copperOre)
+        ]
     )
 
     static let copperIngotRecipe1 = Recipe.Static.Legacy(
         id: "alternate-copper-alloy-ingot",
-        name: "Alternate: Copper Alloy Ingot",
+        output: .init(Legacy.Parts.copperIngot),
         input: [
-            .init(Legacy.Parts.copperOre, amount: 10),
-            .init(Legacy.Parts.ironOre, amount: 5)
-        ],
-        output: .init(Legacy.Parts.copperIngot, amount: 20),
-        duration: 12,
-        isDefault: false
+            .init(Legacy.Parts.copperOre),
+            .init(Legacy.Parts.ironOre)
+        ]
     )
 
     static let aluminumIngotRecipe = Recipe.Static.Legacy(
         id: "aluminum-ingot",
-        name: "Aluminum Ingot",
+        output: .init(Legacy.Parts.aluminumIngot),
         input: [
-            .init(Legacy.Parts.aluminumScrap, amount: 6),
-            .init(Legacy.Parts.silica, amount: 5)
-        ],
-        output: .init(Legacy.Parts.aluminumIngot, amount: 4),
-        duration: 4
+            .init(Legacy.Parts.aluminumScrap),
+            .init(Legacy.Parts.silica)
+        ]
     )
 
     static let foundryRecipes = [

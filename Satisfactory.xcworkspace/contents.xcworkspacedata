@@ -5,9 +5,6 @@
       location = "container:Satisfactory.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:SatisfactoryJSONGenerator.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Packages/SHLogger/Tests/SHLogger.xctestplan">
    </FileRef>
 </Workspace>

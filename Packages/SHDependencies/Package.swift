@@ -18,10 +18,6 @@ let package = Package(
         .package(
             url: "https://github.com/pointfreeco/swift-dependencies",
             from: "1.3.0"
-        ),
-        .package(
-            url: "https://github.com/pointfreeco/swift-case-paths",
-            from: "1.4.1"
         )
     ],
     targets: [
@@ -29,7 +25,6 @@ let package = Package(
             name: "SHDependencies",
             dependencies: [
                 .product(name: "Dependencies", package: "swift-dependencies"),
-                .product(name: "CasePaths", package: "swift-case-paths")
             ]
         )
     ]

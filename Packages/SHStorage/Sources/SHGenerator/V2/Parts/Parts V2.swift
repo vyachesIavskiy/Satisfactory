@@ -172,7 +172,6 @@ extension V2 {
             nuclearPasta,
             coupon,
             samOre,
-            quantumComputer,
             superpositionOscillator,
             
             // FICSMAS is always on the bottom

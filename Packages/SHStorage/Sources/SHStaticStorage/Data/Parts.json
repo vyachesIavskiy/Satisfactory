@@ -347,112 +347,112 @@
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-gift",
     "isNaturalResource" : true,
-    "progressionIndex" : 140
+    "progressionIndex" : 139
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-tree-branch",
     "isNaturalResource" : false,
-    "progressionIndex" : 141
+    "progressionIndex" : 140
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-candy-cane",
     "isNaturalResource" : false,
-    "progressionIndex" : 142
+    "progressionIndex" : 141
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-bow",
     "isNaturalResource" : false,
-    "progressionIndex" : 143
+    "progressionIndex" : 142
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-red-ficsmas-ornament",
     "isNaturalResource" : false,
-    "progressionIndex" : 144
+    "progressionIndex" : 143
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-blue-ficsmas-ornament",
     "isNaturalResource" : false,
-    "progressionIndex" : 145
+    "progressionIndex" : 144
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-actual-snow",
     "isNaturalResource" : false,
-    "progressionIndex" : 146
+    "progressionIndex" : 145
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-copper-ficsmas-ornament",
     "isNaturalResource" : false,
-    "progressionIndex" : 147
+    "progressionIndex" : 146
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-iron-ficsmas-ornament",
     "isNaturalResource" : false,
-    "progressionIndex" : 148
+    "progressionIndex" : 147
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-ornament-bundle",
     "isNaturalResource" : false,
-    "progressionIndex" : 149
+    "progressionIndex" : 148
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-decoration",
     "isNaturalResource" : false,
-    "progressionIndex" : 150
+    "progressionIndex" : 149
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-ficsmas-wonder-star",
     "isNaturalResource" : false,
-    "progressionIndex" : 151
+    "progressionIndex" : 150
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-snowball",
     "isNaturalResource" : false,
-    "progressionIndex" : 152
+    "progressionIndex" : 151
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-sweet-fireworks",
     "isNaturalResource" : false,
-    "progressionIndex" : 153
+    "progressionIndex" : 152
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-fancy-fireworks",
     "isNaturalResource" : false,
-    "progressionIndex" : 154
+    "progressionIndex" : 153
   },
   {
     "categoryID" : "category-ficsmas",
     "formID" : "part-form-solid",
     "id" : "part-sparkly-fireworks",
     "isNaturalResource" : false,
-    "progressionIndex" : 155
+    "progressionIndex" : 154
   },
   {
     "categoryID" : "category-fluids",
@@ -877,16 +877,9 @@
   {
     "categoryID" : "category-quantum-technology",
     "formID" : "part-form-solid",
-    "id" : "part-quantum-computer",
-    "isNaturalResource" : false,
-    "progressionIndex" : 138
-  },
-  {
-    "categoryID" : "category-quantum-technology",
-    "formID" : "part-form-solid",
     "id" : "part-superposition-oscillator",
     "isNaturalResource" : false,
-    "progressionIndex" : 139
+    "progressionIndex" : 138
   },
   {
     "categoryID" : "category-space-elevator-parts",

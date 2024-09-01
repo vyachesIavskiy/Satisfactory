@@ -12,7 +12,7 @@ struct SingleItemProductionRecipeSelectView: View {
     var body: some View {
         recipeBody
             .frame(maxWidth: .infinity, alignment: .leading)
-            .animation(.default, value: viewModel.selectedByproduct == nil)
+            .animation(.default, value: viewModel.byproductSelectionState == nil)
     }
     
     @MainActor @ViewBuilder
@@ -39,7 +39,7 @@ struct SingleItemProductionRecipeSelectView: View {
                 
                 LazyVGrid(columns: [gridItem, gridItem], spacing: 12) {
                     inputsView
-                        .frame(maxHeight: .infinity)
+                        .frame(maxHeight: .infinity, alignment: .top)
                 }
                 .fixedSize()
             }
@@ -51,7 +51,7 @@ struct SingleItemProductionRecipeSelectView: View {
         let outputViewModel = RecipeIngredientViewModel(productionOutput: viewModel.recipe.output)
         
         RecipeIngredientView(viewModel: outputViewModel)
-            .disabledStyle(viewModel.selectedByproduct != nil)
+            .disabledStyle(viewModel.byproductSelectionState != nil)
     }
     
     @MainActor @ViewBuilder
@@ -109,7 +109,7 @@ struct SingleItemProductionRecipeSelectView: View {
             }
         } else {
             byproductView
-                .disabledStyle(viewModel.selectedByproduct != nil)
+                .disabledStyle(viewModel.byproductSelectionState != nil)
         }
     }
     
@@ -162,10 +162,10 @@ struct SingleItemProductionRecipeSelectView: View {
             } label: {
                 inputView
             }
-            .disabledStyle(viewModel.selectedByproduct != nil)
+            .disabledStyle(viewModel.byproductSelectionState != nil)
         } else {
             inputView
-                .disabledStyle(viewModel.selectedByproduct != nil)
+                .disabledStyle(viewModel.byproductSelectionState != nil)
         }
     }
 }
@@ -298,7 +298,7 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
         return SingleItemProductionRecipeSelectViewModel(
             product: SingleItemCalculator.OutputItem(item: recipe.output.item, recipes: [recipe]),
             recipe: recipe,
-            selectedByproduct: nil,
+            byproductSelectionState: nil,
             canPerformAction: { _ in true },
             performAction: { _ in }
         )

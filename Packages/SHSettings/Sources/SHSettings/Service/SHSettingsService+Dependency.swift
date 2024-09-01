@@ -24,9 +24,9 @@ extension SHSettingsService {
     )
     
     static let failing = SHSettingsService(
-        streamSettings: unimplemented("SHSettingsService.streamSettings"),
-        getSettings: unimplemented("SHSettingsService.getSettings"),
-        setSettings: unimplemented("SHSettingsService.setSettings")
+        streamSettings: unimplemented("SHSettingsService.streamSettings", placeholder: .never),
+        getSettings: unimplemented("SHSettingsService.getSettings", placeholder: Settings()),
+        setSettings: unimplemented("SHSettingsService.setSettings", placeholder: ())
     )
     
     static let live = {

@@ -4,14 +4,14 @@ struct CalculationView: View {
     @State
     var viewModel: CalculationViewModel
     
-    @State
-    private var viewModelToDrag: ProductViewModel?
-    
     @Environment(\.displayScale)
     private var displayScale
     
     @Environment(\.dismiss)
     private var dismiss
+    
+    @Environment(\.horizontalSizeClass)
+    private var horizontalSizeClass
     
     @FocusState
     private var focused
@@ -27,7 +27,13 @@ struct CalculationView: View {
             .padding(.bottom, 16)
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            amountView
+            ZStack {
+                if !viewModel.selectingByproduct {
+                    amountView
+                        .transition(.move(edge: .bottom).combined(with: .offset(y: 100)))
+                }
+            }
+            .animation(.default, value: viewModel.selectingByproduct)
         }
         .navigationBarBackButtonHidden(!viewModel.canBeDismissedWithoutSaving)
         .navigationTitle(viewModel.item.localizedName)
@@ -167,17 +173,25 @@ struct CalculationView: View {
             .disabled(viewModel.canBeDismissedWithoutSaving || viewModel.selectingByproduct)
         }
         
-        ToolbarItem(placement: .secondaryAction) {
+        let placement = switch horizontalSizeClass {
+        case .compact, nil: viewModel.hasSavedProduction ? ToolbarItemPlacement.secondaryAction : ToolbarItemPlacement.primaryAction
+        case .regular: ToolbarItemPlacement.primaryAction
+        @unknown default: ToolbarItemPlacement.secondaryAction
+        }
+        
+        ToolbarItem(placement: placement) {
             Button("single-item-production-calculation-statistics", systemImage: "list.number") {
                 viewModel.showStatistics()
             }
+            .disabled(viewModel.selectingByproduct)
         }
         
         if viewModel.hasSavedProduction {
-            ToolbarItem(placement: .secondaryAction) {
+            ToolbarItem(placement: placement) {
                 Button("general-edit", systemImage: "pencil") {
                     viewModel.editProduction()
                 }
+                .disabled(viewModel.selectingByproduct)
             }
         }
     }

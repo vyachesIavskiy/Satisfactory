@@ -3,24 +3,23 @@ import SHModels
 import SHSettings
 import SingleItemCalculator
 
-@Observable
-final class SingleItemProductionRecipeSelectViewModel {
+struct SingleItemProductionRecipeSelectViewModel {
     private let product: SingleItemCalculator.OutputItem
     let recipe: SingleItemCalculator.OutputRecipe
-    let selectedByproduct: CalculationViewModel.ByproductSelectionState?
+    let byproductSelectionState: CalculationViewModel.ByproductSelectionState?
     private let canPerformAction: (CalculationViewModel.Action) -> Bool
     private let performAction: (CalculationViewModel.Action) -> Void
     
     init(
         product: SingleItemCalculator.OutputItem,
         recipe: SingleItemCalculator.OutputRecipe,
-        selectedByproduct: CalculationViewModel.ByproductSelectionState?,
+        byproductSelectionState: CalculationViewModel.ByproductSelectionState?,
         canPerformAction: @escaping (CalculationViewModel.Action) -> Bool,
         performAction: @escaping (CalculationViewModel.Action) -> Void
     ) {
         self.product = product
         self.recipe = recipe
-        self.selectedByproduct = selectedByproduct
+        self.byproductSelectionState = byproductSelectionState
         self.canPerformAction = canPerformAction
         self.performAction = performAction
     }
@@ -83,11 +82,11 @@ final class SingleItemProductionRecipeSelectViewModel {
     // Can confirm byproduct
     @MainActor
     func canConfirmByproduct(_ byproduct: SingleItemCalculator.OutputRecipe.ByproductIngredient) -> Bool {
-        canSelectByproductProducer(for: byproduct) && selectedByproduct?.consumingRecipe != nil
+        canSelectByproductProducer(for: byproduct) && byproductSelectionState?.consumingRecipe != nil
     }
     
     @MainActor
     func canConfirmByproduct(_ input: SingleItemCalculator.OutputRecipe.InputIngredient) -> Bool {
-        canSelectByproductConsumer(for: input) && selectedByproduct?.producingRecipe != nil
+        canSelectByproductConsumer(for: input) && byproductSelectionState?.producingRecipe != nil
     }
 }

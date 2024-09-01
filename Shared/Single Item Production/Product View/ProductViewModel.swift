@@ -4,10 +4,9 @@ import SHStorage
 import SHModels
 import SingleItemCalculator
 
-@Observable
-final class ProductViewModel: Identifiable {
+struct ProductViewModel: Identifiable {
     let product: SingleItemCalculator.OutputItem
-    let selectedByproduct: CalculationViewModel.ByproductSelectionState?
+    let byproductSelectionState: CalculationViewModel.ByproductSelectionState?
     let canPerformAction: (CalculationViewModel.Action) -> Bool
     let performAction: (CalculationViewModel.Action) -> Void
     
@@ -28,14 +27,14 @@ final class ProductViewModel: Identifiable {
     
     init(
         product: SingleItemCalculator.OutputItem,
-        selectedByproduct: CalculationViewModel.ByproductSelectionState?,
+        byproductSelectionState: CalculationViewModel.ByproductSelectionState?,
         canPerformAction: @escaping (CalculationViewModel.Action) -> Bool,
         performAction: @escaping (CalculationViewModel.Action) -> Void
     ) {
         self.product = product
         self.canPerformAction = canPerformAction
         self.performAction = performAction
-        self.selectedByproduct = selectedByproduct
+        self.byproductSelectionState = byproductSelectionState
     }
     
     @MainActor
@@ -43,7 +42,7 @@ final class ProductViewModel: Identifiable {
         SingleItemProductionRecipeSelectViewModel(
             product: product,
             recipe: recipe,
-            selectedByproduct: selectedByproduct,
+            byproductSelectionState: byproductSelectionState,
             canPerformAction: canPerformAction,
             performAction: performAction
         )

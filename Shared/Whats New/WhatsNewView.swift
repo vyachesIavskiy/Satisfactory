@@ -104,7 +104,7 @@ struct WhatsNewView: View {
                     ProductView(
                         viewModel: ProductViewModel(
                             product: plasticOutputItem,
-                            selectedByproduct: nil,
+                            byproductSelectionState: nil,
                             canPerformAction: { _ in false },
                             performAction: { _ in }
                         )
@@ -113,7 +113,7 @@ struct WhatsNewView: View {
                     ProductView(
                         viewModel: ProductViewModel(
                             product: rubberOutputItem,
-                            selectedByproduct: nil,
+                            byproductSelectionState: nil,
                             canPerformAction: { _ in false },
                             performAction: { _ in }
                         )

@@ -40,27 +40,27 @@ extension SHStorageService {
     )
     
     static let failing = SHStorageService(
-        load: unimplemented("SHStorageService.load"),
-        staticConfiguration: unimplemented("SHStorageService.staticConfiguration"),
-        persistentConfiguration: unimplemented("SHStorageService.persistentConfiguration"),
-        pins: unimplemented("SHStorageService.pins"),
-        streamPins: unimplemented("SHStorageService.streamPins"),
-        factories: unimplemented("SHStorageService.factories"),
-        streamFactories: unimplemented("SHStorageService.streamFactories"),
-        productions: unimplemented("SHStorageService.productions"),
-        streamProductions: unimplemented("SHStorageService.streamProductions"),
-        saveFactory: unimplemented("SHStorageService.saveFactory"),
-        saveProduction: unimplemented("SHStorageService.saveProduction"),
-        deleteFactory: unimplemented("SHStorageService.deleteFactory"),
-        deleteProduction: unimplemented("SHStorageService.deleteProduction"),
-        parts: unimplemented("SHStorageService.parts"),
-        equipment: unimplemented("SHStorageService.equipment"),
-        buildings: unimplemented("SHStorageService.buildings"),
-        recipes: unimplemented("SHStorageService.recipes"),
-        extractions: unimplemented("SHStorageService.extractions"),
-        changePartPinStatus: unimplemented("SHStorageService.changePartPinStatus"),
-        changeEquipmentPinStatus: unimplemented("SHStorageService.changeEquipmentPinStatus"),
-        changeRecipePinStatus: unimplemented("SHStorageService.changeRecipePinStatus")
+        load: unimplemented("SHStorageService.load", placeholder: ()),
+        staticConfiguration: unimplemented("SHStorageService.staticConfiguration", placeholder: Configuration(version: 0)),
+        persistentConfiguration: unimplemented("SHStorageService.persistentConfiguration", placeholder: Configuration(version: 0)),
+        pins: unimplemented("SHStorageService.pins", placeholder: Pins()),
+        streamPins: unimplemented("SHStorageService.streamPins", placeholder: .never),
+        factories: unimplemented("SHStorageService.factories", placeholder: []),
+        streamFactories: unimplemented("SHStorageService.streamFactories", placeholder: .never),
+        productions: unimplemented("SHStorageService.productions", placeholder: []),
+        streamProductions: unimplemented("SHStorageService.streamProductions", placeholder: .never),
+        saveFactory: unimplemented("SHStorageService.saveFactory", placeholder: ()),
+        saveProduction: unimplemented("SHStorageService.saveProduction", placeholder: ()),
+        deleteFactory: unimplemented("SHStorageService.deleteFactory", placeholder: ()),
+        deleteProduction: unimplemented("SHStorageService.deleteProduction", placeholder: ()),
+        parts: unimplemented("SHStorageService.parts", placeholder: []),
+        equipment: unimplemented("SHStorageService.equipment", placeholder: []),
+        buildings: unimplemented("SHStorageService.buildings", placeholder: []),
+        recipes: unimplemented("SHStorageService.recipes", placeholder: []),
+        extractions: unimplemented("SHStorageService.extractions", placeholder: []),
+        changePartPinStatus: unimplemented("SHStorageService.changePartPinStatus", placeholder: ()),
+        changeEquipmentPinStatus: unimplemented("SHStorageService.changeEquipmentPinStatus", placeholder: ()),
+        changeRecipePinStatus: unimplemented("SHStorageService.changeRecipePinStatus", placeholder: ())
     )
     
     static let live = {

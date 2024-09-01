@@ -167,7 +167,7 @@ private struct _ProductPreview: View {
         item.map {
             ProductViewModel(
                 product: SingleItemCalculator.OutputItem(item: $0, recipes: outputRecipes),
-                selectedByproduct: nil,
+                byproductSelectionState: nil,
                 canPerformAction: { _ in true },
                 performAction: { _ in }
             )

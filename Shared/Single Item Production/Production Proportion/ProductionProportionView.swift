@@ -7,38 +7,47 @@ struct ProductionProportionView: View {
     @FocusState
     private var focusField: ProductionProportionTextfield.Field?
     
+    @Namespace
+    private var namespace
+    
     var body: some View {
         HStack(spacing: 12) {
             ZStack {
-                ProductionProportionTextfield(
-                    $viewModel.fractionAmount,
-                    focus: $focusField,
-                    field: .fraction
-                )
-                .opacity(viewModel.proportionDisplay == .fraction ? 1.0 : 0.0)
-                .onSubmit {
-                    focusField = nil
-                    viewModel.adjustFractionAmount()
-                    viewModel.update()
+                switch viewModel.proportionDisplay {
+                case .auto:
+                    EmptyView()
+                    
+                case .fraction:
+                    ProductionProportionTextfield(
+                        $viewModel.fractionAmount,
+                        focus: $focusField,
+                        field: .fraction
+                    )
+                    .onSubmit {
+                        focusField = nil
+                        viewModel.adjustFractionAmount()
+                        viewModel.update()
+                    }
+                    .submitLabel(.done)
+                    .focused($focusField, equals: .fraction)
+                    .frame(width: 100)
+                    
+                case .fixed:
+                    ProductionProportionTextfield(
+                        $viewModel.fixedAmount,
+                        focus: $focusField,
+                        field: .fixed
+                    )
+                    .onSubmit {
+                        focusField = nil
+                        viewModel.adjustFixedAmount()
+                        viewModel.update()
+                    }
+                    .submitLabel(.done)
+                    .focused($focusField, equals: .fixed)
+                    .frame(width: 100)
                 }
-                .submitLabel(.done)
-                .focused($focusField, equals: .fraction)
-                
-                ProductionProportionTextfield(
-                    $viewModel.fixedAmount,
-                    focus: $focusField,
-                    field: .fixed
-                )
-                .opacity(viewModel.proportionDisplay == .fixed ? 1.0 : 0.0)
-                .onSubmit {
-                    focusField = nil
-                    viewModel.adjustFixedAmount()
-                    viewModel.update()
-                }
-                .submitLabel(.done)
-                .focused($focusField, equals: .fixed)
             }
-            .frame(width: 100)
             
             if focusField != nil {
                 Button {
@@ -89,6 +98,7 @@ struct ProductionProportionView: View {
                 .buttonStyle(.shBordered)
                 .tint(.sh(.midnight))
                 .transition(.move(edge: .trailing).combined(with: .opacity))
+                .matchedGeometryEffect(id: "proportion-menu", in: namespace)
             }
         }
         .animation(.bouncy, value: focusField)

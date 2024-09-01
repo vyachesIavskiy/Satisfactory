@@ -237,7 +237,9 @@ private extension CalculationViewModel {
         item.id != self.item.id
     }
     
+    @MainActor
     func canSelectRecipe(for input: SingleItemCalculator.OutputRecipe.InputIngredient) -> Bool {
+        byproductSelectionState == nil &&
         !calculator.production.inputItems.contains(item: input.item) &&
         !storageService.recipes(for: input.item, as: [.output, .byproduct]).isEmpty
     }
@@ -388,7 +390,7 @@ private extension CalculationViewModel {
         outputItemViewModels = calculator.outputItems.map { outputItem in
             ProductViewModel(
                 product: outputItem,
-                selectedByproduct: byproductSelectionState,
+                byproductSelectionState: byproductSelectionState,
                 canPerformAction: { [weak self] action in
                     guard let self else { return false }
                     

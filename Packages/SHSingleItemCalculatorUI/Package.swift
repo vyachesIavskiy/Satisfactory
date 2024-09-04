@@ -22,6 +22,7 @@ let package = Package(
         .package(path: "../SHSingleItemCalculator"),
         .package(path: "../SHStatistics"),
         .package(path: "../SHEditProduction"),
+        .package(path: "../SHUtils"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -34,6 +35,7 @@ let package = Package(
                 .product(name: "SHSingleItemCalculator", package: "SHSingleItemCalculator"),
                 .product(name: "SHStatistics", package: "SHStatistics"),
                 .product(name: "SHEditProduction", package: "SHEditProduction"),
+                .product(name: "SHUtils", package: "SHUtils"),
             ]
         ),
         .testTarget(

@@ -59,7 +59,7 @@ public struct ListRow<Icon: View, Label: View, Accessory: View>: View {
 
 public enum ListRowAccessory {
     case chevron
-    case checkmark
+    case checkmark(CheckmarkMode)
     
     @ViewBuilder
     var view: some View {
@@ -69,11 +69,30 @@ public enum ListRowAccessory {
                 .fontWeight(.light)
                 .foregroundStyle(.sh(.gray40))
             
-        case .checkmark:
+        case .checkmark(.singleSelection):
             Image(systemName: "checkmark")
                 .fontWeight(.medium)
                 .foregroundStyle(.sh(.orange))
+            
+        case let .checkmark(.multiSelection(selected)):
+            Image(systemName: "checkmark")
+                .font(.footnote)
+                .fontWeight(.medium)
+                .foregroundStyle(.sh(.orange).opacity(selected ? 1.0 : 0.0))
+                .padding(2)
+                .background(
+                    .sh(.orange30),
+                    in: AngledRectangle(cornerRadius: 2)
+                        .stroke(lineWidth: 1)
+                )
         }
+    }
+}
+
+extension ListRowAccessory {
+    public enum CheckmarkMode {
+        case singleSelection
+        case multiSelection(selected: Bool)
     }
 }
 
@@ -86,19 +105,37 @@ import SHStorage
             ListRow {
                 ListRowIcon(imageName: "part-iron-plate", backgroundShape: .angledRectangle)
             } label: {
-                Text(verbatim: "Iron Plate")
+                Text(verbatim: "No accessory")
             }
             
             ListRow(accessory: .chevron) {
                 ListRowIcon(imageName: "part-reinforced-iron-plate", backgroundShape: .angledRectangle)
             } label: {
-                Text(verbatim: "Reinforced Iron Plate")
+                Text(verbatim: "Chevron")
+            }
+            
+            ListRow(accessory: .checkmark(.singleSelection)) {
+                ListRowIcon(imageName: "part-modular-frame", backgroundShape: .angledRectangle)
+            } label: {
+                Text(verbatim: "Single selection checkmark")
+            }
+            
+            ListRow(accessory: .checkmark(.multiSelection(selected: false))) {
+                ListRowIcon(imageName: "part-heavy-modular-frame", backgroundShape: .angledRectangle)
+            } label: {
+                Text(verbatim: "Multi selection unselected checkmark")
+            }
+            
+            ListRow(accessory: .checkmark(.multiSelection(selected: true))) {
+                ListRowIcon(imageName: "part-fused-modular-frame", backgroundShape: .angledRectangle)
+            } label: {
+                Text(verbatim: "Multi selection selected checkmark")
             }
             
             ListRow {
                 ListRowIcon(imageName: "part-iron-plate", backgroundShape: .angledRectangle)
             } label: {
-                Text(verbatim: "Iron Plate")
+                Text(verbatim: "Custom accessory")
             } accessory: {
                 Image(systemName: "star.fill")
                     .foregroundStyle(.sh(.green))

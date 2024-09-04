@@ -2,6 +2,7 @@ import SwiftUI
 import SHSharedUI
 import SHStatistics
 import SHEditProduction
+import SHUtils
 
 struct CalculatorView: View {
     @State

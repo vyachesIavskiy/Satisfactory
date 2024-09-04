@@ -2,6 +2,7 @@ import SwiftUI
 import SHModels
 import SHStorage
 import SHSingleItemCalculator
+import SHUtils
 
 @Observable
 final class ItemAdjustmentViewModel: Identifiable {

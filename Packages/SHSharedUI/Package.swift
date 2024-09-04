@@ -19,7 +19,8 @@ let package = Package(
     dependencies: [
         .package(path: "../SHModels"),
         .package(path: "../SHStorage"),
-        .package(path: "../SHSettings")
+        .package(path: "../SHSettings"),
+        .package(path: "../SHUtils"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -29,7 +30,8 @@ let package = Package(
             dependencies: [
                 .product(name: "SHModels", package: "SHModels"),
                 .product(name: "SHStorage", package: "SHStorage"),
-                .product(name: "SHSettings", package: "SHSettings")
+                .product(name: "SHSettings", package: "SHSettings"),
+                .product(name: "SHUtils", package: "SHUtils"),
             ]
         ),
         .testTarget(

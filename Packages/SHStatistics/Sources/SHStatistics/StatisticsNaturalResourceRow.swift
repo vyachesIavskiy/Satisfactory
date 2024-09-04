@@ -1,6 +1,7 @@
 import SwiftUI
 import SHModels
 import SHSharedUI
+import SHUtils
 
 extension StatisticsView {
     public struct NaturalResourceRow: View {

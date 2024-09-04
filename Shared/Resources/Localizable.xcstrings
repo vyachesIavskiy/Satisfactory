@@ -740,9 +740,6 @@
         }
       }
     },
-    "Consumed power here" : {
-
-    },
     "edit-factory-delete-message" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1069,6 +1066,9 @@
         }
       }
     },
+    "From resources production view" : {
+
+    },
     "general-apply" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1196,6 +1196,39 @@
     "Load storage" : {
 
     },
+    "new-production-from-resources-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "From Resources"
+          }
+        }
+      }
+    },
+    "new-production-from-resources-production-description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select resources and build items from them. This is a bottom to top type of production."
+          }
+        }
+      }
+    },
+    "new-production-from-resources-production-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "From resources"
+          }
+        }
+      }
+    },
     "new-production-navigation-title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1214,6 +1247,72 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pinned"
+          }
+        }
+      }
+    },
+    "new-production-power-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power"
+          }
+        }
+      }
+    },
+    "new-production-power-production-description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a power generation building and a fuel type. Build a production for all selected fuel types. This is a top to bottom type of production."
+          }
+        }
+      }
+    },
+    "new-production-power-production-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power"
+          }
+        }
+      }
+    },
+    "new-production-single-item-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Single Item"
+          }
+        }
+      }
+    },
+    "new-production-single-item-production-description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a final item and build a production tree. This is a top to bottom type of production."
+          }
+        }
+      }
+    },
+    "new-production-single-item-production-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Single item production"
           }
         }
       }
@@ -1254,7 +1353,11 @@
     "Parts" : {
 
     },
+    "Power production view" : {
+
+    },
     "product-adjustment-fixed-%@-exceeds-%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1265,6 +1368,7 @@
       }
     },
     "product-adjustment-fixed-%@-should-be-equal-to-available-%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1275,6 +1379,7 @@
       }
     },
     "product-adjustment-fraction-%@-exceeds-%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1285,6 +1390,7 @@
       }
     },
     "product-adjustment-fraction-%lf-exceeds-%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1296,6 +1402,7 @@
       "shouldTranslate" : false
     },
     "product-adjustment-fractions-%@-should-be-exactly-%@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1340,9 +1447,6 @@
           }
         }
       }
-    },
-    "Selected" : {
-
     },
     "settings-app-info-app-build-number-row-title" : {
       "extractionState" : "manual",
@@ -1541,12 +1645,6 @@
           }
         }
       }
-    },
-    "SHSection preview" : {
-      "shouldTranslate" : false
-    },
-    "SHSection preview\n(Second line for preview of long section name)" : {
-      "shouldTranslate" : false
     },
     "single-item-production-adjustment-%@-per-minute" : {
       "extractionState" : "manual",
@@ -1946,9 +2044,6 @@
           }
         }
       }
-    },
-    "Unselected" : {
-
     },
     "V2 File system" : {
 

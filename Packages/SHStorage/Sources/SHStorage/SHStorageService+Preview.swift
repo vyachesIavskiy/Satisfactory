@@ -43,19 +43,60 @@ extension SHStorageService {
             staticStorage[keyPath: keyPath]
         }
         
-        func changePartPinStatus(_ partID: String) {
-            if _pins.value.partIDs.contains(partID) {
-                _pins.value.partIDs.remove(partID)
-            } else {
-                _pins.value.partIDs.insert(partID)
+        func changePinStatus(partID: String, productionType: ProductionType) {
+            switch productionType {
+            case .singleItem:
+                if _pins.value.singleItem.partIDs.contains(partID) {
+                    _pins.value.singleItem.partIDs.remove(partID)
+                } else {
+                    _pins.value.singleItem.partIDs.insert(partID)
+                }
+            case .fromResources:
+                if _pins.value.fromResources.partIDs.contains(partID) {
+                    _pins.value.fromResources.partIDs.remove(partID)
+                } else {
+                    _pins.value.fromResources.partIDs.insert(partID)
+                }
+            case .power:
+                if _pins.value.power.partIDs.contains(partID) {
+                    _pins.value.power.partIDs.remove(partID)
+                } else {
+                    _pins.value.power.partIDs.insert(partID)
+                }
             }
         }
         
-        func changeEquipmentPinStatus(_ equipmentID: String) {
-            if _pins.value.equipmentIDs.contains(equipmentID) {
-                _pins.value.equipmentIDs.remove(equipmentID)
-            } else {
-                _pins.value.equipmentIDs.insert(equipmentID)
+        func changePinStatus(equipmentID: String, productionType: ProductionType) {
+            switch productionType {
+            case .singleItem:
+                if _pins.value.singleItem.equipmentIDs.contains(equipmentID) {
+                    _pins.value.singleItem.equipmentIDs.remove(equipmentID)
+                } else {
+                    _pins.value.singleItem.equipmentIDs.insert(equipmentID)
+                }
+            case .fromResources:
+                if _pins.value.fromResources.equipmentIDs.contains(equipmentID) {
+                    _pins.value.fromResources.equipmentIDs.remove(equipmentID)
+                } else {
+                    _pins.value.fromResources.equipmentIDs.insert(equipmentID)
+                }
+            case .power:
+                break
+            }
+        }
+        
+        func changePinStatus(buildingID: String, productionType: ProductionType) {
+            switch productionType {
+            case .singleItem:
+                break
+            case .fromResources:
+                break
+            case .power:
+                if _pins.value.power.buildingIDs.contains(buildingID) {
+                    _pins.value.power.buildingIDs.remove(buildingID)
+                } else {
+                    _pins.value.power.buildingIDs.insert(buildingID)
+                }
             }
         }
         

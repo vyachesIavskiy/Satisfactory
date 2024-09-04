@@ -1,4 +1,5 @@
 import SwiftUI
+import SHSharedUI
 import SHModels
 import SHSettings
 
@@ -44,13 +45,11 @@ struct SettingsView: View {
     private var recipeSection: some View {
         Section("settings-recipes-section-name") {
             ZStack {
-                let recipeViewModel = RecipeDisplayViewModel(recipe: viewModel.recipe)
-                
-                RecipeDisplayView(viewModel: recipeViewModel)
+                RecipeView(viewModel.recipe)
                     .showIngredientNames(true)
                     .hidden()
                 
-                RecipeDisplayView(viewModel: recipeViewModel)
+                RecipeView(viewModel.recipe)
             }
             
             VStack(alignment: .leading, spacing: 8) {

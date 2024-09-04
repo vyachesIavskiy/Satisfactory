@@ -24,58 +24,142 @@ final class V2: VersionedStorage {
     }
     
     func load() throws {
-        logger.info("V2: Loading.")
-        
         configuration = try persistence.loadOne(Configuration.Persistent.V2.self, fromFile: .configuration)
         pins.value = try persistence.loadOne(Pins.Persistent.V2.self, fromFile: .pins)
         productions.value = try persistence.loadMany(Production.Persistent.V2.self, fromDirectory: .productions)
         factories.value = try persistence.loadMany(Factory.Persistent.V2.self, fromDirectory: .factories)
         
-        logger.info("V2: loaded.")
+        logger.info("loaded.")
     }
     
     func save() throws {
-        logger.info("V2: Saving.")
-        
         try persistence.save(configuration, toFile: .configuration)
         try persistence.save(pins.value, toFile: .pins)
         try persistence.save(productions.value, toDirectory: .productions)
         try persistence.save(factories.value, toDirectory: .factories)
         
-        logger.info("V2: Saved.")
+        logger.info("Saved.")
     }
     
-    func isPartPinned(_ partID: String) -> Bool {
-        pins.value.partIDs.contains(partID)
+    func isPartPinned(_ partID: String, productionType: ProductionType) -> Bool {
+        let pins = switch productionType {
+        case .singleItem: pins.value.singleItemPartIDs
+        case .fromResources: pins.value.fromResourcesPartIDs
+        case .power: pins.value.powerPartIDs
+        }
+        
+        return pins.contains(partID)
     }
     
-    func isEquipmentPinned(_ equipmentID: String) -> Bool {
-        pins.value.equipmentIDs.contains(equipmentID)
+    func isEquipmentPinned(_ equipmentID: String, productionType: ProductionType) -> Bool {
+        switch productionType {
+        case .singleItem: return pins.value.singleItemEquipmentIDs.contains(equipmentID)
+        case .fromResources: return pins.value.fromResourcesEquipmentIDs.contains(equipmentID)
+        case .power:
+            logger.error("Checking for pined equipment in Power production mode.")
+            return false
+            
+        }
+    }
+    
+    func isBuildingPinned(_ buildingID: String, productionType: ProductionType) -> Bool {
+        switch productionType {
+        case .singleItem:
+            logger.error("Checking for pined building in Single Item production mode.")
+            return false
+        
+        case .fromResources:
+            logger.error("Checking for pined building in From Resources production mode.")
+            return false
+        
+        case .power:
+            return pins.value.powerBuildingIDs.contains(buildingID)
+        }
     }
     
     func isRecipePinned(_ recipeID: String) -> Bool {
         pins.value.recipeIDs.contains(recipeID)
     }
     
-    func changePartPinStatus(_ partID: String) throws {
-        if isPartPinned(partID) {
-            logger.debug("V2: Unpinning '\(partID)'.")
-            pins.value.partIDs.remove(partID)
-        } else {
-            logger.debug("V2: Pinning '\(partID)'.")
-            pins.value.partIDs.insert(partID)
+    func changePartPinStatus(_ partID: String, productionType: ProductionType) throws {
+        let pinned = isPartPinned(partID, productionType: productionType)
+        switch productionType {
+        case .singleItem:
+            if pinned {
+                pins.value.singleItemPartIDs.remove(partID)
+                logger.info("Unpinned '\(partID)' for Single Item production mode.")
+            } else {
+                pins.value.singleItemPartIDs.insert(partID)
+                logger.info("Pinned '\(partID)' for Single Item production mode.")
+            }
+            
+        case .fromResources:
+            if pinned {
+                pins.value.fromResourcesPartIDs.remove(partID)
+                logger.info("Unpinned '\(partID)' for From Resources production mode.")
+            } else {
+                pins.value.fromResourcesPartIDs.insert(partID)
+                logger.info("Pinned '\(partID)' for From Resources production mode.")
+            }
+            
+        case .power:
+            if pinned {
+                pins.value.powerPartIDs.remove(partID)
+                logger.info("Unpinned '\(partID)' for Power production mode.")
+            } else {
+                pins.value.powerPartIDs.insert(partID)
+                logger.info("Pinned '\(partID)' for Power production mode.")
+            }
         }
         
         try savePins()
     }
     
-    func changeEquipmentPinStatus(_ equipmentID: String) throws {
-        if isEquipmentPinned(equipmentID) {
-            logger.debug("V2: Unpinning '\(equipmentID)'.")
-            pins.value.equipmentIDs.remove(equipmentID)
-        } else {
-            logger.debug("V2: Pinning '\(equipmentID)'.")
-            pins.value.equipmentIDs.insert(equipmentID)
+    func changeEquipmentPinStatus(_ equipmentID: String, productionType: ProductionType) throws {
+        let pinned = isEquipmentPinned(equipmentID, productionType: productionType)
+        switch productionType {
+        case .singleItem:
+            if pinned {
+                pins.value.singleItemEquipmentIDs.remove(equipmentID)
+                logger.info("Unpinned '\(equipmentID)' for Single Item production mode.")
+            } else {
+                pins.value.singleItemEquipmentIDs.insert(equipmentID)
+                logger.info("Pinned '\(equipmentID)' for Single Item production mode.")
+            }
+            
+        case .fromResources:
+            if pinned {
+                pins.value.fromResourcesEquipmentIDs.remove(equipmentID)
+                logger.info("Unpinned '\(equipmentID)' for From Resources production mode.")
+            } else {
+                pins.value.fromResourcesEquipmentIDs.insert(equipmentID)
+                logger.info("Pinned '\(equipmentID)' for From Resources production mode.")
+            }
+            
+        case .power:
+            logger.error("Tried to pin/unpin equipment in Power production mode.")
+        }
+        
+        try savePins()
+    }
+    
+    func changeBuildingPinStatus(_ buildingID: String, productionType: ProductionType) throws {
+        let pinned = isBuildingPinned(buildingID, productionType: productionType)
+        switch productionType {
+        case .singleItem:
+            logger.error("Tried to pin/unpin building in Single Item production mode.")
+            
+        case .fromResources:
+            logger.error("Tried to pin/unpin building in From Resources production mode.")
+            
+        case .power:
+            if pinned {
+                pins.value.powerBuildingIDs.remove(buildingID)
+                logger.info("Unpinned '\(buildingID)' for Power production mode.")
+            } else {
+                pins.value.powerBuildingIDs.insert(buildingID)
+                logger.info("Pinned '\(buildingID)' for Power production mode.")
+            }
         }
         
         try savePins()
@@ -83,18 +167,17 @@ final class V2: VersionedStorage {
     
     func changeRecipePinStatus(_ recipeID: String) throws {
         if isRecipePinned(recipeID) {
-            logger.debug("V2: Unpinning '\(recipeID)'.")
             pins.value.recipeIDs.remove(recipeID)
+            logger.info("Unpinned '\(recipeID)'.")
         } else {
-            logger.debug("V2: Pinning '\(recipeID)'.")
             pins.value.recipeIDs.insert(recipeID)
+            logger.info("Pinned '\(recipeID)'.")
         }
         
         try savePins()
     }
     
     func savePins() throws {
-        logger.info("V2: Saving pins.")
         try persistence.createHomeDirectoryIfNeeded()
         
         try persistence.save(pins.value, toFile: .pins)
@@ -102,8 +185,6 @@ final class V2: VersionedStorage {
     }
     
     func saveInitial() throws {
-        logger.info("V2: Saving initial data.")
-        
         configuration = Configuration.Persistent.V2(version: 1)
         
         try persistence.save(configuration, toFile: .configuration)
@@ -195,8 +276,8 @@ final class V2: VersionedStorage {
         let favoriteRecipes = legacy.recipes.filter(\.isFavorite)
         
         pins.value = Pins.Persistent.V2(
-            partIDs: Set(favoriteParts.map(\.id)),
-            equipmentIDs: Set(favoriteEquipment.map(\.id)),
+            singleItemPartIDs: Set(favoriteParts.map(\.id)),
+            singleItemEquipmentIDs: Set(favoriteEquipment.map(\.id)),
             recipeIDs: Set(favoriteRecipes.map(\.id))
         )
         
@@ -265,19 +346,19 @@ private extension V2 {
     func migratePinIDs(migration: Migration) {
         var migratedPins = pins.value
         
-        for partID in migratedPins.partIDs {
+        for partID in migratedPins.singleItemPartIDs {
             guard let migrationIndex = migration.partIDs.firstIndex(oldID: partID) else { continue }
             
             let newPartID = migration.partIDs[migrationIndex].newID
-            migratedPins.partIDs.replace(partID, to: newPartID)
+            migratedPins.singleItemPartIDs.replace(partID, to: newPartID)
             logger.debug("V2: '\(partID)' changed to '\(newPartID)'")
         }
         
-        for equipmentID in migratedPins.equipmentIDs {
+        for equipmentID in migratedPins.singleItemEquipmentIDs {
             guard let migrationIndex = migration.equipmentIDs.firstIndex(oldID: equipmentID) else { continue }
             
             let newEquipmentID = migration.equipmentIDs[migrationIndex].newID
-            migratedPins.equipmentIDs.replace(equipmentID, to: newEquipmentID)
+            migratedPins.singleItemEquipmentIDs.replace(equipmentID, to: newEquipmentID)
             logger.debug("V2: '\(equipmentID)' changed to '\(newEquipmentID)'")
         }
         

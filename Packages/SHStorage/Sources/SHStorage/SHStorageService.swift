@@ -50,10 +50,13 @@ public struct SHStorageService: Sendable {
     var extractions: @Sendable () -> [Extraction]
     
     /// Changes pin status for a provided part ID.
-    var changePartPinStatus: @Sendable (_ partID: String) -> Void
+    var changePartPinStatus: @Sendable (_ partID: String, _ productionType: ProductionType) -> Void
     
     /// Changes pin status for a provided equipment iD.
-    var changeEquipmentPinStatus: @Sendable (_ equipmentID: String) -> Void
+    var changeEquipmentPinStatus: @Sendable (_ equipmentID: String, _ productionType: ProductionType) -> Void
+    
+    /// Changes pin status for a provided building iD.
+    var changeBuildingPinStatus: @Sendable (_ buildingID: String, _ productionType: ProductionType) -> Void
     
     /// /// Changes pin status for a provided recpe iD.
     var changeRecipePinStatus: @Sendable (_ recipeID: String) -> Void
@@ -149,19 +152,44 @@ public extension SHStorageService {
     }
     
     // MARK: Pins
-    /// Fetch all pinned part IDs.
-    var pinnedPartIDs: Set<String> {
-        pins().partIDs
+    /// Fetch Single Item pinned part IDs.
+    var pinnedSingleItemPartIDs: Set<String> {
+        pins().singleItem.partIDs
     }
     
-    /// Fetch all pinned equipment IDs.
-    var pinnedEquipmentIDs: Set<String> {
-        pins().equipmentIDs
+    /// Fetch Single Item pinned equipment IDs.
+    var pinnedSingleItemEquipmentIDs: Set<String> {
+        pins().singleItem.equipmentIDs
     }
     
-    /// Fetch all pinned item (part or equipment) IDs.
-    var pinnedItemIDs: Set<String> {
-        pinnedPartIDs.union(pinnedEquipmentIDs)
+    /// Fetch Single Item pinned item (part or equipment) IDs.
+    var pinnedSingleItemItemIDs: Set<String> {
+        pins().singleItem.itemIDs
+    }
+    
+    /// Fetch From Resources pinned part IDs.
+    var pinnedFromResourcesPartIDs: Set<String> {
+        pins().fromResources.partIDs
+    }
+    
+    /// Fetch From Resources pinned equipment IDs.
+    var pinnedFromResourcesEquipmentIDs: Set<String> {
+        pins().fromResources.equipmentIDs
+    }
+    
+    /// Fetch From Resources pinned item (part or equipment) IDs.
+    var pinnedFromResourcesItemIDs: Set<String> {
+        pins().fromResources.itemIDs
+    }
+    
+    /// Fetch Power pinned part IDs.
+    var pinnedPowerPartIDs: Set<String> {
+        pins().power.partIDs
+    }
+    
+    /// Fetch Power pinned building IDs.
+    var pinnedPowerBuildingIDs: Set<String> {
+        pins().power.buildingIDs
     }
     
     /// Fetch all pinned recipe IDs which has an item (part or equipment) with provided ID as a provided role.
@@ -205,21 +233,44 @@ public extension SHStorageService {
         pinnedRecipeIDs(for: item.id, as: roles)
     }
     
-    /// Stream all pinned part IDs as an AsyncStream.
-    var streamPinnedPartIDs: AsyncStream<Set<String>> {
-        streamPins().map(\.partIDs).eraseToStream()
+    /// Stream Single Item pinned part IDs as an AsyncStream.
+    var streamPinnedSingleItemPartIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.singleItem.partIDs).eraseToStream()
     }
     
-    /// Stream all pinned equipment IDs as an AsyncStream.
-    var streamPinnedEquipmentIDs: AsyncStream<Set<String>> {
-        streamPins().map(\.equipmentIDs).eraseToStream()
+    /// Stream Single Item pinned equipment IDs as an AsyncStream.
+    var streamPinnedSingleItemEquipmentIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.singleItem.equipmentIDs).eraseToStream()
     }
     
-    /// Stream all pinned item (part or equipment) IDs as an AsyncStream.
-    var streamPinnedItemIDs: AsyncStream<Set<String>> {
-        streamPins()
-            .map { $0.partIDs.union($0.equipmentIDs) }
-            .eraseToStream()
+    /// Stream Single Item pinned item (part or equipment) IDs as an AsyncStream.
+    var streamPinnedSingleItemItemIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.singleItem.itemIDs).eraseToStream()
+    }
+    
+    /// Stream From Resources pinned part IDs as an AsyncStream.
+    var streamPinnedFromResourcesPartIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.fromResources.partIDs).eraseToStream()
+    }
+    
+    /// Stream From Resources pinned equipment IDs as an AsyncStream.
+    var streamPinnedFromResourcesEquipmentIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.fromResources.equipmentIDs).eraseToStream()
+    }
+    
+    /// Stream From Resources pinned item (part or equipment) IDs as an AsyncStream.
+    var streamPinnedFromResourcesItemIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.fromResources.itemIDs).eraseToStream()
+    }
+    
+    /// Stream Power pinned part IDs as an AsyncStream.
+    var streamPinnedPowerPartIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.power.partIDs).eraseToStream()
+    }
+    
+    /// Stream Power pinned building IDs as an AsyncStream.
+    var streamPinnedPowerBuildingIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.power.buildingIDs).eraseToStream()
     }
     
     /// Stream all pinned recipe IDs which has an item (part or equipment) with provided ID as a provided role.
@@ -275,15 +326,37 @@ public extension SHStorageService {
     /// Checks if a provided part is pinned.
     /// - Parameter part: A part to check.
     /// - Returns: `true` if part is pinned. Otherwise `false`.
-    func isPinned(_ part: Part) -> Bool {
-        pins().partIDs.contains(part.id)
+    func isPinned(_ part: Part, productionType: ProductionType) -> Bool {
+        pins().isPinned(partID: part.id, productionType: productionType)
     }
     
     /// Checks if a provided equipment is pinned.
     /// - Parameter equipment: An equipment to check.
     /// - Returns: `true` if equipment is pinned. Otherwise `false`.
-    func isPinned(_ equipment: Equipment) -> Bool {
-        pins().equipmentIDs.contains(equipment.id)
+    func isPinned(_ equipment: Equipment, productionType: ProductionType) -> Bool {
+        pins().isPinned(equipmentID: equipment.id, productionType: productionType)
+    }
+    
+    /// Checks if a provided building is pinned.
+    /// - Parameter building: A building to check.
+    /// - Returns: `true` if building is pinned. Otherwise `false`.
+    func isPinned(_ building: Building, productionType: ProductionType) -> Bool {
+        pins().isPinned(buildingID: building.id, productionType: productionType)
+    }
+    
+    /// Checks if a provided item (part or equipment) is pinned.
+    /// - Parameter item: An item to check
+    /// - Returns: `true` if item is pinned. Otherwise `false`.
+    func isPinned(_ item: some Item, productionType: ProductionType) -> Bool {
+        if let part = item as? Part {
+            isPinned(part, productionType: productionType)
+        } else if let equipment = item as? Equipment {
+            isPinned(equipment, productionType: productionType)
+        } else if let building = item as? Building {
+            isPinned(building, productionType: productionType)
+        } else {
+            false
+        }
     }
     
     /// Checks if a provided recipe is pinned.
@@ -293,33 +366,42 @@ public extension SHStorageService {
         pins().recipeIDs.contains(recipe.id)
     }
     
-    /// Checks if a provided item (part or equipment) is pinned.
-    /// - Parameter item: An item to check
-    /// - Returns: `true` if item is pinned. Otherwise `false`.
-    func isPinned(_ item: some Item) -> Bool {
-        if let part = item as? Part {
-            isPinned(part)
-        } else if let equipment = item as? Equipment {
-            isPinned(equipment)
-        } else {
-            false
-        }
-    }
-    
     /// Changes a pin status for a provided part.
     ///
     /// If provded part was pinned, it will be unpinned. If provided part was not pinned, it will be pinned.
     /// - Parameter part: A part to pin/unpin.
-    func changePinStatus(for part: Part) {
-        changePartPinStatus(part.id)
+    func changePinStatus(for part: Part, productionType: ProductionType) {
+        changePartPinStatus(part.id, productionType)
     }
     
     /// Changes a pin status for a provided equipmnet.
     ///
     /// If provded equipmnet was pinned, it will be unpinned. If provided equipmnet was not pinned, it will be pinned.
     /// - Parameter part: A part to pin/unpin.
-    func changePinStatus(for equipment: Equipment) {
-        changeEquipmentPinStatus(equipment.id)
+    func changePinStatus(for equipment: Equipment, productionType: ProductionType) {
+        changeEquipmentPinStatus(equipment.id, productionType)
+    }
+    
+    /// Changes a pin status for a provided building.
+    ///
+    /// If provded building was pinned, it will be unpinned. If provided building was not pinned, it will be pinned.
+    /// - Parameter part: A part to pin/unpin.
+    func changePinStatus(for building: Building, productionType: ProductionType) {
+        changeEquipmentPinStatus(building.id, productionType)
+    }
+    
+    /// Changes a pin status for a provided item (part or equipment).
+    ///
+    /// If provded item was pinned, it will be unpinned. If provided item was not pinned, it will be pinned.
+    /// - Parameter part: A part to pin/unpin.
+    func changePinStatus(for item: any Item, productionType: ProductionType) {
+        if let part = item as? Part {
+            changePinStatus(for: part, productionType: productionType)
+        } else if let equipment = item as? Equipment {
+            changePinStatus(for: equipment, productionType: productionType)
+        } else if let building = item as? Building {
+            changePinStatus(for: building, productionType: productionType)
+        }
     }
     
     /// Changes a pin status for a provided recipe.
@@ -328,18 +410,6 @@ public extension SHStorageService {
     /// - Parameter part: A part to pin/unpin.
     func changePinStatus(for recipe: Recipe) {
         changeRecipePinStatus(recipe.id)
-    }
-    
-    /// Changes a pin status for a provided item (part or equipment).
-    ///
-    /// If provded item was pinned, it will be unpinned. If provided item was not pinned, it will be pinned.
-    /// - Parameter part: A part to pin/unpin.
-    func changePinStatus(for item: any Item) {
-        if let part = item as? Part {
-            changePinStatus(for: part)
-        } else if let equipment = item as? Equipment {
-            changePinStatus(for: equipment)
-        }
     }
     
     func factory(id: UUID) -> Factory? {

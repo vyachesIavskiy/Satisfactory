@@ -1,7 +1,10 @@
 import SwiftUI
+import SHSharedUI
 import SHModels
 import SHStorage
-import SingleItemCalculator
+import SHSingleItemCalculator
+import SHSingleItemCalculatorUI
+import SHStatistics
 
 /// What's new screen presented on a first launch of the app when it's updated.
 /// A new approach for what's new screen presents only the most recent what's new information with each update.
@@ -83,7 +86,7 @@ struct WhatsNewView: View {
                 }
                 
                 if let recipe {
-                    RecipeDisplayView(viewModel: RecipeDisplayViewModel(recipe: recipe))
+                    RecipeView(recipe)
                         .padding(.horizontal, 10)
                 }
             }
@@ -101,23 +104,9 @@ struct WhatsNewView: View {
             
             ScrollView {
                 contentBox {
-                    ProductView(
-                        viewModel: ProductViewModel(
-                            product: plasticOutputItem,
-                            byproductSelectionState: nil,
-                            canPerformAction: { _ in false },
-                            performAction: { _ in }
-                        )
-                    )
+                    ItemView(viewModel: ItemViewModel(item: plasticOutputItem))
                     
-                    ProductView(
-                        viewModel: ProductViewModel(
-                            product: rubberOutputItem,
-                            byproductSelectionState: nil,
-                            canPerformAction: { _ in false },
-                            performAction: { _ in }
-                        )
-                    )
+                    ItemView(viewModel: ItemViewModel(item: rubberOutputItem))
                 }
             }
             .scrollBounceBehavior(.basedOnSize)

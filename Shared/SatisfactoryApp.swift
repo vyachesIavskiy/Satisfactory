@@ -1,4 +1,5 @@
 import SwiftUI
+import SHSharedUI
 import SHStorage
 import SHModels
 
@@ -9,7 +10,7 @@ struct SatisfactoryApp: App {
             RootView()
                 .onAppear {
                     #if canImport(UIKit)
-                    UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .sh(.orange)
+                    UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = SHColor.orange.uiColor
                     #endif
                 }
             

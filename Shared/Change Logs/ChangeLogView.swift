@@ -1,4 +1,5 @@
 import SwiftUI
+import SHSharedUI
 
 struct ChangeLogView: View {
     @Environment(\.dismiss)
@@ -65,7 +66,7 @@ struct ChangeLogView: View {
                 .padding(.vertical, 8)
                 .background(.background, in: AngledRectangle(cornerRadius: 8))
             } header: {
-                SHSectionHeader(title)
+                SectionHeader(title)
             }
         }
     }

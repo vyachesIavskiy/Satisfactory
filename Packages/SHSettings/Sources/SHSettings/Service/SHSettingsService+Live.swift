@@ -2,7 +2,7 @@ import Combine
 import SHPersistence
 
 extension SHSettingsService {
-    final class Live {
+    final class Live: Sendable {
         private static let filename = "Settings"
         
         private let persistence = SHPersistence(homeDirectoryName: "Settings/V2")

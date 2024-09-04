@@ -1,4 +1,5 @@
 import SwiftUI
+import SHFactory
 
 struct TabsView: View {
     @State
@@ -6,14 +7,14 @@ struct TabsView: View {
     
     var body: some View {
         TabView(selection: $viewModel.selectedTabIndex) {
-            NewProductionView()
+            ProductionTypeSelectionView()
                 .tint(.sh(.orange))
                 .tabItem {
                     Label("tab-new-production", systemImage: "hammer")
                 }
                 .tag(0)
             
-            FactoriesView()
+            FactoryListView()
                 .tint(.sh(.orange))
                 .tabItem {
                     if viewModel.selectedTabIndex == 1 {

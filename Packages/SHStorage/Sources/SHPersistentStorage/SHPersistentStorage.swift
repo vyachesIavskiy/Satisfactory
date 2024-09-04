@@ -85,12 +85,16 @@ public final class SHPersistentStorage {
     }
     
     // MARK: IsPinned
-    public func isPartPinned(_ partID: String) -> Bool {
-        v2.isPartPinned(partID)
+    public func isPartPinned(_ partID: String, productionType: ProductionType) -> Bool {
+        v2.isPartPinned(partID, productionType: productionType)
     }
     
-    public func isEquipmentPinned(_ equipmentID: String) -> Bool {
-        v2.isEquipmentPinned(equipmentID)
+    public func isEquipmentPinned(_ equipmentID: String, productionType: ProductionType) -> Bool {
+        v2.isEquipmentPinned(equipmentID, productionType: productionType)
+    }
+    
+    public func isBuildingPinned(_ buildingID: String, productionType: ProductionType) -> Bool {
+        v2.isBuildingPinned(buildingID, productionType: productionType)
     }
     
     public func isRecipePinned(_ recipeID: String) -> Bool {
@@ -98,12 +102,16 @@ public final class SHPersistentStorage {
     }
     
     // MARK: Change pin status
-    public func changePartPinStatus(_ partID: String) throws {
-        try v2.changePartPinStatus(partID)
+    public func changePartPinStatus(_ partID: String, productionType: ProductionType) throws {
+        try v2.changePartPinStatus(partID, productionType: productionType)
     }
     
-    public func changeEquipmentPinStatus(_ equipmentID: String) throws {
-        try v2.changeEquipmentPinStatus(equipmentID)
+    public func changeEquipmentPinStatus(_ equipmentID: String, productionType: ProductionType) throws {
+        try v2.changeEquipmentPinStatus(equipmentID, productionType: productionType)
+    }
+    
+    public func changeBuildingPinStatus(_ buildingID: String, productionType: ProductionType) throws {
+        try v2.changeBuildingPinStatus(buildingID, productionType: productionType)
     }
     
     public func changeRecipePinStatus(_ recipeID: String) throws {

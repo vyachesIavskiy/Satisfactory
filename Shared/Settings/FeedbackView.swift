@@ -1,6 +1,7 @@
 import SwiftUI
 import UIKit
 import MessageUI
+import SHSharedUI
 
 struct FeedbackView: View {
     enum Result: Equatable {

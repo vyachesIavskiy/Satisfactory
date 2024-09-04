@@ -63,12 +63,16 @@ extension SHStorageService {
         }
         
         // MARK: Change pin status
-        func changePartPinStatus(_ partID: String) {
-            try? persistentStorage.changePartPinStatus(partID)
+        func changePinStatus(partID: String, productionType: ProductionType) {
+            try? persistentStorage.changePartPinStatus(partID, productionType: productionType)
         }
         
-        func changeEquipmentPinStatus(_ equipmentID: String) {
-            try? persistentStorage.changeEquipmentPinStatus(equipmentID)
+        func changePinStatus(equipmentID: String, productionType: ProductionType) {
+            try? persistentStorage.changeEquipmentPinStatus(equipmentID, productionType: productionType)
+        }
+        
+        func changePinStatus(buildingID: String, productionType: ProductionType) {
+            try? persistentStorage.changeBuildingPinStatus(buildingID, productionType: productionType)
         }
         
         func changeRecipePinStatus(_ recipeID: String) {

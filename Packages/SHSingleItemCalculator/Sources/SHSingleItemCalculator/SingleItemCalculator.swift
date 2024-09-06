@@ -1,5 +1,5 @@
 import Foundation
-import SHStorage
+import SHDependencies
 import SHModels
 import SHUtils
 

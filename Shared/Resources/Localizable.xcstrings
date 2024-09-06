@@ -21,6 +21,9 @@
         }
       }
     },
+    "Calculation" : {
+
+    },
     "Cancel" : {
 
     },
@@ -1066,9 +1069,6 @@
         }
       }
     },
-    "From resources production view" : {
-
-    },
     "general-apply" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1131,6 +1131,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Edit"
+          }
+        }
+      }
+    },
+    "general-next" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
           }
         }
       }
@@ -1353,11 +1364,10 @@
     "Parts" : {
 
     },
-    "Power production view" : {
+    "Power" : {
 
     },
     "product-adjustment-fixed-%@-exceeds-%@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1368,7 +1378,6 @@
       }
     },
     "product-adjustment-fixed-%@-should-be-equal-to-available-%@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1379,7 +1388,6 @@
       }
     },
     "product-adjustment-fraction-%@-exceeds-%@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1402,7 +1410,6 @@
       "shouldTranslate" : false
     },
     "product-adjustment-fractions-%@-should-be-exactly-%@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

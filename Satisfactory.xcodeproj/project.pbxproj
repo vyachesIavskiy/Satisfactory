@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D301C2292C8A0B18000EDA8D /* SHFromResourcesCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D301C2282C8A0B18000EDA8D /* SHFromResourcesCalculator */; };
 		D3045CC62C52B30B00265500 /* SHUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D3045CC52C52B30B00265500 /* SHUtils */; };
 		D31F7C5A2BF7E2D900AAE5C0 /* SHSettings in Frameworks */ = {isa = PBXBuildFile; productRef = D31F7C592BF7E2D900AAE5C0 /* SHSettings */; };
-		D33EEE882C86065300E26A7C /* SHSingleItemCalculatorUI in Frameworks */ = {isa = PBXBuildFile; productRef = D33EEE872C86065300E26A7C /* SHSingleItemCalculatorUI */; };
 		D33EEE8A2C86065F00E26A7C /* SHSharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D33EEE892C86065F00E26A7C /* SHSharedUI */; };
 		D341A9EE2BDD60E500ED36F6 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D341A9ED2BDD60E500ED36F6 /* SHStorage */; };
 		D35736942C8115C600866E00 /* Calculators in Frameworks */ = {isa = PBXBuildFile; productRef = D35736932C8115C600866E00 /* Calculators */; };
@@ -27,9 +27,7 @@
 		D35737022C81162400866E00 /* SHUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D35737012C81162400866E00 /* SHUtils */; };
 		D39926882C04F537000D7308 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D39926872C04F537000D7308 /* SHDebug */; };
 		D3A84E932C6EB805005BB515 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D3A84E922C6EB805005BB515 /* SHModels */; };
-		D3BC7C3B2C8707FA00917777 /* SHStatistics in Frameworks */ = {isa = PBXBuildFile; productRef = D3BC7C3A2C8707FA00917777 /* SHStatistics */; };
 		D3BC7C3D2C870B3F00917777 /* SHSingleItemCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3BC7C3C2C870B3F00917777 /* SHSingleItemCalculator */; };
-		D3BC7C3F2C87291700917777 /* SHFactory in Frameworks */ = {isa = PBXBuildFile; productRef = D3BC7C3E2C87291700917777 /* SHFactory */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +47,7 @@
 		D357A7CD2C8336FD008A8983 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Settings/FeedbackView.swift,
+				Views/Settings/FeedbackView.swift,
 			);
 			target = 450BD19D24A6395700948B47 /* macOS */;
 		};
@@ -81,15 +79,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3BC7C3F2C87291700917777 /* SHFactory in Frameworks */,
 				D39926882C04F537000D7308 /* SHDebug in Frameworks */,
 				D33EEE8A2C86065F00E26A7C /* SHSharedUI in Frameworks */,
-				D3BC7C3B2C8707FA00917777 /* SHStatistics in Frameworks */,
 				D31F7C5A2BF7E2D900AAE5C0 /* SHSettings in Frameworks */,
 				D3A84E932C6EB805005BB515 /* SHModels in Frameworks */,
 				D341A9EE2BDD60E500ED36F6 /* SHStorage in Frameworks */,
+				D301C2292C8A0B18000EDA8D /* SHFromResourcesCalculator in Frameworks */,
 				D3BC7C3D2C870B3F00917777 /* SHSingleItemCalculator in Frameworks */,
-				D33EEE882C86065300E26A7C /* SHSingleItemCalculatorUI in Frameworks */,
 				D3045CC62C52B30B00265500 /* SHUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,11 +174,9 @@
 				D39926872C04F537000D7308 /* SHDebug */,
 				D3045CC52C52B30B00265500 /* SHUtils */,
 				D3A84E922C6EB805005BB515 /* SHModels */,
-				D33EEE872C86065300E26A7C /* SHSingleItemCalculatorUI */,
 				D33EEE892C86065F00E26A7C /* SHSharedUI */,
-				D3BC7C3A2C8707FA00917777 /* SHStatistics */,
 				D3BC7C3C2C870B3F00917777 /* SHSingleItemCalculator */,
-				D3BC7C3E2C87291700917777 /* SHFactory */,
+				D301C2282C8A0B18000EDA8D /* SHFromResourcesCalculator */,
 			);
 			productName = iOS;
 			productReference = 450BD19624A6395700948B47 /* Satisfactory.app */;
@@ -646,6 +640,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D301C2282C8A0B18000EDA8D /* SHFromResourcesCalculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHFromResourcesCalculator;
+		};
 		D3045CC52C52B30B00265500 /* SHUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHUtils;
@@ -653,10 +651,6 @@
 		D31F7C592BF7E2D900AAE5C0 /* SHSettings */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHSettings;
-		};
-		D33EEE872C86065300E26A7C /* SHSingleItemCalculatorUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHSingleItemCalculatorUI;
 		};
 		D33EEE892C86065F00E26A7C /* SHSharedUI */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -726,17 +720,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SHModels;
 		};
-		D3BC7C3A2C8707FA00917777 /* SHStatistics */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHStatistics;
-		};
 		D3BC7C3C2C870B3F00917777 /* SHSingleItemCalculator */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHSingleItemCalculator;
-		};
-		D3BC7C3E2C87291700917777 /* SHFactory */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHFactory;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

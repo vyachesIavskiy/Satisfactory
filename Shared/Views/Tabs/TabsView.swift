@@ -6,12 +6,15 @@ struct TabsView: View {
     
     var body: some View {
         TabView(selection: $viewModel.selectedTabIndex) {
-            ProductionTypeSelectionView()
-                .tint(.sh(.orange))
-                .tabItem {
-                    Label("tab-new-production", systemImage: "hammer")
-                }
-                .tag(0)
+//            ProductionTypeSelectionView()
+            NavigationStack {
+                SingleItemCalculatorItemSelectionView()
+            }
+            .tint(.sh(.orange))
+            .tabItem {
+                Label("tab-new-production", systemImage: "hammer")
+            }
+            .tag(0)
             
             FactoryListView()
                 .tint(.sh(.orange))

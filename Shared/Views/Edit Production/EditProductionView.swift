@@ -187,8 +187,11 @@ private struct _EditProductionPreview: View {
         @Dependency(\.uuid)
         var uuid
         
+        @Dependency(\.date)
+        var date
+        
         let item = storageService.item(id: itemID)!
-        let production = SingleItemProduction(id: uuid(), name: item.localizedName, item: item, amount: 0)
+        let production = SingleItemProduction(id: uuid(), name: item.localizedName, creationDate: date(), item: item, amount: 0)
         viewModel = EditProductionViewModel(.new, production: .singleItem(production))
     }
     
@@ -199,8 +202,11 @@ private struct _EditProductionPreview: View {
         @Dependency(\.uuid)
         var uuid
         
+        @Dependency(\.date)
+        var date
+        
         let item = storageService.item(id: itemID)!
-        let production = SingleItemProduction(id: uuid(), name: item.localizedName, item: item, amount: 0)
+        let production = SingleItemProduction(id: uuid(), name: item.localizedName, creationDate: date(), item: item, amount: 0)
         viewModel = EditProductionViewModel(.edit, production: .singleItem(production))
     }
     

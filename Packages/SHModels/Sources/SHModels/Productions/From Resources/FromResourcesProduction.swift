@@ -4,6 +4,7 @@ import SHDependencies
 public struct FromResourcesProduction: Identifiable, Hashable, Sendable {
     public var id: UUID
     public var name: String
+    public var creationDate: Date
     public var resources: [InputResource]
     public var inputItems: [InputItem]
     public var byproducts: [InputByproduct]
@@ -14,6 +15,7 @@ public struct FromResourcesProduction: Identifiable, Hashable, Sendable {
     public init(
         id: UUID,
         name: String,
+        creationDate: Date,
         resources: [InputResource] = [],
         inputItems: [InputItem] = [],
         byproducts: [InputByproduct] = [],
@@ -22,6 +24,7 @@ public struct FromResourcesProduction: Identifiable, Hashable, Sendable {
     ) {
         self.id = id
         self.name = name
+        self.creationDate = creationDate
         self.resources = resources
         self.inputItems = inputItems
         self.byproducts = byproducts
@@ -33,6 +36,7 @@ public struct FromResourcesProduction: Identifiable, Hashable, Sendable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.name == rhs.name &&
+        lhs.creationDate == rhs.creationDate &&
         lhs.resources == rhs.resources &&
         lhs.inputItems == rhs.inputItems &&
         lhs.byproducts == rhs.byproducts &&
@@ -44,6 +48,7 @@ public struct FromResourcesProduction: Identifiable, Hashable, Sendable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(name)
+        hasher.combine(creationDate)
         hasher.combine(resources)
         hasher.combine(inputItems)
         hasher.combine(byproducts)

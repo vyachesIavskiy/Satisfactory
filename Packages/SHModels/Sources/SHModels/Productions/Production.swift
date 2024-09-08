@@ -41,6 +41,14 @@ public enum Production: Identifiable, Hashable, Sendable {
         }
     }
     
+    public var creationDate: Date {
+        switch self {
+        case let .singleItem(production): production.creationDate
+        case let .fromResources(production): production.creationDate
+        case let .power(production): /*production.creationDate*/ Date()
+        }
+    }
+    
     public var canSelectAsset: Bool {
         switch self {
         case .singleItem: false
@@ -86,6 +94,14 @@ public enum Production: Identifiable, Hashable, Sendable {
 public extension Sequence<Production> {
     func first(id: UUID) -> Element?  {
         first { $0.id == id }
+    }
+    
+    func sortedByDate() -> [Production] {
+        sorted(using: KeyPathComparator(\.creationDate, order: .reverse))
+    }
+    
+    func sortedByName() -> [Production] {
+        sorted(using: KeyPathComparator(\.name))
     }
 }
 

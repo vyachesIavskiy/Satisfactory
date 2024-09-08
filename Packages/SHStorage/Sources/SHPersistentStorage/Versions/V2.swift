@@ -269,6 +269,9 @@ final class V2: VersionedStorage {
     }
     
     func migrate(legacy: Legacy, migration: Migration?) throws {
+        @Dependency(\.date)
+        var date
+        
         logger.info("V2: Migrating from Legacy.")
         
         logger.debug("V2: Migrating pins.")
@@ -291,6 +294,7 @@ final class V2: VersionedStorage {
                 SingleItemProduction.Persistent.V2(
                     id: $0.productionTreeRootID,
                     name: $0.name,
+                    creationDate: date(),
                     itemID: root.itemID,
                     amount: $0.amount,
                     inputItems: $0.productionChain.map {
@@ -310,9 +314,6 @@ final class V2: VersionedStorage {
                 )
             )
         }
-        
-        @Dependency(\.date)
-        var date
         
         if !productions.value.isEmpty {
             factories.value = [Factory.Persistent.V2(

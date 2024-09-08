@@ -76,6 +76,7 @@ private struct ProductionRowPreview: View {
                     SingleItemProduction(
                         id: UUID(),
                         name: "Preview production",
+                        creationDate: Date(),
                         item: item,
                         amount: amount,
                         inputItems: [],

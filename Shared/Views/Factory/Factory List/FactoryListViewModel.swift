@@ -37,6 +37,15 @@ final class FactoryListViewModel {
     private var storageService
     
     @MainActor
+    init() {
+        @Dependency(\.storageService)
+        var storageService
+        
+        factories = storageService.factories().sortedByDate()
+        buildFactoriesSection()
+    }
+    
+    @MainActor
     func observeStorage() async {
         await withTaskGroup(of: Void.self) { group in
             group.addTask { [weak self] in
@@ -46,7 +55,7 @@ final class FactoryListViewModel {
                     guard !Task.isCancelled else { break }
                     guard self.factories != factories else { continue }
                     
-                    self.factories = factories
+                    self.factories = factories.sortedByDate()
                     await buildFactoriesSection()
                 }
             }

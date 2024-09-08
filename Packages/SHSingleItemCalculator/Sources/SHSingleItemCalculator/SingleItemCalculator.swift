@@ -22,6 +22,9 @@ public final class SingleItemCalculator {
     @Dependency(\.uuid)
     var uuid
     
+    @Dependency(\.date)
+    var date
+    
     // MARK: Observed properties
     public var production: SingleItemProduction
     private var savedProduction: SingleItemProduction?
@@ -31,7 +34,10 @@ public final class SingleItemCalculator {
         @Dependency(\.uuid)
         var uuid
         
-        production = SingleItemProduction(id: uuid(), name: "", item: item, amount: 1.0)
+        @Dependency(\.date)
+        var date
+        
+        production = SingleItemProduction(id: uuid(), name: "", creationDate: date(), item: item, amount: 1.0)
     }
     
     public init(production: SingleItemProduction) {

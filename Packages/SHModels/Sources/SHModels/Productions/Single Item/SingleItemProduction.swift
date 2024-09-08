@@ -4,6 +4,7 @@ import Dependencies
 public struct SingleItemProduction: Identifiable, Hashable, Sendable {
     public var id: UUID
     public var name: String
+    public var creationDate: Date
     public var item: any Item
     public var amount: Double
     public var inputItems: [InputItem]
@@ -20,6 +21,7 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
     public init(
         id: UUID,
         name: String,
+        creationDate: Date,
         item: some Item,
         amount: Double,
         inputItems: [InputItem] = [],
@@ -28,6 +30,7 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
     ) {
         self.id = id
         self.name = name
+        self.creationDate = creationDate
         self.item = item
         self.amount = amount
         self.inputItems = inputItems
@@ -135,6 +138,7 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id &&
         lhs.name == rhs.name &&
+        lhs.creationDate == rhs.creationDate &&
         lhs.item.id == rhs.item.id &&
         lhs.amount == rhs.amount &&
         lhs.inputItems == rhs.inputItems &&
@@ -146,6 +150,7 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(name)
+        hasher.combine(creationDate)
         hasher.combine(item.id)
         hasher.combine(amount)
         hasher.combine(inputItems)

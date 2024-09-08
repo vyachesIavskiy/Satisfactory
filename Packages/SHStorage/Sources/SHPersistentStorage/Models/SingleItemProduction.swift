@@ -10,6 +10,7 @@ extension SingleItemProduction {
         self.init(
             id: v2.id,
             name: v2.name,
+            creationDate: v2.creationDate,
             item: itemProvider(v2.itemID),
             amount: v2.amount,
             inputItems: v2.inputItems.map {
@@ -55,6 +56,7 @@ extension SingleItemProduction.Persistent.V2 {
         self.init(
             id: production.id,
             name: production.name,
+            creationDate: production.creationDate,
             itemID: production.item.id,
             amount: production.amount,
             inputItems: production.inputItems.map {

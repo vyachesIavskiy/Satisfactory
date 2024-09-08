@@ -51,6 +51,7 @@ private struct _ListRowIconSingleItemProductionPreview: View {
             SingleItemProduction(
                 id: UUID(),
                 name: "",
+                creationDate: Date(),
                 item: storageService.item(id: itemID)!,
                 amount: 0
             )

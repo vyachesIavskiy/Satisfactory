@@ -19,7 +19,7 @@ extension Production {
             )
             
         case let .fromResources(fromResourcesV2):
-            .fromResources(FromResourcesProduction(id: UUID(), name: "", assetName: "", statistics: Statistics()))
+            .fromResources(FromResourcesProduction(id: UUID(), name: "", creationDate: Date(), assetName: "", statistics: Statistics()))
             
         case let .power(powerV2):
             .power(PowerProduction(id: UUID(), name: "", assetName: ""))

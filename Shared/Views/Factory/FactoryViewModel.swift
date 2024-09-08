@@ -37,7 +37,7 @@ final class FactoryViewModel {
         var storageService
         
         self.factory = factory
-        productions = storageService.produtions(inside: factory)
+        productions = storageService.produtions(inside: factory).sortedByDate()
         
         buildSection()
     }
@@ -47,7 +47,7 @@ final class FactoryViewModel {
         for await productions in storageService.streamProductions(inside: factory) {
             guard !Task.isCancelled else { break }
             
-            self.productions = productions
+            self.productions = productions.sortedByDate()
             buildSection()
         }
     }

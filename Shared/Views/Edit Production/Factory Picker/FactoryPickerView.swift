@@ -84,17 +84,9 @@ extension EditProductionView {
         @MainActor @ViewBuilder
         private func factoryRow(_ factory: Factory) -> some View {
             if selectedFactoryID == factory.id {
-                ListRow(accessory: .checkmark(.singleSelection)) {
-                    ListRowIconFactory(factory)
-                } label: {
-                    Text(factory.name)
-                }
+                ListRowFactory(factory, accessory: .checkmark(.singleSelection))
             } else {
-                ListRow {
-                    ListRowIconFactory(factory)
-                } label: {
-                    Text(factory.name)
-                }
+                ListRowFactory(factory)
             }
         }
     }

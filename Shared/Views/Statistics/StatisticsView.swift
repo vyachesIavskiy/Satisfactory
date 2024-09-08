@@ -140,7 +140,7 @@ private func singleItemPlasticProduction() -> SingleItemProduction {
     let dilutedFuelRecipe = storageService.recipe(id: "recipe-alternate-diluted-fuel")!
     let horRecipe = storageService.recipe(id: "recipe-alternate-heavy-oil-residue")!
     
-    var production = SingleItemProduction(id: UUID(), name: "Plastic", item: plastic, amount: 90)
+    var production = SingleItemProduction(id: UUID(), name: "Plastic", creationDate: Date(), item: plastic, amount: 90)
     production.statistics = Statistics(
         items: [
             StatisticItem(item: plastic, recipes: [
@@ -198,7 +198,7 @@ private func singleItemHMFProduction() -> SingleItemProduction {
     let castScrewRecipe = storageService.recipe(id: "recipe-alternate-cast-screw")!
     let ironIngotRecipe = storageService.recipe(id: "recipe-iron-ingot")!
     
-    var production = SingleItemProduction(id: UUID(), name: "Heavy Modular Frame", item: hmf, amount: 12)
+    var production = SingleItemProduction(id: UUID(), name: "Heavy Modular Frame", creationDate: Date(), item: hmf, amount: 12)
     production.statistics = Statistics(
         items: [
             StatisticItem(item: hmf, recipes: [

@@ -100,6 +100,7 @@ private struct FactoryPreview: View {
             .singleItem(SingleItemProduction(
                 id: UUID(),
                 name: $0.localizedName,
+                creationDate: Date(),
                 item: $0,
                 amount: Double(Int.random(in: 1...20)),
                 inputItems: [],

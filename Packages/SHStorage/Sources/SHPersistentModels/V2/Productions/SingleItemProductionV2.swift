@@ -6,6 +6,7 @@ extension SingleItemProduction.Persistent {
     public struct V2: Codable, Identifiable, Hashable {
         public var id: UUID
         public var name: String
+        public var creationDate: Date
         public var itemID: String
         public var amount: Double
         public var inputItems: [InputItem]
@@ -15,6 +16,7 @@ extension SingleItemProduction.Persistent {
         public init(
             id: UUID,
             name: String,
+            creationDate: Date,
             itemID: String,
             amount: Double,
             inputItems: [InputItem],
@@ -23,6 +25,7 @@ extension SingleItemProduction.Persistent {
         ) {
             self.id = id
             self.name = name
+            self.creationDate = creationDate
             self.itemID = itemID
             self.amount = amount
             self.inputItems = inputItems

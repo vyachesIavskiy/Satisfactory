@@ -305,6 +305,7 @@ private extension SingleItemCalculatorViewModel {
         modalNavigationState = .adjustItem(
             viewModel: SingleItemCalculatorItemAdjustmentViewModel(
                 item: outputItem,
+                excludeRecipesForItems: calculator.production.inputItems.map(\.item),
                 allowDeletion: outputItem.item.id != item.id
             ) { [weak self] outputItem in
                 guard let self else { return }
@@ -332,7 +333,10 @@ private extension SingleItemCalculatorViewModel {
     
     @MainActor
     func selectRecipe(for ingredient: SingleItemCalculator.OutputRecipe.InputIngredient) {
-        let viewModel = SingleItemCalculatorInitialRecipeSelectionViewModel(item: ingredient.item) { [weak self] recipe in
+        let viewModel = SingleItemCalculatorInitialRecipeSelectionViewModel(
+            item: ingredient.item,
+            excludeRecipesForItems: calculator.production.inputItems.map(\.item)
+        ) { [weak self] recipe in
             guard let self else { return }
             
             modalNavigationState = nil

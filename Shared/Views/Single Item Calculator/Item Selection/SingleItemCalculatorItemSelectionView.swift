@@ -14,7 +14,6 @@ struct SingleItemCalculatorItemSelectionView: View {
             }
         }
         .listStyle(.plain)
-//        .navigationTitle("new-production-single-item-navigation-title")
         .navigationTitle("new-production-navigation-title")
         .searchable(text: $viewModel.searchText, prompt: "general-search")
         .autocorrectionDisabled()

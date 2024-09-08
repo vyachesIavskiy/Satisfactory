@@ -28,7 +28,7 @@ final class SingleItemCalculatorInitialRecipeSelectionViewModel {
     private var storageService
     
     @MainActor
-    init(item: any Item, onRecipeSelected: (@MainActor (Recipe) -> Void)? = nil) {
+    init(item: any Item, excludeRecipesForItems excludingItems: [any Item] = [], onRecipeSelected: (@MainActor (Recipe) -> Void)? = nil) {
         @Dependency(\.storageService)
         var storageService
         
@@ -41,7 +41,10 @@ final class SingleItemCalculatorInitialRecipeSelectionViewModel {
         
         byproductRecipes = storageService
             .recipes(for: item, as: .byproduct)
-            .filter { $0.machine != nil }
+            .filter { recipe in
+                recipe.machine != nil &&
+                !excludingItems.contains { $0.id == recipe.output.item.id }
+            }
         
         pinnedRecipeIDs = storageService.pinnedRecipeIDs(for: item, as: [.output, .byproduct])
 

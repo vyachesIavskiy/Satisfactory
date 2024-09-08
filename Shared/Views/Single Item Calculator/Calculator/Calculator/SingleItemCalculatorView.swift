@@ -71,7 +71,6 @@ struct SingleItemCalculatorView: View {
     private func selectInitialRecipeView(viewModel: SingleItemCalculatorInitialRecipeSelectionViewModel) -> some View {
         NavigationStack {
             SingleItemCalculatorInitialRecipeSelectionView(viewModel: viewModel)
-                .navigationTitle(viewModel.item.localizedName)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("general-cancel") {

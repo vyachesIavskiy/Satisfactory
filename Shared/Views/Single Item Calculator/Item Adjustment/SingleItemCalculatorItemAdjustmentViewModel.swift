@@ -7,6 +7,7 @@ import SHUtils
 @Observable
 final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     let item: SingleItemCalculator.OutputItem
+    let excludingItems: [any Item]
     let allowDeletion: Bool
     private let onApply: @MainActor (SingleItemProduction.InputItem) -> Void
     
@@ -39,21 +40,11 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     }
     
     var pinnedRecipes: [Recipe] {
-        let allRecipes = storageService.recipes(for: item.item, as: [.output, .byproduct])
-        let pinnedIDs = storageService.pinnedRecipeIDs(for: item.item, as: [.output, .byproduct])
-        
-        return allRecipes.filter { recipe in
-            pinnedIDs.contains(recipe.id) && !selectedRecipes.contains { $0.recipe.id == recipe.id }
-        }
+        recipes(pinned: true)
     }
     
     var unselectedRecipes: [Recipe] {
-        let allRecipes = storageService.recipes(for: item.item, as: [.output, .byproduct])
-        let pinnedIDs = storageService.pinnedRecipeIDs(for: item.item, as: [.output, .byproduct])
-        
-        return allRecipes.filter { recipe in
-            !pinnedIDs.contains(recipe.id) && !selectedRecipes.contains { $0.recipe.id == recipe.id }
-        }
+        recipes(pinned: false)
     }
     
     var applyButtonDisabled: Bool {
@@ -66,10 +57,12 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     
     init(
         item: SingleItemCalculator.OutputItem,
+        excludeRecipesForItems excludingItems: [any Item] = [],
         allowDeletion: Bool,
         onApply: @escaping @MainActor (SingleItemProduction.InputItem) -> Void
     ) {
         self.item = item
+        self.excludingItems = excludingItems
         self.allowDeletion = allowDeletion
         let production = SingleItemCalculator(item: item.item)
         production.amount = item.amount
@@ -175,6 +168,22 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
             totalFixedAmount: recipeAmounts.2,
             availableAmount: amount
         )
+    }
+    
+    private func recipes(pinned: Bool) -> [Recipe] {
+        let outputRecipes = storageService.recipes(for: item.item, as: .output)
+        let byproductRecipes = storageService.recipes(for: item.item, as: .byproduct)
+            .filter { recipe in
+                !excludingItems.contains { $0.id == recipe.output.item.id }
+            }
+        
+        let allRecipes = outputRecipes + byproductRecipes
+        let pinnedIDs = storageService.pinnedRecipeIDs(for: item.item, as: [.output, .byproduct])
+        
+        return allRecipes.filter { recipe in
+            pinnedIDs.contains(recipe.id) == pinned &&
+            !selectedRecipes.contains { $0.recipe.id == recipe.id }
+        }
     }
 }
 

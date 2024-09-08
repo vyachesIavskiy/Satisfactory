@@ -4,7 +4,7 @@ import Observation
 @Observable
 final class TabsViewModel {
     // MARK: Observed properties
-    var selectedTabIndex = 0
+    var selectedTab = TabValue.newProduction
     var shouldPresentWhatsNew = false
     
     // MARK: Ignored properties
@@ -41,5 +41,13 @@ final class TabsViewModel {
         case .v2_0:
             "\(keyPrefix)v2-0"
         }
+    }
+}
+
+extension TabsViewModel {
+    enum TabValue {
+        case newProduction
+        case factories
+        case settings
     }
 }

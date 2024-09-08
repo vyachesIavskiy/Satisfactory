@@ -7,6 +7,9 @@ public struct SingleItemCalculatorItemView: View {
     @Environment(\.displayScale)
     private var displayScale
     
+    @Environment(\.horizontalSizeClass)
+    private var horizontalSizeClass
+    
     public init(viewModel: SingleItemCalculatorItemViewModel) {
         self.viewModel = viewModel
     }
@@ -24,7 +27,7 @@ public struct SingleItemCalculatorItemView: View {
                     if index != viewModel.item.recipes.indices.last {
                         Rectangle()
                             .fill(LinearGradient(
-                                colors: [.sh(.midnight40), .sh(.midnight10)],
+                                colors: [.sh(.midnight40), .sh(.midnight40).opacity(0.1)],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             ))
@@ -34,6 +37,10 @@ public struct SingleItemCalculatorItemView: View {
                 }
             }
         }
+        .frame(
+            maxWidth: horizontalSizeClass == .compact ? .infinity : 600,
+            alignment: .leading
+        )
     }
     
     @MainActor @ViewBuilder
@@ -107,6 +114,7 @@ public struct SingleItemCalculatorItemView: View {
             
             CalculatorRecipeView(viewModel: viewModel.outputRecipeViewModel(for: outputRecipe))
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

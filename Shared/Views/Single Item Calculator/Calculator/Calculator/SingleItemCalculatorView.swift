@@ -20,7 +20,7 @@ struct SingleItemCalculatorView: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack(alignment: .leading, spacing: 16, pinnedViews: .sectionHeaders) {
+            LazyVStack(alignment: horizontalSizeClass == .compact ? .leading : .center, spacing: 16, pinnedViews: .sectionHeaders) {
                 ForEach(Array(viewModel.outputItemViewModels.enumerated()), id: \.element.id) { index, itemViewModel in
                     SingleItemCalculatorItemView(viewModel: itemViewModel)
                     
@@ -33,18 +33,23 @@ struct SingleItemCalculatorView: View {
                             ))
                             .frame(height: 2 / displayScale)
                             .padding(.leading, 16)
+                            .frame(
+                                maxWidth: horizontalSizeClass == .compact ? .infinity : 600,
+                                alignment: .leading
+                            )
                     }
                 }
             }
             .padding(.vertical, 16)
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            AmountView(amount: $viewModel.amount, focused: $focused) {
-                viewModel.adjustNewAmount()
-                viewModel.update()
+            if horizontalSizeClass == .compact {
+                AmountView(amount: $viewModel.amount, focused: $focused) {
+                    viewModel.adjustNewAmount()
+                    viewModel.update()
+                }
+                .disabled(viewModel.selectingByproduct)
             }
-            .disabled(viewModel.selectingByproduct)
-            .transition(.move(edge: .bottom).combined(with: .offset(y: 100)))
         }
         .navigationBarBackButtonHidden(!viewModel.canBeDismissedWithoutSaving || viewModel.selectingByproduct)
         .navigationTitle(viewModel.navigationTitle)
@@ -128,6 +133,16 @@ struct SingleItemCalculatorView: View {
         } label: {
             Label("general-manage", systemImage: "wrench.and.screwdriver")
         }
+        
+        if horizontalSizeClass == .regular {
+            ToolbarItem(placement: .primaryAction) {
+                AmountView(amount: $viewModel.amount, focused: $focused) {
+                    viewModel.adjustNewAmount()
+                    viewModel.update()
+                }
+                .disabled(viewModel.selectingByproduct)
+            }
+        }
     }
     
     @MainActor @ViewBuilder
@@ -163,7 +178,10 @@ private struct AmountView: View {
     @Environment(\.isEnabled)
     private var isEnabled
     
-    var textFieldBackgroundStyle: AnyShapeStyle {
+    @Environment(\.horizontalSizeClass)
+    private var horizontalSizeClass
+    
+    private var textFieldBackgroundStyle: AnyShapeStyle {
         if isEnabled {
             AnyShapeStyle(.background)
         } else {
@@ -171,11 +189,35 @@ private struct AmountView: View {
         }
     }
     
-    var textFieldForegroundStyle: AnyShapeStyle {
+    private var textFieldForegroundStyle: AnyShapeStyle {
         if isEnabled {
             AnyShapeStyle(.primary)
         } else {
             AnyShapeStyle(.secondary)
+        }
+    }
+    
+    private var horizontalPadding: Double {
+        if horizontalSizeClass == .compact {
+            16
+        } else {
+            0
+        }
+    }
+    
+    private var verticalPadding: Double {
+        if horizontalSizeClass == .compact {
+            8
+        } else {
+            0
+        }
+    }
+    
+    private var backgroundStyle: AnyShapeStyle {
+        if horizontalSizeClass == .compact {
+            AnyShapeStyle(.background)
+        } else {
+            AnyShapeStyle(.clear)
         }
     }
     
@@ -187,9 +229,11 @@ private struct AmountView: View {
     
     var body: some View {
         HStack {
-            Text("single-item-production-calculation-amount-title")
-            
-            Spacer()
+            if horizontalSizeClass == .compact {
+                Text("single-item-production-calculation-amount-title")
+                
+                Spacer()
+            }
             
             TextField("single-item-production-calculation-amount-title", value: $amount, format: .shNumber)
                 .multilineTextAlignment(.center)
@@ -230,14 +274,16 @@ private struct AmountView: View {
             }
             .frame(minWidth: 40, alignment: .leading)
         }
-        .padding(.horizontal, 16)
-        .padding([focused ? .vertical : .top], 8)
+        .padding(.horizontal, horizontalPadding)
+        .padding([focused ? .vertical : .top], verticalPadding)
         .overlay(alignment: .top) {
-            Rectangle()
-                .foregroundStyle(.sh(.midnight))
-                .frame(height: 1 / displayScale)
+            if horizontalSizeClass == .compact {
+                Rectangle()
+                    .foregroundStyle(.sh(.midnight))
+                    .frame(height: 1 / displayScale)
+            }
         }
-        .background(.background)
+        .background(backgroundStyle)
     }
 }
 

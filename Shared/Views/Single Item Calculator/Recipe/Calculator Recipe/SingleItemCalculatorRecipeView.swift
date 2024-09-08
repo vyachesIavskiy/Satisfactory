@@ -10,9 +10,6 @@ struct CalculatorRecipeView: View {
     @Environment(\.displayScale)
     private var displayScale
     
-    @Environment(\.horizontalSizeClass)
-    private var horizontalSizeClass
-    
     var body: some View {
         RecipeLayoutView(
             outputViewModel: viewModel.outputViewModel,
@@ -34,10 +31,6 @@ struct CalculatorRecipeView: View {
             }
             .buttonStyle(.shIngredient(input.item))
         }
-        .frame(
-            maxWidth: horizontalSizeClass == .compact ? .infinity : 600,
-            alignment: horizontalSizeClass == .compact ? .leading : .center
-        )
     }
     
     @MainActor @ViewBuilder

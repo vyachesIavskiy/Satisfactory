@@ -24,7 +24,7 @@ final class SingleItemCalculatorViewModel {
     private var pins: Pins
     
     @ObservationIgnored
-    private var settings: Settings
+    private var settings: SHSettings.Settings
     
     @ObservationIgnored
     private var explicitlyDeletedItemIDs = Set<String>()

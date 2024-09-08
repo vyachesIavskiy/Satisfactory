@@ -12,7 +12,9 @@ struct ProductionTypeSelectionView: View {
                     row(productionType)
                 }
             }
+            #if os(iOS)
             .listSectionSpacing(.compact)
+            #endif
             .navigationTitle("new-production-navigation-title")
             .navigationDestination(for: ProductionType.self) { productionType in
                 switch productionType {

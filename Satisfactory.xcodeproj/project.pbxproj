@@ -12,13 +12,11 @@
 		D31F7C5A2BF7E2D900AAE5C0 /* SHSettings in Frameworks */ = {isa = PBXBuildFile; productRef = D31F7C592BF7E2D900AAE5C0 /* SHSettings */; };
 		D33EEE8A2C86065F00E26A7C /* SHSharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D33EEE892C86065F00E26A7C /* SHSharedUI */; };
 		D341A9EE2BDD60E500ED36F6 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D341A9ED2BDD60E500ED36F6 /* SHStorage */; };
-		D35736942C8115C600866E00 /* Calculators in Frameworks */ = {isa = PBXBuildFile; productRef = D35736932C8115C600866E00 /* Calculators */; };
 		D35736962C8115C600866E00 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D35736952C8115C600866E00 /* SHDebug */; };
 		D35736982C8115C600866E00 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D35736972C8115C600866E00 /* SHModels */; };
 		D357369A2C8115C600866E00 /* SHSettings in Frameworks */ = {isa = PBXBuildFile; productRef = D35736992C8115C600866E00 /* SHSettings */; };
 		D357369C2C8115C600866E00 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D357369B2C8115C600866E00 /* SHStorage */; };
 		D357369E2C8115C600866E00 /* SHUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D357369D2C8115C600866E00 /* SHUtils */; };
-		D35736F62C81162400866E00 /* Calculators in Frameworks */ = {isa = PBXBuildFile; productRef = D35736F52C81162400866E00 /* Calculators */; };
 		D35736F82C81162400866E00 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D35736F72C81162400866E00 /* SHDebug */; };
 		D35736FA2C81162400866E00 /* SHLogger in Frameworks */ = {isa = PBXBuildFile; productRef = D35736F92C81162400866E00 /* SHLogger */; };
 		D35736FC2C81162400866E00 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D35736FB2C81162400866E00 /* SHModels */; };
@@ -28,6 +26,12 @@
 		D39926882C04F537000D7308 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D39926872C04F537000D7308 /* SHDebug */; };
 		D3A84E932C6EB805005BB515 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D3A84E922C6EB805005BB515 /* SHModels */; };
 		D3BC7C3D2C870B3F00917777 /* SHSingleItemCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3BC7C3C2C870B3F00917777 /* SHSingleItemCalculator */; };
+		D3F00E7E2C8E505000277B80 /* SHFromResourcesCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E7D2C8E505000277B80 /* SHFromResourcesCalculator */; };
+		D3F00E802C8E505400277B80 /* SHSingleItemCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E7F2C8E505400277B80 /* SHSingleItemCalculator */; };
+		D3F00E822C8E505C00277B80 /* SHSharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E812C8E505C00277B80 /* SHSharedUI */; };
+		D3F00E842C8E508F00277B80 /* SHFromResourcesCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E832C8E508F00277B80 /* SHFromResourcesCalculator */; };
+		D3F00E862C8E508F00277B80 /* SHSharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E852C8E508F00277B80 /* SHSharedUI */; };
+		D3F00E882C8E508F00277B80 /* SHSingleItemCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E872C8E508F00277B80 /* SHSingleItemCalculator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,10 +99,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35737022C81162400866E00 /* SHUtils in Frameworks */,
-				D35736F62C81162400866E00 /* Calculators in Frameworks */,
+				D3F00E842C8E508F00277B80 /* SHFromResourcesCalculator in Frameworks */,
+				D3F00E862C8E508F00277B80 /* SHSharedUI in Frameworks */,
 				D35736FA2C81162400866E00 /* SHLogger in Frameworks */,
 				D35736F82C81162400866E00 /* SHDebug in Frameworks */,
 				D35737002C81162400866E00 /* SHStorage in Frameworks */,
+				D3F00E882C8E508F00277B80 /* SHSingleItemCalculator in Frameworks */,
 				D35736FC2C81162400866E00 /* SHModels in Frameworks */,
 				D35736FE2C81162400866E00 /* SHSettings in Frameworks */,
 			);
@@ -109,10 +115,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35736982C8115C600866E00 /* SHModels in Frameworks */,
-				D35736942C8115C600866E00 /* Calculators in Frameworks */,
 				D357369A2C8115C600866E00 /* SHSettings in Frameworks */,
+				D3F00E822C8E505C00277B80 /* SHSharedUI in Frameworks */,
 				D357369E2C8115C600866E00 /* SHUtils in Frameworks */,
+				D3F00E7E2C8E505000277B80 /* SHFromResourcesCalculator in Frameworks */,
 				D35736962C8115C600866E00 /* SHDebug in Frameworks */,
+				D3F00E802C8E505400277B80 /* SHSingleItemCalculator in Frameworks */,
 				D357369C2C8115C600866E00 /* SHStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,10 +660,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SHStorage;
 		};
-		D35736932C8115C600866E00 /* Calculators */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Calculators;
-		};
 		D35736952C8115C600866E00 /* SHDebug */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHDebug;
@@ -675,10 +679,6 @@
 		D357369D2C8115C600866E00 /* SHUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHUtils;
-		};
-		D35736F52C81162400866E00 /* Calculators */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Calculators;
 		};
 		D35736F72C81162400866E00 /* SHDebug */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -713,6 +713,30 @@
 			productName = SHModels;
 		};
 		D3BC7C3C2C870B3F00917777 /* SHSingleItemCalculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHSingleItemCalculator;
+		};
+		D3F00E7D2C8E505000277B80 /* SHFromResourcesCalculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHFromResourcesCalculator;
+		};
+		D3F00E7F2C8E505400277B80 /* SHSingleItemCalculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHSingleItemCalculator;
+		};
+		D3F00E812C8E505C00277B80 /* SHSharedUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHSharedUI;
+		};
+		D3F00E832C8E508F00277B80 /* SHFromResourcesCalculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHFromResourcesCalculator;
+		};
+		D3F00E852C8E508F00277B80 /* SHSharedUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHSharedUI;
+		};
+		D3F00E872C8E508F00277B80 /* SHSingleItemCalculator */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHSingleItemCalculator;
 		};

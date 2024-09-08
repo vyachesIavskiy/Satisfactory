@@ -101,6 +101,7 @@ struct SettingsView: View {
     
     @MainActor @ViewBuilder
     private var feedbackSection: some View {
+        #if canImport(UIKit)
         Section {
             Button {
                 viewModel.showFeedback = true
@@ -112,7 +113,6 @@ struct SettingsView: View {
             }
             .listRowBackground(Color.sh(.orange))
         }
-        #if canImport(UIKit)
         .sheet(isPresented: $viewModel.showFeedback) {
             FeedbackView(result: $viewModel.feedbackResult)
         }
@@ -121,6 +121,7 @@ struct SettingsView: View {
     
     @MainActor @ViewBuilder
     private var feedbackShaderView: some View {
+        #if canImport(UIKit)
         LinearGradient(
             colors: [.black.opacity(0.6), .black.opacity(0.4), .clear],
             startPoint: .bottom,
@@ -131,7 +132,6 @@ struct SettingsView: View {
         .transition(.opacity.animation(.default.speed(0.75)))
         .contentShape(Rectangle())
         .zIndex(1)
-        #if canImport(UIKit)
         .onTapGesture {
             viewModel.feedbackResult = nil
         }

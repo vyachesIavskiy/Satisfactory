@@ -35,7 +35,7 @@ struct SingleItemCalculatorInitialRecipeSelectionView: View {
             Section(isExpanded: _section.expanded) {
                 ForEach(section.recipes) { recipe in
                     recipeView(recipe)
-                        .listRowInsets(EdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20))
+                        .listRowInsets(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
                     
                     if recipe != section.recipes.last {
                         Rectangle()
@@ -102,7 +102,9 @@ private struct _SingleItemCalculatorInitialRecipeSelectionPreview: View {
     var body: some View {
         NavigationStack {
             if let item {
-                SingleItemCalculatorInitialRecipeSelectionView(viewModel: SingleItemCalculatorInitialRecipeSelectionViewModel(item: item))
+                SingleItemCalculatorInitialRecipeSelectionView(
+                    viewModel: SingleItemCalculatorInitialRecipeSelectionViewModel(item: item)
+                )
             } else {
                 Text(verbatim: "There is no item with ID '\(itemID)'")
                     .font(.largeTitle)

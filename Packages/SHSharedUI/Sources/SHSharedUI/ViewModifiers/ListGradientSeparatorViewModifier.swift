@@ -22,9 +22,9 @@ public struct ListGradientSeparatorViewModifier: ViewModifier {
     @MainActor @ViewBuilder
     private var separator: some View {
         LinearGradient(
-            colors: [.sh(.midnight40), .sh(.gray10)],
+            colors: [.sh(.midnight), .sh(.midnight30)],
             startPoint: .leading,
-            endPoint: UnitPoint(x: 0.85, y: 0.5)
+            endPoint: .trailing
         )
         .frame(height: 2 / displayScale)
         .frame(maxHeight: .infinity, alignment: .bottom)

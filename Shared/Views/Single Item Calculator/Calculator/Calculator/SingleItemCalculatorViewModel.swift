@@ -1,12 +1,25 @@
-import Foundation
-import Observation
+import SwiftUI
 import SHModels
 import SHSettings
 import SHSingleItemCalculator
 
 @Observable
 final class SingleItemCalculatorViewModel {
-    // MARK: Ignored properties
+    // MARK: Observed
+    var outputItemViewModels = [SingleItemCalculatorItemViewModel]()
+    var modalNavigationState: ModalNavigationState?
+    var showingUnsavedConfirmationDialog = false
+    var canBeDismissedWithoutSaving = true
+    var dismissAfterProductionDeletion = false
+    
+    @MainActor
+    private var byproductSelectionState: ByproductSelectionState? {
+        didSet {
+            buildOutputItemViewModels()
+        }
+    }
+    
+    // MARK: Ignored
     @ObservationIgnored
     private var pins: Pins
     
@@ -19,6 +32,8 @@ final class SingleItemCalculatorViewModel {
     @ObservationIgnored
     private var calculator: SingleItemCalculator
     
+    private let shouldDismissIfDeleted: Bool
+    
     @ObservationIgnored
     var amount: Double {
         didSet {
@@ -30,10 +45,6 @@ final class SingleItemCalculatorViewModel {
         calculator.item
     }
     
-    var hasUnsavedChanges: Bool {
-        calculator.hasUnsavedChanges
-    }
-    
     @MainActor
     var selectingByproduct: Bool {
         byproductSelectionState != nil
@@ -43,16 +54,19 @@ final class SingleItemCalculatorViewModel {
         calculator.hasSavedProduction
     }
     
-    // MARK: Observed properties
-    var outputItemViewModels = [SingleItemCalculatorItemViewModel]()
-    var modalNavigationState: ModalNavigationState?
-    var showingUnsavedConfirmationDialog = false
-    var canBeDismissedWithoutSaving = true
+    var navigationTitle: String {
+        if hasSavedProduction {
+            calculator.production.name
+        } else {
+            item.localizedName
+        }
+    }
     
-    @MainActor
-    private var byproductSelectionState: ByproductSelectionState? {
-        didSet {
-            buildOutputItemViewModels()
+    var saveProductionTitle: LocalizedStringKey {
+        if hasSavedProduction {
+            "general-edit"
+        } else {
+            "general-save"
         }
     }
     
@@ -60,21 +74,22 @@ final class SingleItemCalculatorViewModel {
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
     
+    // MARK: Init
     convenience init(item: some Item, recipe: Recipe) {
         let calculator = SingleItemCalculator(item: item)
-        self.init(calculator: calculator)
+        self.init(calculator: calculator, shouldDismissIfDeleted: false)
         
         addInitialRecipe(recipe)
     }
     
     convenience init(production: SingleItemProduction) {
         let calculator = SingleItemCalculator(production: production)
-        self.init(calculator: calculator)
+        self.init(calculator: calculator, shouldDismissIfDeleted: true)
                 
         update()
     }
     
-    private init(calculator: SingleItemCalculator) {
+    private init(calculator: SingleItemCalculator, shouldDismissIfDeleted: Bool) {
         @Dependency(\.storageService)
         var storageService
         
@@ -85,7 +100,10 @@ final class SingleItemCalculatorViewModel {
         amount = calculator.amount
         pins = storageService.pins()
         settings = settingsService.settings
+        self.shouldDismissIfDeleted = shouldDismissIfDeleted
     }
+    
+    // MARK: -
     
     func addRecipe(_ recipe: Recipe, to item: some Item) {
         calculator.addRecipe(recipe, to: item)
@@ -103,34 +121,32 @@ final class SingleItemCalculatorViewModel {
         amount = max(amount, 0.1)
     }
     
-    func saveProduction(completion: (() -> Void)? = nil) {
-        let sharedCompletion = { [weak self] in
+    func editProduction(onSave: (() -> Void)? = nil) {
+        let mode = if hasSavedProduction {
+            EditProductionViewModel.Mode.edit
+        } else {
+            EditProductionViewModel.Mode.new
+        }
+        let production = Production.singleItem(calculator.production)
+        
+        let viewModel = EditProductionViewModel(mode, production: production) { [weak self] savedProduction in
             guard let self else { return }
             
             calculator.save()
-            let production = Production.singleItem(calculator.production)
-            if let factoryID = storageService.factoryID(for: production) {
-                storageService.saveProduction(production, factoryID)
-            }
+            calculator.production.name = savedProduction.name
             canBeDismissedWithoutSaving = true
-            completion?()
+            onSave?()
+        } onDelete: { [weak self] in
+            guard let self else { return }
+            
+            if shouldDismissIfDeleted {
+                dismissAfterProductionDeletion = true
+            } else {
+                calculator.deleteSavedProduction()
+            }
         }
         
-        if calculator.hasSavedProduction {
-            // Save already saved production
-            sharedCompletion()
-        } else {
-            // Create a new production and save it
-            modalNavigationState = .editProduction(
-                viewModel: EditProductionViewModel(newProduction: .singleItem(calculator.production))
-            )
-        }
-    }
-    
-    func editProduction() {
-        modalNavigationState = .editProduction(
-            viewModel: EditProductionViewModel(editProduction: .singleItem(calculator.production))
-        )
+        modalNavigationState = .editProduction(viewModel: viewModel)
     }
     
     @MainActor
@@ -149,7 +165,11 @@ final class SingleItemCalculatorViewModel {
     }
     
     func showStatistics() {
-        modalNavigationState = .statistics(viewModel: StatisticsViewModel(production: .singleItem(calculator.production)))
+        var productionToShow = calculator.production
+        if !hasSavedProduction {
+            productionToShow.name = item.localizedName
+        }
+        modalNavigationState = .statistics(viewModel: StatisticsViewModel(production: .singleItem(productionToShow)))
     }
 }
 

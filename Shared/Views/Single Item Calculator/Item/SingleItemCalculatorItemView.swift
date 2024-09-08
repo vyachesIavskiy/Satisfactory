@@ -2,53 +2,50 @@ import SwiftUI
 import SHSingleItemCalculator
 
 public struct SingleItemCalculatorItemView: View {
+    private let viewModel: SingleItemCalculatorItemViewModel
+    
     @Environment(\.displayScale)
     private var displayScale
-    
-    private let viewModel: SingleItemCalculatorItemViewModel
     
     public init(viewModel: SingleItemCalculatorItemViewModel) {
         self.viewModel = viewModel
     }
     
     public var body: some View {
-        VStack {
-            Section {
-                ForEach(Array(viewModel.item.recipes.enumerated()), id: \.element.id) { index, outputRecipe in
-                    VStack(spacing: 8) {
-                        recipeView(outputRecipe)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                        
-                        if index != viewModel.item.recipes.indices.last {
-                            Rectangle()
-                                .fill(LinearGradient(
-                                    colors: [.sh(.midnight40), .sh(.gray10)],
-                                    startPoint: .leading,
-                                    endPoint: UnitPoint(x: 0.85, y: 0.5)
-                                ))
-                                .frame(height: 2 / displayScale)
-                                .padding(.leading, 16)
-                        }
+        VStack(spacing: 8) {
+            titleView
+                .padding(.horizontal, 16)
+            
+            ForEach(Array(viewModel.item.recipes.enumerated()), id: \.element.id) { index, outputRecipe in
+                VStack(spacing: 16) {
+                    recipeView(outputRecipe)
+                        .padding(.horizontal, 16)
+                    
+                    if index != viewModel.item.recipes.indices.last {
+                        Rectangle()
+                            .fill(LinearGradient(
+                                colors: [.sh(.midnight40), .sh(.midnight10)],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            ))
+                            .frame(height: 2 / displayScale)
+                            .padding(.leading, 16)
                     }
                 }
-            } header: {
-                titleView
-                    .padding(.horizontal, 16)
             }
         }
     }
     
     @MainActor @ViewBuilder
     private var titleView: some View {
-        HStack {
+        HStack(alignment: .firstTextBaseline) {
             if viewModel.item.recipes.count > 1 {
                 Text(viewModel.item.item.localizedName)
                     .font(.title3)
                     .foregroundStyle(.secondary)
             } else {
                 Text(viewModel.item.recipes[0].recipe.localizedName)
-                    .font(.headline)
+                    .fontWeight(.medium)
             }
             
             Spacer()
@@ -77,17 +74,16 @@ public struct SingleItemCalculatorItemView: View {
             }
         }
         .frame(minHeight: 28)
-        .padding(.vertical, 8)
         .animation(.default, value: viewModel.canAdjust)
     }
     
     @MainActor @ViewBuilder
     private func recipeView(_ outputRecipe: SingleItemCalculator.OutputRecipe) -> some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 8) {
             if viewModel.item.recipes.count > 1 {
                 HStack {
                     Text(outputRecipe.recipe.localizedName)
-                        .font(.headline)
+                        .fontWeight(.medium)
                     
                     Spacer()
                     

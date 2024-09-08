@@ -158,6 +158,10 @@ public final class SingleItemCalculator {
     public var hasUnsavedChanges: Bool {
         savedProduction != production
     }
+    
+    public func deleteSavedProduction() {
+        savedProduction = nil
+    }
 }
 
 // MARK: InternalState

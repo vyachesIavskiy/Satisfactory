@@ -149,11 +149,10 @@ import SHModels
         factory: Factory(
             id: UUID(),
             name: "Starter factory",
+            creationDate: Date(),
             asset: .assetCatalog(name: "part-iron-plate"),
             productionIDs: []
-        ),
-        onSave: { _ in },
-        onDelete: { }
+        )
     ))
 }
 #endif

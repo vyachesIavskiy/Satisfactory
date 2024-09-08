@@ -5,45 +5,36 @@ import SHStorage
 
 @Observable
 final class FactoryListViewModel {
-    // MARK: Ignored properties
-    @ObservationIgnored
-    private var factories: [Factory]
-    
-    @ObservationIgnored
-    private var productions: [Production]
-    
-    @MainActor @ObservationIgnored
-    var searchText = "" {
-        didSet {
-            buildSections()
-        }
-    }
-    
-    // MARK: Observed properties
+    // MARK: Observed
     var factoriesSection = FactoriesSection()
     var productionsSection = ProductionsSection()
     
     var factoryToEdit: Factory?
     var productionToEdit: Production?
     
+    var selectedFactory: Factory?
+    var selectedProduction: Production?
+    
     var showingNewFactoryModal = false
     
-    var navigationPath = [UUID]() // Factories ID
+    // MARK: Ignored
+    @ObservationIgnored
+    private var factories = [Factory]()
+    
+    @ObservationIgnored
+    private var productions = [Production]()
+    
+    @MainActor @ObservationIgnored
+    var searchText = "" {
+        didSet {
+            buildFactoriesSection()
+            buildProductionsSection()
+        }
+    }
     
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
-    
-    @MainActor
-    init() {
-        @Dependency(\.storageService)
-        var storageService
-        
-        self.factories = storageService.factories()
-        self.productions = storageService.productions()
-        
-        buildSections()
-    }
     
     @MainActor
     func observeStorage() async {
@@ -53,9 +44,10 @@ final class FactoryListViewModel {
                 
                 for await factories in storageService.streamFactories() {
                     guard !Task.isCancelled else { break }
+                    guard self.factories != factories else { continue }
                     
                     self.factories = factories
-                    await buildSections()
+                    await buildFactoriesSection()
                 }
             }
             
@@ -64,9 +56,10 @@ final class FactoryListViewModel {
                 
                 for await productions in storageService.streamProductions() {
                     guard !Task.isCancelled else { break }
+                    guard self.productions != productions else { continue }
                     
                     self.productions = productions
-                    await buildSections()
+                    await buildProductionsSection()
                 }
             }
         }
@@ -92,20 +85,28 @@ final class FactoryListViewModel {
 // MARK: Private
 private extension FactoryListViewModel {
     @MainActor
-    func buildSections() {
+    func buildFactoriesSection() {
         if searchText.isEmpty {
             factoriesSection.factories = factories
-            productionsSection.productions = []
         } else {
             factoriesSection.factories = factories.filter {
-                $0.name.localizedCaseInsensitiveContains(searchText)
-            }
-            productionsSection.productions = productions.filter {
                 $0.name.localizedCaseInsensitiveContains(searchText)
             }
         }
         
         factoriesSection.factories.sort(using: KeyPathComparator(\.name))
+    }
+    
+    @MainActor
+    func buildProductionsSection() {
+        if searchText.isEmpty {
+            productionsSection.productions = []
+        } else {
+            productionsSection.productions = productions.filter {
+                $0.name.localizedCaseInsensitiveContains(searchText)
+            }
+        }
+        
         productionsSection.productions.sort(using: KeyPathComparator(\.name))
     }
 }

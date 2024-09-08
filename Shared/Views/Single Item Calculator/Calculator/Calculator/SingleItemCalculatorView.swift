@@ -21,12 +21,22 @@ struct SingleItemCalculatorView: View {
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 16, pinnedViews: .sectionHeaders) {
-                ForEach(viewModel.outputItemViewModels) { viewModel in
-                    SingleItemCalculatorItemView(viewModel: viewModel)
+                ForEach(Array(viewModel.outputItemViewModels.enumerated()), id: \.element.id) { index, itemViewModel in
+                    SingleItemCalculatorItemView(viewModel: itemViewModel)
+                    
+                    if index != viewModel.outputItemViewModels.indices.last {
+                        Rectangle()
+                            .fill(LinearGradient(
+                                colors: [.sh(.midnight), .sh(.midnight30)],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            ))
+                            .frame(height: 2 / displayScale)
+                            .padding(.leading, 16)
+                    }
                 }
             }
-            .padding(.top, 8)
-            .padding(.bottom, 16)
+            .padding(.vertical, 16)
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             AmountView(amount: $viewModel.amount, focused: $focused) {
@@ -37,10 +47,7 @@ struct SingleItemCalculatorView: View {
             .transition(.move(edge: .bottom).combined(with: .offset(y: 100)))
         }
         .navigationBarBackButtonHidden(!viewModel.canBeDismissedWithoutSaving || viewModel.selectingByproduct)
-        .navigationTitle(viewModel.item.localizedName)
-        #if os(iOS)
-        .toolbarBackground(.background, for: .navigationBar)
-        #endif
+        .navigationTitle(viewModel.navigationTitle)
         .toolbar { toolbar }
         .gesture(
             DragGesture()
@@ -51,7 +58,11 @@ struct SingleItemCalculatorView: View {
                 },
             isEnabled: !viewModel.showingUnsavedConfirmationDialog && !viewModel.canBeDismissedWithoutSaving && viewModel.modalNavigationState == nil
         )
-        .sheet(item: $viewModel.modalNavigationState) { state in
+        .sheet(item: $viewModel.modalNavigationState) {
+            if viewModel.dismissAfterProductionDeletion {
+                dismiss()
+            }
+        } content: { state in
             sheetContentView(state: state)
         }
     }
@@ -91,7 +102,7 @@ struct SingleItemCalculatorView: View {
                     titleVisibility: .visible
                 ) {
                     Button("single-item-production-calculation-save-and-exit") {
-                        viewModel.saveProduction {
+                        viewModel.editProduction {
                             dismiss()
                         }
                     }
@@ -105,33 +116,18 @@ struct SingleItemCalculatorView: View {
             }
         }
         
-        ToolbarItem(placement: .primaryAction) {
-            Button("single-item-production-calculation-save", systemImage: "square.and.arrow.down") {
-                viewModel.saveProduction()
-            }
-            .disabled(viewModel.canBeDismissedWithoutSaving || viewModel.selectingByproduct)
-        }
-        
-        let placement = switch horizontalSizeClass {
-        case .compact, nil: viewModel.hasSavedProduction ? ToolbarItemPlacement.secondaryAction : ToolbarItemPlacement.primaryAction
-        case .regular: ToolbarItemPlacement.primaryAction
-        @unknown default: ToolbarItemPlacement.secondaryAction
-        }
-        
-        ToolbarItem(placement: placement) {
+        ToolbarItemGroup(placement: .primaryAction) {
             Button("single-item-production-calculation-statistics", systemImage: "list.number") {
                 viewModel.showStatistics()
             }
             .disabled(viewModel.selectingByproduct)
-        }
-        
-        if viewModel.hasSavedProduction {
-            ToolbarItem(placement: placement) {
-                Button("general-edit", systemImage: "pencil") {
-                    viewModel.editProduction()
-                }
-                .disabled(viewModel.selectingByproduct)
+            
+            Button(viewModel.saveProductionTitle) {
+                viewModel.editProduction()
             }
+            .disabled(viewModel.selectingByproduct)
+        } label: {
+            Label("general-manage", systemImage: "wrench.and.screwdriver")
         }
     }
     

@@ -44,7 +44,7 @@ private struct _ListRowIconFactoryPreview: View {
     private let factory: Factory
     
     init(asset: Asset) {
-        factory = Factory(id: UUID(), name: "Preview Factory", asset: asset, productionIDs: [])
+        factory = Factory(id: UUID(), name: "Preview Factory", creationDate: Date(), asset: asset, productionIDs: [])
     }
     
     var body: some View {

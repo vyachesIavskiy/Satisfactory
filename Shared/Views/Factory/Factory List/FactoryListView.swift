@@ -6,12 +6,8 @@ public struct FactoryListView: View {
     @State
     private var viewModel = FactoryListViewModel()
     
-    public init() {
-        self.viewModel = viewModel
-    }
-    
     public var body: some View {
-        NavigationStack(path: $viewModel.navigationPath) {
+        NavigationStack {
             ZStack {
                 if !viewModel.factoriesSection.factories.isEmpty || !viewModel.searchText.isEmpty {
                     listView
@@ -20,12 +16,11 @@ public struct FactoryListView: View {
                 }
             }
             .navigationTitle("factories-navigation-title")
-            .navigationDestination(for: UUID.self) { id in
-                if let factory = viewModel.factory(id: id) {
-                    FactoryView(viewModel: FactoryViewModel(factory: factory), navigationPath: $viewModel.navigationPath)
-                } else if let production = viewModel.production(id: id) {
-                    ProductionView(production: production)
-                }
+            .navigationDestination(item: $viewModel.selectedFactory) { factory in
+                FactoryView(viewModel: FactoryViewModel(factory: factory))
+            }
+            .navigationDestination(item: $viewModel.selectedProduction) { production in
+                ProductionView(production: production)
             }
         }
         .task {
@@ -38,7 +33,7 @@ public struct FactoryListView: View {
             EditFactoryView(viewModel: EditFactoryViewModel(factory: factory))
         }
         .sheet(item: $viewModel.productionToEdit) { production in
-            EditProductionView(viewModel: EditProductionViewModel(editProduction: production))
+            EditProductionView(viewModel: EditProductionViewModel(.edit, production: production))
         }
     }
     
@@ -104,7 +99,7 @@ public struct FactoryListView: View {
     @MainActor @ViewBuilder
     private func factoryRow(_ factory: Factory) -> some View {
         Button {
-            viewModel.navigationPath.append(factory.id)
+            viewModel.selectedFactory = factory
         } label: {
             ListRowFactory(factory, accessory: .chevron)
                 .contentShape(.interaction, Rectangle())
@@ -115,15 +110,19 @@ public struct FactoryListView: View {
             Button("factories-edit-factory", systemImage: "pencil") {
                 viewModel.factoryToEdit = factory
             }
+            
+            Button("factories-delete-factory", systemImage: "trash", role: .destructive) {
+                viewModel.deleteFactory(factory)
+            }
         }
     }
     
     @MainActor @ViewBuilder
     private func productionView(_ production: Production) -> some View {
         Button {
-            viewModel.navigationPath.append(production.id)
+            viewModel.selectedProduction = production
         } label: {
-            ListRowProduction(production, accessory: .chevron)
+            ListRowProduction(production, showFactory: true, accessory: .chevron)
                 .contentShape(.interaction, Rectangle())
         }
         .listRowBackground(Color.clear)
@@ -131,6 +130,10 @@ public struct FactoryListView: View {
         .contextMenu {
             Button("factories-edit-production", systemImage: "pencil") {
                 viewModel.productionToEdit = production
+            }
+            
+            Button("factories-delete-production", systemImage: "trash", role: .destructive) {
+                viewModel.deleteProduction(production)
             }
         }
     }
@@ -200,7 +203,29 @@ public struct FactoryListView: View {
 }
 
 #if DEBUG
+import SHStorage
+
 #Preview {
-    FactoryListView()
+    let factories = [
+        Factory(id: UUID(), name: "Factory 1", creationDate: Date(), asset: .abbreviation, productionIDs: []),
+        Factory(
+            id: UUID(),
+            name: "Factory 2",
+            creationDate: Date(),
+            asset: .assetCatalog(name: "part-iron-plate"),
+            productionIDs: [UUID()]
+        ),
+    ]
+    
+    return withDependencies {
+        $0.storageService.factories = {
+            factories
+        }
+        $0.storageService.streamFactories = {
+            AsyncStream { factories }
+        }
+    } operation: {
+        FactoryListView()
+    }
 }
 #endif

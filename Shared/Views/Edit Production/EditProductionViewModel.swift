@@ -4,18 +4,25 @@ import SHStorage
 
 @Observable
 public final class EditProductionViewModel {
-    // MARK: Observed properties
+    // MARK: Observed
     var productionName: String
     var selectedFactoryID: Factory.ID?
     var selectedAssetName: String?
-    var navigationPath = [NavigationPath]()
     
+    var showingFactoryPicker = false
     var showingDeleteConfirmation = false
     
+    // MARK: Ignored
+    private let production: Production
+    
+    @ObservationIgnored
+    private var onSave: ((Production) -> Void)?
+    
+    @ObservationIgnored
+    private var onDelete: (() -> Void)?
+    
     public var id: UUID {
-        switch mode {
-        case let .new(production), let .edit(production, _, _): production.id
-        }
+        production.id
     }
     
     var navigationTitle: LocalizedStringKey {
@@ -30,9 +37,7 @@ public final class EditProductionViewModel {
     }
     
     var canSelectAsset: Bool {
-        switch mode {
-        case let .new(production), let .edit(production, _, _): production.canSelectAsset
-        }
+        production.canSelectAsset
     }
     
     var canDeleteProduction: Bool {
@@ -52,27 +57,18 @@ public final class EditProductionViewModel {
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
-    
-    public convenience init(newProduction: Production) {
-        self.init(mode: .new(newProduction))
-    }
-    
-    public convenience init(
-        editProduction: Production,
-        onSave: ((Production) -> Void)? = nil,
-        onDelete: (() -> Void)? = nil
-    ) {
-        self.init(mode: .edit(editProduction, onSave: onSave, onDelete: onDelete))
-    }
-    
-    private init(mode: Mode) {
+
+    init(_ mode: Mode, production: Production, onSave: ((Production) -> Void)? = nil, onDelete: (() -> Void)? = nil) {
         @Dependency(\.storageService)
         var storageService
         
         self.mode = mode
+        self.production = production
+        self.onSave = onSave
+        self.onDelete = onDelete
         
         switch mode {
-        case let .new(production):
+        case .new:
             selectedAssetName = production.assetName
             
             switch production {
@@ -86,7 +82,7 @@ public final class EditProductionViewModel {
                 productionName = ""
             }
             
-        case let .edit(production, _, _):
+        case .edit:
             productionName = production.name
             selectedFactoryID = storageService.factoryID(for: production)
             selectedAssetName = production.assetName
@@ -96,18 +92,19 @@ public final class EditProductionViewModel {
     func saveProduction() {
         guard let selectedFactoryID else { return }
         
-        var newProduction = switch mode {
-        case let .new(production): production
-        case let .edit(production, _, _): production
-        }
+        var newProduction = production
         newProduction.name = productionName
+        if canSelectAsset, let selectedAssetName {
+            newProduction.assetName = selectedAssetName
+        }
         
         storageService.saveProduction(newProduction, selectedFactoryID)
+        
+        onSave?(newProduction)
     }
     
     func deleteProduction() {
-        guard case let .edit(production, _, onDelete) = mode
-        else { return }
+        guard mode == .edit else { return }
         
         storageService.deleteProduction(production)
         onDelete?()
@@ -116,13 +113,7 @@ public final class EditProductionViewModel {
 
 extension EditProductionViewModel {
     enum Mode {
-        case new(Production)
-        case edit(Production, onSave: ((Production) -> Void)?, onDelete: (() -> Void)?)
-    }
-}
-
-extension EditProductionViewModel {
-    enum NavigationPath {
-        case selectFactory
+        case new
+        case edit
     }
 }

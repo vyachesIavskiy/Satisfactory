@@ -39,6 +39,7 @@ public struct ListRowFactory: View {
             ListRowFactory(Factory(
                 id: UUID(),
                 name: "Legacy",
+                creationDate: Date(),
                 asset: .legacy,
                 productionIDs: []
             ))
@@ -46,6 +47,7 @@ public struct ListRowFactory: View {
             ListRowFactory(Factory(
                 id: UUID(),
                 name: "Abbreviated factory name",
+                creationDate: Date(),
                 asset: .abbreviation,
                 productionIDs: []
             ))
@@ -53,6 +55,7 @@ public struct ListRowFactory: View {
             ListRowFactory(Factory(
                 id: UUID(),
                 name: "Reinforced Iron Plate",
+                creationDate: Date(),
                 asset: .assetCatalog(name: "part-reinforced-iron-plate"),
                 productionIDs: []
             ))
@@ -60,6 +63,7 @@ public struct ListRowFactory: View {
             ListRowFactory(Factory(
                 id: UUID(),
                 name: "Modular Frame",
+                creationDate: Date(),
                 asset: .assetCatalog(name: "part-modular-frame"),
                 productionIDs: [UUID(), UUID()]
             ))

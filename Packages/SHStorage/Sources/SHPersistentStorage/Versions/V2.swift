@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import SHDependencies
 import SHPersistence
 import SHModels
 import SHPersistentModels
@@ -310,10 +311,14 @@ final class V2: VersionedStorage {
             )
         }
         
+        @Dependency(\.date)
+        var date
+        
         if !productions.value.isEmpty {
             factories.value = [Factory.Persistent.V2(
                 id: UUID(),
                 name: "Legacy",
+                creationDate: date(),
                 asset: .legacy,
                 productionIDs: productions.value.map(\.id)
             )]

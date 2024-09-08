@@ -428,6 +428,10 @@ public extension SHStorageService {
         factories().first { $0.productionIDs.contains(production.id) }?.id
     }
     
+    func factory(for production: Production) -> Factory? {
+        factoryID(for: production).flatMap(factory(id:))
+    }
+    
     func streamProductions(inside factory: Factory) -> AsyncStream<[Production]> {
         streamProductions()
             .map { $0.filter { factory.productionIDs.contains($0.id) } }

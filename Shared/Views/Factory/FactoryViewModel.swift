@@ -4,7 +4,16 @@ import SHStorage
 
 @Observable
 final class FactoryViewModel {
-    // MARK: Ignored properties
+    // MARK: Observed
+    var section = Section()
+    var productionToEdit: Production?
+    var selectedProduction: Production?    
+    
+    var showingStatisticsSheet = false
+    var showingEditFactorySheet = false
+    var dismissAfterFactoryDeletion = false
+    
+    // MARK: Ignored
     @ObservationIgnored
     var factory: Factory
     
@@ -17,13 +26,6 @@ final class FactoryViewModel {
             buildSection()
         }
     }
-    
-    // MARK: Observed properties
-    var section = Section()
-    var productionToEdit: Production?
-    
-    var showingStatisticsSheet = false
-    var showingEditFactorySheet = false
     
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
@@ -47,6 +49,22 @@ final class FactoryViewModel {
             
             self.productions = productions
             buildSection()
+        }
+    }
+    
+    func deleteProduction(_ production: Production) {
+        storageService.deleteProduction(production)
+    }
+    
+    func statisticsViewModel() -> StatisticsViewModel {
+        StatisticsViewModel(factory: factory)
+    }
+    
+    func editFactoryViewModel() -> EditFactoryViewModel {
+        EditFactoryViewModel(factory: factory) { [weak self] newFactory in
+            self?.factory = newFactory
+        } onDelete: { [weak self] in
+            self?.dismissAfterFactoryDeletion = true
         }
     }
 }

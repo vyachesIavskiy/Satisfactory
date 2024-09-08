@@ -8,7 +8,7 @@ struct ProductionView: View {
         ZStack {
             switch production {
             case let .singleItem(production):
-                SingleItemCalculatorView(viewModel: SingleItemCalculatorViewModel(production: production))
+                SingleItemCalculatorContainerView(production: production)
                 
             case let .fromResources(production):
                 EmptyView()

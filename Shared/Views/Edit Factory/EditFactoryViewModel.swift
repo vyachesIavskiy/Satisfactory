@@ -41,6 +41,9 @@ public final class EditFactoryViewModel {
     @ObservationIgnored @Dependency(\.uuid)
     private var uuid
     
+    @ObservationIgnored @Dependency(\.date)
+    private var date
+    
     public convenience init() {
         self.init(mode: .new)
     }
@@ -86,6 +89,7 @@ public final class EditFactoryViewModel {
             let factory = Factory(
                 id: uuid(),
                 name: factoryName,
+                creationDate: date(),
                 asset: asset,
                 productionIDs: []
             )

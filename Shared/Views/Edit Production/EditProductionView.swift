@@ -21,7 +21,7 @@ public struct EditProductionView: View {
     }
     
     public var body: some View {
-        NavigationStack(path: $viewModel.navigationPath) {
+        NavigationStack {
             VStack(spacing: 4) {
                 productionNameTextField
                 
@@ -32,11 +32,8 @@ public struct EditProductionView: View {
                 deleteButton
             }
             .navigationTitle(viewModel.navigationTitle)
-            .navigationDestination(for: EditProductionViewModel.NavigationPath.self) { path in
-                switch path {
-                case .selectFactory:
-                    FactoryPickerView(selectedFactoryID: $viewModel.selectedFactoryID)
-                }
+            .navigationDestination(isPresented: $viewModel.showingFactoryPicker) {
+                FactoryPickerView(selectedFactoryID: $viewModel.selectedFactoryID)
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -80,7 +77,8 @@ public struct EditProductionView: View {
             
             Button {
                 focused = false
-                viewModel.navigationPath.append(.selectFactory)
+//                viewModel.navigationPath.append(.selectFactory)
+                viewModel.showingFactoryPicker = true
             } label: {
                 ZStack {
                     if let factory = viewModel.selectedFactory {
@@ -191,7 +189,7 @@ private struct _EditProductionPreview: View {
         
         let item = storageService.item(id: itemID)!
         let production = SingleItemProduction(id: uuid(), name: item.localizedName, item: item, amount: 0)
-        viewModel = EditProductionViewModel(newProduction: .singleItem(production))
+        viewModel = EditProductionViewModel(.new, production: .singleItem(production))
     }
     
     init(editProductionWithItemID itemID: String) {
@@ -203,7 +201,7 @@ private struct _EditProductionPreview: View {
         
         let item = storageService.item(id: itemID)!
         let production = SingleItemProduction(id: uuid(), name: item.localizedName, item: item, amount: 0)
-        viewModel = EditProductionViewModel(editProduction: .singleItem(production))
+        viewModel = EditProductionViewModel(.edit, production: .singleItem(production))
     }
     
     var body: some View {

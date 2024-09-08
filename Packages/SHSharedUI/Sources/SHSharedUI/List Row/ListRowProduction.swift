@@ -1,13 +1,19 @@
 import SwiftUI
 import SHModels
 import SHUtils
+import SHStorage
 
 public struct ListRowProduction: View {
     private let production: Production
+    private let showFactory: Bool
     private let accessory: ListRowAccessory?
     
-    public init(_ production: Production, accessory: ListRowAccessory? = nil) {
+    @Dependency(\.storageService)
+    private var storageService
+    
+    public init(_ production: Production, showFactory: Bool, accessory: ListRowAccessory? = nil) {
         self.production = production
+        self.showFactory = showFactory
         self.accessory = accessory
     }
     
@@ -15,7 +21,15 @@ public struct ListRowProduction: View {
         ListRow {
             ListRowIconProduction(production)
         } label: {
-            Text(production.name)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(production.name)
+                
+                if showFactory, let factory = storageService.factory(for: production) {
+                    Text(factory.name)
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                }
+            }
         } accessory: {
             productionAccessory
             
@@ -68,6 +82,7 @@ private struct ProductionRowPreview: View {
                         byproducts: []
                     )
                 ),
+                showFactory: false,
                 accessory: accessory
             )
         } else {

@@ -48,6 +48,7 @@ public struct RecipeView: View {
             
             alternateIndicatorView
         }
+        .frame(minHeight: 28)
     }
     
     @MainActor @ViewBuilder

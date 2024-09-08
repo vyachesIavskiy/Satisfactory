@@ -102,9 +102,13 @@ struct WhatsNewView: View {
             
             ScrollView {
                 contentBox {
-                    SingleItemCalculatorItemView(viewModel: SingleItemCalculatorItemViewModel(item: plasticOutputItem))
+                    SingleItemCalculatorItemView(
+                        viewModel: SingleItemCalculatorItemViewModel(item: plasticOutputItem)
+                    )
                     
-                    SingleItemCalculatorItemView(viewModel: SingleItemCalculatorItemViewModel(item: rubberOutputItem))
+                    SingleItemCalculatorItemView(
+                        viewModel: SingleItemCalculatorItemViewModel(item: rubberOutputItem)
+                    )
                 }
             }
             .scrollBounceBehavior(.basedOnSize)
@@ -127,6 +131,7 @@ struct WhatsNewView: View {
                             value: "Legacy",
                             comment: ""
                         ),
+                        creationDate: Date(),
                         asset: .legacy,
                         productionIDs: [UUID(), UUID(), UUID()]
                     )
@@ -140,6 +145,7 @@ struct WhatsNewView: View {
                             value: "Starter Factory",
                             comment: ""
                         ),
+                        creationDate: Date(),
                         asset: .abbreviation,
                         productionIDs: [UUID(), UUID()]
                     )
@@ -153,6 +159,7 @@ struct WhatsNewView: View {
                             value: "Steel Factory",
                             comment: ""
                         ),
+                        creationDate: Date(),
                         asset: .assetCatalog(name: "part-encased-industrial-beam"),
                         productionIDs: [UUID(), UUID(), UUID(), UUID(), UUID()]
                     )

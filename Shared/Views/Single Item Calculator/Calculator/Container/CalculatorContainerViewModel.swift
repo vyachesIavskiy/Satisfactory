@@ -17,11 +17,15 @@ final class SingleItemCalculatorContainerViewModel {
         var storageService
         
         let recipes = storageService.recipes(for: item, as: [.output, .byproduct])
+        let pinnedRecipes = storageService.pinnedRecipeIDs(for: item, as: [.output, .byproduct])
+        
         if
             recipes.count == 1,
             let recipe = recipes.first,
             !recipe.id.contains("packaged")
         {
+            state = .calculation(viewModel: SingleItemCalculatorViewModel(item: item, recipe: recipe))
+        } else if pinnedRecipes.count == 1, let recipe = pinnedRecipes.first.flatMap(storageService.recipe(id:)) {
             state = .calculation(viewModel: SingleItemCalculatorViewModel(item: item, recipe: recipe))
         } else {
             let initialRecipeSelectionViewModel = SingleItemCalculatorInitialRecipeSelectionViewModel(item: item)

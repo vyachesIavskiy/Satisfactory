@@ -4,7 +4,7 @@ import SHUtils
 
 struct SingleItemCalculatorContainerView: View {
     @State
-    var viewModel: SingleItemCalculatorContainerViewModel
+    private var viewModel: SingleItemCalculatorContainerViewModel
     
     init(item: any Item) {
         _viewModel = State(initialValue: SingleItemCalculatorContainerViewModel(item: item))

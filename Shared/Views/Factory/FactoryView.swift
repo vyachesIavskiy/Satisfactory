@@ -6,15 +6,14 @@ struct FactoryView: View {
     @State
     private var viewModel: FactoryViewModel
     
-    @Binding
-    private var navigationPath: [UUID]
-    
     @Environment(\.dismiss)
     private var dismiss
     
-    init(viewModel: FactoryViewModel, navigationPath: Binding<[UUID]>) {
+    @Environment(\.displayScale)
+    private var displayScale
+    
+    init(viewModel: FactoryViewModel) {
         self.viewModel = viewModel
-        self._navigationPath = navigationPath
     }
     
     var body: some View {
@@ -26,31 +25,34 @@ struct FactoryView: View {
         .listStyle(.plain)
         .searchable(text: $viewModel.searchText, prompt: Text("factories-search-productions"))
         .navigationTitle(viewModel.factory.name)
+        .navigationDestination(item: $viewModel.selectedProduction) { production in
+            ProductionView(production: production)
+        }
         .toolbar {
-            ToolbarItem(placement: .primaryAction) {
+            ToolbarItemGroup(placement: .primaryAction) {
                 Button("statistics-button-name", systemImage: "list.number") {
                     viewModel.showingStatisticsSheet = true
                 }
-            }
-            
-            ToolbarItem(placement: .primaryAction) {
+                
                 Button("general-edit") {
                     viewModel.showingEditFactorySheet = true
                 }
+            } label: {
+                Label("general-more", systemImage: "ellipsis.circle")
             }
         }
         .sheet(isPresented: $viewModel.showingStatisticsSheet) {
-            StatisticsView(viewModel: StatisticsViewModel(factory: viewModel.factory))
+            StatisticsView(viewModel: viewModel.statisticsViewModel())
         }
         .sheet(isPresented: $viewModel.showingEditFactorySheet) {
-            EditFactoryView(viewModel: EditFactoryViewModel(factory: viewModel.factory) { newFactory in
-                viewModel.factory = newFactory
-            } onDelete: {
+            if viewModel.dismissAfterFactoryDeletion {
                 dismiss()
-            })
+            }
+        } content: {
+            EditFactoryView(viewModel: viewModel.editFactoryViewModel())
         }
         .sheet(item: $viewModel.productionToEdit) { production in
-            EditProductionView(viewModel: EditProductionViewModel(editProduction: production))
+            EditProductionView(viewModel: EditProductionViewModel(.edit, production: production))
         }
         .task {
             await viewModel.observeProductions()
@@ -60,15 +62,19 @@ struct FactoryView: View {
     @MainActor @ViewBuilder
     private func productionRow(_ production: Production) -> some View {
         Button {
-            navigationPath.append(production.id)
+            viewModel.selectedProduction = production
         } label: {
-            ListRowProduction(production, accessory: .chevron)
+            ListRowProduction(production, showFactory: false, accessory: .chevron)
         }
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
         .contextMenu {
             Button("factories-edit-production", systemImage: "pencil") {
                 viewModel.productionToEdit = production
+            }
+            
+            Button("factories-delete-production", systemImage: "trash", role: .destructive) {
+                viewModel.deleteProduction(production)
             }
         }
     }
@@ -117,6 +123,7 @@ private struct FactoryPreview: View {
                 factory: Factory(
                     id: UUID(),
                     name: "Preview factory",
+                    creationDate: Date(),
                     asset: .abbreviation,
                     productionIDs: productions.map(\.id)
                 )
@@ -124,11 +131,8 @@ private struct FactoryPreview: View {
         }
     }
     
-    @State
-    private var navigationPath = [UUID]()
-    
     var body: some View {
-        FactoryView(viewModel: viewModel, navigationPath: $navigationPath)
+        FactoryView(viewModel: viewModel)
     }
 }
 

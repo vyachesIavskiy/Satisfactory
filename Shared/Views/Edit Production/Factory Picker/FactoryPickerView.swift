@@ -5,29 +5,27 @@ import SHStorage
 
 extension EditProductionView {
     struct FactoryPickerView: View {
-        @Binding
-        var selectedFactoryID: UUID?
-        
         @State
-        private var showingNewFactoryModal = false
+        private var viewModel: FactoryPickerViewModel
+        
+        @Binding
+        private var selectedFactoryID: UUID?
         
         @Environment(\.displayScale)
         private var displayScale
         
-        private var factories: [Factory] {
-            @Dependency(\.storageService)
-            var storageService
-            
-            return storageService.factories()
+        init(selectedFactoryID: Binding<UUID?>) {
+            _selectedFactoryID = selectedFactoryID
+            _viewModel = State(initialValue: FactoryPickerViewModel(selectedFactoryID: selectedFactoryID.wrappedValue))
         }
         
         var body: some View {
             ZStack {
-                if factories.isEmpty {
+                if viewModel.factories.isEmpty {
                     emptyView
                 } else {
                     List {
-                        ForEach(factories) { factory in
+                        ForEach(viewModel.factories) { factory in
                             Button {
                                 withAnimation(.default.speed(2)) {
                                     selectedFactoryID = factory.id
@@ -44,14 +42,19 @@ extension EditProductionView {
                     .toolbar {
                         ToolbarItem(placement: .primaryAction) {
                             Button("factories-create-factory", systemImage: "plus.square") {
-                                showingNewFactoryModal = true
+                                viewModel.createNewFactory()
                             }
                         }
                     }
                 }
             }
+            .task {
+                await viewModel.observeFactories()
+            }
             .navigationTitle("edit-production-factory-picker-navigation-title")
-            .sheet(isPresented: $showingNewFactoryModal) {
+            .sheet(isPresented: $viewModel.showingNewFactoryModal) {
+                viewModel.selectNewlyAddedFactory()
+            } content: {
                 EditFactoryView(viewModel: EditFactoryViewModel())
             }
         }
@@ -65,7 +68,7 @@ extension EditProductionView {
                     .multilineTextAlignment(.center)
                 
                 Button {
-                    showingNewFactoryModal = true
+                    viewModel.createNewFactory()
                 } label: {
                     Text("factories-create-factory")
                         .font(.title3)

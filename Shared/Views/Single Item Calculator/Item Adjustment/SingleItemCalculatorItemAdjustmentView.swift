@@ -175,9 +175,9 @@ struct SingleItemCalculatorItemAdjustmentView: View {
     private var separator: some View {
         Rectangle()
             .fill(LinearGradient(
-                colors: [.sh(.midnight40), .sh(.gray10)],
+                colors: [.sh(.midnight60), .sh(.midnight30)],
                 startPoint: .leading,
-                endPoint: UnitPoint(x: 0.85, y: 0.5)
+                endPoint: .trailing
             ))
             .padding(.leading, 16)
             .frame(height: 2 / displayScale)

@@ -31,9 +31,9 @@ public struct RecipeIngredientView: View {
                     Text(viewModel.item.localizedName)
                         .font(.callout)
                         .multilineTextAlignment(.center)
-                        .lineLimit(2)
+                        .lineLimit(3)
                         .minimumScaleFactor(0.7)
-                        .frame(width: 100, height: 40)
+                        .frame(width: 80, height: 50)
                 }
             }
 

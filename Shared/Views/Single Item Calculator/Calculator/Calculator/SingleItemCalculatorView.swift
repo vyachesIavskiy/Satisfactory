@@ -129,6 +129,7 @@ struct SingleItemCalculatorView: View {
             Button(viewModel.saveProductionTitle) {
                 viewModel.editProduction()
             }
+            .bold()
             .disabled(viewModel.selectingByproduct)
         } label: {
             Label("general-manage", systemImage: "wrench.and.screwdriver")

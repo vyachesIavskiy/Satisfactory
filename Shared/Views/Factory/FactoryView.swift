@@ -37,6 +37,7 @@ struct FactoryView: View {
                 Button("general-edit") {
                     viewModel.showingEditFactorySheet = true
                 }
+                .bold()
             } label: {
                 Label("general-more", systemImage: "ellipsis.circle")
             }

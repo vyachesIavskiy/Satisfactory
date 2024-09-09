@@ -77,7 +77,6 @@ public struct EditProductionView: View {
             
             Button {
                 focused = false
-//                viewModel.navigationPath.append(.selectFactory)
                 viewModel.showingFactoryPicker = true
             } label: {
                 ZStack {

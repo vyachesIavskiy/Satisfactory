@@ -51,11 +51,10 @@ extension EditProductionView {
             .task {
                 await viewModel.observeFactories()
             }
+            .bind($viewModel.selectedFactoryID, $selectedFactoryID)
             .navigationTitle("edit-production-factory-picker-navigation-title")
             .sheet(isPresented: $viewModel.showingNewFactoryModal) {
-                viewModel.selectNewlyAddedFactory()
-            } content: {
-                EditFactoryView(viewModel: EditFactoryViewModel())
+                EditFactoryView(viewModel: viewModel.createFactoryViewModel())
             }
         }
         

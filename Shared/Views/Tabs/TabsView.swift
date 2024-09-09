@@ -67,15 +67,15 @@ struct TabsView: View {
             Tab("tab-new-production", systemImage: "hammer", value: .newProduction) {
                 NavigationStack {
                     SingleItemCalculatorItemSelectionView()
-                        .tint(.sh(.orange))
                 }
+                .tint(.sh(.orange))
             }
             
             Tab(value: .factories) {
                 NavigationStack {
                     FactoryListView()
-                        .tint(.sh(.orange))
                 }
+                .tint(.sh(.orange))
             } label: {
                 if viewModel.selectedTab == .factories {
                     Label("tab-factories", systemImage: "building.2.fill")
@@ -88,8 +88,8 @@ struct TabsView: View {
             Tab("tab-settings", systemImage: "gear", value: .settings) {
                 NavigationStack {
                     SettingsView()
-                        .tint(.sh(.orange))
                 }
+                .tint(.sh(.orange))
             }
         }
         .tabViewStyle(.sidebarAdaptable)

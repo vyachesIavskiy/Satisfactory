@@ -27,10 +27,10 @@ public struct FactoryListView: View {
             await viewModel.observeStorage()
         }
         .sheet(isPresented: $viewModel.showingNewFactoryModal) {
-            EditFactoryView(viewModel: EditFactoryViewModel())
+            EditFactoryView(viewModel: EditFactoryViewModel(.new))
         }
         .sheet(item: $viewModel.factoryToEdit) { factory in
-            EditFactoryView(viewModel: EditFactoryViewModel(factory: factory))
+            EditFactoryView(viewModel: EditFactoryViewModel(.edit(factory)))
         }
         .sheet(item: $viewModel.productionToEdit) { production in
             EditProductionView(viewModel: EditProductionViewModel(.edit, production: production))

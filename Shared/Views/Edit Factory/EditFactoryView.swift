@@ -141,18 +141,18 @@ public struct EditFactoryView: View {
 import SHModels
 
 #Preview("New Factory") {
-    EditFactoryView(viewModel: EditFactoryViewModel())
+    EditFactoryView(viewModel: EditFactoryViewModel(.new))
 }
 
 #Preview("Edit Factory") {
-    EditFactoryView(viewModel: EditFactoryViewModel(
-        factory: Factory(
+    EditFactoryView(viewModel: EditFactoryViewModel(.edit(
+        Factory(
             id: UUID(),
             name: "Starter factory",
             creationDate: Date(),
             asset: .assetCatalog(name: "part-iron-plate"),
             productionIDs: []
         )
-    ))
+    )))
 }
 #endif

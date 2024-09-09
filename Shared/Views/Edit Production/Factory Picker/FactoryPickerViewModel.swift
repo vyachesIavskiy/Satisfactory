@@ -25,19 +25,7 @@ final class FactoryPickerViewModel {
     @MainActor
     func observeFactories() async {
         for await factories in storageService.streamFactories() {
-            defer {
-                self.factories = factories
-            }
-            
-            guard showingNewFactoryModal else { continue }
-            
-            if self.factories.isEmpty, let newFactory = factories.last {
-                selectedFactoryID = newFactory.id
-            } else if let newFactory = factories.first(where: { factory in
-                self.factories.contains { $0.id != factory.id }
-            }) {
-                selectedFactoryID = newFactory.id
-            }
+            self.factories = factories
         }
     }
     
@@ -45,7 +33,9 @@ final class FactoryPickerViewModel {
         showingNewFactoryModal = true
     }
     
-    func selectNewlyAddedFactory() {
-        
+    func createFactoryViewModel() -> EditFactoryViewModel {
+        EditFactoryViewModel(.new) { [weak self] newFactory in
+            self?.selectedFactoryID = newFactory.id
+        }
     }
 }

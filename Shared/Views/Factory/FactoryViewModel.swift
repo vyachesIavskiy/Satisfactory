@@ -61,7 +61,7 @@ final class FactoryViewModel {
     }
     
     func editFactoryViewModel() -> EditFactoryViewModel {
-        EditFactoryViewModel(factory: factory) { [weak self] newFactory in
+        EditFactoryViewModel(.edit(factory)) { [weak self] newFactory in
             self?.factory = newFactory
         } onDelete: { [weak self] in
             self?.dismissAfterFactoryDeletion = true

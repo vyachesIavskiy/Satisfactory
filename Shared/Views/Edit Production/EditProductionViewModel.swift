@@ -13,6 +13,7 @@ public final class EditProductionViewModel {
     var showingDeleteConfirmation = false
     
     // MARK: Ignored
+    private let mode: Mode
     private let production: Production
     
     @ObservationIgnored
@@ -50,9 +51,6 @@ public final class EditProductionViewModel {
     var selectedFactory: Factory? {
         selectedFactoryID.flatMap(storageService.factory(id:))
     }
-    
-    // MARK: Ignored properties
-    let mode: Mode
     
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)

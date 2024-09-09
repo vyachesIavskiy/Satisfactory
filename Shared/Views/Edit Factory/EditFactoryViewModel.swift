@@ -4,7 +4,7 @@ import SHModels
 
 @Observable
 public final class EditFactoryViewModel {
-    // MARK: Observed properties
+    // MARK: Observed
     var factoryName: String
     var provideAssetImage: Bool {
         didSet {
@@ -13,6 +13,15 @@ public final class EditFactoryViewModel {
     }
     var selectedAssetName: String?
     var showingDeleteConfirmation = false
+    
+    // MARK: Ignored
+    private let mode: Mode
+    
+    @ObservationIgnored
+    private var onSave: ((Factory) -> Void)?
+    
+    @ObservationIgnored
+    private var onDelete: (() -> Void)?
     
     var saveDisabled: Bool {
         factoryName.isEmpty
@@ -32,8 +41,6 @@ public final class EditFactoryViewModel {
         }
     }
     
-    private let mode: Mode
-    
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
@@ -44,27 +51,17 @@ public final class EditFactoryViewModel {
     @ObservationIgnored @Dependency(\.date)
     private var date
     
-    public convenience init() {
-        self.init(mode: .new)
-    }
-    
-    public convenience init(
-        factory: Factory,
-        onSave: ((Factory) -> Void)? = nil,
-        onDelete: (() -> Void)? = nil
-    ) {
-        self.init(mode: .edit(factory, onSave: onSave, onDelete: onDelete))
-    }
-    
-    private init(mode: Mode) {
+    init(_ mode: Mode, onSave: ((Factory) -> Void)? = nil, onDelete: (() -> Void)? = nil) {
         self.mode = mode
+        self.onSave = onSave
+        self.onDelete = onDelete
         
         switch mode {
         case .new:
             factoryName = ""
             provideAssetImage = false
             
-        case let .edit(factory, _, _):
+        case let .edit(factory):
             factoryName = factory.name
             switch factory.asset {
             case .abbreviation, .legacy:
@@ -84,31 +81,29 @@ public final class EditFactoryViewModel {
             .abbreviation
         }
         
+        var newFactory: Factory
         switch mode {
         case .new:
-            let factory = Factory(
+            newFactory = Factory(
                 id: uuid(),
                 name: factoryName,
                 creationDate: date(),
                 asset: asset,
                 productionIDs: []
             )
-            
-            storageService.saveFactory(factory)
-            
-        case let .edit(factory, onSave, _):
-            var copy = factory
-            copy.name = factoryName
-            copy.asset = asset
-            
-            storageService.saveFactory(copy)
-            
-            onSave?(copy)
+        case let .edit(factory):
+            newFactory = factory
+            newFactory.name = factoryName
+            newFactory.asset = asset
         }
+        
+        storageService.saveFactory(newFactory)
+        
+        onSave?(newFactory)
     }
     
     func deleteFactory() {
-        guard case let .edit(factory, _, onDelete) = mode else { return }
+        guard case let .edit(factory) = mode else { return }
         
         storageService.deleteFactory(factory)
         onDelete?()
@@ -118,7 +113,7 @@ public final class EditFactoryViewModel {
 extension EditFactoryViewModel {
     enum Mode {
         case new
-        case edit(Factory, onSave: ((Factory) -> Void)?, onDelete: (() -> Void)?)
+        case edit(Factory)
     }
 }
 

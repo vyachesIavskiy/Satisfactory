@@ -9,13 +9,18 @@ final class FactoryListViewModel {
     var factoriesSection = FactoriesSection()
     var productionsSection = ProductionsSection()
     
-    var factoryToEdit: Factory?
-    var productionToEdit: Production?
-    
     var selectedFactory: Factory?
     var selectedProduction: Production?
     
+    var factoryToEdit: Factory?
+    var productionToEdit: Production?
+    
+    var factoryToDelete: Factory?
+    var productionToDelete: Production?
+    
     var showingNewFactoryModal = false
+    var showingDeleteFactoryConfirmation = false
+    var showingDeleteProductionConfirmation = false
     
     // MARK: Ignored
     @ObservationIgnored
@@ -80,6 +85,16 @@ final class FactoryListViewModel {
     
     func production(id productionID: UUID) -> Production? {
         storageService.production(id: productionID)
+    }
+    
+    func promptToDeleteFactory(_ factory: Factory) {
+        factoryToDelete = factory
+        showingDeleteFactoryConfirmation = true
+    }
+    
+    func promptToDeleteProduction(_ production: Production) {
+        productionToDelete = production
+        showingDeleteProductionConfirmation = true
     }
     
     func deleteFactory(_ factory: Factory) {

@@ -112,8 +112,20 @@ public struct FactoryListView: View {
             }
             
             Button("factories-delete-factory", systemImage: "trash", role: .destructive) {
+                viewModel.promptToDeleteFactory(factory)
+            }
+        }
+        .confirmationDialog(
+            "edit-factory-delete-prompt",
+            isPresented: $viewModel.showingDeleteFactoryConfirmation,
+            titleVisibility: .visible,
+            presenting: viewModel.factoryToDelete
+        ) { factory in
+            Button("general-delete", role: .destructive) {
                 viewModel.deleteFactory(factory)
             }
+        } message: { _ in
+            Text("edit-factory-delete-message")
         }
     }
     
@@ -133,6 +145,16 @@ public struct FactoryListView: View {
             }
             
             Button("factories-delete-production", systemImage: "trash", role: .destructive) {
+                viewModel.promptToDeleteProduction(production)
+            }
+        }
+        .confirmationDialog(
+            "edit-production-delete-prompt",
+            isPresented: $viewModel.showingDeleteProductionConfirmation,
+            titleVisibility: .visible,
+            presenting: viewModel.productionToDelete
+        ) { production in
+            Button("general-delete", role: .destructive) {
                 viewModel.deleteProduction(production)
             }
         }

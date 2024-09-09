@@ -1,18 +1,18 @@
 import SwiftUI
 import SHSharedUI
-import SHStorage
 import SHModels
+import SHStorage
 
 @main
 struct SatisfactoryApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                #if canImport(UIKit)
                 .onAppear {
-                    #if canImport(UIKit)
                     UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = SHColor.orange.uiColor
-                    #endif
                 }
+                #endif
             
 //            FileManagerCheckView()
         }

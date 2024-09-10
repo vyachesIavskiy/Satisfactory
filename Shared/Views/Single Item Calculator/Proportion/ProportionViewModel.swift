@@ -1,4 +1,5 @@
-import Observation
+import SwiftUI
+import TipKit
 import SHModels
 
 @Observable
@@ -28,11 +29,14 @@ final class ProportionViewModel {
     @ObservationIgnored
     private let itemAmount: Double
     
+    let proportionTip: ProportionTip?
+    
     @MainActor
     init(
         proportion: Proportion,
         recipeAmount: Double,
         itemAmount: Double,
+        showTip: Bool,
         onChange: @escaping (Proportion) -> Void
     ) {
         self.onChange = onChange
@@ -52,6 +56,11 @@ final class ProportionViewModel {
         
         fixedAmount = recipeAmount
         self.itemAmount = itemAmount
+        proportionTip = if showTip {
+            ProportionTip()
+        } else {
+            nil
+        }
     }
     
     @MainActor
@@ -75,6 +84,18 @@ final class ProportionViewModel {
             
         case .fixed:
             onChange(.fixed(fixedAmount))
+        }
+    }
+}
+
+extension ProportionViewModel {
+    struct ProportionTip: Tip {
+        var title: Text {
+            Text("single-item-production-tip-proportion-title")
+        }
+        
+        var message: Text? {
+            Text("single-item-production-tip-proportion-message")
         }
     }
 }

@@ -1,4 +1,5 @@
 import SwiftUI
+import TipKit
 import SHSharedUI
 import SHSingleItemCalculator
 import SHUtils
@@ -80,8 +81,8 @@ struct SingleItemCalculatorItemAdjustmentView: View {
     private var adjustingSection: some View {
         Section {
             if !viewModel.selectedRecipes.isEmpty {
-                sectionContent(data: viewModel.selectedRecipes) { recipe in
-                    RecipeAdjustmentView(viewModel: viewModel.recipeAdjustmentViewModel(recipe))
+                sectionContent(data: viewModel.selectedRecipes) { index, recipe in
+                    RecipeAdjustmentView(viewModel: viewModel.recipeAdjustmentViewModel(recipe: recipe, index: index))
                         .padding(.vertical, 8)
                         .padding(.horizontal, 16)
                 }
@@ -100,7 +101,9 @@ struct SingleItemCalculatorItemAdjustmentView: View {
     private var pinnedSection: some View {
         if !viewModel.pinnedRecipes.isEmpty {
             Section {
-                sectionContent(data: viewModel.pinnedRecipes) { pinnedRecipe in
+                addMoreRecipesTipView
+                
+                sectionContent(data: viewModel.pinnedRecipes) { _, pinnedRecipe in
                     Button {
                         withAnimation {
                             viewModel.addRecipe(pinnedRecipe)
@@ -128,7 +131,11 @@ struct SingleItemCalculatorItemAdjustmentView: View {
     private var unselectedSection: some View {
         if !viewModel.unselectedRecipes.isEmpty {
             Section {
-                sectionContent(data: viewModel.unselectedRecipes) { unselectedRecipe in
+                if viewModel.pinnedRecipes.isEmpty {
+                    addMoreRecipesTipView
+                }
+                
+                sectionContent(data: viewModel.unselectedRecipes) { _, unselectedRecipe in
                     Button {
                         withAnimation {
                             viewModel.addRecipe(unselectedRecipe)
@@ -155,11 +162,11 @@ struct SingleItemCalculatorItemAdjustmentView: View {
     @MainActor @ViewBuilder
     private func sectionContent<Data: Identifiable, Content: View>(
         data: [Data],
-        @ViewBuilder content: @escaping @MainActor (Data) -> Content
+        @ViewBuilder content: @escaping @MainActor (Int, Data) -> Content
     ) -> some View {
         ForEach(Array(data.enumerated()), id: \.element.id) { index, element in
             VStack(spacing: 8) {
-                content(element)
+                content(index, element)
                 
                 if index != data.indices.last {
                     separator
@@ -181,6 +188,14 @@ struct SingleItemCalculatorItemAdjustmentView: View {
             ))
             .padding(.leading, 16)
             .frame(height: 2 / displayScale)
+    }
+    
+    @ViewBuilder
+    private var addMoreRecipesTipView: some View {
+        TipView(viewModel.addMoreRecipesTip)
+            .listSectionSeparator(.hidden)
+            .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
     }
 }
 

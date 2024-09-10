@@ -1971,6 +1971,26 @@
         }
       }
     },
+    "single-item-production-tip-add-more-recipes-message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can calculate the same item with more than 1 recipe, adjusting proportions for selected recipes."
+          }
+        }
+      }
+    },
+    "single-item-production-tip-add-more-recipes-title-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add more recipes to %@"
+          }
+        }
+      }
+    },
     "single-item-production-tip-auto-select-single-pinned-recipe-message-%@" : {
       "localizations" : {
         "en" : {
@@ -2007,6 +2027,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This recipe was auto-selected"
+          }
+        }
+      }
+    },
+    "single-item-production-tip-proportion-message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After selecting 2 or more recipes for the same item, you can pick one of three proportions for each recipe."
+          }
+        }
+      }
+    },
+    "single-item-production-tip-proportion-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adjust recipe proportion"
           }
         }
       }

@@ -69,41 +69,55 @@ struct ProportionView: View {
                 .buttonStyle(.shBordered)
                 .transition(.scale.combined(with: .opacity))
             } else {
-                Menu {
-                    Picker("", selection: $viewModel.proportionDisplay) {
-                        Text("single-item-production-proportion-picker-automatically")
-                            .tag(ProportionViewModel.ProductionProportionDisplay.auto)
-                        
-                        Label("single-item-production-proportion-picker-percentage", systemImage: "percent")
-                            .tag(ProportionViewModel.ProductionProportionDisplay.fraction)
-                        
-                        Label("single-item-production-proportion-picker-fixed", systemImage: "textformat.123")
-                            .tag(ProportionViewModel.ProductionProportionDisplay.fixed)
-                    }
-                } label: {
-                    ZStack {
-                        switch viewModel.proportionDisplay {
-                        case .auto:
-                            Text("single-item-production-proportion-auto")
-                        case .fraction:
-                            Text("single-item-production-proportion-percent")
-                        case .fixed:
-                            Text("single-item-production-proportion-fixed")
-                        }
-                    }
-                    .font(.callout)
-                    .frame(minWidth: 32)
-                    .lineLimit(1)
+                if let tip = viewModel.proportionTip {
+                    menuButton
+                        .popoverTip(tip, arrowEdge: .top)
+                } else {
+                    menuButton
                 }
-                .fixedSize()
-                .menuStyle(.button)
-                .buttonStyle(.shBordered)
-                .tint(.sh(.midnight))
-                .transition(.move(edge: .trailing).combined(with: .opacity))
-                .matchedGeometryEffect(id: "proportion-menu", in: namespace)
             }
         }
         .animation(.bouncy, value: focusField)
+    }
+    
+    @ViewBuilder
+    private var menuButton: some View {
+        Menu {
+            ControlGroup {
+                Button("single-item-production-proportion-auto") {
+                    viewModel.proportionDisplay = .auto
+                }
+                
+                Button("single-item-production-proportion-percent") {
+                    viewModel.proportionDisplay = .fraction
+                }
+                
+                Button("single-item-production-proportion-fixed") {
+                    viewModel.proportionDisplay = .fixed
+                }
+            }
+            .controlGroupStyle(.compactMenu)
+        } label: {
+            ZStack {
+                switch viewModel.proportionDisplay {
+                case .auto:
+                    Text("single-item-production-proportion-auto")
+                case .fraction:
+                    Text("single-item-production-proportion-percent")
+                case .fixed:
+                    Text("single-item-production-proportion-fixed")
+                }
+            }
+            .font(.callout)
+            .frame(minWidth: 32)
+            .lineLimit(1)
+        }
+        .fixedSize()
+        .menuStyle(.button)
+        .buttonStyle(.shBordered)
+        .tint(.sh(.midnight))
+        .transition(.move(edge: .trailing).combined(with: .opacity))
+        .matchedGeometryEffect(id: "proportion-menu", in: namespace)
     }
 }
 
@@ -191,7 +205,8 @@ private struct _ProportionPreview: View {
             viewModel: ProportionViewModel(
                 proportion: proportion,
                 recipeAmount: 50,
-                itemAmount: 50
+                itemAmount: 50,
+                showTip: true
             ) {
                 proportion = $0
             }

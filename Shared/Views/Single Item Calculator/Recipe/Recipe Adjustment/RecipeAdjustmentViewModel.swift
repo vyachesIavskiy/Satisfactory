@@ -8,6 +8,7 @@ final class RecipeAdjustmentViewModel {
     let itemAmount: Double
     let allowAdjustment: Bool
     let allowDeletion: Bool
+    let showRecipeProportionTip: Bool
     let onChange: (Proportion) -> Void
     let onDelete: () -> Void
     
@@ -21,6 +22,7 @@ final class RecipeAdjustmentViewModel {
         itemAmount: Double,
         allowAdjustment: Bool,
         allowDeletion: Bool,
+        showRecipeProportionTip: Bool,
         onChange: @escaping (Proportion) -> Void,
         onDelete: @escaping () -> Void
     ) {
@@ -28,6 +30,7 @@ final class RecipeAdjustmentViewModel {
         self.itemAmount = itemAmount
         self.allowAdjustment = allowAdjustment
         self.allowDeletion = allowDeletion
+        self.showRecipeProportionTip = showRecipeProportionTip
         self.onChange = onChange
         self.onDelete = onDelete
     }
@@ -38,6 +41,7 @@ final class RecipeAdjustmentViewModel {
             proportion: recipe.proportion,
             recipeAmount: recipe.output.amount,
             itemAmount: itemAmount,
+            showTip: showRecipeProportionTip,
             onChange: onChange
         )
     }

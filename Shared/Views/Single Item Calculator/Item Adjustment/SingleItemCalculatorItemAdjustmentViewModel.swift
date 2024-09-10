@@ -1,4 +1,5 @@
 import SwiftUI
+import TipKit
 import SHModels
 import SHStorage
 import SHSingleItemCalculator
@@ -9,6 +10,7 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     let item: SingleItemCalculator.OutputItem
     let excludingItems: [any Item]
     let allowDeletion: Bool
+    let addMoreRecipesTip: AddMoreRecipesTip
     private let onApply: @MainActor (SingleItemProduction.InputItem) -> Void
     
     private(set) var production: SingleItemCalculator
@@ -64,6 +66,7 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
         self.item = item
         self.excludingItems = excludingItems
         self.allowDeletion = allowDeletion
+        self.addMoreRecipesTip = AddMoreRecipesTip(item: item.item)
         let production = SingleItemCalculator(item: item.item)
         production.amount = item.amount
         for recipe in item.recipes {
@@ -114,6 +117,7 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     
     @MainActor
     func addRecipe(_ recipe: Recipe) {
+        addMoreRecipesTip.invalidate(reason: .actionPerformed)
         production.addRecipe(recipe, to: item.item)
         update()
     }
@@ -133,12 +137,16 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     }
     
     @MainActor
-    func recipeAdjustmentViewModel(_ recipe: SingleItemCalculator.OutputRecipe) -> RecipeAdjustmentViewModel {
+    func recipeAdjustmentViewModel(
+        recipe: SingleItemCalculator.OutputRecipe,
+        index: Int
+    ) -> RecipeAdjustmentViewModel {
         RecipeAdjustmentViewModel(
             recipe: recipe,
             itemAmount: amount,
             allowAdjustment: selectedRecipes.count > 1,
-            allowDeletion: allowDeletion || selectedRecipes.count > 1
+            allowDeletion: allowDeletion || selectedRecipes.count > 1,
+            showRecipeProportionTip: index == 0
         ) { [weak self] proportion in
             self?.updateRecipe(recipe, with: proportion)
         } onDelete: { [weak self] in
@@ -253,6 +261,20 @@ extension SingleItemCalculatorItemAdjustmentViewModel {
             self.totalFractionAmount = totalFractionAmount
             self.totalFixedAmount = totalFixedAmount
             self.availableAmount = availableAmount
+        }
+    }
+}
+
+extension SingleItemCalculatorItemAdjustmentViewModel {
+    struct AddMoreRecipesTip: Tip {
+        let item: any Item
+        
+        var title: Text {
+            Text("single-item-production-tip-add-more-recipes-title-\(item.localizedName)")
+        }
+        
+        var message: Text? {
+            Text("single-item-production-tip-add-more-recipes-message")
         }
     }
 }

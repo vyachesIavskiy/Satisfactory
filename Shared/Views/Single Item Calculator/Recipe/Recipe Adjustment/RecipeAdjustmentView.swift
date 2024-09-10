@@ -109,6 +109,7 @@ private struct _RecipeAdjustmentPreview: View {
                 itemAmount: 20,
                 allowAdjustment: true,
                 allowDeletion: true,
+                showRecipeProportionTip: true,
                 onChange: { _ in },
                 onDelete: {}
             )

@@ -24,6 +24,7 @@ final class SingleItemCalculatorContainerViewModel {
             let recipe = recipes.first,
             !recipe.id.contains("packaged")
         {
+            SingleItemCalculatorViewModel.AutoSelectSingleRecipeTip.shouldDisplay = true
             state = .calculation(viewModel: SingleItemCalculatorViewModel(item: item, recipe: recipe))
         } else if pinnedRecipes.count == 1, let recipe = pinnedRecipes.first.flatMap(storageService.recipe(id:)) {
             state = .calculation(viewModel: SingleItemCalculatorViewModel(item: item, recipe: recipe))

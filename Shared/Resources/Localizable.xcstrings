@@ -1971,12 +1971,32 @@
         }
       }
     },
+    "single-item-production-tip-auto-select-single-recipe-message-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ has only one recipe so it was selected automatically. If you would like to change this behaviour, you can do this in **Settings**."
+          }
+        }
+      }
+    },
+    "single-item-production-tip-auto-select-single-recipe-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This recipe was auto-selected"
+          }
+        }
+      }
+    },
     "single-item-production-tip-select-recipe-message" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "To start production calculation you need to select a recipe from a list below"
+            "value" : "To start production calculation you need to select a recipe from a list below."
           }
         }
       }

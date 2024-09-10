@@ -103,11 +103,21 @@ struct WhatsNewView: View {
             ScrollView {
                 contentBox {
                     SingleItemCalculatorItemView(
-                        viewModel: SingleItemCalculatorItemViewModel(item: plasticOutputItem)
+                        viewModel: SingleItemCalculatorItemViewModel(
+                            item: plasticOutputItem,
+                            autoSelectSingleRecipeTip: SingleItemCalculatorViewModel.AutoSelectSingleRecipeTip(
+                                item: plasticOutputItem.item
+                            )
+                        )
                     )
                     
                     SingleItemCalculatorItemView(
-                        viewModel: SingleItemCalculatorItemViewModel(item: rubberOutputItem)
+                        viewModel: SingleItemCalculatorItemViewModel(
+                            item: rubberOutputItem,
+                            autoSelectSingleRecipeTip: SingleItemCalculatorViewModel.AutoSelectSingleRecipeTip(
+                                item: plasticOutputItem.item
+                            )
+                        )
                     )
                 }
             }

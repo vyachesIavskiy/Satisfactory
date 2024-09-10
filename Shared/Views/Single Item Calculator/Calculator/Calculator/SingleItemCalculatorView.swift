@@ -1,4 +1,5 @@
 import SwiftUI
+import TipKit
 import SHSharedUI
 import SHUtils
 
@@ -22,7 +23,13 @@ struct SingleItemCalculatorView: View {
         ScrollView {
             LazyVStack(alignment: horizontalSizeClass == .compact ? .leading : .center, spacing: 16, pinnedViews: .sectionHeaders) {
                 ForEach(Array(viewModel.outputItemViewModels.enumerated()), id: \.element.id) { index, itemViewModel in
-                    SingleItemCalculatorItemView(viewModel: itemViewModel)
+                    if index == 0 {
+                        SingleItemCalculatorItemView(viewModel: itemViewModel)
+                            .popoverTip(viewModel.autoSelectSingleRecipeTip, arrowEdge: .top)
+                            .popoverTip(viewModel.autoSelectSinglePinnedRecipeTip, arrowEdge: .top)
+                    } else {
+                        SingleItemCalculatorItemView(viewModel: itemViewModel)
+                    }
                     
                     if index != viewModel.outputItemViewModels.indices.last {
                         Rectangle()

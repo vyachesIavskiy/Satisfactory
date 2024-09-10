@@ -1971,6 +1971,26 @@
         }
       }
     },
+    "single-item-production-tip-auto-select-single-pinned-recipe-message-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ has a single pinned recipe so it was selected automatically. If you would like to change this behaviour, you can do this in **Settings**."
+          }
+        }
+      }
+    },
+    "single-item-production-tip-auto-select-single-pinned-recipe-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This recipe was auto-selected"
+          }
+        }
+      }
+    },
     "single-item-production-tip-auto-select-single-recipe-message-%@" : {
       "localizations" : {
         "en" : {

@@ -22,14 +22,8 @@ public struct SingleItemCalculatorItemView: View {
             
             ForEach(Array(viewModel.item.recipes.enumerated()), id: \.element.id) { index, outputRecipe in
                 VStack(spacing: 16) {
-                    if index == 0 {
-                        recipeView(outputRecipe)
-                            .padding(.horizontal, 16)
-                            .popoverTip(viewModel.autoSelectSingleRecipeTip, arrowEdge: .top)
-                    } else {
-                        recipeView(outputRecipe)
-                            .padding(.horizontal, 16)
-                    }
+                    recipeView(outputRecipe)
+                        .padding(.horizontal, 16)
                     
                     if index != viewModel.item.recipes.indices.last {
                         Rectangle()
@@ -183,7 +177,6 @@ private struct _SingleItemCalculatorItemPreview: View {
             SingleItemCalculatorItemViewModel(
                 item: SingleItemCalculator.OutputItem(item: $0, recipes: outputRecipes),
                 byproductSelectionState: nil,
-                autoSelectSingleRecipeTip: SingleItemCalculatorViewModel.AutoSelectSingleRecipeTip(item: $0),
                 canPerformAction: { _ in true },
                 performAction: { _ in }
             )

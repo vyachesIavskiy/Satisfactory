@@ -7,7 +7,6 @@ import SHSingleItemCalculator
 public struct SingleItemCalculatorItemViewModel: Identifiable {
     let item: SingleItemCalculator.OutputItem
     let byproductSelectionState: SingleItemCalculatorViewModel.ByproductSelectionState?
-    let autoSelectSingleRecipeTip: SingleItemCalculatorViewModel.AutoSelectSingleRecipeTip
     let canPerformAction: (SingleItemCalculatorViewModel.Action) -> Bool
     let performAction: (SingleItemCalculatorViewModel.Action) -> Void
     
@@ -26,14 +25,10 @@ public struct SingleItemCalculatorItemViewModel: Identifiable {
         return storageService.recipes(for: item.item, as: [.output, .byproduct]).count == 1
     }
     
-    init(
-        item: SingleItemCalculator.OutputItem,
-        autoSelectSingleRecipeTip: SingleItemCalculatorViewModel.AutoSelectSingleRecipeTip
-    ) {
+    init(item: SingleItemCalculator.OutputItem) {
         self.init(
             item: item,
             byproductSelectionState: nil,
-            autoSelectSingleRecipeTip: autoSelectSingleRecipeTip,
             canPerformAction: { _ in false },
             performAction: { _ in }
         )
@@ -42,13 +37,11 @@ public struct SingleItemCalculatorItemViewModel: Identifiable {
     init(
         item: SingleItemCalculator.OutputItem,
         byproductSelectionState: SingleItemCalculatorViewModel.ByproductSelectionState?,
-        autoSelectSingleRecipeTip: SingleItemCalculatorViewModel.AutoSelectSingleRecipeTip,
         canPerformAction: @escaping (SingleItemCalculatorViewModel.Action) -> Bool,
         performAction: @escaping (SingleItemCalculatorViewModel.Action) -> Void
     ) {
         self.item = item
         self.byproductSelectionState = byproductSelectionState
-        self.autoSelectSingleRecipeTip = autoSelectSingleRecipeTip
         self.canPerformAction = canPerformAction
         self.performAction = performAction
     }

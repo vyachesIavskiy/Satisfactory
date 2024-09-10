@@ -33,7 +33,8 @@ final class SingleItemCalculatorViewModel {
     @ObservationIgnored
     private var calculator: SingleItemCalculator
     
-    private let autoSelectSingleRecipeTip: AutoSelectSingleRecipeTip
+    let autoSelectSingleRecipeTip: AutoSelectSingleRecipeTip
+    let autoSelectSinglePinnedRecipeTip: AutoSelectSinglePinnedRecipeTip
     
     private let shouldDismissIfDeleted: Bool
     
@@ -104,6 +105,7 @@ final class SingleItemCalculatorViewModel {
         pins = storageService.pins()
         settings = settingsService.settings
         autoSelectSingleRecipeTip = AutoSelectSingleRecipeTip(item: calculator.item)
+        autoSelectSinglePinnedRecipeTip = AutoSelectSinglePinnedRecipeTip(item: calculator.item)
         self.shouldDismissIfDeleted = shouldDismissIfDeleted
     }
     
@@ -307,6 +309,7 @@ private extension SingleItemCalculatorViewModel {
     // MARK: Perform actions
     func adjustItem(_ outputItem: SingleItemCalculator.OutputItem) {
         autoSelectSingleRecipeTip.invalidate(reason: .actionPerformed)
+        autoSelectSinglePinnedRecipeTip.invalidate(reason: .actionPerformed)
         modalNavigationState = .adjustItem(
             viewModel: SingleItemCalculatorItemAdjustmentViewModel(
                 item: outputItem,
@@ -330,6 +333,7 @@ private extension SingleItemCalculatorViewModel {
     
     func removeItem(_ item: some Item) {
         autoSelectSingleRecipeTip.invalidate(reason: .actionPerformed)
+        autoSelectSinglePinnedRecipeTip.invalidate(reason: .actionPerformed)
         calculator.removeInputItem(item)
         explicitlyDeletedItemIDs.insert(item.id)
         update()
@@ -340,6 +344,7 @@ private extension SingleItemCalculatorViewModel {
     @MainActor
     func selectRecipe(for ingredient: SingleItemCalculator.OutputRecipe.InputIngredient) {
         autoSelectSingleRecipeTip.invalidate(reason: .actionPerformed)
+        autoSelectSinglePinnedRecipeTip.invalidate(reason: .actionPerformed)
         let viewModel = SingleItemCalculatorInitialRecipeSelectionViewModel(
             item: ingredient.item,
             excludeRecipesForItems: calculator.production.inputItems.map(\.item)
@@ -419,7 +424,6 @@ private extension SingleItemCalculatorViewModel {
             SingleItemCalculatorItemViewModel(
                 item: outputItem,
                 byproductSelectionState: byproductSelectionState,
-                autoSelectSingleRecipeTip: autoSelectSingleRecipeTip,
                 canPerformAction: { [weak self] action in
                     guard let self else { return false }
                     
@@ -544,6 +548,27 @@ extension SingleItemCalculatorViewModel {
         
         var message: Text? {
             Text("single-item-production-tip-auto-select-single-recipe-message-\(item.localizedName)")
+        }
+        
+        var rules: [Rule] {
+            #Rule(Self.$shouldDisplay) {
+                $0 == true
+            }
+        }
+    }
+    
+    struct AutoSelectSinglePinnedRecipeTip: Tip {
+        @Parameter
+        static var shouldDisplay: Bool = false
+        
+        let item: any Item
+        
+        var title: Text {
+            Text("single-item-production-tip-auto-select-single-pinned-recipe-title")
+        }
+        
+        var message: Text? {
+            Text("single-item-production-tip-auto-select-single-pinned-recipe-message-\(item.localizedName)")
         }
         
         var rules: [Rule] {

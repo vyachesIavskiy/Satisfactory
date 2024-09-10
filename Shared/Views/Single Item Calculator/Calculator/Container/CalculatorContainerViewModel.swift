@@ -1,6 +1,7 @@
 import Observation
 import SHModels
 import SHStorage
+import SHSettings
 
 @Observable
 final class SingleItemCalculatorContainerViewModel {
@@ -16,17 +17,25 @@ final class SingleItemCalculatorContainerViewModel {
         @Dependency(\.storageService)
         var storageService
         
+        @Dependency(\.settingsService)
+        var settingsService
+        
         let recipes = storageService.recipes(for: item, as: [.output, .byproduct])
         let pinnedRecipes = storageService.pinnedRecipeIDs(for: item, as: [.output, .byproduct])
         
         if
+            settingsService.autoSelectSingleRecipe,
             recipes.count == 1,
             let recipe = recipes.first,
             !recipe.id.contains("packaged")
         {
             SingleItemCalculatorViewModel.AutoSelectSingleRecipeTip.shouldDisplay = true
             state = .calculation(viewModel: SingleItemCalculatorViewModel(item: item, recipe: recipe))
-        } else if pinnedRecipes.count == 1, let recipe = pinnedRecipes.first.flatMap(storageService.recipe(id:)) {
+        } else if
+            settingsService.autoSelectSinglePinnedRecipe,
+            pinnedRecipes.count == 1,
+            let recipe = pinnedRecipes.first.flatMap(storageService.recipe(id:))
+        {
             SingleItemCalculatorViewModel.AutoSelectSinglePinnedRecipeTip.shouldDisplay = true
             state = .calculation(viewModel: SingleItemCalculatorViewModel(item: item, recipe: recipe))
         } else {

@@ -555,6 +555,10 @@ extension SingleItemCalculatorViewModel {
                 $0 == true
             }
         }
+        
+        var options: [any TipOption] {
+            Tips.MaxDisplayCount(1)
+        }
     }
     
     struct AutoSelectSinglePinnedRecipeTip: Tip {
@@ -575,6 +579,10 @@ extension SingleItemCalculatorViewModel {
             #Rule(Self.$shouldDisplay) {
                 $0 == true
             }
+        }
+        
+        var options: [any TipOption] {
+            Tips.MaxDisplayCount(1)
         }
     }
 }

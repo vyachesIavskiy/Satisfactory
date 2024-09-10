@@ -1,4 +1,5 @@
 import SwiftUI
+import TipKit
 import SHStorage
 import SHModels
 import SHUtils
@@ -11,6 +12,7 @@ final class SingleItemCalculatorInitialRecipeSelectionViewModel {
     
     private let outputRecipes: [Recipe]
     private let byproductRecipes: [Recipe]
+    let selectRecipeTip = SelectRecipeTip()
     
     @MainActor @ObservationIgnored
     private var pinnedRecipeIDs: Set<String> {
@@ -184,6 +186,19 @@ extension SingleItemCalculatorInitialRecipeSelectionViewModel {
         
         static func byproduct(_ recipes: [Recipe]) -> Self {
             Section(id: .byproduct, recipes: recipes)
+        }
+    }
+}
+
+// MARK: Tips
+extension SingleItemCalculatorInitialRecipeSelectionViewModel {
+    struct SelectRecipeTip: Tip {
+        var title: Text {
+            Text("single-item-production-tip-select-recipe-title")
+        }
+        
+        var message: Text? {
+            Text("single-item-production-tip-select-recipe-message")
         }
     }
 }

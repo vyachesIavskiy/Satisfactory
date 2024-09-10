@@ -2,6 +2,7 @@ import SwiftUI
 import SHSharedUI
 import SHModels
 import SHStorage
+import TipKit
 
 @main
 struct SatisfactoryApp: App {
@@ -15,6 +16,16 @@ struct SatisfactoryApp: App {
                 #endif
             
 //            FileManagerCheckView()
+        }
+    }
+    
+    init() {
+        do {
+            try Tips.configure([
+                .datastoreLocation(.applicationDefault)
+            ])
+        } catch {
+            print("Failed to initialize Tips with error: \(error)")
         }
     }
 }

@@ -1971,6 +1971,26 @@
         }
       }
     },
+    "single-item-production-tip-select-recipe-message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To start production calculation you need to select a recipe from a list below"
+          }
+        }
+      }
+    },
+    "single-item-production-tip-select-recipe-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select recipe"
+          }
+        }
+      }
+    },
     "statistics-%lld-of-recipes" : {
       "extractionState" : "manual",
       "localizations" : {

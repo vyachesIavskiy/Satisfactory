@@ -1,6 +1,7 @@
 import SwiftUI
-import SHModels
+import TipKit
 import SHSharedUI
+import SHModels
 
 struct SingleItemCalculatorInitialRecipeSelectionView: View {
     @State
@@ -14,6 +15,10 @@ struct SingleItemCalculatorInitialRecipeSelectionView: View {
     
     var body: some View {
         List {
+            TipView(viewModel.selectRecipeTip)
+                .listSectionSeparator(.hidden)
+                .listRowSeparator(.hidden)
+            
             ForEach($viewModel.sections) { $section in
                 recipesSection($section)
             }
@@ -65,6 +70,7 @@ struct SingleItemCalculatorInitialRecipeSelectionView: View {
     private func recipeView(_ recipe: Recipe) -> some View {
         Button {
             viewModel.onRecipeSelected?(recipe)
+            viewModel.selectRecipeTip.invalidate(reason: .actionPerformed)
         } label: {
             RecipeView(recipe)
                 .contentShape(.interaction, Rectangle())

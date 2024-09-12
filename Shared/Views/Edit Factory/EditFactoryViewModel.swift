@@ -3,7 +3,7 @@ import SHStorage
 import SHModels
 
 @Observable
-public final class EditFactoryViewModel {
+final class EditFactoryViewModel {
     // MARK: Observed
     var factoryName: String
     var provideAssetImage: Bool {

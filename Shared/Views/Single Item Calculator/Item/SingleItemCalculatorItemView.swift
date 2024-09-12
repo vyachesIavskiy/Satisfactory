@@ -2,7 +2,7 @@ import SwiftUI
 import TipKit
 import SHSingleItemCalculator
 
-public struct SingleItemCalculatorItemView: View {
+struct SingleItemCalculatorItemView: View {
     private let viewModel: SingleItemCalculatorItemViewModel
     
     @Environment(\.displayScale)
@@ -11,11 +11,11 @@ public struct SingleItemCalculatorItemView: View {
     @Environment(\.horizontalSizeClass)
     private var horizontalSizeClass
     
-    public init(viewModel: SingleItemCalculatorItemViewModel) {
+    init(viewModel: SingleItemCalculatorItemViewModel) {
         self.viewModel = viewModel
     }
     
-    public var body: some View {
+    var body: some View {
         VStack(spacing: 8) {
             titleView
                 .padding(.horizontal, 16)

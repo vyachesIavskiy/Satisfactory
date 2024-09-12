@@ -4,14 +4,14 @@ import SHSharedUI
 import SHUtils
 
 extension StatisticsView {
-    public struct NaturalResourceRow: View {
+    struct NaturalResourceRow: View {
         var naturalResource: StatisticNaturalResource
         
-        public init(_ naturalResource: StatisticNaturalResource) {
+        init(_ naturalResource: StatisticNaturalResource) {
             self.naturalResource = naturalResource
         }
         
-        public var body: some View {
+        var body: some View {
             ListRow {
                 ListRowIconItem(naturalResource.item)
             } label: {

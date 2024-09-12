@@ -3,7 +3,7 @@ import SHModels
 import SHStorage
 
 @Observable
-public final class EditProductionViewModel {
+final class EditProductionViewModel {
     // MARK: Observed
     var productionName: String
     var selectedFactoryID: Factory.ID?
@@ -22,7 +22,7 @@ public final class EditProductionViewModel {
     @ObservationIgnored
     private var onDelete: (() -> Void)?
     
-    public var id: UUID {
+    var id: UUID {
         production.id
     }
     

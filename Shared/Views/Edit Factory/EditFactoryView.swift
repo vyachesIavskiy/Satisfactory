@@ -1,7 +1,7 @@
 import SwiftUI
 import SHSharedUI
 
-public struct EditFactoryView: View {
+struct EditFactoryView: View {
     @State
     private var viewModel: EditFactoryViewModel
     
@@ -17,11 +17,11 @@ public struct EditFactoryView: View {
     @FocusState
     private var focused
     
-    public init(viewModel: EditFactoryViewModel) {
+    init(viewModel: EditFactoryViewModel) {
         _viewModel = State(initialValue: viewModel)
     }
     
-    public var body: some View {
+    var body: some View {
         NavigationStack {
             VStack(spacing: 4) {
                 factoryNameTextField

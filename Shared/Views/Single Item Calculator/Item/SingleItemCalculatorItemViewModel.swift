@@ -4,13 +4,13 @@ import SHStorage
 import SHModels
 import SHSingleItemCalculator
 
-public struct SingleItemCalculatorItemViewModel: Identifiable {
+struct SingleItemCalculatorItemViewModel: Identifiable {
     let item: SingleItemCalculator.OutputItem
     let byproductSelectionState: SingleItemCalculatorViewModel.ByproductSelectionState?
     let canPerformAction: (SingleItemCalculatorViewModel.Action) -> Bool
     let performAction: (SingleItemCalculatorViewModel.Action) -> Void
     
-    public var id: UUID {
+    var id: UUID {
         item.id
     }
     

@@ -3,7 +3,7 @@ import SHSharedUI
 import SHModels
 import SHStorage
 
-public struct EditProductionView: View {
+struct EditProductionView: View {
     @State
     private var viewModel: EditProductionViewModel
     
@@ -16,11 +16,11 @@ public struct EditProductionView: View {
     @FocusState
     private var focused
     
-    public init(viewModel: EditProductionViewModel) {
+    init(viewModel: EditProductionViewModel) {
         _viewModel = State(initialValue: viewModel)
     }
     
-    public var body: some View {
+    var body: some View {
         NavigationStack {
             VStack(spacing: 4) {
                 productionNameTextField

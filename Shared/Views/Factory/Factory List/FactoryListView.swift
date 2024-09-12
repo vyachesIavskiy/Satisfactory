@@ -2,11 +2,11 @@ import SwiftUI
 import SHModels
 import SHSharedUI
 
-public struct FactoryListView: View {
+struct FactoryListView: View {
     @State
     private var viewModel = FactoryListViewModel()
     
-    public var body: some View {
+    var body: some View {
         NavigationStack {
             ZStack {
                 if !viewModel.factoriesSection.factories.isEmpty || !viewModel.searchText.isEmpty {

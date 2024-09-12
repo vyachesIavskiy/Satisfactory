@@ -3,7 +3,7 @@ import SHModels
 import SHStorage
 
 @Observable
-public final class StatisticsViewModel {
+final class StatisticsViewModel {
     let productions: [Production]
     let title: String
     
@@ -11,18 +11,18 @@ public final class StatisticsViewModel {
     var naturalResourcesSection = NaturalResourcesSection()
     var machinesSection = MachineSection()
     
-    public var id: String {
+    var id: String {
         productions[0].id.uuidString
     }
     
-    public init(production: Production) {
+    init(production: Production) {
         productions = [production]
         title = production.name
         
         buildSections()
     }
     
-    public init(factory: Factory) {
+    init(factory: Factory) {
         @Dependency(\.storageService)
         var storageService
         
@@ -129,11 +129,11 @@ extension StatisticsViewModel {
 }
 
 extension StatisticsViewModel {
-    public struct Item: Identifiable, Hashable {
+    struct Item: Identifiable, Hashable {
         var statisticItem: StatisticItem
         var recipesExpanded: Bool
         
-        public var id: String { statisticItem.id }
+        var id: String { statisticItem.id }
         
         var expandable: Bool {
             statisticItem.recipes.count > 1
@@ -147,7 +147,7 @@ extension StatisticsViewModel {
             }
         }
         
-        public init(statisticItem: StatisticItem, recipesExpanded: Bool = false) {
+        init(statisticItem: StatisticItem, recipesExpanded: Bool = false) {
             self.statisticItem = statisticItem
             self.recipesExpanded = recipesExpanded
         }
@@ -155,14 +155,14 @@ extension StatisticsViewModel {
 }
 
 extension StatisticsViewModel {
-    public struct NaturalResource: Identifiable, Hashable {
+    struct NaturalResource: Identifiable, Hashable {
         var statisticNaturalResource: StatisticNaturalResource
         var machine: Building?
         var amountOfMachines: Double
         
-        public var id: String { statisticNaturalResource.id }
+        var id: String { statisticNaturalResource.id }
         
-        public init(statisticNaturalResource: StatisticNaturalResource, machine: Building? = nil, amountOfMachines: Double) {
+        init(statisticNaturalResource: StatisticNaturalResource, machine: Building? = nil, amountOfMachines: Double) {
             self.statisticNaturalResource = statisticNaturalResource
             self.machine = machine
             self.amountOfMachines = amountOfMachines
@@ -171,12 +171,12 @@ extension StatisticsViewModel {
 }
 
 extension StatisticsViewModel {
-    public struct Machine: Identifiable, Hashable {
+    struct Machine: Identifiable, Hashable {
         let building: Building
         var recipes: [MachineRecipe]
         var recipesExpanded: Bool
         
-        public var id: String { building.id }
+        var id: String { building.id }
         
         var amount: Double {
             recipes.reduce(0) { $0 + $1.amount }
@@ -244,7 +244,7 @@ extension StatisticsViewModel {
             }
         }
         
-        public init(building: Building, recipes: [MachineRecipe], recipesExpanded: Bool = false) {
+        init(building: Building, recipes: [MachineRecipe], recipesExpanded: Bool = false) {
             self.building = building
             self.recipes = recipes
             self.recipesExpanded = recipesExpanded
@@ -253,11 +253,12 @@ extension StatisticsViewModel {
 }
 
 extension StatisticsViewModel {
-    public struct MachineRecipe: Identifiable, Hashable {
-        public let id = UUID()
+    struct MachineRecipe: Identifiable, Hashable {
         let recipe: Recipe
         var amount: Double
         var powerConsumption: Recipe.PowerConsumption
+        
+        var id: String { recipe.id }
         
         var intAmount: Int {
             Int(amount.rounded(.up))
@@ -296,7 +297,7 @@ extension StatisticsViewModel {
             }
         }
         
-        public init(statisticRecipe: StatisticRecipe) {
+        init(statisticRecipe: StatisticRecipe) {
             let recipeAmount = statisticRecipe.amount / statisticRecipe.recipe.amountPerMinute
             recipe = statisticRecipe.recipe
             amount = statisticRecipe.amount / statisticRecipe.recipe.amountPerMinute

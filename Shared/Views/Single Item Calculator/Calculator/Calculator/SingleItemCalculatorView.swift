@@ -139,7 +139,7 @@ struct SingleItemCalculatorView: View {
             .bold()
             .disabled(viewModel.selectingByproduct)
         } label: {
-            Label("general-manage", systemImage: "wrench.and.screwdriver")
+            Label("general-manage", systemImage: "general-more")
         }
         
         if horizontalSizeClass == .regular {

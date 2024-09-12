@@ -2,18 +2,18 @@ import SwiftUI
 import SHSharedUI
 
 extension StatisticsView {
-    public struct ProductionBuildingRow: View {
+    struct ProductionBuildingRow: View {
         @Binding
         private var productionBuilding: StatisticsViewModel.Machine
         
         @Environment(\.displayScale)
         private var displayScale
         
-        public init(productionBuilding: Binding<StatisticsViewModel.Machine>) {
+        init(productionBuilding: Binding<StatisticsViewModel.Machine>) {
             _productionBuilding = productionBuilding
         }
         
-        public var body: some View {
+        var body: some View {
             VStack(spacing: 4) {
                 HStack(spacing: 12) {
                     ListRowIconItem(productionBuilding.building)

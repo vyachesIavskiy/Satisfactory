@@ -3,7 +3,7 @@ import SHSharedUI
 import SHUtils
 
 extension StatisticsView {
-    public struct ItemRow: View {
+    struct ItemRow: View {
         @Binding
         var item: StatisticsViewModel.Item
         
@@ -15,11 +15,11 @@ extension StatisticsView {
             item.statisticItem.amount.formatted(.shNumber)
         }
         
-        public init(_ item: Binding<StatisticsViewModel.Item>) {
+        init(_ item: Binding<StatisticsViewModel.Item>) {
             self._item = item
         }
         
-        public var body: some View {
+        var body: some View {
             VStack(spacing: 4) {
                 HStack(spacing: 12) {
                     ListRowIconItem(item.statisticItem.item)

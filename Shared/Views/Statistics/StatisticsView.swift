@@ -2,7 +2,7 @@ import SwiftUI
 import SHSharedUI
 import SHModels
 
-public struct StatisticsView: View {
+struct StatisticsView: View {
     @State
     private var viewModel: StatisticsViewModel
     
@@ -12,11 +12,11 @@ public struct StatisticsView: View {
     @Environment(\.displayScale)
     private var displayScale
     
-    public init(viewModel: StatisticsViewModel) {
+    init(viewModel: StatisticsViewModel) {
         _viewModel = State(initialValue: viewModel)
     }
     
-    public var body: some View {
+    var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 24, pinnedViews: .sectionHeaders) {

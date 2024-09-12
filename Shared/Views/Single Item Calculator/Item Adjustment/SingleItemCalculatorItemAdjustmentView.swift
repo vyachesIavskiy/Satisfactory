@@ -32,7 +32,7 @@ struct SingleItemCalculatorItemAdjustmentView: View {
                         
                         Spacer()
                         
-                        Text("single-item-production-adjustment-\(viewModel.item.amount.formatted(.shNumber))-per-minute")
+                        Text("single-item-production-adjustment-\(viewModel.item.amount.formatted(.shNumber()))-per-minute")
                             .font(.headline)
                     }
                     

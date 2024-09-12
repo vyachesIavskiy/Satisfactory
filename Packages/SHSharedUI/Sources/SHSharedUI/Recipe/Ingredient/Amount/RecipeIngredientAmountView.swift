@@ -5,7 +5,7 @@ struct RecipeIngredientAmountView: View {
     let viewModel: RecipeIngredientAmountViewModel
     
     var body: some View {
-        Text(viewModel.amount, format: .shNumber)
+        Text(viewModel.amount, format: .shNumber())
             .multilineTextAlignment(.center)
             .font(.callout)
             .fontWeight(.medium)

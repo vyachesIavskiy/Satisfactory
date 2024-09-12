@@ -209,7 +209,7 @@ extension SingleItemCalculator: CustomStringConvertible {
         }
         
         return """
-        \(item.localizedName) (\(amount.formatted(.shNumber)))
+        \(item.localizedName) (\(amount.formatted(.shNumber()))
         
         \(nodeDescription)
         """

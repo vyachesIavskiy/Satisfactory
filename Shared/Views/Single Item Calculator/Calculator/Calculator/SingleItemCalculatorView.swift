@@ -243,7 +243,7 @@ private struct AmountView: View {
                 Spacer()
             }
             
-            TextField("single-item-production-calculation-amount-title", value: $amount, format: .shNumber)
+            TextField("single-item-production-calculation-amount-title", value: $amount, format: .shNumber())
                 .multilineTextAlignment(.center)
                 #if os(iOS)
                 .keyboardType(.decimalPad)

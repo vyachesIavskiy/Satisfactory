@@ -18,7 +18,7 @@ extension StatisticsView {
                 Text(naturalResource.item.localizedName)
                     .fontWeight(.semibold)
             } accessory: {
-                Text(naturalResource.amount, format: .shNumber)
+                Text(naturalResource.amount, format: .shNumber())
                     .font(.callout)
                     .foregroundStyle(.sh(.midnight))
             }

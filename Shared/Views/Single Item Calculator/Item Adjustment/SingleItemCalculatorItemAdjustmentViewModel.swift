@@ -241,11 +241,11 @@ extension SingleItemCalculatorItemAdjustmentViewModel {
             return if totalFractionAmount > 1.0 {
                 "product-adjustment-fraction-\(totalFractionAmount, format: .shPercent)-exceeds-\(1, format: .shPercent)"
             } else if totalFixedAmount > availableAmount {
-                "product-adjustment-fixed-\(totalFixedAmount, format: .shNumber)-exceeds-\(availableAmount, format: .shNumber)"
+                "product-adjustment-fixed-\(totalFixedAmount, format: .shNumber())-exceeds-\(availableAmount, format: .shNumber())"
             } else if amountOfAuto == 0, totalFractionAmount > 0, totalFractionAmount < 1.0 {
                 "product-adjustment-fractions-\(totalFractionAmount, format: .shPercent)-should-be-exactly-\(1, format: .shPercent)"
             } else if amountOfAuto == 0, totalFractionAmount == 0.0, totalFixedAmount != availableAmount {
-                "product-adjustment-fixed-\(totalFixedAmount, format: .shNumber)-should-be-equal-to-available-\(availableAmount, format: .shNumber)"
+                "product-adjustment-fixed-\(totalFixedAmount, format: .shNumber())-should-be-equal-to-available-\(availableAmount, format: .shNumber())"
             } else {
                 nil
             }

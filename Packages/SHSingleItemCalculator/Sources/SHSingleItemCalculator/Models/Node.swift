@@ -182,15 +182,15 @@ extension SingleItemCalculator.Node {
     func description(with spacing: String) -> String {
         let name = item.localizedName
         let recipe = "[R: \(recipe.localizedName)]"
-        let amount = "\(amount.formatted(.shNumber))"
+        let amount = "\(amount.formatted(.shNumber()))"
         
         let joinedAmount = "(\(amount))"
         
         let byproducts = byproducts.map { byproduct in
             let name = byproduct.item.localizedName
-            let amount = "\(byproduct.amount.formatted(.shNumber))"
+            let amount = "\(byproduct.amount.formatted(.shNumber()))"
             let consumedAmount = byproduct.consumers.map {
-                "\($0.amount.formatted(.shNumber))"
+                "\($0.amount.formatted(.shNumber()))"
             }.joined(separator: ", ")
             
             let joinedAmount = if consumedAmount.isEmpty {
@@ -212,9 +212,9 @@ extension SingleItemCalculator.Node {
         
         let inputs = inputs.map { input in
             let name = input.item.localizedName
-            let amount = "\(input.amount.formatted(.shNumber))"
+            let amount = "\(input.amount.formatted(.shNumber()))"
             let providedByByproductsAmount = input.byproductProducers.map {
-                "\($0.amount.formatted(.shNumber))"
+                "\($0.amount.formatted(.shNumber()))"
             }.joined(separator: ", ")
             
             let joinedAmount = if providedByByproductsAmount.isEmpty {

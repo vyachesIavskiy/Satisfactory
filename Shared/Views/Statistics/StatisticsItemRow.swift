@@ -12,7 +12,7 @@ extension StatisticsView {
         }
         
         private var valueString: String {
-            item.statisticItem.amount.formatted(.shNumber)
+            item.statisticItem.amount.formatted(.shNumber())
         }
         
         init(_ item: Binding<StatisticsViewModel.Item>) {
@@ -45,7 +45,7 @@ extension StatisticsView {
                                 
                                 Spacer()
                                 
-                                Text(AttributedString(recipe.amount.formatted(.shNumber)))
+                                Text(AttributedString(recipe.amount.formatted(.shNumber())))
                                     .foregroundStyle(.sh(.midnight))
                             }
                         }

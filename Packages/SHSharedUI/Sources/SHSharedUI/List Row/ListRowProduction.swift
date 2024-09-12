@@ -43,7 +43,7 @@ public struct ListRowProduction: View {
     private var productionAccessory: some View {
         switch production {
         case let .singleItem(production):
-            Text(production.amount, format: .shNumber)
+            Text(production.amount, format: .shNumber())
             
         case .fromResources:
             EmptyView()

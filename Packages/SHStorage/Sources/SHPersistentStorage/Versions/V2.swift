@@ -52,17 +52,6 @@ final class V2: VersionedStorage {
         return pins.contains(partID)
     }
     
-    func isEquipmentPinned(_ equipmentID: String, productionType: ProductionType) -> Bool {
-        switch productionType {
-        case .singleItem: return pins.value.singleItemEquipmentIDs.contains(equipmentID)
-        case .fromResources: return pins.value.fromResourcesEquipmentIDs.contains(equipmentID)
-        case .power:
-            logger.error("Checking for pined equipment in Power production mode.")
-            return false
-            
-        }
-    }
-    
     func isBuildingPinned(_ buildingID: String, productionType: ProductionType) -> Bool {
         switch productionType {
         case .singleItem:
@@ -111,34 +100,6 @@ final class V2: VersionedStorage {
                 pins.value.powerPartIDs.insert(partID)
                 logger.info("Pinned '\(partID)' for Power production mode.")
             }
-        }
-        
-        try savePins()
-    }
-    
-    func changeEquipmentPinStatus(_ equipmentID: String, productionType: ProductionType) throws {
-        let pinned = isEquipmentPinned(equipmentID, productionType: productionType)
-        switch productionType {
-        case .singleItem:
-            if pinned {
-                pins.value.singleItemEquipmentIDs.remove(equipmentID)
-                logger.info("Unpinned '\(equipmentID)' for Single Item production mode.")
-            } else {
-                pins.value.singleItemEquipmentIDs.insert(equipmentID)
-                logger.info("Pinned '\(equipmentID)' for Single Item production mode.")
-            }
-            
-        case .fromResources:
-            if pinned {
-                pins.value.fromResourcesEquipmentIDs.remove(equipmentID)
-                logger.info("Unpinned '\(equipmentID)' for From Resources production mode.")
-            } else {
-                pins.value.fromResourcesEquipmentIDs.insert(equipmentID)
-                logger.info("Pinned '\(equipmentID)' for From Resources production mode.")
-            }
-            
-        case .power:
-            logger.error("Tried to pin/unpin equipment in Power production mode.")
         }
         
         try savePins()
@@ -276,12 +237,10 @@ final class V2: VersionedStorage {
         
         logger.debug("V2: Migrating pins.")
         let favoriteParts = legacy.parts.filter(\.isFavorite)
-        let favoriteEquipment = legacy.equipment.filter(\.isFavorite)
         let favoriteRecipes = legacy.recipes.filter(\.isFavorite)
         
         pins.value = Pins.Persistent.V2(
             singleItemPartIDs: Set(favoriteParts.map(\.id)),
-            singleItemEquipmentIDs: Set(favoriteEquipment.map(\.id)),
             recipeIDs: Set(favoriteRecipes.map(\.id))
         )
         
@@ -295,14 +254,14 @@ final class V2: VersionedStorage {
                     id: $0.productionTreeRootID,
                     name: $0.name,
                     creationDate: date(),
-                    itemID: root.itemID,
+                    partID: root.partID,
                     amount: $0.amount,
-                    inputItems: $0.productionChain.map {
-                        SingleItemProduction.Persistent.V2.InputItem(
+                    inputParts: $0.productionChain.map {
+                        SingleItemProduction.Persistent.V2.InputPart(
                             id: $0.id,
-                            itemID: $0.itemID,
+                            partID: $0.partID,
                             recipes: [
-                                SingleItemProduction.Persistent.V2.InputItem.Recipe(
+                                SingleItemProduction.Persistent.V2.InputPart.Recipe(
                                     id: $0.id,
                                     recipeID: $0.recipeID,
                                     proportion: .auto
@@ -358,14 +317,6 @@ private extension V2 {
             let newPartID = migration.partIDs[migrationIndex].newID
             migratedPins.singleItemPartIDs.replace(partID, to: newPartID)
             logger.debug("V2: '\(partID)' changed to '\(newPartID)'")
-        }
-        
-        for equipmentID in migratedPins.singleItemEquipmentIDs {
-            guard let migrationIndex = migration.equipmentIDs.firstIndex(oldID: equipmentID) else { continue }
-            
-            let newEquipmentID = migration.equipmentIDs[migrationIndex].newID
-            migratedPins.singleItemEquipmentIDs.replace(equipmentID, to: newEquipmentID)
-            logger.debug("V2: '\(equipmentID)' changed to '\(newEquipmentID)'")
         }
         
         for recipeID in migratedPins.recipeIDs {

@@ -27,7 +27,7 @@ struct SingleItemCalculatorInitialRecipeSelectionView: View {
         }
         .environment(\.defaultMinListRowHeight, 2)
         .listStyle(.plain)
-        .navigationTitle(viewModel.item.localizedName)
+        .navigationTitle(viewModel.part.localizedName)
         .task {
             await viewModel.observeStorage()
         }
@@ -93,38 +93,15 @@ struct SingleItemCalculatorInitialRecipeSelectionView: View {
 }
 
 #if DEBUG
-import SHStorage
-
-private struct _SingleItemCalculatorInitialRecipeSelectionPreview: View {
-    let itemID: String
-    
-    @Dependency(\.storageService)
-    private var storageService
-    
-    private var item: (any Item)? {
-        storageService.item(id: itemID)
-    }
-    
-    var body: some View {
-        NavigationStack {
-            if let item {
-                SingleItemCalculatorInitialRecipeSelectionView(
-                    viewModel: SingleItemCalculatorInitialRecipeSelectionViewModel(item: item)
-                )
-            } else {
-                Text(verbatim: "There is no item with ID '\(itemID)'")
-                    .font(.largeTitle)
-                    .padding()
-            }
-        }
-    }
-}
-
 #Preview("Iron Ingot") {
-    _SingleItemCalculatorInitialRecipeSelectionPreview(itemID: "part-iron-ingot")
+    SingleItemCalculatorInitialRecipeSelectionView(
+        viewModel: SingleItemCalculatorInitialRecipeSelectionViewModel(part: part(id: "part-iron-ingot"))
+    )
 }
 
 #Preview("Reinforced Iron Plate") {
-    _SingleItemCalculatorInitialRecipeSelectionPreview(itemID: "part-reinforced-iron-plate")
+    SingleItemCalculatorInitialRecipeSelectionView(
+        viewModel: SingleItemCalculatorInitialRecipeSelectionViewModel(part: part(id: "part-reinforced-iron-plate"))
+    )
 }
 #endif

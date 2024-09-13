@@ -58,28 +58,28 @@ public struct ListRowProduction: View {
 import SHStorage
 
 private struct ProductionRowPreview: View {
-    let itemID: String
+    let partID: String
     let amount: Double
     let accessory: ListRowAccessory?
     
     @Dependency(\.storageService)
     private var storageService
     
-    private var item: (any Item)? {
-        storageService.item(id: itemID)
+    private var part: Part? {
+        storageService.part(id: partID)
     }
     
     var body: some View {
-        if let item {
+        if let part {
             ListRowProduction(
                 .singleItem(
                     SingleItemProduction(
                         id: UUID(),
                         name: "Preview production",
                         creationDate: Date(),
-                        item: item,
+                        part: part,
                         amount: amount,
-                        inputItems: [],
+                        inputParts: [],
                         byproducts: []
                     )
                 ),
@@ -87,7 +87,7 @@ private struct ProductionRowPreview: View {
                 accessory: accessory
             )
         } else {
-            Text(verbatim: "There is no item with id '\(itemID)'")
+            Text(verbatim: "There is no item with id '\(partID)'")
         }
     }
 }
@@ -95,8 +95,8 @@ private struct ProductionRowPreview: View {
 #Preview {
     List {
         Group {
-            ProductionRowPreview(itemID: "part-reinforced-iron-plate", amount: 20, accessory: nil)
-            ProductionRowPreview(itemID: "part-modular-frame", amount: 45, accessory: .chevron)
+            ProductionRowPreview(partID: "part-reinforced-iron-plate", amount: 20, accessory: nil)
+            ProductionRowPreview(partID: "part-modular-frame", amount: 45, accessory: .chevron)
         }
         .listRowSeparator(.hidden)
         .listRowBackground(Color.clear)

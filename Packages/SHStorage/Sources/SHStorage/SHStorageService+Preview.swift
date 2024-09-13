@@ -46,16 +46,16 @@ extension SHStorageService {
         func changePinStatus(partID: String, productionType: ProductionType) {
             switch productionType {
             case .singleItem:
-                if _pins.value.singleItem.partIDs.contains(partID) {
-                    _pins.value.singleItem.partIDs.remove(partID)
+                if _pins.value.singleItemPartIDs.contains(partID) {
+                    _pins.value.singleItemPartIDs.remove(partID)
                 } else {
-                    _pins.value.singleItem.partIDs.insert(partID)
+                    _pins.value.singleItemPartIDs.insert(partID)
                 }
             case .fromResources:
-                if _pins.value.fromResources.partIDs.contains(partID) {
-                    _pins.value.fromResources.partIDs.remove(partID)
+                if _pins.value.fromResourcesPartIDs.contains(partID) {
+                    _pins.value.fromResourcesPartIDs.remove(partID)
                 } else {
-                    _pins.value.fromResources.partIDs.insert(partID)
+                    _pins.value.fromResourcesPartIDs.insert(partID)
                 }
             case .power:
                 if _pins.value.power.partIDs.contains(partID) {
@@ -63,25 +63,6 @@ extension SHStorageService {
                 } else {
                     _pins.value.power.partIDs.insert(partID)
                 }
-            }
-        }
-        
-        func changePinStatus(equipmentID: String, productionType: ProductionType) {
-            switch productionType {
-            case .singleItem:
-                if _pins.value.singleItem.equipmentIDs.contains(equipmentID) {
-                    _pins.value.singleItem.equipmentIDs.remove(equipmentID)
-                } else {
-                    _pins.value.singleItem.equipmentIDs.insert(equipmentID)
-                }
-            case .fromResources:
-                if _pins.value.fromResources.equipmentIDs.contains(equipmentID) {
-                    _pins.value.fromResources.equipmentIDs.remove(equipmentID)
-                } else {
-                    _pins.value.fromResources.equipmentIDs.insert(equipmentID)
-                }
-            case .power:
-                break
             }
         }
         

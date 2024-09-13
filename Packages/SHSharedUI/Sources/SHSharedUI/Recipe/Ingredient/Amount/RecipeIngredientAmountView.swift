@@ -16,17 +16,17 @@ struct RecipeIngredientAmountView: View {
             .fixedSize(horizontal: true, vertical: false)
             .background {
                 ZStack {
-                    ItemIconShape(item: viewModel.item, cornerRadius: viewModel.cornerRadius)
+                    ItemIconShape(part: viewModel.part, cornerRadius: viewModel.cornerRadius)
                         .fill(viewModel.foregroundStyle)
                         .shadow(color: viewModel.shadowColor, radius: 2, y: 1)
                     
                     if let secondaryStyle = viewModel.secondaryStyle {
                         RecipeByproductShape()
                             .foregroundStyle(secondaryStyle)
-                            .clipShape(ItemIconShape(item: viewModel.item, cornerRadius: viewModel.cornerRadius))
+                            .clipShape(ItemIconShape(part: viewModel.part, cornerRadius: viewModel.cornerRadius))
                     }
                     
-                    ItemIconShape(item: viewModel.item, cornerRadius: viewModel.cornerRadius)
+                    ItemIconShape(part: viewModel.part, cornerRadius: viewModel.cornerRadius)
                         .stroke(viewModel.primaryColor, lineWidth: 1)
                 }
             }

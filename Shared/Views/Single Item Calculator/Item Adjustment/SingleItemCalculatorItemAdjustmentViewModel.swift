@@ -7,11 +7,11 @@ import SHUtils
 
 @Observable
 final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
-    let item: SingleItemCalculator.OutputItem
-    let excludingItems: [any Item]
+    let part: SingleItemCalculator.OutputPart
+    let excludingParts: [Part]
     let allowDeletion: Bool
     let addMoreRecipesTip: AddMoreRecipesTip
-    private let onApply: @MainActor (SingleItemProduction.InputItem) -> Void
+    private let onApply: @MainActor (SingleItemProduction.InputPart) -> Void
     
     private(set) var production: SingleItemCalculator
     
@@ -21,7 +21,7 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     private var storageService
     
     var id: UUID {
-        item.id
+        part.id
     }
     
     var amount: Double {
@@ -32,13 +32,13 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
         @Dependency(\.storageService)
         var storageService
         
-        let storedRecipes = storageService.recipes(for: item.item, as: [.output, .byproduct])
-        let selectedRecipes = production.outputRecipes(for: item.item)
+        let storedRecipes = storageService.recipes(for: part.part, as: [.output, .byproduct])
+        let selectedRecipes = production.outputRecipes(for: part.part)
         return storedRecipes.count != selectedRecipes.count
     }
     
     var selectedRecipes: [SingleItemCalculator.OutputRecipe] {
-        production.outputRecipes(for: item.item)
+        production.outputRecipes(for: part.part)
     }
     
     var pinnedRecipes: [Recipe] {
@@ -58,19 +58,19 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     }
     
     init(
-        item: SingleItemCalculator.OutputItem,
-        excludeRecipesForItems excludingItems: [any Item] = [],
+        part: SingleItemCalculator.OutputPart,
+        excludeRecipesForParts excludingParts: [Part] = [],
         allowDeletion: Bool,
-        onApply: @escaping @MainActor (SingleItemProduction.InputItem) -> Void
+        onApply: @escaping @MainActor (SingleItemProduction.InputPart) -> Void
     ) {
-        self.item = item
-        self.excludingItems = excludingItems
+        self.part = part
+        self.excludingParts = excludingParts
         self.allowDeletion = allowDeletion
-        self.addMoreRecipesTip = AddMoreRecipesTip(item: item.item)
-        let production = SingleItemCalculator(item: item.item)
-        production.amount = item.amount
-        for recipe in item.recipes {
-            production.addRecipe(recipe.recipe, to: item.item, with: recipe.proportion)
+        self.addMoreRecipesTip = AddMoreRecipesTip(part: part.part)
+        let production = SingleItemCalculator(part: part.part)
+        production.amount = part.amount
+        for recipe in part.recipes {
+            production.addRecipe(recipe.recipe, to: part.part, with: recipe.proportion)
         }
         self.production = production
         self.onApply = onApply
@@ -82,14 +82,14 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     
     @MainActor
     func observePins() async {
-        for await _ in storageService.streamPinnedRecipeIDs(for: item.item, as: [.output, .byproduct]) {
+        for await _ in storageService.streamPinnedRecipeIDs(for: part.part, as: [.output, .byproduct]) {
             update()
         }
     }
     
     @MainActor
     func removeRecipe(_ recipe: SingleItemCalculator.OutputRecipe) {
-        production.production.inputItems[0].recipes.removeAll {
+        production.production.inputParts[0].recipes.removeAll {
             $0.recipe == recipe.recipe
         }
         
@@ -99,12 +99,12 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
         
         guard case let .fraction(fraction) = recipe.proportion else { return }
         
-        for recipe in production.production.inputItems[0].recipes {
+        for recipe in production.production.inputParts[0].recipes {
             switch recipe.proportion {
             case let .fraction(recipeFraction):
                 production.changeProportion(
                     of: recipe.recipe,
-                    for: item.item,
+                    for: part.part,
                     to: .fraction(recipeFraction / (1 - fraction))
                 )
             case .fixed:
@@ -118,7 +118,7 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     @MainActor
     func addRecipe(_ recipe: Recipe) {
         addMoreRecipesTip.invalidate(reason: .actionPerformed)
-        production.addRecipe(recipe, to: item.item)
+        production.addRecipe(recipe, to: part.part)
         update()
     }
     
@@ -127,13 +127,13 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
         _ recipe: SingleItemCalculator.OutputRecipe,
         with proportion: Proportion
     ) {
-        production.changeProportion(of: recipe.recipe, for: item.item, to: proportion)
+        production.changeProportion(of: recipe.recipe, for: part.part, to: proportion)
         update()
     }
     
     @MainActor
     func apply() {
-        onApply(production.production.inputItems[0])
+        onApply(production.production.inputParts[0])
     }
     
     @MainActor
@@ -179,14 +179,14 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     }
     
     private func recipes(pinned: Bool) -> [Recipe] {
-        let outputRecipes = storageService.recipes(for: item.item, as: .output)
-        let byproductRecipes = storageService.recipes(for: item.item, as: .byproduct)
+        let outputRecipes = storageService.recipes(for: part.part, as: .output)
+        let byproductRecipes = storageService.recipes(for: part.part, as: .byproduct)
             .filter { recipe in
-                !excludingItems.contains { $0.id == recipe.output.item.id }
+                !excludingParts.contains { $0.id == recipe.output.part.id }
             }
         
         let allRecipes = outputRecipes + byproductRecipes
-        let pinnedIDs = storageService.pinnedRecipeIDs(for: item.item, as: [.output, .byproduct])
+        let pinnedIDs = storageService.pinnedRecipeIDs(for: part.part, as: [.output, .byproduct])
         
         return allRecipes.filter { recipe in
             pinnedIDs.contains(recipe.id) == pinned &&
@@ -267,10 +267,10 @@ extension SingleItemCalculatorItemAdjustmentViewModel {
 
 extension SingleItemCalculatorItemAdjustmentViewModel {
     struct AddMoreRecipesTip: Tip {
-        let item: any Item
+        let part: Part
         
         var title: Text {
-            Text("single-item-production-tip-add-more-recipes-title-\(item.localizedName)")
+            Text("single-item-production-tip-add-more-recipes-title-\(part.localizedName)")
         }
         
         var message: Text? {

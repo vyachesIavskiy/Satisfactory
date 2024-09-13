@@ -15,6 +15,8 @@ extension V2.Buildings {
     static let refinery = Building.Static(id: "building-refinery")
     static let blender = Building.Static(id: "building-blender")
     static let particleAccelerator = Building.Static(id: "building-particle-accelerator")
+    static let converter = Building.Static(id: "building-converter")
+    static let quantumEncoder = Building.Static(id: "building-quantum-encoder")
     
     static let manufacturerBuildings = [
         constructor,
@@ -24,5 +26,7 @@ extension V2.Buildings {
         refinery,
         blender,
         particleAccelerator,
+        converter,
+        quantumEncoder,
     ]
 }

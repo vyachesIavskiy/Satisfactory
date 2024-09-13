@@ -71,7 +71,7 @@ final class EditProductionViewModel {
             
             switch production {
             case let .singleItem(production):
-                productionName = production.item.localizedName
+                productionName = production.part.localizedName
                 
             case let .fromResources(production):
                 productionName = ""

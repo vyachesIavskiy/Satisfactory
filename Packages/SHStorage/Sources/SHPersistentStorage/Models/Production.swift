@@ -5,7 +5,7 @@ import SHPersistentModels
 extension Production {
     init(
         _ v2: Persistent.V2,
-        itemProvider: (_ itemID: String) -> any Item,
+        partProvider: (_ partID: String) -> Part,
         recipeProvider: (_ recipeID: String) -> Recipe
     ) {
         self = switch v2 {
@@ -13,7 +13,7 @@ extension Production {
             .singleItem(
                 SingleItemProduction(
                     singleItemV2,
-                    itemProvider: itemProvider,
+                    partProvider: partProvider,
                     recipeProvider: recipeProvider
                 )
             )

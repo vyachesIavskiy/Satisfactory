@@ -7,7 +7,7 @@ extension SingleItemCalculator {
         let id: UUID
         
         /// A node output item. This can be recipe output or recipe byproduct ingredient.
-        var item: any Item
+        var part: Part
         
         /// A Recipe used to populate and recalculate this node.
         var recipe: Recipe
@@ -37,9 +37,9 @@ extension SingleItemCalculator {
         /// An array of input recipe nodes. Might be empty if a user did not select any recipe for an input product or if a product is a natural resource.
         var inputNodes = [Node]()
         
-        init(id: UUID, item: any Item, recipe: Recipe, amount: Double, parentRecipeNode: Node? = nil) {
+        init(id: UUID, part: Part, recipe: Recipe, amount: Double, parentRecipeNode: Node? = nil) {
             self.id = id
-            self.item = item
+            self.part = part
             self.recipe = recipe
             self.amount = amount
             self.parentRecipeNode = parentRecipeNode
@@ -49,23 +49,23 @@ extension SingleItemCalculator {
         
         func update() {
             let outputIngredients = recipe.byproducts + CollectionOfOne(recipe.output)
-            let producingIngredient = outputIngredients.first { $0.item.id == item.id }
+            let producingIngredient = outputIngredients.first(of: part)
             
             guard let producingIngredient else {
-                fatalError("Could not find ingredient for '\(item.localizedName)' in '\(recipe.localizedName)'")
+                fatalError("Could not find ingredient for '\(part.localizedName)' in '\(recipe.localizedName)'")
             }
             
             let amountPerRecipe = recipe.amountPerMinute(for: producingIngredient)
             let multiplier = amount / amountPerRecipe
             
-            byproducts = outputIngredients.filter { $0.item.id != item.id }.map { ingredient in
+            byproducts = outputIngredients.filter { $0.part != part }.map { ingredient in
                 let amountPerRecipe = recipe.amountPerMinute(for: ingredient)
-                return Byproduct(item: ingredient.item, amount: amountPerRecipe * multiplier)
+                return Byproduct(part: ingredient.part, amount: amountPerRecipe * multiplier)
             }
             
             inputs = recipe.inputs.map { ingredient in
                 let amountPerRecipe = recipe.amountPerMinute(for: ingredient)
-                return Input(item: ingredient.item, amount: amountPerRecipe * multiplier)
+                return Input(part: ingredient.part, amount: amountPerRecipe * multiplier)
             }
         }
         
@@ -73,7 +73,7 @@ extension SingleItemCalculator {
             for input in inputs {
                 guard
                     // Check if this input has a corresponding input node (i.e. a recipe for this input is selected).
-                    let (inputNodeIndex, inputNode) = inputNodes.enumerated().first(where: { $0.1.item.id == input.item.id }),
+                    let (inputNodeIndex, inputNode) = inputNodes.enumerated().first(where: { $0.1.part == input.part }),
                     // Check if amount is different. If not, do not update.
                     input.availableAmount != inputNode.amount
                 else { continue }
@@ -144,7 +144,7 @@ extension SingleItemCalculator.Node {
 // MARK: Byproduct
 extension SingleItemCalculator.Node {
     struct Byproduct {
-        let item: any Item
+        let part: Part
         var amount: Double
         var consumers = [Consumer]()
         
@@ -162,7 +162,7 @@ extension SingleItemCalculator.Node {
 // MARK: Input
 extension SingleItemCalculator.Node {
     struct Input {
-        let item: any Item
+        let part: Part
         var amount: Double
         var byproductProducers = [ByproductProducer]()
         
@@ -180,14 +180,14 @@ extension SingleItemCalculator.Node {
 // MARK: Description for print
 extension SingleItemCalculator.Node {
     func description(with spacing: String) -> String {
-        let name = item.localizedName
+        let name = part.localizedName
         let recipe = "[R: \(recipe.localizedName)]"
         let amount = "\(amount.formatted(.shNumber()))"
         
         let joinedAmount = "(\(amount))"
         
         let byproducts = byproducts.map { byproduct in
-            let name = byproduct.item.localizedName
+            let name = byproduct.part.localizedName
             let amount = "\(byproduct.amount.formatted(.shNumber()))"
             let consumedAmount = byproduct.consumers.map {
                 "\($0.amount.formatted(.shNumber()))"
@@ -211,7 +211,7 @@ extension SingleItemCalculator.Node {
         }
         
         let inputs = inputs.map { input in
-            let name = input.item.localizedName
+            let name = input.part.localizedName
             let amount = "\(input.amount.formatted(.shNumber()))"
             let providedByByproductsAmount = input.byproductProducers.map {
                 "\($0.amount.formatted(.shNumber()))"

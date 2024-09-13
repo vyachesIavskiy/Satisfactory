@@ -14,7 +14,6 @@ extension V2 {
         fluidExtractorBuildings +
         manufacturerBuildings +
         minerBuildings +
-        smelterBuildings +
-        workstationBuildingsV2
+        smelterBuildings
     }
 }

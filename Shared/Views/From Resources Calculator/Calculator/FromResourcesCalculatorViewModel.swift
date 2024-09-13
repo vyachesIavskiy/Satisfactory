@@ -49,7 +49,7 @@ final class FromResourcesCalculatorViewModel {
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
     
-    convenience init(item: some Item, recipe: Recipe) {
+    convenience init(part: Part, recipe: Recipe) {
         let calculator = FromResourcesCalculator(/*item: item*/)
         self.init(calculator: calculator)
         
@@ -201,7 +201,7 @@ extension FromResourcesCalculatorViewModel {
         
         var id: String {
             switch self {
-            case let .selectInitialRecipeForItem(viewModel): viewModel.item.id
+            case let .selectInitialRecipeForItem(viewModel): viewModel.part.id
             case let .adjustItem(viewModel): viewModel.id.uuidString
             case let .editProduction(viewModel): viewModel.id.uuidString
             case let .statistics(viewModel): viewModel.id
@@ -213,7 +213,7 @@ extension FromResourcesCalculatorViewModel {
 // MARK: ByproductSelectionState
 extension FromResourcesCalculatorViewModel {
     struct ByproductSelectionState {
-        let item: any Item
+        let part: Part
         var producingRecipe: Recipe?
         var consumingRecipe: Recipe?
     }

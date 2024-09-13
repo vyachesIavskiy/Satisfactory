@@ -2,8 +2,8 @@ import SHModels
 import SHUtils
 
 extension SingleItemCalculator {
-    struct Byproduct {
-        let item: any Item
+    struct Byproduct: Hashable {
+        let part: Part
         let recipeID: String
         var amount: Double
         var consumers: [Consumer]
@@ -20,8 +20,8 @@ extension SingleItemCalculator {
             consumers.reduce(0.0) { $0 + $1.amount }
         }
         
-        init(item: some Item, recipeID: String, amount: Double, consumers: [Consumer] = []) {
-            self.item = item
+        init(part: Part, recipeID: String, amount: Double, consumers: [Consumer] = []) {
+            self.part = part
             self.recipeID = recipeID
             self.amount = amount
             self.consumers = consumers
@@ -34,7 +34,7 @@ extension SingleItemCalculator {
 }
 
 extension SingleItemCalculator.Byproduct {
-    struct Consumer {
+    struct Consumer: Hashable {
         let recipeID: String
         var amount: Double
     }

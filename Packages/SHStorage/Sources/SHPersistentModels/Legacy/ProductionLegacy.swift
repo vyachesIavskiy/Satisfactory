@@ -2,22 +2,22 @@ import Foundation
 import SHModels
 
 extension SingleItemProduction.Persistent {
-    public struct Legacy: Decodable {
-        public let productionTreeRootID: UUID
-        public let amount: Double
-        public let productionChain: [Chain]
+    package struct Legacy: Decodable {
+        package let productionTreeRootID: UUID
+        package let amount: Double
+        package let productionChain: [Chain]
         
-        public var root: Chain? {
+        package var root: Chain? {
             productionChain.first { $0.id == productionTreeRootID }
         }
         
-        public var name: String {
+        package var name: String {
             guard let root else { return "" }
             
-            return "\(root.itemID)-\(root.recipeID)-\(amount.formatted(.number.precision(.fractionLength(0...4))))"
+            return "\(root.partID)-\(root.recipeID)-\(amount.formatted(.number.precision(.fractionLength(0...4))))"
         }
         
-        public init(productionTreeRootID: UUID, amount: Double, productionChain: [Chain]) {
+        package init(productionTreeRootID: UUID, amount: Double, productionChain: [Chain]) {
             self.productionTreeRootID = productionTreeRootID
             self.amount = amount
             self.productionChain = productionChain
@@ -26,15 +26,15 @@ extension SingleItemProduction.Persistent {
 }
 
 extension SingleItemProduction.Persistent.Legacy {
-    public struct Chain: Decodable {
-        public let id: UUID
-        public let itemID: String
-        public let recipeID: String
-        public let children: [UUID]
+    package struct Chain: Decodable {
+        package let id: UUID
+        package let partID: String
+        package let recipeID: String
+        package let children: [UUID]
         
-        public init(id: UUID, itemID: String, recipeID: String, children: [UUID]) {
+        package init(id: UUID, partID: String, recipeID: String, children: [UUID]) {
             self.id = id
-            self.itemID = itemID
+            self.partID = partID
             self.recipeID = recipeID
             self.children = children
         }

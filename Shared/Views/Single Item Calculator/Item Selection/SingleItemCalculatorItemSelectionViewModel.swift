@@ -5,23 +5,35 @@ import SHModels
 
 @Observable
 final class SingleItemCalculatorItemSelectionViewModel {
-    // MARK: Ignored properties
+    // MARK: Observed
+    @MainActor
+    var sorting = Sorting.progression {
+        didSet {
+            updateSections(animated: true)
+        }
+    }
+    
+    @MainActor
+    var sections = [Section]()
+    
+    var selectedPart: Part?
+    
+    // MARK: Ignored
     private let parts: [Part]
-    private let equipment: [Equipment]
     
     @MainActor @ObservationIgnored
-    private var pins: Pins {
+    private var pinnedPartIDs: Set<String> {
         didSet {
-            if oldValue.singleItem.itemIDs != pins.singleItem.itemIDs {
+            if oldValue != pinnedPartIDs {
                 updateSections(animated: true)
             }
         }
     }
     
     @MainActor @ObservationIgnored
-    private var settings: SHSettings.Settings {
+    private var showFICSMAS: Bool {
         didSet {
-            if oldValue.showFICSMAS != settings.showFICSMAS {
+            if oldValue != showFICSMAS {
                 updateSections(animated: true)
             }
         }
@@ -41,19 +53,7 @@ final class SingleItemCalculatorItemSelectionViewModel {
     @ObservationIgnored @Dependency(\.settingsService)
     private var settingsService
     
-    // MARK: Observed properties
-    @MainActor
-    var sorting = Sorting.progression {
-        didSet {
-            updateSections(animated: true)
-        }
-    }
-    
-    @MainActor
-    var sections = [Section]()
-    
-    var selectedItemID: String?
-    
+    // MARK: -
     @MainActor
     init() {
         @Dependency(\.storageService)
@@ -62,30 +62,26 @@ final class SingleItemCalculatorItemSelectionViewModel {
         @Dependency(\.settingsService)
         var settingsService
         
-        parts = storageService.parts()
-        equipment = storageService.equipment()
-        
-        pins = storageService.pins()
-        settings = settingsService.settings
+        parts = storageService.automatableParts()
+        pinnedPartIDs = storageService.pinnedSingleItemPartIDs
+        showFICSMAS = settingsService.showFICSMAS
     }
     
     @MainActor
     func observeStorage() async {
-        for await pins in storageService.streamPins() {
+        for await pinnedPartIDs in storageService.streamPinnedSingleItemPartIDs {
             guard !Task.isCancelled else { break }
-            guard self.pins != pins else { continue }
             
-            self.pins = pins
+            self.pinnedPartIDs = pinnedPartIDs
         }
     }
     
     @MainActor
     func observeSettings() async {
-        for await settings in settingsService.streamSettings() {
+        for await showFICSMAS in settingsService.streamSettings().map(\.showFICSMAS) {
             guard !Task.isCancelled else { break }
-            guard self.settings != settings else { continue }
             
-            self.settings = settings
+            self.showFICSMAS = showFICSMAS
         }
     }
     
@@ -95,22 +91,17 @@ final class SingleItemCalculatorItemSelectionViewModel {
     }
     
     @MainActor
-    func isPinned(_ item: some Item) -> Bool {
-        storageService.isPinned(item, productionType: .singleItem)
+    func isPinned(_ part: Part) -> Bool {
+        storageService.isPinned(part, productionType: .singleItem)
     }
     
     @MainActor
-    func changePinStatus(for item: some Item) {
-        storageService.changePinStatus(for: item, productionType: .singleItem)
+    func changePinStatus(for part: Part) {
+        storageService.changePinStatus(for: part, productionType: .singleItem)
     }
     
-    @MainActor
-    func item(id: String) -> (any Item)? {
-        storageService.item(id: id)
-    }
-    
-    func selectItem(_ item: any Item) {
-        selectedItemID = item.id
+    func selectItem(_ part: Part) {
+        selectedPart = part
     }
 }
 
@@ -141,13 +132,7 @@ private extension SingleItemCalculatorItemSelectionViewModel {
         let automatableParts = parts.filter {
             !storageService.recipes(for: $0, as: [.output, .byproduct]).isEmpty
         }
-        let automatableEquipment = equipment.filter {
-            !storageService.recipes(for: $0, as: [.output, .byproduct]).isEmpty
-        }
         let (pinnedParts, unpinnedParts) = split(automatableParts)
-        let (pinnedEquipment, unpinnedEquipment) = split(automatableEquipment)
-        
-        let pinnedItems: [any Item] = pinnedParts + pinnedEquipment
         
         let partsByCategories = unpinnedParts.reduce(into: [(SHModels.Category, [Part])]()) { partialResult, part in
             if let index = partialResult.firstIndex(where: { $0.0 == part.category }) {
@@ -157,17 +142,8 @@ private extension SingleItemCalculatorItemSelectionViewModel {
             }
         }
         
-        let equipmentByCategories = unpinnedEquipment.reduce(into: [(SHModels.Category, [Equipment])]()) { partialResult, equipment in
-            if let index = partialResult.firstIndex(where: { $0.0 == equipment.category }) {
-                partialResult[index].1.append(equipment)
-            } else {
-                partialResult.append((equipment.category, [equipment]))
-            }
-        }
-        
-        return [.pinned(pinnedItems)] +
-        partsByCategories.sorted { $0.0 < $1.0 }.map { .parts(title: $0.0.localizedName, parts: $0.1) } +
-        equipmentByCategories.sorted { $0.0 < $1.0 }.map { .equipment(title: $0.0.localizedName, equipment: $0.1) }
+        return [.pinned(pinnedParts)] +
+        partsByCategories.sorted { $0.0 < $1.0 }.map { .parts(title: $0.0.localizedName, parts: $0.1) }
     }
     
 //    @MainActor
@@ -205,21 +181,21 @@ private extension SingleItemCalculatorItemSelectionViewModel {
 //    }
     
     @MainActor
-    func split<T: ProgressiveItem>(_ items: [T]) -> (pinned: [T], unpinned: [T]) {
-        var (pinned, unpinned) = items.reduce(into: ([T](), [T]())) { partialResult, item in
-            if item.category == .ficsmas, !settings.showFICSMAS {
+    func split(_ parts: [Part]) -> (pinned: [Part], unpinned: [Part]) {
+        var (pinned, unpinned) = parts.reduce(into: ([Part](), [Part]())) { partialResult, part in
+            if part.category == .ficsmas, !showFICSMAS {
                 return
             }
             
             if
                 searchText.isEmpty ||
-                item.category.localizedName.localizedCaseInsensitiveContains(searchText) ||
-                item.localizedName.localizedCaseInsensitiveContains(searchText)
+                part.category.localizedName.localizedCaseInsensitiveContains(searchText) ||
+                part.localizedName.localizedCaseInsensitiveContains(searchText)
             {
-                if pins.singleItem.itemIDs.contains(item.id) {
-                    partialResult.0.append(item)
+                if pinnedPartIDs.contains(part.id) {
+                    partialResult.0.append(part)
                 } else {
-                    partialResult.1.append(item)
+                    partialResult.1.append(part)
                 }
             }
         }
@@ -248,49 +224,35 @@ extension SingleItemCalculatorItemSelectionViewModel {
 
 // MARK: - Section
 extension SingleItemCalculatorItemSelectionViewModel {
-    struct Section: Identifiable, Equatable {
+    struct Section: Identifiable, Hashable {
         enum ID: Hashable {
             case pinned
             case parts(title: String)
-            case equipment(title: String)
         }
         
         let id: ID
-        var items: [any Item]
+        var parts: [Part]
         var expanded: Bool
         
         var title: String {
             switch id {
             case .pinned: NSLocalizedString("new-production-pinned-section-name", value: "Pinned", comment: "")
-            case let .parts(title), let .equipment(title): title
+            case let .parts(title): title
             }
         }
         
-        private init(id: ID, items: [any Item]) {
+        private init(id: ID, parts: [Part]) {
             self.id = id
-            self.items = items
+            self.parts = parts
             self.expanded = true
         }
         
-        static func pinned(_ items: [any Item]) -> Self {
-            Section(id: .pinned, items: items)
+        static func pinned(_ parts: [Part]) -> Self {
+            Section(id: .pinned, parts: parts)
         }
         
         static func parts(title: String, parts: [Part]) -> Self {
-            Section(id: .parts(title: title), items: parts)
-        }
-        
-        static func equipment(title: String, equipment: [Equipment]) -> Self {
-            Section(id: .equipment(title: title), items: equipment)
-        }
-        
-        static func == (
-            lhs: SingleItemCalculatorItemSelectionViewModel.Section,
-            rhs: SingleItemCalculatorItemSelectionViewModel.Section
-        ) -> Bool {
-            lhs.id == rhs.id &&
-            lhs.items.map(\.id) == rhs.items.map(\.id) &&
-            lhs.expanded == rhs.expanded
+            Section(id: .parts(title: title), parts: parts)
         }
     }
 }

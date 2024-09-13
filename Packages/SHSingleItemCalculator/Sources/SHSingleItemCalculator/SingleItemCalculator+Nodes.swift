@@ -3,18 +3,18 @@ import SHModels
 extension SingleItemCalculator {
     /// Creates root recipes nodes for production product.
     func buildNodes() {
-        guard let inputItem = internalState.selectedInputItem(with: item.id) else { return }
+        guard let inputPart = internalState.selectedInputItem(with: part.id) else { return }
         
-        let amounts = amounts(for: inputItem, availableAmount: amount)
+        let amounts = amounts(for: inputPart, availableAmount: amount)
         
-        mainNodes = inputItem.recipes.map { productionRecipe in
+        mainNodes = inputPart.recipes.map { productionRecipe in
             let amount = switch productionRecipe.proportion {
             case let .fraction(fraction): amounts.forFractions * fraction
             case let .fixed(fixed): fixed
             case .auto: amounts.forAutos / Double(amounts.amountOfAuto)
             }
             
-            return Node(id: uuid(), item: item, recipe: productionRecipe.recipe, amount: amount)
+            return Node(id: uuid(), part: part, recipe: productionRecipe.recipe, amount: amount)
         }
     }
     
@@ -26,7 +26,7 @@ extension SingleItemCalculator {
     }
     
     private typealias Amounts = (forFractions: Double, forAutos: Double, amountOfAuto: Int)
-    private func amounts(for inputItem: SingleItemProduction.InputItem, availableAmount: Double) -> Amounts {
+    private func amounts(for inputPart: SingleItemProduction.InputPart, availableAmount: Double) -> Amounts {
         /// Calculate input amount without fixed recipe proportions.
         /// This amount will be used as base amount for fraction proportions.
         ///
@@ -38,7 +38,7 @@ extension SingleItemCalculator {
         ///   Recipe3: .fraction(0.4)
         ///   Recipe4: .auto
         /// Returned amount will be: 563 - 100 - 125 = 338.
-        let amountForFractions = inputItem.recipes.reduce(availableAmount) { partialResult, productionRecipe in
+        let amountForFractions = inputPart.recipes.reduce(availableAmount) { partialResult, productionRecipe in
             guard case let .fixed(amount) = productionRecipe.proportion else {
                 return partialResult
             }
@@ -57,7 +57,7 @@ extension SingleItemCalculator {
         ///   Recipe3: .fraction(0.4)
         ///   Recipe4: .auto
         /// Returned amount will be: 563 - 100 - 125 - (338 x 0.4) = 202.8 (0.6 of available amount for fractions)
-        let amountForAutos = inputItem.recipes.reduce(amountForFractions) { partialResult, productionRecipe in
+        let amountForAutos = inputPart.recipes.reduce(amountForFractions) { partialResult, productionRecipe in
             guard case let .fraction(fraction) = productionRecipe.proportion else {
                 return partialResult
             }
@@ -65,7 +65,7 @@ extension SingleItemCalculator {
             return partialResult - amountForFractions * fraction
         }
         
-        let amountOfAutoRecipes = inputItem.recipes.filter { $0.proportion == .auto }.count
+        let amountOfAutoRecipes = inputPart.recipes.filter { $0.proportion == .auto }.count
         
         return Amounts(forFractions: amountForFractions, forAutos: amountForAutos, amountOfAuto: amountOfAutoRecipes)
     }
@@ -85,23 +85,23 @@ extension SingleItemCalculator {
     
     private func buildInputNode(for node: Node, input: Node.Input, inputIndex: Int) {
         // Check if user selected a recipe for an input.
-        guard let inputItemIndex = internalState.index(of: input.item) else { return }
+        guard let inputPartIndex = internalState.index(of: input.part) else { return }
         
         // Convenience selected item.
-        let inputItem = internalState.selectedInputItems[inputItemIndex]
+        let inputPart = internalState.selectedInputParts[inputPartIndex]
         
         // Get available amount of input based on recipeNode recipe
         let inputAmount = input.availableAmount
         
         // Get amounts for fractions, autos and amount of auro recipes
-        let amounts = amounts(for: inputItem, availableAmount: inputAmount)
+        let amounts = amounts(for: inputPart, availableAmount: inputAmount)
         
-        for (inputRecipeIndex, inputRecipe) in inputItem.recipes.enumerated() {
+        for (inputRecipeIndex, inputRecipe) in inputPart.recipes.enumerated() {
             buildInputRecipeNode(
                 to: node,
                 input: input,
-                inputItem: inputItem,
-                inputItemIndex: inputItemIndex,
+                inputPart: inputPart,
+                inputPartIndex: inputPartIndex,
                 inputRecipe: inputRecipe,
                 inputRecipeIndex: inputRecipeIndex,
                 inputAmount: inputAmount,
@@ -113,8 +113,8 @@ extension SingleItemCalculator {
     private func buildInputRecipeNode(
         to node: Node,
         input: Node.Input,
-        inputItem: SingleItemProduction.InputItem,
-        inputItemIndex: Int,
+        inputPart: SingleItemProduction.InputPart,
+        inputPartIndex: Int,
         inputRecipe: SingleItemProduction.InputRecipe,
         inputRecipeIndex: Int,
         inputAmount: Double,
@@ -129,7 +129,7 @@ extension SingleItemCalculator {
             // If input recipe is the same as parent recipe (recycled plastic/rubber, packaged/unpackaged recipes)
             guard
                 let parentRecipeNode = node.parentRecipeNode,
-                let input = parentRecipeNode.inputs.first(where: { $0.item.id == node.item.id })
+                let input = parentRecipeNode.inputs.first(where: { $0.part == node.part })
             else { return }
             
             // If selected recipe (and parent node recipe) has fixed proportion, do not spawn additional node.
@@ -141,8 +141,8 @@ extension SingleItemCalculator {
             
             // Calculate difference between amount of item produced by parent recipe for input and amount of item in the input.
             var nodeAmountForFractions = input.amount
-            if let nodeItemIndex = self.production.inputItems.firstIndex(item: node.item) {
-                let nodeItem = self.production.inputItems[nodeItemIndex]
+            if let nodePartIndex = self.production.inputParts.firstIndex(part: node.part) {
+                let nodeItem = self.production.inputParts[nodePartIndex]
                 nodeAmountForFractions = nodeItem.recipes.reduce(input.amount) { partialResult, productionRecipe in
                     guard case let .fixed(amount) = productionRecipe.proportion else {
                         return partialResult
@@ -166,9 +166,9 @@ extension SingleItemCalculator {
             let additionalAmount = (producedParentAmount * producedParentMultiplier) - producedParentAmount
             
             // Create a new additional node for a subtree. Additional nodes are calculated after main nodes.
-            let node = Node(id: uuid(), item: parentRecipeNode.item, recipe: parentRecipeNode.recipe, amount: additionalAmount)
+            let node = Node(id: uuid(), part: parentRecipeNode.part, recipe: parentRecipeNode.recipe, amount: additionalAmount)
             additionalNodes.append(node)
-        } else if !node.anyParentContains(where: { $0.item.id == inputItem.item.id }) {
+        } else if !node.anyParentContains(where: { $0.part == inputPart.part }) {
             // If input item is not an output item of any parent node.
             
             // Update tree node amount value based on production recipe proportion value.
@@ -188,11 +188,11 @@ extension SingleItemCalculator {
                     
                     // Also update production recipe proportion to acomodate deduction for tree node.
                     // From previous example available 420 items/min is deducted to 110 items/min.
-                    internalState.selectedInputItems[inputItemIndex].recipes[inputRecipeIndex].proportion = .fixed(inputAmount - amount)
+                    internalState.selectedInputParts[inputPartIndex].recipes[inputRecipeIndex].proportion = .fixed(inputAmount - amount)
                 } else {
                     // This node requires less items/min than current production recipe can provide.
                     // Do not modify tree node amount, but update production recipe proportion value
-                    internalState.selectedInputItems[inputItemIndex].recipes[inputRecipeIndex].proportion = .fixed(amount - inputAmount)
+                    internalState.selectedInputParts[inputPartIndex].recipes[inputRecipeIndex].proportion = .fixed(amount - inputAmount)
                 }
                 
             case let .fraction(fraction):
@@ -210,7 +210,7 @@ extension SingleItemCalculator {
             
             let inputNode = Node(
                 id: uuid(),
-                item: input.item,
+                part: input.part,
                 recipe: inputRecipe.recipe,
                 amount: inputAmount
             )

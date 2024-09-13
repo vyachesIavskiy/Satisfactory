@@ -9,8 +9,8 @@ public final class RecipeIngredientViewModel: Identifiable {
         state.id
     }
     
-    var item: any Item {
-        state.item
+    var part: Part {
+        state.part
     }
     
     var amountViewModels: [RecipeIngredientAmountViewModel] {

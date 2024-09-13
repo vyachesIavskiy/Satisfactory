@@ -6,16 +6,15 @@ private extension Recipe.Static {
         id: String,
         input: Ingredient,
         output: Ingredient,
-        duration: Int
+        duration: Double
     ) {
         self.init(
             id: id,
             inputs: [input],
             output: output,
             machine: V2.Buildings.nuclearPowerPlant,
-            manualCrafting: [],
             duration: duration,
-            powerConsumption: PowerConsumption(min: 0, max: 0)
+            powerConsumption: PowerConsumption(0)
         )
     }
 }

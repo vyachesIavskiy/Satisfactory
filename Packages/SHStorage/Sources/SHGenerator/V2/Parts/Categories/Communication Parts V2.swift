@@ -8,15 +8,15 @@ private extension Part.Static {
 }
 
 extension V2.Parts {
-    static let crystalOscillator = Part.Static(id: "part-crystal-oscillator")
     static let computer = Part.Static(id: "part-computer")
-    static let radioControlUnit = Part.Static(id: "part-radio-control-unit")
     static let supercomputer = Part.Static(id: "part-supercomputer")
+    static let crystalOscillator = Part.Static(id: "part-crystal-oscillator")
+    static let radioControlUnit = Part.Static(id: "part-radio-control-unit")
     
     static let communicationParts = [
-        crystalOscillator,
         computer,
+        supercomputer,
+        crystalOscillator,
         radioControlUnit,
-        supercomputer
     ]
 }

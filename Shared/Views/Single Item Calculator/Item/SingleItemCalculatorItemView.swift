@@ -20,12 +20,12 @@ struct SingleItemCalculatorItemView: View {
             titleView
                 .padding(.horizontal, 16)
             
-            ForEach(Array(viewModel.item.recipes.enumerated()), id: \.element.id) { index, outputRecipe in
+            ForEach(Array(viewModel.part.recipes.enumerated()), id: \.element.id) { index, outputRecipe in
                 VStack(spacing: 16) {
                     recipeView(outputRecipe)
                         .padding(.horizontal, 16)
                     
-                    if index != viewModel.item.recipes.indices.last {
+                    if index != viewModel.part.recipes.indices.last {
                         Rectangle()
                             .fill(LinearGradient(
                                 colors: [.sh(.midnight40), .sh(.midnight40).opacity(0.1)],
@@ -47,12 +47,12 @@ struct SingleItemCalculatorItemView: View {
     @MainActor @ViewBuilder
     private var titleView: some View {
         HStack(alignment: .firstTextBaseline) {
-            if viewModel.item.recipes.count > 1 {
-                Text(viewModel.item.item.localizedName)
+            if viewModel.part.recipes.count > 1 {
+                Text(viewModel.part.part.localizedName)
                     .font(.title3)
                     .foregroundStyle(.secondary)
             } else {
-                Text(viewModel.item.recipes[0].recipe.localizedName)
+                Text(viewModel.part.recipes[0].recipe.localizedName)
                     .fontWeight(.medium)
             }
             
@@ -88,7 +88,7 @@ struct SingleItemCalculatorItemView: View {
     @MainActor @ViewBuilder
     private func recipeView(_ outputRecipe: SingleItemCalculator.OutputRecipe) -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            if viewModel.item.recipes.count > 1 {
+            if viewModel.part.recipes.count > 1 {
                 HStack {
                     Text(outputRecipe.recipe.localizedName)
                         .fontWeight(.medium)
@@ -124,14 +124,14 @@ import SHStorage
 import SHModels
 
 private struct _SingleItemCalculatorItemPreview: View {
-    let itemID: String
+    let partID: String
     let recipeIDs: [String]
     
-    private var item: (any Item)? {
+    private var part: Part? {
         @Dependency(\.storageService)
         var storageService
         
-        return storageService.item(id: itemID)
+        return storageService.part(id: partID)
     }
     
     private var outputRecipes: [SingleItemCalculator.OutputRecipe] {
@@ -143,12 +143,12 @@ private struct _SingleItemCalculatorItemPreview: View {
                 SingleItemCalculator.OutputRecipe(
                     recipe: $0,
                     output: SingleItemCalculator.OutputRecipe.OutputIngredient(
-                        item: $0.output.item,
+                        part: $0.output.part,
                         amount: 20
                     ),
                     byproducts: $0.byproducts.map {
                         SingleItemCalculator.OutputRecipe.ByproductIngredient(
-                            item: $0.item,
+                            part: $0.part,
                             amount: 20,
                             byproducts: [],
                             isSelected: false
@@ -156,7 +156,7 @@ private struct _SingleItemCalculatorItemPreview: View {
                     },
                     inputs: $0.inputs.map {
                         SingleItemCalculator.OutputRecipe.InputIngredient(
-                            item: $0.item,
+                            part: $0.part,
                             amount: 20,
                             byproducts: [],
                             isSelected: false
@@ -173,9 +173,9 @@ private struct _SingleItemCalculatorItemPreview: View {
     }
     
     private var viewModel: SingleItemCalculatorItemViewModel? {
-        item.map {
+        part.map {
             SingleItemCalculatorItemViewModel(
-                item: SingleItemCalculator.OutputItem(item: $0, recipes: outputRecipes),
+                part: SingleItemCalculator.OutputPart(part: $0, recipes: outputRecipes),
                 byproductSelectionState: nil,
                 canPerformAction: { _ in true },
                 performAction: { _ in }
@@ -189,7 +189,7 @@ private struct _SingleItemCalculatorItemPreview: View {
                 SingleItemCalculatorItemView(viewModel: viewModel)
             }
         } else {
-            Text(verbatim: "There is no item with ID '\(itemID)'")
+            Text(verbatim: "There is no item with ID '\(partID)'")
                 .font(.title3)
                 .padding()
         }
@@ -197,18 +197,18 @@ private struct _SingleItemCalculatorItemPreview: View {
 }
 
 #Preview("Plastic, 1 recipe") {
-    _SingleItemCalculatorItemPreview(itemID: "part-plastic", recipeIDs: ["recipe-alternate-recycled-plastic"])
+    _SingleItemCalculatorItemPreview(partID: "part-plastic", recipeIDs: ["recipe-alternate-recycled-plastic"])
 }
 
 #Preview("Rubber, 2 recipes") {
-    _SingleItemCalculatorItemPreview(itemID: "part-rubber", recipeIDs: [
+    _SingleItemCalculatorItemPreview(partID: "part-rubber", recipeIDs: [
         "recipe-alternate-recycled-rubber",
         "recipe-rubber"
     ])
 }
 
 #Preview("Heavy Modular Frame, 3 recipes") {
-    _SingleItemCalculatorItemPreview(itemID: "part-heavy-modular-frame", recipeIDs: [
+    _SingleItemCalculatorItemPreview(partID: "part-heavy-modular-frame", recipeIDs: [
         "recipe-heavy-modular-frame",
         "recipe-alternate-heavy-encased-frame",
         "recipe-alternate-heavy-flexible-frame"

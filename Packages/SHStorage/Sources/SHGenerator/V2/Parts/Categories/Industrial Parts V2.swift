@@ -14,8 +14,8 @@ extension V2.Parts {
     static let heatSink = Part.Static(id: "part-heat-sink")
     static let coolingSystem = Part.Static(id: "part-cooling-system")
     static let fusedModularFrame = Part.Static(id: "part-fused-modular-frame")
-    static let battery = Part.Static(id: "part-battery")
     static let turboMotor = Part.Static(id: "part-turbo-motor")
+    static let battery = Part.Static(id: "part-battery")
     
     static let industrialParts = [
         rotor,
@@ -24,7 +24,7 @@ extension V2.Parts {
         heatSink,
         coolingSystem,
         fusedModularFrame,
+        turboMotor,
         battery,
-        turboMotor
     ]
 }

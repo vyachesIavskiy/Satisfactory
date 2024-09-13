@@ -3,7 +3,7 @@ import SHModels
 import SHStaticModels
 
 extension Production.Persistent {
-    public enum V2: Identifiable, Codable, Hashable {
+    package enum V2: Identifiable, Codable, Hashable {
         case singleItem(SingleItemProduction.Persistent.V2)
         case fromResources(FromResourcesProduction.Persistent.V2)
         case power(PowerProduction.Persistent.V2)
@@ -12,7 +12,7 @@ extension Production.Persistent {
             case productionType
         }
         
-        public var id: UUID {
+        package var id: UUID {
             switch self {
             case let .singleItem(production): production.id
             case let .fromResources(production): production.id
@@ -20,7 +20,7 @@ extension Production.Persistent {
             }
         }
         
-        public init(from decoder: any Decoder) throws {
+        package init(from decoder: any Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             let productionType = try container.decode(ProductionType.self, forKey: .productionType)
             
@@ -36,7 +36,7 @@ extension Production.Persistent {
             }
         }
         
-        public func encode(to encoder: any Encoder) throws {
+        package func encode(to encoder: any Encoder) throws {
             var container = encoder.container(keyedBy: CodingKeys.self)
             
             switch self {
@@ -54,7 +54,7 @@ extension Production.Persistent {
             }
         }
         
-        public mutating func migrate(migration: Migration) {
+        package mutating func migrate(migration: Migration) {
             switch self {
             case let .singleItem(production):
                 var copy = production

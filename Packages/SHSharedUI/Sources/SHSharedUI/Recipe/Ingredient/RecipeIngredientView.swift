@@ -22,13 +22,13 @@ public struct RecipeIngredientView: View {
     public var body: some View {
         VStack(spacing: iconSpacing) {
             VStack(spacing: 0) {
-                Image(viewModel.item.id)
+                Image(viewModel.part.id)
                     .resizable()
                     .frame(width: iconSize, height: iconSize)
                     .padding(4)
                 
                 if showIngredientNames {
-                    Text(viewModel.item.localizedName)
+                    Text(viewModel.part.localizedName)
                         .font(.callout)
                         .multilineTextAlignment(.center)
                         .lineLimit(3)

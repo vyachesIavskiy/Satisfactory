@@ -2,7 +2,7 @@ import Foundation
 import SHModels
 
 extension Asset.Persistent {
-    public enum V2: Codable, Hashable {
+    package enum V2: Codable, Hashable {
         case legacy
         case abbreviation
         case assetCatalog(name: String)
@@ -18,7 +18,7 @@ extension Asset.Persistent {
             case value
         }
         
-        public init(from decoder: any Decoder) throws {
+        package init(from decoder: any Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             let codingRawValue = try container.decode(String.self, forKey: .assetTypeRawValue)
             guard let codingValue = CodingValue(rawValue: codingRawValue) else {
@@ -43,7 +43,7 @@ extension Asset.Persistent {
             }
         }
         
-        public func encode(to encoder: any Encoder) throws {
+        package func encode(to encoder: any Encoder) throws {
             var container = encoder.container(keyedBy: CodingKeys.self)
             let codingValue: CodingValue = switch self {
             case .legacy: .legacy

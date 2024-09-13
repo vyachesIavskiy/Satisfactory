@@ -1,5 +1,5 @@
 import SHModels
 
 extension FromResourcesProduction {
-    public enum Persistent {}
+    package enum Persistent {}
 }

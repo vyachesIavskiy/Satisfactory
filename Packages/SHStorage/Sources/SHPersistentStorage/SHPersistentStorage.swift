@@ -7,43 +7,43 @@ import struct SHStaticModels.Migration
 import SHStaticStorage
 import SHLogger
 
-public final class SHPersistentStorage {
+package final class SHPersistentStorage {
     private let staticStorage: SHStaticStorage
     private let v2 = V2()
     private let logger = SHLogger(subsystemName: "SHStorage", category: "SHPersistentStorage")
     
-    public var configuration: Configuration {
+    package var configuration: Configuration {
         get { Configuration(v2.configuration) }
         set { v2.configuration = Configuration.Persistent.V2(newValue) }
     }
     
-    public var streamPins: AsyncStream<Pins> {
+    package var streamPins: AsyncStream<Pins> {
         v2.pins
             .map(Pins.init)
             .values
             .eraseToStream()
     }
     
-    public var pins: Pins {
+    package var pins: Pins {
         Pins(v2.pins.value)
     }
     
-    public var factories: [Factory] {
+    package var factories: [Factory] {
         v2.factories.value.map(Factory.init)
     }
     
-    public var streamFactories: AsyncStream<[Factory]> {
+    package var streamFactories: AsyncStream<[Factory]> {
         v2.factories
             .map { $0.map(Factory.init) }
             .values
             .eraseToStream()
     }
     
-    public var productions: [Production] {
+    package var productions: [Production] {
         v2.productions.value.map(map)
     }
     
-    public var streamProductions: AsyncStream<[Production]> {
+    package var streamProductions: AsyncStream<[Production]> {
         v2.productions
             .map { [weak self] in
                 guard let self else { return [] }
@@ -54,17 +54,17 @@ public final class SHPersistentStorage {
             .eraseToStream()
     }
     
-    public init(staticStorage: SHStaticStorage) {
+    package init(staticStorage: SHStaticStorage) {
         self.staticStorage = staticStorage
     }
     
     // MARK: Loading
-    public func load(_ options: LoadOptions) throws {
+    package func load() throws {
         logger.info("Loading Persistent storage.")
         
         // Check if storage can be loaded
         let legacy = Legacy()
-        let canLegacyBeLoaded = legacy.canBeLoaded() || !options.v1.isEmpty
+        let canLegacyBeLoaded = legacy.canBeLoaded()
         guard canLegacyBeLoaded || v2.canBeLoaded() else {
             logger.info("Persistent storage is not detected, saving initial data.")
             
@@ -72,10 +72,10 @@ public final class SHPersistentStorage {
             return
         }
         
-        if !v2.canBeLoaded() || !options.v1.isEmpty {
+        if !v2.canBeLoaded() {
             // Migrate
             let migration = createContentMigration()
-            try migrateIfNeeded(legacy: legacy, options: options, migration: migration)
+            try migrateIfNeeded(legacy: legacy, migration: migration)
         } else {
             // Load v2 Storage
             try v2.load()
@@ -85,67 +85,55 @@ public final class SHPersistentStorage {
     }
     
     // MARK: IsPinned
-    public func isPartPinned(_ partID: String, productionType: ProductionType) -> Bool {
+    package func isPartPinned(_ partID: String, productionType: ProductionType) -> Bool {
         v2.isPartPinned(partID, productionType: productionType)
     }
-    
-    public func isEquipmentPinned(_ equipmentID: String, productionType: ProductionType) -> Bool {
-        v2.isEquipmentPinned(equipmentID, productionType: productionType)
-    }
-    
-    public func isBuildingPinned(_ buildingID: String, productionType: ProductionType) -> Bool {
+        
+    package func isBuildingPinned(_ buildingID: String, productionType: ProductionType) -> Bool {
         v2.isBuildingPinned(buildingID, productionType: productionType)
     }
     
-    public func isRecipePinned(_ recipeID: String) -> Bool {
+    package func isRecipePinned(_ recipeID: String) -> Bool {
         v2.isRecipePinned(recipeID)
     }
     
     // MARK: Change pin status
-    public func changePartPinStatus(_ partID: String, productionType: ProductionType) throws {
+    package func changePartPinStatus(_ partID: String, productionType: ProductionType) throws {
         try v2.changePartPinStatus(partID, productionType: productionType)
     }
     
-    public func changeEquipmentPinStatus(_ equipmentID: String, productionType: ProductionType) throws {
-        try v2.changeEquipmentPinStatus(equipmentID, productionType: productionType)
-    }
-    
-    public func changeBuildingPinStatus(_ buildingID: String, productionType: ProductionType) throws {
+    package func changeBuildingPinStatus(_ buildingID: String, productionType: ProductionType) throws {
         try v2.changeBuildingPinStatus(buildingID, productionType: productionType)
     }
     
-    public func changeRecipePinStatus(_ recipeID: String) throws {
+    package func changeRecipePinStatus(_ recipeID: String) throws {
         try v2.changeRecipePinStatus(recipeID)
     }
     
-    public func saveFactory(_ factory: Factory) throws {
+    package func saveFactory(_ factory: Factory) throws {
         try v2.saveFactory(Factory.Persistent.V2(factory))
     }
     
-    public func saveProduction(_ production: Production, to factoryID: UUID) throws {
+    package func saveProduction(_ production: Production, to factoryID: UUID) throws {
         try v2.saveProduction(Production.Persistent.V2(production), to: factoryID)
     }
     
-    public func deleteFactory(_ factory: Factory) throws {
+    package func deleteFactory(_ factory: Factory) throws {
         try v2.deleteFactory(Factory.Persistent.V2(factory))
     }
     
-    public func deleteProduction(_ production: Production) throws {
+    package func deleteProduction(_ production: Production) throws {
         try v2.deleteProduction(Production.Persistent.V2(production))
     }
 }
 
 // MARK: Migration
 private extension SHPersistentStorage {
-    func migrateIfNeeded(legacy: Legacy, options: LoadOptions, migration: Migration?) throws {
+    func migrateIfNeeded(legacy: Legacy, migration: Migration?) throws {
         logger.info("Migrating Persistent storage.")
         
         func migrateLegacy() throws {
-            if !options.v1.isEmpty {
-                logger.debug("Load options detected. Migrating from debug provided Legacy to V2.")
-                legacy.load(from: options)
-                try v2.migrate(legacy: legacy, migration: migration)
-            } else if legacy.canBeLoaded() {
+            if legacy.canBeLoaded() {
                 logger.debug("Legacy storage detected. Migrating from Legacy to V2.")
                 try legacy.load()
                 try v2.migrate(legacy: legacy, migration: migration)
@@ -187,13 +175,6 @@ private extension SHPersistentStorage {
                     migrationPlan.partIDs[mergedIndex].newID = migration.partIDs[migrationIndex].newID
                 }
                 
-                for (mergedIndex, equipmentID) in migrationPlan.equipmentIDs.enumerated() {
-                    guard let migrationIndex = migration.equipmentIDs.firstIndex(oldID: equipmentID.newID)
-                    else { continue }
-                    
-                    migrationPlan.equipmentIDs[mergedIndex].newID = migration.equipmentIDs[migrationIndex].newID
-                }
-                
                 for (mergedIndex, recipeID) in migrationPlan.recipeIDs.enumerated() {
                     guard let migrationIndex = migration.recipeIDs.firstIndex(oldID: recipeID.newID)
                     else { continue }
@@ -211,14 +192,14 @@ private extension SHPersistentStorage {
 
 private extension SHPersistentStorage {
     func map(_ savedProduction: Production.Persistent.V2) -> Production {
-        Production(savedProduction, itemProvider: item(id:), recipeProvider: recipe(id:))
+        Production(savedProduction, partProvider: part(id:), recipeProvider: recipe(id:))
     }
     
-    func item(id: String) -> any Item {
-        guard let item = staticStorage[itemID: id] else {
-            fatalError("No item with id '\(id)'")
+    func part(id: String) -> Part {
+        guard let part = staticStorage[partID: id] else {
+            fatalError("No part with id '\(id)'")
         }
-        return item
+        return part
     }
     
     func recipe(id: String) -> Recipe {

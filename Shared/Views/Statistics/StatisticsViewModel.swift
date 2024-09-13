@@ -35,16 +35,16 @@ final class StatisticsViewModel {
     
     private func buildSections() {
         itemsSection.items = productions
-            .flatMap(\.statistics.items)
-            .reduce(into: [Item]()) { partialResult, statisticItem in
-                if let index = partialResult.firstIndex(where: { $0.id == statisticItem.id }) {
-                    partialResult[index].statisticItem.recipes.merge(with: statisticItem.recipes) { lhs, rhs in
+            .flatMap(\.statistics.parts)
+            .reduce(into: [Part]()) { partialResult, statisticPart in
+                if let index = partialResult.firstIndex(where: { $0.id == statisticPart.id }) {
+                    partialResult[index].statisticPart.recipes.merge(with: statisticPart.recipes) { lhs, rhs in
                         lhs.id == rhs.id
                     } merging: { lhs, rhs in
                         lhs.amount += rhs.amount
                     }
                 } else {
-                    partialResult.append(Item(statisticItem: statisticItem))
+                    partialResult.append(Part(statisticPart: statisticPart))
                 }
             }
             .sorted()
@@ -60,8 +60,8 @@ final class StatisticsViewModel {
             }
             .sorted()
         
-        machinesSection.machines = productions.flatMap(\.statistics.items).reduce(into: []) { partialResult, statisticItem in
-            let recipeMachines = statisticItem.recipes.reduce(into: [Machine]()) { partialResult, statisticRecipe in
+        machinesSection.machines = productions.flatMap(\.statistics.parts).reduce(into: []) { partialResult, statisticPart in
+            let recipeMachines = statisticPart.recipes.reduce(into: [Machine]()) { partialResult, statisticRecipe in
                 guard let recipeMachine = statisticRecipe.recipe.machine else { return }
                 
                 let newMachineRecipe = MachineRecipe(statisticRecipe: statisticRecipe)
@@ -95,7 +95,7 @@ final class StatisticsViewModel {
 
 extension StatisticsViewModel {
     struct ItemsSection: Hashable {
-        var items = [Item]()
+        var items = [Part]()
         var expanded = true
     }
 }
@@ -130,26 +130,26 @@ extension StatisticsViewModel {
 }
 
 extension StatisticsViewModel {
-    struct Item: Identifiable, Hashable {
-        var statisticItem: StatisticItem
+    struct Part: Identifiable, Hashable {
+        var statisticPart: StatisticPart
         var recipesExpanded: Bool
         
-        var id: String { statisticItem.id }
+        var id: String { statisticPart.id }
         
         var expandable: Bool {
-            statisticItem.recipes.count > 1
+            statisticPart.recipes.count > 1
         }
         
         var subtitle: LocalizedStringKey {
             if expandable {
-                "statistics-\(statisticItem.recipes.count)-of-recipes"
+                "statistics-\(statisticPart.recipes.count)-of-recipes"
             } else {
-                "\(statisticItem.recipes[0].recipe.localizedName)"
+                "\(statisticPart.recipes[0].recipe.localizedName)"
             }
         }
         
-        init(statisticItem: StatisticItem, recipesExpanded: Bool = false) {
-            self.statisticItem = statisticItem
+        init(statisticPart: StatisticPart, recipesExpanded: Bool = false) {
+            self.statisticPart = statisticPart
             self.recipesExpanded = recipesExpanded
         }
     }
@@ -324,15 +324,10 @@ extension StatisticsViewModel.MachineRecipe {
     }
 }
 
-extension [StatisticsViewModel.Item] {
+extension [StatisticsViewModel.Part] {
     func sorted() -> Self {
         sorted {
-            guard
-                let lPart = $0.statisticItem.item as? Part,
-                let rPart = $1.statisticItem.item as? Part
-            else { return false }
-            
-            return lPart.progressionIndex > rPart.progressionIndex
+            $0.statisticPart.part.progressionIndex > $1.statisticPart.part.progressionIndex
         }
     }
 }
@@ -340,12 +335,7 @@ extension [StatisticsViewModel.Item] {
 extension [StatisticNaturalResource] {
     func sorted() -> Self {
         sorted {
-            guard
-                let lPart = $0.item as? Part,
-                let rPart = $1.item as? Part
-            else { return false }
-            
-            return lPart.progressionIndex > rPart.progressionIndex
+            $0.part.progressionIndex > $1.part.progressionIndex
         }
     }
 }

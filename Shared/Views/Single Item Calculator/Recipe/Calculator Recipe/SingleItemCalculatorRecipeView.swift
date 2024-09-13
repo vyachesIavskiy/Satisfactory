@@ -19,17 +19,17 @@ struct CalculatorRecipeView: View {
             $0
                 .disabledStyle(viewModel.byproductSelectionState != nil)
         } byproduct: { index, ingredientView in
-            let byproduct = viewModel.recipe.byproducts[index]
+            let byproduct = viewModel.outputRecipe.byproducts[index]
             byproductViewBuilder(byproduct: byproduct) {
                 ingredientView
             }
-            .buttonStyle(.shIngredient(byproduct.item))
+            .buttonStyle(.shIngredient(byproduct.part))
         } input: { index, ingredientView in
-            let input = viewModel.recipe.inputs[index]
+            let input = viewModel.outputRecipe.inputs[index]
             inputViewBuilder(input: input) {
                 ingredientView
             }
-            .buttonStyle(.shIngredient(input.item))
+            .buttonStyle(.shIngredient(input.part))
         }
     }
     
@@ -169,12 +169,12 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
         let recipe = SingleItemCalculator.OutputRecipe(
             recipe: recipe,
             output: SingleItemCalculator.OutputRecipe.OutputIngredient(
-                item: recipe.output.item,
+                part: recipe.output.part,
                 amount: recipe.amountPerMinute(for: recipe.output)
             ),
             byproducts: recipe.byproducts.map {
                 SingleItemCalculator.OutputRecipe.ByproductIngredient(
-                    item: $0.item,
+                    part: $0.part,
                     amount: recipe.amountPerMinute(for: $0),
                     byproducts: [],
                     isSelected: false
@@ -183,7 +183,7 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
             inputs: recipe.inputs.map {
                 SingleItemCalculator.OutputRecipe.InputIngredient(
                     producingProductID: nil,
-                    item: $0.item,
+                    part: $0.part,
                     amount: recipe.amountPerMinute(for: $0),
                     byproducts: [],
                     isSelected: false
@@ -193,8 +193,7 @@ private struct _SingleItemProductionRecipeSelectPreview: View {
         )
         
         return CalculatorRecipeViewModel(
-            product: SingleItemCalculator.OutputItem(item: recipe.output.item, recipes: [recipe]),
-            recipe: recipe,
+            outputRecipe: recipe,
             byproductSelectionState: nil,
             canPerformAction: { _ in true },
             performAction: { _ in }

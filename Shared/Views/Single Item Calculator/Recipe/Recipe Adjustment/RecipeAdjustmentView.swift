@@ -78,12 +78,12 @@ private struct _RecipeAdjustmentPreview: View {
             SingleItemCalculator.OutputRecipe(
                 recipe: $0,
                 output: SingleItemCalculator.OutputRecipe.OutputIngredient(
-                    item: $0.output.item,
+                    part: $0.output.part,
                     amount: 20
                 ),
                 byproducts: $0.byproducts.map {
                     SingleItemCalculator.OutputRecipe.ByproductIngredient(
-                        item: $0.item,
+                        part: $0.part,
                         amount: 20,
                         byproducts: [],
                         isSelected: false
@@ -91,7 +91,7 @@ private struct _RecipeAdjustmentPreview: View {
                 },
                 inputs: $0.inputs.map {
                     SingleItemCalculator.OutputRecipe.InputIngredient(
-                        item: $0.item,
+                        part: $0.part,
                         amount: 20,
                         byproducts: [],
                         isSelected: false

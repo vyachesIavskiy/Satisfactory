@@ -9,7 +9,7 @@ public struct ListRowIconItem: View {
         case .solid, nil:
             ListRowIconBackgroundShape.angledRectangle
             
-        case .fluid, .gas:
+        case .fluid, .gas, .matter:
             ListRowIconBackgroundShape.roundedRectangle
         }
     }

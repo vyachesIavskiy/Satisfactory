@@ -5,22 +5,22 @@ import Dependencies
 extension SingleItemProduction {
     public struct InputByproduct: Hashable, Sendable {
         public let id: UUID
-        public var item: any Item
+        public var part: Part
         public var producers: [InputByproductProducer]
         
-        public init(id: UUID, item: some Item, producers: [InputByproductProducer]) {
+        public init(id: UUID, part: Part, producers: [InputByproductProducer]) {
             self.id = id
-            self.item = item
+            self.part = part
             self.producers = producers
         }
         
-        public init(id: UUID, item: some Item, producingRecipe: Recipe, consumingRecipe: Recipe) {
+        public init(id: UUID, part: Part, producingRecipe: Recipe, consumingRecipe: Recipe) {
             @Dependency(\.uuid)
             var uuid
             
             self.init(
                 id: id,
-                item: item,
+                part: part,
                 producers: [
                     SingleItemProduction.InputByproductProducer(
                         id: uuid(),
@@ -30,34 +30,20 @@ extension SingleItemProduction {
                 ]
             )
         }
-        
-        // Equatable
-        public static func == (lhs: Self, rhs: Self) -> Bool {
-            lhs.id == rhs.id &&
-            lhs.item.id == rhs.item.id &&
-            lhs.producers == rhs.producers
-        }
-        
-        // Hashable
-        public func hash(into hasher: inout Hasher) {
-            hasher.combine(id)
-            hasher.combine(item.id)
-            hasher.combine(producers)
-        }
     }
 }
 
 // MARK: Input byproduct + Sequence
 extension Sequence<SingleItemProduction.InputByproduct> {
-    public func first(item: some Item) -> Element? {
-        first { $0.item.id == item.id }
+    public func first(part: Part) -> Element? {
+        first { $0.part == part }
     }
 }
 
 // MARK: Input byproduct + Collection
 extension Collection<SingleItemProduction.InputByproduct> {
-    public func firstIndex(item: some Item) -> Index? {
-        firstIndex { $0.item.id == item.id }
+    public func firstIndex(part: Part) -> Index? {
+        firstIndex { $0.part == part }
     }
 }
 

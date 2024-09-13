@@ -111,259 +111,6 @@
         }
       }
     },
-    "equipment-beacon" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beacon"
-          }
-        }
-      }
-    },
-    "equipment-blade-runners" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Blade Runners"
-          }
-        }
-      }
-    },
-    "equipment-boombox" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Boombox"
-          }
-        }
-      }
-    },
-    "equipment-candy-cane-basher" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Candy Cane Basher"
-          }
-        }
-      }
-    },
-    "equipment-chainsaw" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chainsaw"
-          }
-        }
-      }
-    },
-    "equipment-factory-cart" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Factory Cart"
-          }
-        }
-      }
-    },
-    "equipment-ficsit-coffe-cup" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FICSIT Coffee Cup"
-          }
-        }
-      }
-    },
-    "equipment-ficsit-gold-coffee-cup" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "FICSIT Gold Coffee Cup"
-          }
-        }
-      }
-    },
-    "equipment-gas-mask" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gas Mask"
-          }
-        }
-      }
-    },
-    "equipment-golden-factory-cart" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Golden Factory Cart"
-          }
-        }
-      }
-    },
-    "equipment-hazmat-suit" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hazmat Suit"
-          }
-        }
-      }
-    },
-    "equipment-hover-pack" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hover Pack"
-          }
-        }
-      }
-    },
-    "equipment-jetpack" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jetpack"
-          }
-        }
-      }
-    },
-    "equipment-medicinal-inhaler" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Medicinal Inhaler"
-          }
-        }
-      }
-    },
-    "equipment-nobelisk-detonator" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nobelisk Detonator"
-          }
-        }
-      }
-    },
-    "equipment-object-scanner" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Object Scanner"
-          }
-        }
-      }
-    },
-    "equipment-parachute" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Parachute"
-          }
-        }
-      }
-    },
-    "equipment-portable-miner" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Portable Miner"
-          }
-        }
-      }
-    },
-    "equipment-rebar-gun" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rebar Gun"
-          }
-        }
-      }
-    },
-    "equipment-rifle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rifle"
-          }
-        }
-      }
-    },
-    "equipment-xeno-basher" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Xeno Basher"
-          }
-        }
-      }
-    },
-    "equipment-xeno-zapper" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Xeno Zapper"
-          }
-        }
-      }
-    },
-    "equipment-zipline" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zipline"
-          }
-        }
-      }
-    },
     "factory-legacy" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -547,6 +294,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beryl Nut"
+          }
+        }
+      }
+    },
+    "part-biochemical-sculptor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biochemical Sculptor"
           }
         }
       }
@@ -804,6 +562,50 @@
         }
       }
     },
+    "part-dark-matter-crystal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark Matter Crystal"
+          }
+        }
+      }
+    },
+    "part-dark-matter-residue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark Matter Residue"
+          }
+        }
+      }
+    },
+    "part-diamonds" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diamonds"
+          }
+        }
+      }
+    },
+    "part-dissolved-silica" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dissolved Silica"
+          }
+        }
+      }
+    },
     "part-electromagnetic-control-rod" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -914,6 +716,28 @@
         }
       }
     },
+    "part-ficsite-ingot" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ficsite Ingot"
+          }
+        }
+      }
+    },
+    "part-ficsite-trigon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ficsite Trigon"
+          }
+        }
+      }
+    },
     "part-ficsmas-bow" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -976,6 +800,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "FICSMAS Wonder Star"
+          }
+        }
+      }
+    },
+    "part-ficsonium" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ficsonium"
           }
         }
       }
@@ -1141,6 +976,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Iodine Infused Filter"
+          }
+        }
+      }
+    },
+    "part-ionized-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ionized Fuel"
           }
         }
       }
@@ -1409,6 +1255,17 @@
         }
       }
     },
+    "part-packaged-ionized-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Ionized Fuel"
+          }
+        }
+      }
+    },
     "part-packaged-liquid-biofuel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1449,6 +1306,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Packaged Oil"
+          }
+        }
+      }
+    },
+    "part-packaged-rocket-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaged Rocket Fuel"
           }
         }
       }
@@ -1574,6 +1442,17 @@
         }
       }
     },
+    "part-portable-miner" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Portable Miner"
+          }
+        }
+      }
+    },
     "part-power-shard" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1673,6 +1552,17 @@
         }
       }
     },
+    "part-reanimated-sam" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reanimated SAM"
+          }
+        }
+      }
+    },
     "part-red-ficsmas-ornament" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1706,6 +1596,17 @@
         }
       }
     },
+    "part-rocket-fuel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rocket Fuel"
+          }
+        }
+      }
+    },
     "part-rotor" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1728,13 +1629,13 @@
         }
       }
     },
-    "part-sam-ore" : {
+    "part-sam" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAM Ore"
+            "value" : "SAM"
           }
         }
       }
@@ -1768,6 +1669,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Silica"
+          }
+        }
+      }
+    },
+    "part-singularity-cell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Singularity Cell"
           }
         }
       }
@@ -1966,6 +1878,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Thermal Propulsion Rocket"
+          }
+        }
+      }
+    },
+    "part-time-crystal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Crystal"
           }
         }
       }

@@ -2,7 +2,7 @@ import SHModels
 import SHStaticModels
 
 extension V2.Extractions {
-    static let crudeOil = Extraction.Static(
+    static let oilExtractor = Extraction.Static(
         building: V2.Buildings.oilExctractor,
         naturalResources: [V2.Parts.crudeOil],
         rates: [
@@ -12,5 +12,7 @@ extension V2.Extractions {
         ]
     )
     
-    static let crudeOilExtractions = [crudeOil]
+    static let oilExtractions = [
+        oilExtractor
+    ]
 }

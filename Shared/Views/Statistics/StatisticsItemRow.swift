@@ -5,28 +5,28 @@ import SHUtils
 extension StatisticsView {
     struct ItemRow: View {
         @Binding
-        var item: StatisticsViewModel.Item
+        var part: StatisticsViewModel.Part
         
         private var name: String {
-            item.statisticItem.item.localizedName
+            part.statisticPart.part.localizedName
         }
         
         private var valueString: String {
-            item.statisticItem.amount.formatted(.shNumber())
+            part.statisticPart.amount.formatted(.shNumber())
         }
         
-        init(_ item: Binding<StatisticsViewModel.Item>) {
-            self._item = item
+        init(_ part: Binding<StatisticsViewModel.Part>) {
+            self._part = part
         }
         
         var body: some View {
             VStack(spacing: 4) {
                 HStack(spacing: 12) {
-                    ListRowIconItem(item.statisticItem.item)
+                    ListRowIconItem(part.statisticPart.part)
                     
-                    if item.expandable {
+                    if part.expandable {
                         Button {
-                            _item.wrappedValue.recipesExpanded.toggle()
+                            _part.wrappedValue.recipesExpanded.toggle()
                         } label: {
                             itemRowContent
                                 .contentShape(.interaction, Rectangle())
@@ -37,9 +37,9 @@ extension StatisticsView {
                     }
                 }
                 
-                if item.recipesExpanded {
+                if part.recipesExpanded {
                     VStack(alignment: .leading, spacing: 4) {
-                        ForEach(item.statisticItem.recipes) { recipe in
+                        ForEach(part.statisticPart.recipes) { recipe in
                             HStack(alignment: .firstTextBaseline) {
                                 Text(recipe.recipe.localizedName)
                                 
@@ -67,7 +67,7 @@ extension StatisticsView {
         
         @MainActor @ViewBuilder
         private var itemRowContent: some View {
-            if item.expandable {
+            if part.expandable {
                 VStack(spacing: 4) {
                     HStack {
                         Text(name)
@@ -81,16 +81,16 @@ extension StatisticsView {
                     }
                     
                     HStack {
-                        Text(item.subtitle)
+                        Text(part.subtitle)
                             .font(.caption)
-                            .opacity(item.recipesExpanded ? 0 : 1)
-                            .animation(.default.speed(2), value: item.recipesExpanded)
+                            .opacity(part.recipesExpanded ? 0 : 1)
+                            .animation(.default.speed(2), value: part.recipesExpanded)
                         
                         Spacer()
                         
-                        ExpandArrow(item.recipesExpanded)
-                            .stroke(lineWidth: item.recipesExpanded ? 0.5 : 1)
-                            .foregroundStyle(.sh(item.recipesExpanded ? .midnight30 : .midnight))
+                        ExpandArrow(part.recipesExpanded)
+                            .stroke(lineWidth: part.recipesExpanded ? 0.5 : 1)
+                            .foregroundStyle(.sh(part.recipesExpanded ? .midnight30 : .midnight))
                             .fixedSize(horizontal: false, vertical: true)
                             .frame(width: 16)
                     }
@@ -101,10 +101,10 @@ extension StatisticsView {
                         Text(name)
                             .fontWeight(.semibold)
                         
-                        Text(item.subtitle)
+                        Text(part.subtitle)
                             .font(.caption)
-                            .opacity(item.recipesExpanded ? 0 : 1)
-                            .animation(.default.speed(2), value: item.recipesExpanded)
+                            .opacity(part.recipesExpanded ? 0 : 1)
+                            .animation(.default.speed(2), value: part.recipesExpanded)
                     }
                     
                     Spacer()
@@ -124,14 +124,14 @@ import SHStorage
 
 private struct _ItemRowPreview: View {
     @State
-    private var viewModelItem: StatisticsViewModel.Item
+    private var viewModelItem: StatisticsViewModel.Part
     
-    init(itemID: String, recipes: [String : Double]) {
+    init(partID: String, recipes: [String : Double]) {
         @Dependency(\.storageService)
         var storageService
         
-        _viewModelItem = State(initialValue: StatisticsViewModel.Item(statisticItem: StatisticItem(
-            item: storageService.item(id: itemID)!,
+        _viewModelItem = State(initialValue: StatisticsViewModel.Part(statisticPart: StatisticPart(
+            part: storageService.part(id: partID)!,
             recipes: recipes.map {
                 StatisticRecipe(
                     recipe: storageService.recipe(id: $0.key)!,
@@ -146,13 +146,13 @@ private struct _ItemRowPreview: View {
 }
 
 #Preview("Item Row (1 recipe)") {
-    _ItemRowPreview(itemID: "part-iron-plate", recipes: [
+    _ItemRowPreview(partID: "part-iron-plate", recipes: [
         "recipe-iron-plate": 40
     ])
 }
 
 #Preview("Item Row (2 recipes)") {
-    _ItemRowPreview(itemID: "part-iron-plate", recipes: [
+    _ItemRowPreview(partID: "part-iron-plate", recipes: [
         "recipe-iron-plate": 40,
         "recipe-alternate-steel-coated-plate": 12
     ])

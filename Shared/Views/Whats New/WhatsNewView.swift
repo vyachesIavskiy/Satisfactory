@@ -103,11 +103,11 @@ struct WhatsNewView: View {
             ScrollView {
                 contentBox {
                     SingleItemCalculatorItemView(
-                        viewModel: SingleItemCalculatorItemViewModel(item: plasticOutputItem)
+                        viewModel: SingleItemCalculatorItemViewModel(part: plasticOutputItem)
                     )
                     
                     SingleItemCalculatorItemView(
-                        viewModel: SingleItemCalculatorItemViewModel(item: rubberOutputItem)
+                        viewModel: SingleItemCalculatorItemViewModel(part: rubberOutputItem)
                     )
                 }
             }
@@ -180,13 +180,13 @@ struct WhatsNewView: View {
                 .frame(maxHeight: .infinity)
             
             contentBox {
-                StatisticsView.ItemRow(.constant(StatisticsViewModel.Item(statisticItem: StatisticItem(
-                    item: storageService.item(id: "part-turbo-motor")!,
+                StatisticsView.ItemRow(.constant(StatisticsViewModel.Part(statisticPart: StatisticPart(
+                    part: storageService.part(id: "part-turbo-motor")!,
                     recipes: [StatisticRecipe(recipe: storageService.recipe(id: "recipe-turbo-motor")!, amount: 2.5)]
                 ))))
                 
                 StatisticsView.NaturalResourceRow(StatisticNaturalResource(
-                    item: storageService.item(id: "part-water")!,
+                    part: storageService.part(id: "part-water")!,
                     amount: 360
                 ))
                 
@@ -241,32 +241,32 @@ struct WhatsNewView: View {
         .padding(.vertical, 20)
     }
     
-    private var plasticOutputItem: SingleItemCalculator.OutputItem {
-        let plastic = storageService.item(id: "part-plastic")!
-        let rubber = storageService.item(id: "part-rubber")!
-        let fuel = storageService.item(id: "part-fuel")!
+    private var plasticOutputItem: SingleItemCalculator.OutputPart {
+        let plastic = storageService.part(id: "part-plastic")!
+        let rubber = storageService.part(id: "part-rubber")!
+        let fuel = storageService.part(id: "part-fuel")!
         let recipe = storageService.recipe(id: "recipe-alternate-recycled-plastic")!
         
-        return SingleItemCalculator.OutputItem(
-            item: plastic,
+        return SingleItemCalculator.OutputPart(
+            part: plastic,
             recipes: [
                 SingleItemCalculator.OutputRecipe(
                     recipe: recipe,
                     output: SingleItemCalculator.OutputRecipe.OutputIngredient(
-                        item: plastic,
+                        part: plastic,
                         amount: 90,
                         additionalAmounts: [23.333333]
                     ),
                     byproducts: [],
                     inputs: [
                         SingleItemCalculator.OutputRecipe.InputIngredient(
-                            item: rubber,
+                            part: rubber,
                             amount: 56.666666,
                             byproducts: [],
                             isSelected: true
                         ),
                         SingleItemCalculator.OutputRecipe.InputIngredient(
-                            item: fuel,
+                            part: fuel,
                             amount: 56.666666,
                             byproducts: [],
                             isSelected: false
@@ -278,32 +278,32 @@ struct WhatsNewView: View {
         )
     }
     
-    private var rubberOutputItem: SingleItemCalculator.OutputItem {
-        let rubber = storageService.item(id: "part-rubber")!
-        let plastic = storageService.item(id: "part-plastic")!
-        let fuel = storageService.item(id: "part-fuel")!
-        let polymerResin = storageService.item(id: "part-polymer-resin")!
-        let water = storageService.item(id: "part-water")!
+    private var rubberOutputItem: SingleItemCalculator.OutputPart {
+        let rubber = storageService.part(id: "part-rubber")!
+        let plastic = storageService.part(id: "part-plastic")!
+        let fuel = storageService.part(id: "part-fuel")!
+        let polymerResin = storageService.part(id: "part-polymer-resin")!
+        let water = storageService.part(id: "part-water")!
         
         let recipe1 = storageService.recipe(id: "recipe-alternate-recycled-rubber")!
         let recipe2 = storageService.recipe(id: "recipe-residual-rubber")!
         
-        return SingleItemCalculator.OutputItem(
-            item: plastic,
+        return SingleItemCalculator.OutputPart(
+            part: plastic,
             recipes: [
                 SingleItemCalculator.OutputRecipe(
                     recipe: recipe1,
-                    output: SingleItemCalculator.OutputRecipe.OutputIngredient(item: rubber, amount: 56.666666),
+                    output: SingleItemCalculator.OutputRecipe.OutputIngredient(part: rubber, amount: 56.666666),
                     byproducts: [],
                     inputs: [
                         SingleItemCalculator.OutputRecipe.InputIngredient(
-                            item: plastic,
+                            part: plastic,
                             amount: 23.333333,
                             byproducts: [],
                             isSelected: true
                         ),
                         SingleItemCalculator.OutputRecipe.InputIngredient(
-                            item: fuel,
+                            part: fuel,
                             amount: 23.333333,
                             byproducts: [],
                             isSelected: false
@@ -313,17 +313,17 @@ struct WhatsNewView: View {
                 ),
                 SingleItemCalculator.OutputRecipe(
                     recipe: recipe2,
-                    output: SingleItemCalculator.OutputRecipe.OutputIngredient(item: rubber, amount: 10),
+                    output: SingleItemCalculator.OutputRecipe.OutputIngredient(part: rubber, amount: 10),
                     byproducts: [],
                     inputs: [
                         SingleItemCalculator.OutputRecipe.InputIngredient(
-                            item: polymerResin,
+                            part: polymerResin,
                             amount: 20,
                             byproducts: [],
                             isSelected: false
                         ),
                         SingleItemCalculator.OutputRecipe.InputIngredient(
-                            item: water,
+                            part: water,
                             amount: 20,
                             byproducts: [],
                             isSelected: false

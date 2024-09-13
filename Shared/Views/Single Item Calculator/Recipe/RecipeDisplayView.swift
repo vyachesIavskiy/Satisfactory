@@ -61,12 +61,12 @@ private struct _SingleItemProductionRecipeDisplayPreview: View {
                     RecipeDisplayView(SingleItemCalculator.OutputRecipe(
                         recipe: recipe,
                         output: SingleItemCalculator.OutputRecipe.OutputIngredient(
-                            item: recipe.output.item,
+                            part: recipe.output.part,
                             amount: recipe.amountPerMinute(for: recipe.output)
                         ),
                         byproducts: recipe.byproducts.map {
                             SingleItemCalculator.OutputRecipe.ByproductIngredient(
-                                item: $0.item,
+                                part: $0.part,
                                 amount: recipe.amountPerMinute(for: $0),
                                 byproducts: [],
                                 isSelected: false
@@ -75,7 +75,7 @@ private struct _SingleItemProductionRecipeDisplayPreview: View {
                         inputs: recipe.inputs.map {
                             SingleItemCalculator.OutputRecipe.InputIngredient(
                                 producingProductID: nil,
-                                item: $0.item,
+                                part: $0.part,
                                 amount: recipe.amountPerMinute(for: $0),
                                 byproducts: [],
                                 isSelected: false

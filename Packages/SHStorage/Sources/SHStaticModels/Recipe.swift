@@ -2,25 +2,23 @@ import Foundation
 import SHModels
 
 extension Recipe {
-    public struct Static: Codable {
-        public let id: String
-        public let output: Ingredient
-        public let byproducts: [Ingredient]?
-        public let inputs: [Ingredient]
-        public let machineID: String?
-        public let manualCraftingIDs: [String]
-        public let duration: Int
-        public let powerConsumption: PowerConsumption
-        public let isDefault: Bool
+    package struct Static: Codable {
+        package let id: String
+        package let output: Ingredient
+        package let byproducts: [Ingredient]?
+        package let inputs: [Ingredient]
+        package let machineID: String?
+        package let duration: Double
+        package let powerConsumption: PowerConsumption
+        package let isDefault: Bool
         
-        public init(
+        package init(
             id: String,
             output: Ingredient,
             byproducts: [Ingredient]?,
             inputs: [Ingredient],
             machineID: String?,
-            manualCraftingIDs: [String],
-            duration: Int,
+            duration: Double,
             powerConsumption: PowerConsumption,
             isDefault: Bool
         ) {
@@ -29,25 +27,23 @@ extension Recipe {
             self.byproducts = byproducts
             self.inputs = inputs
             self.machineID = machineID
-            self.manualCraftingIDs = manualCraftingIDs
             self.duration = duration
             self.powerConsumption = powerConsumption
             self.isDefault = isDefault
         }
     }
     
-    public init(
+    package init(
         _ recipe: Recipe.Static,
-        itemProvider: (_ itemID: String) throws -> any Item,
+        partProvider: (_ partID: String) throws -> Part,
         buildingProvider: (_ buildingID: String) throws -> Building
     ) throws {
         try self.init(
             id: recipe.id,
-            output: Ingredient(.output, ingredient: recipe.output, itemProvider: itemProvider),
-            byproducts: recipe.byproducts?.map { try Ingredient(.byproduct, ingredient: $0, itemProvider: itemProvider) } ?? [],
-            inputs: recipe.inputs.map { try Ingredient(.input, ingredient: $0, itemProvider: itemProvider) },
+            output: Ingredient(.output, ingredient: recipe.output, partProvider: partProvider),
+            byproducts: recipe.byproducts?.map { try Ingredient(.byproduct, ingredient: $0, partProvider: partProvider) } ?? [],
+            inputs: recipe.inputs.map { try Ingredient(.input, ingredient: $0, partProvider: partProvider) },
             machine: recipe.machineID.map(buildingProvider),
-            manualCrafting: recipe.manualCraftingIDs.map(buildingProvider),
             duration: recipe.duration,
             powerConsumption: PowerConsumption(
                 min: recipe.powerConsumption.min,
@@ -59,12 +55,12 @@ extension Recipe {
 }
 
 extension Recipe.Static {
-    public struct Ingredient: Codable {
-        public let itemID: String
-        public let amount: Double
+    package struct Ingredient: Codable {
+        package let partID: String
+        package let amount: Double
         
-        public init(itemID: String, amount: Double) {
-            self.itemID = itemID
+        package init(partID: String, amount: Double) {
+            self.partID = partID
             self.amount = amount
         }
     }
@@ -74,24 +70,28 @@ private extension Recipe.Ingredient {
     init(
         _ role: Recipe.Ingredient.Role,
         ingredient: Recipe.Static.Ingredient,
-        itemProvider: (_ itemID: String) throws -> any Item
+        partProvider: (_ partID: String) throws -> Part
     ) rethrows {
         try self.init(
             role: role,
-            item: itemProvider(ingredient.itemID),
+            part: partProvider(ingredient.partID),
             amount: ingredient.amount
         )
     }
 }
 
 extension Recipe.Static {
-    public struct PowerConsumption: Codable {
-        public let min: Int
-        public let max: Int
+    package struct PowerConsumption: Codable {
+        package let min: Int
+        package let max: Int
         
-        public init(min: Int, max: Int) {
+        package init(min: Int, max: Int) {
             self.min = min
             self.max = max
+        }
+        
+        package init(_ amount: Int) {
+            self.init(min: amount, max: amount)
         }
     }
 }

@@ -53,9 +53,9 @@ extension SHStorageService {
         }
         
         // MARK: Loading
-        func load(_ options: LoadOptions) throws {
+        func load() throws {
             try staticStorage.load()
-            try persistentStorage.load(options)
+            try persistentStorage.load()
         }
         
         func loadForMigration() throws {
@@ -65,10 +65,6 @@ extension SHStorageService {
         // MARK: Change pin status
         func changePinStatus(partID: String, productionType: ProductionType) {
             try? persistentStorage.changePartPinStatus(partID, productionType: productionType)
-        }
-        
-        func changePinStatus(equipmentID: String, productionType: ProductionType) {
-            try? persistentStorage.changeEquipmentPinStatus(equipmentID, productionType: productionType)
         }
         
         func changePinStatus(buildingID: String, productionType: ProductionType) {

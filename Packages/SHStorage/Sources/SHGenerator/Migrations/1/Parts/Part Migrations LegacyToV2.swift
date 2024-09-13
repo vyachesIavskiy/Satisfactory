@@ -10,24 +10,26 @@ extension Migration.IDs {
 extension LegacyToV2 {
     enum Parts {
         static let all =
-        alienParts +
-        biomassParts +
-        communicationParts +
-        consumedParts +
-        containerParts +
-        electronicParts +
-        fluidParts +
-        fuelParts +
-        gasParts +
-        industrialParts +
-        ingotParts +
-        mineralParts +
-        nuclearParts +
-        oilProductsParts +
         oreParts +
-        powerShardParts +
-        powerSlugParts +
+        fluidParts +
+        gasParts +
+        ingotParts +
+        standardParts +
+        electronicParts +
+        compoundsParts +
+        biomassParts +
+        toolsParts +
+        industrialParts +
+        communicationParts +
+        containerParts +
+        packagingParts +
+        oilProductsParts +
+        consumablesParts +
+        ammunitionParts +
+        nuclearParts +
         spaceElevatorParts +
-        standardParts
+        alienRemainsParts +
+        powerSlugParts +
+        powerShardParts
     }
 }

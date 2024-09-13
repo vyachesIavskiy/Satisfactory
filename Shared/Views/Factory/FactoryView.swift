@@ -89,22 +89,22 @@ private struct FactoryPreview: View {
     private var storageService
     
     private var productions: [Production] {
-        let itemIDs = [
+        let partIDs = [
             "part-iron-plate",
             "part-iron-rod",
             "part-reinforced-iron-plate",
             "part-modular-frame"
         ]
-        let items = itemIDs.compactMap(storageService.item(id:))
+        let parts = partIDs.compactMap(storageService.part(id:))
         
-        return items.map {
+        return parts.map {
             .singleItem(SingleItemProduction(
                 id: UUID(),
                 name: $0.localizedName,
                 creationDate: Date(),
-                item: $0,
+                part: $0,
                 amount: Double(Int.random(in: 1...20)),
-                inputItems: [],
+                inputParts: [],
                 byproducts: []
             ))
         }

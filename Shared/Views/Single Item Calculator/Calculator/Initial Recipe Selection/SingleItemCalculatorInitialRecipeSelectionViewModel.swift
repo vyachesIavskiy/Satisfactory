@@ -7,7 +7,7 @@ import SHUtils
 @Observable
 final class SingleItemCalculatorInitialRecipeSelectionViewModel {
     // MARK: Ignored properties
-    let item: any Item
+    let part: Part
     var onRecipeSelected: (@MainActor (Recipe) -> Void)?
     
     private let outputRecipes: [Recipe]
@@ -30,32 +30,32 @@ final class SingleItemCalculatorInitialRecipeSelectionViewModel {
     private var storageService
     
     @MainActor
-    init(item: any Item, excludeRecipesForItems excludingItems: [any Item] = [], onRecipeSelected: (@MainActor (Recipe) -> Void)? = nil) {
+    init(part: Part, excludeRecipesForParts excludingParts: [Part] = [], onRecipeSelected: (@MainActor (Recipe) -> Void)? = nil) {
         @Dependency(\.storageService)
         var storageService
         
-        self.item = item
+        self.part = part
         self.onRecipeSelected = onRecipeSelected
         
         outputRecipes = storageService
-            .recipes(for: item, as: .output)
+            .recipes(for: part, as: .output)
             .filter { $0.machine != nil }
         
         byproductRecipes = storageService
-            .recipes(for: item, as: .byproduct)
+            .recipes(for: part, as: .byproduct)
             .filter { recipe in
                 recipe.machine != nil &&
-                !excludingItems.contains { $0.id == recipe.output.item.id }
+                !excludingParts.contains { $0.id == recipe.output.part.id }
             }
         
-        pinnedRecipeIDs = storageService.pinnedRecipeIDs(for: item, as: [.output, .byproduct])
+        pinnedRecipeIDs = storageService.pinnedRecipeIDs(for: part, as: [.output, .byproduct])
 
         buildSections()
     }
     
     @MainActor
     func observeStorage() async {
-        for await pinnedRecipeIDs in storageService.streamPinnedRecipeIDs(for: item, as: [.output, .byproduct]) {
+        for await pinnedRecipeIDs in storageService.streamPinnedRecipeIDs(for: part, as: [.output, .byproduct]) {
             guard !Task.isCancelled else { break }
             
             self.pinnedRecipeIDs = pinnedRecipeIDs
@@ -92,11 +92,11 @@ final class SingleItemCalculatorInitialRecipeSelectionViewModel {
 // MARK: Hashable
 extension SingleItemCalculatorInitialRecipeSelectionViewModel: Hashable {
     static func == (lhs: SingleItemCalculatorInitialRecipeSelectionViewModel, rhs: SingleItemCalculatorInitialRecipeSelectionViewModel) -> Bool {
-        lhs.item.id == rhs.item.id
+        lhs.part.id == rhs.part.id
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(item.id)
+        hasher.combine(part.id)
     }
 }
 

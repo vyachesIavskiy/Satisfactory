@@ -5,33 +5,30 @@ import SHSettings
 import SHSingleItemCalculator
 
 struct CalculatorRecipeViewModel {
-    private let product: SingleItemCalculator.OutputItem
-    let recipe: SingleItemCalculator.OutputRecipe
+    let outputRecipe: SingleItemCalculator.OutputRecipe
     let byproductSelectionState: SingleItemCalculatorViewModel.ByproductSelectionState?
     private let canPerformAction: (SingleItemCalculatorViewModel.Action) -> Bool
     private let performAction: (SingleItemCalculatorViewModel.Action) -> Void
     
     var outputViewModel: RecipeIngredientViewModel {
-        RecipeIngredientViewModel(recipe.output)
+        RecipeIngredientViewModel(outputRecipe.output)
     }
     
     var byproductViewModels: [RecipeIngredientViewModel] {
-        recipe.byproducts.map(RecipeIngredientViewModel.init)
+        outputRecipe.byproducts.map(RecipeIngredientViewModel.init)
     }
     
     var inputViewModels: [RecipeIngredientViewModel] {
-        recipe.inputs.map(RecipeIngredientViewModel.init)
+        outputRecipe.inputs.map(RecipeIngredientViewModel.init)
     }
     
     init(
-        product: SingleItemCalculator.OutputItem,
-        recipe: SingleItemCalculator.OutputRecipe,
+        outputRecipe: SingleItemCalculator.OutputRecipe,
         byproductSelectionState: SingleItemCalculatorViewModel.ByproductSelectionState?,
         canPerformAction: @escaping (SingleItemCalculatorViewModel.Action) -> Bool,
         performAction: @escaping (SingleItemCalculatorViewModel.Action) -> Void
     ) {
-        self.product = product
-        self.recipe = recipe
+        self.outputRecipe = outputRecipe
         self.byproductSelectionState = byproductSelectionState
         self.canPerformAction = canPerformAction
         self.performAction = performAction
@@ -51,45 +48,45 @@ struct CalculatorRecipeViewModel {
     // Select byproduct producer
     @MainActor
     func canSelectByproductProducer(for byproduct: SingleItemCalculator.OutputRecipe.ByproductIngredient) -> Bool {
-        canPerformAction(.selectByproductProducer(byproduct: byproduct, recipe: recipe.recipe))
+        canPerformAction(.selectByproductProducer(byproduct: byproduct, recipe: outputRecipe.recipe))
     }
     
     @MainActor
     func selectByproductProducer(for byproduct: SingleItemCalculator.OutputRecipe.ByproductIngredient) {
-        performAction(.selectByproductProducer(byproduct: byproduct, recipe: recipe.recipe))
+        performAction(.selectByproductProducer(byproduct: byproduct, recipe: outputRecipe.recipe))
     }
     
     // Unselect byproduct producer
     @MainActor
     func canUnselectByproductProducer(for byproduct: SingleItemCalculator.OutputRecipe.ByproductIngredient) -> Bool {
-        canPerformAction(.unselectByproductProducer(byproduct: byproduct, recipe: recipe.recipe))
+        canPerformAction(.unselectByproductProducer(byproduct: byproduct, recipe: outputRecipe.recipe))
     }
     
     @MainActor
     func unselectByproductProducer(for byproduct: SingleItemCalculator.OutputRecipe.ByproductIngredient) {
-        performAction(.unselectByproductProducer(byproduct: byproduct, recipe: recipe.recipe))
+        performAction(.unselectByproductProducer(byproduct: byproduct, recipe: outputRecipe.recipe))
     }
     
     // Select byproduct consumer
     @MainActor
     func canSelectByproductConsumer(for input: SingleItemCalculator.OutputRecipe.InputIngredient) -> Bool {
-        canPerformAction(.selectByproductConsumer(input: input, recipe: recipe.recipe))
+        canPerformAction(.selectByproductConsumer(input: input, recipe: outputRecipe.recipe))
     }
     
     @MainActor
     func selectByproductConsumer(for input: SingleItemCalculator.OutputRecipe.InputIngredient) {
-        performAction(.selectByproductConsumer(input: input, recipe: recipe.recipe))
+        performAction(.selectByproductConsumer(input: input, recipe: outputRecipe.recipe))
     }
     
     // Unselect byproduct consumer
     @MainActor
     func canUnselectByproductConsumer(for input: SingleItemCalculator.OutputRecipe.InputIngredient) -> Bool {
-        canPerformAction(.unselectByproductConsumer(input: input, recipe: recipe.recipe))
+        canPerformAction(.unselectByproductConsumer(input: input, recipe: outputRecipe.recipe))
     }
     
     @MainActor
     func unselectByproductConsumer(for input: SingleItemCalculator.OutputRecipe.InputIngredient) {
-        performAction(.unselectByproductConsumer(input: input, recipe: recipe.recipe))
+        performAction(.unselectByproductConsumer(input: input, recipe: outputRecipe.recipe))
     }
     
     // Can confirm byproduct

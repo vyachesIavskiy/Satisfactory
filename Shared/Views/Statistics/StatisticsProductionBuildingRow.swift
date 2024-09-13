@@ -35,7 +35,7 @@ extension StatisticsView {
                     VStack(alignment: .leading, spacing: 4) {
                         ForEach(productionBuilding.recipes) { recipe in
                             HStack(spacing: 12) {
-                                Image(recipe.recipe.output.item.id)
+                                Image(recipe.recipe.output.part.id)
                                     .resizable()
                                     .frame(width: 20, height: 20)
                                     .padding(4)

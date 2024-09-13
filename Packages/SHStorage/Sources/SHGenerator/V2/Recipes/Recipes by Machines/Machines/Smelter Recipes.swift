@@ -6,9 +6,8 @@ private extension Recipe.Static {
         id: String,
         input: Ingredient,
         output: Ingredient,
-        duration: Int,
-        isDefault: Bool = true,
-        manuallyCraftable: Bool = true
+        duration: Double,
+        isDefault: Bool = true
     ) {
         self.init(
             id: id,
@@ -16,16 +15,15 @@ private extension Recipe.Static {
             output: output,
             byproducts: [],
             machine: V2.Buildings.smelter,
-            manualCrafting: (isDefault && !manuallyCraftable) ? [V2.Buildings.craftBench] : [],
             duration: duration,
-            powerConsumption: PowerConsumption(min: 4, max: 4),
+            powerConsumption: PowerConsumption(4),
             isDefault: isDefault
         )
     }
 }
 
+// MARK: - Ingots
 extension V2.Recipes {
-    // MARK: - Ingots
     static let ironIngotRecipe = Recipe.Static(
         id: "recipe-iron-ingot",
         input: Recipe.Static.Ingredient(V2.Parts.ironOre, amount: 1),
@@ -47,7 +45,7 @@ extension V2.Recipes {
         duration: 4
     )
     
-    static let aluminumIngotRecipe1 = Recipe.Static(
+    static let pureAluminumIngotRecipe = Recipe.Static(
         id: "recipe-altername-pure-aluminum-ingot",
         input: Recipe.Static.Ingredient(V2.Parts.aluminumScrap, amount: 2),
         output: Recipe.Static.Ingredient(V2.Parts.aluminumIngot, amount: 1),
@@ -55,29 +53,39 @@ extension V2.Recipes {
         isDefault: false
     )
     
-    // MARK: - FICSMAS
+    private static let ingotsRecipes = [
+        ironIngotRecipe,
+        copperIngotRecipe,
+        cateriumIngotRecipe,
+        pureAluminumIngotRecipe,
+    ]
+}
+
+// MARK: - FICSMAS
+extension V2.Recipes {
     static let redFicsmasOrnamentRecipe = Recipe.Static(
         id: "recipe-red-ficsmas-ornament",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.redFicsmasOrnament, amount: 1),
-        duration: 12,
-        manuallyCraftable: false
+        duration: 12
     )
     
     static let blueFicsmasOrnamentRecipe = Recipe.Static(
         id: "recipe-blue-ficsmas-ornament",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.blueFicsmasOrnament, amount: 2),
-        duration: 12,
-        manuallyCraftable: false
+        duration: 12
     )
     
-    static let smelterRecipes = [
-        ironIngotRecipe,
-        copperIngotRecipe,
-        cateriumIngotRecipe,
-        aluminumIngotRecipe1,
+    private static let ficsmasRecipes = [
         redFicsmasOrnamentRecipe,
         blueFicsmasOrnamentRecipe
     ]
+}
+
+// MARK: - Smelter recipes
+extension V2.Recipes {
+    static let smelterRecipes =
+    ingotsRecipes +
+    ficsmasRecipes
 }

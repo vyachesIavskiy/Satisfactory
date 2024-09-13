@@ -5,8 +5,8 @@ import SHUtils
 
 public final class SingleItemCalculator {
     // MARK: Ignored properties
-    public var item: any Item {
-        production.item
+    public var part: Part {
+        production.part
     }
     
     public var amount: Double {
@@ -28,16 +28,16 @@ public final class SingleItemCalculator {
     // MARK: Observed properties
     public var production: SingleItemProduction
     private var savedProduction: SingleItemProduction?
-    public internal(set) var outputItems = [OutputItem]()
+    public internal(set) var outputParts = [OutputPart]()
     
-    public init(item: any Item) {
+    public init(part: Part) {
         @Dependency(\.uuid)
         var uuid
         
         @Dependency(\.date)
         var date
         
-        production = SingleItemProduction(id: uuid(), name: "", creationDate: date(), item: item, amount: 1.0)
+        production = SingleItemProduction(id: uuid(), name: "", creationDate: date(), part: part, amount: 1.0)
     }
     
     public init(production: SingleItemProduction) {
@@ -48,72 +48,72 @@ public final class SingleItemCalculator {
     // MARK: - Input
     public func addRecipe(
         _ recipe: Recipe,
-        to item: some Item,
+        to part: Part,
         with proportion: Proportion = .auto
     ) {
-        production.addRecipe(recipe, to: item, with: proportion)
+        production.addRecipe(recipe, to: part, with: proportion)
     }
     
-    public func updateInputItem(_ inputItem: SingleItemProduction.InputItem) {
-        production.updateInputItem(inputItem)
+    public func updateInputPart(_ inputPart: SingleItemProduction.InputPart) {
+        production.updateInputPart(inputPart)
     }
     
     public func changeProportion(
         of recipe: Recipe,
-        for item: any Item,
+        for part: Part,
         to newProportion: Proportion
     ) {
-        production.changeProportion(of: recipe, for: item, to: newProportion)
+        production.changeProportion(of: recipe, for: part, to: newProportion)
     }
     
 //    public func moveInputItems(from offsets: IndexSet, to offset: Int) {
 //        input.moveInputItem(from: offsets, to: offset)
 //    }
     
-    public func removeInputItem(_ item: some Item) {
-        production.removeItem(item)
+    public func removeInputItem(_ part: Part) {
+        production.removePart(part)
     }
     
     // Byproducts
-    public func addByproduct(_ item: any Item, producer: Recipe, consumer: Recipe) {
-        production.add(producingRecipe: producer, consumingRecipe: consumer, for: item)
+    public func addByproduct(_ part: Part, producer: Recipe, consumer: Recipe) {
+        production.add(producingRecipe: producer, consumingRecipe: consumer, for: part)
     }
     
-    public func hasProducer(_ item: any Item, recipe: Recipe) -> Bool {
-        production.hasProducingRecipe(recipe, for: item)
+    public func hasProducer(_ part: Part, recipe: Recipe) -> Bool {
+        production.hasProducingRecipe(recipe, for: part)
     }
     
-    public func hasConsumer(_ item: any Item, recipe: Recipe) -> Bool {
-        production.hasConsumingRecipe(recipe, for: item)
+    public func hasConsumer(_ part: Part, recipe: Recipe) -> Bool {
+        production.hasConsumingRecipe(recipe, for: part)
     }
     
-    public func removeByrpoduct(_ item: any Item) {
-        production.removeByproduct(item: item)
+    public func removeByrpoduct(_ part: Part) {
+        production.removeByproduct(part: part)
     }
     
-    public func removeProducer(_ recipe: Recipe, for item: any Item) {
-        production.removeProducingRecipe(recipe, item: item)
+    public func removeProducer(_ recipe: Recipe, for part: Part) {
+        production.removeProducingRecipe(recipe, part: part)
     }
     
-    public func removeConsumer(_ recipe: Recipe, for item: any Item) {
-        production.removeConsumingRecipe(recipe, item: item)
+    public func removeConsumer(_ recipe: Recipe, for part: Part) {
+        production.removeConsumingRecipe(recipe, part: part)
     }
     
     // Output
-    public func outputItem(for item: any Item) -> OutputItem? {
-        outputItems.first { $0.item.id == item.id }
+    public func outputItem(for part: Part) -> OutputPart? {
+        outputParts.first { $0.part == part }
     }
     
-    public func outputRecipes(for item: any Item) -> [OutputRecipe] {
-        outputItems.first { $0.item.id == item.id }.map(\.recipes) ?? []
+    public func outputRecipes(for part: Part) -> [OutputRecipe] {
+        outputParts.first { $0.part == part }.map(\.recipes) ?? []
     }
     
-    public func outputItemsContains(where predicate: (_ outputItem: OutputItem) throws -> Bool) rethrows -> Bool {
-        try outputItems.contains(where: predicate)
+    public func outputItemsContains(where predicate: (_ outputItem: OutputPart) throws -> Bool) rethrows -> Bool {
+        try outputParts.contains(where: predicate)
     }
     
-    public func outputItemsContains(item: any Item) -> Bool {
-        outputItemsContains { $0.item.id == item.id }
+    public func outputItemsContains(part: Part) -> Bool {
+        outputItemsContains { $0.part == part }
     }
     
     public func outputRecipesContains(where predicate: (_ outputRecipe: OutputRecipe) throws -> Bool) rethrows -> Bool {
@@ -173,25 +173,25 @@ public final class SingleItemCalculator {
 // MARK: InternalState
 extension SingleItemCalculator {
     struct InternalState {
-        var selectedInputItems = [SingleItemProduction.InputItem]()
+        var selectedInputParts = [SingleItemProduction.InputPart]()
         var selectedByproducts = [SingleItemProduction.InputByproduct]()
         
         mutating func reset(production: SingleItemProduction) {
-            selectedInputItems = production.inputItems
+            selectedInputParts = production.inputParts
             selectedByproducts = production.byproducts
         }
         
         // MARK: Convenience helpers
-        func selectedInputItem(with id: String) -> SingleItemProduction.InputItem? {
-            selectedInputItems.first { $0.item.id == id }
+        func selectedInputItem(with id: String) -> SingleItemProduction.InputPart? {
+            selectedInputParts.first { $0.part.id == id }
         }
         
-        func index(of item: some Item) -> Int? {
-            selectedInputItems.firstIndex { $0.item.id == item.id }
+        func index(of part: Part) -> Int? {
+            selectedInputParts.firstIndex { $0.part == part }
         }
         
         func selectedByproduct(with id: String) -> SingleItemProduction.InputByproduct? {
-            selectedByproducts.first { $0.item.id == id }
+            selectedByproducts.first { $0.part.id == id }
         }
     }
 }
@@ -209,7 +209,7 @@ extension SingleItemCalculator: CustomStringConvertible {
         }
         
         return """
-        \(item.localizedName) (\(amount.formatted(.shNumber()))
+        \(part.localizedName) (\(amount.formatted(.shNumber()))
         
         \(nodeDescription)
         """

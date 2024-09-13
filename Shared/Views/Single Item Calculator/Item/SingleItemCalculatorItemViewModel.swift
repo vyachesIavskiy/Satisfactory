@@ -5,29 +5,29 @@ import SHModels
 import SHSingleItemCalculator
 
 struct SingleItemCalculatorItemViewModel: Identifiable {
-    let item: SingleItemCalculator.OutputItem
+    let part: SingleItemCalculator.OutputPart
     let byproductSelectionState: SingleItemCalculatorViewModel.ByproductSelectionState?
     let canPerformAction: (SingleItemCalculatorViewModel.Action) -> Bool
     let performAction: (SingleItemCalculatorViewModel.Action) -> Void
     
     var id: UUID {
-        item.id
+        part.id
     }
     
     var canAdjust: Bool {
-        canPerformAction(.adjust(item))
+        canPerformAction(.adjust(part))
     }
     
     var hasOnlyOneRecipe: Bool {
         @Dependency(\.storageService)
         var storageService
         
-        return storageService.recipes(for: item.item, as: [.output, .byproduct]).count == 1
+        return storageService.recipes(for: part.part, as: [.output, .byproduct]).count == 1
     }
     
-    init(item: SingleItemCalculator.OutputItem) {
+    init(part: SingleItemCalculator.OutputPart) {
         self.init(
-            item: item,
+            part: part,
             byproductSelectionState: nil,
             canPerformAction: { _ in false },
             performAction: { _ in }
@@ -35,12 +35,12 @@ struct SingleItemCalculatorItemViewModel: Identifiable {
     }
     
     init(
-        item: SingleItemCalculator.OutputItem,
+        part: SingleItemCalculator.OutputPart,
         byproductSelectionState: SingleItemCalculatorViewModel.ByproductSelectionState?,
         canPerformAction: @escaping (SingleItemCalculatorViewModel.Action) -> Bool,
         performAction: @escaping (SingleItemCalculatorViewModel.Action) -> Void
     ) {
-        self.item = item
+        self.part = part
         self.byproductSelectionState = byproductSelectionState
         self.canPerformAction = canPerformAction
         self.performAction = performAction
@@ -49,8 +49,7 @@ struct SingleItemCalculatorItemViewModel: Identifiable {
     @MainActor
     func outputRecipeViewModel(for recipe: SingleItemCalculator.OutputRecipe) -> CalculatorRecipeViewModel {
         CalculatorRecipeViewModel(
-            product: item,
-            recipe: recipe,
+            outputRecipe: recipe,
             byproductSelectionState: byproductSelectionState,
             canPerformAction: canPerformAction,
             performAction: performAction
@@ -59,11 +58,11 @@ struct SingleItemCalculatorItemViewModel: Identifiable {
     
     @MainActor
     func adjust() {
-        performAction(.adjust(item))
+        performAction(.adjust(part))
     }
     
     @MainActor
     func removeItem() {
-        performAction(.removeItem(item.item))
+        performAction(.removePart(part.part))
     }
 }

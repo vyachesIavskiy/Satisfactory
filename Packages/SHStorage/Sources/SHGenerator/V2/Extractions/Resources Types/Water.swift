@@ -2,7 +2,7 @@ import SHModels
 import SHStaticModels
 
 extension V2.Extractions {
-    static let water = Extraction.Static(
+    static let waterExtractor = Extraction.Static(
         building: V2.Buildings.waterExctractor,
         naturalResources: [V2.Parts.water],
         rates: [
@@ -10,5 +10,7 @@ extension V2.Extractions {
         ]
     )
     
-    static let waterExtractions = [water]
+    static let waterExtractions = [
+        waterExtractor
+    ]
 }

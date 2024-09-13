@@ -13,15 +13,15 @@ final class SingleItemCalculatorContainerViewModel {
     var state: State
     
     @MainActor
-    init(item: some Item) {
+    init(part: Part) {
         @Dependency(\.storageService)
         var storageService
         
         @Dependency(\.settingsService)
         var settingsService
         
-        let recipes = storageService.recipes(for: item, as: [.output, .byproduct])
-        let pinnedRecipes = storageService.pinnedRecipeIDs(for: item, as: [.output, .byproduct])
+        let recipes = storageService.recipes(for: part, as: [.output, .byproduct])
+        let pinnedRecipes = storageService.pinnedRecipeIDs(for: part, as: [.output, .byproduct])
         
         if
             settingsService.autoSelectSingleRecipe,
@@ -30,21 +30,21 @@ final class SingleItemCalculatorContainerViewModel {
             !recipe.id.contains("packaged")
         {
             SingleItemCalculatorViewModel.AutoSelectSingleRecipeTip.shouldDisplay = true
-            state = .calculation(viewModel: SingleItemCalculatorViewModel(item: item, recipe: recipe))
+            state = .calculation(viewModel: SingleItemCalculatorViewModel(part: part, recipe: recipe))
         } else if
             settingsService.autoSelectSinglePinnedRecipe,
             pinnedRecipes.count == 1,
             let recipe = pinnedRecipes.first.flatMap(storageService.recipe(id:))
         {
             SingleItemCalculatorViewModel.AutoSelectSinglePinnedRecipeTip.shouldDisplay = true
-            state = .calculation(viewModel: SingleItemCalculatorViewModel(item: item, recipe: recipe))
+            state = .calculation(viewModel: SingleItemCalculatorViewModel(part: part, recipe: recipe))
         } else {
-            let initialRecipeSelectionViewModel = SingleItemCalculatorInitialRecipeSelectionViewModel(item: item)
+            let initialRecipeSelectionViewModel = SingleItemCalculatorInitialRecipeSelectionViewModel(part: part)
             state = .initialRecipeSelection(viewModel: initialRecipeSelectionViewModel)
             initialRecipeSelectionViewModel.onRecipeSelected = { [weak self] recipe in
                 guard let self else { return }
                 
-                state = .calculation(viewModel: SingleItemCalculatorViewModel(item: item, recipe: recipe))
+                state = .calculation(viewModel: SingleItemCalculatorViewModel(part: part, recipe: recipe))
             }
         }
     }
@@ -52,15 +52,5 @@ final class SingleItemCalculatorContainerViewModel {
     @MainActor
     init(production: SingleItemProduction) {
         state = .calculation(viewModel: SingleItemCalculatorViewModel(production: production))
-    }
-}
-
-extension SingleItemCalculatorContainerViewModel: Hashable {
-    static func == (lhs: SingleItemCalculatorContainerViewModel, rhs: SingleItemCalculatorContainerViewModel) -> Bool {
-        lhs.state == rhs.state
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(state)
     }
 }

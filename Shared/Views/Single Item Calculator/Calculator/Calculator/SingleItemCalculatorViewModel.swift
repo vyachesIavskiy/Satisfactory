@@ -28,7 +28,7 @@ final class SingleItemCalculatorViewModel {
     private var settings: SHSettings.Settings
     
     @ObservationIgnored
-    private var explicitlyDeletedItemIDs = Set<String>()
+    private var explicitlyDeletedPartIDs = Set<String>()
     
     @ObservationIgnored
     private var calculator: SingleItemCalculator
@@ -45,8 +45,8 @@ final class SingleItemCalculatorViewModel {
         }
     }
     
-    var item: any Item {
-        calculator.item
+    var part: Part {
+        calculator.part
     }
     
     @MainActor
@@ -62,7 +62,7 @@ final class SingleItemCalculatorViewModel {
         if hasSavedProduction {
             calculator.production.name
         } else {
-            item.localizedName
+            part.localizedName
         }
     }
     
@@ -79,8 +79,8 @@ final class SingleItemCalculatorViewModel {
     private var storageService
     
     // MARK: Init
-    convenience init(item: some Item, recipe: Recipe) {
-        let calculator = SingleItemCalculator(item: item)
+    convenience init(part: Part, recipe: Recipe) {
+        let calculator = SingleItemCalculator(part: part)
         self.init(calculator: calculator, shouldDismissIfDeleted: false)
         
         addInitialRecipe(recipe)
@@ -104,15 +104,15 @@ final class SingleItemCalculatorViewModel {
         amount = calculator.amount
         pins = storageService.pins()
         settings = settingsService.settings
-        autoSelectSingleRecipeTip = AutoSelectSingleRecipeTip(item: calculator.item)
-        autoSelectSinglePinnedRecipeTip = AutoSelectSinglePinnedRecipeTip(item: calculator.item)
+        autoSelectSingleRecipeTip = AutoSelectSingleRecipeTip(part: calculator.part)
+        autoSelectSinglePinnedRecipeTip = AutoSelectSinglePinnedRecipeTip(part: calculator.part)
         self.shouldDismissIfDeleted = shouldDismissIfDeleted
     }
     
     // MARK: -
     
-    func addRecipe(_ recipe: Recipe, to item: some Item) {
-        calculator.addRecipe(recipe, to: item)
+    func addRecipe(_ recipe: Recipe, to part: Part) {
+        calculator.addRecipe(recipe, to: part)
         addInputRecipesIfNeeded()
         update()
         
@@ -173,7 +173,7 @@ final class SingleItemCalculatorViewModel {
     func showStatistics() {
         var productionToShow = calculator.production
         if !hasSavedProduction {
-            productionToShow.name = item.localizedName
+            productionToShow.name = part.localizedName
         }
         modalNavigationState = .statistics(viewModel: StatisticsViewModel(production: .singleItem(productionToShow)))
     }
@@ -195,7 +195,7 @@ private extension SingleItemCalculatorViewModel {
     func addInitialRecipe(_ recipe: Recipe) {
         calculator.amount = recipe.amountPerMinute(for: recipe.output)
         amount = calculator.amount
-        calculator.addRecipe(recipe, to: item)
+        calculator.addRecipe(recipe, to: part)
         addInputRecipesIfNeeded()
         update()
         
@@ -210,37 +210,35 @@ private extension SingleItemCalculatorViewModel {
         
         guard addSingleRecipe || addSingleRecipe else { return }
         
-        for inputItem in calculator.production.inputItems {
+        for inputItem in calculator.production.inputParts {
             for recipe in inputItem.recipes {
-                let inputItems = recipe.recipe.inputs.map(\.item)
+                let inputItems = recipe.recipe.inputs.map(\.part)
                 
-                for inputItem in inputItems {
+                for inputPart in inputItems {
                     guard
-                        !calculator.production.inputItems.contains(item: inputItem),
-                        !explicitlyDeletedItemIDs.contains(inputItem.id)
+                        !calculator.production.inputParts.contains(part: inputPart),
+                        !explicitlyDeletedPartIDs.contains(inputPart.id)
                     else { continue }
                     
-                    let isNaturalResource = (inputItem as? Part)?.isNaturalResource == true
-                    
-                    if addSingleRecipe, !isNaturalResource {
-                        let recipes = storageService.recipes(for: inputItem, as: [.output, .byproduct])
+                    if addSingleRecipe, !inputPart.isNaturalResource {
+                        let recipes = storageService.recipes(for: inputPart, as: [.output, .byproduct])
                         if
                             recipes.count == 1,
                             let recipe = recipes.first,
                             !recipe.id.contains("packaged")
                         {
-                            calculator.addRecipe(recipe, to: inputItem)
+                            calculator.addRecipe(recipe, to: inputPart)
                         }
                     }
                     
-                    if addPinnedRecipe, !isNaturalResource {
-                        let pinnedRecipeIDs = storageService.pinnedRecipeIDs(for: inputItem, as: [.output, .byproduct])
+                    if addPinnedRecipe, !inputPart.isNaturalResource {
+                        let pinnedRecipeIDs = storageService.pinnedRecipeIDs(for: inputPart, as: [.output, .byproduct])
                         if
                             pinnedRecipeIDs.count == 1,
                             let recipe = pinnedRecipeIDs.first.flatMap(storageService.recipe(id:)),
                             !recipe.id.contains("packaged")
                         {
-                            calculator.addRecipe(recipe, to: inputItem)
+                            calculator.addRecipe(recipe, to: inputPart)
                         }
                     }
                 }
@@ -250,21 +248,21 @@ private extension SingleItemCalculatorViewModel {
     
     // MARK: Can perform actions
     @MainActor
-    func canAdjustItem(_ outputItem: SingleItemCalculator.OutputItem) -> Bool {
+    func canAdjustPart(_ outputItem: SingleItemCalculator.OutputPart) -> Bool {
         byproductSelectionState == nil &&
-        (outputItem.item.id != item.id ||
-        storageService.recipes(for: outputItem.item, as: [.output, .byproduct]).count > 1)
+        (outputItem.part != part ||
+        storageService.recipes(for: outputItem.part, as: [.output, .byproduct]).count > 1)
     }
     
-    func canRemoveItem(_ item: some Item) -> Bool {
-        item.id != self.item.id
+    func canRemovePart(_ part: Part) -> Bool {
+        self.part != part
     }
     
     @MainActor
     func canSelectRecipe(for input: SingleItemCalculator.OutputRecipe.InputIngredient) -> Bool {
         byproductSelectionState == nil &&
-        !calculator.production.inputItems.contains(item: input.item) &&
-        !storageService.recipes(for: input.item, as: [.output, .byproduct]).isEmpty
+        !calculator.production.inputParts.contains(part: input.part) &&
+        !storageService.recipes(for: input.part, as: [.output, .byproduct]).isEmpty
     }
     
     @MainActor
@@ -274,8 +272,8 @@ private extension SingleItemCalculatorViewModel {
         
         // If production has at least one input with the same item
         calculator.outputRecipesContains {
-            !calculator.hasConsumer(byproduct.item, recipe: $0.recipe) &&
-            $0.inputs.contains { $0.item.id == byproduct.item.id }
+            !calculator.hasConsumer(byproduct.part, recipe: $0.recipe) &&
+            $0.inputs.contains { $0.part == byproduct.part }
         }
     }
     
@@ -284,7 +282,7 @@ private extension SingleItemCalculatorViewModel {
         byproduct: SingleItemCalculator.OutputRecipe.ByproductIngredient,
         recipe: Recipe
     ) -> Bool {
-        calculator.hasProducer(byproduct.item, recipe: recipe)
+        calculator.hasProducer(byproduct.part, recipe: recipe)
     }
     
     @MainActor
@@ -293,8 +291,8 @@ private extension SingleItemCalculatorViewModel {
         byproductSelectionState?.consumingRecipe == nil &&
         
         calculator.outputRecipesContains {
-            !calculator.hasProducer(input.item, recipe: $0.recipe) &&
-            $0.byproducts.contains { $0.item.id == input.item.id }
+            !calculator.hasProducer(input.part, recipe: $0.recipe) &&
+            $0.byproducts.contains { $0.part == input.part }
         }
     }
     
@@ -303,26 +301,26 @@ private extension SingleItemCalculatorViewModel {
         input: SingleItemCalculator.OutputRecipe.InputIngredient,
         recipe: Recipe
     ) -> Bool {
-        calculator.hasConsumer(input.item, recipe: recipe)
+        calculator.hasConsumer(input.part, recipe: recipe)
     }
     
     // MARK: Perform actions
-    func adjustItem(_ outputItem: SingleItemCalculator.OutputItem) {
+    func adjustPart(_ outputPart: SingleItemCalculator.OutputPart) {
         autoSelectSingleRecipeTip.invalidate(reason: .actionPerformed)
         autoSelectSinglePinnedRecipeTip.invalidate(reason: .actionPerformed)
         modalNavigationState = .adjustItem(
             viewModel: SingleItemCalculatorItemAdjustmentViewModel(
-                item: outputItem,
-                excludeRecipesForItems: calculator.production.inputItems.map(\.item),
-                allowDeletion: outputItem.item.id != item.id
-            ) { [weak self] outputItem in
+                part: outputPart,
+                excludeRecipesForParts: calculator.production.inputParts.map(\.part),
+                allowDeletion: outputPart.part != part
+            ) { [weak self] outputPart in
                 guard let self else { return }
                 
-                if outputItem.recipes.isEmpty {
-                    calculator.removeInputItem(outputItem.item)
-                    explicitlyDeletedItemIDs.insert(outputItem.item.id)
+                if outputPart.recipes.isEmpty {
+                    calculator.removeInputItem(outputPart.part)
+                    explicitlyDeletedPartIDs.insert(outputPart.part.id)
                 } else {
-                    calculator.updateInputItem(outputItem)
+                    calculator.updateInputPart(outputPart)
                 }
                 
                 modalNavigationState = nil
@@ -331,11 +329,11 @@ private extension SingleItemCalculatorViewModel {
         )
     }
     
-    func removeItem(_ item: some Item) {
+    func removePart(_ part: Part) {
         autoSelectSingleRecipeTip.invalidate(reason: .actionPerformed)
         autoSelectSinglePinnedRecipeTip.invalidate(reason: .actionPerformed)
-        calculator.removeInputItem(item)
-        explicitlyDeletedItemIDs.insert(item.id)
+        calculator.removeInputItem(part)
+        explicitlyDeletedPartIDs.insert(part.id)
         update()
         
         canBeDismissedWithoutSaving = false
@@ -346,13 +344,13 @@ private extension SingleItemCalculatorViewModel {
         autoSelectSingleRecipeTip.invalidate(reason: .actionPerformed)
         autoSelectSinglePinnedRecipeTip.invalidate(reason: .actionPerformed)
         let viewModel = SingleItemCalculatorInitialRecipeSelectionViewModel(
-            item: ingredient.item,
-            excludeRecipesForItems: calculator.production.inputItems.map(\.item)
+            part: ingredient.part,
+            excludeRecipesForParts: calculator.production.inputParts.map(\.part)
         ) { [weak self] recipe in
             guard let self else { return }
             
             modalNavigationState = nil
-            addRecipe(recipe, to: ingredient.item)
+            addRecipe(recipe, to: ingredient.part)
             update()
         }
         
@@ -363,7 +361,7 @@ private extension SingleItemCalculatorViewModel {
     func selectByproductProducer(byproduct: SingleItemCalculator.OutputRecipe.ByproductIngredient, recipe: Recipe) {
         if byproductSelectionState == nil {
             byproductSelectionState = ByproductSelectionState(
-                item: byproduct.item,
+                part: byproduct.part,
                 producingRecipe: recipe
             )
         } else {
@@ -375,7 +373,7 @@ private extension SingleItemCalculatorViewModel {
     
     @MainActor
     func unselectByproductProducer(byproduct: SingleItemCalculator.OutputRecipe.ByproductIngredient, recipe: Recipe) {
-        calculator.removeProducer(recipe, for: byproduct.item)
+        calculator.removeProducer(recipe, for: byproduct.part)
         
         update()
     }
@@ -384,7 +382,7 @@ private extension SingleItemCalculatorViewModel {
     func selectByproductConsumer(input: SingleItemCalculator.OutputRecipe.InputIngredient, recipe: Recipe) {
         if byproductSelectionState == nil {
             byproductSelectionState = ByproductSelectionState(
-                item: input.item,
+                part: input.part,
                 consumingRecipe: recipe
             )
         } else {
@@ -396,7 +394,7 @@ private extension SingleItemCalculatorViewModel {
     
     @MainActor
     func unselectByproductConsumer(input: SingleItemCalculator.OutputRecipe.InputIngredient, recipe: Recipe) {
-        calculator.removeConsumer(recipe, for: input.item)
+        calculator.removeConsumer(recipe, for: input.part)
         
         update()
     }
@@ -404,14 +402,14 @@ private extension SingleItemCalculatorViewModel {
     @MainActor
     func checkByproductSelectionState() {
         guard
-            let item = byproductSelectionState?.item,
+            let part = byproductSelectionState?.part,
             let producingRecipe = byproductSelectionState?.producingRecipe,
             let consumingRecipe = byproductSelectionState?.consumingRecipe
         else { return }
         
         byproductSelectionState = nil
         
-        calculator.addByproduct(item, producer: producingRecipe, consumer: consumingRecipe)
+        calculator.addByproduct(part, producer: producingRecipe, consumer: consumingRecipe)
         update()
         
         canBeDismissedWithoutSaving = false
@@ -420,19 +418,19 @@ private extension SingleItemCalculatorViewModel {
     // MARK: ViewModels
     @MainActor
     func buildOutputItemViewModels() {
-        outputItemViewModels = calculator.outputItems.map { outputItem in
+        outputItemViewModels = calculator.outputParts.map { outputPart in
             SingleItemCalculatorItemViewModel(
-                item: outputItem,
+                part: outputPart,
                 byproductSelectionState: byproductSelectionState,
                 canPerformAction: { [weak self] action in
                     guard let self else { return false }
                     
                     return switch action {
-                    case let .adjust(item):
-                        canAdjustItem(item)
+                    case let .adjust(part):
+                        canAdjustPart(part)
                         
-                    case let .removeItem(item):
-                        canRemoveItem(item)
+                    case let .removePart(part):
+                        canRemovePart(part)
                         
                     case let .selectRecipeForInput(input):
                         canSelectRecipe(for: input)
@@ -454,11 +452,11 @@ private extension SingleItemCalculatorViewModel {
                     guard let self else { return }
                     
                     switch action {
-                    case let .adjust(product):
-                        adjustItem(product)
+                    case let .adjust(part):
+                        adjustPart(part)
                         
-                    case let .removeItem(item):
-                        removeItem(item)
+                    case let .removePart(part):
+                        removePart(part)
                         
                     case let .selectRecipeForInput(input):
                         selectRecipe(for: input)
@@ -484,8 +482,8 @@ private extension SingleItemCalculatorViewModel {
 // MARK: Action
 extension SingleItemCalculatorViewModel {
     enum Action {
-        case adjust(SingleItemCalculator.OutputItem)
-        case removeItem(any Item)
+        case adjust(SingleItemCalculator.OutputPart)
+        case removePart(Part)
         case selectRecipeForInput(SingleItemCalculator.OutputRecipe.InputIngredient)
         case selectByproductProducer(
             byproduct: SingleItemCalculator.OutputRecipe.ByproductIngredient,
@@ -516,7 +514,7 @@ extension SingleItemCalculatorViewModel {
         
         var id: String {
             switch self {
-            case let .selectInitialRecipeForItem(viewModel): viewModel.item.id
+            case let .selectInitialRecipeForItem(viewModel): viewModel.part.id
             case let .adjustItem(viewModel): viewModel.id.uuidString
             case let .editProduction(viewModel): viewModel.id.uuidString
             case let .statistics(viewModel): viewModel.id
@@ -528,7 +526,7 @@ extension SingleItemCalculatorViewModel {
 // MARK: ByproductSelectionState
 extension SingleItemCalculatorViewModel {
     struct ByproductSelectionState {
-        let item: any Item
+        let part: Part
         var producingRecipe: Recipe?
         var consumingRecipe: Recipe?
     }
@@ -540,14 +538,14 @@ extension SingleItemCalculatorViewModel {
         @Parameter
         static var shouldDisplay: Bool = false
         
-        let item: any Item
+        let part: Part
         
         var title: Text {
             Text("single-item-production-tip-auto-select-single-recipe-title")
         }
         
         var message: Text? {
-            Text("single-item-production-tip-auto-select-single-recipe-message-\(item.localizedName)")
+            Text("single-item-production-tip-auto-select-single-recipe-message-\(part.localizedName)")
         }
         
         var rules: [Rule] {
@@ -565,14 +563,14 @@ extension SingleItemCalculatorViewModel {
         @Parameter
         static var shouldDisplay: Bool = false
         
-        let item: any Item
+        let part: Part
         
         var title: Text {
             Text("single-item-production-tip-auto-select-single-pinned-recipe-title")
         }
         
         var message: Text? {
-            Text("single-item-production-tip-auto-select-single-pinned-recipe-message-\(item.localizedName)")
+            Text("single-item-production-tip-auto-select-single-pinned-recipe-message-\(part.localizedName)")
         }
         
         var rules: [Rule] {

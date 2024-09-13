@@ -10,17 +10,23 @@ private extension Part.Static {
 extension V2.Parts {
     static let wire = Part.Static(id: "part-wire")
     static let cable = Part.Static(id: "part-cable")
+    static let circuitBoard = Part.Static(id: "part-circuit-board")
     static let quickwire = Part.Static(id: "part-quickwire")
     static let aiLimiter = Part.Static(id: "part-ai-limiter")
-    static let circuitBoard = Part.Static(id: "part-circuit-board")
     static let highSpeedConnector = Part.Static(id: "part-high-speed-connector")
+    static let reanimatedSAM = Part.Static(id: "part-reanimated-sam")
+    static let samFluctuator = Part.Static(id: "part-sam-fluctuator")
+    static let singularityCell = Part.Static(id: "part-singularity-cell")
     
     static let electronicParts = [
         wire,
         cable,
+        circuitBoard,
         quickwire,
         aiLimiter,
-        circuitBoard,
-        highSpeedConnector
+        highSpeedConnector,
+        reanimatedSAM,
+        samFluctuator,
+        singularityCell
     ]
 }

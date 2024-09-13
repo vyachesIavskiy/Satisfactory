@@ -21,9 +21,9 @@ import SHStorage
         Text(verbatim: "Single item production")
         
         HStack {
-            _ListRowIconSingleItemProductionPreview(itemID: "part-reinforced-iron-plate")
+            _ListRowIconSingleItemProductionPreview(partID: "part-reinforced-iron-plate")
             
-            _ListRowIconSingleItemProductionPreview(itemID: "part-crude-oil")
+            _ListRowIconSingleItemProductionPreview(partID: "part-crude-oil")
         }
         
         Text(verbatim: "From resources production")
@@ -43,7 +43,7 @@ import SHStorage
 private struct _ListRowIconSingleItemProductionPreview: View {
     private let production: Production
     
-    init(itemID: String) {
+    init(partID: String) {
         @Dependency(\.storageService)
         var storageService
         
@@ -52,7 +52,7 @@ private struct _ListRowIconSingleItemProductionPreview: View {
                 id: UUID(),
                 name: "",
                 creationDate: Date(),
-                item: storageService.item(id: itemID)!,
+                part: storageService.part(id: partID)!,
                 amount: 0
             )
         )

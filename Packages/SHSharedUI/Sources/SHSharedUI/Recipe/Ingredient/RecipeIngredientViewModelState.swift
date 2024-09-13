@@ -2,7 +2,7 @@ import SHModels
 
 public protocol RecipeIngredientViewModelState {
     var id: String { get }
-    var item: any Item { get }
+    var part: Part { get }
     var amountViewModels: [RecipeIngredientAmountViewModel] { get }
 }
 
@@ -12,7 +12,7 @@ extension RecipeIngredientViewModel {
         private let amount: Double
         
         var id: String { ingredient.id }
-        var item: any Item { ingredient.item }
+        var part: Part { ingredient.part }
         var amountViewModels: [RecipeIngredientAmountViewModel] {
             [RecipeIngredientAmountViewModel(recipeIngredient: ingredient, amount: amount)]
         }

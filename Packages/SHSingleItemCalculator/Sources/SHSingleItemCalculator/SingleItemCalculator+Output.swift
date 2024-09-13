@@ -5,38 +5,38 @@ extension SingleItemCalculator {
         var ingredientConverter = IngredientConverter()
         
         func isSelected(_ input: Node.Input, node: Node) -> Bool {
-            self.production.inputItems.contains(item: input.item)
+            self.production.inputParts.contains(part: input.part)
         }
         
-        var outputItems = buildOutputItems(
+        var outputParts = buildOutputParts(
             ingredientConverter: &ingredientConverter,
             isSelected: isSelected
         )
         
         addAdditionalOutputItems(
-            updating: &outputItems,
+            updating: &outputParts,
             ingredientConverter: &ingredientConverter,
             isSelected: isSelected
         )
         
-        self.outputItems = outputItems
+        self.outputParts = outputParts
     }
     
-    private func buildOutputItems(
+    private func buildOutputParts(
         ingredientConverter: inout IngredientConverter,
         isSelected: (_ input: Node.Input, _ node: Node) -> Bool
-    ) -> [OutputItem] {
+    ) -> [OutputPart] {
         var nodes = mainNodes
-        var outputItems = [OutputItem]()
+        var outputParts = [OutputPart]()
         
         while !nodes.isEmpty {
             for node in nodes {
                 // If there is already an product in output.
-                if let productIndex = outputItems.firstIndex(where: { $0.item.id == node.item.id }) {
+                if let productIndex = outputParts.firstIndex(where: { $0.part == node.part }) {
                     // And if there is already a recipe for a product in output.
-                    if let recipeIndex = outputItems[productIndex].recipes.firstIndex(where: { $0.recipe.id == node.recipe.id }) {
+                    if let recipeIndex = outputParts[productIndex].recipes.firstIndex(where: { $0.recipe.id == node.recipe.id }) {
                         // Accumulate saved values with new values.
-                        var recipe = outputItems[productIndex].recipes[recipeIndex]
+                        var recipe = outputParts[productIndex].recipes[recipeIndex]
                         recipe.output.amount += node.amount
                         recipe.byproducts.merge(with: node.byproducts.map {
                             ingredientConverter.convert(producingRecipeID: recipe.recipe.id, byproduct: $0)
@@ -47,23 +47,23 @@ extension SingleItemCalculator {
                                 isSelected: isSelected(input, node)
                             )
                         })
-                        outputItems[productIndex].recipes[recipeIndex] = recipe
+                        outputParts[productIndex].recipes[recipeIndex] = recipe
                     } else {
                         // If a recipe is new, add this to output product.
                         let proportion = production
-                            .inputItems
-                            .first(item: outputItems[productIndex].item)?
+                            .inputParts
+                            .first(part: outputParts[productIndex].part)?
                             .recipes
                             .first(where: { $0.recipe == node.recipe })?
                             .proportion ?? .auto
                         
-                        outputItems[productIndex].recipes.append(
+                        outputParts[productIndex].recipes.append(
                             OutputRecipe(
                                 id: uuid(),
                                 recipe: node.recipe,
                                 output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                                     id: uuid(),
-                                    item: node.item,
+                                    part: node.part,
                                     amount: node.amount
                                 ),
                                 byproducts: node.byproducts.map { ingredientConverter.convert(producingRecipeID: node.recipe.id, byproduct: $0) },
@@ -80,21 +80,21 @@ extension SingleItemCalculator {
                 } else {
                     // If a product is new, add it.
                     let proportion = production
-                        .inputItems
-                        .first(item: node.item)?
+                        .inputParts
+                        .first(part: node.part)?
                         .recipes
                         .first(where: { $0.recipe == node.recipe })?
                         .proportion ?? .auto
                     
-                    let product = OutputItem(
+                    let product = OutputPart(
                         id: uuid(),
-                        item: node.item,
+                        part: node.part,
                         recipes: [OutputRecipe(
                             id: uuid(),
                             recipe: node.recipe,
                             output: SingleItemCalculator.OutputRecipe.OutputIngredient(
                                 id: uuid(),
-                                item: node.item,
+                                part: node.part,
                                 amount: node.amount
                             ),
                             byproducts: node.byproducts.map { ingredientConverter.convert(producingRecipeID: node.recipe.id, byproduct: $0) },
@@ -109,28 +109,28 @@ extension SingleItemCalculator {
                     )
                     
                     // Populate producingProductID field for inputs with a newly created product
-                    for productIndex in outputItems.indices {
-                        for (recipeIndex, recipe) in outputItems[productIndex].recipes.enumerated() {
+                    for productIndex in outputParts.indices {
+                        for (recipeIndex, recipe) in outputParts[productIndex].recipes.enumerated() {
                             for (inputIndex, input) in recipe.inputs.enumerated() {
-                                if input.item.id == product.item.id {
-                                    outputItems[productIndex].recipes[recipeIndex].inputs[inputIndex].producingProductID = product.id
+                                if input.part == product.part {
+                                    outputParts[productIndex].recipes[recipeIndex].inputs[inputIndex].producingProductID = product.id
                                 }
                             }
                         }
                     }
                     
-                    outputItems.append(product)
+                    outputParts.append(product)
                 }
             }
             
             nodes = nodes.flatMap(\.inputNodes)
         }
         
-        return outputItems
+        return outputParts
     }
     
     private func addAdditionalOutputItems(
-        updating outputItems: inout [OutputItem],
+        updating outputItems: inout [OutputPart],
         ingredientConverter: inout IngredientConverter,
         isSelected: (_ input: Node.Input, _ node: Node) -> Bool
     ) {
@@ -139,7 +139,7 @@ extension SingleItemCalculator {
         while !nodes.isEmpty {
             for node in nodes {
                 guard
-                    let (outputIndex, output) = outputItems.enumerated().first(where: { $0.1.item.id == node.item.id }),
+                    let (outputIndex, output) = outputItems.enumerated().first(where: { $0.1.part == node.part }),
                     let recipeIndex = output.recipes.firstIndex(where: { $0.recipe.id == node.recipe.id })
                 else { continue }
                 
@@ -181,7 +181,7 @@ extension SingleItemCalculator {
         mutating func convert(producingRecipeID: String, byproduct: SingleItemCalculator.Node.Byproduct) -> SingleItemCalculator.OutputRecipe.ByproductIngredient {
             SingleItemCalculator.OutputRecipe.ByproductIngredient(
                 id: uuid(),
-                item: byproduct.item,
+                part: byproduct.part,
                 amount: byproduct.availableAmount,
                 byproducts: byproduct.consumers.map {
                     byproductConverter.convert(producerRecipeID: producingRecipeID, byproductConsumer: $0)
@@ -196,7 +196,7 @@ extension SingleItemCalculator {
         ) -> SingleItemCalculator.OutputRecipe.InputIngredient {
             SingleItemCalculator.OutputRecipe.InputIngredient(
                 id: uuid(),
-                item: input.item,
+                part: input.part,
                 amount: input.availableAmount,
                 byproducts: input.byproductProducers.map {
                     byproductConverter.convert(inputProducer: $0)
@@ -237,7 +237,7 @@ extension SingleItemCalculator {
 private extension [SingleItemCalculator.OutputRecipe.OutputIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
-            $0.item.id == $1.item.id
+            $0.part == $1.part
         } merging: {
             $0.amount += $1.amount
         }
@@ -247,7 +247,7 @@ private extension [SingleItemCalculator.OutputRecipe.OutputIngredient] {
 private extension [SingleItemCalculator.OutputRecipe.ByproductIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
-            $0.item.id == $1.item.id
+            $0.part == $1.part
         } merging: {
             $0.amount += $1.amount
             $0.isSelected = $0.isSelected || $1.isSelected
@@ -259,7 +259,7 @@ private extension [SingleItemCalculator.OutputRecipe.ByproductIngredient] {
 private extension [SingleItemCalculator.OutputRecipe.InputIngredient] {
     mutating func merge(with other: Self) {
         merge(with: other) {
-            $0.item.id == $1.item.id
+            $0.part == $1.part
         } merging: {
             $0.amount += $1.amount
             $0.isSelected = $0.isSelected || $1.isSelected

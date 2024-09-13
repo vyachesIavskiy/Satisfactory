@@ -75,7 +75,6 @@ private struct FileManagerCheckView: View {
     
     // Storage
     @State var parts = [Part]()
-    @State var equipment = [Equipment]()
     @State var recipes = [Recipe]()
     @State var factories = [FactoryListView]()
     
@@ -132,23 +131,6 @@ private struct FileManagerCheckView: View {
                             
                             HStack {
                                 Text(part.id)
-                                
-                                Spacer()
-                                
-                                if isPinned {
-                                    Image(systemName: "pin.square")
-                                }
-                            }
-                            .foregroundStyle(isPinned ? .orange : .primary)
-                        }
-                    }
-                    
-                    Section("Equipment", isExpanded: $equipmentExpanded) {
-                        ForEach(equipment) { equipment in
-                            let isPinned = pinnedEquipmentIDs.contains(equipment.id)
-                            
-                            HStack {
-                                Text(equipment.id)
                                 
                                 Spacer()
                                 

@@ -16,7 +16,7 @@ extension SHStorageService: DependencyKey {
 
 extension SHStorageService {
     static let noop = SHStorageService(
-        load: { _ in },
+        load: { },
         staticConfiguration: { Configuration(version: 1) },
         persistentConfiguration: { Configuration(version: 1) },
         pins: { Pins() },
@@ -30,12 +30,10 @@ extension SHStorageService {
         deleteFactory: { _ in },
         deleteProduction: { _ in },
         parts: { [] },
-        equipment: { [] },
         buildings: { [] },
         recipes: { [] },
         extractions: { [] },
         changePartPinStatus: { _, _ in },
-        changeEquipmentPinStatus: { _, _ in },
         changeBuildingPinStatus: { _, _ in },
         changeRecipePinStatus: { _ in }
     )
@@ -55,12 +53,10 @@ extension SHStorageService {
         deleteFactory: unimplemented("SHStorageService.deleteFactory", placeholder: ()),
         deleteProduction: unimplemented("SHStorageService.deleteProduction", placeholder: ()),
         parts: unimplemented("SHStorageService.parts", placeholder: []),
-        equipment: unimplemented("SHStorageService.equipment", placeholder: []),
         buildings: unimplemented("SHStorageService.buildings", placeholder: []),
         recipes: unimplemented("SHStorageService.recipes", placeholder: []),
         extractions: unimplemented("SHStorageService.extractions", placeholder: []),
         changePartPinStatus: unimplemented("SHStorageService.changePartPinStatus", placeholder: ()),
-        changeEquipmentPinStatus: unimplemented("SHStorageService.changeEquipmentPinStatus", placeholder: ()),
         changeBuildingPinStatus: unimplemented("SHStorageService.changeBuildingPinStatus", placeholder: ()),
         changeRecipePinStatus: unimplemented("SHStorageService.changeRecipePinStatus", placeholder: ())
     )
@@ -69,7 +65,7 @@ extension SHStorageService {
         let live = Live()
         
         return SHStorageService(
-            load: { try live.load($0) },
+            load: { try live.load() },
             staticConfiguration: { live.staticConfiguration },
             persistentConfiguration: { live.persistentConfiguration },
             pins: { live.pins },
@@ -83,12 +79,10 @@ extension SHStorageService {
             deleteFactory: { live.deleteFactory($0) },
             deleteProduction: { live.deleteProduction($0) },
             parts: { live.parts },
-            equipment: { live.equipment },
             buildings: { live.buildings },
             recipes: { live.recipes },
             extractions: { live.extractions },
             changePartPinStatus: { live.changePinStatus(partID: $0, productionType: $1) },
-            changeEquipmentPinStatus: { live.changePinStatus(equipmentID: $0, productionType: $1) },
             changeBuildingPinStatus: { live.changePinStatus(buildingID: $0, productionType: $1) },
             changeRecipePinStatus: { live.changeRecipePinStatus($0) }
         )
@@ -98,7 +92,7 @@ extension SHStorageService {
         let preview = Preview()
         
         return SHStorageService(
-            load: { _ in },
+            load: { },
             staticConfiguration: { Configuration(version: 1) },
             persistentConfiguration: { Configuration(version: 1) },
             pins: { preview.pins },
@@ -112,12 +106,10 @@ extension SHStorageService {
             deleteFactory: { preview.deleteFactory($0) },
             deleteProduction: { preview.deleteProduction($0) },
             parts: { preview.parts },
-            equipment: { preview.equipment },
             buildings: { preview.buildings },
             recipes: { preview.recipes },
             extractions: { preview.extractions },
             changePartPinStatus: { preview.changePinStatus(partID: $0, productionType: $1) },
-            changeEquipmentPinStatus: { preview.changePinStatus(equipmentID: $0, productionType: $1) },
             changeBuildingPinStatus: { preview.changePinStatus(buildingID: $0, productionType: $1) },
             changeRecipePinStatus: { preview.changeRecipePinStatus($0) }
         )

@@ -48,6 +48,14 @@
     "id" : "building-particle-accelerator"
   },
   {
+    "categoryID" : "category-manufacturers",
+    "id" : "building-converter"
+  },
+  {
+    "categoryID" : "category-manufacturers",
+    "id" : "building-quantum-encoder"
+  },
+  {
     "categoryID" : "category-miners",
     "id" : "building-miner-mk-1"
   },
@@ -66,13 +74,5 @@
   {
     "categoryID" : "category-smelters",
     "id" : "building-foundry"
-  },
-  {
-    "categoryID" : "category-workstations",
-    "id" : "building-craft-bench"
-  },
-  {
-    "categoryID" : "category-workstations",
-    "id" : "building-equipment-workshop"
   }
 ]

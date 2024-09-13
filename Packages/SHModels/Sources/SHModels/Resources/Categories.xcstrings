@@ -1,24 +1,24 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "category-aliens" : {
+    "category-alien-remains" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aliens"
+            "value" : "Alien Remains"
           }
         }
       }
     },
-    "category-back" : {
+    "category-ammunition" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Back"
+            "value" : "Ammunition"
           }
         }
       }
@@ -34,17 +34,6 @@
         }
       }
     },
-    "category-body" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Body"
-          }
-        }
-      }
-    },
     "category-communications" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -56,13 +45,24 @@
         }
       }
     },
-    "category-consumed" : {
+    "category-compounds" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Consumed"
+            "value" : "Compounds"
+          }
+        }
+      }
+    },
+    "category-consumables" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consumables"
           }
         }
       }
@@ -100,6 +100,17 @@
         }
       }
     },
+    "category-fluid-extractors" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fluid Extractors"
+          }
+        }
+      }
+    },
     "category-fluids" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -107,17 +118,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fluids"
-          }
-        }
-      }
-    },
-    "category-fuels" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fuels"
           }
         }
       }
@@ -133,24 +133,13 @@
         }
       }
     },
-    "category-hands" : {
+    "category-generators" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hands"
-          }
-        }
-      }
-    },
-    "category-head" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Head"
+            "value" : "Generators"
           }
         }
       }
@@ -177,24 +166,35 @@
         }
       }
     },
-    "category-legs" : {
+    "category-manufacturers" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Legs"
+            "value" : "Manufacturers"
           }
         }
       }
     },
-    "category-minerals" : {
+    "category-matters" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Minerals"
+            "value" : "Matters"
+          }
+        }
+      }
+    },
+    "category-miners" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miners"
           }
         }
       }
@@ -232,6 +232,17 @@
         }
       }
     },
+    "category-packaging" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Packaging"
+          }
+        }
+      }
+    },
     "category-power-shards" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -265,13 +276,24 @@
         }
       }
     },
-    "category-space-elevator-parts" : {
+    "category-smelters" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Space Elevator Parts"
+            "value" : "Smelters"
+          }
+        }
+      }
+    },
+    "category-space-elevator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Space Elevator"
           }
         }
       }
@@ -294,6 +316,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Standard Parts"
+          }
+        }
+      }
+    },
+    "category-tools" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tools"
           }
         }
       }

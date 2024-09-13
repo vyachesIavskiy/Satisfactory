@@ -24,19 +24,19 @@ extension SingleItemCalculator {
         inputIndex: Int
     ) {
         // If input item is a top-level additional item, do not handle inputs for it.
-        guard node.item.id != input.item.id else { return }
+        guard node.part != input.part else { return }
         
         // Check if user selected a recipe for an input.
-        guard let inputItemIndex = internalState.index(of: input.item) else { return }
+        guard let inputItemIndex = internalState.index(of: input.part) else { return }
         
         // Convenience selected item.
-        let inputItem = internalState.selectedInputItems[inputItemIndex]
+        let inputPart = internalState.selectedInputParts[inputItemIndex]
         
-        for inputRecipe in inputItem.recipes {
+        for inputRecipe in inputPart.recipes {
             buildAdditionalInputRecipeNode(
                 to: node,
                 input: input,
-                inputItem: inputItem,
+                inputPart: inputPart,
                 inputRecipe: inputRecipe
             )
         }
@@ -45,7 +45,7 @@ extension SingleItemCalculator {
     private func buildAdditionalInputRecipeNode(
         to node: SingleItemCalculator.Node,
         input: SingleItemCalculator.Node.Input,
-        inputItem: SingleItemProduction.InputItem,
+        inputPart: SingleItemProduction.InputPart,
         inputRecipe: SingleItemProduction.InputRecipe
     ) {
         // Safety check if input node contains selected recipe. If this happens, this is logical error.
@@ -73,7 +73,7 @@ extension SingleItemCalculator {
         ///   Recipe3: .fraction(0.4)
         ///   Recipe4: .auto
         /// Returned amount will be: 563 - 100 - 125 - (338 x 0.4) = 202.8 (0.6 of available amount for fractions)
-        let amountForAutos = inputItem.recipes.reduce(amountForFractions) { partialResult, productionRecipe in
+        let amountForAutos = inputPart.recipes.reduce(amountForFractions) { partialResult, productionRecipe in
             guard case let .fraction(fraction) = productionRecipe.proportion else {
                 return partialResult
             }
@@ -81,7 +81,7 @@ extension SingleItemCalculator {
             return partialResult - amountForFractions * fraction
         }
         
-        let amountOfAutoRecipes = inputItem.recipes.filter { $0.proportion == .auto }.count
+        let amountOfAutoRecipes = inputPart.recipes.filter { $0.proportion == .auto }.count
         
         // Update tree node amount value based on production recipe proportion value.
         switch inputRecipe.proportion {
@@ -108,7 +108,7 @@ extension SingleItemCalculator {
         // Input is new, item is not the same as parent output item and recipe is not fixed propotion. Add it.
         let inputNode = SingleItemCalculator.Node(
             id: uuid(),
-            item: input.item,
+            part: input.part,
             recipe: inputRecipe.recipe,
             amount: inputAmount
         )

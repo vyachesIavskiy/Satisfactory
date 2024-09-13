@@ -34,7 +34,7 @@ struct FromResourcesCalculatorItemsSelectionView: View {
                 NavigationLink("general-next") {
                     Text("Calculation")
                 }
-                .disabled(viewModel.selectedItemIDs.isEmpty)
+                .disabled(viewModel.selectedPartIDs.isEmpty)
             }
         }
         .onAppear {
@@ -56,10 +56,10 @@ struct FromResourcesCalculatorItemsSelectionView: View {
     @ViewBuilder
     private func itemsSection(_ _section: Binding<FromResourcesCalculatorItemsSelectionViewModel.Section>) -> some View {
         let section = _section.wrappedValue
-        if !section.items.isEmpty {
+        if !section.parts.isEmpty {
             Section(isExpanded: _section.expanded) {
-                ForEach(section.items, id: \.id) { item in
-                    itemRow(item)
+                ForEach(section.parts) { part in
+                    itemRow(part)
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets(top: 4, leading: 20, bottom: 4, trailing: 20))
                         .disabled(!section.expanded)
@@ -76,19 +76,19 @@ struct FromResourcesCalculatorItemsSelectionView: View {
     }
     
     @ViewBuilder
-    private func itemRow(_ item: any Item) -> some View {
+    private func itemRow(_ part: Part) -> some View {
         Button {
-            viewModel.selectItem(item)
+            viewModel.selectPart(part)
         } label: {
-            ListRowItem(item, accessory: .checkmark(.multiSelection(selected: viewModel.isSelected(item))))
+            ListRowItem(part, accessory: .checkmark(.multiSelection(selected: viewModel.isSelected(part))))
                 .contentShape(.interaction, Rectangle())
         }
         .listRowBackground(Color.clear)
         .contextMenu {
             Button {
-                viewModel.changePinStatus(for: item)
+                viewModel.changePinStatus(for: part)
             } label: {
-                if viewModel.isPinned(item) {
+                if viewModel.isPinned(part) {
                     Label("general-unpin", systemImage: "pin.slash.fill")
                 } else {
                     Label("general-pin", systemImage: "pin.fill")

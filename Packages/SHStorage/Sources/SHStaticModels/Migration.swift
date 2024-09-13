@@ -1,32 +1,31 @@
 import Foundation
 
-public struct Migration: Codable {
-    public var version: Int
-    public var partIDs: [IDs]
-    public var equipmentIDs: [IDs]
-    public var recipeIDs: [IDs]
+package struct Migration: Codable {
+    package var version: Int
+    package var partIDs: [IDs]
+    package var recipeIDs: [IDs]
 }
 
-public extension Migration {
+package extension Migration {
     struct IDs: Codable {
-        public var oldID: String
-        public var newID: String
+        package var oldID: String
+        package var newID: String
     }
 }
 
 extension Migration: Equatable {
-    public static func == (lhs: Self, rhs: Self) -> Bool {
+    package static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.version == rhs.version
     }
 }
 
 extension Migration: Comparable {
-    public static func < (lhs: Self, rhs: Self) -> Bool {
+    package static func < (lhs: Self, rhs: Self) -> Bool {
         lhs.version < rhs.version
     }
 }
 
-public extension Sequence where Element == Migration.IDs {
+package extension Sequence where Element == Migration.IDs {
     func first(oldID: String) -> Element? {
         first { $0.oldID == oldID }
     }
@@ -36,7 +35,7 @@ public extension Sequence where Element == Migration.IDs {
     }
 }
 
-public extension Collection where Element == Migration.IDs {
+package extension Collection where Element == Migration.IDs {
     func firstIndex(oldID: String) -> Index? {
         firstIndex { $0.oldID == oldID }
     }

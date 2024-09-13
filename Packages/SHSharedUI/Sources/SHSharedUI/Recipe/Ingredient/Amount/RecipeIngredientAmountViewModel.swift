@@ -3,7 +3,7 @@ import SHModels
 
 @Observable
 public final class RecipeIngredientAmountViewModel {
-    let item: any Item
+    let part: Part
     let amount: Double
     let foregroundStyle: AnyShapeStyle
     let secondaryStyle: AnyShapeStyle?
@@ -11,9 +11,9 @@ public final class RecipeIngredientAmountViewModel {
     let shadowColor: Color
     
     var cornerRadius: Double {
-        switch (item as? Part)?.form {
-        case .solid, nil: 5.0
-        case .fluid, .gas: 10.0
+        switch part.form {
+        case .solid: 5.0
+        case .fluid, .gas, .matter: 10.0
         }
     }
     
@@ -21,7 +21,7 @@ public final class RecipeIngredientAmountViewModel {
         let primaryColor: Color
         let shadowColor: Color
         var secondaryStyle: AnyShapeStyle?
-        let form = (ingredient.item as? Part)?.form
+        let form = ingredient.part.form
         
         switch ingredient.role {
         case .output:
@@ -30,12 +30,12 @@ public final class RecipeIngredientAmountViewModel {
             
         case .byproduct:
             switch form {
-            case .solid, nil:
+            case .solid:
                 primaryColor = .sh(.orange)
                 shadowColor = .sh(.orange30)
                 secondaryStyle = AnyShapeStyle(Gradient(colors: [.sh(.orange10), .sh(.orange50)]))
                 
-            case .fluid, .gas:
+            case .fluid, .gas, .matter:
                 primaryColor = .sh(.cyan)
                 shadowColor = .sh(.cyan30)
                 secondaryStyle = AnyShapeStyle(Gradient(colors: [.sh(.cyan10), .sh(.cyan50)]))
@@ -43,18 +43,18 @@ public final class RecipeIngredientAmountViewModel {
             
         case .input:
             switch form {
-            case .solid, nil:
+            case .solid:
                 primaryColor = .sh(.orange)
                 shadowColor = .sh(.orange30)
                 
-            case .fluid, .gas:
+            case .fluid, .gas, .matter:
                 primaryColor = .sh(.cyan)
                 shadowColor = .sh(.cyan30)
             }
         }
         
         self.init(
-            item: ingredient.item,
+            part: ingredient.part,
             amount: amount,
             secondaryStyle: secondaryStyle,
             primaryColor: primaryColor,
@@ -63,14 +63,14 @@ public final class RecipeIngredientAmountViewModel {
     }
     
     public init(
-        item: any Item,
+        part: Part,
         amount: Double,
         foregroundStyle: AnyShapeStyle = AnyShapeStyle(.background),
         secondaryStyle: AnyShapeStyle? = nil,
         primaryColor: Color,
         shadowColor: Color
     ) {
-        self.item = item
+        self.part = part
         self.amount = amount
         self.foregroundStyle = foregroundStyle
         self.secondaryStyle = secondaryStyle

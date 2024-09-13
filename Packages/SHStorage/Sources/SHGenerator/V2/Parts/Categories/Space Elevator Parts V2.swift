@@ -3,7 +3,7 @@ import SHStaticModels
 
 private extension Part.Static {
     init(id: String) {
-        self.init(id: id, category: .spaceElevatorParts, form: .solid)
+        self.init(id: id, category: .spaceElevator, form: .solid)
     }
 }
 
@@ -17,6 +17,9 @@ extension V2.Parts {
     static let magneticFieldGenerator = Part.Static(id: "part-magnetic-field-generator")
     static let thermalPropulsionRocket = Part.Static(id: "part-thermal-propulsion-rocket")
     static let nuclearPasta = Part.Static(id: "part-nuclear-pasta")
+    static let biochemicalSculptor = Part.Static(id: "part-biochemical-sculptor")
+    static let aiExpansionServer = Part.Static(id: "part-ai-expansion-server")
+    static let ballisticWarpDrive = Part.Static(id: "part-ballistic-warp-drive")
     
     static let spaceElevatorParts = [
         smartPlating,
@@ -27,6 +30,9 @@ extension V2.Parts {
         assemblyDirectorSystem,
         magneticFieldGenerator,
         thermalPropulsionRocket,
-        nuclearPasta
+        nuclearPasta,
+        biochemicalSculptor,
+        aiExpansionServer,
+        ballisticWarpDrive,
     ]
 }

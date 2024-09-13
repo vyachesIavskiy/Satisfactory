@@ -5,14 +5,14 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
     public var id: UUID
     public var name: String
     public var creationDate: Date
-    public var item: any Item
+    public var part: Part
     public var amount: Double
-    public var inputItems: [InputItem]
+    public var inputParts: [InputPart]
     public var byproducts: [InputByproduct]
     public var statistics: Statistics
     
     public var assetName: String {
-        item.id
+        part.id
     }
     
     @Dependency(\.uuid)
@@ -22,76 +22,76 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
         id: UUID,
         name: String,
         creationDate: Date,
-        item: some Item,
+        part: Part,
         amount: Double,
-        inputItems: [InputItem] = [],
+        inputParts: [InputPart] = [],
         byproducts: [InputByproduct] = [],
         statistics: Statistics = Statistics()
     ) {
         self.id = id
         self.name = name
         self.creationDate = creationDate
-        self.item = item
+        self.part = part
         self.amount = amount
-        self.inputItems = inputItems
+        self.inputParts = inputParts
         self.byproducts = byproducts
         self.statistics = statistics
     }
     
-    public mutating func addRecipe(_ recipe: Recipe, to item: some Item, with proportion: Proportion) {
-        if let index = inputItems.firstIndex(item: item) {
-            inputItems[index].addRecipe(recipe, proportion: proportion)
+    public mutating func addRecipe(_ recipe: Recipe, to part: Part, with proportion: Proportion) {
+        if let index = inputParts.firstIndex(part: part) {
+            inputParts[index].addRecipe(recipe, proportion: proportion)
         } else {
-            inputItems.append(InputItem(id: uuid(), item: item, recipes: [
+            inputParts.append(InputPart(id: uuid(), part: part, recipes: [
                 InputRecipe(id: uuid(), recipe: recipe, proportion: proportion)
             ]))
         }
     }
     
-    public mutating func updateInputItem(_ inputItem: InputItem) {
-        guard let index = inputItems.firstIndex(item: inputItem.item) else { return }
+    public mutating func updateInputPart(_ inputPart: InputPart) {
+        guard let index = inputParts.firstIndex(part: inputPart.part) else { return }
         
-        inputItems[index] = inputItem
+        inputParts[index] = inputPart
     }
     
     public mutating func changeProportion(
         of recipe: Recipe,
-        for item: some Item,
+        for part: Part,
         to newProportion: Proportion
     ) {
         guard
-            let itemIndex = inputItems.firstIndex(item: item),
-            let recipeIndex = inputItems[itemIndex].recipes.firstIndex(recipe: recipe)
+            let itemIndex = inputParts.firstIndex(part: part),
+            let recipeIndex = inputParts[itemIndex].recipes.firstIndex(recipe: recipe)
         else { return }
         
-        inputItems[itemIndex].recipes[recipeIndex].proportion = newProportion
+        inputParts[itemIndex].recipes[recipeIndex].proportion = newProportion
     }
     
-    public mutating func removeItem(_ item: some Item) {
-        guard self.item.id != item.id else { return }
+    public mutating func removePart(_ part: Part) {
+        guard self.part != part else { return }
         
-        inputItems.removeAll { $0.item.id == item.id }
+        inputParts.removeAll { $0.part == part }
     }
     
     // Byproducts
-    public func hasProducingRecipe(_ recipe: Recipe, for item: some Item) -> Bool {
+    public func hasProducingRecipe(_ recipe: Recipe, for part: Part) -> Bool {
         byproducts.contains {
-            $0.item.id == item.id && $0.producers.contains(recipe: recipe)
+            $0.part == part && $0.producers.contains(recipe: recipe)
         }
     }
     
-    public func hasConsumingRecipe(_ recipe: Recipe, for item: some Item) -> Bool {
+    public func hasConsumingRecipe(_ recipe: Recipe, for part: Part) -> Bool {
         byproducts.contains {
-            $0.item.id == item.id && $0.producers.contains {
+            $0.part == part && $0.producers.contains {
                 $0.consumers.contains(recipe: recipe)
             }
         }
     }
     
-    public mutating func add(producingRecipe: Recipe, consumingRecipe: Recipe, for item: some Item) {
-        guard let byproductIndex = byproducts.firstIndex(item: item) else {
+    public mutating func add(producingRecipe: Recipe, consumingRecipe: Recipe, for part: Part) {
+        guard let byproductIndex = byproducts.firstIndex(part: part) else {
             byproducts.append(
-                InputByproduct(id: uuid(), item: item, producingRecipe: producingRecipe, consumingRecipe: consumingRecipe)
+                InputByproduct(id: uuid(), part: part, producingRecipe: producingRecipe, consumingRecipe: consumingRecipe)
             )
             return
         }
@@ -112,18 +112,18 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
         )
     }
     
-    public mutating func removeByproduct(item: some Item) {
-        byproducts.removeAll { $0.item.id == item.id }
+    public mutating func removeByproduct(part: Part) {
+        byproducts.removeAll { $0.part == part }
     }
     
-    public mutating func removeProducingRecipe(_ recipe: Recipe, item: some Item) {
-        guard let byproductIndex = byproducts.firstIndex(item: item) else { return }
+    public mutating func removeProducingRecipe(_ recipe: Recipe, part: Part) {
+        guard let byproductIndex = byproducts.firstIndex(part: part) else { return }
         
         byproducts[byproductIndex].producers.removeAll { $0.recipe == recipe }
     }
     
-    public mutating func removeConsumingRecipe(_ recipe: Recipe, item: some Item) {
-        guard let byproductIndex = byproducts.firstIndex(item: item) else { return }
+    public mutating func removeConsumingRecipe(_ recipe: Recipe, part: Part) {
+        guard let byproductIndex = byproducts.firstIndex(part: part) else { return }
         
         for producingIndex in byproducts[byproductIndex].producers.indices {
             byproducts[byproductIndex].producers[producingIndex].consumers.removeAll { $0.recipe == recipe }
@@ -139,9 +139,9 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
         lhs.id == rhs.id &&
         lhs.name == rhs.name &&
         lhs.creationDate == rhs.creationDate &&
-        lhs.item.id == rhs.item.id &&
+        lhs.part == rhs.part &&
         lhs.amount == rhs.amount &&
-        lhs.inputItems == rhs.inputItems &&
+        lhs.inputParts == rhs.inputParts &&
         lhs.byproducts == rhs.byproducts &&
         lhs.statistics == rhs.statistics
     }
@@ -151,9 +151,9 @@ public struct SingleItemProduction: Identifiable, Hashable, Sendable {
         hasher.combine(id)
         hasher.combine(name)
         hasher.combine(creationDate)
-        hasher.combine(item.id)
+        hasher.combine(part)
         hasher.combine(amount)
-        hasher.combine(inputItems)
+        hasher.combine(inputParts)
         hasher.combine(byproducts)
         hasher.combine(statistics)
     }

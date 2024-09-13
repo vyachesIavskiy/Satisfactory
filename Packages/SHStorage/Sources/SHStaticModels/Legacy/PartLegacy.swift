@@ -2,10 +2,10 @@ import Foundation
 import SHModels
 
 extension Part.Static {
-    public struct Legacy: Decodable {
-        public let id: String
+    package struct Legacy: Decodable {
+        package let id: String
         
-        public init(id: String) {
+        package init(id: String) {
             self.id = id
         }
     }

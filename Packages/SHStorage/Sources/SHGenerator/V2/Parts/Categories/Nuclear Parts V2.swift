@@ -17,6 +17,8 @@ extension V2.Parts {
     static let encasedPlutoniumCell = Part.Static(id: "part-encased-plutonium-cell")
     static let plutoniumFuelRod = Part.Static(id: "part-plutonium-fuel-rod")
     static let plutoniumWaste = Part.Static(id: "part-plutonium-waste")
+    static let ficsonium = Part.Static(id: "part-ficsonium")
+    static let ficsoniumFuelRod = Part.Static(id: "part-ficsonium-fuel-rod")
     
     static let nuclearParts = [
         electromagneticControlRod,
@@ -27,6 +29,8 @@ extension V2.Parts {
         plutoniumPellet,
         encasedPlutoniumCell,
         plutoniumFuelRod,
-        plutoniumWaste
+        plutoniumWaste,
+        ficsonium,
+        ficsoniumFuelRod,
     ]
 }

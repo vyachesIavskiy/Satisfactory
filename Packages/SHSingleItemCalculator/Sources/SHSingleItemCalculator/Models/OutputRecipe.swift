@@ -49,67 +49,67 @@ extension Collection<SingleItemCalculator.OutputRecipe> {
 }
 
 extension SingleItemCalculator.OutputRecipe {
-    public struct OutputIngredient: Identifiable, CustomStringConvertible {
+    public struct OutputIngredient: Identifiable, Hashable, CustomStringConvertible {
         public let id: UUID
-        public let item: any Item
+        public let part: Part
         public var amount: Double
         public var additionalAmounts = [Double]()
         
         public var description: String {
-            "id: \(id), \(item), amount: \(amount), additional amounts: \(additionalAmounts)"
+            "id: \(id), \(part), amount: \(amount), additional amounts: \(additionalAmounts)"
         }
         
-        public init(id: UUID = UUID(), item: any Item, amount: Double, additionalAmounts: [Double] = []) {
+        public init(id: UUID = UUID(), part: Part, amount: Double, additionalAmounts: [Double] = []) {
             self.id = id
-            self.item = item
+            self.part = part
             self.amount = amount
             self.additionalAmounts = additionalAmounts
         }
     }
     
-    public struct ByproductIngredient: Identifiable, CustomStringConvertible {
+    public struct ByproductIngredient: Identifiable, Hashable, CustomStringConvertible {
         public let id: UUID
-        public let item: any Item
+        public let part: Part
         public var amount: Double
         public var byproducts: [Byproduct]
         public var isSelected: Bool
         
         public var description: String {
-            "id: \(id), \(item), amount: \(amount), byproducts: \(byproducts), \(isSelected ? "selected" : "not selected")"
+            "id: \(id), \(part), amount: \(amount), byproducts: \(byproducts), \(isSelected ? "selected" : "not selected")"
         }
         
-        public init(id: UUID = UUID(), item: any Item, amount: Double, byproducts: [Byproduct], isSelected: Bool) {
+        public init(id: UUID = UUID(), part: Part, amount: Double, byproducts: [Byproduct], isSelected: Bool) {
             self.id = id
-            self.item = item
+            self.part = part
             self.amount = amount
             self.byproducts = byproducts
             self.isSelected = isSelected
         }
     }
     
-    public struct InputIngredient: Identifiable, CustomStringConvertible {
+    public struct InputIngredient: Identifiable, Hashable, CustomStringConvertible {
         public let id: UUID
         public var producingProductID: UUID?
-        public let item: any Item
+        public let part: Part
         public var amount: Double
         public var byproducts: [Byproduct]
         public var isSelected: Bool
         
         public var description: String {
-            "id: \(id) \(item), amount: \(amount), byproducts: \(byproducts), \(isSelected ? "selected" : "not selected")"
+            "id: \(id) \(part), amount: \(amount), byproducts: \(byproducts), \(isSelected ? "selected" : "not selected")"
         }
         
         public init(
             id: UUID = UUID(),
             producingProductID: UUID? = nil,
-            item: any Item,
+            part: Part,
             amount: Double,
             byproducts: [Byproduct],
             isSelected: Bool
         ) {
             self.id = id
             self.producingProductID = producingProductID
-            self.item = item
+            self.part = part
             self.amount = amount
             self.byproducts = byproducts
             self.isSelected = isSelected
@@ -128,57 +128,5 @@ extension SingleItemCalculator.OutputRecipe {
             self.index = index
             self.amount = amount
         }
-    }
-}
-
-extension SingleItemCalculator.OutputRecipe.OutputIngredient: Hashable {
-    public static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.id == rhs.id &&
-        lhs.item.id == rhs.item.id &&
-        lhs.amount == rhs.amount
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-        hasher.combine(item.id)
-        hasher.combine(amount)
-    }
-}
-
-extension SingleItemCalculator.OutputRecipe.ByproductIngredient: Hashable {
-    public static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.id == rhs.id &&
-        lhs.item.id == rhs.item.id &&
-        lhs.amount == rhs.amount &&
-        lhs.byproducts == rhs.byproducts &&
-        lhs.isSelected == rhs.isSelected
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-        hasher.combine(item.id)
-        hasher.combine(amount)
-        hasher.combine(byproducts)
-        hasher.combine(isSelected)
-    }
-}
-
-extension SingleItemCalculator.OutputRecipe.InputIngredient: Hashable {
-    public static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.id == rhs.id &&
-        lhs.producingProductID == rhs.producingProductID &&
-        lhs.item.id == rhs.item.id &&
-        lhs.amount == rhs.amount &&
-        lhs.byproducts == rhs.byproducts &&
-        lhs.isSelected == rhs.isSelected
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-        hasher.combine(producingProductID)
-        hasher.combine(item.id)
-        hasher.combine(amount)
-        hasher.combine(byproducts)
-        hasher.combine(isSelected)
     }
 }

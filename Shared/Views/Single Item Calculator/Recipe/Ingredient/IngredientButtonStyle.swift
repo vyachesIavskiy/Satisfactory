@@ -6,10 +6,10 @@ struct RecipeIngredientButtonStyle: ButtonStyle {
     @Environment(\.isEnabled)
     private var isEnabled
     
-    private let item: any Item
+    private let part: Part
     
     private var foregroundColor: Color {
-        if (item as? Part)?.form == .solid {
+        if part.form == .solid {
             .sh(.orange80)
         } else {
             .sh(.cyan80)
@@ -17,7 +17,7 @@ struct RecipeIngredientButtonStyle: ButtonStyle {
     }
     
     private var backgroundColor: Color {
-        if (item as? Part)?.form == .solid {
+        if part.form == .solid {
             .sh(.orange10)
         } else {
             .sh(.cyan10)
@@ -25,15 +25,15 @@ struct RecipeIngredientButtonStyle: ButtonStyle {
     }
     
     private var backgroundShape: some Shape {
-        if (item as? Part)?.form == .solid {
+        if part.form == .solid {
             AnyShape(AngledRectangle(cornerRadius: 8))
         } else {
             AnyShape(UnevenRoundedRectangle(bottomLeadingRadius: 10, topTrailingRadius: 10))
         }
     }
     
-    init(_ item: any Item) {
-        self.item = item
+    init(_ part: Part) {
+        self.part = part
     }
     
     func makeBody(configuration: Self.Configuration) -> some View {
@@ -49,7 +49,7 @@ struct RecipeIngredientButtonStyle: ButtonStyle {
 }
 
 extension ButtonStyle where Self == RecipeIngredientButtonStyle {
-    static func shIngredient(_ item: any Item) -> Self {
-        RecipeIngredientButtonStyle(item)
+    static func shIngredient(_ part: Part) -> Self {
+        RecipeIngredientButtonStyle(part)
     }
 }

@@ -1,39 +1,31 @@
 
 public struct Pins: Equatable, Sendable {
-    public var singleItem: SingleItem
-    public var fromResources: FromResources
+    public var singleItemPartIDs: Set<String>
+    public var fromResourcesPartIDs: Set<String>
     public var power: Power
     public var recipeIDs: Set<String>
     
     public var isEmpty: Bool {
-        singleItem.isEmpty && fromResources.isEmpty && recipeIDs.isEmpty
+        singleItemPartIDs.isEmpty && fromResourcesPartIDs.isEmpty && recipeIDs.isEmpty
     }
     
     public init(
-        singleItem: SingleItem = SingleItem(),
-        fromResources: FromResources = FromResources(),
+        singleItemPartIDs: Set<String> = [],
+        fromResourcesPartIDs: Set<String> = [],
         power: Power = Power(),
         recipeIDs: Set<String> = []
     ) {
-        self.singleItem = singleItem
-        self.fromResources = fromResources
+        self.singleItemPartIDs = singleItemPartIDs
+        self.fromResourcesPartIDs = fromResourcesPartIDs
         self.power = power
         self.recipeIDs = recipeIDs
     }
     
     public func isPinned(partID: String, productionType: ProductionType) -> Bool {
         switch productionType {
-        case .singleItem: singleItem.isPinned(partID: partID)
-        case .fromResources: fromResources.isPinned(partID: partID)
+        case .singleItem: singleItemPartIDs.contains(partID)
+        case .fromResources: fromResourcesPartIDs.contains(partID)
         case .power: power.isPinned(partID: partID)
-        }
-    }
-    
-    public func isPinned(equipmentID: String, productionType: ProductionType) -> Bool {
-        switch productionType {
-        case .singleItem: singleItem.isPinned(equipmentID: equipmentID)
-        case .fromResources: fromResources.isPinned(equipmentID: equipmentID)
-        case .power: false
         }
     }
     
@@ -47,58 +39,6 @@ public struct Pins: Equatable, Sendable {
 }
 
 extension Pins {
-    public struct SingleItem: Equatable, Sendable {
-        public var partIDs: Set<String>
-        public var equipmentIDs: Set<String>
-        
-        public var itemIDs: Set<String> {
-            partIDs.union(equipmentIDs)
-        }
-        
-        public var isEmpty: Bool {
-            partIDs.isEmpty && equipmentIDs.isEmpty
-        }
-        
-        public init(partIDs: Set<String> = [], equipmentIDs: Set<String> = []) {
-            self.partIDs = partIDs
-            self.equipmentIDs = equipmentIDs
-        }
-        
-        public func isPinned(partID: String) -> Bool {
-            partIDs.contains(partID)
-        }
-        
-        public func isPinned(equipmentID: String) -> Bool {
-            equipmentIDs.contains(equipmentID)
-        }
-    }
-    
-    public struct FromResources: Equatable, Sendable {
-        public var partIDs: Set<String>
-        public var equipmentIDs: Set<String>
-        
-        public var itemIDs: Set<String> {
-            partIDs.union(equipmentIDs)
-        }
-        
-        public var isEmpty: Bool {
-            partIDs.isEmpty && equipmentIDs.isEmpty
-        }
-        
-        public init(partIDs: Set<String> = [], equipmentIDs: Set<String> = []) {
-            self.partIDs = partIDs
-            self.equipmentIDs = equipmentIDs
-        }
-        
-        public func isPinned(partID: String) -> Bool {
-            partIDs.contains(partID)
-        }
-        
-        public func isPinned(equipmentID: String) -> Bool {
-            equipmentIDs.contains(equipmentID)
-        }
-    }
-    
     public struct Power: Equatable, Sendable {
         public var buildingIDs: Set<String>
         public var partIDs: Set<String>

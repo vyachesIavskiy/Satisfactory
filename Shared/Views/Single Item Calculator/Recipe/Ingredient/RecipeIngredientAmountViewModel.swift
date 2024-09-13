@@ -6,7 +6,7 @@ import SHSingleItemCalculator
 extension RecipeIngredientAmountViewModel {
     convenience init(productionOutput output: SingleItemCalculator.OutputRecipe.OutputIngredient) {
         self.init(
-            item: output.item,
+            part: output.part,
             amount: output.amount,
             primaryColor: .sh(.gray50),
             shadowColor: .sh(.gray30)
@@ -15,7 +15,7 @@ extension RecipeIngredientAmountViewModel {
     
     convenience init(additionalProductionOutput output: SingleItemCalculator.OutputRecipe.OutputIngredient, amount: Double) {
         self.init(
-            item: output.item,
+            part: output.part,
             amount: amount,
             primaryColor: .sh(.gray50),
             shadowColor: .sh(.gray30)
@@ -27,11 +27,11 @@ extension RecipeIngredientAmountViewModel {
         let secondaryStyle: AnyShapeStyle
         let primaryColor: Color
         let shadowColor: Color
-        let part = (byproduct.item as? Part)
-        let isNaturalResource = part?.isNaturalResource == true
+        let part = byproduct.part
+        let isNaturalResource = part.isNaturalResource == true
         
-        switch part?.form {
-        case .solid, nil:
+        switch part.form {
+        case .solid:
             primaryColor = .sh(.orange)
             shadowColor = .sh(.orange30)
             
@@ -49,7 +49,7 @@ extension RecipeIngredientAmountViewModel {
                 secondaryStyle = AnyShapeStyle(Gradient(colors: [.sh(.orange10), .sh(.orange50)]))
             }
             
-        case .fluid, .gas:
+        case .fluid, .gas, .matter:
             primaryColor = .sh(.cyan)
             shadowColor = .sh(.cyan30)
             
@@ -69,7 +69,7 @@ extension RecipeIngredientAmountViewModel {
         }
         
         self.init(
-            item: byproduct.item,
+            part: part,
             amount: byproduct.amount,
             foregroundStyle: foregroundStyle,
             secondaryStyle: secondaryStyle,
@@ -82,11 +82,11 @@ extension RecipeIngredientAmountViewModel {
         let foregroundStyle: AnyShapeStyle
         let primaryColor: Color
         let shadowColor: Color
-        let part = (input.item as? Part)
-        let isNaturalResource = part?.isNaturalResource == true
+        let part = input.part
+        let isNaturalResource = part.isNaturalResource == true
         
-        switch part?.form {
-        case .solid, nil:
+        switch part.form {
+        case .solid:
             primaryColor = .sh(.orange)
             shadowColor = .sh(.orange30)
             
@@ -102,7 +102,7 @@ extension RecipeIngredientAmountViewModel {
                 AnyShapeStyle(.background)
             }
             
-        case .fluid, .gas:
+        case .fluid, .gas, .matter:
             primaryColor = .sh(.cyan)
             shadowColor = .sh(.cyan30)
             
@@ -120,7 +120,7 @@ extension RecipeIngredientAmountViewModel {
         }
         
         self.init(
-            item: input.item,
+            part: part,
             amount: input.amount,
             foregroundStyle: foregroundStyle,
             primaryColor: primaryColor,
@@ -128,7 +128,7 @@ extension RecipeIngredientAmountViewModel {
         )
     }
     
-    convenience init(productionSecondaryByproduct byproduct: SingleItemCalculator.OutputRecipe.Byproduct, item: any Item) {
+    convenience init(productionSecondaryByproduct byproduct: SingleItemCalculator.OutputRecipe.Byproduct, part: Part) {
         let primaryColors = [
             Color.sh(.yellow40),
             Color.sh(.purple40),
@@ -177,7 +177,7 @@ extension RecipeIngredientAmountViewModel {
         let secondaryStyle = AnyShapeStyle(Gradient(colors: secondaryStyteColors[resolvedIndex]))
         
         self.init(
-            item: item,
+            part: part,
             amount: byproduct.amount,
             foregroundStyle: foregroundStyle,
             secondaryStyle: secondaryStyle,

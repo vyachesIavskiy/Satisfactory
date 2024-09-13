@@ -11,6 +11,6 @@ extension LegacyToV2.Parts {
         copperIngot,
         steelIngot,
         cateriumIngot,
-        aluminumIngot
+        aluminumIngot,
     ]
 }

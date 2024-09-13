@@ -126,13 +126,13 @@ private func singleItemPlasticProduction() -> SingleItemProduction {
     @Dependency(\.storageService)
     var storageService
     
-    let plastic = storageService.item(id: "part-plastic")!
-    let rubber = storageService.item(id: "part-rubber")!
-    let fuel = storageService.item(id: "part-fuel")!
-    let hor = storageService.item(id: "part-heavy-oil-residue")!
+    let plastic = storageService.part(id: "part-plastic")!
+    let rubber = storageService.part(id: "part-rubber")!
+    let fuel = storageService.part(id: "part-fuel")!
+    let hor = storageService.part(id: "part-heavy-oil-residue")!
     
-    let water = storageService.item(id: "part-water")!
-    let crudeOil = storageService.item(id: "part-crude-oil")!
+    let water = storageService.part(id: "part-water")!
+    let crudeOil = storageService.part(id: "part-crude-oil")!
     
     let recycledPlasticRecipe = storageService.recipe(id: "recipe-alternate-recycled-plastic")!
     let recycledRubberRecipe = storageService.recipe(id: "recipe-alternate-recycled-rubber")!
@@ -140,26 +140,26 @@ private func singleItemPlasticProduction() -> SingleItemProduction {
     let dilutedFuelRecipe = storageService.recipe(id: "recipe-alternate-diluted-fuel")!
     let horRecipe = storageService.recipe(id: "recipe-alternate-heavy-oil-residue")!
     
-    var production = SingleItemProduction(id: UUID(), name: "Plastic", creationDate: Date(), item: plastic, amount: 90)
+    var production = SingleItemProduction(id: UUID(), name: "Plastic", creationDate: Date(), part: plastic, amount: 90)
     production.statistics = Statistics(
-        items: [
-            StatisticItem(item: plastic, recipes: [
+        parts: [
+            StatisticPart(part: plastic, recipes: [
                 StatisticRecipe(recipe: recycledPlasticRecipe, amount: 90)
             ]),
-            StatisticItem(item: rubber, recipes: [
+            StatisticPart(part: rubber, recipes: [
                 StatisticRecipe(recipe: recycledRubberRecipe, amount: 46.6666),
                 StatisticRecipe(recipe: residualRubberRecipe, amount: 10)
             ]),
-            StatisticItem(item: fuel, recipes: [
+            StatisticPart(part: fuel, recipes: [
                 StatisticRecipe(recipe: dilutedFuelRecipe, amount: 80)
             ]),
-            StatisticItem(item: hor, recipes: [
+            StatisticPart(part: hor, recipes: [
                 StatisticRecipe(recipe: horRecipe, amount: 40)
             ])
         ],
         naturalResources: [
-            StatisticNaturalResource(item: water, amount: 100),
-            StatisticNaturalResource(item: crudeOil, amount: 30)
+            StatisticNaturalResource(part: water, amount: 100),
+            StatisticNaturalResource(part: crudeOil, amount: 30)
         ]
     )
     
@@ -170,21 +170,21 @@ private func singleItemHMFProduction() -> SingleItemProduction {
     @Dependency(\.storageService)
     var storageService
     
-    let hmf = storageService.item(id: "part-heavy-modular-frame")!
-    let modularFrame = storageService.item(id: "part-modular-frame")!
-    let encasedIndustrialBeam = storageService.item(id: "part-encased-industrial-beam")!
-    let steelPipe = storageService.item(id: "part-steel-pipe")!
-    let concrete = storageService.item(id: "part-concrete")!
-    let reinforcedIronPlate = storageService.item(id: "part-reinforced-iron-plate")!
-    let ironRod = storageService.item(id: "part-iron-rod")!
-    let steelIngot = storageService.item(id: "part-steel-ingot")!
-    let ironPlate = storageService.item(id: "part-iron-plate")!
-    let screw = storageService.item(id: "part-screw")!
-    let ironIngot = storageService.item(id: "part-iron-ingot")!
+    let hmf = storageService.part(id: "part-heavy-modular-frame")!
+    let modularFrame = storageService.part(id: "part-modular-frame")!
+    let encasedIndustrialBeam = storageService.part(id: "part-encased-industrial-beam")!
+    let steelPipe = storageService.part(id: "part-steel-pipe")!
+    let concrete = storageService.part(id: "part-concrete")!
+    let reinforcedIronPlate = storageService.part(id: "part-reinforced-iron-plate")!
+    let ironRod = storageService.part(id: "part-iron-rod")!
+    let steelIngot = storageService.part(id: "part-steel-ingot")!
+    let ironPlate = storageService.part(id: "part-iron-plate")!
+    let screw = storageService.part(id: "part-screw")!
+    let ironIngot = storageService.part(id: "part-iron-ingot")!
     
-    let limestone = storageService.item(id: "part-limestone")!
-    let coal = storageService.item(id: "part-coal")!
-    let ironOre = storageService.item(id: "part-iron-ore")!
+    let limestone = storageService.part(id: "part-limestone")!
+    let coal = storageService.part(id: "part-coal")!
+    let ironOre = storageService.part(id: "part-iron-ore")!
     
     let heavyEncasedFrameRecipe = storageService.recipe(id: "recipe-alternate-heavy-encased-frame")!
     let modularFrameRecipe = storageService.recipe(id: "recipe-modular-frame")!
@@ -198,47 +198,47 @@ private func singleItemHMFProduction() -> SingleItemProduction {
     let castScrewRecipe = storageService.recipe(id: "recipe-alternate-cast-screw")!
     let ironIngotRecipe = storageService.recipe(id: "recipe-iron-ingot")!
     
-    var production = SingleItemProduction(id: UUID(), name: "Heavy Modular Frame", creationDate: Date(), item: hmf, amount: 12)
+    var production = SingleItemProduction(id: UUID(), name: "Heavy Modular Frame", creationDate: Date(), part: hmf, amount: 12)
     production.statistics = Statistics(
-        items: [
-            StatisticItem(item: hmf, recipes: [
+        parts: [
+            StatisticPart(part: hmf, recipes: [
                 StatisticRecipe(recipe: heavyEncasedFrameRecipe, amount: 12)
             ]),
-            StatisticItem(item: modularFrame, recipes: [
+            StatisticPart(part: modularFrame, recipes: [
                 StatisticRecipe(recipe: modularFrameRecipe, amount: 32)
             ]),
-            StatisticItem(item: encasedIndustrialBeam, recipes: [
+            StatisticPart(part: encasedIndustrialBeam, recipes: [
                 StatisticRecipe(recipe: encasedIndustrialBeamRecipe, amount: 40)
             ]),
-            StatisticItem(item: steelPipe, recipes: [
+            StatisticPart(part: steelPipe, recipes: [
                 StatisticRecipe(recipe: steelPipeRecipe, amount: 424)
             ]),
-            StatisticItem(item: concrete, recipes: [
+            StatisticPart(part: concrete, recipes: [
                 StatisticRecipe(recipe: concreteRecipe, amount: 288)
             ]),
-            StatisticItem(item: reinforcedIronPlate, recipes: [
+            StatisticPart(part: reinforcedIronPlate, recipes: [
                 StatisticRecipe(recipe: ripRecipe, amount: 48)
             ]),
-            StatisticItem(item: ironRod, recipes: [
+            StatisticPart(part: ironRod, recipes: [
                 StatisticRecipe(recipe: ironRodRecipe, amount: 192)
             ]),
-            StatisticItem(item: steelIngot, recipes: [
+            StatisticPart(part: steelIngot, recipes: [
                 StatisticRecipe(recipe: solidSteelIngotRecipe, amount: 636)
             ]),
-            StatisticItem(item: ironPlate, recipes: [
+            StatisticPart(part: ironPlate, recipes: [
                 StatisticRecipe(recipe: ironPlateRecipe, amount: 288)
             ]),
-            StatisticItem(item: screw, recipes: [
+            StatisticPart(part: screw, recipes: [
                 StatisticRecipe(recipe: castScrewRecipe, amount: 576)
             ]),
-            StatisticItem(item: ironIngot, recipes: [
+            StatisticPart(part: ironIngot, recipes: [
                 StatisticRecipe(recipe: ironIngotRecipe, amount: 1192)
             ])
         ],
         naturalResources: [
-            StatisticNaturalResource(item: limestone, amount: 864),
-            StatisticNaturalResource(item: coal, amount: 424),
-            StatisticNaturalResource(item: ironOre, amount: 1192)
+            StatisticNaturalResource(part: limestone, amount: 864),
+            StatisticNaturalResource(part: coal, amount: 424),
+            StatisticNaturalResource(part: ironOre, amount: 1192)
         ]
     )
     

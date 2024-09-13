@@ -11,7 +11,7 @@ extension SingleItemCalculator {
         for byproduct in node.byproducts {
             guard
                 // Check if this byproduct is registered as produced byproduct by user.
-                let registeredByproduct = internalState.selectedByproduct(with: byproduct.item.id),
+                let registeredByproduct = internalState.selectedByproduct(with: byproduct.part.id),
                 // Check if the node recipe is registered as byproduct producer.
                 let registeredProducingRecipe = registeredByproduct
                     .producers
@@ -20,7 +20,7 @@ extension SingleItemCalculator {
             
             // Create a byproduct
             var byproduct = Byproduct(
-                item: byproduct.item,
+                part: byproduct.part,
                 recipeID: node.recipe.id,
                 amount: byproduct.amount,
                 consumers: registeredProducingRecipe.consumers.map {
@@ -50,7 +50,7 @@ extension SingleItemCalculator {
                 // Check if this node's recipe is registered as consumer for found producing byproduct.
                 let consumingRecipeIndex = byproduct.consumers.firstIndex(where: { $0.recipeID == node.recipe.id }),
                 // Find an input which should consume a specified item.
-                let (inputIndex, input) = node.inputs.enumerated().first(where: { $0.1.item.id == byproduct.item.id })
+                let (inputIndex, input) = node.inputs.enumerated().first(where: { $0.1.part == byproduct.part })
             {
                 // Determine how much of a product this input can consume
                 let availableAmount = min(input.availableAmount, byproduct.amount)

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Part: ProgressiveItem {
+public struct Part: Item {
     public let id: String
     public let category: Category
     public let progressionIndex: Int
@@ -25,17 +25,31 @@ public extension Part {
         case solid
         case fluid
         case gas
+        case matter
         
         public var id: String {
             switch self {
             case .solid: "part-form-solid"
             case .fluid: "part-form-fluid"
             case .gas: "part-form-gas"
+            case .matter: "part-form-matter"
             }
         }
         
         public var localizedName: String {
             NSLocalizedString(id, tableName: "Part Forms", bundle: .module, comment: "")
         }
+    }
+}
+
+public extension Sequence<Part> {
+    func sortedByProgression() -> [Element] {
+        sorted(using: KeyPathComparator(\.progressionIndex))
+    }
+}
+
+public extension [Part] {
+    mutating func sortByProgression() {
+        self = sortedByProgression()
     }
 }

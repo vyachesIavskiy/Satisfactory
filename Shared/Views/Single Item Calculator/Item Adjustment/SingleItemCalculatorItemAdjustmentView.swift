@@ -27,12 +27,12 @@ struct SingleItemCalculatorItemAdjustmentView: View {
             .safeAreaInset(edge: .top, spacing: 0) {
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(alignment: .firstTextBaseline) {
-                        Text(viewModel.item.item.localizedName)
+                        Text(viewModel.part.part.localizedName)
                             .font(.title3)
                         
                         Spacer()
                         
-                        Text("single-item-production-adjustment-\(viewModel.item.amount.formatted(.shNumber()))-per-minute")
+                        Text("single-item-production-adjustment-\(viewModel.part.amount.formatted(.shNumber()))-per-minute")
                             .font(.headline)
                     }
                     
@@ -87,7 +87,7 @@ struct SingleItemCalculatorItemAdjustmentView: View {
                         .padding(.horizontal, 16)
                 }
             } else {
-                Text("single-item-production-adjustment-no-recipes-for-**\(viewModel.item.item.localizedName)**")
+                Text("single-item-production-adjustment-no-recipes-for-**\(viewModel.part.part.localizedName)**")
                     .font(.title3)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
@@ -204,14 +204,14 @@ import SHModels
 import SHStorage
 
 private struct _SingleItemCalculatorItemAdjustmentPreview: View {
-    let itemID: String
+    let partID: String
     let recipeIDs: [String]
     
     @Dependency(\.storageService)
     var storageService
     
-    private var item: any Item {
-        storageService.item(id: itemID)!
+    private var part: Part {
+        storageService.part(id: partID)!
     }
     
     private var recipes: [Recipe] {
@@ -221,18 +221,18 @@ private struct _SingleItemCalculatorItemAdjustmentPreview: View {
     var body: some View {
         SingleItemCalculatorItemAdjustmentView(
             viewModel: SingleItemCalculatorItemAdjustmentViewModel(
-                item: SingleItemCalculator.OutputItem(
-                    item: item,
+                part: SingleItemCalculator.OutputPart(
+                    part: part,
                     recipes: recipes.map { recipe in
                         SingleItemCalculator.OutputRecipe(
                             recipe: recipe,
                             output: SingleItemCalculator.OutputRecipe.OutputIngredient(
-                                item: recipe.output.item,
+                                part: recipe.output.part,
                                 amount: recipe.amountPerMinute(for: recipe.output)
                             ),
                             byproducts: recipe.byproducts.map {
                                 SingleItemCalculator.OutputRecipe.ByproductIngredient(
-                                    item: $0.item,
+                                    part: $0.part,
                                     amount: recipe.amountPerMinute(for: $0),
                                     byproducts: [],
                                     isSelected: true
@@ -240,7 +240,7 @@ private struct _SingleItemCalculatorItemAdjustmentPreview: View {
                             },
                             inputs: recipe.inputs.map {
                                 SingleItemCalculator.OutputRecipe.InputIngredient(
-                                    item: $0.item,
+                                    part: $0.part,
                                     amount: recipe.amountPerMinute(for: $0),
                                     byproducts: [],
                                     isSelected: true
@@ -260,12 +260,12 @@ private struct _SingleItemCalculatorItemAdjustmentPreview: View {
 }
 
 #Preview("Iron Plate") {
-    _SingleItemCalculatorItemAdjustmentPreview(itemID: "part-iron-plate", recipeIDs: ["recipe-iron-plate"])
+    _SingleItemCalculatorItemAdjustmentPreview(partID: "part-iron-plate", recipeIDs: ["recipe-iron-plate"])
 }
 
 #Preview("Reinforced Iron Plate") {
     _SingleItemCalculatorItemAdjustmentPreview(
-        itemID: "part-reinforced-iron-plate",
+        partID: "part-reinforced-iron-plate",
         recipeIDs: [
             "recipe-reinforced-iron-plate",
             "recipe-alternate-bolted-iron-plate"
@@ -274,10 +274,10 @@ private struct _SingleItemCalculatorItemAdjustmentPreview: View {
 }
 
 #Preview("Plastic") {
-    _SingleItemCalculatorItemAdjustmentPreview(itemID: "part-plastic", recipeIDs: ["recipe-alternate-recycled-plastic"])
+    _SingleItemCalculatorItemAdjustmentPreview(partID: "part-plastic", recipeIDs: ["recipe-alternate-recycled-plastic"])
 }
 
 #Preview("Heavy Modular Frame") {
-    _SingleItemCalculatorItemAdjustmentPreview(itemID: "part-heavy-modular-frame", recipeIDs: ["recipe-heavy-modular-frame"])
+    _SingleItemCalculatorItemAdjustmentPreview(partID: "part-heavy-modular-frame", recipeIDs: ["recipe-heavy-modular-frame"])
 }
 #endif

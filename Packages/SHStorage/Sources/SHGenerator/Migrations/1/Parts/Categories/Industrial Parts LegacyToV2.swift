@@ -6,8 +6,8 @@ extension LegacyToV2.Parts {
     static let heatSink = Migration.IDs(old: Legacy.Parts.heatSink, new: V2.Parts.heatSink)
     static let coolingSystem = Migration.IDs(old: Legacy.Parts.coolingSystem, new: V2.Parts.coolingSystem)
     static let fusedModularFrame = Migration.IDs(old: Legacy.Parts.fusedModularFrame, new: V2.Parts.fusedModularFrame)
-    static let battery = Migration.IDs(old: Legacy.Parts.battery, new: V2.Parts.battery)
     static let turboMotor = Migration.IDs(old: Legacy.Parts.turboMotor, new: V2.Parts.turboMotor)
+    static let battery = Migration.IDs(old: Legacy.Parts.battery, new: V2.Parts.battery)
     
     static let industrialParts = [
         rotor,
@@ -16,7 +16,7 @@ extension LegacyToV2.Parts {
         heatSink,
         coolingSystem,
         fusedModularFrame,
+        turboMotor,
         battery,
-        turboMotor
     ]
 }

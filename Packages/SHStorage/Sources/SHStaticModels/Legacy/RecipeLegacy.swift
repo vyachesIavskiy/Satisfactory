@@ -2,12 +2,12 @@ import Foundation
 import SHModels
 
 extension Recipe.Static {
-    public struct Legacy: Decodable {
-        public let id: String
-        public let output: [Recipe.Static.Legacy.Ingredient]
-        public let input: [Recipe.Static.Legacy.Ingredient]
+    package struct Legacy: Decodable {
+        package let id: String
+        package let output: [Recipe.Static.Legacy.Ingredient]
+        package let input: [Recipe.Static.Legacy.Ingredient]
         
-        public init(
+        package init(
             id: String,
             output: [Recipe.Static.Legacy.Ingredient],
             input: [Recipe.Static.Legacy.Ingredient]
@@ -20,10 +20,10 @@ extension Recipe.Static {
 }
 
 extension Recipe.Static.Legacy {
-    public struct Ingredient: Decodable {
-        public var id: String
+    package struct Ingredient: Decodable {
+        package var id: String
         
-        public init(id: String) {
+        package init(id: String) {
             self.id = id
         }
     }

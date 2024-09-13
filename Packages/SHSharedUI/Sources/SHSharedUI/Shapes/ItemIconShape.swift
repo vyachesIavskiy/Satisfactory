@@ -2,13 +2,13 @@ import SwiftUI
 import SHModels
 
 public struct ItemIconShape: Shape {
-    private let item: any Item
+    private let part: Part
     private let cornerRadius: Double
     private let corners: AngledRectangle.Corner.Set
     private var inset = 0.0
     
-    public init(item: any Item, cornerRadius: Double, corners: AngledRectangle.Corner.Set = .diagonal) {
-        self.item = item
+    public init(part: Part, cornerRadius: Double, corners: AngledRectangle.Corner.Set = .diagonal) {
+        self.part = part
         self.cornerRadius = cornerRadius
         self.corners = corners
     }
@@ -18,9 +18,9 @@ public struct ItemIconShape: Shape {
     }
     
     public func path(in rect: CGRect) -> Path {
-        switch (item as? Part)?.form {
-        case .solid, nil: solidPath(in: rect)
-        case .fluid, .gas: fluidPath(in: rect)
+        switch part.form {
+        case .solid: solidPath(in: rect)
+        case .fluid, .gas, .matter: fluidPath(in: rect)
         }
     }
     
@@ -54,39 +54,39 @@ extension ItemIconShape: InsettableShape {
 import SHStorage
 
 private struct _ItemIconShapePreview: View {
-    let itemID: String
+    let partID: String
     let cornerRadius: Double
     
-    var item: (any Item)? {
-        @Dependency(\.storageService) 
+    var part: Part? {
+        @Dependency(\.storageService)
         var storageService
         
-        return storageService.item(id: itemID)
+        return storageService.part(id: partID)
     }
     
     var body: some View {
-        if let item {
-            ItemIconShape(item: item, cornerRadius: cornerRadius)
+        if let part {
+            ItemIconShape(part: part, cornerRadius: cornerRadius)
                 .padding(20)
         } else {
-            Text(verbatim: "'\(itemID)' is not found")
+            Text(verbatim: "'\(partID)' is not found")
         }
     }
 }
 
 #Preview("Iron plate") {
-    _ItemIconShapePreview(itemID: "part-iron-plate", cornerRadius: 8)
+    _ItemIconShapePreview(partID: "part-iron-plate", cornerRadius: 8)
 }
 
 #Preview("Water") {
-    _ItemIconShapePreview(itemID: "part-water", cornerRadius: 12)
+    _ItemIconShapePreview(partID: "part-water", cornerRadius: 12)
 }
 
 #Preview("Nitrogen Gas") {
-    _ItemIconShapePreview(itemID: "part-nitrogen-gas", cornerRadius: 12)
+    _ItemIconShapePreview(partID: "part-nitrogen-gas", cornerRadius: 12)
 }
 
 #Preview("Portable Miner") {
-    _ItemIconShapePreview(itemID: "part-portable-miner", cornerRadius: 8)
+    _ItemIconShapePreview(partID: "part-portable-miner", cornerRadius: 8)
 }
 #endif

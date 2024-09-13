@@ -13,9 +13,9 @@ extension StatisticsView {
         
         var body: some View {
             ListRow {
-                ListRowIconItem(naturalResource.item)
+                ListRowIconItem(naturalResource.part)
             } label: {
-                Text(naturalResource.item.localizedName)
+                Text(naturalResource.part.localizedName)
                     .fontWeight(.semibold)
             } accessory: {
                 Text(naturalResource.amount, format: .shNumber())
@@ -32,11 +32,11 @@ import SHStorage
 private struct _NaturalResourceRowPreview: View {
     let naturalResource: StatisticNaturalResource
     
-    init(itemID: String, amount: Double) {
+    init(partID: String, amount: Double) {
         @Dependency(\.storageService)
         var storageService
         
-        naturalResource = StatisticNaturalResource(item: storageService.item(id: itemID)!, amount: amount)
+        naturalResource = StatisticNaturalResource(part: part(id: partID), amount: amount)
     }
     
     var body: some View {
@@ -45,6 +45,6 @@ private struct _NaturalResourceRowPreview: View {
 }
 
 #Preview {
-    _NaturalResourceRowPreview(itemID: "part-iron-ore", amount: 120)
+    _NaturalResourceRowPreview(partID: "part-iron-ore", amount: 120)
 }
 #endif

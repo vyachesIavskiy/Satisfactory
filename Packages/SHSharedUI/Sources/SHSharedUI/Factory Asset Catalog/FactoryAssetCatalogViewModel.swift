@@ -19,12 +19,10 @@ final class FactoryAssetCatalogViewModel {
             KeyPathComparator(\.category),
             KeyPathComparator(\.progressionIndex)
         ])
-        let equipment = storageService.equipment().sortedByProgression()
         let buildings = storageService.buildings().sortedByCategory()
         
         sections = [
             Section(id: .parts, assetNames: parts.map(\.id)),
-            Section(id: .equipment, assetNames: equipment.map(\.id)),
             Section(id: .buildings, assetNames: buildings.map(\.id))
         ]
     }
@@ -34,7 +32,6 @@ extension FactoryAssetCatalogViewModel {
     struct Section: Identifiable {
         enum ID {
             case parts
-            case equipment
             case buildings
         }
         
@@ -45,7 +42,6 @@ extension FactoryAssetCatalogViewModel {
         var name: LocalizedStringKey {
             switch id {
             case .parts: "factory-asset-parts-section-name"
-            case .equipment: "factory-asset-equipment-section-name"
             case .buildings: "factory-asset-buildings-section-name"
             }
         }

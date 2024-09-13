@@ -6,8 +6,8 @@ struct SingleItemCalculatorContainerView: View {
     @State
     private var viewModel: SingleItemCalculatorContainerViewModel
     
-    init(item: any Item) {
-        _viewModel = State(initialValue: SingleItemCalculatorContainerViewModel(item: item))
+    init(part: Part) {
+        _viewModel = State(initialValue: SingleItemCalculatorContainerViewModel(part: part))
     }
     
     init(production: SingleItemProduction) {
@@ -32,30 +32,7 @@ struct SingleItemCalculatorContainerView: View {
 }
 
 #if DEBUG
-import SHStorage
-
-private struct _CalculatorContainerPreview: View {
-    let itemID: String
-    
-    @Dependency(\.storageService)
-    private var storageService
-    
-    private var item: (any Item)? {
-        storageService.item(id: itemID)
-    }
-    
-    var body: some View {
-        if let item {
-            NavigationStack {
-                SingleItemCalculatorContainerView(item: item)
-            }
-        } else {
-            Text(verbatim: "There is no item with id '\(itemID)'")
-        }
-    }
-}
-
 #Preview {
-    _CalculatorContainerPreview(itemID: "part-plastic")
+    SingleItemCalculatorContainerView(part: part(id: "part-plastic"))
 }
 #endif

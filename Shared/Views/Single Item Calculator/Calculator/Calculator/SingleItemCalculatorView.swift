@@ -91,7 +91,7 @@ struct SingleItemCalculatorView: View {
                     }
                 }
         }
-        .id(viewModel.item.id)
+        .id(viewModel.part.id)
     }
     
     @MainActor @ToolbarContentBuilder
@@ -300,8 +300,8 @@ import SHStorage
 import SHModels
 
 private struct _SingleItemCalculatorPreview: View {
-    private let itemID: String
-    private let item: (any Item)?
+    private let partID: String
+    private let part: Part?
     
     private let recipeID: String
     private let recipe: Recipe?
@@ -309,18 +309,18 @@ private struct _SingleItemCalculatorPreview: View {
     @State
     private var viewModel: SingleItemCalculatorViewModel?
     
-    init(itemID: String, recipeID: String) {
+    init(partID: String, recipeID: String) {
         @Dependency(\.storageService)
         var storageService
         
-        self.itemID = itemID
+        self.partID = partID
         self.recipeID = recipeID
         
-        item = storageService.item(id: itemID)
+        part = storageService.part(id: partID)
         recipe = storageService.recipe(id: recipeID)
         
-        if let item, let recipe {
-            _viewModel = State(initialValue: SingleItemCalculatorViewModel(item: item, recipe: recipe))
+        if let part, let recipe {
+            _viewModel = State(initialValue: SingleItemCalculatorViewModel(part: part, recipe: recipe))
         }
     }
     
@@ -331,8 +331,8 @@ private struct _SingleItemCalculatorPreview: View {
             }
         } else {
             VStack(spacing: 24) {
-                if item == nil {
-                    Text(verbatim: "There is no item with id '\(itemID)'")
+                if part == nil {
+                    Text(verbatim: "There is no item with id '\(partID)'")
                 }
                 
                 if recipe == nil {
@@ -346,6 +346,6 @@ private struct _SingleItemCalculatorPreview: View {
 }
 
 #Preview("Calculator View") {
-    _SingleItemCalculatorPreview(itemID: "part-plastic", recipeID: "recipe-alternate-recycled-plastic")
+    _SingleItemCalculatorPreview(partID: "part-plastic", recipeID: "recipe-alternate-recycled-plastic")
 }
 #endif

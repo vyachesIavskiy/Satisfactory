@@ -13,11 +13,11 @@ struct RecipeIngredientSingleItemViewModelState: RecipeIngredientViewModelState 
         }
     }
     
-    var item: any Item {
+    var part: Part {
         switch ingredient {
-        case let .output(ingredient): ingredient.item
-        case let .byproduct(ingredient): ingredient.item
-        case let .input(ingredient): ingredient.item
+        case let .output(ingredient): ingredient.part
+        case let .byproduct(ingredient): ingredient.part
+        case let .input(ingredient): ingredient.part
         }
     }
     
@@ -44,7 +44,7 @@ struct RecipeIngredientSingleItemViewModelState: RecipeIngredientViewModelState 
                 result.append(RecipeIngredientAmountViewModel(productionByproduct: ingredient))
             }
             result += ingredient.byproducts.map {
-                RecipeIngredientAmountViewModel(productionSecondaryByproduct: $0, item: ingredient.item)
+                RecipeIngredientAmountViewModel(productionSecondaryByproduct: $0, part: ingredient.part)
             }
             
         case let .input(ingredient):
@@ -58,7 +58,7 @@ struct RecipeIngredientSingleItemViewModelState: RecipeIngredientViewModelState 
                 result.append(RecipeIngredientAmountViewModel(productionInput: ingredient))
             }
             result += ingredient.byproducts.map {
-                RecipeIngredientAmountViewModel(productionSecondaryByproduct: $0, item: ingredient.item)
+                RecipeIngredientAmountViewModel(productionSecondaryByproduct: $0, part: ingredient.part)
             }
         }
         

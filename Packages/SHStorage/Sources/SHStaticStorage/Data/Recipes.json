@@ -3043,6 +3043,597 @@
     }
   },
   {
+    "duration" : 10,
+    "id" : "recipe-time-crystal",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-diamonds"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-time-crystal"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 3,
+    "id" : "recipe-excited-photonic-matter",
+    "inputs" : [
+
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-excited-photonic-matter"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-dark-matter-residue",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-reanimated-sam"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-dark-matter-residue"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-alternate-pink-diamonds",
+    "inputs" : [
+      {
+        "amount" : 8,
+        "partID" : "part-coal"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-quartz-crystal"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-diamonds"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 2,
+        "partID" : "part-compacted-coal"
+      }
+    ],
+    "duration" : 3,
+    "id" : "recipe-alternate-dark-ion-fuel",
+    "inputs" : [
+      {
+        "amount" : 12,
+        "partID" : "part-packaged-rocket-fuel"
+      },
+      {
+        "amount" : 4,
+        "partID" : "part-dark-matter-crystal"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-ionized-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-ficsite-ingot-iron",
+    "inputs" : [
+      {
+        "amount" : 4,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 24,
+        "partID" : "part-iron-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-ficsite-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-ficsite-ingot-caterium",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 4,
+        "partID" : "part-caterium-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-ficsite-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 2,
+    "id" : "recipe-ficsite-ingot-aluminum",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 4,
+        "partID" : "part-aluminum-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-ficsite-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-iron-ore-limestone",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 24,
+        "partID" : "part-limestone"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-iron-ore"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-copper-ore-sulfur",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 12,
+        "partID" : "part-sulfur"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-copper-ore"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-copper-ore-quartz",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-raw-quartz"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-copper-ore"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-limestone-sulfur",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-sulfur"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-limestone"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-coal-limestone",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 36,
+        "partID" : "part-limestone"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-coal"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-coal-iron",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 18,
+        "partID" : "part-iron-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-coal"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-sulfur-iron",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 30,
+        "partID" : "part-iron-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-sulfur"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-sulfur-coal",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 20,
+        "partID" : "part-coal"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-sulfur"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-caterium-ore-copper",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 15,
+        "partID" : "part-copper-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-caterium-ore"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-caterium-ore-quartz",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 12,
+        "partID" : "part-raw-quartz"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-caterium-ore"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-raw-quartz-coal",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 24,
+        "partID" : "part-coal"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-raw-quartz"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-raw-quartz-bauxite",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-bauxite"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-raw-quartz"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-bauxite-copper",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 18,
+        "partID" : "part-copper-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-bauxite"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-bauxite-caterium",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 15,
+        "partID" : "part-caterium-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-bauxite"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-nitrogen-gas-caterium",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 12,
+        "partID" : "part-caterium-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-nitrogen-gas"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-nitrogen-gas-bauxite",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-bauxite"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-nitrogen-gas"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-uranium-bauxite",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 48,
+        "partID" : "part-bauxite"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-uranium"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
     "duration" : 12,
     "id" : "recipe-alternate-iron-alloy-ingot",
     "inputs" : [
@@ -5484,6 +6075,234 @@
     "powerConsumption" : {
       "max" : 1500,
       "min" : 500
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 25,
+        "partID" : "part-dark-matter-residue"
+      }
+    ],
+    "duration" : 15,
+    "id" : "recipe-ai-expansion-server",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-magnetic-field-generator"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-neural-quantum-processor"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-superposition-oscillator"
+      },
+      {
+        "amount" : 25,
+        "partID" : "part-excited-photonic-matter"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-ai-expansion-server"
+    },
+    "powerConsumption" : {
+      "max" : 2000,
+      "min" : 0
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 25,
+        "partID" : "part-dark-matter-residue"
+      }
+    ],
+    "duration" : 12,
+    "id" : "recipe-superposition-oscillator",
+    "inputs" : [
+      {
+        "amount" : 6,
+        "partID" : "part-dark-matter-crystal"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-crystal-oscillator"
+      },
+      {
+        "amount" : 9,
+        "partID" : "part-alclad-aluminum-sheet"
+      },
+      {
+        "amount" : 25,
+        "partID" : "part-excited-photonic-matter"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-superposition-oscillator"
+    },
+    "powerConsumption" : {
+      "max" : 2000,
+      "min" : 0
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 25,
+        "partID" : "part-dark-matter-residue"
+      }
+    ],
+    "duration" : 20,
+    "id" : "recipe-neural-quantum-processor",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-time-crystal"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-supercomputer"
+      },
+      {
+        "amount" : 15,
+        "partID" : "part-ficsite-trigon"
+      },
+      {
+        "amount" : 25,
+        "partID" : "part-excited-photonic-matter"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-neural-quantum-processor"
+    },
+    "powerConsumption" : {
+      "max" : 2000,
+      "min" : 0
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 24,
+        "partID" : "part-dark-matter-residue"
+      }
+    ],
+    "duration" : 24,
+    "id" : "recipe-alien-power-matrix",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-sam-fluctuator"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-power-shard"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-superposition-oscillator"
+      },
+      {
+        "amount" : 24,
+        "partID" : "part-excited-photonic-matter"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-alien-power-matrix"
+    },
+    "powerConsumption" : {
+      "max" : 2000,
+      "min" : 0
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 20,
+        "partID" : "part-dark-matter-residue"
+      }
+    ],
+    "duration" : 24,
+    "id" : "recipe-ficsonium-fuel-rod",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-ficsonium"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-electromagnetic-control-rod"
+      },
+      {
+        "amount" : 40,
+        "partID" : "part-ficsite-trigon"
+      },
+      {
+        "amount" : 20,
+        "partID" : "part-excited-photonic-matter"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-ficsonium-fuel-rod"
+    },
+    "powerConsumption" : {
+      "max" : 2000,
+      "min" : 0
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 12,
+        "partID" : "part-dark-matter-residue"
+      }
+    ],
+    "duration" : 12,
+    "id" : "recipe-synthetic-power-shard",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-time-crystal"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-dark-matter-crystal"
+      },
+      {
+        "amount" : 12,
+        "partID" : "part-quartz-crystal"
+      },
+      {
+        "amount" : 12,
+        "partID" : "part-excited-photonic-matter"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-power-shard"
+    },
+    "powerConsumption" : {
+      "max" : 2000,
+      "min" : 0
     }
   },
   {

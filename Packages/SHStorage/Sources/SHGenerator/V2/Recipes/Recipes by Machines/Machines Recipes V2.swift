@@ -4,11 +4,13 @@ extension V2.Recipes {
     assemblerRecipes +
     blenderRecipes +
     constructorRecipes +
+    converterRecipes +
     foundryRecipes +
     manufacturerRecipes +
     nuclearPowerPlantRecipes +
     packagerRecipes +
     particleAcceleratorRecipes +
+    quantumEncoderRecipes +
     refineryRecipes +
     smelterRecipes
 }

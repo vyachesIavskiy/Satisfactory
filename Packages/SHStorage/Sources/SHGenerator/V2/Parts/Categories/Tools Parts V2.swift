@@ -8,7 +8,7 @@ private extension Part.Static {
 }
 
 extension V2.Parts {
-    static let portableMiner = Part.Static(id: "equipment-portable-miner")
+    static let portableMiner = Part.Static(id: "part-portable-miner")
     
     static let toolsParts = [
         portableMiner,

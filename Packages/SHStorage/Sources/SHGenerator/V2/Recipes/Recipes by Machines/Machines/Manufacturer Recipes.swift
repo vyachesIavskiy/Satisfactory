@@ -102,7 +102,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.superpositionOscillator, amount: 2),
             Recipe.Static.Ingredient(V2.Parts.darkMatterCrystal, amount: 40)
         ],
-        output: Recipe.Static.Ingredient(V2.Parts.thermalPropulsionRocket, amount: 1),
+        output: Recipe.Static.Ingredient(V2.Parts.ballisticWarpDrive, amount: 1),
         duration: 60
     )
     
@@ -197,7 +197,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.ironPlate, amount: 100),
             Recipe.Static.Ingredient(V2.Parts.concrete, amount: 200)
         ],
-        output: Recipe.Static.Ingredient(V2.Parts.highSpeedConnector, amount: 10),
+        output: Recipe.Static.Ingredient(V2.Parts.singularityCell, amount: 10),
         duration: 60
     )
     
@@ -208,7 +208,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.wire, amount: 5),
             Recipe.Static.Ingredient(V2.Parts.steelPipe, amount: 3),
         ],
-        output: Recipe.Static.Ingredient(V2.Parts.highSpeedConnector, amount: 1),
+        output: Recipe.Static.Ingredient(V2.Parts.samFluctuator, amount: 1),
         duration: 6
     )
     

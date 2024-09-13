@@ -195,7 +195,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.rawQuartz, amount: 25),
             Recipe.Static.Ingredient(V2.Parts.coal, amount: 12)
         ],
-        output: Recipe.Static.Ingredient(V2.Parts.steelPipe, amount: 18),
+        output: Recipe.Static.Ingredient(V2.Parts.quartzCrystal, amount: 18),
         duration: 20,
         isDefault: false
     )

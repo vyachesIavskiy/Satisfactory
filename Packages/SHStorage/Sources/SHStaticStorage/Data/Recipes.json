@@ -1,5 +1,1487 @@
 [
   {
+    "byproducts" : [
+
+    ],
+    "duration" : 2,
+    "id" : "recipe-iron-ingot",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-iron-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-smelter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-iron-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 2,
+    "id" : "recipe-copper-ingot",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-copper-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-smelter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-copper-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 4,
+    "id" : "recipe-caterium-ingot",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-caterium-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-smelter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-caterium-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 2,
+    "id" : "recipe-altername-pure-aluminum-ingot",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-aluminum-scrap"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-smelter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-aluminum-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 12,
+    "id" : "recipe-red-ficsmas-ornament",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-ficsmas-gift"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-smelter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-red-ficsmas-ornament"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 12,
+    "id" : "recipe-blue-ficsmas-ornament",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-ficsmas-gift"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-smelter",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-blue-ficsmas-ornament"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-alternate-iron-alloy-ingot",
+    "inputs" : [
+      {
+        "amount" : 8,
+        "partID" : "part-iron-ore"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-copper-ore"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 15,
+      "partID" : "part-iron-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-alternate-basic-iron-ingot",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-iron-ore"
+      },
+      {
+        "amount" : 8,
+        "partID" : "part-limestone"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-iron-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-alternate-copper-alloy-ingot",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-copper-ore"
+      },
+      {
+        "amount" : 5,
+        "partID" : "part-iron-ore"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-copper-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-alternate-tempered-copper-ingot",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-copper-ore"
+      },
+      {
+        "amount" : 8,
+        "partID" : "part-petroleum-coke"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-copper-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-steel-ingot",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-iron-ore"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-coal"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 3,
+      "partID" : "part-steel-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 3,
+    "id" : "recipe-alternate-solid-steel-ingot",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-iron-ingot"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-coal"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 3,
+      "partID" : "part-steel-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-alternate-coke-steel-ingot",
+    "inputs" : [
+      {
+        "amount" : 15,
+        "partID" : "part-iron-ore"
+      },
+      {
+        "amount" : 15,
+        "partID" : "part-petroleum-coke"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 20,
+      "partID" : "part-steel-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 24,
+    "id" : "recipe-alternate-compacted-steel-ingot",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-iron-ore"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-compacted-coal"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-steel-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 8,
+    "id" : "recipe-alternate-tempered-caterium-ingot",
+    "inputs" : [
+      {
+        "amount" : 6,
+        "partID" : "part-caterium-ore"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-petroleum-coke"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 3,
+      "partID" : "part-caterium-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-aluminum-ingot",
+    "inputs" : [
+      {
+        "amount" : 6,
+        "partID" : "part-aluminum-scrap"
+      },
+      {
+        "amount" : 5,
+        "partID" : "part-silica"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-aluminum-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-alternate-steel-cast-plate",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-iron-ingot"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-steel-ingot"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 3,
+      "partID" : "part-iron-plate"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-alternate-molded-beam",
+    "inputs" : [
+      {
+        "amount" : 24,
+        "partID" : "part-steel-ingot"
+      },
+      {
+        "amount" : 16,
+        "partID" : "part-concrete"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 9,
+      "partID" : "part-steel-beam"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-alternate-molded-steel-pipe",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-steel-ingot"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-concrete"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 5,
+      "partID" : "part-steel-pipe"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 20,
+    "id" : "recipe-alternate-fused-quartz-crystal",
+    "inputs" : [
+      {
+        "amount" : 25,
+        "partID" : "part-raw-quartz"
+      },
+      {
+        "amount" : 12,
+        "partID" : "part-coal"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 18,
+      "partID" : "part-steel-pipe"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-copprt-ficsmas-ornament",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-red-ficsmas-ornament"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-copper-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-copper-ficsmas-ornament"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-iron-ficsmas-ornament",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-blue-ficsmas-ornament"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-iron-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-foundry",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-iron-ficsmas-ornament"
+    },
+    "powerConsumption" : {
+      "max" : 16,
+      "min" : 16
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-iron-plate",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-iron-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-iron-plate"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-iron-rod",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-iron-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-iron-rod"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 5,
+    "id" : "recipe-alternate-steel-rod",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-steel-ingot"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-iron-rod"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 8,
+    "id" : "recipe-alternate-aluminum-rod",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-aluminum-ingot"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 7,
+      "partID" : "part-iron-rod"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-screw",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-iron-rod"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-screw"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 24,
+    "id" : "recipe-alternate-cast-screw",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-iron-ingot"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 20,
+      "partID" : "part-screw"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-alternate-steel-screw",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-steel-beam"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 52,
+      "partID" : "part-screw"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-copper-sheet",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-copper-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-copper-sheet"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-steel-beam",
+    "inputs" : [
+      {
+        "amount" : 4,
+        "partID" : "part-steel-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-steel-beam"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 8,
+    "id" : "recipe-alternate-aluminum-beam",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-aluminum-ingot"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 3,
+      "partID" : "part-steel-beam"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-steel-pipe",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-steel-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-steel-pipe"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-alternate-iron-pipe",
+    "inputs" : [
+      {
+        "amount" : 20,
+        "partID" : "part-iron-ingot"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 5,
+      "partID" : "part-steel-pipe"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 2,
+    "id" : "recipe-aluminum-casing",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-aluminum-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-aluminum-casing"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-ficsite-trigon",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-ficsite-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 3,
+      "partID" : "part-ficsite-trigon"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-wire",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-copper-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-wire"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 24,
+    "id" : "recipe-alternate-iron-wire",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-iron-ingot"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 9,
+      "partID" : "part-wire"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-alternate-caterium-wire",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-caterium-ingot"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 8,
+      "partID" : "part-wire"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 2,
+    "id" : "recipe-cable",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-wire"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-cable"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 5,
+    "id" : "recipe-quickwire",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-caterium-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 5,
+      "partID" : "part-quickwire"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 2,
+    "id" : "recipe-reanimated-sam",
+    "inputs" : [
+      {
+        "amount" : 4,
+        "partID" : "part-sam"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-reanimated-sam"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-concrete",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-limestone"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-concrete"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 8,
+    "id" : "recipe-quartz-crystal",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-raw-quartz"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 3,
+      "partID" : "part-quartz-crystal"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 8,
+    "id" : "recipe-silica",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-raw-quartz"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 5,
+      "partID" : "part-silica"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-copper-powder",
+    "inputs" : [
+      {
+        "amount" : 30,
+        "partID" : "part-copper-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 5,
+      "partID" : "part-copper-powder"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 5,
+    "id" : "recipe-biomass-leaves",
+    "inputs" : [
+      {
+        "amount" : 10,
+        "partID" : "part-leaves"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 5,
+      "partID" : "part-biomass"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-biomass-wood",
+    "inputs" : [
+      {
+        "amount" : 4,
+        "partID" : "part-wood"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 20,
+      "partID" : "part-biomass"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-biomass-mycelia",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-mycelia"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-biomass"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-biomass-alien-protein",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-alien-protein"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 100,
+      "partID" : "part-biomass"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-solid-biofuel",
+    "inputs" : [
+      {
+        "amount" : 8,
+        "partID" : "part-biomass"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-solid-biofuel"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 8,
+    "id" : "recipe-alternate-biocoal",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-biomass"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 6,
+      "partID" : "part-coal"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-alternate-charcoal",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-wood"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-coal"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-empty-canister",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-plastic"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-empty-canister"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-alternate-steel-canister",
+    "inputs" : [
+      {
+        "amount" : 4,
+        "partID" : "part-steel-ingot"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-empty-canister"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 1,
+    "id" : "recipe-empty-fluid-tank",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-aluminum-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-empty-fluid-tank"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 3,
+    "id" : "recipe-hog-protein",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-hog-remains"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-alien-protein"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 3,
+    "id" : "recipe-hatcher-protein",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-hatcher-remains"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-alien-protein"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 3,
+    "id" : "recipe-stinger-protein",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-stinger-remains"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-alien-protein"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 3,
+    "id" : "recipe-plasma-spitter-protein",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-spitter-remains"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-alien-protein"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-alien-dna-capsule",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-alien-protein"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-alien-dna-capsule"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 8,
+    "id" : "recipe-power-shard-1",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-blue-power-slug"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-power-shard"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-power-shard-2",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-yellow-power-slug"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-power-shard"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 24,
+    "id" : "recipe-power-shard-5",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-purple-power-slug"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 5,
+      "partID" : "part-power-shard"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-iron-rebar",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-iron-rod"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-iron-rebar"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-ficsmas-tree-branch",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-ficsmas-gift"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-ficsmas-tree-branch"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-candy-cane",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-ficsmas-gift"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-candy-cane"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-ficsmas-bow",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-ficsmas-gift"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-ficsmas-bow"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-actual-snow",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-ficsmas-gift"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-actual-snow"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-snowball",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-actual-snow"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-constructor",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-snowball"
+    },
+    "powerConsumption" : {
+      "max" : 4,
+      "min" : 4
+    }
+  },
+  {
     "duration" : 30,
     "id" : "recipe-smart-plating",
     "inputs" : [
@@ -1513,2508 +2995,850 @@
   },
   {
     "byproducts" : [
-
-    ],
-    "duration" : 120,
-    "id" : "recipe-biochemical-sculptor",
-    "inputs" : [
       {
         "amount" : 1,
-        "partID" : "part-assembly-director-system"
-      },
-      {
-        "amount" : 80,
-        "partID" : "part-ficsite-trigon"
-      },
-      {
-        "amount" : 20,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-biochemical-sculptor"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 8,
-        "partID" : "part-water"
-      }
-    ],
-    "duration" : 6,
-    "id" : "recipe-alternate-distilled-silica",
-    "inputs" : [
-      {
-        "amount" : 12,
-        "partID" : "part-dissolved-silica"
-      },
-      {
-        "amount" : 5,
-        "partID" : "part-limestone"
-      },
-      {
-        "amount" : 10,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 27,
-      "partID" : "part-silica"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 5,
-        "partID" : "part-water"
-      }
-    ],
-    "duration" : 6,
-    "id" : "recipe-alternate-instant-scrap",
-    "inputs" : [
-      {
-        "amount" : 15,
-        "partID" : "part-bauxite"
-      },
-      {
-        "amount" : 10,
-        "partID" : "part-coal"
-      },
-      {
-        "amount" : 5,
-        "partID" : "part-sulfuric-acid"
-      },
-      {
-        "amount" : 6,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 30,
-      "partID" : "part-aluminum-scrap"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 6,
-    "id" : "recipe-nitric-acid",
-    "inputs" : [
-      {
-        "amount" : 12,
-        "partID" : "part-nitrogen-gas"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-water"
-      },
-      {
-        "amount" : 1,
-        "partID" : "part-iron-plate"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 3,
-      "partID" : "part-nitric-acid"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 6,
-    "id" : "recipe-alternate-diluted-fuel",
-    "inputs" : [
-      {
-        "amount" : 5,
         "partID" : "part-heavy-oil-residue"
-      },
-      {
-        "amount" : 10,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 10,
-      "partID" : "part-fuel"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 8,
-    "id" : "recipe-alternate-turbo-blend-fuel",
-    "inputs" : [
-      {
-        "amount" : 2,
-        "partID" : "part-fuel"
-      },
-      {
-        "amount" : 4,
-        "partID" : "part-heavy-oil-residue"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-sulfur"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-petroleum-coke"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 6,
-      "partID" : "part-turbofuel"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 1,
-        "partID" : "part-compacted-coal"
       }
     ],
     "duration" : 6,
-    "id" : "recipe-rocket-fuel",
+    "id" : "recipe-plastic",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-crude-oil"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-plastic"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-residual-plastic",
     "inputs" : [
       {
         "amount" : 6,
-        "partID" : "part-turbofuel"
+        "partID" : "part-polymer-resin"
       },
       {
-        "amount" : 1,
-        "partID" : "part-nitric-acid"
+        "amount" : 2,
+        "partID" : "part-water"
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-blender",
+    "machineID" : "building-refinery",
     "output" : {
-      "amount" : 10,
-      "partID" : "part-rocket-fuel"
+      "amount" : 2,
+      "partID" : "part-plastic"
     },
     "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
+      "max" : 30,
+      "min" : 30
     }
   },
   {
-    "byproducts" : [
-      {
-        "amount" : 1,
-        "partID" : "part-compacted-coal"
-      }
-    ],
-    "duration" : 2.4,
-    "id" : "recipe-alternate-nitro-rocket-fuel",
+    "duration" : 12,
+    "id" : "recipe-alternate-recycled-plastic",
     "inputs" : [
       {
-        "amount" : 4,
-        "partID" : "part-fuel"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-nitrogen-gas"
-      },
-      {
-        "amount" : 4,
-        "partID" : "part-sulfur"
-      },
-      {
-        "amount" : 2,
-        "partID" : "part-coal"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 6,
-      "partID" : "part-rocket-fuel"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 10,
-    "id" : "recipe-cooling-system",
-    "inputs" : [
-      {
-        "amount" : 2,
-        "partID" : "part-heat-sink"
-      },
-      {
-        "amount" : 2,
+        "amount" : 6,
         "partID" : "part-rubber"
       },
       {
-        "amount" : 5,
-        "partID" : "part-water"
-      },
-      {
-        "amount" : 25,
-        "partID" : "part-nitrogen-gas"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-cooling-system"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 24,
-    "id" : "recipe-alternate-cooling-device",
-    "inputs" : [
-      {
-        "amount" : 4,
-        "partID" : "part-heat-sink"
-      },
-      {
-        "amount" : 1,
-        "partID" : "part-motor"
-      },
-      {
-        "amount" : 24,
-        "partID" : "part-nitrogen-gas"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-cooling-system"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 40,
-    "id" : "recipe-fused-modular-frame",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-heavy-modular-frame"
-      },
-      {
-        "amount" : 50,
-        "partID" : "part-aluminum-casing"
-      },
-      {
-        "amount" : 25,
-        "partID" : "part-nitrogen-gas"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-fused-modular-frame"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 20,
-    "id" : "recipe-alternate-heat-fused-frame",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-heavy-modular-frame"
-      },
-      {
-        "amount" : 50,
-        "partID" : "part-aluminum-ingot"
-      },
-      {
-        "amount" : 8,
-        "partID" : "part-nitric-acid"
-      },
-      {
-        "amount" : 10,
+        "amount" : 6,
         "partID" : "part-fuel"
       }
     ],
     "isDefault" : false,
-    "machineID" : "building-blender",
+    "machineID" : "building-refinery",
     "output" : {
-      "amount" : 1,
-      "partID" : "part-fused-modular-frame"
+      "amount" : 12,
+      "partID" : "part-plastic"
     },
     "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "byproducts" : [
       {
-        "amount" : 1.5,
+        "amount" : 2,
+        "partID" : "part-heavy-oil-residue"
+      }
+    ],
+    "duration" : 6,
+    "id" : "recipe-alternate-polymer-resin",
+    "inputs" : [
+      {
+        "amount" : 6,
+        "partID" : "part-crude-oil"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 13,
+      "partID" : "part-polymer-resin"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 2,
+        "partID" : "part-heavy-oil-residue"
+      }
+    ],
+    "duration" : 6,
+    "id" : "recipe-rubber",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-crude-oil"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-rubber"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-residual-rubber",
+    "inputs" : [
+      {
+        "amount" : 4,
+        "partID" : "part-polymer-resin"
+      },
+      {
+        "amount" : 4,
         "partID" : "part-water"
       }
     ],
-    "duration" : 3,
-    "id" : "recipe-battery",
+    "isDefault" : true,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-rubber"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 12,
+    "id" : "recipe-alternate-recycled-rubber",
     "inputs" : [
       {
-        "amount" : 2.5,
-        "partID" : "part-sulfuric-acid"
+        "amount" : 6,
+        "partID" : "part-plastic"
       },
       {
+        "amount" : 6,
+        "partID" : "part-fuel"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-rubber"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "byproducts" : [
+      {
         "amount" : 2,
+        "partID" : "part-polymer-resin"
+      }
+    ],
+    "duration" : 6,
+    "id" : "recipe-alternate-heavy-oil-residue",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-crude-oil"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-heavy-oil-residue"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-petroleum-coke",
+    "inputs" : [
+      {
+        "amount" : 4,
+        "partID" : "part-heavy-oil-residue"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-petroleum-coke"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 5,
+        "partID" : "part-silica"
+      }
+    ],
+    "duration" : 6,
+    "id" : "recipe-alumina-solution",
+    "inputs" : [
+      {
+        "amount" : 12,
+        "partID" : "part-bauxite"
+      },
+      {
+        "amount" : 18,
+        "partID" : "part-water"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-alumina-solution"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 3,
+    "id" : "recipe-alternate-sloppy-alumina",
+    "inputs" : [
+      {
+        "amount" : 10,
+        "partID" : "part-bauxite"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-water"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-alumina-solution"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 2,
+        "partID" : "part-water"
+      }
+    ],
+    "duration" : 1,
+    "id" : "recipe-aluminum-scrap",
+    "inputs" : [
+      {
+        "amount" : 4,
         "partID" : "part-alumina-solution"
       },
       {
-        "amount" : 1,
-        "partID" : "part-aluminum-casing"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-battery"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-      {
         "amount" : 2,
-        "partID" : "part-sulfuric-acid"
-      }
-    ],
-    "duration" : 12,
-    "id" : "recipe-encased-uranium-cell",
-    "inputs" : [
-      {
-        "amount" : 10,
-        "partID" : "part-uranium"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-concrete"
-      },
-      {
-        "amount" : 8,
-        "partID" : "part-sulfuric-acid"
+        "partID" : "part-coal"
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 5,
-      "partID" : "part-encased-uranium-cell"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 6,
-        "partID" : "part-water"
-      }
-    ],
-    "duration" : 24,
-    "id" : "recipe-non-fissile-uranium",
-    "inputs" : [
-      {
-        "amount" : 15,
-        "partID" : "part-uranium-waste"
-      },
-      {
-        "amount" : 10,
-        "partID" : "part-silica"
-      },
-      {
-        "amount" : 6,
-        "partID" : "part-nitric-acid"
-      },
-      {
-        "amount" : 6,
-        "partID" : "part-sulfuric-acid"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 20,
-      "partID" : "part-non-fissile-uranium"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 8,
-        "partID" : "part-water"
-      }
-    ],
-    "duration" : 12,
-    "id" : "recipe-alternate-fertile-uranium",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-uranium"
-      },
-      {
-        "amount" : 5,
-        "partID" : "part-uranium-waste"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-nitric-acid"
-      },
-      {
-        "amount" : 5,
-        "partID" : "part-sulfuric-acid"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 20,
-      "partID" : "part-non-fissile-uranium"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 12,
-    "id" : "recipe-turbo-rifle-ammo-blender",
-    "inputs" : [
-      {
-        "amount" : 25,
-        "partID" : "part-rifle-ammo"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-aluminum-casing"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-turbofuel"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-blender",
-    "output" : {
-      "amount" : 50,
-      "partID" : "part-turbo-rifle-ammo"
-    },
-    "powerConsumption" : {
-      "max" : 75,
-      "min" : 75
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-iron-plate",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-iron-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-iron-plate"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-iron-rod",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-iron-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-iron-rod"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 5,
-    "id" : "recipe-alternate-steel-rod",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-steel-ingot"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-iron-rod"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 8,
-    "id" : "recipe-alternate-aluminum-rod",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-aluminum-ingot"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 7,
-      "partID" : "part-iron-rod"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-screw",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-iron-rod"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-screw"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 24,
-    "id" : "recipe-alternate-cast-screw",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-iron-ingot"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 20,
-      "partID" : "part-screw"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-alternate-steel-screw",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-steel-beam"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 52,
-      "partID" : "part-screw"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-copper-sheet",
-    "inputs" : [
-      {
-        "amount" : 2,
-        "partID" : "part-copper-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-copper-sheet"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-steel-beam",
-    "inputs" : [
-      {
-        "amount" : 4,
-        "partID" : "part-steel-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-steel-beam"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 8,
-    "id" : "recipe-alternate-aluminum-beam",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-aluminum-ingot"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 3,
-      "partID" : "part-steel-beam"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-steel-pipe",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-steel-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-steel-pipe"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-alternate-iron-pipe",
-    "inputs" : [
-      {
-        "amount" : 20,
-        "partID" : "part-iron-ingot"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 5,
-      "partID" : "part-steel-pipe"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 2,
-    "id" : "recipe-aluminum-casing",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-aluminum-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-aluminum-casing"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-ficsite-trigon",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-ficsite-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 3,
-      "partID" : "part-ficsite-trigon"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-wire",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-copper-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-wire"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 24,
-    "id" : "recipe-alternate-iron-wire",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-iron-ingot"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 9,
-      "partID" : "part-wire"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-alternate-caterium-wire",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-caterium-ingot"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 8,
-      "partID" : "part-wire"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 2,
-    "id" : "recipe-cable",
-    "inputs" : [
-      {
-        "amount" : 2,
-        "partID" : "part-wire"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-cable"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 5,
-    "id" : "recipe-quickwire",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-caterium-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 5,
-      "partID" : "part-quickwire"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 2,
-    "id" : "recipe-reanimated-sam",
-    "inputs" : [
-      {
-        "amount" : 4,
-        "partID" : "part-sam"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-reanimated-sam"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-concrete",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-limestone"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-concrete"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 8,
-    "id" : "recipe-quartz-crystal",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-raw-quartz"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 3,
-      "partID" : "part-quartz-crystal"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 8,
-    "id" : "recipe-silica",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-raw-quartz"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 5,
-      "partID" : "part-silica"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-copper-powder",
-    "inputs" : [
-      {
-        "amount" : 30,
-        "partID" : "part-copper-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 5,
-      "partID" : "part-copper-powder"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 5,
-    "id" : "recipe-biomass-leaves",
-    "inputs" : [
-      {
-        "amount" : 10,
-        "partID" : "part-leaves"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 5,
-      "partID" : "part-biomass"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-biomass-wood",
-    "inputs" : [
-      {
-        "amount" : 4,
-        "partID" : "part-wood"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 20,
-      "partID" : "part-biomass"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-biomass-mycelia",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-mycelia"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 10,
-      "partID" : "part-biomass"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-biomass-alien-protein",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-alien-protein"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 100,
-      "partID" : "part-biomass"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-solid-biofuel",
-    "inputs" : [
-      {
-        "amount" : 8,
-        "partID" : "part-biomass"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-solid-biofuel"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 8,
-    "id" : "recipe-alternate-biocoal",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-biomass"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-constructor",
+    "machineID" : "building-refinery",
     "output" : {
       "amount" : 6,
-      "partID" : "part-coal"
+      "partID" : "part-aluminum-scrap"
     },
     "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
+      "max" : 30,
+      "min" : 30
     }
   },
   {
-    "duration" : 4,
-    "id" : "recipe-alternate-charcoal",
-    "inputs" : [
+    "byproducts" : [
       {
-        "amount" : 1,
-        "partID" : "part-wood"
+        "amount" : 7,
+        "partID" : "part-water"
       }
     ],
-    "isDefault" : false,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 10,
-      "partID" : "part-coal"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
     "duration" : 4,
-    "id" : "recipe-empty-canister",
+    "id" : "recipe-alternate-electrode-aluminum-scrap",
     "inputs" : [
       {
-        "amount" : 2,
-        "partID" : "part-plastic"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-empty-canister"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-alternate-steel-canister",
-    "inputs" : [
+        "amount" : 12,
+        "partID" : "part-alumina-solution"
+      },
       {
         "amount" : 4,
-        "partID" : "part-steel-ingot"
+        "partID" : "part-petroleum-coke"
       }
     ],
     "isDefault" : false,
-    "machineID" : "building-constructor",
+    "machineID" : "building-refinery",
     "output" : {
-      "amount" : 4,
-      "partID" : "part-empty-canister"
+      "amount" : 20,
+      "partID" : "part-aluminum-scrap"
     },
     "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 1,
-    "id" : "recipe-empty-fluid-tank",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-aluminum-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-empty-fluid-tank"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 3,
-    "id" : "recipe-hog-protein",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-hog-remains"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-alien-protein"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 3,
-    "id" : "recipe-hatcher-protein",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-hatcher-remains"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-alien-protein"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 3,
-    "id" : "recipe-stinger-protein",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-stinger-remains"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-alien-protein"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 3,
-    "id" : "recipe-plasma-spitter-protein",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-spitter-remains"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-alien-protein"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 6,
-    "id" : "recipe-alien-dna-capsule",
+    "id" : "recipe-sulfuric-acid",
     "inputs" : [
       {
-        "amount" : 1,
-        "partID" : "part-alien-protein"
+        "amount" : 5,
+        "partID" : "part-sulfur"
+      },
+      {
+        "amount" : 5,
+        "partID" : "part-water"
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-refinery",
     "output" : {
-      "amount" : 1,
-      "partID" : "part-alien-dna-capsule"
+      "amount" : 10,
+      "partID" : "part-sulfuric-acid"
     },
     "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 3,
+        "partID" : "part-polymer-resin"
+      }
+    ],
+    "duration" : 6,
+    "id" : "recipe-fuel",
+    "inputs" : [
+      {
+        "amount" : 6,
+        "partID" : "part-crude-oil"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-residual-fuel",
+    "inputs" : [
+      {
+        "amount" : 6,
+        "partID" : "part-heavy-oil-residue"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 2,
+    "id" : "recipe-alternate-diluted-packaged-fuel",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-heavy-oil-residue"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-packaged-water"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-packaged-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-liquid-biofuel",
+    "inputs" : [
+      {
+        "amount" : 6,
+        "partID" : "part-solid-biofuel"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-water"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-liquid-biofuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 16,
+    "id" : "recipe-turbofuel",
+    "inputs" : [
+      {
+        "amount" : 6,
+        "partID" : "part-fuel"
+      },
+      {
+        "amount" : 4,
+        "partID" : "part-compacted-coal"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 5,
+      "partID" : "part-turbofuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 8,
-    "id" : "recipe-power-shard-1",
+    "id" : "recipe-alternate-turbo-heavy-fuel",
     "inputs" : [
       {
+        "amount" : 5,
+        "partID" : "part-heavy-oil-residue"
+      },
+      {
+        "amount" : 4,
+        "partID" : "part-compacted-coal"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 4,
+      "partID" : "part-turbofuel"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 2,
+        "partID" : "part-compacted-coal"
+      }
+    ],
+    "duration" : 24,
+    "id" : "recipe-ionized-fuel",
+    "inputs" : [
+      {
+        "amount" : 16,
+        "partID" : "part-rocket-fuel"
+      },
+      {
         "amount" : 1,
-        "partID" : "part-blue-power-slug"
+        "partID" : "part-power-shard"
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-refinery",
     "output" : {
-      "amount" : 1,
-      "partID" : "part-power-shard"
+      "amount" : 16,
+      "partID" : "part-ionized-fuel"
     },
     "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 12,
-    "id" : "recipe-power-shard-2",
+    "id" : "recipe-alternate-pure-iron-ingot",
     "inputs" : [
       {
-        "amount" : 1,
-        "partID" : "part-yellow-power-slug"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-power-shard"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 24,
-    "id" : "recipe-power-shard-5",
-    "inputs" : [
+        "amount" : 7,
+        "partID" : "part-iron-ore"
+      },
       {
-        "amount" : 1,
-        "partID" : "part-purple-power-slug"
+        "amount" : 4,
+        "partID" : "part-water"
       }
     ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
+    "isDefault" : false,
+    "machineID" : "building-refinery",
     "output" : {
-      "amount" : 5,
-      "partID" : "part-power-shard"
+      "amount" : 13,
+      "partID" : "part-iron-ingot"
     },
     "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-iron-rebar",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-iron-rod"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-iron-rebar"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 6,
-    "id" : "recipe-ficsmas-tree-branch",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-ficsmas-gift"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-ficsmas-tree-branch"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-candy-cane",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-ficsmas-gift"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-candy-cane"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-ficsmas-bow",
-    "inputs" : [
-      {
-        "amount" : 2,
-        "partID" : "part-ficsmas-gift"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-ficsmas-bow"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-actual-snow",
+    "id" : "recipe-alternate-leached-iron-ingot",
     "inputs" : [
       {
         "amount" : 5,
-        "partID" : "part-ficsmas-gift"
+        "partID" : "part-iron-ore"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-sulfuric-acid"
       }
     ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
+    "isDefault" : false,
+    "machineID" : "building-refinery",
     "output" : {
-      "amount" : 2,
-      "partID" : "part-actual-snow"
+      "amount" : 10,
+      "partID" : "part-iron-ingot"
     },
     "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 24,
+    "id" : "recipe-alternate-pure-copper-ingot",
+    "inputs" : [
+      {
+        "amount" : 6,
+        "partID" : "part-copper-ore"
+      },
+      {
+        "amount" : 4,
+        "partID" : "part-water"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 15,
+      "partID" : "part-copper-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 12,
-    "id" : "recipe-snowball",
+    "id" : "recipe-alternate-leached-copper-ingot",
     "inputs" : [
       {
-        "amount" : 3,
-        "partID" : "part-actual-snow"
+        "amount" : 9,
+        "partID" : "part-copper-ore"
+      },
+      {
+        "amount" : 5,
+        "partID" : "part-sulfuric-acid"
       }
     ],
-    "isDefault" : true,
-    "machineID" : "building-constructor",
+    "isDefault" : false,
+    "machineID" : "building-refinery",
     "output" : {
-      "amount" : 1,
-      "partID" : "part-snowball"
+      "amount" : 22,
+      "partID" : "part-copper-ingot"
     },
     "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 5,
+    "id" : "recipe-alternate-pure-caterium-ingot",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-caterium-ore"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-water"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-caterium-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 10,
-    "id" : "recipe-time-crystal",
+    "id" : "recipe-alternate-leached-caterium-ingot",
     "inputs" : [
       {
-        "amount" : 2,
-        "partID" : "part-diamonds"
+        "amount" : 9,
+        "partID" : "part-caterium-ore"
+      },
+      {
+        "amount" : 5,
+        "partID" : "part-sulfuric-acid"
       }
     ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
+    "isDefault" : false,
+    "machineID" : "building-refinery",
     "output" : {
-      "amount" : 1,
-      "partID" : "part-time-crystal"
+      "amount" : 6,
+      "partID" : "part-caterium-ingot"
     },
     "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 3,
-    "id" : "recipe-excited-photonic-matter",
-    "inputs" : [
-
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 10,
-      "partID" : "part-excited-photonic-matter"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-dark-matter-residue",
+    "id" : "recipe-alternate-wet-concrete",
     "inputs" : [
       {
-        "amount" : 5,
-        "partID" : "part-reanimated-sam"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 10,
-      "partID" : "part-dark-matter-residue"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-alternate-pink-diamonds",
-    "inputs" : [
-      {
-        "amount" : 8,
-        "partID" : "part-coal"
+        "amount" : 6,
+        "partID" : "part-limestone"
       },
       {
-        "amount" : 3,
-        "partID" : "part-quartz-crystal"
+        "amount" : 5,
+        "partID" : "part-water"
       }
     ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
+    "isDefault" : false,
+    "machineID" : "building-refinery",
     "output" : {
-      "amount" : 1,
-      "partID" : "part-diamonds"
+      "amount" : 4,
+      "partID" : "part-concrete"
     },
     "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 8,
+    "id" : "recipe-alternate-pure-quartz-crystal",
+    "inputs" : [
+      {
+        "amount" : 9,
+        "partID" : "part-raw-quartz"
+      },
+      {
+        "amount" : 5,
+        "partID" : "part-water"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 7,
+      "partID" : "part-quartz-crystal"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "byproducts" : [
       {
-        "amount" : 2,
-        "partID" : "part-compacted-coal"
-      }
-    ],
-    "duration" : 3,
-    "id" : "recipe-alternate-dark-ion-fuel",
-    "inputs" : [
-      {
         "amount" : 12,
-        "partID" : "part-packaged-rocket-fuel"
-      },
-      {
-        "amount" : 4,
-        "partID" : "part-dark-matter-crystal"
+        "partID" : "part-dissolved-silica"
       }
     ],
-    "isDefault" : false,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 10,
-      "partID" : "part-ionized-fuel"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-ficsite-ingot-iron",
-    "inputs" : [
-      {
-        "amount" : 4,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 24,
-        "partID" : "part-iron-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-ficsite-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-ficsite-ingot-caterium",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 4,
-        "partID" : "part-caterium-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-ficsite-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 2,
-    "id" : "recipe-ficsite-ingot-aluminum",
-    "inputs" : [
-      {
-        "amount" : 2,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 4,
-        "partID" : "part-aluminum-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-ficsite-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-iron-ore-limestone",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 24,
-        "partID" : "part-limestone"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-iron-ore"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-copper-ore-sulfur",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 12,
-        "partID" : "part-sulfur"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-copper-ore"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-copper-ore-quartz",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 10,
-        "partID" : "part-raw-quartz"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-copper-ore"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-limestone-sulfur",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 2,
-        "partID" : "part-sulfur"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-limestone"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-coal-limestone",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 36,
-        "partID" : "part-limestone"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-coal"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-coal-iron",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 18,
-        "partID" : "part-iron-ore"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-coal"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-sulfur-iron",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 30,
-        "partID" : "part-iron-ore"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-sulfur"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-sulfur-coal",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 20,
-        "partID" : "part-coal"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-sulfur"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-caterium-ore-copper",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 15,
-        "partID" : "part-copper-ore"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-caterium-ore"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-caterium-ore-quartz",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 12,
-        "partID" : "part-raw-quartz"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-caterium-ore"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-raw-quartz-coal",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 24,
-        "partID" : "part-coal"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-raw-quartz"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-raw-quartz-bauxite",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 10,
-        "partID" : "part-bauxite"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-raw-quartz"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-bauxite-copper",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 18,
-        "partID" : "part-copper-ore"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-bauxite"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-bauxite-caterium",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 15,
-        "partID" : "part-caterium-ore"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-bauxite"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-nitrogen-gas-caterium",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 12,
-        "partID" : "part-caterium-ore"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-nitrogen-gas"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-nitrogen-gas-bauxite",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 10,
-        "partID" : "part-bauxite"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-nitrogen-gas"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-uranium-bauxite",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-reanimated-sam"
-      },
-      {
-        "amount" : 48,
-        "partID" : "part-bauxite"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-converter",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-uranium"
-    },
-    "powerConsumption" : {
-      "max" : 400,
-      "min" : 100
-    }
-  },
-  {
     "duration" : 12,
-    "id" : "recipe-alternate-iron-alloy-ingot",
+    "id" : "recipe-alternate-quartz-purification",
     "inputs" : [
       {
-        "amount" : 8,
-        "partID" : "part-iron-ore"
+        "amount" : 24,
+        "partID" : "part-raw-quartz"
       },
       {
         "amount" : 2,
-        "partID" : "part-copper-ore"
+        "partID" : "part-nitric-acid"
       }
     ],
     "isDefault" : false,
-    "machineID" : "building-foundry",
+    "machineID" : "building-refinery",
     "output" : {
       "amount" : 15,
-      "partID" : "part-iron-ingot"
+      "partID" : "part-quartz-crystal"
     },
     "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-alternate-basic-iron-ingot",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-iron-ore"
-      },
-      {
-        "amount" : 8,
-        "partID" : "part-limestone"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 10,
-      "partID" : "part-iron-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-alternate-copper-alloy-ingot",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-copper-ore"
-      },
-      {
-        "amount" : 5,
-        "partID" : "part-iron-ore"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 10,
-      "partID" : "part-copper-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-alternate-tempered-copper-ingot",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-copper-ore"
-      },
-      {
-        "amount" : 8,
-        "partID" : "part-petroleum-coke"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-copper-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-steel-ingot",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-iron-ore"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-coal"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 3,
-      "partID" : "part-steel-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 3,
-    "id" : "recipe-alternate-solid-steel-ingot",
-    "inputs" : [
-      {
-        "amount" : 2,
-        "partID" : "part-iron-ingot"
-      },
-      {
-        "amount" : 2,
-        "partID" : "part-coal"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 3,
-      "partID" : "part-steel-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-alternate-coke-steel-ingot",
-    "inputs" : [
-      {
-        "amount" : 15,
-        "partID" : "part-iron-ore"
-      },
-      {
-        "amount" : 15,
-        "partID" : "part-petroleum-coke"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 20,
-      "partID" : "part-steel-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 24,
-    "id" : "recipe-alternate-compacted-steel-ingot",
-    "inputs" : [
-      {
-        "amount" : 2,
-        "partID" : "part-iron-ore"
-      },
-      {
-        "amount" : 1,
-        "partID" : "part-compacted-coal"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-steel-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 8,
-    "id" : "recipe-alternate-tempered-caterium-ingot",
+    "id" : "recipe-alternate-coated-cable",
     "inputs" : [
       {
-        "amount" : 6,
-        "partID" : "part-caterium-ore"
+        "amount" : 5,
+        "partID" : "part-wire"
       },
       {
         "amount" : 2,
-        "partID" : "part-petroleum-coke"
+        "partID" : "part-heavy-oil-residue"
       }
     ],
     "isDefault" : false,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 3,
-      "partID" : "part-caterium-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-aluminum-ingot",
-    "inputs" : [
-      {
-        "amount" : 6,
-        "partID" : "part-aluminum-scrap"
-      },
-      {
-        "amount" : 5,
-        "partID" : "part-silica"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-aluminum-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-alternate-steel-cast-plate",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-iron-ingot"
-      },
-      {
-        "amount" : 1,
-        "partID" : "part-steel-ingot"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 3,
-      "partID" : "part-iron-plate"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-alternate-molded-beam",
-    "inputs" : [
-      {
-        "amount" : 24,
-        "partID" : "part-steel-ingot"
-      },
-      {
-        "amount" : 16,
-        "partID" : "part-concrete"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-foundry",
+    "machineID" : "building-refinery",
     "output" : {
       "amount" : 9,
-      "partID" : "part-steel-beam"
+      "partID" : "part-cable"
     },
     "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 8,
+    "id" : "recipe-alternate-steamed-copper-sheet",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-copper-ingot"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-water"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 3,
+      "partID" : "part-copper-sheet"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
+    }
+  },
+  {
+    "duration" : 2,
+    "id" : "recipe-alternate-polyester-fabric",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-polymer-resin"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-water"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-refinery",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-fabric"
+    },
+    "powerConsumption" : {
+      "max" : 30,
+      "min" : 30
     }
   },
   {
     "duration" : 6,
-    "id" : "recipe-alternate-molded-steel-pipe",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-steel-ingot"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-concrete"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 5,
-      "partID" : "part-steel-pipe"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 20,
-    "id" : "recipe-alternate-fused-quartz-crystal",
-    "inputs" : [
-      {
-        "amount" : 25,
-        "partID" : "part-raw-quartz"
-      },
-      {
-        "amount" : 12,
-        "partID" : "part-coal"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 18,
-      "partID" : "part-steel-pipe"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-copprt-ficsmas-ornament",
+    "id" : "recipe-smokeless-powder",
     "inputs" : [
       {
         "amount" : 2,
-        "partID" : "part-red-ficsmas-ornament"
+        "partID" : "part-black-powder"
       },
       {
-        "amount" : 2,
-        "partID" : "part-copper-ingot"
+        "amount" : 1,
+        "partID" : "part-heavy-oil-residue"
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-foundry",
+    "machineID" : "building-refinery",
     "output" : {
-      "amount" : 1,
-      "partID" : "part-copper-ficsmas-ornament"
+      "amount" : 2,
+      "partID" : "part-smokeless-powder"
     },
     "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-iron-ficsmas-ornament",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-blue-ficsmas-ornament"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-iron-ingot"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-foundry",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-iron-ficsmas-ornament"
-    },
-    "powerConsumption" : {
-      "max" : 16,
-      "min" : 16
+      "max" : 30,
+      "min" : 30
     }
   },
   {
@@ -5126,43 +4950,574 @@
     }
   },
   {
-    "duration" : 300,
-    "id" : "recipe-uranium-waste",
+    "byproducts" : [
+
+    ],
+    "duration" : 120,
+    "id" : "recipe-biochemical-sculptor",
     "inputs" : [
       {
         "amount" : 1,
-        "partID" : "part-uranium-fuel-rod"
+        "partID" : "part-assembly-director-system"
+      },
+      {
+        "amount" : 80,
+        "partID" : "part-ficsite-trigon"
+      },
+      {
+        "amount" : 20,
+        "partID" : "part-water"
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-nuclear-power-plant",
+    "machineID" : "building-blender",
     "output" : {
-      "amount" : 50,
-      "partID" : "part-uranium-waste"
+      "amount" : 4,
+      "partID" : "part-biochemical-sculptor"
     },
     "powerConsumption" : {
-      "max" : 0,
-      "min" : 0
+      "max" : 75,
+      "min" : 75
     }
   },
   {
-    "duration" : 600,
-    "id" : "recipe-plutonium-waste",
+    "byproducts" : [
+      {
+        "amount" : 8,
+        "partID" : "part-water"
+      }
+    ],
+    "duration" : 6,
+    "id" : "recipe-alternate-distilled-silica",
     "inputs" : [
       {
-        "amount" : 1,
-        "partID" : "part-plutonium-fuel-rod"
+        "amount" : 12,
+        "partID" : "part-dissolved-silica"
+      },
+      {
+        "amount" : 5,
+        "partID" : "part-limestone"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-water"
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-nuclear-power-plant",
+    "machineID" : "building-blender",
     "output" : {
-      "amount" : 10,
-      "partID" : "part-plutonium-waste"
+      "amount" : 27,
+      "partID" : "part-silica"
     },
     "powerConsumption" : {
-      "max" : 0,
-      "min" : 0
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 5,
+        "partID" : "part-water"
+      }
+    ],
+    "duration" : 6,
+    "id" : "recipe-alternate-instant-scrap",
+    "inputs" : [
+      {
+        "amount" : 15,
+        "partID" : "part-bauxite"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-coal"
+      },
+      {
+        "amount" : 5,
+        "partID" : "part-sulfuric-acid"
+      },
+      {
+        "amount" : 6,
+        "partID" : "part-water"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 30,
+      "partID" : "part-aluminum-scrap"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 6,
+    "id" : "recipe-nitric-acid",
+    "inputs" : [
+      {
+        "amount" : 12,
+        "partID" : "part-nitrogen-gas"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-water"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-iron-plate"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 3,
+      "partID" : "part-nitric-acid"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 6,
+    "id" : "recipe-alternate-diluted-fuel",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-heavy-oil-residue"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-water"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 8,
+    "id" : "recipe-alternate-turbo-blend-fuel",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-fuel"
+      },
+      {
+        "amount" : 4,
+        "partID" : "part-heavy-oil-residue"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-sulfur"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-petroleum-coke"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 6,
+      "partID" : "part-turbofuel"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 1,
+        "partID" : "part-compacted-coal"
+      }
+    ],
+    "duration" : 6,
+    "id" : "recipe-rocket-fuel",
+    "inputs" : [
+      {
+        "amount" : 6,
+        "partID" : "part-turbofuel"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-nitric-acid"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-rocket-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 1,
+        "partID" : "part-compacted-coal"
+      }
+    ],
+    "duration" : 2.4,
+    "id" : "recipe-alternate-nitro-rocket-fuel",
+    "inputs" : [
+      {
+        "amount" : 4,
+        "partID" : "part-fuel"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-nitrogen-gas"
+      },
+      {
+        "amount" : 4,
+        "partID" : "part-sulfur"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-coal"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 6,
+      "partID" : "part-rocket-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 10,
+    "id" : "recipe-cooling-system",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-heat-sink"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-rubber"
+      },
+      {
+        "amount" : 5,
+        "partID" : "part-water"
+      },
+      {
+        "amount" : 25,
+        "partID" : "part-nitrogen-gas"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-cooling-system"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 24,
+    "id" : "recipe-alternate-cooling-device",
+    "inputs" : [
+      {
+        "amount" : 4,
+        "partID" : "part-heat-sink"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-motor"
+      },
+      {
+        "amount" : 24,
+        "partID" : "part-nitrogen-gas"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 2,
+      "partID" : "part-cooling-system"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 40,
+    "id" : "recipe-fused-modular-frame",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-heavy-modular-frame"
+      },
+      {
+        "amount" : 50,
+        "partID" : "part-aluminum-casing"
+      },
+      {
+        "amount" : 25,
+        "partID" : "part-nitrogen-gas"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-fused-modular-frame"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 20,
+    "id" : "recipe-alternate-heat-fused-frame",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-heavy-modular-frame"
+      },
+      {
+        "amount" : 50,
+        "partID" : "part-aluminum-ingot"
+      },
+      {
+        "amount" : 8,
+        "partID" : "part-nitric-acid"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-fuel"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-fused-modular-frame"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 1.5,
+        "partID" : "part-water"
+      }
+    ],
+    "duration" : 3,
+    "id" : "recipe-battery",
+    "inputs" : [
+      {
+        "amount" : 2.5,
+        "partID" : "part-sulfuric-acid"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-alumina-solution"
+      },
+      {
+        "amount" : 1,
+        "partID" : "part-aluminum-casing"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-battery"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 2,
+        "partID" : "part-sulfuric-acid"
+      }
+    ],
+    "duration" : 12,
+    "id" : "recipe-encased-uranium-cell",
+    "inputs" : [
+      {
+        "amount" : 10,
+        "partID" : "part-uranium"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-concrete"
+      },
+      {
+        "amount" : 8,
+        "partID" : "part-sulfuric-acid"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 5,
+      "partID" : "part-encased-uranium-cell"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 6,
+        "partID" : "part-water"
+      }
+    ],
+    "duration" : 24,
+    "id" : "recipe-non-fissile-uranium",
+    "inputs" : [
+      {
+        "amount" : 15,
+        "partID" : "part-uranium-waste"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-silica"
+      },
+      {
+        "amount" : 6,
+        "partID" : "part-nitric-acid"
+      },
+      {
+        "amount" : 6,
+        "partID" : "part-sulfuric-acid"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 20,
+      "partID" : "part-non-fissile-uranium"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 8,
+        "partID" : "part-water"
+      }
+    ],
+    "duration" : 12,
+    "id" : "recipe-alternate-fertile-uranium",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-uranium"
+      },
+      {
+        "amount" : 5,
+        "partID" : "part-uranium-waste"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-nitric-acid"
+      },
+      {
+        "amount" : 5,
+        "partID" : "part-sulfuric-acid"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 20,
+      "partID" : "part-non-fissile-uranium"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
+    }
+  },
+  {
+    "byproducts" : [
+
+    ],
+    "duration" : 12,
+    "id" : "recipe-turbo-rifle-ammo-blender",
+    "inputs" : [
+      {
+        "amount" : 25,
+        "partID" : "part-rifle-ammo"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-aluminum-casing"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-turbofuel"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-blender",
+    "output" : {
+      "amount" : 50,
+      "partID" : "part-turbo-rifle-ammo"
+    },
+    "powerConsumption" : {
+      "max" : 75,
+      "min" : 75
     }
   },
   {
@@ -5802,6 +6157,46 @@
     }
   },
   {
+    "duration" : 300,
+    "id" : "recipe-uranium-waste",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-uranium-fuel-rod"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-nuclear-power-plant",
+    "output" : {
+      "amount" : 50,
+      "partID" : "part-uranium-waste"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
+    }
+  },
+  {
+    "duration" : 600,
+    "id" : "recipe-plutonium-waste",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-plutonium-fuel-rod"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-nuclear-power-plant",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-plutonium-waste"
+    },
+    "powerConsumption" : {
+      "max" : 0,
+      "min" : 0
+    }
+  },
+  {
     "duration" : 120,
     "id" : "recipe-nuclear-pasta",
     "inputs" : [
@@ -6078,6 +6473,597 @@
     }
   },
   {
+    "duration" : 10,
+    "id" : "recipe-time-crystal",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-diamonds"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-time-crystal"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 3,
+    "id" : "recipe-excited-photonic-matter",
+    "inputs" : [
+
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-excited-photonic-matter"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-dark-matter-residue",
+    "inputs" : [
+      {
+        "amount" : 5,
+        "partID" : "part-reanimated-sam"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-dark-matter-residue"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-alternate-pink-diamonds",
+    "inputs" : [
+      {
+        "amount" : 8,
+        "partID" : "part-coal"
+      },
+      {
+        "amount" : 3,
+        "partID" : "part-quartz-crystal"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-diamonds"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "byproducts" : [
+      {
+        "amount" : 2,
+        "partID" : "part-compacted-coal"
+      }
+    ],
+    "duration" : 3,
+    "id" : "recipe-alternate-dark-ion-fuel",
+    "inputs" : [
+      {
+        "amount" : 12,
+        "partID" : "part-packaged-rocket-fuel"
+      },
+      {
+        "amount" : 4,
+        "partID" : "part-dark-matter-crystal"
+      }
+    ],
+    "isDefault" : false,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 10,
+      "partID" : "part-ionized-fuel"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-ficsite-ingot-iron",
+    "inputs" : [
+      {
+        "amount" : 4,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 24,
+        "partID" : "part-iron-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-ficsite-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 4,
+    "id" : "recipe-ficsite-ingot-caterium",
+    "inputs" : [
+      {
+        "amount" : 3,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 4,
+        "partID" : "part-caterium-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-ficsite-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 2,
+    "id" : "recipe-ficsite-ingot-aluminum",
+    "inputs" : [
+      {
+        "amount" : 2,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 4,
+        "partID" : "part-aluminum-ingot"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 1,
+      "partID" : "part-ficsite-ingot"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-iron-ore-limestone",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 24,
+        "partID" : "part-limestone"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-iron-ore"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-copper-ore-sulfur",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 12,
+        "partID" : "part-sulfur"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-copper-ore"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-copper-ore-quartz",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-raw-quartz"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-copper-ore"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-limestone-sulfur",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 2,
+        "partID" : "part-sulfur"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-limestone"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-coal-limestone",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 36,
+        "partID" : "part-limestone"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-coal"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-coal-iron",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 18,
+        "partID" : "part-iron-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-coal"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-sulfur-iron",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 30,
+        "partID" : "part-iron-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-sulfur"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-sulfur-coal",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 20,
+        "partID" : "part-coal"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-sulfur"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-caterium-ore-copper",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 15,
+        "partID" : "part-copper-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-caterium-ore"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-caterium-ore-quartz",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 12,
+        "partID" : "part-raw-quartz"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-caterium-ore"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-raw-quartz-coal",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 24,
+        "partID" : "part-coal"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-raw-quartz"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-raw-quartz-bauxite",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-bauxite"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-raw-quartz"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-bauxite-copper",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 18,
+        "partID" : "part-copper-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-bauxite"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-bauxite-caterium",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 15,
+        "partID" : "part-caterium-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-bauxite"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-nitrogen-gas-caterium",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 12,
+        "partID" : "part-caterium-ore"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-nitrogen-gas"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-nitrogen-gas-bauxite",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 10,
+        "partID" : "part-bauxite"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-nitrogen-gas"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
+    "duration" : 6,
+    "id" : "recipe-uranium-bauxite",
+    "inputs" : [
+      {
+        "amount" : 1,
+        "partID" : "part-reanimated-sam"
+      },
+      {
+        "amount" : 48,
+        "partID" : "part-bauxite"
+      }
+    ],
+    "isDefault" : true,
+    "machineID" : "building-converter",
+    "output" : {
+      "amount" : 12,
+      "partID" : "part-uranium"
+    },
+    "powerConsumption" : {
+      "max" : 400,
+      "min" : 100
+    }
+  },
+  {
     "byproducts" : [
       {
         "amount" : 25,
@@ -6303,992 +7289,6 @@
     "powerConsumption" : {
       "max" : 2000,
       "min" : 0
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 1,
-        "partID" : "part-heavy-oil-residue"
-      }
-    ],
-    "duration" : 6,
-    "id" : "recipe-plastic",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-crude-oil"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-plastic"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-residual-plastic",
-    "inputs" : [
-      {
-        "amount" : 6,
-        "partID" : "part-polymer-resin"
-      },
-      {
-        "amount" : 2,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-plastic"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-alternate-recycled-plastic",
-    "inputs" : [
-      {
-        "amount" : 6,
-        "partID" : "part-rubber"
-      },
-      {
-        "amount" : 6,
-        "partID" : "part-fuel"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-plastic"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 2,
-        "partID" : "part-heavy-oil-residue"
-      }
-    ],
-    "duration" : 6,
-    "id" : "recipe-alternate-polymer-resin",
-    "inputs" : [
-      {
-        "amount" : 6,
-        "partID" : "part-crude-oil"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 13,
-      "partID" : "part-polymer-resin"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 2,
-        "partID" : "part-heavy-oil-residue"
-      }
-    ],
-    "duration" : 6,
-    "id" : "recipe-rubber",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-crude-oil"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-rubber"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-residual-rubber",
-    "inputs" : [
-      {
-        "amount" : 4,
-        "partID" : "part-polymer-resin"
-      },
-      {
-        "amount" : 4,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-rubber"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-alternate-recycled-rubber",
-    "inputs" : [
-      {
-        "amount" : 6,
-        "partID" : "part-plastic"
-      },
-      {
-        "amount" : 6,
-        "partID" : "part-fuel"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-rubber"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 2,
-        "partID" : "part-polymer-resin"
-      }
-    ],
-    "duration" : 6,
-    "id" : "recipe-alternate-heavy-oil-residue",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-crude-oil"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-heavy-oil-residue"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-petroleum-coke",
-    "inputs" : [
-      {
-        "amount" : 4,
-        "partID" : "part-heavy-oil-residue"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-petroleum-coke"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 5,
-        "partID" : "part-silica"
-      }
-    ],
-    "duration" : 6,
-    "id" : "recipe-alumina-solution",
-    "inputs" : [
-      {
-        "amount" : 12,
-        "partID" : "part-bauxite"
-      },
-      {
-        "amount" : 18,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-alumina-solution"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 3,
-    "id" : "recipe-alternate-sloppy-alumina",
-    "inputs" : [
-      {
-        "amount" : 10,
-        "partID" : "part-bauxite"
-      },
-      {
-        "amount" : 10,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 12,
-      "partID" : "part-alumina-solution"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 2,
-        "partID" : "part-water"
-      }
-    ],
-    "duration" : 1,
-    "id" : "recipe-aluminum-scrap",
-    "inputs" : [
-      {
-        "amount" : 4,
-        "partID" : "part-alumina-solution"
-      },
-      {
-        "amount" : 2,
-        "partID" : "part-coal"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 6,
-      "partID" : "part-aluminum-scrap"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 7,
-        "partID" : "part-water"
-      }
-    ],
-    "duration" : 4,
-    "id" : "recipe-alternate-electrode-aluminum-scrap",
-    "inputs" : [
-      {
-        "amount" : 12,
-        "partID" : "part-alumina-solution"
-      },
-      {
-        "amount" : 4,
-        "partID" : "part-petroleum-coke"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 20,
-      "partID" : "part-aluminum-scrap"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-sulfuric-acid",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-sulfur"
-      },
-      {
-        "amount" : 5,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 10,
-      "partID" : "part-sulfuric-acid"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 3,
-        "partID" : "part-polymer-resin"
-      }
-    ],
-    "duration" : 6,
-    "id" : "recipe-fuel",
-    "inputs" : [
-      {
-        "amount" : 6,
-        "partID" : "part-crude-oil"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-fuel"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-residual-fuel",
-    "inputs" : [
-      {
-        "amount" : 6,
-        "partID" : "part-heavy-oil-residue"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-fuel"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 2,
-    "id" : "recipe-alternate-diluted-packaged-fuel",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-heavy-oil-residue"
-      },
-      {
-        "amount" : 2,
-        "partID" : "part-packaged-water"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-packaged-fuel"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 4,
-    "id" : "recipe-liquid-biofuel",
-    "inputs" : [
-      {
-        "amount" : 6,
-        "partID" : "part-solid-biofuel"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-liquid-biofuel"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 16,
-    "id" : "recipe-turbofuel",
-    "inputs" : [
-      {
-        "amount" : 6,
-        "partID" : "part-fuel"
-      },
-      {
-        "amount" : 4,
-        "partID" : "part-compacted-coal"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 5,
-      "partID" : "part-turbofuel"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 8,
-    "id" : "recipe-alternate-turbo-heavy-fuel",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-heavy-oil-residue"
-      },
-      {
-        "amount" : 4,
-        "partID" : "part-compacted-coal"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-turbofuel"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 2,
-        "partID" : "part-compacted-coal"
-      }
-    ],
-    "duration" : 24,
-    "id" : "recipe-ionized-fuel",
-    "inputs" : [
-      {
-        "amount" : 16,
-        "partID" : "part-rocket-fuel"
-      },
-      {
-        "amount" : 1,
-        "partID" : "part-power-shard"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 16,
-      "partID" : "part-ionized-fuel"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-alternate-pure-iron-ingot",
-    "inputs" : [
-      {
-        "amount" : 7,
-        "partID" : "part-iron-ore"
-      },
-      {
-        "amount" : 4,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 13,
-      "partID" : "part-iron-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-alternate-leached-iron-ingot",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-iron-ore"
-      },
-      {
-        "amount" : 1,
-        "partID" : "part-sulfuric-acid"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 10,
-      "partID" : "part-iron-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 24,
-    "id" : "recipe-alternate-pure-copper-ingot",
-    "inputs" : [
-      {
-        "amount" : 6,
-        "partID" : "part-copper-ore"
-      },
-      {
-        "amount" : 4,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 15,
-      "partID" : "part-copper-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 12,
-    "id" : "recipe-alternate-leached-copper-ingot",
-    "inputs" : [
-      {
-        "amount" : 9,
-        "partID" : "part-copper-ore"
-      },
-      {
-        "amount" : 5,
-        "partID" : "part-sulfuric-acid"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 22,
-      "partID" : "part-copper-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 5,
-    "id" : "recipe-alternate-pure-caterium-ingot",
-    "inputs" : [
-      {
-        "amount" : 2,
-        "partID" : "part-caterium-ore"
-      },
-      {
-        "amount" : 2,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-caterium-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 10,
-    "id" : "recipe-alternate-leached-caterium-ingot",
-    "inputs" : [
-      {
-        "amount" : 9,
-        "partID" : "part-caterium-ore"
-      },
-      {
-        "amount" : 5,
-        "partID" : "part-sulfuric-acid"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 6,
-      "partID" : "part-caterium-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 3,
-    "id" : "recipe-alternate-wet-concrete",
-    "inputs" : [
-      {
-        "amount" : 6,
-        "partID" : "part-limestone"
-      },
-      {
-        "amount" : 5,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 4,
-      "partID" : "part-concrete"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 8,
-    "id" : "recipe-alternate-pure-quartz-crystal",
-    "inputs" : [
-      {
-        "amount" : 9,
-        "partID" : "part-raw-quartz"
-      },
-      {
-        "amount" : 5,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 7,
-      "partID" : "part-quartz-crystal"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "byproducts" : [
-      {
-        "amount" : 12,
-        "partID" : "part-dissolved-silica"
-      }
-    ],
-    "duration" : 12,
-    "id" : "recipe-alternate-quartz-purification",
-    "inputs" : [
-      {
-        "amount" : 24,
-        "partID" : "part-raw-quartz"
-      },
-      {
-        "amount" : 2,
-        "partID" : "part-nitric-acid"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 15,
-      "partID" : "part-quartz-crystal"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 8,
-    "id" : "recipe-alternate-coated-cable",
-    "inputs" : [
-      {
-        "amount" : 5,
-        "partID" : "part-wire"
-      },
-      {
-        "amount" : 2,
-        "partID" : "part-heavy-oil-residue"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 9,
-      "partID" : "part-cable"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 8,
-    "id" : "recipe-alternate-steamed-copper-sheet",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-copper-ingot"
-      },
-      {
-        "amount" : 3,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 3,
-      "partID" : "part-copper-sheet"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 2,
-    "id" : "recipe-alternate-polyester-fabric",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-polymer-resin"
-      },
-      {
-        "amount" : 1,
-        "partID" : "part-water"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-fabric"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "duration" : 6,
-    "id" : "recipe-smokeless-powder",
-    "inputs" : [
-      {
-        "amount" : 2,
-        "partID" : "part-black-powder"
-      },
-      {
-        "amount" : 1,
-        "partID" : "part-heavy-oil-residue"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-refinery",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-smokeless-powder"
-    },
-    "powerConsumption" : {
-      "max" : 30,
-      "min" : 30
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 2,
-    "id" : "recipe-iron-ingot",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-iron-ore"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-smelter",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-iron-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 2,
-    "id" : "recipe-copper-ingot",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-copper-ore"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-smelter",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-copper-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 4,
-    "id" : "recipe-caterium-ingot",
-    "inputs" : [
-      {
-        "amount" : 3,
-        "partID" : "part-caterium-ore"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-smelter",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-caterium-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 2,
-    "id" : "recipe-altername-pure-aluminum-ingot",
-    "inputs" : [
-      {
-        "amount" : 2,
-        "partID" : "part-aluminum-scrap"
-      }
-    ],
-    "isDefault" : false,
-    "machineID" : "building-smelter",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-aluminum-ingot"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 12,
-    "id" : "recipe-red-ficsmas-ornament",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-ficsmas-gift"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-smelter",
-    "output" : {
-      "amount" : 1,
-      "partID" : "part-red-ficsmas-ornament"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
-    }
-  },
-  {
-    "byproducts" : [
-
-    ],
-    "duration" : 12,
-    "id" : "recipe-blue-ficsmas-ornament",
-    "inputs" : [
-      {
-        "amount" : 1,
-        "partID" : "part-ficsmas-gift"
-      }
-    ],
-    "isDefault" : true,
-    "machineID" : "building-smelter",
-    "output" : {
-      "amount" : 2,
-      "partID" : "part-blue-ficsmas-ornament"
-    },
-    "powerConsumption" : {
-      "max" : 4,
-      "min" : 4
     }
   }
 ]

@@ -144,13 +144,13 @@
         }
       }
     },
-    "part-ai-extension-server" : {
+    "part-ai-expansion-server" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "AI Extension Server"
+            "value" : "AI Expansion Server"
           }
         }
       }
@@ -283,6 +283,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bacon Agaric"
+          }
+        }
+      }
+    },
+    "part-ballistic-warp-drive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ballistic Warp Drive"
           }
         }
       }
@@ -1684,13 +1695,13 @@
         }
       }
     },
-    "part-sam" : {
+    "part-sam-fluctuator" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SAM"
+            "value" : "SAM Fluctuator"
           }
         }
       }
@@ -3440,6 +3451,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Assembly Director System"
+          }
+        }
+      }
+    },
+    "recipe-automated-wiring" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automated Wiring"
           }
         }
       }

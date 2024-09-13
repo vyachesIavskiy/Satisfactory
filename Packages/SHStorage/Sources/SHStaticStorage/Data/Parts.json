@@ -464,7 +464,7 @@
   {
     "categoryID" : "category-tools",
     "formID" : "part-form-solid",
-    "id" : "equipment-portable-miner",
+    "id" : "part-portable-miner",
     "isNaturalResource" : false,
     "progressionIndex" : 66
   },

@@ -466,7 +466,7 @@
     "machineID" : "building-foundry",
     "output" : {
       "amount" : 18,
-      "partID" : "part-steel-pipe"
+      "partID" : "part-quartz-crystal"
     },
     "powerConsumption" : {
       "max" : 16,
@@ -2674,7 +2674,7 @@
     "machineID" : "building-assembler",
     "output" : {
       "amount" : 1,
-      "partID" : "equipment-portable-miner"
+      "partID" : "part-portable-miner"
     },
     "powerConsumption" : {
       "max" : 15,
@@ -4042,7 +4042,7 @@
     "machineID" : "building-manufacturer",
     "output" : {
       "amount" : 1,
-      "partID" : "part-thermal-propulsion-rocket"
+      "partID" : "part-ballistic-warp-drive"
     },
     "powerConsumption" : {
       "max" : 55,
@@ -4226,7 +4226,7 @@
     "machineID" : "building-manufacturer",
     "output" : {
       "amount" : 10,
-      "partID" : "part-high-speed-connector"
+      "partID" : "part-singularity-cell"
     },
     "powerConsumption" : {
       "max" : 55,
@@ -4254,7 +4254,7 @@
     "machineID" : "building-manufacturer",
     "output" : {
       "amount" : 1,
-      "partID" : "part-high-speed-connector"
+      "partID" : "part-sam-fluctuator"
     },
     "powerConsumption" : {
       "max" : 55,

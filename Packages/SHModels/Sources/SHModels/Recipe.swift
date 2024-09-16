@@ -54,6 +54,18 @@ public struct Recipe: BaseItem {
         
         return multiplier
     }
+    
+    public func ingredient(partID: String) -> Ingredient? {
+        if output.part.id == partID {
+            output
+        } else if let byproduct = byproducts.first(partID: partID) {
+            byproduct
+        } else if let input = inputs.first(partID: partID) {
+            input
+        } else {
+            nil
+        }
+    }
 }
 
 extension Recipe {

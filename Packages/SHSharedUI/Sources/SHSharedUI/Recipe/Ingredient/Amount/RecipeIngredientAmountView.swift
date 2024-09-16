@@ -32,3 +32,31 @@ struct RecipeIngredientAmountView: View {
             }
     }
 }
+
+#if DEBUG
+import SHModels
+import SHStorage
+
+#Preview("Amount") {
+    _RecipeIngredientAmountPreview(recipeID: "recipe-iron-plate", partID: "part-iron-plate")
+}
+
+private struct _RecipeIngredientAmountPreview: View {
+    private let ingredient: Recipe.Ingredient
+    
+    init(recipeID: String, partID: String) {
+        @Dependency(\.storageService)
+        var storageService
+        
+        let recipe = storageService.recipe(id: recipeID)
+        ingredient = recipe!.ingredient(partID: partID)!
+    }
+    
+    var body: some View {
+        RecipeIngredientAmountView(viewModel: RecipeIngredientAmountViewModel(
+            recipeIngredient: ingredient,
+            amount: 10
+        ))
+    }
+}
+#endif

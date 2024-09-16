@@ -43,7 +43,12 @@ struct FactoryView: View {
             }
         }
         .sheet(isPresented: $viewModel.showingStatisticsSheet) {
-            StatisticsView(viewModel: viewModel.statisticsViewModel())
+            if #available(iOS 18, *) {
+                StatisticsView(viewModel: viewModel.statisticsViewModel())
+                    .presentationSizing(.page)
+            } else {
+                StatisticsView(viewModel: viewModel.statisticsViewModel())
+            }
         }
         .sheet(isPresented: $viewModel.showingEditFactorySheet) {
             if viewModel.dismissAfterFactoryDeletion {

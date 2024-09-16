@@ -149,7 +149,13 @@ extension SingleItemCalculator.Node {
         var consumers = [Consumer]()
         
         var availableAmount: Double {
-            amount - consumers.reduce(0.0) { $0 + $1.amount }
+            let result = amount - consumers.reduce(0.0) { $0 + $1.amount }
+            // If we have an extremely small number, but not zero
+            return if result > 0.0001 {
+                result
+            } else {
+                0.0
+            }
         }
         
         struct Consumer {
@@ -167,7 +173,13 @@ extension SingleItemCalculator.Node {
         var byproductProducers = [ByproductProducer]()
         
         var availableAmount: Double {
-            amount - byproductProducers.reduce(0.0) { $0 + $1.amount }
+            let result = amount - byproductProducers.reduce(0.0) { $0 + $1.amount }
+            // If we have an extremely small number, but not zero
+            return if result > 0.0001 {
+                result
+            } else {
+                0.0
+            }
         }
         
         struct ByproductProducer {

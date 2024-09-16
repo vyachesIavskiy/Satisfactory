@@ -173,16 +173,31 @@ struct SingleItemCalculatorView: View {
     private func sheetContentView(state: SingleItemCalculatorViewModel.ModalNavigationState) -> some View {
         switch state {
         case let .selectInitialRecipeForItem(viewModel):
-            selectInitialRecipeView(viewModel: viewModel)
+            if #available(iOS 18, *) {
+                selectInitialRecipeView(viewModel: viewModel)
+                    .presentationSizing(.form)
+            } else {
+                selectInitialRecipeView(viewModel: viewModel)
+            }
             
         case let .adjustItem(viewModel):
-            SingleItemCalculatorItemAdjustmentView(viewModel: viewModel)
+            if #available(iOS 18, *) {
+                SingleItemCalculatorItemAdjustmentView(viewModel: viewModel)
+                    .presentationSizing(.form)
+            } else {
+                SingleItemCalculatorItemAdjustmentView(viewModel: viewModel)
+            }
             
         case let .editProduction(viewModel):
             EditProductionView(viewModel: viewModel)
             
         case let .statistics(viewModel):
-            StatisticsView(viewModel: viewModel)
+            if #available(iOS 18, *) {
+                StatisticsView(viewModel: viewModel)
+                    .presentationSizing(.page)
+            } else {
+                StatisticsView(viewModel: viewModel)
+            }
         }
     }
 }
@@ -204,6 +219,14 @@ private struct AmountView: View {
     
     @Environment(\.horizontalSizeClass)
     private var horizontalSizeClass
+    
+    private var textFieldMinWidth: CGFloat? {
+        if horizontalSizeClass == .regular {
+            150
+        } else {
+            nil
+        }
+    }
     
     private var textFieldBackgroundStyle: AnyShapeStyle {
         if isEnabled {
@@ -272,7 +295,7 @@ private struct AmountView: View {
                 }
                 .padding(.horizontal, 8)
                 .padding(.vertical, 4)
-                .frame(maxWidth: 150)
+                .frame(minWidth: textFieldMinWidth, maxWidth: 150)
                 .background(textFieldBackgroundStyle, in: RoundedRectangle(cornerRadius: 4, style: .continuous))
                 .foregroundStyle(textFieldForegroundStyle)
                 .overlay(

@@ -127,11 +127,11 @@ struct EditProductionView: View {
                 viewModel.showingDeleteConfirmation = true
             } label: {
                 Text("general-delete")
-                    .font(.title3)
+                    .font(.title2)
                     .padding(.horizontal)
             }
             .buttonStyle(.shBordered)
-            .padding(.vertical, 4)
+            .padding(.vertical, 16)
             .tint(.sh(.red))
             .confirmationDialog(
                 "edit-production-delete-prompt",

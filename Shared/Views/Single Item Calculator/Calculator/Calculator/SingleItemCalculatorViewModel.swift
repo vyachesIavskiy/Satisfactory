@@ -113,7 +113,7 @@ final class SingleItemCalculatorViewModel {
     
     func addRecipe(_ recipe: Recipe, to part: Part) {
         calculator.addRecipe(recipe, to: part)
-        addInputRecipesIfNeeded()
+        addAutoSelectedRecipes(from: recipe)
         update()
         
         canBeDismissedWithoutSaving = false
@@ -153,6 +153,11 @@ final class SingleItemCalculatorViewModel {
         }
         
         modalNavigationState = .editProduction(viewModel: viewModel)
+    }
+    
+    func saveProduction() {
+        calculator.save()
+        canBeDismissedWithoutSaving = true
     }
     
     @MainActor
@@ -196,7 +201,7 @@ private extension SingleItemCalculatorViewModel {
         calculator.amount = recipe.amountPerMinute(for: recipe.output)
         amount = calculator.amount
         calculator.addRecipe(recipe, to: part)
-        addInputRecipesIfNeeded()
+        addAutoSelectedRecipes(from: recipe)
         update()
         
         // Update this value since it was reset
@@ -204,47 +209,94 @@ private extension SingleItemCalculatorViewModel {
     }
     
     // MARK: Auto-selection recipes
-    func addInputRecipesIfNeeded() {
+    func addAutoSelectedRecipes(from recipe: Recipe) {
         let addSingleRecipe = settings.autoSelectSingleRecipe
         let addPinnedRecipe = settings.autoSelectSinglePinnedRecipe
         
-        guard addSingleRecipe || addSingleRecipe else { return }
+        guard addSingleRecipe || addPinnedRecipe else { return }
         
-        for inputItem in calculator.production.inputParts {
-            for recipe in inputItem.recipes {
-                let inputItems = recipe.recipe.inputs.map(\.part)
-                
-                for inputPart in inputItems {
+        logger.info("Auto-select recipes: recipe=\(recipe.localizedName), auto-select single=\(addSingleRecipe), auto-select pinned=\(addPinnedRecipe)")
+        
+        var recipesToCheck = [recipe]
+        var recipesToAdd = [(Part, Recipe)]()
+        while !recipesToCheck.isEmpty {
+            for recipe in recipesToCheck {
+                for input in recipe.inputs {
                     guard
-                        !calculator.production.inputParts.contains(part: inputPart),
-                        !explicitlyDeletedPartIDs.contains(inputPart.id)
+                        !calculator.production.inputParts.contains(part: input.part),
+                        !explicitlyDeletedPartIDs.contains(input.part.id),
+                        !input.part.isNaturalResource
                     else { continue }
                     
-                    if addSingleRecipe, !inputPart.isNaturalResource {
-                        let recipes = storageService.recipes(for: inputPart, as: [.output, .byproduct])
-                        if
-                            recipes.count == 1,
-                            let recipe = recipes.first,
-                            !recipe.id.contains("packaged")
-                        {
-                            calculator.addRecipe(recipe, to: inputPart)
-                        }
-                    }
+                    let inputRecipes = storageService.recipes(for: input.part, as: [.output, .byproduct])
+                    let pinnedRecipes = inputRecipes.filter(storageService.isPinned(_:))
                     
-                    if addPinnedRecipe, !inputPart.isNaturalResource {
-                        let pinnedRecipeIDs = storageService.pinnedRecipeIDs(for: inputPart, as: [.output, .byproduct])
-                        if
-                            pinnedRecipeIDs.count == 1,
-                            let recipe = pinnedRecipeIDs.first.flatMap(storageService.recipe(id:)),
-                            !recipe.id.contains("packaged")
-                        {
-                            calculator.addRecipe(recipe, to: inputPart)
+                    if addSingleRecipe, inputRecipes.count == 1, !inputRecipes[0].id.contains("packaged") {
+                        logger.info("Auto-select single recipe: part=\(input.part.localizedName), recipe=\(inputRecipes[0].localizedName)")
+                        recipesToAdd.append((input.part, inputRecipes[0]))
+                        if !recipesToCheck.contains(where: { $0.id == inputRecipes[0].id }) {
+                            recipesToCheck.append(inputRecipes[0])
+                        }
+                    } else if addPinnedRecipe, pinnedRecipes.count == 1, !pinnedRecipes[0].id.contains("packaged") {
+                        logger.info("Auto-select single pinned recipe: part=\(input.part.localizedName), recipe=\(pinnedRecipes[0].localizedName)")
+                        recipesToAdd.append((input.part, pinnedRecipes[0]))
+                        if !recipesToCheck.contains(where: { $0.id == pinnedRecipes[0].id }) {
+                            recipesToCheck.append(pinnedRecipes[0])
                         }
                     }
                 }
+                recipesToCheck.removeFirst()
             }
         }
+        
+        for (part, recipe) in recipesToAdd {
+            calculator.addRecipe(recipe, to: part)
+        }
+        
+        calculator.update()
     }
+    
+//    func addInputRecipesIfNeeded() {
+//        let addSingleRecipe = settings.autoSelectSingleRecipe
+//        let addPinnedRecipe = settings.autoSelectSinglePinnedRecipe
+//        
+//        guard addSingleRecipe || addPinnedRecipe else { return }
+//        
+//        for inputPart in calculator.production.inputParts {
+//            for recipe in inputPart.recipes {
+//                let inputIngredientParts = recipe.recipe.inputs.map(\.part)
+//                
+//                for inputPart in inputIngredientParts {
+//                    guard
+//                        !calculator.production.inputParts.contains(part: inputPart),
+//                        !explicitlyDeletedPartIDs.contains(inputPart.id)
+//                    else { continue }
+//                    
+//                    if addSingleRecipe, !inputPart.isNaturalResource {
+//                        let recipes = storageService.recipes(for: inputPart, as: [.output, .byproduct])
+//                        if
+//                            recipes.count == 1,
+//                            let recipe = recipes.first,
+//                            !recipe.id.contains("packaged")
+//                        {
+//                            calculator.addRecipe(recipe, to: inputPart)
+//                        }
+//                    }
+//                    
+//                    if addPinnedRecipe, !inputPart.isNaturalResource {
+//                        let pinnedRecipeIDs = storageService.pinnedRecipeIDs(for: inputPart, as: [.output, .byproduct])
+//                        if
+//                            pinnedRecipeIDs.count == 1,
+//                            let recipe = pinnedRecipeIDs.first.flatMap(storageService.recipe(id:)),
+//                            !recipe.id.contains("packaged")
+//                        {
+//                            calculator.addRecipe(recipe, to: inputPart)
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     // MARK: Can perform actions
     @MainActor

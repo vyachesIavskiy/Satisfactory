@@ -24,9 +24,6 @@
     "Calculation" : {
 
     },
-    "Cancel" : {
-
-    },
     "change-log-added-section-name" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -897,9 +894,6 @@
         }
       }
     },
-    "Factories" : {
-
-    },
     "factories-%lld-amount-of-produictions" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1230,12 +1224,6 @@
         }
       }
     },
-    "Legacy File system" : {
-
-    },
-    "Load storage" : {
-
-    },
     "new-production-from-resources-navigation-title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1390,9 +1378,6 @@
         }
       }
     },
-    "Parts" : {
-
-    },
     "Power" : {
 
     },
@@ -1458,9 +1443,6 @@
           }
         }
       }
-    },
-    "Recipes" : {
-
     },
     "root-failed-to-load-application" : {
       "extractionState" : "manual",
@@ -1814,6 +1796,16 @@
         }
       }
     },
+    "single-item-production-info" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info"
+          }
+        }
+      }
+    },
     "single-item-production-ingredient-consume-byproduct" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2145,9 +2137,6 @@
         }
       }
     },
-    "Storage" : {
-
-    },
     "tab-factories" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2180,9 +2169,6 @@
           }
         }
       }
-    },
-    "V2 File system" : {
-
     },
     "whats-new-bullet-new-design" : {
       "extractionState" : "manual",

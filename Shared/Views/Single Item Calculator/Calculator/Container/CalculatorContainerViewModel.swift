@@ -21,7 +21,6 @@ final class SingleItemCalculatorContainerViewModel {
         var settingsService
         
         let recipes = storageService.recipes(for: part, as: [.output, .byproduct])
-        let pinnedRecipes = storageService.pinnedRecipeIDs(for: part, as: [.output, .byproduct])
         
         if
             settingsService.autoSelectSingleRecipe,
@@ -31,14 +30,7 @@ final class SingleItemCalculatorContainerViewModel {
         {
             SingleItemCalculatorViewModel.AutoSelectSingleRecipeTip.shouldDisplay = true
             state = .calculation(viewModel: SingleItemCalculatorViewModel(part: part, recipe: recipe))
-        } else if
-            settingsService.autoSelectSinglePinnedRecipe,
-            pinnedRecipes.count == 1,
-            let recipe = pinnedRecipes.first.flatMap(storageService.recipe(id:))
-        {
-            SingleItemCalculatorViewModel.AutoSelectSinglePinnedRecipeTip.shouldDisplay = true
-            state = .calculation(viewModel: SingleItemCalculatorViewModel(part: part, recipe: recipe))
-        } else {
+        }  else {
             let initialRecipeSelectionViewModel = SingleItemCalculatorInitialRecipeSelectionViewModel(part: part)
             state = .initialRecipeSelection(viewModel: initialRecipeSelectionViewModel)
             initialRecipeSelectionViewModel.onRecipeSelected = { [weak self] recipe in

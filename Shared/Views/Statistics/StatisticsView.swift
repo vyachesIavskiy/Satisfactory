@@ -20,21 +20,21 @@ struct StatisticsView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 24, pinnedViews: .sectionHeaders) {
+                    machinesSection
+                        .padding(.horizontal, 20)
+                    
                     itemsSection
                         .padding(.horizontal, 20)
                     
                     naturalResoucesSection
                         .padding(.horizontal, 20)
                     
-                    machinesSection
-                        .padding(.horizontal, 20)
-                    
                     Spacer(minLength: 30)
                 }
             }
+            .animation(.default, value: viewModel.machinesSection)
             .animation(.default, value: viewModel.itemsSection)
             .animation(.default, value: viewModel.naturalResourcesSection)
-            .animation(.default, value: viewModel.machinesSection)
             .navigationTitle(viewModel.title)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
@@ -92,11 +92,12 @@ struct StatisticsView: View {
                 }
             } header: {
                 SectionHeader(expanded: $viewModel.machinesSection.expanded) {
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .leading, spacing: 6) {
                         Text("statistics-production-buildings-section-name")
                         
                         HStack(spacing: 4) {
                             Image(systemName: "bolt.fill")
+                                .foregroundStyle(.sh(viewModel.machinesSection.expanded ? .cyan : .gray))
                             
                             Text(viewModel.machinesSection.powerConsumptionString)
                         }

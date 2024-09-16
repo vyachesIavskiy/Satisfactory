@@ -14,130 +14,75 @@ extension StatisticsView {
         }
         
         var body: some View {
-            VStack(spacing: 4) {
+            VStack(spacing: 8) {
                 HStack(spacing: 12) {
                     ListRowIconItem(productionBuilding.building)
                     
-                    if productionBuilding.expandable {
-                        Button {
-                            productionBuilding.recipesExpanded.toggle()
-                        } label: {
-                            productionBuildingRowContent
-                                .contentShape(.interaction, Rectangle())
-                        }
-                        .buttonStyle(.plain)
-                    } else {
-                        productionBuildingRowContent
-                    }
+                    productionBuildingRowContent
                 }
                 
-                if productionBuilding.recipesExpanded {
-                    VStack(alignment: .leading, spacing: 4) {
-                        ForEach(productionBuilding.recipes) { recipe in
-                            HStack(spacing: 12) {
-                                Image(recipe.recipe.output.part.id)
-                                    .resizable()
-                                    .frame(width: 20, height: 20)
-                                    .padding(4)
-                                    .background {
-                                        AngledRectangle(cornerRadius: 4).inset(by: 1 / displayScale)
-                                            .fill(.sh(.gray20))
-                                            .stroke(.sh(.midnight40), lineWidth: 2 / displayScale)
-                                    }
-                                
-                                HStack(alignment: .firstTextBaseline) {
-                                    Text(recipe.recipe.localizedName)
-                                    
-                                    Spacer()
-                                    
-                                    Text(recipe.valueString)
-                                        .foregroundStyle(.sh(.midnight))
+                VStack(alignment: .leading, spacing: 6) {
+                    ForEach(productionBuilding.recipes) { recipe in
+                        HStack(spacing: 12) {
+                            Image(recipe.recipe.output.part.id)
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .padding(5)
+                                .background {
+                                    AngledRectangle(cornerRadius: 4).inset(by: 1 / displayScale)
+                                        .fill(.sh(.gray20))
+                                        .stroke(.sh(.midnight40), lineWidth: 2 / displayScale)
                                 }
+                            
+                            HStack(alignment: .firstTextBaseline) {
+                                Text(recipe.recipe.localizedName)
+                                
+                                Spacer()
+                                
+                                Text(recipe.valueString)
+                                    .foregroundStyle(.sh(.midnight))
                             }
                         }
                     }
-                    .font(.caption)
-                    .padding(.leading, 24)
-                    .transition(
-                        .asymmetric(
-                            insertion: .opacity.animation(.default.speed(0.5)),
-                            removal: .opacity.animation(.default.speed(3))
-                        )
-                    )
                 }
+                .font(.callout)
+                .padding(.leading, 12)
+                .transition(
+                    .asymmetric(
+                        insertion: .opacity.animation(.default.speed(0.5)),
+                        removal: .opacity.animation(.default.speed(3))
+                    )
+                )
             }
-            .padding(.bottom, 4)
             .addListGradientSeparator(leadingPadding: 64)
             .fixedSize(horizontal: false, vertical: true)
         }
         
         @MainActor @ViewBuilder
         private var productionBuildingRowContent: some View {
-            let titleView = Text(productionBuilding.building.localizedName)
-                .fontWeight(.semibold)
-            
-            let powerConsumptionView = HStack(spacing: 4) {
-                Image(systemName: "bolt.fill")
-                    .foregroundStyle(.sh(.cyan))
+            HStack {
+                Text(productionBuilding.building.localizedName)
+                    .fontWeight(.medium)
                 
-                Text(productionBuilding.powerValueString)
-            }
-            .font(.footnote)
-            
-            let subtitleView = Text(productionBuilding.subtitle)
-                .font(.caption)
-                .opacity(productionBuilding.recipesExpanded ? 0 : 1)
-                .animation(.default.speed(2), value: productionBuilding.recipesExpanded)
-            
-            let valueView = Text(productionBuilding.valueString)
-                .font(.callout)
-                .foregroundStyle(.sh(.midnight))
-            
-            if productionBuilding.expandable {
-                VStack(spacing: 4) {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 4) {
-                            titleView
-                            
-                            if productionBuilding.shouldDisplayPowerConsumption {
-                                powerConsumptionView
-                            }
-                        }
-                        
-                        Spacer()
-                        
-                        valueView
-                    }
+                Spacer()
+                
+                VStack(alignment: .trailing, spacing: 6) {
+                    Text(productionBuilding.intAmount, format: .number)
+                        .font(.callout)
+                        .foregroundStyle(.sh(.midnight))
                     
-                    HStack {
-                        subtitleView
+                    HStack(spacing: 4) {
+                        Image(systemName: "bolt.fill")
+                            .foregroundStyle(.sh(.cyan))
                         
-                        Spacer()
-                        
-                        ExpandArrow(productionBuilding.recipesExpanded)
-                            .stroke(lineWidth: productionBuilding.recipesExpanded ? 0.5 : 1)
-                            .foregroundStyle(.sh(productionBuilding.recipesExpanded ? .midnight30 : .midnight))
-                            .fixedSize(horizontal: false, vertical: true)
-                            .frame(width: 16)
+                        Text(productionBuilding.subtitle)
                     }
-                }
-            } else {
-                HStack {
-                    VStack(alignment: .leading, spacing: 4) {
-                        titleView
-                        
-                        if productionBuilding.shouldDisplayPowerConsumption {
-                            powerConsumptionView
-                        }
-                        
-                        subtitleView
-                    }
-                    
-                    Spacer()
-                    
-                    valueView
+                    .font(.footnote)
+                    .foregroundStyle(.sh(.midnight))
+                    .opacity(0.7)
                 }
             }
+            .addListGradientSeparator(colors: [.sh(.midnight30), .sh(.midnight10)], lineWidth: 1)
         }
     }
 }

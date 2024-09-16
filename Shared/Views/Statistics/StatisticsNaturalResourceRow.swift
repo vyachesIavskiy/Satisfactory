@@ -16,7 +16,7 @@ extension StatisticsView {
                 ListRowIconItem(naturalResource.part)
             } label: {
                 Text(naturalResource.part.localizedName)
-                    .fontWeight(.semibold)
+                    .fontWeight(.medium)
             } accessory: {
                 Text(naturalResource.amount, format: .shNumber())
                     .font(.callout)
@@ -44,7 +44,7 @@ private struct _NaturalResourceRowPreview: View {
     }
 }
 
-#Preview {
+#Preview("Natural Resource") {
     _NaturalResourceRowPreview(partID: "part-iron-ore", amount: 120)
 }
 #endif

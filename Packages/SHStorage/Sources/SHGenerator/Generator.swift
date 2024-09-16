@@ -20,7 +20,6 @@ final class Generator {
                 .split(separator: "/")
                 .prefix { $0 != "SHGenerator" }
                 .joined(separator: "/")
-                .replacingOccurrences(of: "%20", with: "\\ ")
 
             guard var url = URL(string: "file:///\(path)") else {
                 throw Error.cannotResolveURL(fromPath: path)

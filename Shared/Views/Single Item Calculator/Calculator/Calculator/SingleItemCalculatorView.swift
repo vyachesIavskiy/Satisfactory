@@ -113,8 +113,12 @@ struct SingleItemCalculatorView: View {
                     titleVisibility: .visible
                 ) {
                     Button("single-item-production-calculation-save-and-exit") {
-                        viewModel.editProduction {
-                            dismiss()
+                        if viewModel.hasSavedProduction {
+                            viewModel.saveProduction()
+                        } else {
+                            viewModel.editProduction {
+                                dismiss()
+                            }
                         }
                     }
                     
@@ -127,19 +131,31 @@ struct SingleItemCalculatorView: View {
             }
         }
         
-        ToolbarItemGroup(placement: .primaryAction) {
+        ToolbarItem(placement: .primaryAction) {
+            Button("general-save") {
+                if viewModel.hasSavedProduction {
+                    viewModel.saveProduction()
+                } else {
+                    viewModel.editProduction()
+                }
+            }
+            .disabled(viewModel.selectingByproduct)
+        }
+        
+        ToolbarItem(placement: .secondaryAction) {
             Button("single-item-production-calculation-statistics", systemImage: "list.number") {
                 viewModel.showStatistics()
             }
             .disabled(viewModel.selectingByproduct)
-            
-            Button(viewModel.saveProductionTitle) {
-                viewModel.editProduction()
+        }
+        
+        if viewModel.hasSavedProduction {
+            ToolbarItem(placement: .secondaryAction) {
+                Button("single-item-production-info", systemImage: "info.square") {
+                    viewModel.editProduction()
+                }
+                .disabled(viewModel.selectingByproduct)
             }
-            .bold()
-            .disabled(viewModel.selectingByproduct)
-        } label: {
-            Label("general-manage", systemImage: "general-more")
         }
         
         if horizontalSizeClass == .regular {

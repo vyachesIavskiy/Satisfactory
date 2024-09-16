@@ -1,23 +1,7 @@
 [
   {
-    "categoryID" : "category-generators",
-    "id" : "building-nuclear-power-plant"
-  },
-  {
     "categoryID" : "category-fluid-extractors",
-    "id" : "building-water-extractor"
-  },
-  {
-    "categoryID" : "category-fluid-extractors",
-    "id" : "building-oil-extractor"
-  },
-  {
-    "categoryID" : "category-fluid-extractors",
-    "id" : "building-resource-well-pressurizer"
-  },
-  {
-    "categoryID" : "category-fluid-extractors",
-    "id" : "building-resource-well-extractor"
+    "id" : "building-space-elevator"
   },
   {
     "categoryID" : "category-manufacturers",
@@ -56,6 +40,14 @@
     "id" : "building-quantum-encoder"
   },
   {
+    "categoryID" : "category-smelters",
+    "id" : "building-smelter"
+  },
+  {
+    "categoryID" : "category-smelters",
+    "id" : "building-foundry"
+  },
+  {
     "categoryID" : "category-miners",
     "id" : "building-miner-mk-1"
   },
@@ -68,11 +60,23 @@
     "id" : "building-miner-mk-3"
   },
   {
-    "categoryID" : "category-smelters",
-    "id" : "building-smelter"
+    "categoryID" : "category-fluid-extractors",
+    "id" : "building-water-extractor"
   },
   {
-    "categoryID" : "category-smelters",
-    "id" : "building-foundry"
+    "categoryID" : "category-fluid-extractors",
+    "id" : "building-oil-extractor"
+  },
+  {
+    "categoryID" : "category-fluid-extractors",
+    "id" : "building-resource-well-pressurizer"
+  },
+  {
+    "categoryID" : "category-fluid-extractors",
+    "id" : "building-resource-well-extractor"
+  },
+  {
+    "categoryID" : "category-generators",
+    "id" : "building-nuclear-power-plant"
   }
 ]

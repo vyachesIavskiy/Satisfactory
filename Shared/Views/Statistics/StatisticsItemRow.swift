@@ -20,98 +20,64 @@ extension StatisticsView {
         }
         
         var body: some View {
-            VStack(spacing: 4) {
-                HStack(spacing: 12) {
-                    ListRowIconItem(part.statisticPart.part)
-                    
-                    if part.expandable {
-                        Button {
-                            _part.wrappedValue.recipesExpanded.toggle()
-                        } label: {
-                            itemRowContent
-                                .contentShape(.interaction, Rectangle())
-                        }
-                        .buttonStyle(.plain)
-                    } else {
-                        itemRowContent
-                    }
-                }
+            HStack(spacing: 12) {
+                ListRowIconItem(part.statisticPart.part)
+                    .frame(maxHeight: .infinity, alignment: .top)
                 
-                if part.recipesExpanded {
-                    VStack(alignment: .leading, spacing: 4) {
+                itemRowContent
+            }
+            .fixedSize(horizontal: false, vertical: true)
+            .addListGradientSeparator(leadingPadding: 64)
+        }
+        
+        @MainActor @ViewBuilder
+        private var itemRowContent: some View {
+            let titleView = Text(name)
+                .fontWeight(.medium)
+            
+            let valueView = Text(valueString)
+                .font(.callout)
+                .foregroundStyle(.sh(.midnight))
+            
+            if part.statisticPart.recipes.count > 1 {
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack {
+                        titleView
+                        
+                        Spacer()
+                        
+                        valueView
+                    }
+                    .padding(.vertical, 6)
+                    .addListGradientSeparator(colors: [.sh(.midnight30), .sh(.midnight10)], lineWidth: 1)
+                    
+                    VStack(alignment: .leading, spacing: 6) {
                         ForEach(part.statisticPart.recipes) { recipe in
                             HStack(alignment: .firstTextBaseline) {
                                 Text(recipe.recipe.localizedName)
                                 
                                 Spacer()
                                 
-                                Text(AttributedString(recipe.amount.formatted(.shNumber())))
+                                Text(recipe.amount, format: .shNumber())
                                     .foregroundStyle(.sh(.midnight))
                             }
                         }
                     }
-                    .font(.caption)
-                    .padding(.leading, 64)
+                    .font(.footnote)
                     .padding(.bottom, 4)
-                    .transition(
-                        .asymmetric(
-                            insertion: .opacity.animation(.default.speed(0.5)),
-                            removal: .opacity.animation(.default.speed(3))
-                        )
-                    )
-                }
-            }
-            .addListGradientSeparator(leadingPadding: 64)
-            .fixedSize(horizontal: false, vertical: true)
-        }
-        
-        @MainActor @ViewBuilder
-        private var itemRowContent: some View {
-            if part.expandable {
-                VStack(spacing: 4) {
-                    HStack {
-                        Text(name)
-                            .fontWeight(.semibold)
-                        
-                        Spacer()
-                        
-                        Text(valueString)
-                            .font(.callout)
-                            .foregroundStyle(.sh(.midnight))
-                    }
-                    
-                    HStack {
-                        Text(part.subtitle)
-                            .font(.caption)
-                            .opacity(part.recipesExpanded ? 0 : 1)
-                            .animation(.default.speed(2), value: part.recipesExpanded)
-                        
-                        Spacer()
-                        
-                        ExpandArrow(part.recipesExpanded)
-                            .stroke(lineWidth: part.recipesExpanded ? 0.5 : 1)
-                            .foregroundStyle(.sh(part.recipesExpanded ? .midnight30 : .midnight))
-                            .fixedSize(horizontal: false, vertical: true)
-                            .frame(width: 16)
-                    }
                 }
             } else {
                 HStack {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(name)
-                            .fontWeight(.semibold)
+                    VStack(alignment: .leading, spacing: 6) {
+                        titleView
                         
-                        Text(part.subtitle)
-                            .font(.caption)
-                            .opacity(part.recipesExpanded ? 0 : 1)
-                            .animation(.default.speed(2), value: part.recipesExpanded)
+                        Text(part.statisticPart.recipes[0].recipe.localizedName)
+                            .font(.footnote)
                     }
                     
                     Spacer()
                     
-                    Text(valueString)
-                        .font(.callout)
-                        .foregroundStyle(.sh(.midnight))
+                    valueView
                 }
             }
         }

@@ -8,9 +8,9 @@ final class StatisticsViewModel {
     let productions: [Production]
     let title: String
     
+    var machinesSection = MachineSection()
     var itemsSection = ItemsSection()
     var naturalResourcesSection = NaturalResourcesSection()
-    var machinesSection = MachineSection()
     
     var id: String {
         productions[0].id.uuidString
@@ -34,32 +34,6 @@ final class StatisticsViewModel {
     }
     
     private func buildSections() {
-        itemsSection.items = productions
-            .flatMap(\.statistics.parts)
-            .reduce(into: [Part]()) { partialResult, statisticPart in
-                if let index = partialResult.firstIndex(where: { $0.id == statisticPart.id }) {
-                    partialResult[index].statisticPart.recipes.merge(with: statisticPart.recipes) { lhs, rhs in
-                        lhs.id == rhs.id
-                    } merging: { lhs, rhs in
-                        lhs.amount += rhs.amount
-                    }
-                } else {
-                    partialResult.append(Part(statisticPart: statisticPart))
-                }
-            }
-            .sorted()
-        
-        naturalResourcesSection.naturalResources = productions
-            .flatMap(\.statistics.naturalResources)
-            .reduce(into: [StatisticNaturalResource]()) { partialResult, statisticNaturalResource in
-                if let index = partialResult.firstIndex(where: { $0.id == statisticNaturalResource.id }) {
-                    partialResult[index].amount += statisticNaturalResource.amount
-                } else {
-                    partialResult.append(statisticNaturalResource)
-                }
-            }
-            .sorted()
-        
         machinesSection.machines = productions.flatMap(\.statistics.parts).reduce(into: []) { partialResult, statisticPart in
             let recipeMachines = statisticPart.recipes.reduce(into: [Machine]()) { partialResult, statisticRecipe in
                 guard let recipeMachine = statisticRecipe.recipe.machine else { return }
@@ -90,6 +64,32 @@ final class StatisticsViewModel {
                 }
             }
         }
+        
+        itemsSection.items = productions
+            .flatMap(\.statistics.parts)
+            .reduce(into: [Part]()) { partialResult, statisticPart in
+                if let index = partialResult.firstIndex(where: { $0.id == statisticPart.id }) {
+                    partialResult[index].statisticPart.recipes.merge(with: statisticPart.recipes) { lhs, rhs in
+                        lhs.id == rhs.id
+                    } merging: { lhs, rhs in
+                        lhs.amount += rhs.amount
+                    }
+                } else {
+                    partialResult.append(Part(statisticPart: statisticPart))
+                }
+            }
+            .sorted()
+        
+        naturalResourcesSection.naturalResources = productions
+            .flatMap(\.statistics.naturalResources)
+            .reduce(into: [StatisticNaturalResource]()) { partialResult, statisticNaturalResource in
+                if let index = partialResult.firstIndex(where: { $0.id == statisticNaturalResource.id }) {
+                    partialResult[index].amount += statisticNaturalResource.amount
+                } else {
+                    partialResult.append(statisticNaturalResource)
+                }
+            }
+            .sorted()
     }
 }
 
@@ -132,25 +132,11 @@ extension StatisticsViewModel {
 extension StatisticsViewModel {
     struct Part: Identifiable, Hashable {
         var statisticPart: StatisticPart
-        var recipesExpanded: Bool
         
         var id: String { statisticPart.id }
         
-        var expandable: Bool {
-            statisticPart.recipes.count > 1
-        }
-        
-        var subtitle: LocalizedStringKey {
-            if expandable {
-                "statistics-\(statisticPart.recipes.count)-of-recipes"
-            } else {
-                "\(statisticPart.recipes[0].recipe.localizedName)"
-            }
-        }
-        
-        init(statisticPart: StatisticPart, recipesExpanded: Bool = false) {
+        init(statisticPart: StatisticPart) {
             self.statisticPart = statisticPart
-            self.recipesExpanded = recipesExpanded
         }
     }
 }
@@ -175,7 +161,6 @@ extension StatisticsViewModel {
     struct Machine: Identifiable, Hashable {
         let building: Building
         var recipes: [MachineRecipe]
-        var recipesExpanded: Bool
         
         var id: String { building.id }
         
@@ -190,54 +175,15 @@ extension StatisticsViewModel {
             }
         }
         
-        private var intAmount: Int {
+        var intAmount: Int {
             recipes.reduce(0) { $0 + $1.intAmount }
         }
         
-        var expandable: Bool {
-            recipes.count > 1
-        }
-        
-        var subtitle: LocalizedStringKey {
-            if expandable {
-                "statistics-\(recipes.count)-of-recipes"
-            } else {
-                "\(recipes[0].recipe.localizedName)"
-            }
-        }
-        
-        var valueString: AttributedString {
-            if recipes.count > 1 {
-                return AttributedString(intAmount.formatted(.number))
-            } else {
-                let intAmount = Int(amount.rounded(.down))
-                let additionalPercent = amount - Double(intAmount)
-                
-                if intAmount > 0, additionalPercent > 0 {
-                    var result = AttributedString((intAmount + 1).formatted(.number))
-                    var container = AttributeContainer()
-                    container.font = .caption
-                    result.append(AttributedString(" (1x \(additionalPercent.formatted(.shPercent)))", attributes: container))
-                    return result
-                } else if intAmount > 0 {
-                    return AttributedString(intAmount.formatted(.number))
-                } else if additionalPercent > 0 {
-                    var result = AttributedString("1")
-                    var container = AttributeContainer()
-                    container.font = .caption
-                    result.append(AttributedString(" (\(additionalPercent.formatted(.shPercent)))", attributes: container))
-                    return result
-                } else {
-                    return AttributedString()
-                }
-            }
-        }
-        
-        var shouldDisplayPowerConsumption: Bool {
+        var shouldDisplaySubtitle: Bool {
             powerConsumption.min > 0 || powerConsumption.max > 0
         }
         
-        var powerValueString: LocalizedStringKey {
+        var subtitle: LocalizedStringKey {
             if powerConsumption.min == powerConsumption.max {
                 "statistics-power-consumption-fixed-\(powerConsumption.max.formatted(.shNumber(fractionLength: 1)))"
             } else {
@@ -245,10 +191,9 @@ extension StatisticsViewModel {
             }
         }
         
-        init(building: Building, recipes: [MachineRecipe], recipesExpanded: Bool = false) {
+        init(building: Building, recipes: [MachineRecipe]) {
             self.building = building
             self.recipes = recipes
-            self.recipesExpanded = recipesExpanded
         }
     }
 }
@@ -268,21 +213,19 @@ extension StatisticsViewModel {
         var valueString: AttributedString {
             let intAmount = Int(amount.rounded(.down))
             let additionalPercent = amount - Double(intAmount)
+            var container = AttributeContainer()
+            container.font = .callout
             
             if intAmount > 0, additionalPercent > 0 {
-                var container = AttributeContainer()
-                container.font = .caption.weight(.semibold)
                 var result = AttributedString((intAmount + 1).formatted(.number), attributes: container)
-                container.font = .caption
+                container.font = .footnote
                 result.append(AttributedString(" (1x \(additionalPercent.formatted(.shPercent)))", attributes: container))
                 return result
             } else if intAmount > 0 {
-                return AttributedString(intAmount.formatted(.number))
+                return AttributedString(intAmount.formatted(.number), attributes: container)
             } else if additionalPercent > 0 {
-                var container = AttributeContainer()
-                container.font = .caption.weight(.semibold)
                 var result = AttributedString("1", attributes: container)
-                container.font = .caption
+                container.font = .footnote
                 result.append(AttributedString(" (\(additionalPercent.formatted(.shPercent)))", attributes: container))
                 return result
             } else {

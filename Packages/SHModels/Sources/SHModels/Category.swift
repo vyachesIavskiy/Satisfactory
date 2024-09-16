@@ -29,6 +29,7 @@ public enum Category: Int, Equatable, Sendable {
     case special
     
     // Buildings
+    case progression
     case manufacturers
     case smelters
     case generators
@@ -63,6 +64,7 @@ public enum Category: Int, Equatable, Sendable {
         case .ficsmas: "category-ficsmas"
         case .special: "category-special"
             
+        case .progression: "category-progression"
         case .fluidExtractors: "category-fluid-extractors"
         case .manufacturers: "category-manufacturers"
         case .miners: "category-miners"

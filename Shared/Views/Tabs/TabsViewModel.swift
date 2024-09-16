@@ -33,8 +33,10 @@ final class TabsViewModel {
         let keyPrefix = "whats-new.shown-for-version."
         
         return switch version {
+        #if DEBUG
         case .preview:
             nil // Never save Preview version
+        #endif
             
         case .v1_4, .v1_5, .v1_5_1, .v1_6, .v1_7, .v1_7_1:
             nil // What's new is not available for versions lower than 2.0

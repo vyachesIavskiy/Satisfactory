@@ -1188,19 +1188,5 @@
     "id" : "part-ficsit-coupon",
     "isNaturalResource" : true,
     "progressionIndex" : 169
-  },
-  {
-    "categoryID" : "category-special",
-    "formID" : "part-form-solid",
-    "id" : "part-mercer-sphere",
-    "isNaturalResource" : true,
-    "progressionIndex" : 170
-  },
-  {
-    "categoryID" : "category-special",
-    "formID" : "part-form-solid",
-    "id" : "part-somersloop",
-    "isNaturalResource" : true,
-    "progressionIndex" : 171
   }
 ]

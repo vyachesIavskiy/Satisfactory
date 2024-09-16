@@ -77,6 +77,26 @@
   },
   {
     "categoryID" : "category-generators",
+    "id" : "building-biomass-burner"
+  },
+  {
+    "categoryID" : "category-generators",
+    "id" : "building-coal-powered-generator"
+  },
+  {
+    "categoryID" : "category-generators",
+    "id" : "building-fuel-powered-generator"
+  },
+  {
+    "categoryID" : "category-generators",
+    "id" : "building-geothermal-generator"
+  },
+  {
+    "categoryID" : "category-generators",
     "id" : "building-nuclear-power-plant"
+  },
+  {
+    "categoryID" : "category-generators",
+    "id" : "building-power-storage"
   }
 ]

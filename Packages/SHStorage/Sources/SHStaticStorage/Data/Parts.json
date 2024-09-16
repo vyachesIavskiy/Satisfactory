@@ -982,14 +982,14 @@
   {
     "categoryID" : "category-space-elevator",
     "formID" : "part-form-solid",
-    "id" : "part-ai-expansion-server",
+    "id" : "part-ballistic-warp-drive",
     "isNaturalResource" : false,
     "progressionIndex" : 140
   },
   {
     "categoryID" : "category-space-elevator",
     "formID" : "part-form-solid",
-    "id" : "part-ballistic-warp-drive",
+    "id" : "part-ai-expansion-server",
     "isNaturalResource" : false,
     "progressionIndex" : 141
   },

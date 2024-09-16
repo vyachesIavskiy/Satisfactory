@@ -32,7 +32,7 @@ extension V2.Parts {
         thermalPropulsionRocket,
         nuclearPasta,
         biochemicalSculptor,
-        aiExpansionServer,
         ballisticWarpDrive,
+        aiExpansionServer,
     ]
 }

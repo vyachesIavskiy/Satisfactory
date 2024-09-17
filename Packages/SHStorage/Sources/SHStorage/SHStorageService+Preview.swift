@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import SHModels
 import SHStaticStorage
+import SHPersistentModels
 
 extension SHStorageService {
     @dynamicMemberLookup
@@ -10,6 +11,7 @@ extension SHStorageService {
         private let _pins = CurrentValueSubject<Pins, Never>(Pins())
         private let _productions = CurrentValueSubject<[Production], Never>([])
         private let _factories = CurrentValueSubject<[Factory], Never>([])
+        private let _orders = CurrentValueSubject<OrdersV2, Never>(OrdersV2())
         
         var pins: Pins {
             _pins.value
@@ -41,6 +43,32 @@ extension SHStorageService {
         
         subscript<M>(dynamicMember keyPath: KeyPath<SHStaticStorage, M>) -> M {
             staticStorage[keyPath: keyPath]
+        }
+        
+        func productions(inside factory: Factory) -> [Production] {
+            _orders.value.productionOrders
+                .first(factoryID: factory.id)
+                .map { productionOrder in
+                    productionOrder.order.compactMap {
+                        _productions.value.first(id: $0)
+                    }
+                } ?? []
+        }
+        
+        func streamProductions(inside factory: Factory) -> AsyncStream<[Production]> {
+            _orders.map { [weak self] orders in
+                guard let self else { return [] }
+                
+                return orders.productionOrders
+                    .first(factoryID: factory.id)
+                    .map { productionOrder in
+                        productionOrder.order.compactMap {
+                            self._productions.value.first(id: $0)
+                        }
+                    } ?? []
+            }
+            .values
+            .eraseToStream()
         }
         
         func changePinStatus(partID: String, productionType: ProductionType) {
@@ -95,6 +123,8 @@ extension SHStorageService {
             } else {
                 _factories.value.append(factory)
             }
+            
+            _orders.value.factoryOrder = _factories.value.map(\.id)
         }
         
         func saveProduction(_ production: Production, to factoryID: UUID) {
@@ -114,6 +144,18 @@ extension SHStorageService {
             {
                 _factories.value[index].productionIDs.removeAll { $0 == production.id }
             }
+            
+            let factoryProductionIDs = _factories.value
+                .first { $0.id == factoryID }
+                .map { factory in
+                    _productions.value.filter { factory.productionIDs.contains($0.id) }.map(\.id)
+                } ?? []
+            
+            if let index = _orders.value.productionOrders.firstIndex(factoryID: factoryID) {
+                _orders.value.productionOrders[index].order = factoryProductionIDs
+            } else {
+                _orders.value.productionOrders.append(OrdersV2.ProductionOrder(factoryID: factoryID, order: factoryProductionIDs))
+            }
         }
         
         func saveProductionInformation(_ production: Production, to factoryID: UUID) {
@@ -132,6 +174,18 @@ extension SHStorageService {
             {
                 _factories.value[index].productionIDs.removeAll { $0 == production.id }
             }
+            
+            let factoryProductionIDs = _factories.value
+                .first { $0.id == factoryID }
+                .map { factory in
+                    _productions.value.filter { factory.productionIDs.contains($0.id) }.map(\.id)
+                } ?? []
+            
+            if let index = _orders.value.productionOrders.firstIndex(factoryID: factoryID) {
+                _orders.value.productionOrders[index].order = factoryProductionIDs
+            } else {
+                _orders.value.productionOrders.append(OrdersV2.ProductionOrder(factoryID: factoryID, order: factoryProductionIDs))
+            }
         }
         
         func saveProductionContent(_ production: Production) {
@@ -144,16 +198,40 @@ extension SHStorageService {
             if let index = _factories.value.firstIndex(id: factory.id) {
                 _factories.value.remove(at: index)
             }
+            
+            _orders.value.factoryOrder = _factories.value.map(\.id)
         }
         
         func deleteProduction(_ production: Production) {
             if let index = _productions.value.firstIndex(id: production.id) {
                 _productions.value.remove(at: index)
             }
+            
+            guard let index = _factories.value.firstIndex(where: { $0.productionIDs.contains(production.id) })
+            else { return }
+            
+            let factoryProductionIDs = _productions.value.filter {
+                _factories.value[index].productionIDs.contains($0.id)
+            }.map(\.id)
+            
+            let factoryID = _factories.value[index].id
+            if let index = _orders.value.productionOrders.firstIndex(factoryID: factoryID) {
+                _orders.value.productionOrders[index].order = factoryProductionIDs
+            } else {
+                _orders.value.productionOrders.append(OrdersV2.ProductionOrder(factoryID: factoryID, order: factoryProductionIDs))
+            }
         }
         
         func moveFactories(fromOffsets: IndexSet, toOffset: Int) {
             _factories.value.move(fromOffsets: fromOffsets, toOffset: toOffset)
+        }
+        
+        func moveProductions(factory: Factory, fromOffsets: IndexSet, toOffset: Int) {
+            let factoryProductions = _productions.value.filter { factory.productionIDs.contains($0.id) }
+            
+            guard let index = _orders.value.productionOrders.firstIndex(factoryID: factory.id) else { return }
+            
+            _orders.value.productionOrders[index].order.move(fromOffsets: fromOffsets, toOffset: toOffset)
         }
     }
 }

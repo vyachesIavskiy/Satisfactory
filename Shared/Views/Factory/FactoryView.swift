@@ -21,6 +21,7 @@ struct FactoryView: View {
             ForEach(viewModel.section.productions) { production in
                 productionRow(production)
             }
+            .onMove(perform: viewModel.move)
         }
         .listStyle(.plain)
         .searchable(text: $viewModel.searchText, prompt: Text("factories-search-productions"))

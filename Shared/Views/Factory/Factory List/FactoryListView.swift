@@ -64,9 +64,7 @@ struct FactoryListView: View {
                     factoryRow(factory)
                         .disabled(!viewModel.factoriesSection.expanded)
                 }
-                .onMove { fromOffsets, toOffset in
-                    viewModel.move(fromOffsets: fromOffsets, toOffset: toOffset)
-                }
+                .onMove(perform: viewModel.move)
             } header: {
                 if !viewModel.productionsSection.productions.isEmpty {
                     SectionHeader("factories-factories-section-name", expanded: $viewModel.factoriesSection.expanded)

@@ -27,7 +27,7 @@ final class StatisticsViewModel {
         @Dependency(\.storageService)
         var storageService
         
-        productions = storageService.produtions(inside: factory)
+        productions = storageService.productionsInside(factory)
         title = factory.name
         
         buildSections()

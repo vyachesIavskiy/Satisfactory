@@ -37,23 +37,27 @@ final class FactoryViewModel {
         var storageService
         
         self.factory = factory
-        productions = storageService.produtions(inside: factory).sortedByDate()
+        productions = storageService.productionsInside(factory)
         
         buildSection()
     }
     
     @MainActor
     func observeProductions() async {
-        for await productions in storageService.streamProductions(inside: factory) {
+        for await productions in storageService.streamProductionsInside(factory) {
             guard !Task.isCancelled else { break }
             
-            self.productions = productions.sortedByDate()
+            self.productions = productions
             buildSection()
         }
     }
     
     func deleteProduction(_ production: Production) {
         storageService.deleteProduction(production)
+    }
+    
+    func move(fromOffsets: IndexSet, toOffset: Int) {
+        storageService.moveProductions(factory, fromOffsets, toOffset)
     }
     
     func statisticsViewModel() -> StatisticsViewModel {

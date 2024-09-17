@@ -332,6 +332,13 @@ final class V2: VersionedStorage {
         try persistence.save(orders.value, toFile: .orders)
     }
     
+    func moveProductions(factoryID: UUID, fromOffsets: IndexSet, toOffset: Int) throws {
+        guard let index = orders.value.productionOrders.firstIndex(factoryID: factoryID) else { return }
+        
+        orders.value.productionOrders[index].order.move(fromOffsets: fromOffsets, toOffset: toOffset)
+        try persistence.save(orders.value, toFile: .orders)
+    }
+    
     func deleteFactory(_ factory: Factory.Persistent.V2) throws {
         guard let factoryIndex = factories.value.firstIndex(where: { $0.id == factory.id })
         else { return }

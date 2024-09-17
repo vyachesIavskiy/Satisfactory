@@ -23,7 +23,11 @@ public struct SHStorageService: Sendable {
     
     public var productions: @Sendable () -> [Production]
     
+    public var productionsInside: @Sendable (_ factory: Factory) -> [Production]
+    
     public var streamProductions: @Sendable () -> AsyncStream<[Production]>
+    
+    public var streamProductionsInside: @Sendable (_ factory: Factory) -> AsyncStream<[Production]>
     
     public var saveFactory: @Sendable (_ factory: Factory) -> Void
     
@@ -38,6 +42,8 @@ public struct SHStorageService: Sendable {
     public var deleteProduction: @Sendable (_ production: Production) -> Void
     
     public var moveFactories: @Sendable (_ fromOffsets: IndexSet, _ toOffsets: Int) -> Void
+    
+    public var moveProductions: @Sendable (_ factory: Factory, _ fromOffsets: IndexSet, _ toOffset: Int) -> Void
     
     /// Fetch all parts from storage. This information is not changed during execution.
     public var parts: @Sendable () -> [Part]
@@ -348,22 +354,12 @@ public extension SHStorageService {
         productions().first(id: id)
     }
     
-    func produtions(inside factory: Factory) -> [Production] {
-        productions().filter { factory.productionIDs.contains($0.id) }
-    }
-    
     func factoryID(for production: Production) -> UUID? {
         factories().first { $0.productionIDs.contains(production.id) }?.id
     }
     
     func factory(for production: Production) -> Factory? {
         factoryID(for: production).flatMap(factory(id:))
-    }
-    
-    func streamProductions(inside factory: Factory) -> AsyncStream<[Production]> {
-        streamProductions()
-            .map { $0.filter { factory.productionIDs.contains($0.id) } }
-            .eraseToStream()
     }
     
     func extraction(for item: any Item) -> Extraction? {

@@ -113,5 +113,9 @@ extension SHStorageService {
         func moveFactories(fromOffsets: IndexSet, toOffset: Int) {
             try? persistentStorage.moveFactories(fromOffsets: fromOffsets, toOffset: toOffset)
         }
+        
+        func moveProductions(factory: Factory, fromOffsets: IndexSet, toOffset: Int) {
+            try? persistentStorage.moveProductions(factory: factory, fromOffsets: fromOffsets, toOffset: toOffset)
+        }
     }
 }

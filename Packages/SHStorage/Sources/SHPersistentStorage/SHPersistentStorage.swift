@@ -154,6 +154,10 @@ package final class SHPersistentStorage {
     package func moveFactories(fromOffsets: IndexSet, toOffset: Int) throws {
         try v2.moveFactories(fromOffsets: fromOffsets, toOffset: toOffset)
     }
+    
+    package func moveProductions(factory: Factory, fromOffsets: IndexSet, toOffset: Int) throws {
+        try v2.moveProductions(factoryID: factory.id, fromOffsets: fromOffsets, toOffset: toOffset)
+    }
 }
 
 // MARK: Migration

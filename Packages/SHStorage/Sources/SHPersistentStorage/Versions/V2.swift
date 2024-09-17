@@ -14,9 +14,60 @@ final class V2: VersionedStorage {
     var pins = CurrentValueSubject<Pins.Persistent.V2, Never>(Pins.Persistent.V2())
     var productions = CurrentValueSubject<[Production.Persistent.V2], Never>([])
     var factories = CurrentValueSubject<[Factory.Persistent.V2], Never>([])
+    var orders = CurrentValueSubject<OrdersV2, Never>(OrdersV2())
+    
+    var sortedFactories: [Factory.Persistent.V2] {
+        orders.value.factoryOrder.compactMap { factoryID in
+            factories.value.first { $0.id == factoryID }
+        }
+    }
+    
+    var sortedFactoriesStream: AsyncStream<[Factory.Persistent.V2]> {
+        combineLatest(orders.values, factories.values).map { orders, factories in
+            return orders.factoryOrder.compactMap { factoryID in
+                factories.first { $0.id == factoryID }
+            }
+        }
+        .eraseToStream()
+    }
     
     private let persistence = SHPersistence(homeDirectoryName: "Storage/V2")
     private let logger = SHLogger(subsystemName: "SHStorage", category: "Persistent.V2")
+    
+    func productions(inside factoryID: UUID) -> [Production.Persistent.V2] {
+        guard let factory = factories.value.first(where: { $0.id == factoryID }) else {
+            return []
+        }
+        
+        let factoryProductions = productions.value.filter { factory.productionIDs.contains($0.id) }
+        
+        return orders.value.productionOrders
+            .first(factoryID: factoryID)
+            .map {
+                $0.order.compactMap { productionID in
+                    factoryProductions.first { $0.id == productionID }
+                }
+            } ?? []
+    }
+    
+    func streamProductions(inside factoryID: UUID) -> AsyncStream<[Production.Persistent.V2]> {
+        guard let factory = factories.value.first(where: { $0.id == factoryID }) else {
+            return .finished
+        }
+        
+        return combineLatest(orders.values, productions.values).map { orders, productions in
+            let factoryProductions = productions.filter { factory.productionIDs.contains($0.id) }
+            
+            return orders.productionOrders
+                .first(factoryID: factoryID)
+                .map {
+                    $0.order.compactMap { productionID in
+                        factoryProductions.first { $0.id == productionID }
+                    }
+                } ?? []
+        }
+        .eraseToStream()
+    }
     
     func canBeLoaded() -> Bool {
         let result = persistence.canBeLoaded()
@@ -27,8 +78,9 @@ final class V2: VersionedStorage {
     func load() throws {
         configuration = try persistence.loadOne(Configuration.Persistent.V2.self, fromFile: .configuration)
         pins.value = try persistence.loadOne(Pins.Persistent.V2.self, fromFile: .pins)
-        productions.value = try persistence.loadMany(Production.Persistent.V2.self, fromDirectory: .productions)
         factories.value = try persistence.loadMany(Factory.Persistent.V2.self, fromDirectory: .factories)
+        productions.value = try persistence.loadMany(Production.Persistent.V2.self, fromDirectory: .productions)
+        orders.value = try persistence.loadOne(OrdersV2.self, fromFile: .orders)
         
         logger.info("loaded.")
     }
@@ -38,6 +90,7 @@ final class V2: VersionedStorage {
         try persistence.save(pins.value, toFile: .pins)
         try persistence.save(productions.value, toDirectory: .productions)
         try persistence.save(factories.value, toDirectory: .factories)
+        try persistence.save(orders.value, toFile: .orders)
         
         logger.info("Saved.")
     }
@@ -151,6 +204,7 @@ final class V2: VersionedStorage {
         
         try persistence.save(configuration, toFile: .configuration)
         try persistence.save(pins.value, toFile: .pins)
+        try persistence.save(orders.value, toFile: .orders)
         
         logger.info("V2: Initial data saved.")
     }
@@ -159,17 +213,20 @@ final class V2: VersionedStorage {
         if let index = factories.value.firstIndex(where: { $0.id == factory.id }) {
             factories.value[index] = factory
         } else {
-            factories.value.append(factory)
+            factories.value.insert(factory, at: 0)
         }
         
+        orders.value.factoryOrder = factories.value.map(\.id)
+        
         try persistence.save(factories.value, toDirectory: .factories)
+        try persistence.save(orders.value, toFile: .orders)
     }
     
     func saveProduction(_ production: Production.Persistent.V2, to factoryID: UUID) throws {
         if let index = productions.value.firstIndex(where: { $0.id == production.id }) {
             productions.value[index] = production
         } else {
-            productions.value.append(production)
+            productions.value.insert(production, at: 0)
         }
         
         if let indexToAdd = factories.value.firstIndex(where: { $0.id == factoryID }) {
@@ -185,8 +242,94 @@ final class V2: VersionedStorage {
             }
         }
         
+        let factoryProductionIDs = factories.value
+            .first { $0.id == factoryID }
+            .map { factory in
+                productions.value.filter { factory.productionIDs.contains($0.id) }.map(\.id)
+            } ?? []
+        
+        if let index = orders.value.productionOrders.firstIndex(factoryID: factoryID) {
+            orders.value.productionOrders[index].order = factoryProductionIDs
+        } else {
+            orders.value.productionOrders.append(OrdersV2.ProductionOrder(factoryID: factoryID, order: factoryProductionIDs))
+        }
+        
         try persistence.save(productions.value, toDirectory: .productions)
         try persistence.save(factories.value, toDirectory: .factories)
+        try persistence.save(orders.value, toFile: .orders)
+    }
+    
+    func saveProductionInformation(_ production: Production.Persistent.V2, to factoryID: UUID) throws {
+        enum Error: LocalizedError {
+            case productionNotFound(Production.ID)
+            
+            var errorDescription: String? {
+                switch self {
+                case let .productionNotFound(id): "Production not found: productionID=\(id)"
+                }
+            }
+        }
+        
+        guard let index = productions.value.firstIndex(where: { $0.id == production.id }) else {
+            throw Error.productionNotFound(production.id)
+        }
+        
+        productions.value[index].name = production.name
+        productions.value[index].assetName = production.assetName
+        
+        if let indexToAdd = factories.value.firstIndex(where: { $0.id == factoryID }) {
+            if
+                let indexToRemove = factories.value.firstIndex(where: { $0.productionIDs.contains(production.id) }),
+                indexToAdd != indexToRemove
+            {
+                factories.value[indexToRemove].productionIDs.removeAll { $0 == production.id }
+            }
+            
+            if !factories.value[indexToAdd].productionIDs.contains(production.id) {
+                factories.value[indexToAdd].productionIDs.append(production.id)
+            }
+        }
+        
+        let factoryProductionIDs = factories.value
+            .first { $0.id == factoryID }
+            .map { factory in
+                productions.value.filter { factory.productionIDs.contains($0.id) }.map(\.id)
+            } ?? []
+        
+        if let index = orders.value.productionOrders.firstIndex(factoryID: factoryID) {
+            orders.value.productionOrders[index].order = factoryProductionIDs
+        } else {
+            orders.value.productionOrders.append(OrdersV2.ProductionOrder(factoryID: factoryID, order: factoryProductionIDs))
+        }
+        
+        try persistence.save(productions.value, toDirectory: .productions)
+        try persistence.save(factories.value, toDirectory: .factories)
+        try persistence.save(orders.value, toFile: .orders)
+    }
+    
+    func saveProductionContent(_ production: Production.Persistent.V2) throws {
+        enum Error: LocalizedError {
+            case productionNotFound(Production.ID)
+            
+            var errorDescription: String? {
+                switch self {
+                case let .productionNotFound(id): "Production not found: productionID=\(id)"
+                }
+            }
+        }
+        
+        guard let index = productions.value.firstIndex(where: { $0.id == production.id }) else {
+            throw Error.productionNotFound(production.id)
+        }
+        
+        productions.value[index].content = production.content
+        try persistence.save(productions.value, toDirectory: .productions)
+    }
+    
+    func moveFactories(fromOffsets: IndexSet, toOffset: Int) throws {
+        factories.value.move(fromOffsets: fromOffsets, toOffset: toOffset)
+        orders.value.factoryOrder = factories.value.map(\.id)
+        try persistence.save(orders.value, toFile: .orders)
     }
     
     func deleteFactory(_ factory: Factory.Persistent.V2) throws {
@@ -200,6 +343,13 @@ final class V2: VersionedStorage {
         for productionID in factory.productionIDs {
             try deleteProduction(id: productionID)
         }
+        
+        if let index = orders.value.productionOrders.firstIndex(factoryID: factory.id) {
+            orders.value.productionOrders.remove(at: index)
+        }
+        
+        orders.value.factoryOrder = factories.value.map(\.id)
+        try persistence.save(orders.value, toFile: .orders)
     }
     
     func deleteProduction(_ production: Production.Persistent.V2) throws {
@@ -219,6 +369,18 @@ final class V2: VersionedStorage {
         
         factories.value[factoryIndex].productionIDs.removeAll(where: { $0 == production.id })
         try persistence.save(factories.value, toDirectory: .factories)
+        
+        let factoryProductionIDs = productions.value.filter {
+            factories.value[factoryIndex].productionIDs.contains($0.id)
+        }.map(\.id)
+        
+        let factoryID = factories.value[factoryIndex].id
+        if let index = orders.value.productionOrders.firstIndex(factoryID: factoryID) {
+            orders.value.productionOrders[index].order = factoryProductionIDs
+        } else {
+            orders.value.productionOrders.append(OrdersV2.ProductionOrder(factoryID: factoryID, order: factoryProductionIDs))
+        }
+        try persistence.save(orders.value, toFile: .orders)
     }
     
     func remove() throws {
@@ -249,27 +411,30 @@ final class V2: VersionedStorage {
         productions.value = legacyProductions.compactMap {
             guard let root = $0.root else { return nil }
             
-            return .singleItem(
-                SingleItemProduction.Persistent.V2(
-                    id: $0.productionTreeRootID,
-                    name: $0.name,
-                    creationDate: date(),
-                    partID: root.partID,
-                    amount: $0.amount,
-                    inputParts: $0.productionChain.map {
-                        SingleItemProduction.Persistent.V2.InputPart(
-                            id: $0.id,
-                            partID: $0.partID,
-                            recipes: [
-                                SingleItemProduction.Persistent.V2.InputPart.Recipe(
-                                    id: $0.id,
-                                    recipeID: $0.recipeID,
-                                    proportion: .auto
-                                )
-                            ]
-                        )
-                    },
-                    byproducts: []
+            return Production.Persistent.V2(
+                id: $0.productionTreeRootID,
+                name: $0.name,
+                creationDate: date(),
+                assetName: $0.root?.partID ?? "",
+                content: .singleItem(
+                    Production.Content.SingleItem.Persistent.V2(
+                        partID: root.partID,
+                        amount: $0.amount,
+                        inputParts: $0.productionChain.map {
+                            Production.Content.SingleItem.Persistent.V2.InputPart(
+                                id: $0.id,
+                                partID: $0.partID,
+                                recipes: [
+                                    Production.Content.SingleItem.Persistent.V2.InputPart.Recipe(
+                                        id: $0.id,
+                                        recipeID: $0.recipeID,
+                                        proportion: .auto
+                                    )
+                                ]
+                            )
+                        },
+                        byproducts: []
+                    )
                 )
             )
         }
@@ -359,4 +524,5 @@ private extension String {
     static let productions = "Productions"
     static let factories = "Factories"
     static let settings = "Settings"
+    static let orders = "Orders"
 }

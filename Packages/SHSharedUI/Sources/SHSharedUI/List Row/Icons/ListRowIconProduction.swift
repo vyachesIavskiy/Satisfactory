@@ -47,14 +47,15 @@ private struct _ListRowIconSingleItemProductionPreview: View {
         @Dependency(\.storageService)
         var storageService
         
-        production = Production.singleItem(
-            SingleItemProduction(
-                id: UUID(),
-                name: "",
-                creationDate: Date(),
+        production = Production(
+            id: UUID(),
+            name: "",
+            creationDate: Date(),
+            assetName: partID,
+            content: .singleItem(Production.Content.SingleItem(
                 part: storageService.part(id: partID)!,
-                amount: 0
-            )
+                amount: 10
+            ))
         )
     }
     

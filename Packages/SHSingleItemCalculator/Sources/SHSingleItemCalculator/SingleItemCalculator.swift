@@ -26,8 +26,7 @@ public final class SingleItemCalculator {
     var date
     
     // MARK: Observed properties
-    public var production: SingleItemProduction
-    private var savedProduction: SingleItemProduction?
+    public var production: Production.Content.SingleItem
     public internal(set) var outputParts = [OutputPart]()
     
     public init(part: Part) {
@@ -37,12 +36,11 @@ public final class SingleItemCalculator {
         @Dependency(\.date)
         var date
         
-        production = SingleItemProduction(id: uuid(), name: "", creationDate: date(), part: part, amount: 1.0)
+        production = Production.Content.SingleItem(part: part, amount: 1.0)
     }
     
-    public init(production: SingleItemProduction) {
+    public init(production: Production.Content.SingleItem) {
         self.production = production
-        savedProduction = production
     }
     
     // MARK: - Input
@@ -54,7 +52,7 @@ public final class SingleItemCalculator {
         production.addRecipe(recipe, to: part, with: proportion)
     }
     
-    public func updateInputPart(_ inputPart: SingleItemProduction.InputPart) {
+    public func updateInputPart(_ inputPart: Production.Content.SingleItem.InputPart) {
         production.updateInputPart(inputPart)
     }
     
@@ -152,37 +150,21 @@ public final class SingleItemCalculator {
         // Update statistics for production
         updateStatistics()
     }
-    
-    public var hasSavedProduction: Bool {
-        savedProduction != nil
-    }
-    
-    public func save() {
-        savedProduction = production
-    }
-    
-    public var hasUnsavedChanges: Bool {
-        savedProduction != production
-    }
-    
-    public func deleteSavedProduction() {
-        savedProduction = nil
-    }
 }
 
 // MARK: InternalState
 extension SingleItemCalculator {
     struct InternalState {
-        var selectedInputParts = [SingleItemProduction.InputPart]()
-        var selectedByproducts = [SingleItemProduction.InputByproduct]()
+        var selectedInputParts = [Production.Content.SingleItem.InputPart]()
+        var selectedByproducts = [Production.Content.SingleItem.InputByproduct]()
         
-        mutating func reset(production: SingleItemProduction) {
+        mutating func reset(production: Production.Content.SingleItem) {
             selectedInputParts = production.inputParts
             selectedByproducts = production.byproducts
         }
         
         // MARK: Convenience helpers
-        func selectedInputItem(with id: String) -> SingleItemProduction.InputPart? {
+        func selectedInputItem(with id: String) -> Production.Content.SingleItem.InputPart? {
             selectedInputParts.first { $0.part.id == id }
         }
         
@@ -190,7 +172,7 @@ extension SingleItemCalculator {
             selectedInputParts.firstIndex { $0.part == part }
         }
         
-        func selectedByproduct(with id: String) -> SingleItemProduction.InputByproduct? {
+        func selectedByproduct(with id: String) -> Production.Content.SingleItem.InputByproduct? {
             selectedByproducts.first { $0.part.id == id }
         }
     }

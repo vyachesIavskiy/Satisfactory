@@ -41,7 +41,7 @@ public struct ListRowProduction: View {
     
     @MainActor @ViewBuilder
     private var productionAccessory: some View {
-        switch production {
+        switch production.content {
         case let .singleItem(production):
             Text(production.amount, format: .shNumber())
             
@@ -72,15 +72,18 @@ private struct ProductionRowPreview: View {
     var body: some View {
         if let part {
             ListRowProduction(
-                .singleItem(
-                    SingleItemProduction(
-                        id: UUID(),
-                        name: "Preview production",
-                        creationDate: Date(),
-                        part: part,
-                        amount: amount,
-                        inputParts: [],
-                        byproducts: []
+                Production(
+                    id: UUID(),
+                    name: "Preview production",
+                    creationDate: Date(),
+                    assetName: part.id,
+                    content: .singleItem(
+                        Production.Content.SingleItem(
+                            part: part,
+                            amount: amount,
+                            inputParts: [],
+                            byproducts: []
+                        )
                     )
                 ),
                 showFactory: false,

@@ -1,16 +1,13 @@
 import SHModels
 import SHPersistentModels
 
-extension SingleItemProduction {
+extension Production.Content.SingleItem {
     init(
         _ v2: Persistent.V2,
         partProvider: (String) -> Part,
         recipeProvider: (String) -> Recipe
     ) {
         self.init(
-            id: v2.id,
-            name: v2.name,
-            creationDate: v2.creationDate,
             part: partProvider(v2.partID),
             amount: v2.amount,
             inputParts: v2.inputParts.map {
@@ -51,20 +48,17 @@ extension SingleItemProduction {
     }
 }
 
-extension SingleItemProduction.Persistent.V2 {
-    init(_ production: SingleItemProduction) {
+extension Production.Content.SingleItem.Persistent.V2 {
+    init(_ content: Production.Content.SingleItem) {
         self.init(
-            id: production.id,
-            name: production.name,
-            creationDate: production.creationDate,
-            partID: production.part.id,
-            amount: production.amount,
-            inputParts: production.inputParts.map {
+            partID: content.part.id,
+            amount: content.amount,
+            inputParts: content.inputParts.map {
                 InputPart(id: $0.id, partID: $0.part.id, recipes: $0.recipes.map {
                     InputPart.Recipe(id: $0.id, recipeID: $0.recipe.id, proportion: $0.proportion)
                 })
             },
-            byproducts: production.byproducts.map {
+            byproducts: content.byproducts.map {
                 Byproduct(id: $0.id, partID: $0.part.id, producers: $0.producers.map {
                     Byproduct.Producer(id: $0.id, recipeID: $0.recipe.id, consumers: $0.consumers.map {
                         Byproduct.Producer.Consumer(id: $0.id, recipeID: $0.recipe.id)
@@ -72,12 +66,12 @@ extension SingleItemProduction.Persistent.V2 {
                 })
             },
             statistics: Statistics(
-                parts: production.statistics.parts.map {
+                parts: content.statistics.parts.map {
                     StatisticPart(partID: $0.part.id, recipes: $0.recipes.map {
                         StatisticRecipe(recipeID: $0.recipe.id, amount: $0.amount)
                     })
                 },
-                naturalResources: production.statistics.naturalResources.map {
+                naturalResources: content.statistics.naturalResources.map {
                     StatisticNaturalResource(partID: $0.part.id, amount: $0.amount)
                 }
             )

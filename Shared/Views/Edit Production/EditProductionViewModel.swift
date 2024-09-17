@@ -52,6 +52,13 @@ final class EditProductionViewModel {
         selectedFactoryID.flatMap(storageService.factory(id:))
     }
     
+    var confirmationTitle: LocalizedStringKey {
+        switch mode {
+        case .new: "general-save"
+        case .edit: "general-apply"
+        }
+    }
+    
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
@@ -69,14 +76,14 @@ final class EditProductionViewModel {
         case .new:
             selectedAssetName = production.assetName
             
-            switch production {
-            case let .singleItem(production):
-                productionName = production.part.localizedName
+            switch production.content {
+            case let .singleItem(content):
+                productionName = content.part.localizedName
                 
-            case let .fromResources(production):
+            case .fromResources:
                 productionName = ""
                 
-            case let .power(production):
+            case .power:
                 productionName = ""
             }
             
@@ -96,7 +103,11 @@ final class EditProductionViewModel {
             newProduction.assetName = selectedAssetName
         }
         
-        storageService.saveProduction(newProduction, selectedFactoryID)
+        if mode == .new {
+            storageService.saveProduction(newProduction, selectedFactoryID)
+        } else {
+            storageService.saveProductionInformation(newProduction, selectedFactoryID)
+        }
         
         onSave?(newProduction)
     }

@@ -45,8 +45,8 @@ extension SingleItemCalculator {
     private func buildAdditionalInputRecipeNode(
         to node: SingleItemCalculator.Node,
         input: SingleItemCalculator.Node.Input,
-        inputPart: SingleItemProduction.InputPart,
-        inputRecipe: SingleItemProduction.InputRecipe
+        inputPart: Production.Content.SingleItem.InputPart,
+        inputRecipe: Production.Content.SingleItem.InputRecipe
     ) {
         // Safety check if input node contains selected recipe. If this happens, this is logical error.
         guard !node.inputContains(inputRecipe.recipe) else { return }

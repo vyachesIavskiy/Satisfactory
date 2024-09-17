@@ -1,5 +1,5 @@
 import SHModels
 
-extension SingleItemProduction {
+extension Production.Content.SingleItem {
     package enum Persistent {}
 }

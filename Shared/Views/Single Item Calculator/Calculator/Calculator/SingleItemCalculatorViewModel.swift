@@ -7,6 +7,7 @@ import SHSingleItemCalculator
 @Observable
 final class SingleItemCalculatorViewModel {
     // MARK: Observed
+    var savedProduction: Production?
     var outputItemViewModels = [SingleItemCalculatorItemViewModel]()
     var modalNavigationState: ModalNavigationState?
     var showingUnsavedConfirmationDialog = false
@@ -55,15 +56,11 @@ final class SingleItemCalculatorViewModel {
     }
     
     var hasSavedProduction: Bool {
-        calculator.hasSavedProduction
+        savedProduction != nil
     }
     
     var navigationTitle: String {
-        if hasSavedProduction {
-            calculator.production.name
-        } else {
-            part.localizedName
-        }
+        savedProduction?.name ?? part.localizedName
     }
     
     var saveProductionTitle: LocalizedStringKey {
@@ -78,6 +75,12 @@ final class SingleItemCalculatorViewModel {
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
     
+    @ObservationIgnored @Dependency(\.uuid)
+    private var uuid
+    
+    @ObservationIgnored @Dependency(\.date)
+    private var date
+    
     // MARK: Init
     convenience init(part: Part, recipe: Recipe) {
         let calculator = SingleItemCalculator(part: part)
@@ -86,20 +89,25 @@ final class SingleItemCalculatorViewModel {
         addInitialRecipe(recipe)
     }
     
-    convenience init(production: SingleItemProduction) {
-        let calculator = SingleItemCalculator(production: production)
-        self.init(calculator: calculator, shouldDismissIfDeleted: true)
+    convenience init(production: Production) {
+        guard case let .singleItem(content) = production.content else {
+            fatalError("SingleItemCalculatorViewModel can work only with Single Item Production Content")
+        }
+        
+        let calculator = SingleItemCalculator(production: content)
+        self.init(calculator: calculator, savedProduction: production, shouldDismissIfDeleted: true)
                 
         update()
     }
     
-    private init(calculator: SingleItemCalculator, shouldDismissIfDeleted: Bool) {
+    private init(calculator: SingleItemCalculator, savedProduction: Production? = nil, shouldDismissIfDeleted: Bool) {
         @Dependency(\.storageService)
         var storageService
         
         @Dependency(\.settingsService)
         var settingsService
         
+        self.savedProduction = savedProduction
         self.calculator = calculator
         amount = calculator.amount
         pins = storageService.pins()
@@ -128,19 +136,33 @@ final class SingleItemCalculatorViewModel {
     }
     
     func editProduction(onSave: (() -> Void)? = nil) {
-        let mode = if hasSavedProduction {
-            EditProductionViewModel.Mode.edit
+        let mode: EditProductionViewModel.Mode
+        let production: Production
+        
+        if let savedProduction {
+            mode = .edit
+            production = savedProduction
         } else {
-            EditProductionViewModel.Mode.new
+            mode = .new
+            production = Production(
+                id: uuid(),
+                name: part.localizedName,
+                creationDate: date(),
+                assetName: part.id,
+                content: .singleItem(calculator.production)
+            )
         }
-        let production = Production.singleItem(calculator.production)
         
         let viewModel = EditProductionViewModel(mode, production: production) { [weak self] savedProduction in
             guard let self else { return }
             
-            calculator.save()
-            calculator.production.name = savedProduction.name
-            canBeDismissedWithoutSaving = true
+            if self.savedProduction == nil {
+                self.savedProduction = savedProduction
+                saveProductionContent()
+            } else {
+                self.savedProduction?.name = savedProduction.name
+            }
+            
             onSave?()
         } onDelete: { [weak self] in
             guard let self else { return }
@@ -148,15 +170,19 @@ final class SingleItemCalculatorViewModel {
             if shouldDismissIfDeleted {
                 dismissAfterProductionDeletion = true
             } else {
-                calculator.deleteSavedProduction()
+                self.savedProduction = nil
             }
         }
         
         modalNavigationState = .editProduction(viewModel: viewModel)
     }
     
-    func saveProduction() {
-        calculator.save()
+    func saveProductionContent() {
+        guard var savedProduction else { return }
+        
+        savedProduction.content = .singleItem(calculator.production)
+        storageService.saveProductionContent(savedProduction)
+        self.savedProduction = savedProduction
         canBeDismissedWithoutSaving = true
     }
     
@@ -176,11 +202,18 @@ final class SingleItemCalculatorViewModel {
     }
     
     func showStatistics() {
-        var productionToShow = calculator.production
-        if !hasSavedProduction {
-            productionToShow.name = part.localizedName
+        let production = if let savedProduction {
+            savedProduction
+        } else {
+            Production(
+                id: uuid(),
+                name: part.localizedName,
+                creationDate: date(),
+                assetName: part.id,
+                content: .singleItem(calculator.production)
+            )
         }
-        modalNavigationState = .statistics(viewModel: StatisticsViewModel(production: .singleItem(productionToShow)))
+        modalNavigationState = .statistics(viewModel: StatisticsViewModel(production: production))
     }
 }
 

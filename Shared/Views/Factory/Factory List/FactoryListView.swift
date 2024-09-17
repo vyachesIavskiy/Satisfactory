@@ -20,7 +20,7 @@ struct FactoryListView: View {
                 FactoryView(viewModel: FactoryViewModel(factory: factory))
             }
             .navigationDestination(item: $viewModel.selectedProduction) { production in
-                ProductionView(production: production)
+                ProductionContentView(production: production)
             }
         }
         .task {
@@ -63,6 +63,9 @@ struct FactoryListView: View {
                 ForEach(viewModel.factoriesSection.factories) { factory in
                     factoryRow(factory)
                         .disabled(!viewModel.factoriesSection.expanded)
+                }
+                .onMove { fromOffsets, toOffset in
+                    viewModel.move(fromOffsets: fromOffsets, toOffset: toOffset)
                 }
             } header: {
                 if !viewModel.productionsSection.productions.isEmpty {

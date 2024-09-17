@@ -47,6 +47,14 @@ extension SHStorageService {
             persistentStorage = SHPersistentStorage(staticStorage: staticStorage)
         }
         
+        package func productions(inside factory: Factory) -> [Production] {
+            persistentStorage.productions(inside: factory)
+        }
+        
+        package func streamProductions(inside factory: Factory) -> AsyncStream<[Production]> {
+            persistentStorage.streamProductions(inside: factory)
+        }
+        
         // MARK: Dynamic members
         subscript<M>(dynamicMember keyPath: KeyPath<SHStaticStorage, M>) -> M {
             staticStorage[keyPath: keyPath]
@@ -84,6 +92,14 @@ extension SHStorageService {
             try? persistentStorage.saveProduction(production, to: factoryID)
         }
         
+        func saveProductionInformation(_ production: Production, to factoryID: UUID) {
+            try? persistentStorage.saveProductionInformation(production, to: factoryID)
+        }
+        
+        func saveProductionContent(_ production: Production) {
+            try? persistentStorage.saveProductionContent(production)
+        }
+        
         // MARK: Deleting
         func deleteFactory(_ factory: Factory) {
             try? persistentStorage.deleteFactory(factory)
@@ -91,6 +107,11 @@ extension SHStorageService {
         
         func deleteProduction(_ production: Production) {
             try? persistentStorage.deleteProduction(production)
+        }
+        
+        // MARK: Moving
+        func moveFactories(fromOffsets: IndexSet, toOffset: Int) {
+            try? persistentStorage.moveFactories(fromOffsets: fromOffsets, toOffset: toOffset)
         }
     }
 }

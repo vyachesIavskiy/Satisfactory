@@ -10,7 +10,7 @@ final class Legacy: VersionedStorage {
     
     var parts = [Part.Persistent.Legacy]()
     var recipes = [Recipe.Persistent.Legacy]()
-    var productions = [SingleItemProduction.Persistent.Legacy]()
+    var productions = [Production.Content.SingleItem.Persistent.Legacy]()
     
     private let persistence = SHPersistence()
     private let fileManager = SHFileManager()
@@ -35,7 +35,7 @@ final class Legacy: VersionedStorage {
         
         parts = try persistence.loadMany(Part.Persistent.Legacy.self, fromDirectory: .parts)
         recipes = try persistence.loadMany(Recipe.Persistent.Legacy.self, fromDirectory: .recipes)
-        productions = try persistence.loadMany(SingleItemProduction.Persistent.Legacy.self, fromDirectory: .productions)
+        productions = try persistence.loadMany(Production.Content.SingleItem.Persistent.Legacy.self, fromDirectory: .productions)
         
         logger.info("Legacy storage is loaded.")
     }

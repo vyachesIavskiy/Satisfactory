@@ -1,24 +1,22 @@
 import Foundation
 import SHDependencies
 
-extension FromResourcesProduction {
-    public struct InputResource: Hashable, Sendable {
+extension Production.Content.FromResources {
+    public struct InputItem: Hashable, Sendable {
         public let id: UUID
-        public var part: Part
-        public var amount: Double
-        public var recipes: [InputRecipe]
+        public let part: Part
+        public let amount: Double
         
-        public init(id: UUID, part: Part, amount: Double, recipes: [InputRecipe]) {
+        public init(id: UUID, part: Part, amount: Double) {
             self.id = id
             self.part = part
             self.amount = amount
-            self.recipes = recipes
         }
     }
 }
 
 // MARK: Input item + Sequence
-extension Sequence<FromResourcesProduction.InputResource> {
+extension Sequence<Production.Content.FromResources.InputItem> {
     public func first(part: Part) -> Element? {
         first { $0.part == part }
     }
@@ -28,8 +26,9 @@ extension Sequence<FromResourcesProduction.InputResource> {
 }
 
 // MARK: Input item + Collection
-extension Collection<FromResourcesProduction.InputResource> {
+extension Collection<Production.Content.FromResources.InputItem> {
     public func firstIndex(part: Part) -> Index? {
         firstIndex { $0.part == part }
     }
 }
+

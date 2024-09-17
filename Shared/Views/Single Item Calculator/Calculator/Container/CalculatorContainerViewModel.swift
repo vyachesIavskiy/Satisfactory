@@ -42,7 +42,7 @@ final class SingleItemCalculatorContainerViewModel {
     }
     
     @MainActor
-    init(production: SingleItemProduction) {
+    init(production: Production) {
         state = .calculation(viewModel: SingleItemCalculatorViewModel(production: production))
     }
 }

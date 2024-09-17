@@ -1,6 +1,6 @@
 import Foundation
 
-extension FromResourcesProduction {
+extension Production.Content.SingleItem {
     public struct InputRecipe: Hashable, Sendable {
         public let id: UUID
         public var recipe: Recipe
@@ -15,14 +15,14 @@ extension FromResourcesProduction {
 }
 
 // MARK: Input recipe + Sequence
-extension Sequence<FromResourcesProduction.InputRecipe> {
+extension Sequence<Production.Content.SingleItem.InputRecipe> {
     public func first(recipe: Recipe) -> Element? {
         first { $0.recipe == recipe }
     }
 }
 
 // MARK: Input recipe + Collection
-extension Collection<FromResourcesProduction.InputRecipe> {
+extension Collection<Production.Content.SingleItem.InputRecipe> {
     public func firstIndex(recipe: Recipe) -> Index? {
         firstIndex { $0.recipe == recipe }
     }

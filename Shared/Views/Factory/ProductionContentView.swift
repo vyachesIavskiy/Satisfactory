@@ -1,19 +1,19 @@
 import SwiftUI
 import SHModels
 
-struct ProductionView: View {
+struct ProductionContentView: View {
     let production: Production
     
     var body: some View {
         ZStack {
-            switch production {
-            case let .singleItem(production):
+            switch production.content {
+            case .singleItem:
                 SingleItemCalculatorContainerView(production: production)
                 
-            case let .fromResources(production):
+            case let .fromResources(content):
                 EmptyView()
                 
-            case let .power(production):
+            case let .power(content):
                 EmptyView()
             }
         }

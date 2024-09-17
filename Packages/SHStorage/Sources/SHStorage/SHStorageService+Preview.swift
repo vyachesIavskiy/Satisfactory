@@ -116,6 +116,30 @@ extension SHStorageService {
             }
         }
         
+        func saveProductionInformation(_ production: Production, to factoryID: UUID) {
+            guard let index = _productions.value.firstIndex(id: production.id) else { return }
+            
+            _productions.value[index].name = production.name
+            _productions.value[index].assetName = production.assetName
+
+            if
+                let index = _factories.value.firstIndex(where: { $0.id == factoryID }),
+                !_factories.value[index].productionIDs.contains(factoryID)
+            {
+                _factories.value[index].productionIDs.append(production.id)
+            } else if
+                let index = _factories.value.firstIndex(where: { $0.productionIDs.contains(production.id) })
+            {
+                _factories.value[index].productionIDs.removeAll { $0 == production.id }
+            }
+        }
+        
+        func saveProductionContent(_ production: Production) {
+            guard let index = _productions.value.firstIndex(id: production.id) else { return }
+            
+            _productions.value[index].content = production.content
+        }
+        
         func deleteFactory(_ factory: Factory) {
             if let index = _factories.value.firstIndex(id: factory.id) {
                 _factories.value.remove(at: index)
@@ -126,6 +150,10 @@ extension SHStorageService {
             if let index = _productions.value.firstIndex(id: production.id) {
                 _productions.value.remove(at: index)
             }
+        }
+        
+        func moveFactories(fromOffsets: IndexSet, toOffset: Int) {
+            _factories.value.move(fromOffsets: fromOffsets, toOffset: toOffset)
         }
     }
 }

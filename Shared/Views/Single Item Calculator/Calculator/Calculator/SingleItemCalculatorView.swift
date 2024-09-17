@@ -114,9 +114,11 @@ struct SingleItemCalculatorView: View {
                 ) {
                     Button("single-item-production-calculation-save-and-exit") {
                         if viewModel.hasSavedProduction {
-                            viewModel.saveProduction()
+                            viewModel.saveProductionContent()
+                            dismiss()
                         } else {
                             viewModel.editProduction {
+                                viewModel.saveProductionContent()
                                 dismiss()
                             }
                         }
@@ -134,7 +136,7 @@ struct SingleItemCalculatorView: View {
         ToolbarItem(placement: .primaryAction) {
             Button("general-save") {
                 if viewModel.hasSavedProduction {
-                    viewModel.saveProduction()
+                    viewModel.saveProductionContent()
                 } else {
                     viewModel.editProduction()
                 }

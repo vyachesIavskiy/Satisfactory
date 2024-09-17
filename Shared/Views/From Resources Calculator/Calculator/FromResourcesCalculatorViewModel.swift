@@ -56,7 +56,7 @@ final class FromResourcesCalculatorViewModel {
 //        addInitialRecipe(recipe)
     }
     
-    convenience init(production: SingleItemProduction) {
+    convenience init(production: Production.Content.FromResources) {
         let calculator = FromResourcesCalculator(/*production: production*/)
         self.init(calculator: calculator)
                 

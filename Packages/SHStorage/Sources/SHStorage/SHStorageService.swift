@@ -29,9 +29,15 @@ public struct SHStorageService: Sendable {
     
     public var saveProduction: @Sendable (_ production: Production, _ factoryID: UUID) -> Void
     
+    public var saveProductionInformation: @Sendable (_ production: Production, _ factoryID: UUID) -> Void
+    
+    public var saveProductionContent: @Sendable (_ production: Production) -> Void
+    
     public var deleteFactory: @Sendable (_ factory: Factory) -> Void
     
     public var deleteProduction: @Sendable (_ production: Production) -> Void
+    
+    public var moveFactories: @Sendable (_ fromOffsets: IndexSet, _ toOffsets: Int) -> Void
     
     /// Fetch all parts from storage. This information is not changed during execution.
     public var parts: @Sendable () -> [Part]

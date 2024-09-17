@@ -11,7 +11,7 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     let excludingParts: [Part]
     let allowDeletion: Bool
     let addMoreRecipesTip: AddMoreRecipesTip
-    private let onApply: @MainActor (SingleItemProduction.InputPart) -> Void
+    private let onApply: @MainActor (Production.Content.SingleItem.InputPart) -> Void
     
     private(set) var production: SingleItemCalculator
     
@@ -61,7 +61,7 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
         part: SingleItemCalculator.OutputPart,
         excludeRecipesForParts excludingParts: [Part] = [],
         allowDeletion: Bool,
-        onApply: @escaping @MainActor (SingleItemProduction.InputPart) -> Void
+        onApply: @escaping @MainActor (Production.Content.SingleItem.InputPart) -> Void
     ) {
         self.part = part
         self.excludingParts = excludingParts

@@ -46,7 +46,7 @@ final class FactoryListViewModel {
         @Dependency(\.storageService)
         var storageService
         
-        factories = storageService.factories().sortedByDate()
+        factories = storageService.factories()
         buildFactoriesSection()
     }
     
@@ -60,7 +60,7 @@ final class FactoryListViewModel {
                     guard !Task.isCancelled else { break }
                     guard self.factories != factories else { continue }
                     
-                    self.factories = factories.sortedByDate()
+                    self.factories = factories
                     await buildFactoriesSection()
                 }
             }
@@ -104,6 +104,10 @@ final class FactoryListViewModel {
     func deleteProduction(_ production: Production) {
         storageService.deleteProduction(production)
     }
+    
+    func move(fromOffsets: IndexSet, toOffset: Int) {
+        storageService.moveFactories(fromOffsets, toOffset)
+    }
 }
 
 // MARK: Private
@@ -117,8 +121,6 @@ private extension FactoryListViewModel {
                 $0.name.localizedCaseInsensitiveContains(searchText)
             }
         }
-        
-        factoriesSection.factories.sort(using: KeyPathComparator(\.name))
     }
     
     @MainActor
@@ -130,8 +132,6 @@ private extension FactoryListViewModel {
                 $0.name.localizedCaseInsensitiveContains(searchText)
             }
         }
-        
-        productionsSection.productions.sort(using: KeyPathComparator(\.name))
     }
 }
 

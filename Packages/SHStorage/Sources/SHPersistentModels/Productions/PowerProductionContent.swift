@@ -1,5 +1,5 @@
 import SHModels
 
-extension FromResourcesProduction {
+extension Production.Content.Power {
     package enum Persistent {}
 }

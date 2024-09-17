@@ -2,11 +2,8 @@ import Foundation
 import SHModels
 import SHStaticModels
 
-extension SingleItemProduction.Persistent {
-    package struct V2: Codable, Identifiable, Hashable {
-        package var id: UUID
-        package var name: String
-        package var creationDate: Date
+extension Production.Content.SingleItem.Persistent {
+    package struct V2: Codable, Hashable {
         package var partID: String
         package var amount: Double
         package var inputParts: [InputPart]
@@ -14,18 +11,12 @@ extension SingleItemProduction.Persistent {
         package var statistics: Statistics
         
         package init(
-            id: UUID,
-            name: String,
-            creationDate: Date,
             partID: String,
             amount: Double,
             inputParts: [InputPart],
             byproducts: [Byproduct],
             statistics: Statistics = Statistics()
         ) {
-            self.id = id
-            self.name = name
-            self.creationDate = creationDate
             self.partID = partID
             self.amount = amount
             self.inputParts = inputParts
@@ -53,7 +44,7 @@ extension SingleItemProduction.Persistent {
     }
 }
 
-extension SingleItemProduction.Persistent.V2 {
+extension Production.Content.SingleItem.Persistent.V2 {
     package struct InputPart: Codable, Hashable {
         package var id: UUID
         package var partID: String
@@ -67,7 +58,7 @@ extension SingleItemProduction.Persistent.V2 {
     }
 }
 
-extension SingleItemProduction.Persistent.V2.InputPart {
+extension Production.Content.SingleItem.Persistent.V2.InputPart {
     package struct Recipe: Codable, Hashable {
         package var id: UUID
         package var recipeID: String
@@ -81,7 +72,7 @@ extension SingleItemProduction.Persistent.V2.InputPart {
     }
 }
 
-extension SingleItemProduction.Persistent.V2 {
+extension Production.Content.SingleItem.Persistent.V2 {
     package struct Byproduct: Codable, Hashable {
         package var id: UUID
         package var partID: String
@@ -95,7 +86,7 @@ extension SingleItemProduction.Persistent.V2 {
     }
 }
 
-extension SingleItemProduction.Persistent.V2.Byproduct {
+extension Production.Content.SingleItem.Persistent.V2.Byproduct {
     package struct Producer: Codable, Hashable {
         package var id: UUID
         package var recipeID: String
@@ -109,7 +100,7 @@ extension SingleItemProduction.Persistent.V2.Byproduct {
     }
 }
 
-extension SingleItemProduction.Persistent.V2.Byproduct.Producer {
+extension Production.Content.SingleItem.Persistent.V2.Byproduct.Producer {
     package struct Consumer: Codable, Hashable {
         package var id: UUID
         package var recipeID: String
@@ -121,7 +112,7 @@ extension SingleItemProduction.Persistent.V2.Byproduct.Producer {
     }
 }
 
-extension SingleItemProduction.Persistent.V2 {
+extension Production.Content.SingleItem.Persistent.V2 {
     package struct Statistics: Codable, Hashable {
         package var parts: [StatisticPart]
         package var naturalResources: [StatisticNaturalResource]
@@ -133,7 +124,7 @@ extension SingleItemProduction.Persistent.V2 {
     }
 }
 
-extension SingleItemProduction.Persistent.V2 {
+extension Production.Content.SingleItem.Persistent.V2 {
     package struct StatisticPart: Codable, Hashable {
         package var partID: String
         package var recipes: [StatisticRecipe]
@@ -145,7 +136,7 @@ extension SingleItemProduction.Persistent.V2 {
     }
 }
 
-extension SingleItemProduction.Persistent.V2 {
+extension Production.Content.SingleItem.Persistent.V2 {
     package struct StatisticRecipe: Codable, Hashable {
         package var recipeID: String
         package var amount: Double
@@ -157,7 +148,7 @@ extension SingleItemProduction.Persistent.V2 {
     }
 }
 
-extension SingleItemProduction.Persistent.V2 {
+extension Production.Content.SingleItem.Persistent.V2 {
     package struct StatisticNaturalResource: Codable, Hashable {
         package var partID: String
         package var amount: Double

@@ -29,13 +29,12 @@ package final class SHPersistentStorage {
     }
     
     package var factories: [Factory] {
-        v2.factories.value.map(Factory.init)
+        v2.sortedFactories.map(Factory.init)
     }
     
     package var streamFactories: AsyncStream<[Factory]> {
-        v2.factories
+        v2.sortedFactoriesStream
             .map { $0.map(Factory.init) }
-            .values
             .eraseToStream()
     }
     
@@ -56,6 +55,21 @@ package final class SHPersistentStorage {
     
     package init(staticStorage: SHStaticStorage) {
         self.staticStorage = staticStorage
+    }
+    
+    package func productions(inside factory: Factory) -> [Production] {
+        v2.productions(inside: factory.id)
+            .map(map)
+    }
+    
+    package func streamProductions(inside factory: Factory) -> AsyncStream<[Production]> {
+        v2.streamProductions(inside: factory.id)
+            .map { [weak self] in
+                guard let self else { return [] }
+                
+                return $0.map(map)
+            }
+            .eraseToStream()
     }
     
     // MARK: Loading
@@ -110,6 +124,7 @@ package final class SHPersistentStorage {
         try v2.changeRecipePinStatus(recipeID)
     }
     
+    // MARK: Save
     package func saveFactory(_ factory: Factory) throws {
         try v2.saveFactory(Factory.Persistent.V2(factory))
     }
@@ -118,12 +133,26 @@ package final class SHPersistentStorage {
         try v2.saveProduction(Production.Persistent.V2(production), to: factoryID)
     }
     
+    package func saveProductionInformation(_ production: Production, to factoryID: UUID) throws {
+        try v2.saveProductionInformation(Production.Persistent.V2(production), to: factoryID)
+    }
+    
+    package func saveProductionContent(_ production: Production) throws {
+        try v2.saveProductionContent(Production.Persistent.V2(production))
+    }
+    
+    // MARK: Delete
     package func deleteFactory(_ factory: Factory) throws {
         try v2.deleteFactory(Factory.Persistent.V2(factory))
     }
     
     package func deleteProduction(_ production: Production) throws {
         try v2.deleteProduction(Production.Persistent.V2(production))
+    }
+    
+    // MARK: Move
+    package func moveFactories(fromOffsets: IndexSet, toOffset: Int) throws {
+        try v2.moveFactories(fromOffsets: fromOffsets, toOffset: toOffset)
     }
 }
 

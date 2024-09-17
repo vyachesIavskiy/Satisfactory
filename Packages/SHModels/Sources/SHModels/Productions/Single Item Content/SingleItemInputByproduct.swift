@@ -1,8 +1,8 @@
 import Foundation
-import SHDependencies
+import Dependencies
 
 // MARK: Input byproduct
-extension FromResourcesProduction {
+extension Production.Content.SingleItem {
     public struct InputByproduct: Hashable, Sendable {
         public let id: UUID
         public var part: Part
@@ -22,7 +22,7 @@ extension FromResourcesProduction {
                 id: id,
                 part: part,
                 producers: [
-                    FromResourcesProduction.InputByproductProducer(
+                    InputByproductProducer(
                         id: uuid(),
                         producingRecipe: producingRecipe,
                         consumingRecipe: consumingRecipe
@@ -34,21 +34,21 @@ extension FromResourcesProduction {
 }
 
 // MARK: Input byproduct + Sequence
-extension Sequence<FromResourcesProduction.InputByproduct> {
+extension Sequence<Production.Content.SingleItem.InputByproduct> {
     public func first(part: Part) -> Element? {
         first { $0.part == part }
     }
 }
 
 // MARK: Input byproduct + Collection
-extension Collection<FromResourcesProduction.InputByproduct> {
+extension Collection<Production.Content.SingleItem.InputByproduct> {
     public func firstIndex(part: Part) -> Index? {
         firstIndex { $0.part == part }
     }
 }
 
 // MARK: Input byproduct producer
-extension FromResourcesProduction {
+extension Production.Content.SingleItem {
     public struct InputByproductProducer: Hashable, Sendable {
         public let id: UUID
         public var recipe: Recipe
@@ -69,7 +69,7 @@ extension FromResourcesProduction {
 }
 
 // MARK: Input byproduct producer + Sequence
-extension Sequence<FromResourcesProduction.InputByproductProducer> {
+extension Sequence<Production.Content.SingleItem.InputByproductProducer> {
     public func first(recipe: Recipe) -> Element? {
         first { $0.recipe == recipe }
     }
@@ -80,14 +80,14 @@ extension Sequence<FromResourcesProduction.InputByproductProducer> {
 }
 
 // MARK: Input byproduct producer + Collection
-extension Collection<FromResourcesProduction.InputByproductProducer> {
+extension Collection<Production.Content.SingleItem.InputByproductProducer> {
     public func firstIndex(recipe: Recipe) -> Index? {
         firstIndex { $0.recipe == recipe }
     }
 }
 
 // MARK: Input byproduct consumer
-extension FromResourcesProduction {
+extension Production.Content.SingleItem {
     public struct InputByproductConsumer: Hashable, Sendable {
         public let id: UUID
         public var recipe: Recipe
@@ -100,7 +100,7 @@ extension FromResourcesProduction {
 }
 
 // MARK: Input byproduct consumer + Sequence
-extension Sequence<FromResourcesProduction.InputByproductConsumer> {
+extension Sequence<Production.Content.SingleItem.InputByproductConsumer> {
     public func first(recipe: Recipe) -> Element? {
         first { $0.recipe == recipe }
     }
@@ -111,7 +111,7 @@ extension Sequence<FromResourcesProduction.InputByproductConsumer> {
 }
 
 // MARK: Input byproduct consumer + Collection
-extension Collection<FromResourcesProduction.InputByproductConsumer> {
+extension Collection<Production.Content.SingleItem.InputByproductConsumer> {
     public func firstIndex(recipe: Recipe) -> Index? {
         firstIndex { $0.recipe == recipe }
     }

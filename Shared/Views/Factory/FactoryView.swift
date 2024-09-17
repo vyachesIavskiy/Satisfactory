@@ -26,7 +26,7 @@ struct FactoryView: View {
         .searchable(text: $viewModel.searchText, prompt: Text("factories-search-productions"))
         .navigationTitle(viewModel.factory.name)
         .navigationDestination(item: $viewModel.selectedProduction) { production in
-            ProductionView(production: production)
+            ProductionContentView(production: production)
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
@@ -103,15 +103,18 @@ private struct FactoryPreview: View {
         let parts = partIDs.compactMap(storageService.part(id:))
         
         return parts.map {
-            .singleItem(SingleItemProduction(
+            Production(
                 id: UUID(),
                 name: $0.localizedName,
                 creationDate: Date(),
-                part: $0,
-                amount: Double(Int.random(in: 1...20)),
-                inputParts: [],
-                byproducts: []
-            ))
+                assetName: $0.id,
+                content: .singleItem(Production.Content.SingleItem(
+                    part: $0,
+                    amount: Double(Int.random(in: 1...20)),
+                    inputParts: [],
+                    byproducts: []
+                ))
+            )
         }
     }
     

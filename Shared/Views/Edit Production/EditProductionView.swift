@@ -44,7 +44,7 @@ struct EditProductionView: View {
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("general-save") {
+                    Button(viewModel.confirmationTitle) {
                         focused = false
                         viewModel.saveProduction()
                         dismiss()
@@ -187,8 +187,14 @@ private struct _EditProductionPreview: View {
         var date
         
         let part = part(id: itemID)
-        let production = SingleItemProduction(id: uuid(), name: part.localizedName, creationDate: date(), part: part, amount: 0)
-        viewModel = EditProductionViewModel(.new, production: .singleItem(production))
+        let production = Production(
+            id: uuid(),
+            name: part.localizedName,
+            creationDate: date(),
+            assetName: part.id,
+            content: .singleItem(Production.Content.SingleItem(part: part, amount: 0))
+        )
+        viewModel = EditProductionViewModel(.new, production: production)
     }
     
     init(editProductionWithItemID itemID: String) {
@@ -199,8 +205,14 @@ private struct _EditProductionPreview: View {
         var date
         
         let part = part(id: itemID)
-        let production = SingleItemProduction(id: uuid(), name: part.localizedName, creationDate: date(), part: part, amount: 0)
-        viewModel = EditProductionViewModel(.edit, production: .singleItem(production))
+        let production = Production(
+            id: uuid(),
+            name: part.localizedName,
+            creationDate: date(),
+            assetName: part.id,
+            content: .singleItem(Production.Content.SingleItem(part: part, amount: 0))
+        )
+        viewModel = EditProductionViewModel(.edit, production: production)
     }
     
     var body: some View {

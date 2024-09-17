@@ -26,7 +26,7 @@ extension SingleItemCalculator {
     }
     
     private typealias Amounts = (forFractions: Double, forAutos: Double, amountOfAuto: Int)
-    private func amounts(for inputPart: SingleItemProduction.InputPart, availableAmount: Double) -> Amounts {
+    private func amounts(for inputPart: Production.Content.SingleItem.InputPart, availableAmount: Double) -> Amounts {
         /// Calculate input amount without fixed recipe proportions.
         /// This amount will be used as base amount for fraction proportions.
         ///
@@ -113,9 +113,9 @@ extension SingleItemCalculator {
     private func buildInputRecipeNode(
         to node: Node,
         input: Node.Input,
-        inputPart: SingleItemProduction.InputPart,
+        inputPart: Production.Content.SingleItem.InputPart,
         inputPartIndex: Int,
-        inputRecipe: SingleItemProduction.InputRecipe,
+        inputRecipe: Production.Content.SingleItem.InputRecipe,
         inputRecipeIndex: Int,
         inputAmount: Double,
         amounts: Amounts

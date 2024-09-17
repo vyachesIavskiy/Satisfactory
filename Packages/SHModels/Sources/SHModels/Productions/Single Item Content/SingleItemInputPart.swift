@@ -1,7 +1,7 @@
 import Foundation
 import Dependencies
 
-extension SingleItemProduction {
+extension Production.Content.SingleItem {
     public struct InputPart: Hashable, Sendable {
         public let id: UUID
         public var part: Part
@@ -25,7 +25,7 @@ extension SingleItemProduction {
 }
 
 // MARK: Input item + Sequence
-extension Sequence<SingleItemProduction.InputPart> {
+extension Sequence<Production.Content.SingleItem.InputPart> {
     public func first(part: Part) -> Element? {
         first { $0.part == part }
     }
@@ -35,7 +35,7 @@ extension Sequence<SingleItemProduction.InputPart> {
 }
 
 // MARK: Input item + Collection
-extension Collection<SingleItemProduction.InputPart> {
+extension Collection<Production.Content.SingleItem.InputPart> {
     public func firstIndex(part: Part) -> Index? {
         firstIndex { $0.part == part }
     }

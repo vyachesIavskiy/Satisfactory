@@ -10,7 +10,7 @@ struct SingleItemCalculatorContainerView: View {
         _viewModel = State(initialValue: SingleItemCalculatorContainerViewModel(part: part))
     }
     
-    init(production: SingleItemProduction) {
+    init(production: Production) {
         _viewModel = State(initialValue: SingleItemCalculatorContainerViewModel(production: production))
     }
     

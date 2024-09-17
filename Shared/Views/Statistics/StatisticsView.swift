@@ -116,14 +116,34 @@ struct StatisticsView: View {
 import SHStorage
 
 #Preview("Plastic") {
-    StatisticsView(viewModel: StatisticsViewModel(production: Production.singleItem(singleItemPlasticProduction())))
+    StatisticsView(
+        viewModel: StatisticsViewModel(
+            production: Production(
+                id: UUID(),
+                name: "Plastic",
+                creationDate: Date(),
+                assetName: "part-plastic",
+                content: .singleItem(singleItemContentPlastic())
+            )
+        )
+    )
 }
 
 #Preview("HMF") {
-    StatisticsView(viewModel: StatisticsViewModel(production: Production.singleItem(singleItemHMFProduction())))
+    StatisticsView(
+        viewModel: StatisticsViewModel(
+            production: Production(
+                id: UUID(),
+                name: "HMF",
+                creationDate: Date(),
+                assetName: "part-heavy-modular-frame",
+                content: .singleItem(singleItemContentHMFProduction())
+            )
+        )
+    )
 }
 
-private func singleItemPlasticProduction() -> SingleItemProduction {
+private func singleItemContentPlastic() -> Production.Content.SingleItem {
     @Dependency(\.storageService)
     var storageService
     
@@ -141,7 +161,7 @@ private func singleItemPlasticProduction() -> SingleItemProduction {
     let dilutedFuelRecipe = storageService.recipe(id: "recipe-alternate-diluted-fuel")!
     let horRecipe = storageService.recipe(id: "recipe-alternate-heavy-oil-residue")!
     
-    var production = SingleItemProduction(id: UUID(), name: "Plastic", creationDate: Date(), part: plastic, amount: 90)
+    var production = Production.Content.SingleItem(part: plastic, amount: 90)
     production.statistics = Statistics(
         parts: [
             StatisticPart(part: plastic, recipes: [
@@ -167,7 +187,7 @@ private func singleItemPlasticProduction() -> SingleItemProduction {
     return production
 }
 
-private func singleItemHMFProduction() -> SingleItemProduction {
+private func singleItemContentHMFProduction() -> Production.Content.SingleItem {
     @Dependency(\.storageService)
     var storageService
     
@@ -199,7 +219,7 @@ private func singleItemHMFProduction() -> SingleItemProduction {
     let castScrewRecipe = storageService.recipe(id: "recipe-alternate-cast-screw")!
     let ironIngotRecipe = storageService.recipe(id: "recipe-iron-ingot")!
     
-    var production = SingleItemProduction(id: UUID(), name: "Heavy Modular Frame", creationDate: Date(), part: hmf, amount: 12)
+    var production = Production.Content.SingleItem(part: hmf, amount: 12)
     production.statistics = Statistics(
         parts: [
             StatisticPart(part: hmf, recipes: [

@@ -133,6 +133,48 @@ struct SingleItemCalculatorView: View {
             }
         }
         
+        if horizontalSizeClass == .regular {
+            ToolbarItem(placement: .primaryAction) {
+                AmountView(amount: $viewModel.amount, focused: $focused) {
+                    viewModel.adjustNewAmount()
+                    viewModel.update()
+                }
+                .disabled(viewModel.selectingByproduct)
+            }
+            
+            ToolbarItem(placement: .primaryAction) {
+                Button("single-item-production-calculation-statistics", systemImage: "list.number") {
+                    viewModel.showStatistics()
+                }
+                .disabled(viewModel.selectingByproduct)
+            }
+            
+            if viewModel.hasSavedProduction {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("single-item-production-info", systemImage: "info.square") {
+                        viewModel.editProduction()
+                    }
+                    .disabled(viewModel.selectingByproduct)
+                }
+            }
+        } else {
+            if viewModel.hasSavedProduction {
+                ToolbarItem(placement: .secondaryAction) {
+                    Button("single-item-production-info", systemImage: "info.square") {
+                        viewModel.editProduction()
+                    }
+                    .disabled(viewModel.selectingByproduct)
+                }
+            }
+            
+            ToolbarItem(placement: .secondaryAction) {
+                Button("single-item-production-calculation-statistics", systemImage: "list.number") {
+                    viewModel.showStatistics()
+                }
+                .disabled(viewModel.selectingByproduct)
+            }
+        }
+        
         ToolbarItem(placement: .primaryAction) {
             Button("general-save") {
                 if viewModel.hasSavedProduction {
@@ -142,32 +184,6 @@ struct SingleItemCalculatorView: View {
                 }
             }
             .disabled(viewModel.selectingByproduct)
-        }
-        
-        ToolbarItem(placement: .secondaryAction) {
-            Button("single-item-production-calculation-statistics", systemImage: "list.number") {
-                viewModel.showStatistics()
-            }
-            .disabled(viewModel.selectingByproduct)
-        }
-        
-        if viewModel.hasSavedProduction {
-            ToolbarItem(placement: .secondaryAction) {
-                Button("single-item-production-info", systemImage: "info.square") {
-                    viewModel.editProduction()
-                }
-                .disabled(viewModel.selectingByproduct)
-            }
-        }
-        
-        if horizontalSizeClass == .regular {
-            ToolbarItem(placement: .primaryAction) {
-                AmountView(amount: $viewModel.amount, focused: $focused) {
-                    viewModel.adjustNewAmount()
-                    viewModel.update()
-                }
-                .disabled(viewModel.selectingByproduct)
-            }
         }
     }
     

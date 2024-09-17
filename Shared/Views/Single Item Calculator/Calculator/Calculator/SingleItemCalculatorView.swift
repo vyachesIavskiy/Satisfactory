@@ -193,7 +193,7 @@ struct SingleItemCalculatorView: View {
         case let .selectInitialRecipeForItem(viewModel):
             if #available(iOS 18, *) {
                 selectInitialRecipeView(viewModel: viewModel)
-                    .presentationSizing(.form)
+                    .presentationSizing(.page)
             } else {
                 selectInitialRecipeView(viewModel: viewModel)
             }
@@ -201,7 +201,7 @@ struct SingleItemCalculatorView: View {
         case let .adjustItem(viewModel):
             if #available(iOS 18, *) {
                 SingleItemCalculatorItemAdjustmentView(viewModel: viewModel)
-                    .presentationSizing(.form)
+                    .presentationSizing(.page)
             } else {
                 SingleItemCalculatorItemAdjustmentView(viewModel: viewModel)
             }

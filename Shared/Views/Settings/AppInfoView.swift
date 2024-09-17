@@ -8,9 +8,9 @@ struct AppInfoView: View {
             
             cell(title: "settings-app-info-app-build-number-row-title", subtitle: Bundle.main.appBuildNumber)
             
-            cell(title: "settings-app-info-game-update-row-title", subtitle: "Update 8")
+            cell(title: "settings-app-info-game-update-row-title", subtitle: "Stable 1.0")
             
-            cell(title: "settings-app-info-game-version-row-title", subtitle: "0.8.3.3")
+            cell(title: "settings-app-info-game-version-row-title", subtitle: "v1.0.0.1")
         }
         .navigationTitle("settings-app-info-navigation-title")
     }

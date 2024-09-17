@@ -4,8 +4,7 @@ import SHUtils
 
 extension StatisticsView {
     struct ItemRow: View {
-        @Binding
-        var part: StatisticsViewModel.Part
+        private let part: StatisticsViewModel.Part
         
         private var name: String {
             part.statisticPart.part.localizedName
@@ -15,8 +14,8 @@ extension StatisticsView {
             part.statisticPart.amount.formatted(.shNumber())
         }
         
-        init(_ part: Binding<StatisticsViewModel.Part>) {
-            self._part = part
+        init(_ part: StatisticsViewModel.Part) {
+            self.part = part
         }
         
         var body: some View {
@@ -26,8 +25,8 @@ extension StatisticsView {
                 
                 itemRowContent
             }
-            .fixedSize(horizontal: false, vertical: true)
             .addListGradientSeparator(leadingPadding: 64)
+            .fixedSize(horizontal: false, vertical: true)
         }
         
         @MainActor @ViewBuilder
@@ -89,25 +88,24 @@ import SHModels
 import SHStorage
 
 private struct _ItemRowPreview: View {
-    @State
-    private var viewModelItem: StatisticsViewModel.Part
+    private let viewModelItem: StatisticsViewModel.Part
     
     init(partID: String, recipes: [String : Double]) {
         @Dependency(\.storageService)
         var storageService
         
-        _viewModelItem = State(initialValue: StatisticsViewModel.Part(statisticPart: StatisticPart(
+        viewModelItem = StatisticsViewModel.Part(statisticPart: StatisticPart(
             part: storageService.part(id: partID)!,
             recipes: recipes.map {
                 StatisticRecipe(
                     recipe: storageService.recipe(id: $0.key)!,
                     amount: $0.value
                 )
-        })))
+        }))
     }
     
     var body: some View {
-        StatisticsView.ItemRow($viewModelItem)
+        StatisticsView.ItemRow(viewModelItem)
     }
 }
 

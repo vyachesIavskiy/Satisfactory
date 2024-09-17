@@ -1411,18 +1411,6 @@
         }
       }
     },
-    "product-adjustment-fraction-%lf-exceeds-%@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "product-adjustment-fraction-%1$lf-exceeds-%2$@"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "product-adjustment-fractions-%@-should-be-exactly-%@" : {
       "localizations" : {
         "en" : {
@@ -2214,18 +2202,18 @@
         }
       }
     },
-    "whats-new-page-2-a-completely-new-design" : {
+    "whats-new-calculator-page-subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A completely new design"
+            "value" : "A brand new calculator which can now also work with byproducts."
           }
         }
       }
     },
-    "whats-new-page-3-new-production-calculator" : {
+    "whats-new-calculator-page-title" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2236,40 +2224,29 @@
         }
       }
     },
-    "whats-new-page-4-legacy-factory-name" : {
+    "whats-new-design-page-subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Legacy"
+            "value" : "Every UI element has a new fresh and stunning look"
           }
         }
       }
     },
-    "whats-new-page-4-organize-your-productions-with-new-factories-tab" : {
+    "whats-new-design-page-title" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Organize your productions with new Factories tab"
+            "value" : "A completely new design"
           }
         }
       }
     },
-    "whats-new-page-4-starter-factory-factory-name" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Starter factory"
-          }
-        }
-      }
-    },
-    "whats-new-page-4-steel-factory-factory-name" : {
+    "whats-new-factories-factory-name" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2280,24 +2257,99 @@
         }
       }
     },
-    "whats-new-page-5-all-new-statistics-design-which-shows-even-more-information" : {
-      "extractionState" : "manual",
+    "whats-new-factories-legacy-factory-name" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "All new statistics design which shows even more information"
+            "value" : "Legacy"
           }
         }
       }
     },
-    "whats-new-welcome-to-satisfactory-helper-2-0" : {
+    "whats-new-factories-page-subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Welcome to Satisfactory Helper 2.0"
+            "value" : "Organize your production chains into factories"
+          }
+        }
+      }
+    },
+    "whats-new-factories-page-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Factories tab"
+          }
+        }
+      }
+    },
+    "whats-new-factories-starter-factory-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starter factory"
+          }
+        }
+      }
+    },
+    "whats-new-factories-steel-factory-name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel factory"
+          }
+        }
+      }
+    },
+    "whats-new-statistics-page-subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refreshed, more informative and with power consumption"
+          }
+        }
+      }
+    },
+    "whats-new-statistics-page-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New statistics design"
+          }
+        }
+      }
+    },
+    "whats-new-welcome-page-subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A completely rewritten app with the same goal in mind"
+          }
+        }
+      }
+    },
+    "whats-new-welcome-page-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satisfactory Helper 2.0"
           }
         }
       }

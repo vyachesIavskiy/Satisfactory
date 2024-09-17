@@ -3,14 +3,13 @@ import SHSharedUI
 
 extension StatisticsView {
     struct ProductionBuildingRow: View {
-        @Binding
-        private var productionBuilding: StatisticsViewModel.Machine
+        private let productionBuilding: StatisticsViewModel.Machine
         
         @Environment(\.displayScale)
         private var displayScale
         
-        init(productionBuilding: Binding<StatisticsViewModel.Machine>) {
-            _productionBuilding = productionBuilding
+        init(_ productionBuilding: StatisticsViewModel.Machine) {
+            self.productionBuilding = productionBuilding
         }
         
         var body: some View {
@@ -92,7 +91,6 @@ import SHModels
 import SHStorage
 
 private struct _ProductionBuildingRowPreview: View {
-    @State
     private var viewModelProductionBuilding: StatisticsViewModel.Machine
     
     init(buildingID: String, recipes: [String: Double]) {
@@ -101,7 +99,7 @@ private struct _ProductionBuildingRowPreview: View {
         
         let building = storageService.building(id: buildingID)!
         
-        _viewModelProductionBuilding = State(initialValue: StatisticsViewModel.Machine(
+        viewModelProductionBuilding = StatisticsViewModel.Machine(
             building: building,
             recipes: recipes.map {
                 StatisticsViewModel.MachineRecipe(statisticRecipe: StatisticRecipe(
@@ -109,11 +107,11 @@ private struct _ProductionBuildingRowPreview: View {
                     amount: $0.value
                 ))
             }
-        ))
+        )
     }
     
     var body: some View {
-        StatisticsView.ProductionBuildingRow(productionBuilding: $viewModelProductionBuilding)
+        StatisticsView.ProductionBuildingRow(viewModelProductionBuilding)
     }
 }
 

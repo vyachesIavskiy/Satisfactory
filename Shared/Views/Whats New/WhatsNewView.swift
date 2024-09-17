@@ -9,335 +9,103 @@ import SHSingleItemCalculator
 /// There is no way to re-visit this view anyhow other than on a first launch of the app.
 /// Because of this this view can be completely static and can change it's layout with each new version.
 struct WhatsNewView: View {
+    private let finish: () -> Void
+    
+    @State
+    private var page = Page.welcome
+    
+    @Namespace
+    private var namespace
+    
     @Dependency(\.storageService)
     private var storageService
-        
-    @State
-    private var selectedPageIndex = 0
     
-    let didFinish: () -> Void
+    init(finish: @escaping () -> Void) {
+        self.finish = finish
+    }
     
     var body: some View {
         ZStack {
             LinearGradient(
-                colors: [.sh(.orange20), .sh(.orange10), .sh(.orange10), .sh(.orange20)],
+                colors: [.sh(.orange10), .sh(.midnight10), .sh(.cyan10)],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
             
-            TabView(selection: $selectedPageIndex) {
-                page1View
-                    .tag(0)
-                
-                page2View
-                    .tag(1)
-                
-                page3View
-                    .tag(2)
-                
-                page4View
-                    .tag(3)
-                
-                page5View
-                    .tag(4)
-            }
-            #if os(iOS)
-            .tabViewStyle(.page(indexDisplayMode: selectedPageIndex == 4 ? .never : .always))
-            #endif
-        }
-    }
-    
-    @MainActor @ViewBuilder
-    private var page1View: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("whats-new-welcome-to-satisfactory-helper-2-0")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding(.bottom, 40)
-            
-            Group {
-                Text("whats-new-bullet-new-design")
-                Text("whats-new-bullet-new-factories-tab")
-                Text("whats-new-bullet-new-production-calculator")
-                Text("whats-new-bullet-new-statistics")
-            }
-            .fontWeight(.medium)
-            .foregroundStyle(.sh(.midnight50))
-        }
-        .padding(20)
-    }
-    
-    @MainActor @ViewBuilder
-    private var page2View: some View {
-        let item = storageService.item(id: "part-heavy-modular-frame")
-        let recipe = storageService.recipe(id: "recipe-alumina-solution")
-        
-        VStack {
-            pageTitleText("whats-new-page-2-a-completely-new-design")
-                .frame(maxHeight: .infinity)
-            
-            contentBox {
-                if let item {
-                    ListRowItem(item)
-                        .padding(.horizontal, 10)
+            VStack(spacing: 0) {
+                ZStack {
+                    Group {
+                        switch page {
+                        case .welcome: WhatsNewWelcomePage()
+                        case .design: WhatsNewDesignPage()
+                        case .calculator: WhatsNewCalculatorPage()
+                        case .factories: WhatsNewFactoriesPage()
+                        case .statistics: WhatsNewStatisticsPage()
+                        }
+                    }
+                    .transition(.push(from: .trailing))
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
-                if let recipe {
-                    RecipeView(recipe)
-                        .padding(.horizontal, 10)
+                buttons
+            }
+            .animation(.interpolatingSpring.speed(1.2), value: page)
+        }
+    }
+    
+    @ViewBuilder
+    private var buttons: some View {
+        Group {
+            if page == .statistics {
+                Button(action: finish) {
+                    Text("general-close")
+                        .font(.title2)
+                        .frame(minWidth: 80)
+                        .padding(.vertical, 2)
                 }
-            }
-            
-            Color.clear
-                .frame(maxHeight: .infinity)
-        }
-        .padding(.vertical, 20)
-    }
-    
-    @MainActor @ViewBuilder
-    private var page3View: some View {
-        VStack {
-            pageTitleText("whats-new-page-3-new-production-calculator")
-            
-            ScrollView {
-                contentBox {
-                    SingleItemCalculatorItemView(
-                        viewModel: SingleItemCalculatorItemViewModel(part: plasticOutputItem)
-                    )
-                    
-                    SingleItemCalculatorItemView(
-                        viewModel: SingleItemCalculatorItemViewModel(part: rubberOutputItem)
-                    )
+                .matchedGeometryEffect(id: "button", in: namespace)
+            } else {
+                Button {
+                    page.nextPage()
+                } label: {
+                    Text("general-next")
+                        .font(.title2)
+                        .frame(minWidth: 80)
+                        .padding(.vertical, 2)
                 }
+                .matchedGeometryEffect(id: "button", in: namespace)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.trailing, 40)
             }
-            .scrollBounceBehavior(.basedOnSize)
         }
-        .padding(.vertical, 20)
+        .buttonStyle(.shBordered)
+        .padding(.bottom, 20)
     }
-    
-    @MainActor @ViewBuilder
-    private var page4View: some View {
-        VStack {
-            pageTitleText("whats-new-page-4-organize-your-productions-with-new-factories-tab")
-                .frame(maxHeight: .infinity)
-            
-            contentBox {
-                ListRowFactory(
-                    Factory(
-                        id: UUID(),
-                        name: NSLocalizedString(
-                            "whats-new-page-4-legacy-factory-name",
-                            value: "Legacy",
-                            comment: ""
-                        ),
-                        creationDate: Date(),
-                        asset: .legacy,
-                        productionIDs: [UUID(), UUID(), UUID()]
-                    )
-                )
-                
-                ListRowFactory(
-                    Factory(
-                        id: UUID(),
-                        name: NSLocalizedString(
-                            "whats-new-page-4-starter-factory-factory-name",
-                            value: "Starter Factory",
-                            comment: ""
-                        ),
-                        creationDate: Date(),
-                        asset: .abbreviation,
-                        productionIDs: [UUID(), UUID()]
-                    )
-                )
-                
-                ListRowFactory(
-                    Factory(
-                        id: UUID(),
-                        name: NSLocalizedString(
-                            "whats-new-page-4-steel-factory-factory-name",
-                            value: "Steel Factory",
-                            comment: ""
-                        ),
-                        creationDate: Date(),
-                        asset: .assetCatalog(name: "part-encased-industrial-beam"),
-                        productionIDs: [UUID(), UUID(), UUID(), UUID(), UUID()]
-                    )
-                )
-            }
-            .padding(.horizontal, 10)
-            
-            Color.clear
-                .frame(maxHeight: .infinity)
-        }
-        .padding(.vertical, 20)
-    }
-    
-    @MainActor @ViewBuilder
-    private var page5View: some View {
-        VStack {
-            pageTitleText("whats-new-page-5-all-new-statistics-design-which-shows-even-more-information")
-                .frame(maxHeight: .infinity)
-            
-            contentBox {
-                StatisticsView.ItemRow(.constant(StatisticsViewModel.Part(statisticPart: StatisticPart(
-                    part: storageService.part(id: "part-turbo-motor")!,
-                    recipes: [StatisticRecipe(recipe: storageService.recipe(id: "recipe-turbo-motor")!, amount: 2.5)]
-                ))))
-                
-                StatisticsView.NaturalResourceRow(StatisticNaturalResource(
-                    part: storageService.part(id: "part-water")!,
-                    amount: 360
-                ))
-                
-                StatisticsView.ProductionBuildingRow(productionBuilding: .constant(StatisticsViewModel.Machine(
-                    building: storageService.building(id: "building-assembler")!,
-                    recipes: [
-                        StatisticsViewModel.MachineRecipe(statisticRecipe: StatisticRecipe(
-                            recipe: storageService.recipe(id: "recipe-reinforced-iron-plate")!,
-                            amount: 10
-                        )),
-                        StatisticsViewModel.MachineRecipe(statisticRecipe: StatisticRecipe(
-                            recipe: storageService.recipe(id: "recipe-smart-plating")!,
-                            amount: 5
-                        ))
-                    ]
-                )))
-            }
-            .padding(.horizontal, 10)
-            
-            Button {
-                didFinish()
-            } label: {
-                Text("general-close")
-                    .font(.title2)
-                    .fontWeight(.medium)
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 16)
-            }
-            .buttonStyle(.shBordered)
-            .tint(.sh(.orange70))
-            .shButtonCornerRadius(8)
-            .frame(maxHeight: .infinity, alignment: .bottom)
-        }
-        .padding(.vertical, 20)
-    }
-    
-    @MainActor @ViewBuilder
-    private func pageTitleText(_ title: LocalizedStringKey) -> some View {
-        Text(title)
-            .multilineTextAlignment(.center)
-            .font(.largeTitle)
-            .fontWeight(.semibold)
-            .padding(.horizontal, 20)
-            .frame(minHeight: 120)
-    }
-    
-    @MainActor @ViewBuilder
-    private func contentBox<Content: View>(@ViewBuilder content: () -> Content) -> some View {
-        VStack(alignment: .leading, spacing: 24) {
-            content()
-        }
-        .padding(.vertical, 20)
-    }
-    
-    private var plasticOutputItem: SingleItemCalculator.OutputPart {
-        let plastic = storageService.part(id: "part-plastic")!
-        let rubber = storageService.part(id: "part-rubber")!
-        let fuel = storageService.part(id: "part-fuel")!
-        let recipe = storageService.recipe(id: "recipe-alternate-recycled-plastic")!
+}
+
+extension WhatsNewView {
+    enum Page {
+        case welcome
+        case design
+        case calculator
+        case factories
+        case statistics
         
-        return SingleItemCalculator.OutputPart(
-            part: plastic,
-            recipes: [
-                SingleItemCalculator.OutputRecipe(
-                    recipe: recipe,
-                    output: SingleItemCalculator.OutputRecipe.OutputIngredient(
-                        part: plastic,
-                        amount: 90,
-                        additionalAmounts: [23.333333]
-                    ),
-                    byproducts: [],
-                    inputs: [
-                        SingleItemCalculator.OutputRecipe.InputIngredient(
-                            part: rubber,
-                            amount: 56.666666,
-                            byproducts: [],
-                            isSelected: true
-                        ),
-                        SingleItemCalculator.OutputRecipe.InputIngredient(
-                            part: fuel,
-                            amount: 56.666666,
-                            byproducts: [],
-                            isSelected: false
-                        )
-                    ],
-                    proportion: .auto
-                )
-            ]
-        )
-    }
-    
-    private var rubberOutputItem: SingleItemCalculator.OutputPart {
-        let rubber = storageService.part(id: "part-rubber")!
-        let plastic = storageService.part(id: "part-plastic")!
-        let fuel = storageService.part(id: "part-fuel")!
-        let polymerResin = storageService.part(id: "part-polymer-resin")!
-        let water = storageService.part(id: "part-water")!
-        
-        let recipe1 = storageService.recipe(id: "recipe-alternate-recycled-rubber")!
-        let recipe2 = storageService.recipe(id: "recipe-residual-rubber")!
-        
-        return SingleItemCalculator.OutputPart(
-            part: plastic,
-            recipes: [
-                SingleItemCalculator.OutputRecipe(
-                    recipe: recipe1,
-                    output: SingleItemCalculator.OutputRecipe.OutputIngredient(part: rubber, amount: 56.666666),
-                    byproducts: [],
-                    inputs: [
-                        SingleItemCalculator.OutputRecipe.InputIngredient(
-                            part: plastic,
-                            amount: 23.333333,
-                            byproducts: [],
-                            isSelected: true
-                        ),
-                        SingleItemCalculator.OutputRecipe.InputIngredient(
-                            part: fuel,
-                            amount: 23.333333,
-                            byproducts: [],
-                            isSelected: false
-                        )
-                    ],
-                    proportion: .auto
-                ),
-                SingleItemCalculator.OutputRecipe(
-                    recipe: recipe2,
-                    output: SingleItemCalculator.OutputRecipe.OutputIngredient(part: rubber, amount: 10),
-                    byproducts: [],
-                    inputs: [
-                        SingleItemCalculator.OutputRecipe.InputIngredient(
-                            part: polymerResin,
-                            amount: 20,
-                            byproducts: [],
-                            isSelected: false
-                        ),
-                        SingleItemCalculator.OutputRecipe.InputIngredient(
-                            part: water,
-                            amount: 20,
-                            byproducts: [],
-                            isSelected: false
-                        )
-                    ],
-                    proportion: .fixed(10)
-                )
-            ]
-        )
+        mutating func nextPage() {
+            self = switch self {
+            case .welcome: .design
+            case .design: .calculator
+            case .calculator: .factories
+            case .factories: .statistics
+            case .statistics: .statistics
+            }
+        }
     }
 }
 
 #if DEBUG
 #Preview("What's new") {
-    WhatsNewView(didFinish: { })
+    WhatsNewView { }
 }
 #endif

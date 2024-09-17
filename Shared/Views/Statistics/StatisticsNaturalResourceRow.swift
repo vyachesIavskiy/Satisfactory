@@ -5,7 +5,7 @@ import SHUtils
 
 extension StatisticsView {
     struct NaturalResourceRow: View {
-        var naturalResource: StatisticNaturalResource
+        let naturalResource: StatisticNaturalResource
         
         init(_ naturalResource: StatisticNaturalResource) {
             self.naturalResource = naturalResource

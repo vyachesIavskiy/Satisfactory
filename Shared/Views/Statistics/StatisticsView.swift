@@ -47,12 +47,42 @@ struct StatisticsView: View {
     }
     
     @MainActor @ViewBuilder
+    private var machinesSection: some View {
+        if !viewModel.machinesSection.machines.isEmpty {
+            Section(isExpanded: $viewModel.machinesSection.expanded) {
+                VStack(spacing: 16) {
+                    ForEach(viewModel.machinesSection.machines) { machine in
+                        ProductionBuildingRow(machine)
+                    }
+                }
+            } header: {
+                SectionHeader(expanded: $viewModel.machinesSection.expanded) {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("statistics-production-buildings-section-name")
+                        
+                        HStack(spacing: 4) {
+                            Image(systemName: "bolt.fill")
+                                .foregroundStyle(.sh(viewModel.machinesSection.expanded ? .cyan : .gray))
+                            
+                            Text(viewModel.machinesSection.powerConsumptionString)
+                        }
+                        .font(.footnote)
+                        .fontWeight(.medium)
+                        .foregroundStyle(.sh(viewModel.machinesSection.expanded ? .midnight : .gray))
+                    }
+                }
+                .background(.background)
+            }
+        }
+    }
+    
+    @MainActor @ViewBuilder
     private var itemsSection: some View {
         if !viewModel.itemsSection.items.isEmpty {
             Section(isExpanded: $viewModel.itemsSection.expanded) {
                 VStack(spacing: 16) {
-                    ForEach($viewModel.itemsSection.items) { $item in
-                        StatisticsView.ItemRow($item)
+                    ForEach(viewModel.itemsSection.items) { item in
+                        StatisticsView.ItemRow(item)
                     }
                 }
             } header: {
@@ -76,36 +106,6 @@ struct StatisticsView: View {
                     "statistics-natural-resources-section-name",
                     expanded: $viewModel.naturalResourcesSection.expanded
                 )
-                .background(.background)
-            }
-        }
-    }
-    
-    @MainActor @ViewBuilder
-    private var machinesSection: some View {
-        if !viewModel.machinesSection.machines.isEmpty {
-            Section(isExpanded: $viewModel.machinesSection.expanded) {
-                VStack(spacing: 16) {
-                    ForEach($viewModel.machinesSection.machines) { $machine in
-                        ProductionBuildingRow(productionBuilding: $machine)
-                    }
-                }
-            } header: {
-                SectionHeader(expanded: $viewModel.machinesSection.expanded) {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("statistics-production-buildings-section-name")
-                        
-                        HStack(spacing: 4) {
-                            Image(systemName: "bolt.fill")
-                                .foregroundStyle(.sh(viewModel.machinesSection.expanded ? .cyan : .gray))
-                            
-                            Text(viewModel.machinesSection.powerConsumptionString)
-                        }
-                        .font(.footnote)
-                        .fontWeight(.medium)
-                        .foregroundStyle(.sh(viewModel.machinesSection.expanded ? .midnight : .gray))
-                    }
-                }
                 .background(.background)
             }
         }

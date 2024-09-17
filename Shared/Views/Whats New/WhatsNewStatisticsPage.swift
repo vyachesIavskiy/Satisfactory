@@ -8,14 +8,14 @@ struct WhatsNewStatisticsPage: View {
     private var storageService
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 40) {
+        VStack(alignment: .leading, spacing: 24) {
             WhatsNewPageTitle("whats-new-statistics-page-title")
             
             Spacer()
             
             WhatsNewPageSubtitle("whats-new-statistics-page-subtitle")
             
-            VStack(alignment: .leading, spacing: 48) {
+            VStack(alignment: .leading, spacing: 16) {
                 StatisticsView.ProductionBuildingRow(StatisticsViewModel.Machine(
                     building: storageService.building(id: "building-assembler")!,
                     recipes: [

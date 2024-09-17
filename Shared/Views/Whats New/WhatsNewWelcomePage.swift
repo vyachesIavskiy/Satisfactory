@@ -2,7 +2,7 @@ import SwiftUI
 
 struct WhatsNewWelcomePage: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 40) {
+        VStack(alignment: .leading, spacing: 24) {
             WhatsNewPageTitle("whats-new-welcome-page-title")
             
             Spacer()
@@ -19,11 +19,15 @@ struct WhatsNewWelcomePage: View {
             .foregroundStyle(.sh(.midnight50))
             .frame(maxWidth: .infinity, alignment: .leading)
             
+            WhatsNewPageFooter("whats-new-welcome-page-footer")
+                .foregroundStyle(.sh(.midnight80))
+            
             Spacer()
             
             Spacer()
         }
         .padding(20)
+        .padding(.top, 20)
     }
 }
 

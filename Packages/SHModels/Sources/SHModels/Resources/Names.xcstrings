@@ -1695,6 +1695,17 @@
         }
       }
     },
+    "part-sam" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SAM"
+          }
+        }
+      }
+    },
     "part-sam-fluctuator" : {
       "extractionState" : "manual",
       "localizations" : {

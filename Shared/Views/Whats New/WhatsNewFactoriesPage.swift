@@ -8,7 +8,7 @@ struct WhatsNewFactoriesPage: View {
     private var storageService
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 40) {
+        VStack(alignment: .leading, spacing: 24) {
             WhatsNewPageTitle("whats-new-factories-page-title")
             
             Spacer()
@@ -55,6 +55,9 @@ struct WhatsNewFactoriesPage: View {
                     )
                 )
             }
+            
+            WhatsNewPageFooter("whats-new-factories-page-footer")
+                .foregroundStyle(.sh(.green70))
             
             Spacer()
             

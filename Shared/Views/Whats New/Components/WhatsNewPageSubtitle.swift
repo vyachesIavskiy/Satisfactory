@@ -9,9 +9,10 @@ struct WhatsNewPageSubtitle: View {
     
     var body: some View {
         Text(text)
-            .multilineTextAlignment(.center)
-            .font(.system(size: 20))
-            .frame(maxWidth: .infinity)
+            .multilineTextAlignment(.leading)
+            .font(.headline)
+            .foregroundStyle(.sh(.midnight80))
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

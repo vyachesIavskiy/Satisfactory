@@ -16,7 +16,7 @@ struct WhatsNewDesignPage: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 40) {
+        VStack(alignment: .leading, spacing: 24) {
             WhatsNewPageTitle("whats-new-design-page-title")
             
             Spacer()
@@ -33,6 +33,9 @@ struct WhatsNewDesignPage: View {
                 }
             }
             .geometryGroup()
+            
+            WhatsNewPageFooter("whats-new-design-page-footer")
+                .foregroundStyle(.sh(.green70))
             
             Spacer()
             

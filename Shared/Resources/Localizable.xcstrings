@@ -2224,6 +2224,17 @@
         }
       }
     },
+    "whats-new-design-page-footer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tip: You can long press any item or recipe to pin it!"
+          }
+        }
+      }
+    },
     "whats-new-design-page-subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2263,6 +2274,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Legacy"
+          }
+        }
+      }
+    },
+    "whats-new-factories-page-footer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tip: You can now see statistics for a single production or the whole factory!"
           }
         }
       }
@@ -2332,13 +2354,23 @@
         }
       }
     },
+    "whats-new-welcome-page-footer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thank you for using our app! As always, if you would like to share any feedback, you can use Feedback button in a Settings tab.\n\nStay optimized!"
+          }
+        }
+      }
+    },
     "whats-new-welcome-page-subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A completely rewritten app with the same goal in mind"
+            "value" : "Welcome to Satisfactory 2.0, a completely rewritten app from scratch which brings you familiar functionality in a new look.\n\nKey features of this update are:"
           }
         }
       }

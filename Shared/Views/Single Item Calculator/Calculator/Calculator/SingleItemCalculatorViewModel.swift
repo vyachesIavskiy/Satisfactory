@@ -202,10 +202,14 @@ final class SingleItemCalculatorViewModel {
     }
     
     func showStatistics() {
-        let production = if let savedProduction {
-            savedProduction
+        let production: Production
+        
+        if let savedProduction {
+            var copy = savedProduction
+            copy.content = .singleItem(calculator.production)
+            production = copy
         } else {
-            Production(
+            production = Production(
                 id: uuid(),
                 name: part.localizedName,
                 creationDate: date(),

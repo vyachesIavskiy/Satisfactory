@@ -97,5 +97,9 @@ extension ProportionViewModel {
         var message: Text? {
             Text("single-item-production-tip-proportion-message")
         }
+        
+        var options: [any TipOption] = [
+            MaxDisplayCount(1)
+        ]
     }
 }

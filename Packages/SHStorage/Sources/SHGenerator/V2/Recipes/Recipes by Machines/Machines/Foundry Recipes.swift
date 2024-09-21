@@ -6,25 +6,67 @@ private extension Recipe.Static {
         id: String,
         inputs: [Ingredient],
         output: Ingredient,
-        duration: Int,
-        isDefault: Bool = true,
-        manuallyCraftable: Bool = true
+        duration: Double,
+        isDefault: Bool = true
     ) {
         self.init(
             id: id,
             inputs: inputs,
             output: output,
             machine: V2.Buildings.foundry,
-            manualCrafting: (isDefault && manuallyCraftable) ? [V2.Buildings.craftBench] : [],
             duration: duration,
-            powerConsumption: PowerConsumption(min: 16, max: 16),
+            powerConsumption: PowerConsumption(16),
             isDefault: isDefault
         )
     }
 }
 
+// MARK: - Ingots
 extension V2.Recipes {
-    // MARK: - Ingots
+    static let ironAlloyIngotRecipe = Recipe.Static(
+        id: "recipe-alternate-iron-alloy-ingot",
+        inputs: [
+            Recipe.Static.Ingredient(V2.Parts.ironOre, amount: 8),
+            Recipe.Static.Ingredient(V2.Parts.copperOre, amount: 2)
+        ],
+        output: Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 15),
+        duration: 12,
+        isDefault: false
+    )
+    
+    static let basicIronIngotRecipe = Recipe.Static(
+        id: "recipe-alternate-basic-iron-ingot",
+        inputs: [
+            Recipe.Static.Ingredient(V2.Parts.ironOre, amount: 5),
+            Recipe.Static.Ingredient(V2.Parts.limestone, amount: 8)
+        ],
+        output: Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 10),
+        duration: 12,
+        isDefault: false
+    )
+    
+    static let copperAlloyIngotRecipe = Recipe.Static(
+        id: "recipe-alternate-copper-alloy-ingot",
+        inputs: [
+            Recipe.Static.Ingredient(V2.Parts.copperOre, amount: 5),
+            Recipe.Static.Ingredient(V2.Parts.ironOre, amount: 5)
+        ],
+        output: Recipe.Static.Ingredient(V2.Parts.copperIngot, amount: 10),
+        duration: 6,
+        isDefault: false
+    )
+    
+    static let temperedCopperIngotRecipe = Recipe.Static(
+        id: "recipe-alternate-tempered-copper-ingot",
+        inputs: [
+            Recipe.Static.Ingredient(V2.Parts.copperOre, amount: 5),
+            Recipe.Static.Ingredient(V2.Parts.petroleumCoke, amount: 8)
+        ],
+        output: Recipe.Static.Ingredient(V2.Parts.copperIngot, amount: 12),
+        duration: 12,
+        isDefault: false
+    )
+    
     static let steelIngotRecipe = Recipe.Static(
         id: "recipe-steel-ingot",
         inputs: [
@@ -35,7 +77,7 @@ extension V2.Recipes {
         duration: 4
     )
     
-    static let steelIngotRecipe1 = Recipe.Static(
+    static let solidSteelIngotRecipe = Recipe.Static(
         id: "recipe-alternate-solid-steel-ingot",
         inputs: [
             Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 2),
@@ -46,18 +88,7 @@ extension V2.Recipes {
         isDefault: false
     )
     
-    static let steelIngotRecipe2 = Recipe.Static(
-        id: "recipe-alternate-compacted-steel-ingot",
-        inputs: [
-            Recipe.Static.Ingredient(V2.Parts.ironOre, amount: 6),
-            Recipe.Static.Ingredient(V2.Parts.compactedCoal, amount: 3)
-        ],
-        output: Recipe.Static.Ingredient(V2.Parts.steelIngot, amount: 10),
-        duration: 16,
-        isDefault: false
-    )
-    
-    static let steelIngotRecipe3 = Recipe.Static(
+    static let cokeSteelIngotRecipe = Recipe.Static(
         id: "recipe-alternate-coke-steel-ingot",
         inputs: [
             Recipe.Static.Ingredient(V2.Parts.ironOre, amount: 15),
@@ -68,25 +99,25 @@ extension V2.Recipes {
         isDefault: false
     )
     
-    static let ironIngotRecipe1 = Recipe.Static(
-        id: "recipe-alternate-iron-alloy-ingot",
+    static let compactedSteelIngotRecipe = Recipe.Static(
+        id: "recipe-alternate-compacted-steel-ingot",
         inputs: [
             Recipe.Static.Ingredient(V2.Parts.ironOre, amount: 2),
-            Recipe.Static.Ingredient(V2.Parts.copperOre, amount: 2)
+            Recipe.Static.Ingredient(V2.Parts.compactedCoal, amount: 1)
         ],
-        output: Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 5),
-        duration: 6,
+        output: Recipe.Static.Ingredient(V2.Parts.steelIngot, amount: 4),
+        duration: 24,
         isDefault: false
     )
     
-    static let copperIngotRecipe1 = Recipe.Static(
-        id: "recipe-alternate-copper-alloy-ingot",
+    static let temperedCateriumIngotRecipe = Recipe.Static(
+        id: "recipe-alternate-tempered-caterium-ingot",
         inputs: [
-            Recipe.Static.Ingredient(V2.Parts.copperOre, amount: 10),
-            Recipe.Static.Ingredient(V2.Parts.ironOre, amount: 5)
+            Recipe.Static.Ingredient(V2.Parts.cateriumOre, amount: 6),
+            Recipe.Static.Ingredient(V2.Parts.petroleumCoke, amount: 2)
         ],
-        output: Recipe.Static.Ingredient(V2.Parts.copperIngot, amount: 20),
-        duration: 12,
+        output: Recipe.Static.Ingredient(V2.Parts.cateriumIngot, amount: 3),
+        duration: 8,
         isDefault: false
     )
     
@@ -100,7 +131,82 @@ extension V2.Recipes {
         duration: 4
     )
     
-    // MARK: - FICSMAS
+    private static let ingotsRecipes = [
+        ironAlloyIngotRecipe,
+        basicIronIngotRecipe,
+        copperAlloyIngotRecipe,
+        temperedCopperIngotRecipe,
+        steelIngotRecipe,
+        solidSteelIngotRecipe,
+        cokeSteelIngotRecipe,
+        compactedSteelIngotRecipe,
+        temperedCateriumIngotRecipe,
+        aluminumIngotRecipe,
+    ]
+}
+
+// MARK: - Standard parts
+extension V2.Recipes {
+    static let steelCastPlateRecipe = Recipe.Static(
+        id: "recipe-alternate-steel-cast-plate",
+        inputs: [
+            Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 1),
+            Recipe.Static.Ingredient(V2.Parts.steelIngot, amount: 1)
+        ],
+        output: Recipe.Static.Ingredient(V2.Parts.ironPlate, amount: 3),
+        duration: 4,
+        isDefault: false
+    )
+    
+    static let moldedBeamRecipe = Recipe.Static(
+        id: "recipe-alternate-molded-beam",
+        inputs: [
+            Recipe.Static.Ingredient(V2.Parts.steelIngot, amount: 24),
+            Recipe.Static.Ingredient(V2.Parts.concrete, amount: 16)
+        ],
+        output: Recipe.Static.Ingredient(V2.Parts.steelBeam, amount: 9),
+        duration: 12,
+        isDefault: false
+    )
+    
+    static let moldedSteelPipeRecipe = Recipe.Static(
+        id: "recipe-alternate-molded-steel-pipe",
+        inputs: [
+            Recipe.Static.Ingredient(V2.Parts.steelIngot, amount: 5),
+            Recipe.Static.Ingredient(V2.Parts.concrete, amount: 3)
+        ],
+        output: Recipe.Static.Ingredient(V2.Parts.steelPipe, amount: 5),
+        duration: 6,
+        isDefault: false
+    )
+    
+    private static let standardRecipes = [
+        steelCastPlateRecipe,
+        moldedBeamRecipe,
+        moldedSteelPipeRecipe,
+    ]
+}
+
+// MARK: - Compounds
+extension V2.Recipes {
+    static let fusedQuartzCrystalRecipe = Recipe.Static(
+        id: "recipe-alternate-fused-quartz-crystal",
+        inputs: [
+            Recipe.Static.Ingredient(V2.Parts.rawQuartz, amount: 25),
+            Recipe.Static.Ingredient(V2.Parts.coal, amount: 12)
+        ],
+        output: Recipe.Static.Ingredient(V2.Parts.quartzCrystal, amount: 18),
+        duration: 20,
+        isDefault: false
+    )
+    
+    private static let compoundsRecipes = [
+        fusedQuartzCrystalRecipe,
+    ]
+}
+
+// MARK: - FICSMAS
+extension V2.Recipes {
     static let copperFicsmasOrnamentRecipe = Recipe.Static(
         id: "recipe-copprt-ficsmas-ornament",
         inputs: [
@@ -108,8 +214,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.copperIngot, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.copperFicsmasOrnament, amount: 1),
-        duration: 12,
-        manuallyCraftable: false
+        duration: 12
     )
     
     static let ironFicsmasOrnamentRecipe = Recipe.Static(
@@ -119,19 +224,20 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 3)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.ironFicsmasOrnament, amount: 1),
-        duration: 12,
-        manuallyCraftable: false
+        duration: 12
     )
     
-    static let foundryRecipes = [
-        steelIngotRecipe,
-        steelIngotRecipe1,
-        steelIngotRecipe2,
-        steelIngotRecipe3,
-        ironIngotRecipe1,
-        copperIngotRecipe1,
-        aluminumIngotRecipe,
+    private static let ficsmasRecipes = [
         copperFicsmasOrnamentRecipe,
         ironFicsmasOrnamentRecipe
     ]
+}
+
+// MARK: Foundry recipes
+extension V2.Recipes {
+    static let foundryRecipes =
+    ingotsRecipes +
+    standardRecipes +
+    compoundsRecipes +
+    ficsmasRecipes
 }

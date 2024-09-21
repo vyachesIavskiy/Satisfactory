@@ -2,23 +2,19 @@ import SwiftUI
 import SHModels
 
 struct RecipeItemAmountShape: Shape {
-    let item: any Item
+    let part: Part
     let cornerRadius: Double
     private var inset: CGFloat = 0
     
-    private var partForm: Part.Form? {
-        (item as? Part)?.form
-    }
-    
-    init(item: any Item, cornerRadius: Double) {
-        self.item = item
+    init(part: Part, cornerRadius: Double) {
+        self.part = part
         self.cornerRadius = cornerRadius
     }
     
     func path(in rect: CGRect) -> Path {
-        switch partForm {
-        case .solid, nil: solidPath(in: rect)
-        case .fluid, .gas: fluidPath(in: rect)
+        switch part.form {
+        case .solid: solidPath(in: rect)
+        case .fluid, .gas, .matter: fluidPath(in: rect)
         }
     }
     

@@ -1,7 +1,9 @@
 import Foundation
 
 public extension FormatStyle where Self == FloatingPointFormatStyle<Double> {
-    static var shNumber: FloatingPointFormatStyle<Double> { .number.precision(.fractionLength(0...4)) }
+    static func shNumber(fractionLength: UInt = 4) -> FloatingPointFormatStyle<Double> {
+        .number.precision(.fractionLength(0...Int(fractionLength)))
+    }
 }
 
 public extension FormatStyle where Self == FloatingPointFormatStyle<Double>.Percent {

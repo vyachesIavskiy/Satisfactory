@@ -2,10 +2,10 @@ import SHModels
 import SHStaticModels
 
 private extension Extraction.Static {
-    init(naturalResource: Part.Static) {
+    init(naturalResources: [Part.Static]) {
         self.init(
             building: V2.Buildings.resourceWellExtractor,
-            naturalResources: [naturalResource],
+            naturalResources: naturalResources,
             rates: [
                 Extraction.Rate(purity: .impure, amount: 30),
                 Extraction.Rate(purity: .normal, amount: 60),
@@ -16,13 +16,13 @@ private extension Extraction.Static {
 }
 
 extension V2.Extractions {
-    static let nitrogenGas = Extraction.Static(naturalResource: V2.Parts.nitrogenGas)
-    static let waterWell = Extraction.Static(naturalResource: V2.Parts.water)
-    static let crudeOilWell = Extraction.Static(naturalResource: V2.Parts.crudeOil)
+    static let resourceWell = Extraction.Static(naturalResources: [
+        V2.Parts.nitrogenGas,
+        V2.Parts.water,
+        V2.Parts.crudeOil
+    ])
     
     static let resourceWellExtractions = [
-        nitrogenGas,
-        waterWell,
-        crudeOilWell
+        resourceWell,
     ]
 }

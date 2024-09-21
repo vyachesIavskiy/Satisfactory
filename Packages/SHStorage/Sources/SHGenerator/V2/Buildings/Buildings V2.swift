@@ -10,11 +10,11 @@ extension Building.Static {
 extension V2 {
     enum Buildings {
         static let all =
-        generatorBuildings +
-        fluidExtractorBuildings +
+        progressionBuildings +
         manufacturerBuildings +
-        minerBuildings +
         smelterBuildings +
-        workstationBuildingsV2
+        minerBuildings +
+        fluidExtractorBuildings +
+        generatorBuildings
     }
 }

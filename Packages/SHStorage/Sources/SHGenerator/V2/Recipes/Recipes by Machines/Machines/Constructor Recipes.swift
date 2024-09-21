@@ -6,26 +6,23 @@ private extension Recipe.Static {
         id: String,
         input: Ingredient,
         output: Ingredient,
-        duration: Int,
-        isDefault: Bool = true,
-        manuallyCraftable: Bool = true,
-        additionalManualCrafting: Building.Static? = nil
+        duration: Double,
+        isDefault: Bool = true
     ) {
         self.init(
             id: id,
             inputs: [input],
             output: output,
             machine: V2.Buildings.constructor,
-            manualCrafting: (isDefault && manuallyCraftable) ? [V2.Buildings.craftBench] + (additionalManualCrafting.map { [$0] } ?? []) : [],
             duration: duration,
-            powerConsumption: PowerConsumption(min: 4, max: 4),
+            powerConsumption: PowerConsumption(4),
             isDefault: isDefault
         )
     }
 }
 
+// MARK: - Standard Parts
 extension V2.Recipes {
-    // MARK: - Standard Parts
     static let ironPlateRecipe = Recipe.Static(
         id: "recipe-iron-plate",
         input: Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 3),
@@ -40,11 +37,19 @@ extension V2.Recipes {
         duration: 4
     )
     
-    static let ironRodRecipe1 = Recipe.Static(
+    static let steelRodRecipe = Recipe.Static(
         id: "recipe-alternate-steel-rod",
         input: Recipe.Static.Ingredient(V2.Parts.steelIngot, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.ironRod, amount: 4),
         duration: 5,
+        isDefault: false
+    )
+    
+    static let aluminumRodRecipe = Recipe.Static(
+        id: "recipe-alternate-aluminum-rod",
+        input: Recipe.Static.Ingredient(V2.Parts.aluminumIngot, amount: 1),
+        output: Recipe.Static.Ingredient(V2.Parts.ironRod, amount: 7),
+        duration: 8,
         isDefault: false
     )
     
@@ -55,7 +60,7 @@ extension V2.Recipes {
         duration: 6
     )
     
-    static let screwRecipe1 = Recipe.Static(
+    static let castScrewRecipe = Recipe.Static(
         id: "recipe-alternate-cast-screw",
         input: Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 5),
         output: Recipe.Static.Ingredient(V2.Parts.screw, amount: 20),
@@ -63,7 +68,7 @@ extension V2.Recipes {
         isDefault: false
     )
     
-    static let screwRecipe2 = Recipe.Static(
+    static let steelScrewRecipe = Recipe.Static(
         id: "recipe-alternate-steel-screw",
         input: Recipe.Static.Ingredient(V2.Parts.steelBeam, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.screw, amount: 52),
@@ -85,11 +90,27 @@ extension V2.Recipes {
         duration: 4
     )
     
+    static let aluminumBeamRecipe = Recipe.Static(
+        id: "recipe-alternate-aluminum-beam",
+        input: Recipe.Static.Ingredient(V2.Parts.aluminumIngot, amount: 3),
+        output: Recipe.Static.Ingredient(V2.Parts.steelBeam, amount: 3),
+        duration: 8,
+        isDefault: false
+    )
+    
     static let steelPipeRecipe = Recipe.Static(
         id: "recipe-steel-pipe",
         input: Recipe.Static.Ingredient(V2.Parts.steelIngot, amount: 3),
         output: Recipe.Static.Ingredient(V2.Parts.steelPipe, amount: 2),
         duration: 6
+    )
+    
+    static let ironPipeRecipe = Recipe.Static(
+        id: "recipe-alternate-iron-pipe",
+        input: Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 20),
+        output: Recipe.Static.Ingredient(V2.Parts.steelPipe, amount: 5),
+        duration: 12,
+        isDefault: false
     )
     
     static let aluminumCasingRecipe = Recipe.Static(
@@ -99,7 +120,33 @@ extension V2.Recipes {
         duration: 2
     )
     
-    // MARK: - Electronics
+    static let ficsiteTrigonRecipe = Recipe.Static(
+        id: "recipe-ficsite-trigon",
+        input: Recipe.Static.Ingredient(V2.Parts.ficsiteIngot, amount: 1),
+        output: Recipe.Static.Ingredient(V2.Parts.ficsiteTrigon, amount: 3),
+        duration: 6
+    )
+    
+    private static let standardPartsRecipes = [
+        ironPlateRecipe,
+        ironRodRecipe,
+        steelRodRecipe,
+        aluminumRodRecipe,
+        screwRecipe,
+        castScrewRecipe,
+        steelScrewRecipe,
+        copperSheetRecipe,
+        steelBeamRecipe,
+        aluminumBeamRecipe,
+        steelPipeRecipe,
+        ironPipeRecipe,
+        aluminumCasingRecipe,
+        ficsiteTrigonRecipe,
+    ]
+}
+
+// MARK: - Electronics
+extension V2.Recipes {
     static let wireRecipe = Recipe.Static(
         id: "recipe-wire",
         input: Recipe.Static.Ingredient(V2.Parts.copperIngot, amount: 1),
@@ -107,7 +154,7 @@ extension V2.Recipes {
         duration: 4
     )
     
-    static let wireRecipe1 = Recipe.Static(
+    static let ironWireRecipe = Recipe.Static(
         id: "recipe-alternate-iron-wire",
         input: Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 5),
         output: Recipe.Static.Ingredient(V2.Parts.wire, amount: 9),
@@ -115,7 +162,7 @@ extension V2.Recipes {
         isDefault: false
     )
     
-    static let wireRecipe2 = Recipe.Static(
+    static let cateriumWireRecipe = Recipe.Static(
         id: "recipe-alternate-caterium-wire",
         input: Recipe.Static.Ingredient(V2.Parts.cateriumIngot, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.wire, amount: 8),
@@ -137,7 +184,25 @@ extension V2.Recipes {
         duration: 5
     )
     
-    // MARK: - Minerals
+    static let reanimatedSAMRecipe = Recipe.Static(
+        id: "recipe-reanimated-sam",
+        input: Recipe.Static.Ingredient(V2.Parts.sam, amount: 4),
+        output: Recipe.Static.Ingredient(V2.Parts.reanimatedSAM, amount: 1),
+        duration: 2
+    )
+    
+    private static let electronicsRecipes = [
+        wireRecipe,
+        ironWireRecipe,
+        cateriumWireRecipe,
+        cableRecipe,
+        quickwireRecipe,
+        reanimatedSAMRecipe,
+    ]
+}
+
+// MARK: - Compounds
+extension V2.Recipes {
     static let concreteRecipe = Recipe.Static(
         id: "recipe-concrete",
         input: Recipe.Static.Ingredient(V2.Parts.limestone, amount: 3),
@@ -166,14 +231,16 @@ extension V2.Recipes {
         duration: 6
     )
     
-    // MARK: - Biomass
-    static let colorCartridgeRecipe = Recipe.Static(
-        id: "recipe-color-cartridge",
-        input: Recipe.Static.Ingredient(V2.Parts.flowerPetals, amount: 5),
-        output: Recipe.Static.Ingredient(V2.Parts.colorCartridge, amount: 10),
-        duration: 8
-    )
-    
+    private static let compoundsRecipes = [
+        concreteRecipe,
+        quartzCrystalRecipe,
+        silicaRecipe,
+        copperPowderRecipe,
+    ]
+}
+
+// MARK: - Biomass
+extension V2.Recipes {
     static let biomassLeavesRecipe = Recipe.Static(
         id: "recipe-biomass-leaves",
         input: Recipe.Static.Ingredient(V2.Parts.leaves, amount: 10),
@@ -225,7 +292,19 @@ extension V2.Recipes {
         isDefault: false
     )
     
-    // MARK: - Containers
+    private static let biomassRecipes = [
+        biomassLeavesRecipe,
+        biomassWoodRecipe,
+        biomassMyceliaRecipe,
+        biomassAlienProteinRecipe,
+        solidBiofuelRecipe,
+        bioCoalRecipe,
+        charcoalRecipe,
+    ]
+}
+
+// MARK: - Containers
+extension V2.Recipes {
     static let emptyCanisterRecipe = Recipe.Static(
         id: "recipe-empty-canister",
         input: Recipe.Static.Ingredient(V2.Parts.plastic, amount: 2),
@@ -233,11 +312,11 @@ extension V2.Recipes {
         duration: 4
     )
     
-    static let emptyCanisterRecipe1 = Recipe.Static(
+    static let steelCanisterRecipe = Recipe.Static(
         id: "recipe-alternate-steel-canister",
-        input: Recipe.Static.Ingredient(V2.Parts.steelIngot, amount: 3),
-        output: Recipe.Static.Ingredient(V2.Parts.emptyCanister, amount: 2),
-        duration: 3,
+        input: Recipe.Static.Ingredient(V2.Parts.steelIngot, amount: 4),
+        output: Recipe.Static.Ingredient(V2.Parts.emptyCanister, amount: 4),
+        duration: 6,
         isDefault: false
     )
     
@@ -248,7 +327,15 @@ extension V2.Recipes {
         duration: 1
     )
     
-    // MARK: - Alien Remains
+    private static let containersRecipes = [
+        emptyCanisterRecipe,
+        steelCanisterRecipe,
+        emptyFluidTankRecipe,
+    ]
+}
+
+// MARK: - Alien Remains
+extension V2.Recipes {
     static let hogProteinRecipe = Recipe.Static(
         id: "recipe-hog-protein",
         input: Recipe.Static.Ingredient(V2.Parts.hogRemains, amount: 1),
@@ -270,9 +357,9 @@ extension V2.Recipes {
         duration: 3
     )
     
-    static let plasmaSpitterProteinRecipe = Recipe.Static(
+    static let spitterProteinRecipe = Recipe.Static(
         id: "recipe-plasma-spitter-protein",
-        input: Recipe.Static.Ingredient(V2.Parts.plasmaSpitterRemains, amount: 1),
+        input: Recipe.Static.Ingredient(V2.Parts.spitterRemains, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.alienProtein, amount: 1),
         duration: 3
     )
@@ -284,7 +371,17 @@ extension V2.Recipes {
         duration: 6
     )
     
-    // MARK: - Power Shards
+    private static let alienRemainsRecipes = [
+        hogProteinRecipe,
+        hatcherProteinRecipe,
+        stingerProteinRecipe,
+        spitterProteinRecipe,
+        alienDNACapsuleRecipe,
+    ]
+}
+
+// MARK: - Power Shards
+extension V2.Recipes {
     static let powerShard1Recipe = Recipe.Static(
         id: "recipe-power-shard-1",
         input: Recipe.Static.Ingredient(V2.Parts.bluePowerSlug, amount: 1),
@@ -306,100 +403,83 @@ extension V2.Recipes {
         duration: 24
     )
     
-    // MARK: - Ammunition
+    private static let powerShardsRecipes = [
+        powerShard1Recipe,
+        powerShard2Recipe,
+        powerShard5Recipe,
+    ]
+}
+
+// MARK: - Ammunition
+extension V2.Recipes {
     static let ironRebarRecipe = Recipe.Static(
         id: "recipe-iron-rebar",
         input: Recipe.Static.Ingredient(V2.Parts.ironRod, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.ironRebar, amount: 1),
-        duration: 4,
-        additionalManualCrafting: V2.Buildings.equipmentWorkshop
+        duration: 4
     )
     
-    // MARK: - FICSMAS
+    private static let ammunitionRecipes = [
+        ironRebarRecipe,
+    ]
+}
+
+// MARK: - FICSMAS
+extension V2.Recipes {
     static let ficsmasTreeBranchRecipe = Recipe.Static(
         id: "recipe-ficsmas-tree-branch",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 1),
         output: Recipe.Static.Ingredient(V2.Parts.ficsmasTreeBranch, amount: 1),
-        duration: 6,
-        manuallyCraftable: false
+        duration: 6
     )
     
     static let candyCanePartRecipe = Recipe.Static(
         id: "recipe-candy-cane",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 3),
         output: Recipe.Static.Ingredient(V2.Parts.candyCanePart, amount: 1),
-        duration: 12,
-        manuallyCraftable: false
+        duration: 12
     )
     
     static let ficsmasBowRecipe = Recipe.Static(
         id: "recipe-ficsmas-bow",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 2),
         output: Recipe.Static.Ingredient(V2.Parts.ficsmasBow, amount: 1),
-        duration: 12,
-        manuallyCraftable: false
+        duration: 12
     )
     
     static let actualSnowRecipe = Recipe.Static(
         id: "recipe-actual-snow",
         input: Recipe.Static.Ingredient(V2.Parts.ficsmasGift, amount: 5),
         output: Recipe.Static.Ingredient(V2.Parts.actualSnow, amount: 2),
-        duration: 12,
-        manuallyCraftable: false
+        duration: 12
     )
     
     static let snowballRecipe = Recipe.Static(
         id: "recipe-snowball",
         input: Recipe.Static.Ingredient(V2.Parts.actualSnow, amount: 3),
         output: Recipe.Static.Ingredient(V2.Parts.snowball, amount: 1),
-        duration: 12,
-        manuallyCraftable: false
+        duration: 12
     )
     
-    static let constructorRecipes = [
-        ironPlateRecipe,
-        ironRodRecipe,
-        ironRodRecipe1,
-        screwRecipe,
-        screwRecipe1,
-        screwRecipe2,
-        copperSheetRecipe,
-        steelBeamRecipe,
-        steelPipeRecipe,
-        aluminumCasingRecipe,
-        wireRecipe,
-        wireRecipe1,
-        wireRecipe2,
-        cableRecipe,
-        quickwireRecipe,
-        concreteRecipe,
-        quartzCrystalRecipe,
-        silicaRecipe,
-        copperPowderRecipe,
-        colorCartridgeRecipe,
-        biomassLeavesRecipe,
-        biomassWoodRecipe,
-        biomassMyceliaRecipe,
-        biomassAlienProteinRecipe,
-        solidBiofuelRecipe,
-        bioCoalRecipe,
-        charcoalRecipe,
-        emptyCanisterRecipe,
-        emptyCanisterRecipe1,
-        emptyFluidTankRecipe,
-        hogProteinRecipe,
-        hatcherProteinRecipe,
-        stingerProteinRecipe,
-        plasmaSpitterProteinRecipe,
-        alienDNACapsuleRecipe,
-        powerShard1Recipe,
-        powerShard2Recipe,
-        powerShard5Recipe,
-        ironRebarRecipe,
+    private static let ficsmasRecipes = [
         ficsmasTreeBranchRecipe,
         candyCanePartRecipe,
         ficsmasBowRecipe,
         actualSnowRecipe,
         snowballRecipe
     ]
+}
+
+// MARK: Constructor recipes
+extension V2.Recipes {
+    static let constructorRecipes =
+    standardPartsRecipes +
+    electronicsRecipes +
+    compoundsRecipes +
+    biomassRecipes +
+    containersRecipes +
+    alienRemainsRecipes +
+    powerShardsRecipes +
+    ammunitionRecipes +
+    ficsmasRecipes
 }

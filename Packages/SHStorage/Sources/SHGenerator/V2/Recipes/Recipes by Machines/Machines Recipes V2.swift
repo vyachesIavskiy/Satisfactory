@@ -1,14 +1,16 @@
 
 extension V2.Recipes {
     static let machinesRecipes =
-    assemblerRecipes +
-    blenderRecipes +
-    constructorRecipes +
+    smelterRecipes +
     foundryRecipes +
-    manufacturerRecipes +
-    nuclearPowerPlantRecipes +
-    packagerRecipes +
-    particleAcceleratorRecipes +
+    constructorRecipes +
+    assemblerRecipes +
     refineryRecipes +
-    smelterRecipes
+    manufacturerRecipes +
+    blenderRecipes +
+    packagerRecipes +
+    nuclearPowerPlantRecipes +
+    particleAcceleratorRecipes +
+    converterRecipes +
+    quantumEncoderRecipes
 }

@@ -47,15 +47,23 @@ extension SHStorageService {
             persistentStorage = SHPersistentStorage(staticStorage: staticStorage)
         }
         
+        package func productions(inside factory: Factory) -> [Production] {
+            persistentStorage.productions(inside: factory)
+        }
+        
+        package func streamProductions(inside factory: Factory) -> AsyncStream<[Production]> {
+            persistentStorage.streamProductions(inside: factory)
+        }
+        
         // MARK: Dynamic members
         subscript<M>(dynamicMember keyPath: KeyPath<SHStaticStorage, M>) -> M {
             staticStorage[keyPath: keyPath]
         }
         
         // MARK: Loading
-        func load(_ options: LoadOptions) throws {
+        func load() throws {
             try staticStorage.load()
-            try persistentStorage.load(options)
+            try persistentStorage.load()
         }
         
         func loadForMigration() throws {
@@ -63,12 +71,12 @@ extension SHStorageService {
         }
         
         // MARK: Change pin status
-        func changePartPinStatus(_ partID: String) {
-            try? persistentStorage.changePartPinStatus(partID)
+        func changePinStatus(partID: String, productionType: ProductionType) {
+            try? persistentStorage.changePartPinStatus(partID, productionType: productionType)
         }
         
-        func changeEquipmentPinStatus(_ equipmentID: String) {
-            try? persistentStorage.changeEquipmentPinStatus(equipmentID)
+        func changePinStatus(buildingID: String, productionType: ProductionType) {
+            try? persistentStorage.changeBuildingPinStatus(buildingID, productionType: productionType)
         }
         
         func changeRecipePinStatus(_ recipeID: String) {
@@ -84,6 +92,14 @@ extension SHStorageService {
             try? persistentStorage.saveProduction(production, to: factoryID)
         }
         
+        func saveProductionInformation(_ production: Production, to factoryID: UUID) {
+            try? persistentStorage.saveProductionInformation(production, to: factoryID)
+        }
+        
+        func saveProductionContent(_ production: Production) {
+            try? persistentStorage.saveProductionContent(production)
+        }
+        
         // MARK: Deleting
         func deleteFactory(_ factory: Factory) {
             try? persistentStorage.deleteFactory(factory)
@@ -91,6 +107,15 @@ extension SHStorageService {
         
         func deleteProduction(_ production: Production) {
             try? persistentStorage.deleteProduction(production)
+        }
+        
+        // MARK: Moving
+        func moveFactories(fromOffsets: IndexSet, toOffset: Int) {
+            try? persistentStorage.moveFactories(fromOffsets: fromOffsets, toOffset: toOffset)
+        }
+        
+        func moveProductions(factory: Factory, fromOffsets: IndexSet, toOffset: Int) {
+            try? persistentStorage.moveProductions(factory: factory, fromOffsets: fromOffsets, toOffset: toOffset)
         }
     }
 }

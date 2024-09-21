@@ -3,19 +3,19 @@ import SHModels
 
 // MARK: Static
 extension Extraction {
-    public struct Static: Codable {
-        public let buildingID: String
-        public let naturalResourceIDs: [String]
-        public let rates: [Rate]
+    package struct Static: Codable {
+        package let buildingID: String
+        package let naturalResourceIDs: [String]
+        package let rates: [Rate]
         
-        public init(buildingID: String, naturalResourceIDs: [String], rates: [Rate]) {
+        package init(buildingID: String, naturalResourceIDs: [String], rates: [Rate]) {
             self.buildingID = buildingID
             self.naturalResourceIDs = naturalResourceIDs
             self.rates = rates
         }
     }
     
-    public init(
+    package init(
         _ extraction: Static,
         buildingProvider: (_ buildingID: String) throws -> Building,
         partProvider: (_ partID: String) throws -> Part
@@ -30,11 +30,11 @@ extension Extraction {
 
 // MARK: Static rate
 extension Extraction.Static {
-    public struct Rate: Codable {
-        public let purityID: String
-        public let amount: Double
+    package struct Rate: Codable {
+        package let purityID: String
+        package let amount: Double
         
-        public init(purityID: String, amount: Double) {
+        package init(purityID: String, amount: Double) {
             self.purityID = purityID
             self.amount = amount
         }

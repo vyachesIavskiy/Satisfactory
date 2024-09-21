@@ -9,9 +9,8 @@ final class Legacy: VersionedStorage {
     let version = Version.legacy
     
     var parts = [Part.Persistent.Legacy]()
-    var equipment = [Equipment.Persistent.Legacy]()
     var recipes = [Recipe.Persistent.Legacy]()
-    var productions = [SingleItemProduction.Persistent.Legacy]()
+    var productions = [Production.Content.SingleItem.Persistent.Legacy]()
     
     private let persistence = SHPersistence()
     private let fileManager = SHFileManager()
@@ -35,20 +34,8 @@ final class Legacy: VersionedStorage {
         logger.info("Loading Legacy storage.")
         
         parts = try persistence.loadMany(Part.Persistent.Legacy.self, fromDirectory: .parts)
-        equipment = try persistence.loadMany(Equipment.Persistent.Legacy.self, fromDirectory: .equipment)
         recipes = try persistence.loadMany(Recipe.Persistent.Legacy.self, fromDirectory: .recipes)
-        productions = try persistence.loadMany(SingleItemProduction.Persistent.Legacy.self, fromDirectory: .productions)
-        
-        logger.info("Legacy storage is loaded.")
-    }
-    
-    func load(from options: LoadOptions) {
-        logger.info("Loading Legacy storage from load options.")
-        
-        parts = options.v1.pinnedPartIDs.map { Part.Persistent.Legacy(id: $0, isFavorite: true) }
-        equipment = options.v1.pinnedEquipmentIDs.map { Equipment.Persistent.Legacy(id: $0, isFavorite: true) }
-        recipes = options.v1.pinnedRecipeIDs.map { Recipe.Persistent.Legacy(id: $0, isFavorite: true) }
-        productions = options.v1.savedProductions
+        productions = try persistence.loadMany(Production.Content.SingleItem.Persistent.Legacy.self, fromDirectory: .productions)
         
         logger.info("Legacy storage is loaded.")
     }

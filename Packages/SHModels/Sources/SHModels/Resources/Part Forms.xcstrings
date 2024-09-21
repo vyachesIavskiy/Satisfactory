@@ -23,6 +23,17 @@
         }
       }
     },
+    "part-form-matter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Matter"
+          }
+        }
+      }
+    },
     "part-form-solid" : {
       "extractionState" : "manual",
       "localizations" : {

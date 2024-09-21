@@ -3,80 +3,23 @@ import SHModels
 import SHStaticModels
 
 extension Production.Persistent {
-    public enum V2: Identifiable, Codable, Hashable {
-        case singleItem(SingleItemProduction.Persistent.V2)
-        case fromResources(FromResourcesProduction.Persistent.V2)
-        case power(PowerProduction.Persistent.V2)
+    package struct V2: Identifiable, Codable, Hashable {
+        package var id: UUID
+        package var name: String
+        package var creationDate: Date
+        package var assetName: String
+        package var content: Production.Content.Persistent.V2
         
-        enum CodingKeys: String, CodingKey {
-            case productionType
+        package init(id: UUID, name: String, creationDate: Date, assetName: String, content: Production.Content.Persistent.V2) {
+            self.id = id
+            self.name = name
+            self.creationDate = creationDate
+            self.assetName = assetName
+            self.content = content
         }
         
-        public var id: UUID {
-            switch self {
-            case let .singleItem(production): production.id
-            case let .fromResources(production): production.id
-            case let .power(production): production.id
-            }
-        }
-        
-        public init(from decoder: any Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-            let productionType = try container.decode(ProductionType.self, forKey: .productionType)
-            
-            switch productionType {
-            case .singleItem:
-                try self = .singleItem(SingleItemProduction.Persistent.V2(from: decoder))
-                
-            case .fromResources:
-                try self = .fromResources(FromResourcesProduction.Persistent.V2(from: decoder))
-                
-            case .power:
-                try self = .power(PowerProduction.Persistent.V2(from: decoder))
-            }
-        }
-        
-        public func encode(to encoder: any Encoder) throws {
-            var container = encoder.container(keyedBy: CodingKeys.self)
-            
-            switch self {
-            case let .singleItem(production):
-                try production.encode(to: encoder)
-                try container.encode(ProductionType.singleItem, forKey: .productionType)
-                
-            case let .fromResources(production):
-                try production.encode(to: encoder)
-                try container.encode(ProductionType.fromResources, forKey: .productionType)
-                
-            case let .power(production):
-                try production.encode(to: encoder)
-                try container.encode(ProductionType.power, forKey: .productionType)
-            }
-        }
-        
-        public mutating func migrate(migration: Migration) {
-            switch self {
-            case let .singleItem(production):
-                var copy = production
-                copy.migrate(migration)
-                self = .singleItem(copy)
-                
-            case let .fromResources(production):
-                var copy = production
-                copy.migrate(migration)
-                self = .fromResources(copy)
-                
-            case let .power(production):
-                var copy = production
-                copy.migrate(migration)
-                self = .power(copy)
-            }
+        package mutating func migrate(migration: Migration) {
+            content.migrate(migration: migration)
         }
     }
-}
-
-enum ProductionType: String, Codable {
-    case singleItem
-    case fromResources
-    case power
 }

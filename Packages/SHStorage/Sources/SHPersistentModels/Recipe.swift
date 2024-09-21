@@ -1,5 +1,5 @@
 import SHModels
 
 extension Recipe {
-    public enum Persistent {}
+    package enum Persistent {}
 }

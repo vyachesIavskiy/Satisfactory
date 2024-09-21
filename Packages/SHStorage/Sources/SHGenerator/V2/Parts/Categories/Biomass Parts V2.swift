@@ -8,13 +8,19 @@ private extension Part.Static {
 }
 
 extension V2.Parts {
+    static let leaves = Part.Static(id: "part-leaves")
+    static let wood = Part.Static(id: "part-wood")
+    static let mycelia = Part.Static(id: "part-mycelia")
     static let biomass = Part.Static(id: "part-biomass")
-    static let solidBiofuel = Part.Static(id: "part-solid-biofuel")
     static let fabric = Part.Static(id: "part-fabric")
+    static let solidBiofuel = Part.Static(id: "part-solid-biofuel")
     
     static let biomassParts = [
+        leaves,
+        wood,
+        mycelia,
         biomass,
+        fabric,
         solidBiofuel,
-        fabric
     ]
 }

@@ -1,5 +1,5 @@
 import SHModels
 
 extension Configuration {
-    public enum Persistent {}
+    package enum Persistent {}
 }

@@ -8,8 +8,7 @@ extension Recipe.Static {
         output: Ingredient,
         byproducts: [Ingredient]? = nil,
         machine: Building.Static?,
-        manualCrafting: [Building.Static],
-        duration: Int,
+        duration: Double,
         powerConsumption: Recipe.Static.PowerConsumption,
         isDefault: Bool = true
     ) {
@@ -19,7 +18,6 @@ extension Recipe.Static {
             byproducts: byproducts,
             inputs: inputs,
             machineID: machine?.id,
-            manualCraftingIDs: manualCrafting.map(\.id),
             duration: duration,
             powerConsumption: powerConsumption,
             isDefault: isDefault
@@ -29,15 +27,7 @@ extension Recipe.Static {
 
 extension Recipe.Static.Ingredient {
     init(_ part: Part.Static, amount: Double) {
-        self.init(itemID: part.id, amount: amount)
-    }
-    
-    init(_ equipment: Equipment.Static, amount: Double) {
-        self.init(itemID: equipment.id, amount: amount)
-    }
-    
-    init(_ building: Building.Static, amount: Double) {
-        self.init(itemID: building.id, amount: amount)
+        self.init(partID: part.id, amount: amount)
     }
 }
 

@@ -21,7 +21,7 @@
         }
       }
     },
-    "Cancel" : {
+    "Calculation" : {
 
     },
     "change-log-added-section-name" : {
@@ -740,9 +740,6 @@
         }
       }
     },
-    "Consumed power here" : {
-
-    },
     "edit-factory-delete-message" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -897,12 +894,6 @@
         }
       }
     },
-    "Equipment" : {
-
-    },
-    "Factories" : {
-
-    },
     "factories-%lld-amount-of-produictions" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -933,6 +924,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Create factory"
+          }
+        }
+      }
+    },
+    "factories-delete-factory" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete factory"
           }
         }
       }
@@ -1135,6 +1136,39 @@
         }
       }
     },
+    "general-manage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manage"
+          }
+        }
+      }
+    },
+    "general-more" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More"
+          }
+        }
+      }
+    },
+    "general-next" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        }
+      }
+    },
     "general-pin" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1190,11 +1224,38 @@
         }
       }
     },
-    "Legacy File system" : {
-
+    "new-production-from-resources-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "From Resources"
+          }
+        }
+      }
     },
-    "Load storage" : {
-
+    "new-production-from-resources-production-description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select resources and build items from them. This is a bottom to top type of production."
+          }
+        }
+      }
+    },
+    "new-production-from-resources-production-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "From resources"
+          }
+        }
+      }
     },
     "new-production-navigation-title" : {
       "extractionState" : "manual",
@@ -1214,6 +1275,72 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pinned"
+          }
+        }
+      }
+    },
+    "new-production-power-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power"
+          }
+        }
+      }
+    },
+    "new-production-power-production-description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a power generation building and a fuel type. Build a production for all selected fuel types. This is a top to bottom type of production."
+          }
+        }
+      }
+    },
+    "new-production-power-production-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power"
+          }
+        }
+      }
+    },
+    "new-production-single-item-navigation-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Single Item"
+          }
+        }
+      }
+    },
+    "new-production-single-item-production-description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a final item and build a production tree. This is a top to bottom type of production."
+          }
+        }
+      }
+    },
+    "new-production-single-item-production-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Single item production"
           }
         }
       }
@@ -1251,7 +1378,7 @@
         }
       }
     },
-    "Parts" : {
+    "Power" : {
 
     },
     "product-adjustment-fixed-%@-exceeds-%@" : {
@@ -1284,17 +1411,6 @@
         }
       }
     },
-    "product-adjustment-fraction-%lf-exceeds-%@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "product-adjustment-fraction-%1$lf-exceeds-%2$@"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "product-adjustment-fractions-%@-should-be-exactly-%@" : {
       "localizations" : {
         "en" : {
@@ -1315,9 +1431,6 @@
           }
         }
       }
-    },
-    "Recipes" : {
-
     },
     "root-failed-to-load-application" : {
       "extractionState" : "manual",
@@ -1340,9 +1453,6 @@
           }
         }
       }
-    },
-    "Selected" : {
-
     },
     "settings-app-info-app-build-number-row-title" : {
       "extractionState" : "manual",
@@ -1542,12 +1652,6 @@
         }
       }
     },
-    "SHSection preview" : {
-      "shouldTranslate" : false
-    },
-    "SHSection preview\n(Second line for preview of long section name)" : {
-      "shouldTranslate" : false
-    },
     "single-item-production-adjustment-%@-per-minute" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1676,6 +1780,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "If you close production now, all unsaved changes will be lost. Would you like to save those changes?"
+          }
+        }
+      }
+    },
+    "single-item-production-info" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Info"
           }
         }
       }
@@ -1834,6 +1948,106 @@
         }
       }
     },
+    "single-item-production-tip-add-more-recipes-message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can calculate the same item with more than 1 recipe, adjusting proportions for selected recipes."
+          }
+        }
+      }
+    },
+    "single-item-production-tip-add-more-recipes-title-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add more recipes to %@"
+          }
+        }
+      }
+    },
+    "single-item-production-tip-auto-select-single-pinned-recipe-message-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ has a single pinned recipe so it was selected automatically. If you would like to change this behaviour, you can do this in **Settings**."
+          }
+        }
+      }
+    },
+    "single-item-production-tip-auto-select-single-pinned-recipe-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This recipe was auto-selected"
+          }
+        }
+      }
+    },
+    "single-item-production-tip-auto-select-single-recipe-message-%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ has only one recipe so it was selected automatically. If you would like to change this behaviour, you can do this in **Settings**."
+          }
+        }
+      }
+    },
+    "single-item-production-tip-auto-select-single-recipe-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This recipe was auto-selected"
+          }
+        }
+      }
+    },
+    "single-item-production-tip-proportion-message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After selecting 2 or more recipes for the same item, you can pick one of three proportions for each recipe."
+          }
+        }
+      }
+    },
+    "single-item-production-tip-proportion-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adjust recipe proportion"
+          }
+        }
+      }
+    },
+    "single-item-production-tip-select-recipe-message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To start production calculation you need to select a recipe from a list below."
+          }
+        }
+      }
+    },
+    "single-item-production-tip-select-recipe-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select recipe"
+          }
+        }
+      }
+    },
     "statistics-%lld-of-recipes" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1911,9 +2125,6 @@
         }
       }
     },
-    "Storage" : {
-
-    },
     "tab-factories" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1946,12 +2157,6 @@
           }
         }
       }
-    },
-    "Unselected" : {
-
-    },
-    "V2 File system" : {
-
     },
     "whats-new-bullet-new-design" : {
       "extractionState" : "manual",
@@ -1997,18 +2202,18 @@
         }
       }
     },
-    "whats-new-page-2-a-completely-new-design" : {
+    "whats-new-calculator-page-subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A completely new design"
+            "value" : "A brand new calculator which can now also work with byproducts."
           }
         }
       }
     },
-    "whats-new-page-3-new-production-calculator" : {
+    "whats-new-calculator-page-title" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2019,40 +2224,40 @@
         }
       }
     },
-    "whats-new-page-4-legacy-factory-name" : {
+    "whats-new-design-page-footer" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Legacy"
+            "value" : "Tip: You can long press any item or recipe to pin it!"
           }
         }
       }
     },
-    "whats-new-page-4-organize-your-productions-with-new-factories-tab" : {
+    "whats-new-design-page-subtitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Organize your productions with new Factories tab"
+            "value" : "Every UI element has a new fresh and stunning look"
           }
         }
       }
     },
-    "whats-new-page-4-starter-factory-factory-name" : {
+    "whats-new-design-page-title" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Starter factory"
+            "value" : "A completely new design"
           }
         }
       }
     },
-    "whats-new-page-4-steel-factory-factory-name" : {
+    "whats-new-factories-factory-name" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -2063,24 +2268,120 @@
         }
       }
     },
-    "whats-new-page-5-all-new-statistics-design-which-shows-even-more-information" : {
-      "extractionState" : "manual",
+    "whats-new-factories-legacy-factory-name" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "All new statistics design which shows even more information"
+            "value" : "Legacy"
           }
         }
       }
     },
-    "whats-new-welcome-to-satisfactory-helper-2-0" : {
+    "whats-new-factories-page-footer" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Welcome to Satisfactory Helper 2.0"
+            "value" : "Tip: You can now see statistics for a single production or the whole factory!"
+          }
+        }
+      }
+    },
+    "whats-new-factories-page-subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Organize your production chains into factories"
+          }
+        }
+      }
+    },
+    "whats-new-factories-page-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Factories tab"
+          }
+        }
+      }
+    },
+    "whats-new-factories-starter-factory-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starter factory"
+          }
+        }
+      }
+    },
+    "whats-new-factories-steel-factory-name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steel factory"
+          }
+        }
+      }
+    },
+    "whats-new-statistics-page-subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refreshed, more informative and with power consumption"
+          }
+        }
+      }
+    },
+    "whats-new-statistics-page-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New statistics design"
+          }
+        }
+      }
+    },
+    "whats-new-welcome-page-footer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thank you for using our app! As always, if you would like to share any feedback, you can use Feedback button in a Settings tab.\n\nStay optimized!"
+          }
+        }
+      }
+    },
+    "whats-new-welcome-page-subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to Satisfactory 2.0, a completely rewritten app from scratch which brings you familiar functionality in a new look.\n\nKey features of this update are:"
+          }
+        }
+      }
+    },
+    "whats-new-welcome-page-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satisfactory Helper 2.0"
           }
         }
       }

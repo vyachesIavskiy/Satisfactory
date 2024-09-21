@@ -1,10 +1,9 @@
 import Foundation
 import SHModels
-import struct SHPersistentStorage.LoadOptions
 
 public struct SHStorageService: Sendable {
     /// Loads storage. This should be called before any other call to storage is made.
-    public var load: @Sendable (_ loadOptions: LoadOptions) throws -> Void
+    public var load: @Sendable () throws -> Void
     
     /// Fetch a static configuration for a storage. This information is not changed during execution.
     public var staticConfiguration: @Sendable () -> Configuration
@@ -24,21 +23,30 @@ public struct SHStorageService: Sendable {
     
     public var productions: @Sendable () -> [Production]
     
+    public var productionsInside: @Sendable (_ factory: Factory) -> [Production]
+    
     public var streamProductions: @Sendable () -> AsyncStream<[Production]>
+    
+    public var streamProductionsInside: @Sendable (_ factory: Factory) -> AsyncStream<[Production]>
     
     public var saveFactory: @Sendable (_ factory: Factory) -> Void
     
     public var saveProduction: @Sendable (_ production: Production, _ factoryID: UUID) -> Void
     
+    public var saveProductionInformation: @Sendable (_ production: Production, _ factoryID: UUID) -> Void
+    
+    public var saveProductionContent: @Sendable (_ production: Production) -> Void
+    
     public var deleteFactory: @Sendable (_ factory: Factory) -> Void
     
     public var deleteProduction: @Sendable (_ production: Production) -> Void
     
+    public var moveFactories: @Sendable (_ fromOffsets: IndexSet, _ toOffsets: Int) -> Void
+    
+    public var moveProductions: @Sendable (_ factory: Factory, _ fromOffsets: IndexSet, _ toOffset: Int) -> Void
+    
     /// Fetch all parts from storage. This information is not changed during execution.
     public var parts: @Sendable () -> [Part]
-    
-    /// Fetch all equipment from storage. This data is constant.
-    public var equipment: @Sendable () -> [Equipment]
     
     /// Fetch all buildings from storage. This data is constant.
     public var buildings: @Sendable () -> [Building]
@@ -50,10 +58,10 @@ public struct SHStorageService: Sendable {
     var extractions: @Sendable () -> [Extraction]
     
     /// Changes pin status for a provided part ID.
-    var changePartPinStatus: @Sendable (_ partID: String) -> Void
+    var changePartPinStatus: @Sendable (_ partID: String, _ productionType: ProductionType) -> Void
     
-    /// Changes pin status for a provided equipment iD.
-    var changeEquipmentPinStatus: @Sendable (_ equipmentID: String) -> Void
+    /// Changes pin status for a provided building iD.
+    var changeBuildingPinStatus: @Sendable (_ buildingID: String, _ productionType: ProductionType) -> Void
     
     /// /// Changes pin status for a provided recpe iD.
     var changeRecipePinStatus: @Sendable (_ recipeID: String) -> Void
@@ -66,16 +74,12 @@ public extension SHStorageService {
     /// - Parameter id: An ID for an item.
     /// - Returns: An item with a provided ID or `nil` if there is no item with a provided ID.
     func item(id: String) -> (any Item)? {
-        let items: [any Item] = parts() + equipment() + buildings()
+        let items: [any Item] = parts() + buildings()
         return items.first { $0.id == id }
     }
     
     func part(id: String) -> Part? {
         parts().first { $0.id == id }
-    }
-    
-    func equipment(id: String) -> Equipment? {
-        equipment().first { $0.id == id }
     }
     
     func building(id: String) -> Building? {
@@ -88,14 +92,6 @@ public extension SHStorageService {
     /// - Returns: An array of parts which can be automated.
     func automatableParts() -> [Part] {
         parts().filter { !recipes(for: $0, as: .output).filter { $0.machine != nil }.isEmpty }
-    }
-    
-    /// Fetch all equipment that can be automated.
-    ///
-    /// An equipment can be automated if there is a recipe which produces this equipment (as an output or a byproduct) and this recipe can be set in any production machine.
-    /// - Returns: An array of equipment which can be automated.
-    func automatableEquipment() -> [Equipment] {
-        equipment().filter { !recipes(for: $0, as: .output).filter { $0.machine != nil }.isEmpty }
     }
     
     // MARK: Recipes
@@ -111,12 +107,12 @@ public extension SHStorageService {
     ///   - itemID: An ID of an ingredient item.
     ///   - role: An ingredient role for an item.
     /// - Returns: An array of recipes.
-    func recipes(for itemID: String, as role: Recipe.Ingredient.Role) -> [Recipe] {
+    func recipes(for partID: String, as role: Recipe.Ingredient.Role) -> [Recipe] {
         recipes().filter { recipe in
             switch role {
-            case .output: recipe.output.item.id == itemID
-            case .byproduct: recipe.byproducts.contains { $0.item.id == itemID }
-            case .input: recipe.inputs.contains { $0.item.id == itemID }
+            case .output: recipe.output.part.id == partID
+            case .byproduct: recipe.byproducts.contains { $0.part.id == partID }
+            case .input: recipe.inputs.contains { $0.part.id == partID }
             }
         }
     }
@@ -126,8 +122,8 @@ public extension SHStorageService {
     ///   - itemID: An ID of an ingredient item.
     ///   - roles: Ingredient roles for an item.
     /// - Returns: An array of recipes.
-    func recipes(for itemID: String, as roles: [Recipe.Ingredient.Role]) -> [Recipe] {
-        roles.flatMap { recipes(for: itemID, as: $0) }
+    func recipes(for partID: String, as roles: [Recipe.Ingredient.Role]) -> [Recipe] {
+        roles.flatMap { recipes(for: partID, as: $0) }
     }
     
     /// Fetch recipes which has a provided item (part or equipment) as a provided role.
@@ -135,8 +131,8 @@ public extension SHStorageService {
     ///   - item: An ingredient item.
     ///   - role: An ingredient role for an item.
     /// - Returns: An array of recipes.
-    func recipes(for item: some Item, as role: Recipe.Ingredient.Role) -> [Recipe] {
-        recipes(for: item.id, as: role)
+    func recipes(for part: Part, as role: Recipe.Ingredient.Role) -> [Recipe] {
+        recipes(for: part.id, as: role)
     }
     
     /// Fetch recipes which has a provided item (part or equipment) as all of provided roles.
@@ -144,24 +140,29 @@ public extension SHStorageService {
     ///   - item: An ingredient item.
     ///   - roles: Ingredient roles for an item.
     /// - Returns: An array of recipes.
-    func recipes(for item: some Item, as roles: [Recipe.Ingredient.Role]) -> [Recipe] {
-        recipes(for: item.id, as: roles)
+    func recipes(for part: Part, as roles: [Recipe.Ingredient.Role]) -> [Recipe] {
+        recipes(for: part.id, as: roles)
     }
     
     // MARK: Pins
-    /// Fetch all pinned part IDs.
-    var pinnedPartIDs: Set<String> {
-        pins().partIDs
+    /// Fetch Single Item pinned part IDs.
+    var pinnedSingleItemPartIDs: Set<String> {
+        pins().singleItemPartIDs
     }
     
-    /// Fetch all pinned equipment IDs.
-    var pinnedEquipmentIDs: Set<String> {
-        pins().equipmentIDs
+    /// Fetch From Resources pinned part IDs.
+    var pinnedFromResourcesPartIDs: Set<String> {
+        pins().fromResourcesPartIDs
     }
     
-    /// Fetch all pinned item (part or equipment) IDs.
-    var pinnedItemIDs: Set<String> {
-        pinnedPartIDs.union(pinnedEquipmentIDs)
+    /// Fetch Power pinned part IDs.
+    var pinnedPowerPartIDs: Set<String> {
+        pins().power.partIDs
+    }
+    
+    /// Fetch Power pinned building IDs.
+    var pinnedPowerBuildingIDs: Set<String> {
+        pins().power.buildingIDs
     }
     
     /// Fetch all pinned recipe IDs which has an item (part or equipment) with provided ID as a provided role.
@@ -205,21 +206,24 @@ public extension SHStorageService {
         pinnedRecipeIDs(for: item.id, as: roles)
     }
     
-    /// Stream all pinned part IDs as an AsyncStream.
-    var streamPinnedPartIDs: AsyncStream<Set<String>> {
-        streamPins().map(\.partIDs).eraseToStream()
+    /// Stream Single Item pinned part IDs as an AsyncStream.
+    var streamPinnedSingleItemPartIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.singleItemPartIDs).eraseToStream()
     }
     
-    /// Stream all pinned equipment IDs as an AsyncStream.
-    var streamPinnedEquipmentIDs: AsyncStream<Set<String>> {
-        streamPins().map(\.equipmentIDs).eraseToStream()
+    /// Stream From Resources pinned part IDs as an AsyncStream.
+    var streamPinnedFromResourcesPartIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.fromResourcesPartIDs).eraseToStream()
     }
     
-    /// Stream all pinned item (part or equipment) IDs as an AsyncStream.
-    var streamPinnedItemIDs: AsyncStream<Set<String>> {
-        streamPins()
-            .map { $0.partIDs.union($0.equipmentIDs) }
-            .eraseToStream()
+    /// Stream Power pinned part IDs as an AsyncStream.
+    var streamPinnedPowerPartIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.power.partIDs).eraseToStream()
+    }
+    
+    /// Stream Power pinned building IDs as an AsyncStream.
+    var streamPinnedPowerBuildingIDs: AsyncStream<Set<String>> {
+        streamPins().map(\.power.buildingIDs).eraseToStream()
     }
     
     /// Stream all pinned recipe IDs which has an item (part or equipment) with provided ID as a provided role.
@@ -275,15 +279,28 @@ public extension SHStorageService {
     /// Checks if a provided part is pinned.
     /// - Parameter part: A part to check.
     /// - Returns: `true` if part is pinned. Otherwise `false`.
-    func isPinned(_ part: Part) -> Bool {
-        pins().partIDs.contains(part.id)
+    func isPinned(_ part: Part, productionType: ProductionType) -> Bool {
+        pins().isPinned(partID: part.id, productionType: productionType)
     }
     
-    /// Checks if a provided equipment is pinned.
-    /// - Parameter equipment: An equipment to check.
-    /// - Returns: `true` if equipment is pinned. Otherwise `false`.
-    func isPinned(_ equipment: Equipment) -> Bool {
-        pins().equipmentIDs.contains(equipment.id)
+    /// Checks if a provided building is pinned.
+    /// - Parameter building: A building to check.
+    /// - Returns: `true` if building is pinned. Otherwise `false`.
+    func isPinned(_ building: Building, productionType: ProductionType) -> Bool {
+        pins().isPinned(buildingID: building.id, productionType: productionType)
+    }
+    
+    /// Checks if a provided item (part or equipment) is pinned.
+    /// - Parameter item: An item to check
+    /// - Returns: `true` if item is pinned. Otherwise `false`.
+    func isPinned(_ item: some Item, productionType: ProductionType) -> Bool {
+        if let part = item as? Part {
+            isPinned(part, productionType: productionType)
+        } else if let building = item as? Building {
+            isPinned(building, productionType: productionType)
+        } else {
+            false
+        }
     }
     
     /// Checks if a provided recipe is pinned.
@@ -293,33 +310,32 @@ public extension SHStorageService {
         pins().recipeIDs.contains(recipe.id)
     }
     
-    /// Checks if a provided item (part or equipment) is pinned.
-    /// - Parameter item: An item to check
-    /// - Returns: `true` if item is pinned. Otherwise `false`.
-    func isPinned(_ item: some Item) -> Bool {
-        if let part = item as? Part {
-            isPinned(part)
-        } else if let equipment = item as? Equipment {
-            isPinned(equipment)
-        } else {
-            false
-        }
-    }
-    
     /// Changes a pin status for a provided part.
     ///
     /// If provded part was pinned, it will be unpinned. If provided part was not pinned, it will be pinned.
     /// - Parameter part: A part to pin/unpin.
-    func changePinStatus(for part: Part) {
-        changePartPinStatus(part.id)
+    func changePinStatus(for part: Part, productionType: ProductionType) {
+        changePartPinStatus(part.id, productionType)
     }
     
-    /// Changes a pin status for a provided equipmnet.
+    /// Changes a pin status for a provided building.
     ///
-    /// If provded equipmnet was pinned, it will be unpinned. If provided equipmnet was not pinned, it will be pinned.
+    /// If provded building was pinned, it will be unpinned. If provided building was not pinned, it will be pinned.
     /// - Parameter part: A part to pin/unpin.
-    func changePinStatus(for equipment: Equipment) {
-        changeEquipmentPinStatus(equipment.id)
+    func changePinStatus(for building: Building, productionType: ProductionType) {
+        changeBuildingPinStatus(building.id, productionType)
+    }
+    
+    /// Changes a pin status for a provided item (part or equipment).
+    ///
+    /// If provded item was pinned, it will be unpinned. If provided item was not pinned, it will be pinned.
+    /// - Parameter part: A part to pin/unpin.
+    func changePinStatus(for item: any Item, productionType: ProductionType) {
+        if let part = item as? Part {
+            changePinStatus(for: part, productionType: productionType)
+        } else if let building = item as? Building {
+            changePinStatus(for: building, productionType: productionType)
+        }
     }
     
     /// Changes a pin status for a provided recipe.
@@ -330,18 +346,6 @@ public extension SHStorageService {
         changeRecipePinStatus(recipe.id)
     }
     
-    /// Changes a pin status for a provided item (part or equipment).
-    ///
-    /// If provded item was pinned, it will be unpinned. If provided item was not pinned, it will be pinned.
-    /// - Parameter part: A part to pin/unpin.
-    func changePinStatus(for item: any Item) {
-        if let part = item as? Part {
-            changePinStatus(for: part)
-        } else if let equipment = item as? Equipment {
-            changePinStatus(for: equipment)
-        }
-    }
-    
     func factory(id: UUID) -> Factory? {
         factories().first(id: id)
     }
@@ -350,18 +354,12 @@ public extension SHStorageService {
         productions().first(id: id)
     }
     
-    func produtions(inside factory: Factory) -> [Production] {
-        productions().filter { factory.productionIDs.contains($0.id) }
-    }
-    
     func factoryID(for production: Production) -> UUID? {
         factories().first { $0.productionIDs.contains(production.id) }?.id
     }
     
-    func streamProductions(inside factory: Factory) -> AsyncStream<[Production]> {
-        streamProductions()
-            .map { $0.filter { factory.productionIDs.contains($0.id) } }
-            .eraseToStream()
+    func factory(for production: Production) -> Factory? {
+        factoryID(for: production).flatMap(factory(id:))
     }
     
     func extraction(for item: any Item) -> Extraction? {

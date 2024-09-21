@@ -10,7 +10,8 @@
       "part-bauxite",
       "part-raw-quartz",
       "part-sulfur",
-      "part-uranium"
+      "part-uranium",
+      "part-sam"
     ],
     "rates" : [
       {
@@ -38,7 +39,8 @@
       "part-bauxite",
       "part-raw-quartz",
       "part-sulfur",
-      "part-uranium"
+      "part-uranium",
+      "part-sam"
     ],
     "rates" : [
       {
@@ -66,7 +68,8 @@
       "part-bauxite",
       "part-raw-quartz",
       "part-sulfur",
-      "part-uranium"
+      "part-uranium",
+      "part-sam"
     ],
     "rates" : [
       {
@@ -118,46 +121,8 @@
   {
     "buildingID" : "building-resource-well-extractor",
     "naturalResourceIDs" : [
-      "part-nitrogen-gas"
-    ],
-    "rates" : [
-      {
-        "amount" : 30,
-        "purityID" : "purity-impure"
-      },
-      {
-        "amount" : 60,
-        "purityID" : "purity-normal"
-      },
-      {
-        "amount" : 120,
-        "purityID" : "purity-pure"
-      }
-    ]
-  },
-  {
-    "buildingID" : "building-resource-well-extractor",
-    "naturalResourceIDs" : [
-      "part-water"
-    ],
-    "rates" : [
-      {
-        "amount" : 30,
-        "purityID" : "purity-impure"
-      },
-      {
-        "amount" : 60,
-        "purityID" : "purity-normal"
-      },
-      {
-        "amount" : 120,
-        "purityID" : "purity-pure"
-      }
-    ]
-  },
-  {
-    "buildingID" : "building-resource-well-extractor",
-    "naturalResourceIDs" : [
+      "part-nitrogen-gas",
+      "part-water",
       "part-crude-oil"
     ],
     "rates" : [

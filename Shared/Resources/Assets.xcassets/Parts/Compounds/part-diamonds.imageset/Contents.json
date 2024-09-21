@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "part-diamonds.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

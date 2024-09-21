@@ -27,7 +27,7 @@ final class Generator {
             
             url.append(path: "SHStaticStorage/Data")
             
-            guard fileManager.fileExists(atPath: url.path()) else {
+            guard try !fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil).isEmpty else {
                 throw Error.resourcesDirectoryIsNotFound(at: url)
             }
             
@@ -51,20 +51,13 @@ private extension Generator {
     func generateNewData() throws {
         logger.info("Start generation.")
         
-        logger.info("Settings progression indicies for parts and equipment.")
+        logger.info("Settings progression indicies for parts.")
         
         var sortedAllParts = [Part.Static]()
         for part in V2.Parts.all {
             var copy = part
-            copy.progressionIndex = V2.Parts.allSortedByProgression.firstIndex { $0.id == part.id } ?? -1
+            copy.progressionIndex = V2.Parts.all.firstIndex { $0.id == part.id } ?? -1
             sortedAllParts.append(copy)
-        }
-        
-        var sortedAllEquipment = [Equipment.Static]()
-        for equipment in V2.Equipment.all {
-            var copy = equipment
-            copy.progressionIndex = V2.Equipment.allSortedByProgression.firstIndex { $0.id == equipment.id } ?? -1
-            sortedAllEquipment.append(copy)
         }
         
         logger.info("Writing configuration.")
@@ -72,10 +65,7 @@ private extension Generator {
         
         logger.info("Writing parts.")
         try write(sortedAllParts, to: .parts)
-        
-        logger.info("Writing equipment.")
-        try write(sortedAllEquipment, to: .equipment)
-        
+                
         logger.info("Writing buildings.")
         try write(V2.Buildings.all, to: .buildings)
         
@@ -109,7 +99,7 @@ private extension Generator {
         var errorDescription: String? {
             switch self {
             case .cannotResolveURL: "URL cannot be resolved."
-            case .resourcesDirectoryIsNotFound: "'SHStorage/Data' directory cannot be found."
+            case .resourcesDirectoryIsNotFound: "'SHStaticStorage/Data' directory cannot be found."
             }
         }
         

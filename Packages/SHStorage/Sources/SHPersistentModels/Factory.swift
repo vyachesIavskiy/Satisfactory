@@ -1,5 +1,5 @@
 import SHModels
 
 extension Factory {
-    public enum Persistent {}
+    package enum Persistent {}
 }

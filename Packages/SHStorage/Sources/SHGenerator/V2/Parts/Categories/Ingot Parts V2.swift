@@ -13,12 +13,14 @@ extension V2.Parts {
     static let steelIngot = Part.Static(id: "part-steel-ingot")
     static let cateriumIngot = Part.Static(id: "part-caterium-ingot")
     static let aluminumIngot = Part.Static(id: "part-aluminum-ingot")
+    static let ficsiteIngot = Part.Static(id: "part-ficsite-ingot")
     
     static let ingotParts = [
         ironIngot,
         copperIngot,
         steelIngot,
         cateriumIngot,
-        aluminumIngot
+        aluminumIngot,
+        ficsiteIngot,
     ]
 }

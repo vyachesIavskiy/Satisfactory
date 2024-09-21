@@ -7,36 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D301C2292C8A0B18000EDA8D /* SHFromResourcesCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D301C2282C8A0B18000EDA8D /* SHFromResourcesCalculator */; };
 		D3045CC62C52B30B00265500 /* SHUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D3045CC52C52B30B00265500 /* SHUtils */; };
 		D31F7C5A2BF7E2D900AAE5C0 /* SHSettings in Frameworks */ = {isa = PBXBuildFile; productRef = D31F7C592BF7E2D900AAE5C0 /* SHSettings */; };
+		D33EEE8A2C86065F00E26A7C /* SHSharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D33EEE892C86065F00E26A7C /* SHSharedUI */; };
 		D341A9EE2BDD60E500ED36F6 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D341A9ED2BDD60E500ED36F6 /* SHStorage */; };
-		D35736942C8115C600866E00 /* Calculators in Frameworks */ = {isa = PBXBuildFile; productRef = D35736932C8115C600866E00 /* Calculators */; };
 		D35736962C8115C600866E00 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D35736952C8115C600866E00 /* SHDebug */; };
 		D35736982C8115C600866E00 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D35736972C8115C600866E00 /* SHModels */; };
 		D357369A2C8115C600866E00 /* SHSettings in Frameworks */ = {isa = PBXBuildFile; productRef = D35736992C8115C600866E00 /* SHSettings */; };
 		D357369C2C8115C600866E00 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D357369B2C8115C600866E00 /* SHStorage */; };
 		D357369E2C8115C600866E00 /* SHUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D357369D2C8115C600866E00 /* SHUtils */; };
-		D35736F62C81162400866E00 /* Calculators in Frameworks */ = {isa = PBXBuildFile; productRef = D35736F52C81162400866E00 /* Calculators */; };
 		D35736F82C81162400866E00 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D35736F72C81162400866E00 /* SHDebug */; };
 		D35736FA2C81162400866E00 /* SHLogger in Frameworks */ = {isa = PBXBuildFile; productRef = D35736F92C81162400866E00 /* SHLogger */; };
 		D35736FC2C81162400866E00 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D35736FB2C81162400866E00 /* SHModels */; };
 		D35736FE2C81162400866E00 /* SHSettings in Frameworks */ = {isa = PBXBuildFile; productRef = D35736FD2C81162400866E00 /* SHSettings */; };
 		D35737002C81162400866E00 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D35736FF2C81162400866E00 /* SHStorage */; };
 		D35737022C81162400866E00 /* SHUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D35737012C81162400866E00 /* SHUtils */; };
-		D385EFBA2C53F8720083BFA1 /* SHSingleItemProduction in Frameworks */ = {isa = PBXBuildFile; productRef = D385EF752C53F8720083BFA1 /* SHSingleItemProduction */; };
-		D385EFBB2C53F8720083BFA1 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D385EF732C53F8720083BFA1 /* SHDebug */; };
-		D385EFBC2C53F8720083BFA1 /* SHSettings in Frameworks */ = {isa = PBXBuildFile; productRef = D385EF722C53F8720083BFA1 /* SHSettings */; };
-		D385EFBD2C53F8720083BFA1 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D385EF712C53F8720083BFA1 /* SHStorage */; };
-		D385EFBE2C53F8720083BFA1 /* SHUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D385EF742C53F8720083BFA1 /* SHUtils */; };
 		D39926882C04F537000D7308 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D39926872C04F537000D7308 /* SHDebug */; };
 		D3A84E932C6EB805005BB515 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D3A84E922C6EB805005BB515 /* SHModels */; };
-		D3A84E952C6FD1FD005BB515 /* Calculators in Frameworks */ = {isa = PBXBuildFile; productRef = D3A84E942C6FD1FD005BB515 /* Calculators */; };
+		D3BC7C3D2C870B3F00917777 /* SHSingleItemCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3BC7C3C2C870B3F00917777 /* SHSingleItemCalculator */; };
+		D3F00E7E2C8E505000277B80 /* SHFromResourcesCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E7D2C8E505000277B80 /* SHFromResourcesCalculator */; };
+		D3F00E802C8E505400277B80 /* SHSingleItemCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E7F2C8E505400277B80 /* SHSingleItemCalculator */; };
+		D3F00E822C8E505C00277B80 /* SHSharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E812C8E505C00277B80 /* SHSharedUI */; };
+		D3F00E842C8E508F00277B80 /* SHFromResourcesCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E832C8E508F00277B80 /* SHFromResourcesCalculator */; };
+		D3F00E862C8E508F00277B80 /* SHSharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E852C8E508F00277B80 /* SHSharedUI */; };
+		D3F00E882C8E508F00277B80 /* SHSingleItemCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E872C8E508F00277B80 /* SHSingleItemCalculator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		450BD19624A6395700948B47 /* Satisfactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satisfactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		450BD19E24A6395700948B47 /* Satisfactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satisfactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D385EFC62C53F8720083BFA1 /* iOS UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95DAFDB2AC6ACC60062A5AD /* iOS AppStore Screenshots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS AppStore Screenshots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 		D357A7CD2C8336FD008A8983 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Settings/FeedbackView.swift,
+				Views/Settings/FeedbackView.swift,
 			);
 			target = 450BD19D24A6395700948B47 /* macOS */;
 		};
@@ -84,10 +84,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D39926882C04F537000D7308 /* SHDebug in Frameworks */,
+				D33EEE8A2C86065F00E26A7C /* SHSharedUI in Frameworks */,
 				D31F7C5A2BF7E2D900AAE5C0 /* SHSettings in Frameworks */,
 				D3A84E932C6EB805005BB515 /* SHModels in Frameworks */,
 				D341A9EE2BDD60E500ED36F6 /* SHStorage in Frameworks */,
-				D3A84E952C6FD1FD005BB515 /* Calculators in Frameworks */,
+				D301C2292C8A0B18000EDA8D /* SHFromResourcesCalculator in Frameworks */,
+				D3BC7C3D2C870B3F00917777 /* SHSingleItemCalculator in Frameworks */,
 				D3045CC62C52B30B00265500 /* SHUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,24 +99,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35737022C81162400866E00 /* SHUtils in Frameworks */,
-				D35736F62C81162400866E00 /* Calculators in Frameworks */,
+				D3F00E842C8E508F00277B80 /* SHFromResourcesCalculator in Frameworks */,
+				D3F00E862C8E508F00277B80 /* SHSharedUI in Frameworks */,
 				D35736FA2C81162400866E00 /* SHLogger in Frameworks */,
 				D35736F82C81162400866E00 /* SHDebug in Frameworks */,
 				D35737002C81162400866E00 /* SHStorage in Frameworks */,
+				D3F00E882C8E508F00277B80 /* SHSingleItemCalculator in Frameworks */,
 				D35736FC2C81162400866E00 /* SHModels in Frameworks */,
 				D35736FE2C81162400866E00 /* SHSettings in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D385EFB92C53F8720083BFA1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D385EFBA2C53F8720083BFA1 /* SHSingleItemProduction in Frameworks */,
-				D385EFBB2C53F8720083BFA1 /* SHDebug in Frameworks */,
-				D385EFBC2C53F8720083BFA1 /* SHSettings in Frameworks */,
-				D385EFBD2C53F8720083BFA1 /* SHStorage in Frameworks */,
-				D385EFBE2C53F8720083BFA1 /* SHUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,10 +115,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35736982C8115C600866E00 /* SHModels in Frameworks */,
-				D35736942C8115C600866E00 /* Calculators in Frameworks */,
 				D357369A2C8115C600866E00 /* SHSettings in Frameworks */,
+				D3F00E822C8E505C00277B80 /* SHSharedUI in Frameworks */,
 				D357369E2C8115C600866E00 /* SHUtils in Frameworks */,
+				D3F00E7E2C8E505000277B80 /* SHFromResourcesCalculator in Frameworks */,
 				D35736962C8115C600866E00 /* SHDebug in Frameworks */,
+				D3F00E802C8E505400277B80 /* SHSingleItemCalculator in Frameworks */,
 				D357369C2C8115C600866E00 /* SHStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,7 +146,6 @@
 				450BD19624A6395700948B47 /* Satisfactory.app */,
 				450BD19E24A6395700948B47 /* Satisfactory.app */,
 				F95DAFDB2AC6ACC60062A5AD /* iOS AppStore Screenshots.app */,
-				D385EFC62C53F8720083BFA1 /* iOS UIKit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,7 +182,9 @@
 				D39926872C04F537000D7308 /* SHDebug */,
 				D3045CC52C52B30B00265500 /* SHUtils */,
 				D3A84E922C6EB805005BB515 /* SHModels */,
-				D3A84E942C6FD1FD005BB515 /* Calculators */,
+				D33EEE892C86065F00E26A7C /* SHSharedUI */,
+				D3BC7C3C2C870B3F00917777 /* SHSingleItemCalculator */,
+				D301C2282C8A0B18000EDA8D /* SHFromResourcesCalculator */,
 			);
 			productName = iOS;
 			productReference = 450BD19624A6395700948B47 /* Satisfactory.app */;
@@ -213,30 +208,6 @@
 			name = macOS;
 			productName = macOS;
 			productReference = 450BD19E24A6395700948B47 /* Satisfactory.app */;
-			productType = "com.apple.product-type.application";
-		};
-		D385EF702C53F8720083BFA1 /* iOS UIKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D385EFC32C53F8720083BFA1 /* Build configuration list for PBXNativeTarget "iOS UIKit" */;
-			buildPhases = (
-				D385EF762C53F8720083BFA1 /* Sources */,
-				D385EFB92C53F8720083BFA1 /* Frameworks */,
-				D385EFBF2C53F8720083BFA1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "iOS UIKit";
-			packageProductDependencies = (
-				D385EF712C53F8720083BFA1 /* SHStorage */,
-				D385EF722C53F8720083BFA1 /* SHSettings */,
-				D385EF732C53F8720083BFA1 /* SHDebug */,
-				D385EF742C53F8720083BFA1 /* SHUtils */,
-				D385EF752C53F8720083BFA1 /* SHSingleItemProduction */,
-			);
-			productName = iOS;
-			productReference = D385EFC62C53F8720083BFA1 /* iOS UIKit.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F95DAF912AC6ACC60062A5AD /* iOS AppStore Screenshots */ = {
@@ -291,7 +262,6 @@
 			projectRoot = "";
 			targets = (
 				450BD19524A6395700948B47 /* iOS */,
-				D385EF702C53F8720083BFA1 /* iOS UIKit */,
 				F95DAF912AC6ACC60062A5AD /* iOS AppStore Screenshots */,
 				450BD19D24A6395700948B47 /* macOS */,
 			);
@@ -307,13 +277,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		450BD19C24A6395700948B47 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D385EFBF2C53F8720083BFA1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -338,13 +301,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		450BD19A24A6395700948B47 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D385EF762C53F8720083BFA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -395,7 +351,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 11;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -417,7 +373,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -463,7 +419,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 11;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -479,7 +435,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -496,7 +452,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Colors/Orange/Orange - 60";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 7R7GVTFP58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -505,7 +460,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = iphoneos;
@@ -523,7 +477,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Colors/Orange/Orange - 60";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 7R7GVTFP58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -532,7 +485,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
 				PRODUCT_NAME = Satisfactory;
 				SDKROOT = iphoneos;
@@ -595,64 +547,12 @@
 			};
 			name = Release;
 		};
-		D385EFC42C53F8720083BFA1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Colors/Orange/Orange - 60";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
-				DEVELOPMENT_TEAM = 7R7GVTFP58;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "UIKit/iOS Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.7.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		D385EFC52C53F8720083BFA1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Colors/Orange/Orange - 60";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
-				DEVELOPMENT_TEAM = 7R7GVTFP58;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "UIKit/iOS Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.7.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		F95DAFD92AC6ACC60062A5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Colors/Orange/Orange - 60";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 7R7GVTFP58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "iOS/Info-AppStoreScreenshots.plist";
@@ -661,7 +561,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory.apc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -679,7 +578,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Colors/Orange/Orange - 60";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 7R7GVTFP58;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "iOS/Info-AppStoreScreenshots.plist";
@@ -688,7 +586,6 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory.apc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -731,15 +628,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D385EFC32C53F8720083BFA1 /* Build configuration list for PBXNativeTarget "iOS UIKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D385EFC42C53F8720083BFA1 /* Debug */,
-				D385EFC52C53F8720083BFA1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		F95DAFD82AC6ACC60062A5AD /* Build configuration list for PBXNativeTarget "iOS AppStore Screenshots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -752,6 +640,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D301C2282C8A0B18000EDA8D /* SHFromResourcesCalculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHFromResourcesCalculator;
+		};
 		D3045CC52C52B30B00265500 /* SHUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHUtils;
@@ -760,13 +652,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SHSettings;
 		};
+		D33EEE892C86065F00E26A7C /* SHSharedUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHSharedUI;
+		};
 		D341A9ED2BDD60E500ED36F6 /* SHStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHStorage;
-		};
-		D35736932C8115C600866E00 /* Calculators */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Calculators;
 		};
 		D35736952C8115C600866E00 /* SHDebug */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -787,10 +679,6 @@
 		D357369D2C8115C600866E00 /* SHUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHUtils;
-		};
-		D35736F52C81162400866E00 /* Calculators */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Calculators;
 		};
 		D35736F72C81162400866E00 /* SHDebug */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -816,26 +704,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SHUtils;
 		};
-		D385EF712C53F8720083BFA1 /* SHStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHStorage;
-		};
-		D385EF722C53F8720083BFA1 /* SHSettings */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHSettings;
-		};
-		D385EF732C53F8720083BFA1 /* SHDebug */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHDebug;
-		};
-		D385EF742C53F8720083BFA1 /* SHUtils */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHUtils;
-		};
-		D385EF752C53F8720083BFA1 /* SHSingleItemProduction */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHSingleItemProduction;
-		};
 		D39926872C04F537000D7308 /* SHDebug */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHDebug;
@@ -844,9 +712,33 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SHModels;
 		};
-		D3A84E942C6FD1FD005BB515 /* Calculators */ = {
+		D3BC7C3C2C870B3F00917777 /* SHSingleItemCalculator */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Calculators;
+			productName = SHSingleItemCalculator;
+		};
+		D3F00E7D2C8E505000277B80 /* SHFromResourcesCalculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHFromResourcesCalculator;
+		};
+		D3F00E7F2C8E505400277B80 /* SHSingleItemCalculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHSingleItemCalculator;
+		};
+		D3F00E812C8E505C00277B80 /* SHSharedUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHSharedUI;
+		};
+		D3F00E832C8E508F00277B80 /* SHFromResourcesCalculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHFromResourcesCalculator;
+		};
+		D3F00E852C8E508F00277B80 /* SHSharedUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHSharedUI;
+		};
+		D3F00E872C8E508F00277B80 /* SHSingleItemCalculator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SHSingleItemCalculator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

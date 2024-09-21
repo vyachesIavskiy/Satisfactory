@@ -89,7 +89,7 @@ private struct _SizeReaderPreview: View {
                 .border(.orange, width: 1)
                 .readSize($size)
             
-            Text(verbatim: "[w: \(size.width.formatted(.shNumber)), h: \(size.height.formatted(.shNumber))]")
+            Text(verbatim: "[w: \(size.width.formatted(.shNumber())), h: \(size.height.formatted(.shNumber()))]")
                 .foregroundStyle(.orange)
         }
     }
@@ -115,14 +115,14 @@ private struct _MaxSizeReaderPreview: View {
                 .readSize($size2)
             
             HStack {
-                Text(verbatim: "[w: \(size1.width.formatted(.shNumber)), h: \(size1.height.formatted(.shNumber))]")
+                Text(verbatim: "[w: \(size1.width.formatted(.shNumber())), h: \(size1.height.formatted(.shNumber()))]")
                     .foregroundStyle(.orange)
                 
-                Text(verbatim: "[w: \(size2.width.formatted(.shNumber)), h: \(size2.height.formatted(.shNumber))]")
+                Text(verbatim: "[w: \(size2.width.formatted(.shNumber())), h: \(size2.height.formatted(.shNumber()))]")
                     .foregroundStyle(.red)
             }
             
-            Text(verbatim: "Max: [w: \(maxSize.width.formatted(.shNumber)), h: \(maxSize.height.formatted(.shNumber))]")
+            Text(verbatim: "Max: [w: \(maxSize.width.formatted(.shNumber())), h: \(maxSize.height.formatted(.shNumber()))]")
                 .foregroundStyle(size1 == maxSize ? .orange : .red)
                 .bold()
         }

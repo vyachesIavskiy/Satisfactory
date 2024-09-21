@@ -17,7 +17,7 @@ extension V2.Parts {
     static let rawQuartz = Part.Static(id: "part-raw-quartz")
     static let sulfur = Part.Static(id: "part-sulfur")
     static let uranium = Part.Static(id: "part-uranium")
-    static let samOre = Part.Static(id: "part-sam-ore")
+    static let sam = Part.Static(id: "part-sam")
     
     static let oreParts = [
         ironOre,
@@ -29,6 +29,6 @@ extension V2.Parts {
         rawQuartz,
         sulfur,
         uranium,
-        samOre
+        sam
     ]
 }

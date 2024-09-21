@@ -18,7 +18,7 @@ extension V2 {
         static let all =
         minerExtractions +
         waterExtractions +
-        crudeOilExtractions +
+        oilExtractions +
         resourceWellExtractions
     }
 }

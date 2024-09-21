@@ -2,14 +2,14 @@ import Foundation
 import SHModels
 
 extension Part {
-    public struct Static: Codable {
-        public let id: String
-        public let categoryID: String
-        public var progressionIndex = 0
-        public let formID: String
-        public let isNaturalResource: Bool
+    package struct Static: Codable {
+        package let id: String
+        package let categoryID: String
+        package var progressionIndex = 0
+        package let formID: String
+        package let isNaturalResource: Bool
         
-        public init(id: String, categoryID: String, formID: String, isNaturalResource: Bool = false) {
+        package init(id: String, categoryID: String, formID: String, isNaturalResource: Bool = false) {
             self.id = id
             self.categoryID = categoryID
             self.formID = formID
@@ -17,7 +17,7 @@ extension Part {
         }
     }
     
-    public init(_ part: Static) throws {
+    package init(_ part: Static) throws {
         try self.init(
             id: part.id,
             category: Category(fromID: part.categoryID), 

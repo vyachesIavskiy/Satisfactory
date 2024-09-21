@@ -3,23 +3,22 @@ import SHModels
 import SHStaticModels
 import SHLogger
 
-public final class SHStaticStorage {
-    public private(set) var configuration = Configuration(version: 1)
-    public private(set) var parts = [Part]()
-    public private(set) var equipment = [Equipment]()
-    public private(set) var buildings = [Building]()
-    public private(set) var recipes = [Recipe]()
-    public private(set) var extractions = [Extraction]()
-    public private(set) var migrations = [Migration]()
+package final class SHStaticStorage {
+    package private(set) var configuration = Configuration(version: 1)
+    package private(set) var parts = [Part]()
+    package private(set) var buildings = [Building]()
+    package private(set) var recipes = [Recipe]()
+    package private(set) var extractions = [Extraction]()
+    package private(set) var migrations = [Migration]()
     
     private let logger = SHLogger(subsystemName: "SHStorage", category: "SHStaticStorage")
     private let dataDirectoryName = "Data"
     
     private var loaded = false
     
-    public init() {}
+    package init() {}
     
-    public func load() throws {
+    package func load() throws {
         logger.info("Loading SHStaticStorage.")
         
         guard !loaded else {
@@ -39,14 +38,6 @@ public final class SHStaticStorage {
         let staticBuildings = try load([Building.Static].self, resourceName: .buildings)
         buildings = try staticBuildings.map(Building.init)
         
-        // Load equipment
-        let staticEquipment = try load([Equipment.Static].self, resourceName: .equipment)
-        equipment = try staticEquipment.map { equipment in
-            try Equipment(equipment) {
-                try self[partID: $0]
-            }
-        }
-        
         // Load extractions
         let staticExtractions = try load([Extraction.Static].self, resourceName: .extractions)
         extractions = try staticExtractions.map { extraction in
@@ -62,7 +53,7 @@ public final class SHStaticStorage {
         let staticRecipes = try load([Recipe.Static].self, resourceName: .recipes)
         recipes = try staticRecipes.map { recipe in
             try Recipe(recipe) {
-                try self[itemID: $0]
+                try self[partID: $0]
             } buildingProvider: {
                 try self[buildingID: $0]
             }
@@ -89,16 +80,6 @@ package extension SHStaticStorage {
         return part
     }
     
-    subscript(equipmentID id: String) -> Equipment? {
-        let equipment = equipment.first(id: id)
-        
-        if equipment == nil {
-            logger.debug("Equipment '\(id)' is not found.")
-        }
-        
-        return equipment
-    }
-    
     subscript(buildingID id: String) -> Building? {
         let building = buildings.first(id: id)
         
@@ -111,7 +92,6 @@ package extension SHStaticStorage {
     
     subscript(itemID id: String) -> (any Item)? {
         let item: (any Item)? = parts.first(id: id) ??
-        equipment.first(id: id) ??
         buildings.first(id: id)
         
         if item == nil {
@@ -131,21 +111,21 @@ package extension SHStaticStorage {
         return recipe
     }
     
-    subscript(recipesFor item: some Item, role role: Recipe.Ingredient.Role) -> [Recipe] {
-        self[recipesFor: item.id, role: role]
+    subscript(recipesFor part: Part, role role: Recipe.Ingredient.Role) -> [Recipe] {
+        self[recipesFor: part.id, role: role]
     }
     
-    subscript(recipesFor itemID: String, role role: Recipe.Ingredient.Role) -> [Recipe] {
+    subscript(recipesFor partID: String, role role: Recipe.Ingredient.Role) -> [Recipe] {
         let recipes = recipes.filter { recipe in
             switch role {
-            case .output: recipe.output.item.id == itemID
-            case .byproduct: recipe.byproducts.reduce(false) { $0 || $1.item.id == itemID }
-            case .input: recipe.inputs.reduce(false) { $0 || $1.item.id == itemID }
+            case .output: recipe.output.part.id == partID
+            case .byproduct: recipe.byproducts.reduce(false) { $0 || $1.part.id == partID }
+            case .input: recipe.inputs.reduce(false) { $0 || $1.part.id == partID }
             }
         }
         
         if recipes.isEmpty {
-            logger.debug("No recipes were found for '\(itemID)' as '\(role)'.")
+            logger.debug("No recipes were found for '\(partID)' as '\(role)'.")
         }
         
         return recipes
@@ -171,16 +151,6 @@ package extension SHStaticStorage {
             }
             
             return part
-        }
-    }
-    
-    subscript(equipmentID id: String) -> Equipment {
-        get throws {
-            guard let equipment = self[equipmentID: id] else {
-                throw Error.invalidEquipmentID(id)
-            }
-            
-            return equipment
         }
     }
     
@@ -219,7 +189,6 @@ package extension SHStaticStorage {
 extension SHStaticStorage {
     enum Error: LocalizedError {
         case invalidPartID(String)
-        case invalidEquipmentID(String)
         case invalidBuildingID(String)
         case invalidItemID(String)
         case invalidRecipeID(String)
@@ -227,7 +196,6 @@ extension SHStaticStorage {
         var errorDescription: String? {
             switch self {
             case .invalidPartID: "Part is not found."
-            case .invalidEquipmentID: "Equipment is not found."
             case .invalidBuildingID: "Building is not found."
             case .invalidItemID: "Item is not found."
             case .invalidRecipeID: "Recipe is not found."
@@ -237,7 +205,6 @@ extension SHStaticStorage {
         var failureReason: String? {
             switch self {
             case let .invalidPartID(id): "There is no part with id '\(id)'."
-            case let .invalidEquipmentID(id): "There is no equipment with id '\(id)'."
             case let .invalidBuildingID(id): "There is no building with id '\(id)'."
             case let .invalidItemID(id): "There is no item with id '\(id)'."
             case let .invalidRecipeID(id): "There is no recipe with id '\(id)'."
@@ -299,7 +266,6 @@ private extension SHStaticStorage {
 private extension String {
     static let configuration = "Configuration"
     static let parts = "Parts"
-    static let equipment = "Equipment"
     static let buildings = "Buildings"
     static let recipes = "Recipes"
     static let extractions = "Extractions"

@@ -2,14 +2,24 @@ import Foundation
 import SHModels
 
 extension Pins.Persistent {
-    public struct V2: Codable, Equatable {
-        public var partIDs: Set<String>
-        public var equipmentIDs: Set<String>
-        public var recipeIDs: Set<String>
+    package struct V2: Codable, Equatable {
+        package var singleItemPartIDs: Set<String>
+        package var fromResourcesPartIDs: Set<String>
+        package var powerPartIDs: Set<String>
+        package var powerBuildingIDs: Set<String>
+        package var recipeIDs: Set<String>
         
-        public init(partIDs: Set<String> = [], equipmentIDs: Set<String> = [], recipeIDs: Set<String> = []) {
-            self.partIDs = partIDs
-            self.equipmentIDs = equipmentIDs
+        package init(
+            singleItemPartIDs: Set<String> = [],
+            fromResourcesPartIDs: Set<String> = [],
+            powerPartIDs: Set<String> = [],
+            powerBuildingIDs: Set<String> = [],
+            recipeIDs: Set<String> = []
+        ) {
+            self.singleItemPartIDs = singleItemPartIDs
+            self.fromResourcesPartIDs = fromResourcesPartIDs
+            self.powerPartIDs = powerPartIDs
+            self.powerBuildingIDs = powerBuildingIDs
             self.recipeIDs = recipeIDs
         }
     }

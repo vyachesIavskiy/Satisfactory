@@ -1,4 +1,5 @@
 import SwiftUI
+import SHSharedUI
 
 struct AngledBottomLine: Shape {
     var cornerRadius: CGFloat

@@ -14,7 +14,8 @@ private extension Extraction.Static {
                 V2.Parts.bauxite,
                 V2.Parts.rawQuartz,
                 V2.Parts.sulfur,
-                V2.Parts.uranium
+                V2.Parts.uranium,
+                V2.Parts.sam
             ],
             rates: rates
         )

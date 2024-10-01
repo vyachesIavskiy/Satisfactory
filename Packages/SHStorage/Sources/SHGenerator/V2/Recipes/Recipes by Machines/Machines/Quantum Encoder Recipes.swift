@@ -16,7 +16,7 @@ private extension Recipe.Static {
             inputs: inputs,
             output: output,
             byproducts: [byproduct],
-            machine: V2.Buildings.converter,
+            machine: V2.Buildings.quantumEncoder,
             duration: duration,
             powerConsumption: powerConsumption,
             isDefault: isDefault

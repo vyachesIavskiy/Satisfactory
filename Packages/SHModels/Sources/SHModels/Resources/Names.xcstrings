@@ -12,6 +12,17 @@
         }
       }
     },
+    "building-biomass-burner" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biomass Burner"
+          }
+        }
+      }
+    },
     "building-blender" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19,6 +30,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Blender"
+          }
+        }
+      }
+    },
+    "building-coal-powered-generator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coal-Powered Generator"
           }
         }
       }
@@ -34,6 +56,17 @@
         }
       }
     },
+    "building-converter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Converter"
+          }
+        }
+      }
+    },
     "building-foundry" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -41,6 +74,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Foundry"
+          }
+        }
+      }
+    },
+    "building-fuel-powered-generator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuel-Powered Genrator"
+          }
+        }
+      }
+    },
+    "building-geothermal-generator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geothermal Generator"
           }
         }
       }
@@ -56,6 +111,39 @@
         }
       }
     },
+    "building-miner-mk-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miner MK.1"
+          }
+        }
+      }
+    },
+    "building-miner-mk-2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miner MK.2"
+          }
+        }
+      }
+    },
+    "building-miner-mk-3" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miner MK.3"
+          }
+        }
+      }
+    },
     "building-nuclear-power-plant" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -63,6 +151,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuclear Power Plant"
+          }
+        }
+      }
+    },
+    "building-oil-extractor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oil Extractor"
           }
         }
       }
@@ -89,6 +188,28 @@
         }
       }
     },
+    "building-power-storage" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power Storage"
+          }
+        }
+      }
+    },
+    "building-quantum-encoder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quantum Encoder"
+          }
+        }
+      }
+    },
     "building-refinery" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -96,6 +217,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Refinery"
+          }
+        }
+      }
+    },
+    "building-resource-well-extractor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resource Well Extractor"
+          }
+        }
+      }
+    },
+    "building-resource-well-pressurizer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resource Well Pressurizer"
           }
         }
       }
@@ -110,6 +253,20 @@
           }
         }
       }
+    },
+    "building-space-elevator" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Space Elevator"
+          }
+        }
+      }
+    },
+    "building-water-extractor" : {
+      "extractionState" : "manual"
     },
     "factory-legacy" : {
       "extractionState" : "manual",

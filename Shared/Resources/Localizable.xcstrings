@@ -575,6 +575,61 @@
         }
       }
     },
+    "change-log-v2-0-1-change-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed Converter and Quantum Encoder do not have names"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-1-change-2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed Quantum Encoder recipes are shown as Converter recipes"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-1-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 2.0.1"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-1-update-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A first patch for 2.0 version!\n\nThis is a small hotfix for missing names."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-1-version-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v 2.0.1"
+          }
+        }
+      }
+    },
     "change-log-v2-0-change-1" : {
       "extractionState" : "manual",
       "localizations" : {

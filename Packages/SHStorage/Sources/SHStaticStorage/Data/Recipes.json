@@ -7091,7 +7091,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-converter",
+    "machineID" : "building-quantum-encoder",
     "output" : {
       "amount" : 1,
       "partID" : "part-ai-expansion-server"
@@ -7129,7 +7129,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-converter",
+    "machineID" : "building-quantum-encoder",
     "output" : {
       "amount" : 1,
       "partID" : "part-superposition-oscillator"
@@ -7167,7 +7167,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-converter",
+    "machineID" : "building-quantum-encoder",
     "output" : {
       "amount" : 1,
       "partID" : "part-neural-quantum-processor"
@@ -7205,7 +7205,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-converter",
+    "machineID" : "building-quantum-encoder",
     "output" : {
       "amount" : 10,
       "partID" : "part-alien-power-matrix"
@@ -7243,7 +7243,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-converter",
+    "machineID" : "building-quantum-encoder",
     "output" : {
       "amount" : 1,
       "partID" : "part-ficsonium-fuel-rod"
@@ -7281,7 +7281,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-converter",
+    "machineID" : "building-quantum-encoder",
     "output" : {
       "amount" : 1,
       "partID" : "part-power-shard"

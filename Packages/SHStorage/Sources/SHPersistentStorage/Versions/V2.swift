@@ -71,7 +71,7 @@ final class V2: VersionedStorage {
     
     func canBeLoaded() -> Bool {
         let result = persistence.canBeLoaded()
-        logger.info("V2: \(result ? "Can" : "Cannot") be loaded.")
+        logger.info("[SHPersistentStorage.V2] \(result ? "Can" : "Cannot") be loaded.")
         return result
     }
     
@@ -82,7 +82,7 @@ final class V2: VersionedStorage {
         productions.value = try persistence.loadMany(Production.Persistent.V2.self, fromDirectory: .productions)
         orders.value = try persistence.loadOne(OrdersV2.self, fromFile: .orders)
         
-        logger.info("loaded.")
+        logger.info("[SHPersistentStorage.V2] Loaded.")
     }
     
     func save() throws {
@@ -92,7 +92,7 @@ final class V2: VersionedStorage {
         try persistence.save(factories.value, toDirectory: .factories)
         try persistence.save(orders.value, toFile: .orders)
         
-        logger.info("Saved.")
+        logger.info("[SHPersistentStorage.V2] Saved.")
     }
     
     func isPartPinned(_ partID: String, productionType: ProductionType) -> Bool {
@@ -108,11 +108,11 @@ final class V2: VersionedStorage {
     func isBuildingPinned(_ buildingID: String, productionType: ProductionType) -> Bool {
         switch productionType {
         case .singleItem:
-            logger.error("Checking for pined building in Single Item production mode.")
+            logger.error("[SHPersistentStorage.V2] Checking for pined building in Single Item production mode.")
             return false
         
         case .fromResources:
-            logger.error("Checking for pined building in From Resources production mode.")
+            logger.error("[SHPersistentStorage.V2] Checking for pined building in From Resources production mode.")
             return false
         
         case .power:
@@ -130,28 +130,28 @@ final class V2: VersionedStorage {
         case .singleItem:
             if pinned {
                 pins.value.singleItemPartIDs.remove(partID)
-                logger.info("Unpinned '\(partID)' for Single Item production mode.")
+                logger.info("[SHPersistentStorage.V2] Single Item production, unpinned, partID=\(partID).")
             } else {
                 pins.value.singleItemPartIDs.insert(partID)
-                logger.info("Pinned '\(partID)' for Single Item production mode.")
+                logger.info("[SHPersistentStorage.V2] Single Item production, pinned, partID=\(partID).")
             }
             
         case .fromResources:
             if pinned {
                 pins.value.fromResourcesPartIDs.remove(partID)
-                logger.info("Unpinned '\(partID)' for From Resources production mode.")
+                logger.info("[SHPersistentStorage.V2] From Resources production, unpinned partID=\(partID).")
             } else {
                 pins.value.fromResourcesPartIDs.insert(partID)
-                logger.info("Pinned '\(partID)' for From Resources production mode.")
+                logger.info("[SHPersistentStorage.V2] From Resources production, pinned partID=\(partID).")
             }
             
         case .power:
             if pinned {
                 pins.value.powerPartIDs.remove(partID)
-                logger.info("Unpinned '\(partID)' for Power production mode.")
+                logger.info("[SHPersistentStorage.V2] Power production, unpinned partID=\(partID).")
             } else {
                 pins.value.powerPartIDs.insert(partID)
-                logger.info("Pinned '\(partID)' for Power production mode.")
+                logger.info("[SHPersistentStorage.V2] Power production, pinned partID=\(partID).")
             }
         }
         
@@ -162,18 +162,18 @@ final class V2: VersionedStorage {
         let pinned = isBuildingPinned(buildingID, productionType: productionType)
         switch productionType {
         case .singleItem:
-            logger.error("Tried to pin/unpin building in Single Item production mode.")
+            logger.error("[SHPersistentStorage.V2] Tried to pin/unpin building in Single Item production mode.")
             
         case .fromResources:
-            logger.error("Tried to pin/unpin building in From Resources production mode.")
+            logger.error("[SHPersistentStorage.V2] Tried to pin/unpin building in From Resources production mode.")
             
         case .power:
             if pinned {
                 pins.value.powerBuildingIDs.remove(buildingID)
-                logger.info("Unpinned '\(buildingID)' for Power production mode.")
+                logger.info("[SHPersistentStorage.V2] Power production unpinned buildingID=\(buildingID).")
             } else {
                 pins.value.powerBuildingIDs.insert(buildingID)
-                logger.info("Pinned '\(buildingID)' for Power production mode.")
+                logger.info("[SHPersistentStorage.V2] Power production pinned buildingID=\(buildingID).")
             }
         }
         
@@ -183,10 +183,10 @@ final class V2: VersionedStorage {
     func changeRecipePinStatus(_ recipeID: String) throws {
         if isRecipePinned(recipeID) {
             pins.value.recipeIDs.remove(recipeID)
-            logger.info("Unpinned '\(recipeID)'.")
+            logger.info("[SHPersistentStorage.V2] Unpinned, recipeID=\(recipeID).")
         } else {
             pins.value.recipeIDs.insert(recipeID)
-            logger.info("Pinned '\(recipeID)'.")
+            logger.info("[SHPersistentStorage.V2] Pinned, recipeID=\(recipeID).")
         }
         
         try savePins()
@@ -196,20 +196,24 @@ final class V2: VersionedStorage {
         try persistence.createHomeDirectoryIfNeeded()
         
         try persistence.save(pins.value, toFile: .pins)
-        logger.info("V2: Pins saved.")
+        logger.info("[SHPersistentStorage.V2] Pins saved.")
     }
     
     func saveInitial() throws {
+        logger.info("[SHPersistentStorage.V2] Saving initial data.")
+        
         configuration = Configuration.Persistent.V2(version: 1)
         
         try persistence.save(configuration, toFile: .configuration)
         try persistence.save(pins.value, toFile: .pins)
         try persistence.save(orders.value, toFile: .orders)
         
-        logger.info("V2: Initial data saved.")
+        logger.info("[SHPersistentStorage.V2] Saved initial data.")
     }
     
     func saveFactory(_ factory: Factory.Persistent.V2) throws {
+        logger.info("[SHPersistentStorage.V2] Saving factory, id=\(factory.id), name=\(factory.name).")
+        
         if let index = factories.value.firstIndex(where: { $0.id == factory.id }) {
             factories.value[index] = factory
         } else {
@@ -220,9 +224,13 @@ final class V2: VersionedStorage {
         
         try persistence.save(factories.value, toDirectory: .factories)
         try persistence.save(orders.value, toFile: .orders)
+        
+        logger.info("[SHPersistentStorage.V2] Saved factory, id=\(factory.id), name=\(factory.name).")
     }
     
     func saveProduction(_ production: Production.Persistent.V2, to factoryID: UUID) throws {
+        logger.info("[SHPersistentStorage.V2] Saving production, id=\(production.id), name=\(production.name), factoryID=\(factoryID).")
+        
         if let index = productions.value.firstIndex(where: { $0.id == production.id }) {
             productions.value[index] = production
         } else {
@@ -257,6 +265,8 @@ final class V2: VersionedStorage {
         try persistence.save(productions.value, toDirectory: .productions)
         try persistence.save(factories.value, toDirectory: .factories)
         try persistence.save(orders.value, toFile: .orders)
+        
+        logger.info("[SHPersistentStorage.V2] Saved production, id=\(production.id), name=\(production.name), factoryID=\(factoryID).")
     }
     
     func saveProductionInformation(_ production: Production.Persistent.V2, to factoryID: UUID) throws {
@@ -391,20 +401,20 @@ final class V2: VersionedStorage {
     }
     
     func remove() throws {
-        logger.info("V2: Removing.")
+        logger.info("[SHPersistentStorage.V2] Removing.")
         
         try persistence.remove()
         
-        logger.info("V2: Removed")
+        logger.info("[SHPersistentStorage.V2] Removed.")
     }
     
     func migrate(legacy: Legacy, migration: Migration?) throws {
         @Dependency(\.date)
         var date
         
-        logger.info("V2: Migrating from Legacy.")
+        logger.info("[SHPersistentStorage.V2] Migrating from Legacy.")
         
-        logger.debug("V2: Migrating pins.")
+        logger.info("[SHPersistentStorage.V2]   Migrating pins.")
         let favoriteParts = legacy.parts.filter(\.isFavorite)
         let favoriteRecipes = legacy.recipes.filter(\.isFavorite)
         
@@ -413,7 +423,7 @@ final class V2: VersionedStorage {
             recipeIDs: Set(favoriteRecipes.map(\.id))
         )
         
-        logger.debug("V2: Migrating productions.")
+        logger.info("[SHPersistentStorage.V2]   Migrating productions.")
         let legacyProductions = legacy.productions
         productions.value = legacyProductions.compactMap {
             guard let root = $0.root else { return nil }
@@ -462,18 +472,18 @@ final class V2: VersionedStorage {
         
         try save()
         
-        logger.info("V2: Migration completed.")
+        logger.info("[SHPersistentStorage.V2] Migration completed.")
     }
 }
 
 // MARK: - Private
 private extension V2 {
     func migrateContent(migration: Migration) {
-        logger.info("V2: Migrating content.")
+        logger.info("[SHPersistentStorage.V2] Migrating content.")
         migrateConfiguration(migration: migration)
         migratePinIDs(migration: migration)
         migrateProductionItemIDs(migration: migration)
-        logger.info("V2: Content migrated.")
+        logger.info("[SHPersistentStorage.V2] Content migrated.")
     }
     
     func migrateConfiguration(migration: Migration) {
@@ -488,7 +498,7 @@ private extension V2 {
             
             let newPartID = migration.partIDs[migrationIndex].newID
             migratedPins.singleItemPartIDs.replace(partID, to: newPartID)
-            logger.debug("V2: '\(partID)' changed to '\(newPartID)'")
+            logger.debug("[SHPersistentStorage.V2] '\(partID)' changed to '\(newPartID)'")
         }
         
         for recipeID in migratedPins.recipeIDs {
@@ -496,7 +506,7 @@ private extension V2 {
             
             let newRecipeID = migration.recipeIDs[migrationIndex].newID
             migratedPins.recipeIDs.replace(recipeID, to: newRecipeID)
-            logger.debug("V2: '\(recipeID)' changed to '\(newRecipeID)'")
+            logger.debug("[SHPersistentStorage.V2] '\(recipeID)' changed to '\(newRecipeID)'")
         }
         
         if migratedPins != pins.value {

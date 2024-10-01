@@ -26,18 +26,18 @@ final class Legacy: VersionedStorage {
         // so we need to check for 'version.json' file.
         let url = _url.appendingPathComponent(.version, conformingTo: .json)
         let result = fileManager.fileExists(at: url)
-        logger.info("Legacy \(result ? "can" : "cannot") be loaded.")
+        logger.info("[SHPersistentStorage.Legacy] \(result ? "Can" : "Cannot") be loaded.")
         return result
     }
     
     func load() throws {
-        logger.info("Loading Legacy storage.")
+        logger.info("[SHPersistentStorage.Legacy] Loading.")
         
         parts = try persistence.loadMany(Part.Persistent.Legacy.self, fromDirectory: .parts)
         recipes = try persistence.loadMany(Recipe.Persistent.Legacy.self, fromDirectory: .recipes)
         productions = try persistence.loadMany(Production.Content.SingleItem.Persistent.Legacy.self, fromDirectory: .productions)
         
-        logger.info("Legacy storage is loaded.")
+        logger.info("[SHPersistentStorage.Legacy] Loaded.")
     }
     
     func remove() throws {
@@ -53,7 +53,7 @@ final class Legacy: VersionedStorage {
             try fileManager.removeDirectory(at: url)
         }
         
-        logger.info("Removing Legacy storage.")
+        logger.info("[SHPersistentStorage.Legacy] Removing.")
         
         try remove(file: .version)
         try remove(directory: .parts)
@@ -67,7 +67,7 @@ final class Legacy: VersionedStorage {
         userDefaults.removeObject(forKey: "itemViewStyle")
         userDefaults.removeObject(forKey: "showWithoutRecipes")
         
-        logger.info("Legacy storage is removed.")
+        logger.info("[SHPersistentStorage.Legacy] Removed.")
     }
 }
 

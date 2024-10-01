@@ -19,10 +19,10 @@ package final class SHStaticStorage {
     package init() {}
     
     package func load() throws {
-        logger.info("Loading SHStaticStorage.")
+        logger.info("[SHStaticStorage] Loading.")
         
         guard !loaded else {
-            logger.info("SHStaticStorage is already loaded, skipping.")
+            logger.info("[SHStaticStorage] Already loaded, skipping.")
             return
         }
         
@@ -64,7 +64,7 @@ package final class SHStaticStorage {
         
         loaded = true
         
-        logger.info("SHStaticStorage is loaded.")
+        logger.info("[SHStaticStorage] Loaded.")
     }
 }
 
@@ -74,7 +74,7 @@ package extension SHStaticStorage {
         let part = parts.first(id: id)
         
         if part == nil {
-            logger.debug("Part '\(id)' is not found.")
+            logger.debug("[SHStaticStorage] Part is not found, id=\(id).")
         }
         
         return part
@@ -84,7 +84,7 @@ package extension SHStaticStorage {
         let building = buildings.first(id: id)
         
         if building == nil {
-            logger.debug("Building '\(id)' is not found.")
+            logger.debug("[SHStaticStorage] Building '\(id)' is not found, id=\(id).")
         }
         
         return building
@@ -95,7 +95,7 @@ package extension SHStaticStorage {
         buildings.first(id: id)
         
         if item == nil {
-            logger.debug("Item '\(id)' is not found.")
+            logger.debug("[SHStaticStorage] Item is not found, id=\(id).")
         }
         
         return item
@@ -105,7 +105,7 @@ package extension SHStaticStorage {
         let recipe = recipes.first(id: id)
         
         if recipe == nil {
-            logger.debug("Recipe '\(id)' is not found.")
+            logger.debug("[SHStaticStorage] Recipe is not found, id=\(id).")
         }
         
         return recipe
@@ -125,7 +125,7 @@ package extension SHStaticStorage {
         }
         
         if recipes.isEmpty {
-            logger.debug("No recipes were found for '\(partID)' as '\(role)'.")
+            logger.debug("[SHStaticStorage] No recipes found, partID=\(partID), role=\(role).")
         }
         
         return recipes

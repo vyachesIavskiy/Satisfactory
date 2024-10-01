@@ -74,13 +74,13 @@ package final class SHPersistentStorage {
     
     // MARK: Loading
     package func load() throws {
-        logger.info("Loading Persistent storage.")
+        logger.info("[SHPersistentStorage] Loading.")
         
         // Check if storage can be loaded
         let legacy = Legacy()
         let canLegacyBeLoaded = legacy.canBeLoaded()
         guard canLegacyBeLoaded || v2.canBeLoaded() else {
-            logger.info("Persistent storage is not detected, saving initial data.")
+            logger.info("[SHPersistentStorage] Saving initial data.")
             
             try v2.saveInitial()
             return
@@ -95,7 +95,7 @@ package final class SHPersistentStorage {
             try v2.load()
         }
         
-        logger.info("Persistent Storage is loaded.")
+        logger.info("[SHPersistentStorage] Loaded.")
     }
     
     // MARK: IsPinned
@@ -163,11 +163,11 @@ package final class SHPersistentStorage {
 // MARK: Migration
 private extension SHPersistentStorage {
     func migrateIfNeeded(legacy: Legacy, migration: Migration?) throws {
-        logger.info("Migrating Persistent storage.")
+        logger.info("[SHPersistentStorage] Migrating.")
         
         func migrateLegacy() throws {
             if legacy.canBeLoaded() {
-                logger.debug("Legacy storage detected. Migrating from Legacy to V2.")
+                logger.debug("[SHPersistentStorage] Legacy storage detected. Migrating from Legacy to V2.")
                 try legacy.load()
                 try v2.migrate(legacy: legacy, migration: migration)
                 try legacy.remove()
@@ -182,7 +182,7 @@ private extension SHPersistentStorage {
     }
     
     func createContentMigration() -> Migration? {
-        logger.info("Creating migration.")
+        logger.info("[SHPersistentStorage] Creating migration.")
         
         let contentVersion = configuration.version
         
@@ -192,7 +192,7 @@ private extension SHPersistentStorage {
         
         guard !remainingMigrations.isEmpty else {
             // There is no new migration, exit
-            logger.info("Content does not require migration, skipping.")
+            logger.info("[SHPersistentStorage] Content does not require migration, skipping.")
             return nil
         }
         
@@ -230,14 +230,14 @@ private extension SHPersistentStorage {
     
     func part(id: String) -> Part {
         guard let part = staticStorage[partID: id] else {
-            fatalError("No part with id '\(id)'")
+            fatalError("[SHPersistentStorage] Part not found, id=\(id).")
         }
         return part
     }
     
     func recipe(id: String) -> Recipe {
         guard let recipe = staticStorage[recipeID: id] else {
-            fatalError("No recipe with id '\(id)'")
+            fatalError("[SHPersistentStorage] Recipe not found, id=\(id).")
         }
         return recipe
     }

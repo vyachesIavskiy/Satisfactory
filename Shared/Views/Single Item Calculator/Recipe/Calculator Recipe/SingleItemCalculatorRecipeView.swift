@@ -16,8 +16,7 @@ struct CalculatorRecipeView: View {
             byproductViewModels: viewModel.byproductViewModels,
             inputViewModels: viewModel.inputViewModels
         ) {
-            $0
-                .disabledStyle(viewModel.byproductSelectionState != nil)
+            $0.disabledStyle(viewModel.byproductSelectionState != nil)
         } byproduct: { index, ingredientView in
             let byproduct = viewModel.outputRecipe.byproducts[index]
             byproductViewBuilder(byproduct: byproduct) {

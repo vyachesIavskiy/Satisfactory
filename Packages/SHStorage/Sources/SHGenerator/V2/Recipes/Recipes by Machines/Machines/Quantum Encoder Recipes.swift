@@ -8,7 +8,6 @@ private extension Recipe.Static {
         output: Ingredient,
         byproduct: Ingredient,
         duration: Double,
-        powerConsumption: PowerConsumption,
         isDefault: Bool = true
     ) {
         self.init(
@@ -18,7 +17,7 @@ private extension Recipe.Static {
             byproducts: [byproduct],
             machine: V2.Buildings.quantumEncoder,
             duration: duration,
-            powerConsumption: powerConsumption,
+            powerConsumption: PowerConsumption(min: 0, max: 2000),
             isDefault: isDefault
         )
     }
@@ -36,8 +35,7 @@ extension V2.Recipes {
         ],
         output: Recipe.Static.Ingredient(V2.Parts.aiExpansionServer, amount: 1),
         byproduct: Recipe.Static.Ingredient(V2.Parts.darkMatterResidue, amount: 25),
-        duration: 15,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 0, max: 2000)
+        duration: 15
     )
     
     private static let spaceElevatorRecipes = [
@@ -57,8 +55,7 @@ extension V2.Recipes {
         ],
         output: Recipe.Static.Ingredient(V2.Parts.superpositionOscillator, amount: 1),
         byproduct: Recipe.Static.Ingredient(V2.Parts.darkMatterResidue, amount: 25),
-        duration: 12,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 0, max: 2000)
+        duration: 12
     )
     
     static let neuralQuantumProcessorRecipe = Recipe.Static(
@@ -71,8 +68,7 @@ extension V2.Recipes {
         ],
         output: Recipe.Static.Ingredient(V2.Parts.neuralQuantumProcessor, amount: 1),
         byproduct: Recipe.Static.Ingredient(V2.Parts.darkMatterResidue, amount: 25),
-        duration: 20,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 0, max: 2000)
+        duration: 20
     )
     
     static let alienPowerMatrixRecipe = Recipe.Static(
@@ -83,10 +79,9 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.superpositionOscillator, amount: 3),
             Recipe.Static.Ingredient(V2.Parts.excitedPhotonicMatter, amount: 24)
         ],
-        output: Recipe.Static.Ingredient(V2.Parts.alienPowerMatrix, amount: 10),
+        output: Recipe.Static.Ingredient(V2.Parts.alienPowerMatrix, amount: 1),
         byproduct: Recipe.Static.Ingredient(V2.Parts.darkMatterResidue, amount: 24),
-        duration: 24,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 0, max: 2000)
+        duration: 24
     )
     
     fileprivate static let quantumTechnologyRecipes = [
@@ -108,8 +103,7 @@ extension V2.Recipes {
         ],
         output: Recipe.Static.Ingredient(V2.Parts.ficsoniumFuelRod, amount: 1),
         byproduct: Recipe.Static.Ingredient(V2.Parts.darkMatterResidue, amount: 20),
-        duration: 24,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 0, max: 2000)
+        duration: 24
     )
     
     fileprivate static let nuclearRecipes = [
@@ -129,8 +123,7 @@ extension V2.Recipes {
         ],
         output: Recipe.Static.Ingredient(V2.Parts.powerShard, amount: 1),
         byproduct: Recipe.Static.Ingredient(V2.Parts.darkMatterResidue, amount: 12),
-        duration: 12,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 0, max: 2000)
+        duration: 12
     )
     
     fileprivate static let powerShardsRecipes = [

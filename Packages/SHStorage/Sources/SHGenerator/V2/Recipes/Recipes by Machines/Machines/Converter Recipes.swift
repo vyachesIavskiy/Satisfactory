@@ -8,7 +8,6 @@ private extension Recipe.Static {
         output: Ingredient,
         byproducts: [Ingredient]? = nil,
         duration: Double,
-        powerConsumption: PowerConsumption,
         isDefault: Bool = true
     ) {
         self.init(
@@ -18,7 +17,7 @@ private extension Recipe.Static {
             byproducts: byproducts,
             machine: V2.Buildings.converter,
             duration: duration,
-            powerConsumption: powerConsumption,
+            powerConsumption: PowerConsumption(min: 100, max: 400),
             isDefault: isDefault
         )
     }
@@ -32,16 +31,14 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.diamonds, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.timeCrystal, amount: 1),
-        duration: 10,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 10
     )
     
     static let excitedPhotonicMatterRecipe = Recipe.Static(
         id: "recipe-excited-photonic-matter",
         inputs: [],
         output: Recipe.Static.Ingredient(V2.Parts.excitedPhotonicMatter, amount: 10),
-        duration: 3,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 3
     )
     
     static let darkMatterResidueRecipe = Recipe.Static(
@@ -50,8 +47,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.reanimatedSAM, amount: 5)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.darkMatterResidue, amount: 10),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     fileprivate static let quantumTechnologyRecipes = [
@@ -70,8 +66,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.quartzCrystal, amount: 3)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.diamonds, amount: 1),
-        duration: 4,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 4
     )
     
     static let darkIonFuelRecipe = Recipe.Static(
@@ -85,7 +80,6 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.compactedCoal, amount: 2)
         ],
         duration: 3,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400),
         isDefault: false
     )
     
@@ -104,8 +98,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.ironIngot, amount: 24)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.ficsiteIngot, amount: 1),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let ficsiteIngtoCateriumRecipe = Recipe.Static(
@@ -115,8 +108,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.cateriumIngot, amount: 4)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.ficsiteIngot, amount: 1),
-        duration: 4,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 4
     )
     
     static let ficsiteIngtoAluminumRecipe = Recipe.Static(
@@ -126,8 +118,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.aluminumIngot, amount: 4)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.ficsiteIngot, amount: 1),
-        duration: 2,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 2
     )
     
     fileprivate static let ingotsRecipes = [
@@ -146,8 +137,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.limestone, amount: 24)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.ironOre, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let copperOreSulfurRecipe = Recipe.Static(
@@ -157,8 +147,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.sulfur, amount: 12)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.copperOre, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let copperOreQuartzRecipe = Recipe.Static(
@@ -168,8 +157,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.rawQuartz, amount: 10)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.copperOre, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let limestoneSulfurRecipe = Recipe.Static(
@@ -179,8 +167,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.sulfur, amount: 2)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.limestone, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let coalLimestoneRecipe = Recipe.Static(
@@ -190,8 +177,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.limestone, amount: 36)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.coal, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let coalIronRecipe = Recipe.Static(
@@ -201,8 +187,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.ironOre, amount: 18)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.coal, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let sulfurIronRecipe = Recipe.Static(
@@ -212,8 +197,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.ironOre, amount: 30)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.sulfur, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let sulfurCoalRecipe = Recipe.Static(
@@ -223,8 +207,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.coal, amount: 20)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.sulfur, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let cateriumOreCopperRecipe = Recipe.Static(
@@ -234,8 +217,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.copperOre, amount: 15)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.cateriumOre, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let cateriumOreQuartzRecipe = Recipe.Static(
@@ -245,8 +227,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.rawQuartz, amount: 12)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.cateriumOre, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let rawQuartzCoalRecipe = Recipe.Static(
@@ -256,8 +237,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.coal, amount: 24)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.rawQuartz, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let rawQuartzBauxiteRecipe = Recipe.Static(
@@ -267,8 +247,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.bauxite, amount: 10)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.rawQuartz, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let bauxiteCopperRecipe = Recipe.Static(
@@ -278,8 +257,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.copperOre, amount: 18)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.bauxite, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let bauxiteCateriumRecipe = Recipe.Static(
@@ -289,8 +267,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.cateriumOre, amount: 15)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.bauxite, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let nitrogenGasCateriumRecipe = Recipe.Static(
@@ -300,8 +277,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.cateriumOre, amount: 12)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.nitrogenGas, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let nitrogenGasBauxiteRecipe = Recipe.Static(
@@ -311,8 +287,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.bauxite, amount: 10)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.nitrogenGas, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     static let uraniumBauxiteRecipe = Recipe.Static(
@@ -322,8 +297,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.bauxite, amount: 48)
         ],
         output: Recipe.Static.Ingredient(V2.Parts.uranium, amount: 12),
-        duration: 6,
-        powerConsumption: Recipe.Static.PowerConsumption(min: 100, max: 400)
+        duration: 6
     )
     
     fileprivate static let rawResourceConversionRecipes = [

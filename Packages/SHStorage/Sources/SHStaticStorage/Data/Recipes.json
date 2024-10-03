@@ -7207,7 +7207,7 @@
     "isDefault" : true,
     "machineID" : "building-quantum-encoder",
     "output" : {
-      "amount" : 10,
+      "amount" : 1,
       "partID" : "part-alien-power-matrix"
     },
     "powerConsumption" : {

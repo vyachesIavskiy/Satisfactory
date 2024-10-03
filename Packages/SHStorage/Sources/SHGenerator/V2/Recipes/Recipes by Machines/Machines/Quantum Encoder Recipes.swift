@@ -83,7 +83,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.superpositionOscillator, amount: 3),
             Recipe.Static.Ingredient(V2.Parts.excitedPhotonicMatter, amount: 24)
         ],
-        output: Recipe.Static.Ingredient(V2.Parts.alienPowerMatrix, amount: 10),
+        output: Recipe.Static.Ingredient(V2.Parts.alienPowerMatrix, amount: 1),
         byproduct: Recipe.Static.Ingredient(V2.Parts.darkMatterResidue, amount: 24),
         duration: 24,
         powerConsumption: Recipe.Static.PowerConsumption(min: 0, max: 2000)

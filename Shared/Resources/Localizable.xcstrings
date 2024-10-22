@@ -630,6 +630,50 @@
         }
       }
     },
+    "change-log-v2-0-2-change-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed Alien Power Matrix recipe values."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-2-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 2.0.2"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-2-update-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Another small update to 2.0 version!\n\nA big gratitude this time goes to **Viktor Delvito** for pointing out a wrong value in _Alien Power Matrix_ recipe."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-2-version-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v 2.0.2"
+          }
+        }
+      }
+    },
     "change-log-v2-0-change-1" : {
       "extractionState" : "manual",
       "localizations" : {

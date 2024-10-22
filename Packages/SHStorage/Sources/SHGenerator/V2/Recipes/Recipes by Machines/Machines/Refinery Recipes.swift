@@ -184,7 +184,7 @@ extension V2.Recipes {
             Recipe.Static.Ingredient(V2.Parts.sulfur, amount: 5),
             Recipe.Static.Ingredient(V2.Parts.water, amount: 5)
         ],
-        output: Recipe.Static.Ingredient(V2.Parts.sulfuricAcid, amount: 10),
+        output: Recipe.Static.Ingredient(V2.Parts.sulfuricAcid, amount: 5),
         duration: 6
     )
     

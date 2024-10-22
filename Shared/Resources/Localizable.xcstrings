@@ -674,6 +674,50 @@
         }
       }
     },
+    "change-log-v2-0-3-change-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed Sulfuric Acid recipe values."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-3-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 2.0.3"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-3-update-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yet another small update to 2.0 version!\n\nToday we cheer **Carl Sities** for reporting wrong numbers in Sulfuric Acid recipe."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-3-version-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v 2.0.3"
+          }
+        }
+      }
+    },
     "change-log-v2-0-change-1" : {
       "extractionState" : "manual",
       "localizations" : {

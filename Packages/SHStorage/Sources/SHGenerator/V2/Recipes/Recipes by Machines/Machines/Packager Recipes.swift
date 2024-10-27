@@ -14,7 +14,7 @@ private extension Recipe.Static {
             inputs: inputs,
             output: output,
             byproducts: [],
-            machine: V2.Buildings.constructor,
+            machine: V2.Buildings.packager,
             duration: duration,
             powerConsumption: PowerConsumption(10),
             isDefault: isDefault

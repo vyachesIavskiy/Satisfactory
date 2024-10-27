@@ -5537,7 +5537,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 2,
       "partID" : "part-packaged-water"
@@ -5564,7 +5564,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 2,
       "partID" : "part-packaged-oil"
@@ -5591,7 +5591,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 2,
       "partID" : "part-packaged-heavy-oil-residue"
@@ -5618,7 +5618,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 2,
       "partID" : "part-packaged-liquid-biofuel"
@@ -5645,7 +5645,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 2,
       "partID" : "part-packaged-fuel"
@@ -5672,7 +5672,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 2,
       "partID" : "part-packaged-turbofuel"
@@ -5699,7 +5699,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 1,
       "partID" : "part-packaged-rocket-fuel"
@@ -5726,7 +5726,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 2,
       "partID" : "part-packaged-ionized-fuel"
@@ -5753,7 +5753,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 2,
       "partID" : "part-packaged-alumina-solution"
@@ -5780,7 +5780,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 2,
       "partID" : "part-packaged-sulfuric-acid"
@@ -5807,7 +5807,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 1,
       "partID" : "part-packaged-nitrogen-gas"
@@ -5834,7 +5834,7 @@
       }
     ],
     "isDefault" : true,
-    "machineID" : "building-constructor",
+    "machineID" : "building-packager",
     "output" : {
       "amount" : 1,
       "partID" : "part-packaged-nitric-acid"

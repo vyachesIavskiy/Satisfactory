@@ -27,6 +27,7 @@ struct ChangeLogsView: View {
         case .v2_0_1: "change-log-v2-0-1-name"
         case .v2_0_2: "change-log-v2-0-2-name"
         case .v2_0_3: "change-log-v2-0-3-name"
+        case .v2_0_4: "change-log-v2-0-4-name"
         }
     }
 }

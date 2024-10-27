@@ -718,6 +718,61 @@
         }
       }
     },
+    "change-log-v2-0-4-change-1" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed packaged recipes use _Constructor_ instead of _Packager_."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-4-change-2" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed compounds are marked as natural resources."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-4-name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 2.0.4"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-4-update-message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A new small yet important update to 2.0 version!\n\n**Carl Sities** reported another issue, now for packaged recipes. \nAlso **Cole Riddle** helped us to identify that compounds are marked as natural resources."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-4-version-title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v 2.0.4"
+          }
+        }
+      }
+    },
     "change-log-v2-0-change-1" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -42,7 +42,7 @@ final class TabsViewModel {
             nil // What's new is not available for versions lower than 2.0
         case .v2_0:
             "\(keyPrefix)v2-0"
-        case .v2_0_1, .v2_0_2, .v2_0_3:
+        case .v2_0_1, .v2_0_2, .v2_0_3, .v2_0_4:
             nil // What's new is not available for hot fixes
         }
     }

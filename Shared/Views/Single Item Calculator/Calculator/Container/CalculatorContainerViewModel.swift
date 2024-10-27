@@ -26,7 +26,7 @@ final class SingleItemCalculatorContainerViewModel {
             settingsService.autoSelectSingleRecipe,
             recipes.count == 1,
             let recipe = recipes.first,
-            !recipe.id.contains("packaged")
+            !recipe.id.contains("unpackaged")
         {
             SingleItemCalculatorViewModel.AutoSelectSingleRecipeTip.shouldDisplay = true
             state = .calculation(viewModel: SingleItemCalculatorViewModel(part: part, recipe: recipe))

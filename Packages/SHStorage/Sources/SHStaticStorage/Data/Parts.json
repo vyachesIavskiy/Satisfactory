@@ -374,7 +374,7 @@
     "categoryID" : "category-compounds",
     "formID" : "part-form-solid",
     "id" : "part-concrete",
-    "isNaturalResource" : true,
+    "isNaturalResource" : false,
     "progressionIndex" : 53
   },
   {
@@ -388,35 +388,35 @@
     "categoryID" : "category-compounds",
     "formID" : "part-form-solid",
     "id" : "part-quartz-crystal",
-    "isNaturalResource" : true,
+    "isNaturalResource" : false,
     "progressionIndex" : 55
   },
   {
     "categoryID" : "category-compounds",
     "formID" : "part-form-solid",
     "id" : "part-silica",
-    "isNaturalResource" : true,
+    "isNaturalResource" : false,
     "progressionIndex" : 56
   },
   {
     "categoryID" : "category-compounds",
     "formID" : "part-form-solid",
     "id" : "part-aluminum-scrap",
-    "isNaturalResource" : true,
+    "isNaturalResource" : false,
     "progressionIndex" : 57
   },
   {
     "categoryID" : "category-compounds",
     "formID" : "part-form-solid",
     "id" : "part-copper-powder",
-    "isNaturalResource" : true,
+    "isNaturalResource" : false,
     "progressionIndex" : 58
   },
   {
     "categoryID" : "category-compounds",
     "formID" : "part-form-solid",
     "id" : "part-diamonds",
-    "isNaturalResource" : true,
+    "isNaturalResource" : false,
     "progressionIndex" : 59
   },
   {

@@ -10,7 +10,7 @@ struct AppInfoView: View {
             
             cell(title: "settings-app-info-game-update-row-title", subtitle: "Stable 1.0")
             
-            cell(title: "settings-app-info-game-version-row-title", subtitle: "v1.0.0.3")
+            cell(title: "settings-app-info-game-version-row-title", subtitle: "v1.0.0.4")
         }
         .navigationTitle("settings-app-info-navigation-title")
     }

@@ -3343,7 +3343,7 @@
     "isDefault" : true,
     "machineID" : "building-refinery",
     "output" : {
-      "amount" : 10,
+      "amount" : 5,
       "partID" : "part-sulfuric-acid"
     },
     "powerConsumption" : {

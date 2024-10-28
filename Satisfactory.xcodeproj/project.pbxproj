@@ -73,7 +73,6 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D3051BD12C77643100E0B6C3 /* iOS */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3051BD62C77643100E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = iOS; sourceTree = "<group>"; };
-		D3051BD52C77643100E0B6C3 /* macOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = macOS; sourceTree = "<group>"; };
 		D357A6A32C8336FD008A8983 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D357A7CD2C8336FD008A8983 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
 		D357A7D92C833737008A8983 /* Packages */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D357A7DC2C833737008A8983 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D357A7DD2C833737008A8983 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Packages; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -133,7 +132,6 @@
 			children = (
 				D357A6A32C8336FD008A8983 /* Shared */,
 				D3051BD12C77643100E0B6C3 /* iOS */,
-				D3051BD52C77643100E0B6C3 /* macOS */,
 				D357A7D92C833737008A8983 /* Packages */,
 				450BD19724A6395700948B47 /* Products */,
 				D341A9EC2BDD60E500ED36F6 /* Frameworks */,

@@ -1422,6 +1422,16 @@
         }
       }
     },
+    "help" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Help"
+          }
+        }
+      }
+    },
     "new-production-from-resources-navigation-title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1506,6 +1516,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Power"
+          }
+        }
+      }
+    },
+    "new-production-select-item-helper-text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To start building a Production select an Item from a list below"
           }
         }
       }

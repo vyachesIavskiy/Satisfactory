@@ -18,6 +18,8 @@ final class SingleItemCalculatorItemSelectionViewModel {
     
     var selectedPart: Part?
     
+    var showHelp = false
+    
     // MARK: Ignored
     private let parts: [Part]
     

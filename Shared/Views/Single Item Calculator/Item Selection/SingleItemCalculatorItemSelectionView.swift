@@ -9,6 +9,8 @@ struct SingleItemCalculatorItemSelectionView: View {
     
     var body: some View {
         List {
+            helpSection
+            
             ForEach($viewModel.sections) { $section in
                 itemsSection($section)
             }
@@ -30,6 +32,14 @@ struct SingleItemCalculatorItemSelectionView: View {
                     }
                 }
             }
+            
+            ToolbarItem(placement: .primaryAction) {
+                Button("help", systemImage: "info.square") {
+                    withAnimation(.bouncy) {
+                        viewModel.showHelp.toggle()
+                    }
+                }
+            }
         }
         .onAppear {
             viewModel.buildInitialSections()
@@ -42,6 +52,25 @@ struct SingleItemCalculatorItemSelectionView: View {
         }
         .task {
             await viewModel.observeSettings()
+        }
+    }
+    
+    @ViewBuilder
+    private var helpSection: some View {
+        if viewModel.showHelp {
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Image(systemName: "info.square")
+                        .foregroundStyle(.tint)
+                    
+                    Text("help")
+                }
+                .fontWeight(.medium)
+                
+                Text("new-production-select-item-helper-text")
+            }
+            .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
         }
     }
     
@@ -92,6 +121,8 @@ struct SingleItemCalculatorItemSelectionView: View {
 
 #if DEBUG
 #Preview("Item selection") {
-    SingleItemCalculatorItemSelectionView()
+    NavigationStack {
+        SingleItemCalculatorItemSelectionView()
+    }
 }
 #endif

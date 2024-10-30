@@ -410,6 +410,9 @@ private extension SingleItemCalculatorViewModel {
                     explicitlyDeletedPartIDs.insert(outputPart.part.id)
                 } else {
                     calculator.updateInputPart(outputPart)
+                    for recipe in outputPart.recipes {
+                        addAutoSelectedRecipes(from: recipe.recipe)
+                    }
                 }
                 
                 modalNavigationState = nil

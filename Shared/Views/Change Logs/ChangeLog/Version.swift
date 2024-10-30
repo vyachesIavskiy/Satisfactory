@@ -16,6 +16,7 @@ extension ChangeLog {
         case v2_0_2
         case v2_0_3
         case v2_0_4
+        case v2_0_5
         
         #if DEBUG
         static let validVersions = Array(allCases.dropFirst())
@@ -39,6 +40,7 @@ extension ChangeLog {
             case .v2_0_2: "change-log-v2-0-2-version-title"
             case .v2_0_3: "change-log-v2-0-3-version-title"
             case .v2_0_4: "change-log-v2-0-4-version-title"
+            case .v2_0_5: "change-log-v2-0-5-version-title"
             }
         }
     }

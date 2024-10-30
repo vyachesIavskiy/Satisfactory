@@ -773,6 +773,76 @@
         }
       }
     },
+    "change-log-v2-0-5-change-1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Removed FICSMAS items due to changes to FICSMAS this year"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-5-change-2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added help sections to some views that describes how to operate with the app"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-5-change-3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On iPhone Statistics, Info and Save buttons are moved under title in Calculator view for faster access."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-5-change-4" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed an issue when recipes are not auto selected when changing a recipe for an item in Calculator."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-5-name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 2.0.5"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-5-update-message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OMG, already a fifth update to version 2.0!\n\nOur team prepared a couple of small fixes for you for, as we hope, a better experience."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-5-version-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v 2.0.5"
+          }
+        }
+      }
+    },
     "change-log-v2-0-change-1" : {
       "extractionState" : "manual",
       "localizations" : {

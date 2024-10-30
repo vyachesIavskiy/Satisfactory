@@ -17,6 +17,22 @@ struct SingleItemCalculatorItemAdjustmentView: View {
     var body: some View {
         NavigationStack {
             List {
+                if viewModel.showHelp {
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Image(systemName: "info.square")
+                                .foregroundStyle(.tint)
+                            
+                            Text("help")
+                        }
+                        .fontWeight(.medium)
+                        
+                        Text("single-item-calculator-adjust-item-help-text")
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
+                }
+                
                 adjustingSection
                 
                 pinnedSection
@@ -66,6 +82,14 @@ struct SingleItemCalculatorItemAdjustmentView: View {
                         dismiss()
                     }
                     .disabled(viewModel.applyButtonDisabled)
+                }
+                
+                ToolbarItem(placement: .primaryAction) {
+                    Button("help", systemImage: "info.bubble") {
+                        withAnimation(.bouncy) {
+                            viewModel.showHelp.toggle()
+                        }
+                    }
                 }
             }
             #if os(iOS)

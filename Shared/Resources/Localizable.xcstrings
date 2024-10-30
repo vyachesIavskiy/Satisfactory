@@ -1870,6 +1870,16 @@
         }
       }
     },
+    "single-item-calculator-adjust-item-help-text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can adjust recipes or add new ones here.\nTap on a recipe from unselected section to add it to Production. If there are 2 or more recipes, you can adjust in which proportion they will participate in the Production.\nYou can also remove all the recipes which will remove the item from Production as well."
+          }
+        }
+      }
+    },
     "single-item-calculator-help-text" : {
       "localizations" : {
         "en" : {

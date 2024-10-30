@@ -17,6 +17,8 @@ final class SingleItemCalculatorItemAdjustmentViewModel: Identifiable {
     
     private var proportionsValidation = ProportionsValidation()
     
+    var showHelp = false
+    
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService
     

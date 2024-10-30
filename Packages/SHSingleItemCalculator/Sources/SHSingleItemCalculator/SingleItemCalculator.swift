@@ -64,9 +64,9 @@ public final class SingleItemCalculator {
         production.changeProportion(of: recipe, for: part, to: newProportion)
     }
     
-//    public func moveInputItems(from offsets: IndexSet, to offset: Int) {
-//        input.moveInputItem(from: offsets, to: offset)
-//    }
+    public func moveInputItems(from offsets: IndexSet, to offset: Int) {
+        production.inputParts.move(fromOffsets: offsets, toOffset: offset)
+    }
     
     public func removeInputItem(_ part: Part) {
         production.removePart(part)

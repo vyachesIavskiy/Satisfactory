@@ -129,7 +129,7 @@ final class SingleItemCalculatorViewModel {
     }
     
     func moveItems(indexSet: IndexSet, at position: Int) {
-//        production.moveInputItems(from: indexSet, to: position)
+        calculator.moveInputItems(from: indexSet, to: position)
     }
     
     func adjustNewAmount() {

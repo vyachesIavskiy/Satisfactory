@@ -22,8 +22,23 @@ struct SingleItemCalculatorView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 16, pinnedViews: .sectionHeaders) {
-                Section {
-                    ForEach(Array(viewModel.outputItemViewModels.enumerated()), id: \.element.id) { index, itemViewModel in
+                if viewModel.showHelp {
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack {
+                            Image(systemName: "info.square")
+                                .foregroundStyle(.tint)
+                            
+                            Text("help")
+                        }
+                        .fontWeight(.medium)
+                        
+                        Text("single-item-calculator-help-text")
+                    }
+                    .padding(.horizontal, 16)
+                }
+                
+                ForEach(Array(viewModel.outputItemViewModels.enumerated()), id: \.element.id) { index, itemViewModel in
+                    VStack(spacing: 16) {
                         if index == 0 {
                             SingleItemCalculatorItemView(viewModel: itemViewModel)
                                 .popoverTip(viewModel.autoSelectSingleRecipeTip, arrowEdge: .top)
@@ -47,56 +62,43 @@ struct SingleItemCalculatorView: View {
                                 )
                         }
                     }
-                } header: {
-                    VStack(alignment: .leading) {
-                        if horizontalSizeClass == .compact {
-                            HStack(spacing: 0) {
-                                Button("single-item-production-calculation-statistics", systemImage: "list.number") {
-                                    viewModel.showStatistics()
-                                }
-                                .disabled(viewModel.selectingByproduct)
-                                .frame(maxWidth: .infinity)
-                                
-                                if viewModel.hasSavedProduction {
-                                    Button("single-item-production-info", systemImage: "info.square") {
-                                        viewModel.editProduction()
-                                    }
-                                    .disabled(viewModel.selectingByproduct)
-                                    .frame(maxWidth: .infinity)
-                                }
-                                
-                                Button("general-save", systemImage: "square.and.arrow.down") {
-                                    if viewModel.hasSavedProduction {
-                                        viewModel.saveProductionContent()
-                                    } else {
-                                        viewModel.editProduction()
-                                    }
-                                }
-                                .disabled(viewModel.selectingByproduct)
-                                .frame(maxWidth: .infinity)
-                            }
-                            .padding(.vertical, 8)
-                            .background(.background)
-                        }
-                        
-                        if viewModel.showHelp {
-                            VStack(alignment: .leading, spacing: 8) {
-                                HStack {
-                                    Image(systemName: "info.square")
-                                        .foregroundStyle(.tint)
-                                    
-                                    Text("help")
-                                }
-                                .fontWeight(.medium)
-                                
-                                Text("single-item-calculator-help-text")
-                            }
-                            .padding(.horizontal, 16)
-                        }
-                    }
                 }
+                .onMove(perform: viewModel.moveItems(indexSet:at:))
             }
             .padding(.vertical, 16)
+        }
+        .safeAreaInset(edge: .top, spacing: 0) {
+            if horizontalSizeClass == .compact {
+                HStack(spacing: 0) {
+                    Button("single-item-production-calculation-statistics", systemImage: "list.number") {
+                        viewModel.showStatistics()
+                    }
+                    .disabled(viewModel.selectingByproduct)
+                    .frame(maxWidth: .infinity)
+                    
+                    if viewModel.hasSavedProduction {
+                        Button("single-item-production-info", systemImage: "info.square") {
+                            viewModel.editProduction()
+                        }
+                        .disabled(viewModel.selectingByproduct)
+                        .frame(maxWidth: .infinity)
+                    }
+                    
+                    Button("general-save", systemImage: "square.and.arrow.down") {
+                        if viewModel.hasSavedProduction {
+                            viewModel.saveProductionContent()
+                        } else {
+                            viewModel.editProduction()
+                        }
+                    }
+                    .disabled(viewModel.selectingByproduct)
+                    .frame(maxWidth: .infinity)
+                }
+                .padding(.vertical, 8)
+                .addListGradientSeparator(leadingPadding: 0)
+                .fixedSize(horizontal: false, vertical: true)
+                .background(.background, ignoresSafeAreaEdges: .top)
+            }
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             if horizontalSizeClass == .compact {
@@ -108,6 +110,7 @@ struct SingleItemCalculatorView: View {
             }
         }
         .navigationBarBackButtonHidden(!viewModel.canBeDismissedWithoutSaving || viewModel.selectingByproduct)
+        .toolbarBackground(.hidden, for: .navigationBar)
         .navigationTitle(viewModel.navigationTitle)
         .toolbar { toolbar }
         .gesture(

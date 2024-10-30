@@ -16,7 +16,7 @@ struct SettingsView: View {
                 List {
                     recipeSection
                     
-                    seasonalEventsSection
+//                    seasonalEventsSection
                     
                     otherSection
                     

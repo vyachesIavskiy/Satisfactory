@@ -183,7 +183,7 @@ private extension SingleItemCalculatorItemSelectionViewModel {
     @MainActor
     func split(_ parts: [Part]) -> (pinned: [Part], unpinned: [Part]) {
         var (pinned, unpinned) = parts.reduce(into: ([Part](), [Part]())) { partialResult, part in
-            if part.category == .ficsmas, !showFICSMAS {
+            if part.category == .ficsmas/*, !showFICSMAS*/ {
                 return
             }
             

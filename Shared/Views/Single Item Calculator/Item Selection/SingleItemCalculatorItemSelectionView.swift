@@ -34,7 +34,7 @@ struct SingleItemCalculatorItemSelectionView: View {
             }
             
             ToolbarItem(placement: .primaryAction) {
-                Button("help", systemImage: "info.square") {
+                Button("help", systemImage: "info.bubble") {
                     withAnimation(.bouncy) {
                         viewModel.showHelp.toggle()
                     }

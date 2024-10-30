@@ -13,6 +13,7 @@ final class SingleItemCalculatorViewModel {
     var showingUnsavedConfirmationDialog = false
     var canBeDismissedWithoutSaving = true
     var dismissAfterProductionDeletion = false
+    var showHelp = false
     
     @MainActor
     private var byproductSelectionState: ByproductSelectionState? {

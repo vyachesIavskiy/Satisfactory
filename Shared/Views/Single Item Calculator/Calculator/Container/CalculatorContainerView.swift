@@ -27,12 +27,15 @@ struct SingleItemCalculatorContainerView: View {
         #if os(iOS)
         .toolbar(.hidden, for: .bottomBar, .tabBar)
         #endif
+        .navigationBarTitleDisplayMode(.inline)
         .animation(.default, value: viewModel.state)
     }
 }
 
 #if DEBUG
 #Preview {
-    SingleItemCalculatorContainerView(part: part(id: "part-plastic"))
+    NavigationStack {
+        SingleItemCalculatorContainerView(part: part(id: "part-plastic"))
+    }
 }
 #endif

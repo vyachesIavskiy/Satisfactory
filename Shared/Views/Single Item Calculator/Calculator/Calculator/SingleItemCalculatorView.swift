@@ -21,29 +21,78 @@ struct SingleItemCalculatorView: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack(alignment: horizontalSizeClass == .compact ? .leading : .center, spacing: 16, pinnedViews: .sectionHeaders) {
-                ForEach(Array(viewModel.outputItemViewModels.enumerated()), id: \.element.id) { index, itemViewModel in
-                    if index == 0 {
-                        SingleItemCalculatorItemView(viewModel: itemViewModel)
-                            .popoverTip(viewModel.autoSelectSingleRecipeTip, arrowEdge: .top)
-                            .popoverTip(viewModel.autoSelectSinglePinnedRecipeTip, arrowEdge: .top)
-                    } else {
-                        SingleItemCalculatorItemView(viewModel: itemViewModel)
+            LazyVStack(spacing: 16, pinnedViews: .sectionHeaders) {
+                Section {
+                    ForEach(Array(viewModel.outputItemViewModels.enumerated()), id: \.element.id) { index, itemViewModel in
+                        if index == 0 {
+                            SingleItemCalculatorItemView(viewModel: itemViewModel)
+                                .popoverTip(viewModel.autoSelectSingleRecipeTip, arrowEdge: .top)
+                                .popoverTip(viewModel.autoSelectSinglePinnedRecipeTip, arrowEdge: .top)
+                        } else {
+                            SingleItemCalculatorItemView(viewModel: itemViewModel)
+                        }
+                        
+                        if index != viewModel.outputItemViewModels.indices.last {
+                            Rectangle()
+                                .fill(LinearGradient(
+                                    colors: [.sh(.midnight), .sh(.midnight30)],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                ))
+                                .frame(height: 2 / displayScale)
+                                .padding(.leading, 16)
+                                .frame(
+                                    maxWidth: horizontalSizeClass == .compact ? .infinity : 600,
+                                    alignment: .leading
+                                )
+                        }
                     }
-                    
-                    if index != viewModel.outputItemViewModels.indices.last {
-                        Rectangle()
-                            .fill(LinearGradient(
-                                colors: [.sh(.midnight), .sh(.midnight30)],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            ))
-                            .frame(height: 2 / displayScale)
-                            .padding(.leading, 16)
-                            .frame(
-                                maxWidth: horizontalSizeClass == .compact ? .infinity : 600,
-                                alignment: .leading
-                            )
+                } header: {
+                    VStack(alignment: .leading) {
+                        if horizontalSizeClass == .compact {
+                            HStack(spacing: 0) {
+                                Button("single-item-production-calculation-statistics", systemImage: "list.number") {
+                                    viewModel.showStatistics()
+                                }
+                                .disabled(viewModel.selectingByproduct)
+                                .frame(maxWidth: .infinity)
+                                
+                                if viewModel.hasSavedProduction {
+                                    Button("single-item-production-info", systemImage: "info.square") {
+                                        viewModel.editProduction()
+                                    }
+                                    .disabled(viewModel.selectingByproduct)
+                                    .frame(maxWidth: .infinity)
+                                }
+                                
+                                Button("general-save", systemImage: "square.and.arrow.down") {
+                                    if viewModel.hasSavedProduction {
+                                        viewModel.saveProductionContent()
+                                    } else {
+                                        viewModel.editProduction()
+                                    }
+                                }
+                                .disabled(viewModel.selectingByproduct)
+                                .frame(maxWidth: .infinity)
+                            }
+                            .padding(.vertical, 8)
+                            .background(.background)
+                        }
+                        
+                        if viewModel.showHelp {
+                            VStack(alignment: .leading, spacing: 8) {
+                                HStack {
+                                    Image(systemName: "info.square")
+                                        .foregroundStyle(.tint)
+                                    
+                                    Text("help")
+                                }
+                                .fontWeight(.medium)
+                                
+                                Text("single-item-calculator-help-text")
+                            }
+                            .padding(.horizontal, 16)
+                        }
                     }
                 }
             }
@@ -157,30 +206,23 @@ struct SingleItemCalculatorView: View {
                     .disabled(viewModel.selectingByproduct)
                 }
             }
-        } else {
-            if viewModel.hasSavedProduction {
-                ToolbarItem(placement: .secondaryAction) {
-                    Button("single-item-production-info", systemImage: "info.square") {
+            
+            ToolbarItem(placement: .primaryAction) {
+                Button("general-save") {
+                    if viewModel.hasSavedProduction {
+                        viewModel.saveProductionContent()
+                    } else {
                         viewModel.editProduction()
                     }
-                    .disabled(viewModel.selectingByproduct)
-                }
-            }
-            
-            ToolbarItem(placement: .secondaryAction) {
-                Button("single-item-production-calculation-statistics", systemImage: "list.number") {
-                    viewModel.showStatistics()
                 }
                 .disabled(viewModel.selectingByproduct)
             }
         }
         
         ToolbarItem(placement: .primaryAction) {
-            Button("general-save") {
-                if viewModel.hasSavedProduction {
-                    viewModel.saveProductionContent()
-                } else {
-                    viewModel.editProduction()
+            Button("help", systemImage: "info.bubble") {
+                withAnimation(.bouncy) {
+                    viewModel.showHelp.toggle()
                 }
             }
             .disabled(viewModel.selectingByproduct)
@@ -403,6 +445,9 @@ private struct _SingleItemCalculatorPreview: View {
 }
 
 #Preview("Calculator View") {
-    _SingleItemCalculatorPreview(partID: "part-plastic", recipeID: "recipe-alternate-recycled-plastic")
+    NavigationStack {
+        _SingleItemCalculatorPreview(partID: "part-plastic", recipeID: "recipe-alternate-recycled-plastic")
+            .navigationBarTitleDisplayMode(.inline)
+    }
 }
 #endif

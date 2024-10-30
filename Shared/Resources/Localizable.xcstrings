@@ -1870,6 +1870,16 @@
         }
       }
     },
+    "single-item-calculator-help-text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap on any item to open a recipe selector. By selecting additional recipes for items you create a production."
+          }
+        }
+      }
+    },
     "single-item-production-adjustment-%@-per-minute" : {
       "extractionState" : "manual",
       "localizations" : {

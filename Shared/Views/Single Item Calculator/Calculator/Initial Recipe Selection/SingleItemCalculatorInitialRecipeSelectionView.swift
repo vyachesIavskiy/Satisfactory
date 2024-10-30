@@ -94,14 +94,18 @@ struct SingleItemCalculatorInitialRecipeSelectionView: View {
 
 #if DEBUG
 #Preview("Iron Ingot") {
-    SingleItemCalculatorInitialRecipeSelectionView(
-        viewModel: SingleItemCalculatorInitialRecipeSelectionViewModel(part: part(id: "part-iron-ingot"))
-    )
+    NavigationStack {
+        SingleItemCalculatorInitialRecipeSelectionView(
+            viewModel: SingleItemCalculatorInitialRecipeSelectionViewModel(part: part(id: "part-iron-ingot"))
+        )
+    }
 }
 
 #Preview("Reinforced Iron Plate") {
-    SingleItemCalculatorInitialRecipeSelectionView(
-        viewModel: SingleItemCalculatorInitialRecipeSelectionViewModel(part: part(id: "part-reinforced-iron-plate"))
-    )
+    NavigationStack {
+        SingleItemCalculatorInitialRecipeSelectionView(
+            viewModel: SingleItemCalculatorInitialRecipeSelectionViewModel(part: part(id: "part-reinforced-iron-plate"))
+        )
+    }
 }
 #endif

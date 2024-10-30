@@ -15,9 +15,21 @@ struct SingleItemCalculatorInitialRecipeSelectionView: View {
     
     var body: some View {
         List {
-            TipView(viewModel.selectRecipeTip)
-                .listSectionSeparator(.hidden)
+            if viewModel.showHelp {
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Image(systemName: "info.square")
+                            .foregroundStyle(.tint)
+                        
+                        Text("help")
+                    }
+                    .fontWeight(.medium)
+                    
+                    Text("single-item-calculator-initial-recipe-help-text")
+                }
                 .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+            }
             
             ForEach($viewModel.sections) { $section in
                 recipesSection($section)
@@ -28,6 +40,15 @@ struct SingleItemCalculatorInitialRecipeSelectionView: View {
         .environment(\.defaultMinListRowHeight, 2)
         .listStyle(.plain)
         .navigationTitle(viewModel.part.localizedName)
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button("help", systemImage: "info.bubble") {
+                    withAnimation(.bouncy) {
+                        viewModel.showHelp.toggle()
+                    }
+                }
+            }
+        }
         .task {
             await viewModel.observeStorage()
         }

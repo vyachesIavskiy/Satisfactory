@@ -1525,7 +1525,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "To start building a Production select an Item from a list below"
+            "value" : "To start building a Production select an Item from a list below."
           }
         }
       }
@@ -1876,6 +1876,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tap on any item to open a recipe selector. By selecting additional recipes for items you create a production."
+          }
+        }
+      }
+    },
+    "single-item-calculator-initial-recipe-help-text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a recipe from a list below to start a production."
           }
         }
       }

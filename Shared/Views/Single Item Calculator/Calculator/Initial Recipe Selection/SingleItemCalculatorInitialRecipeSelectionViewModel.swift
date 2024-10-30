@@ -25,6 +25,8 @@ final class SingleItemCalculatorInitialRecipeSelectionViewModel {
     @MainActor
     var sections = [Section]()
     
+    var showHelp = false
+    
     // MARK: Dependencies
     @ObservationIgnored @Dependency(\.storageService)
     private var storageService

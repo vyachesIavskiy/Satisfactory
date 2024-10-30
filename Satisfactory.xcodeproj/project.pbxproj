@@ -35,7 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		450BD19624A6395700948B47 /* Satisfactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satisfactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		450BD19624A6395700948B47 /* Satisfactory Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Satisfactory Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		450BD19E24A6395700948B47 /* Satisfactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satisfactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95DAFDB2AC6ACC60062A5AD /* iOS AppStore Screenshots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS AppStore Screenshots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,7 +141,7 @@
 		450BD19724A6395700948B47 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				450BD19624A6395700948B47 /* Satisfactory.app */,
+				450BD19624A6395700948B47 /* Satisfactory Helper.app */,
 				450BD19E24A6395700948B47 /* Satisfactory.app */,
 				F95DAFDB2AC6ACC60062A5AD /* iOS AppStore Screenshots.app */,
 			);
@@ -185,7 +185,7 @@
 				D301C2282C8A0B18000EDA8D /* SHFromResourcesCalculator */,
 			);
 			productName = iOS;
-			productReference = 450BD19624A6395700948B47 /* Satisfactory.app */;
+			productReference = 450BD19624A6395700948B47 /* Satisfactory Helper.app */;
 			productType = "com.apple.product-type.application";
 		};
 		450BD19D24A6395700948B47 /* macOS */ = {
@@ -459,7 +459,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
-				PRODUCT_NAME = Satisfactory;
+				PRODUCT_NAME = "Satisfactory Helper";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -484,7 +484,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
-				PRODUCT_NAME = Satisfactory;
+				PRODUCT_NAME = "Satisfactory Helper";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

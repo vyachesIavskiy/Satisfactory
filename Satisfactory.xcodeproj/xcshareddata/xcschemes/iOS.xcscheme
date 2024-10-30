@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "450BD19524A6395700948B47"
-               BuildableName = "Satisfactory.app"
+               BuildableName = "Satisfactory Helper.app"
                BlueprintName = "iOS"
                ReferencedContainer = "container:Satisfactory.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "450BD19524A6395700948B47"
-            BuildableName = "Satisfactory.app"
+            BuildableName = "Satisfactory Helper.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:Satisfactory.xcodeproj">
          </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "450BD19524A6395700948B47"
-            BuildableName = "Satisfactory.app"
+            BuildableName = "Satisfactory Helper.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:Satisfactory.xcodeproj">
          </BuildableReference>

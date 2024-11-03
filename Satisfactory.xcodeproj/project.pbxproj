@@ -17,26 +17,16 @@
 		D357369A2C8115C600866E00 /* SHSettings in Frameworks */ = {isa = PBXBuildFile; productRef = D35736992C8115C600866E00 /* SHSettings */; };
 		D357369C2C8115C600866E00 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D357369B2C8115C600866E00 /* SHStorage */; };
 		D357369E2C8115C600866E00 /* SHUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D357369D2C8115C600866E00 /* SHUtils */; };
-		D35736F82C81162400866E00 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D35736F72C81162400866E00 /* SHDebug */; };
-		D35736FA2C81162400866E00 /* SHLogger in Frameworks */ = {isa = PBXBuildFile; productRef = D35736F92C81162400866E00 /* SHLogger */; };
-		D35736FC2C81162400866E00 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D35736FB2C81162400866E00 /* SHModels */; };
-		D35736FE2C81162400866E00 /* SHSettings in Frameworks */ = {isa = PBXBuildFile; productRef = D35736FD2C81162400866E00 /* SHSettings */; };
-		D35737002C81162400866E00 /* SHStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D35736FF2C81162400866E00 /* SHStorage */; };
-		D35737022C81162400866E00 /* SHUtils in Frameworks */ = {isa = PBXBuildFile; productRef = D35737012C81162400866E00 /* SHUtils */; };
 		D39926882C04F537000D7308 /* SHDebug in Frameworks */ = {isa = PBXBuildFile; productRef = D39926872C04F537000D7308 /* SHDebug */; };
 		D3A84E932C6EB805005BB515 /* SHModels in Frameworks */ = {isa = PBXBuildFile; productRef = D3A84E922C6EB805005BB515 /* SHModels */; };
 		D3BC7C3D2C870B3F00917777 /* SHSingleItemCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3BC7C3C2C870B3F00917777 /* SHSingleItemCalculator */; };
 		D3F00E7E2C8E505000277B80 /* SHFromResourcesCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E7D2C8E505000277B80 /* SHFromResourcesCalculator */; };
 		D3F00E802C8E505400277B80 /* SHSingleItemCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E7F2C8E505400277B80 /* SHSingleItemCalculator */; };
 		D3F00E822C8E505C00277B80 /* SHSharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E812C8E505C00277B80 /* SHSharedUI */; };
-		D3F00E842C8E508F00277B80 /* SHFromResourcesCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E832C8E508F00277B80 /* SHFromResourcesCalculator */; };
-		D3F00E862C8E508F00277B80 /* SHSharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E852C8E508F00277B80 /* SHSharedUI */; };
-		D3F00E882C8E508F00277B80 /* SHSingleItemCalculator in Frameworks */ = {isa = PBXBuildFile; productRef = D3F00E872C8E508F00277B80 /* SHSingleItemCalculator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		450BD19624A6395700948B47 /* Satisfactory Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Satisfactory Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		450BD19E24A6395700948B47 /* Satisfactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Satisfactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95DAFDB2AC6ACC60062A5AD /* iOS AppStore Screenshots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS AppStore Screenshots.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -47,13 +37,6 @@
 				"Info-AppStoreScreenshots.plist",
 			);
 			target = 450BD19524A6395700948B47 /* iOS */;
-		};
-		D357A7CD2C8336FD008A8983 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Views/Settings/FeedbackView.swift,
-			);
-			target = 450BD19D24A6395700948B47 /* macOS */;
 		};
 		D357A7DC2C833737008A8983 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -73,7 +56,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D3051BD12C77643100E0B6C3 /* iOS */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D3051BD62C77643100E0B6C3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = iOS; sourceTree = "<group>"; };
-		D357A6A32C8336FD008A8983 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D357A7CD2C8336FD008A8983 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
+		D357A6A32C8336FD008A8983 /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
 		D357A7D92C833737008A8983 /* Packages */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D357A7DC2C833737008A8983 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, D357A7DD2C833737008A8983 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Packages; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -90,22 +73,6 @@
 				D301C2292C8A0B18000EDA8D /* SHFromResourcesCalculator in Frameworks */,
 				D3BC7C3D2C870B3F00917777 /* SHSingleItemCalculator in Frameworks */,
 				D3045CC62C52B30B00265500 /* SHUtils in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		450BD19B24A6395700948B47 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D35737022C81162400866E00 /* SHUtils in Frameworks */,
-				D3F00E842C8E508F00277B80 /* SHFromResourcesCalculator in Frameworks */,
-				D3F00E862C8E508F00277B80 /* SHSharedUI in Frameworks */,
-				D35736FA2C81162400866E00 /* SHLogger in Frameworks */,
-				D35736F82C81162400866E00 /* SHDebug in Frameworks */,
-				D35737002C81162400866E00 /* SHStorage in Frameworks */,
-				D3F00E882C8E508F00277B80 /* SHSingleItemCalculator in Frameworks */,
-				D35736FC2C81162400866E00 /* SHModels in Frameworks */,
-				D35736FE2C81162400866E00 /* SHSettings in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				450BD19624A6395700948B47 /* Satisfactory Helper.app */,
-				450BD19E24A6395700948B47 /* Satisfactory.app */,
 				F95DAFDB2AC6ACC60062A5AD /* iOS AppStore Screenshots.app */,
 			);
 			name = Products;
@@ -188,26 +154,6 @@
 			productReference = 450BD19624A6395700948B47 /* Satisfactory Helper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		450BD19D24A6395700948B47 /* macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 450BD1AD24A6395700948B47 /* Build configuration list for PBXNativeTarget "macOS" */;
-			buildPhases = (
-				450BD19A24A6395700948B47 /* Sources */,
-				450BD19B24A6395700948B47 /* Frameworks */,
-				450BD19C24A6395700948B47 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				D357A6A32C8336FD008A8983 /* Shared */,
-			);
-			name = macOS;
-			productName = macOS;
-			productReference = 450BD19E24A6395700948B47 /* Satisfactory.app */;
-			productType = "com.apple.product-type.application";
-		};
 		F95DAF912AC6ACC60062A5AD /* iOS AppStore Screenshots */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F95DAFD82AC6ACC60062A5AD /* Build configuration list for PBXNativeTarget "iOS AppStore Screenshots" */;
@@ -235,13 +181,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					450BD19524A6395700948B47 = {
-						CreatedOnToolsVersion = 12.0;
-					};
-					450BD19D24A6395700948B47 = {
 						CreatedOnToolsVersion = 12.0;
 					};
 				};
@@ -261,20 +204,12 @@
 			targets = (
 				450BD19524A6395700948B47 /* iOS */,
 				F95DAF912AC6ACC60062A5AD /* iOS AppStore Screenshots */,
-				450BD19D24A6395700948B47 /* macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		450BD19424A6395700948B47 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		450BD19C24A6395700948B47 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -292,13 +227,6 @@
 
 /* Begin PBXSourcesBuildPhase section */
 		450BD19224A6395700948B47 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		450BD19A24A6395700948B47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -495,56 +423,6 @@
 			};
 			name = Release;
 		};
-		450BD1AE24A6395700948B47 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Colors/Orange/Orange - 60";
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 7R7GVTFP58;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
-				PRODUCT_NAME = Satisfactory;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		450BD1AF24A6395700948B47 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Colors/Orange/Orange - 60";
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 7R7GVTFP58;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.breath.Satisfactory;
-				PRODUCT_NAME = Satisfactory;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		F95DAFD92AC6ACC60062A5AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -617,15 +495,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		450BD1AD24A6395700948B47 /* Build configuration list for PBXNativeTarget "macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				450BD1AE24A6395700948B47 /* Debug */,
-				450BD1AF24A6395700948B47 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		F95DAFD82AC6ACC60062A5AD /* Build configuration list for PBXNativeTarget "iOS AppStore Screenshots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -678,30 +547,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = SHUtils;
 		};
-		D35736F72C81162400866E00 /* SHDebug */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHDebug;
-		};
-		D35736F92C81162400866E00 /* SHLogger */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHLogger;
-		};
-		D35736FB2C81162400866E00 /* SHModels */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHModels;
-		};
-		D35736FD2C81162400866E00 /* SHSettings */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHSettings;
-		};
-		D35736FF2C81162400866E00 /* SHStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHStorage;
-		};
-		D35737012C81162400866E00 /* SHUtils */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHUtils;
-		};
 		D39926872C04F537000D7308 /* SHDebug */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHDebug;
@@ -725,18 +570,6 @@
 		D3F00E812C8E505C00277B80 /* SHSharedUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SHSharedUI;
-		};
-		D3F00E832C8E508F00277B80 /* SHFromResourcesCalculator */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHFromResourcesCalculator;
-		};
-		D3F00E852C8E508F00277B80 /* SHSharedUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHSharedUI;
-		};
-		D3F00E872C8E508F00277B80 /* SHSingleItemCalculator */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SHSingleItemCalculator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

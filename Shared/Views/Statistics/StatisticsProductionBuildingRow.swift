@@ -5,6 +5,9 @@ extension StatisticsView {
     struct ProductionBuildingRow: View {
         private let productionBuilding: StatisticsViewModel.Machine
         
+        @State
+        private var isExpanded = true
+        
         @Environment(\.displayScale)
         private var displayScale
         
@@ -19,39 +22,47 @@ extension StatisticsView {
                     
                     productionBuildingRowContent
                 }
+                .contentShape(.interaction, Rectangle())
+                .onTapGesture {
+                    withAnimation {
+                        isExpanded.toggle()
+                    }
+                }
                 
-                VStack(alignment: .leading, spacing: 6) {
-                    ForEach(productionBuilding.recipes) { recipe in
-                        HStack(spacing: 12) {
-                            Image(recipe.recipe.output.part.id)
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .padding(5)
-                                .background {
-                                    AngledRectangle(cornerRadius: 4).inset(by: 1 / displayScale)
-                                        .fill(.sh(.gray20))
-                                        .stroke(.sh(.midnight40), lineWidth: 2 / displayScale)
+                if isExpanded {
+                    VStack(alignment: .leading, spacing: 6) {
+                        ForEach(productionBuilding.recipes) { recipe in
+                            HStack(spacing: 12) {
+                                Image(recipe.recipe.output.part.id)
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .padding(5)
+                                    .background {
+                                        AngledRectangle(cornerRadius: 4).inset(by: 1 / displayScale)
+                                            .fill(.sh(.gray20))
+                                            .stroke(.sh(.midnight40), lineWidth: 2 / displayScale)
+                                    }
+                                
+                                HStack(alignment: .firstTextBaseline) {
+                                    Text(recipe.recipe.localizedName)
+                                    
+                                    Spacer()
+                                    
+                                    Text(recipe.valueString)
+                                        .foregroundStyle(.sh(.midnight))
                                 }
-                            
-                            HStack(alignment: .firstTextBaseline) {
-                                Text(recipe.recipe.localizedName)
-                                
-                                Spacer()
-                                
-                                Text(recipe.valueString)
-                                    .foregroundStyle(.sh(.midnight))
                             }
                         }
                     }
-                }
-                .font(.callout)
-                .padding(.leading, 12)
-                .transition(
-                    .asymmetric(
-                        insertion: .opacity.animation(.default.speed(0.5)),
-                        removal: .opacity.animation(.default.speed(3))
+                    .font(.callout)
+                    .padding(.leading, 12)
+                    .transition(
+                        .asymmetric(
+                            insertion: .opacity.animation(.default.speed(0.5)),
+                            removal: .opacity.animation(.default.speed(3))
+                        )
                     )
-                )
+                }
             }
             .addListGradientSeparator(leadingPadding: 64)
             .fixedSize(horizontal: false, vertical: true)
@@ -60,8 +71,17 @@ extension StatisticsView {
         @MainActor @ViewBuilder
         private var productionBuildingRowContent: some View {
             HStack {
-                Text(productionBuilding.building.localizedName)
-                    .fontWeight(.medium)
+                VStack(alignment: .leading) {
+                    Text(productionBuilding.building.localizedName)
+                        .fontWeight(.medium)
+                    
+                    if !isExpanded {
+                        Text("\(productionBuilding.recipes.count) recipes")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                    }
+                }
                 
                 Spacer()
                 
@@ -81,7 +101,7 @@ extension StatisticsView {
                     .opacity(0.7)
                 }
             }
-            .addListGradientSeparator(colors: [.sh(.midnight30), .sh(.midnight10)], lineWidth: 1)
+            .addListGradientSeparator(colors: isExpanded ? [.sh(.midnight30), .sh(.midnight10)] : [], lineWidth: 1)
         }
     }
 }

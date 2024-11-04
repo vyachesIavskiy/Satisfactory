@@ -207,7 +207,11 @@ extension StatisticsViewModel {
         var id: String { recipe.id }
         
         var intAmount: Int {
-            Int(amount.rounded(.up))
+            if amount - amount.rounded(.towardZero) > 0.0001 {
+                Int(amount.rounded(.up))
+            } else {
+                Int(amount)
+            }
         }
         
         var valueString: AttributedString {
@@ -216,7 +220,7 @@ extension StatisticsViewModel {
             var container = AttributeContainer()
             container.font = .callout
             
-            if intAmount > 0, additionalPercent > 0 {
+            if intAmount > 0, additionalPercent > 0.0001 {
                 var result = AttributedString((intAmount + 1).formatted(.number), attributes: container)
                 container.font = .footnote
                 result.append(AttributedString(" (1x \(additionalPercent.formatted(.shPercent)))", attributes: container))

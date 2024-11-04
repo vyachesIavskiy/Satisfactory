@@ -10,6 +10,28 @@
     "%@  " : {
 
     },
+    "%lld recipes" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Recipe"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Recipes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "adjust-recipe-will-be-deleted" : {
       "extractionState" : "manual",
       "localizations" : {

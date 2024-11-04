@@ -32,8 +32,6 @@ import SHStorage
         
         _ListRowIconItemPreview(itemID: "part-crude-oil")
         
-        _ListRowIconItemPreview(itemID: "equipment-boombox")
-        
         _ListRowIconItemPreview(itemID: "building-assembler")
     }
 }

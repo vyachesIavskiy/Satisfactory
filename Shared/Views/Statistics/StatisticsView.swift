@@ -19,7 +19,7 @@ struct StatisticsView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVStack(spacing: 24, pinnedViews: .sectionHeaders) {
+                VStack(spacing: 24) {
                     machinesSection
                         .padding(.horizontal, 20)
                     

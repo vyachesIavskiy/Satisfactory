@@ -48,6 +48,7 @@ extension ChangeLog {
         case .v2_0_3: .v2_0_3
         case .v2_0_4: .v2_0_4
         case .v2_0_5: .v2_0_5
+        case .v2_0_6: .v2_0_6
         }
     }
 }

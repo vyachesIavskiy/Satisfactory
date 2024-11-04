@@ -865,6 +865,66 @@
         }
       }
     },
+    "change-log-v2-0-6-change-1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed an issue when sometimes statistics screen can show machines with 0% production rate"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-6-change-2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed an issue when long statistics screen can have very poor scroll performance"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-6-change-3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Added ability to expand and collapse machines row in statistics screen"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-6-name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version 2.0.6"
+          }
+        }
+      }
+    },
+    "change-log-v2-0-6-update-message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sixth update to 2.0 version of Satisfactory Helper!\n\nWith the help from **Albert Merino** another bug was fixed. This time it’s for statistics screen."
+          }
+        }
+      }
+    },
+    "change-log-v2-0-6-version-title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v 2.0.6"
+          }
+        }
+      }
+    },
     "change-log-v2-0-change-1" : {
       "extractionState" : "manual",
       "localizations" : {
